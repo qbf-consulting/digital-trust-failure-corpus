@@ -1,0 +1,39 @@
+{
+  "id": "DTF-005",
+  "title": "superseded-artifact-treated-as-current",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["lifecycle", "evidence", "interoperability"],
+  "failure_classes": ["lifecycle-state", "policy-mismatch"],
+  "proposition": {
+    "statement": "A relying system must not treat a superseded artifact as the current authoritative artifact unless an explicit compatibility or historical-use rule permits that reliance."
+  },
+  "preconditions": [
+    "An artifact was previously authoritative or current.",
+    "A successor artifact or state superseded it before the relying decision.",
+    "The relying decision asks for the current authoritative artifact or state."
+  ],
+  "trigger": {
+    "statement": "The relying system selects or accepts the superseded artifact as current without evaluating the supersession relationship or an applicable compatibility rule."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "lifecycle-state", "statement": "Evidence establishing supersession and the current artifact or state."},
+    {"category": "temporal", "statement": "Evidence establishing when supersession became effective relative to the relying decision."},
+    {"category": "policy", "statement": "Any compatibility or historical-use rule that permits reliance on the superseded artifact."},
+    {"category": "provenance", "statement": "Evidence linking the supersession statement to a competent source."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS for current status solely from a superseded artifact when no applicable compatibility rule permits that reliance."},
+    {"condition": "The system ignores known supersession evidence when selecting the current authoritative artifact."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/9", "note": "Repository judgment record for the lifecycle failure tranche."}
+  ]
+}
