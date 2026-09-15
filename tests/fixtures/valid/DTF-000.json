@@ -1,0 +1,36 @@
+{
+  "id": "DTF-000",
+  "title": "canonical-schema-example",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["evidence", "authorization"],
+  "failure_classes": ["missing-evidence"],
+  "proposition": {
+    "statement": "A relying system must not convert absent required evidence into a successful trust decision."
+  },
+  "preconditions": [
+    "A decision requires evidence that has not been supplied."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates the proposition without the required evidence."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "provenance",
+      "statement": "Evidence establishing whether the required input was supplied."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The relying system returns PASS despite the required evidence being absent."
+    }
+  ],
+  "references": []
+}
