@@ -1,0 +1,39 @@
+{
+  "id": "DTF-006",
+  "title": "current-withdrawal-erases-historical-validity",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["lifecycle", "evidence", "interoperability"],
+  "failure_classes": ["historical-validity", "lifecycle-state"],
+  "proposition": {
+    "statement": "A relying system must not infer that an artifact or event was never valid merely because its authority, status, or availability was later withdrawn, revoked, or superseded."
+  },
+  "preconditions": [
+    "The artifact or event was valid under the applicable rules at historical time t1.",
+    "A later lifecycle event at time t2 changes its current status or availability.",
+    "A relying decision asks whether the artifact or event was valid at t1 rather than whether it is valid now."
+  ],
+  "trigger": {
+    "statement": "The relying system answers a historical-validity question using only the artifact's current withdrawn, revoked, or superseded state."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "lifecycle-state", "statement": "Evidence of the artifact state at the historical time and the later lifecycle event."},
+    {"category": "temporal", "statement": "Evidence distinguishing the historical verification time from the later lifecycle-event time."},
+    {"category": "policy", "statement": "Evidence of the rules governing historical validity for the relevant context."},
+    {"category": "provenance", "statement": "Evidence sufficient to attribute historical and current state assertions to competent sources."}
+  ],
+  "falsification": [
+    {"condition": "The system concludes that the artifact was invalid at the historical time solely because it is withdrawn, revoked, or superseded now."},
+    {"condition": "The system collapses current-state evidence and historical-state evidence into a single undifferentiated validity result."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/9", "note": "Repository judgment record for the lifecycle failure tranche."}
+  ]
+}

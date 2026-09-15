@@ -1,0 +1,39 @@
+{
+  "id": "DTF-004",
+  "title": "revoked-artifact-accepted-as-currently-valid",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["credential", "lifecycle", "evidence", "authorization"],
+  "failure_classes": ["lifecycle-state", "stale-evidence"],
+  "proposition": {
+    "statement": "A relying system must not treat an artifact as currently valid after an authoritative revocation has become effective for the decision context."
+  },
+  "preconditions": [
+    "The artifact was valid before a revocation event.",
+    "An authoritative revocation became effective before the relying decision.",
+    "The relying decision asks whether the artifact is valid now."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates current validity using artifact evidence that does not incorporate the effective revocation state."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "lifecycle-state", "statement": "Evidence establishing the artifact lifecycle state for the decision context."},
+    {"category": "authority-state", "statement": "Evidence that the revocation source is competent to change the artifact state."},
+    {"category": "temporal", "statement": "Evidence of revocation effective time and relying decision time."},
+    {"category": "freshness", "statement": "Evidence sufficient to determine that the lifecycle state is current enough for the decision."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS for current validity after an authoritative revocation is known to be effective."},
+    {"condition": "The system cannot establish current revocation state but converts that uncertainty into PASS."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/9", "note": "Repository judgment record for the lifecycle failure tranche."}
+  ]
+}
