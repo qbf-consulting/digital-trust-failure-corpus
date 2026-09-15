@@ -1,0 +1,38 @@
+{
+  "id": "DTF-012",
+  "title": "decision-evidence-policy-version-mismatch",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["evidence", "governance", "authorization", "interoperability"],
+  "failure_classes": ["policy-mismatch", "provenance"],
+  "proposition": {
+    "statement": "A relying system must not represent a trust decision as satisfying one policy or policy version when the material evidence or evaluation was actually produced under a different, incompatible, or unidentified policy context."
+  },
+  "preconditions": [
+    "A relying decision asserts compliance with an identified policy or policy version.",
+    "Material evidence or evaluation results were produced under another policy context, or their policy context cannot be established.",
+    "No compatibility rule establishes that the evidence remains valid under the asserted policy context."
+  ],
+  "trigger": {
+    "statement": "The relying system consumes evidence or a prior decision without reconciling the policy context under which that evidence was produced with the policy asserted for the current decision."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "policy", "statement": "Evidence identifying the policy or policy version asserted for the current decision and the policy context used to produce material evidence."},
+    {"category": "provenance", "statement": "Evidence linking the material evaluation or evidence artifact to the policy context under which it was produced."},
+    {"category": "temporal", "statement": "Evidence sufficient to determine whether a policy change occurred between evidence production and the current decision."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS while representing compliance with policy version B from evidence materially evaluated only under incompatible policy version A."},
+    {"condition": "The system cannot establish the policy context of material evidence but attributes that evidence to the current asserted policy and returns PASS."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/13", "note": "Repository judgment record for the evidence failure tranche."}
+  ]
+}

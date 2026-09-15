@@ -1,0 +1,37 @@
+{
+  "id": "DTF-010",
+  "title": "missing-evidence-interpreted-as-pass",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["evidence", "authorization", "governance"],
+  "failure_classes": ["missing-evidence"],
+  "proposition": {
+    "statement": "A relying system must not interpret the absence or unavailability of evidence required to establish a proposition as positive evidence that the proposition is satisfied."
+  },
+  "preconditions": [
+    "The relying decision requires identified evidence to establish a trust proposition.",
+    "One or more required evidence items are absent, unavailable, or unresolved.",
+    "No competent policy explicitly defines absence of that evidence as satisfying the proposition."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates the proposition while required evidence is missing or unavailable."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "policy", "statement": "Evidence identifying what information is required to establish the proposition for the decision context."},
+    {"category": "other", "statement": "Evidence or diagnostic state establishing which required information is absent, unavailable, or unresolved."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS because required evidence is absent, unavailable, or could not be retrieved."},
+    {"condition": "The system treats failure to observe a disqualifying condition as proof that the positive trust proposition is established."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/13", "note": "Repository judgment record for the evidence failure tranche."}
+  ]
+}
