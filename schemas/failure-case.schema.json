@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qbfconsulting.digital/schemas/digital-trust-failure-case/0.1.0",
+  "title": "Digital Trust Failure Case",
+  "description": "Technology-neutral machine-readable contract for a digital trust failure proposition.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "version",
+    "status",
+    "domains",
+    "failure_classes",
+    "proposition",
+    "preconditions",
+    "trigger",
+    "expected",
+    "evidence_required",
+    "falsification",
+    "references"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^DTF-[0-9]{3,}$"
+    },
+    "title": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 3
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "enum": ["draft", "review", "accepted", "deprecated"]
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "identity",
+          "credential",
+          "trust-registry",
+          "authorization",
+          "delegation",
+          "lifecycle",
+          "governance",
+          "privacy",
+          "composition",
+          "evidence",
+          "agent",
+          "interoperability"
+        ]
+      }
+    },
+    "failure_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "stale-evidence",
+          "missing-evidence",
+          "conflicting-evidence",
+          "authority",
+          "scope-escalation",
+          "lifecycle-state",
+          "historical-validity",
+          "false-independence",
+          "implicit-transitivity",
+          "policy-mismatch",
+          "correlation",
+          "provenance"
+        ]
+      }
+    },
+    "proposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement"],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 20
+        }
+      }
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement"],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dispositions"],
+      "properties": {
+        "dispositions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["PASS", "DENY", "INDETERMINATE"],
+          "properties": {
+            "PASS": {
+              "enum": ["allowed", "prohibited", "not-applicable"]
+            },
+            "DENY": {
+              "enum": ["allowed", "prohibited", "not-applicable"]
+            },
+            "INDETERMINATE": {
+              "enum": ["allowed", "prohibited", "not-applicable"]
+            }
+          },
+          "allOf": [
+            {
+              "anyOf": [
+                {
+                  "properties": {
+                    "DENY": {"const": "allowed"}
+                  }
+                },
+                {
+                  "properties": {
+                    "INDETERMINATE": {"const": "allowed"}
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "evidence_required": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category", "statement"],
+        "properties": {
+          "category": {
+            "enum": [
+              "authority-state",
+              "lifecycle-state",
+              "freshness",
+              "provenance",
+              "policy",
+              "relationship",
+              "cryptographic",
+              "temporal",
+              "composition",
+              "other"
+            ]
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      }
+    },
+    "falsification": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["condition"],
+        "properties": {
+          "condition": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "locator"],
+        "properties": {
+          "type": {
+            "enum": [
+              "specification",
+              "issue",
+              "pull-request",
+              "paper",
+              "incident",
+              "implementation",
+              "other"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
