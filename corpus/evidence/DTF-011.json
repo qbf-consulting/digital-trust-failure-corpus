@@ -1,0 +1,38 @@
+{
+  "id": "DTF-011",
+  "title": "unverifiable-evidence-freshness-treated-as-current",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["evidence", "lifecycle", "authorization"],
+  "failure_classes": ["stale-evidence", "missing-evidence"],
+  "proposition": {
+    "statement": "A relying system must not treat evidence as current when the freshness needed for the decision context cannot be established from available temporal or lifecycle information."
+  },
+  "preconditions": [
+    "The relying decision requires evidence to be current within a bounded or otherwise meaningful freshness condition.",
+    "The available evidence does not establish when the relevant state was observed, produced, or last verified.",
+    "The relying system cannot otherwise establish that no material state change has occurred."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates current state while the age or freshness of required evidence is unresolved."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "freshness", "statement": "Evidence establishing the freshness condition required for the relying decision."},
+    {"category": "temporal", "statement": "Evidence identifying relevant observation, production, verification, or effective times."},
+    {"category": "lifecycle-state", "statement": "Evidence sufficient to determine whether a material state change could invalidate the evidence used."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS for a current-state proposition when required evidence freshness cannot be established."},
+    {"condition": "The system assumes evidence remains current indefinitely because no newer evidence was successfully retrieved."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/13", "note": "Repository judgment record for the evidence failure tranche."}
+  ]
+}
