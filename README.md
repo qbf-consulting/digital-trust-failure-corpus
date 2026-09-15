@@ -6,7 +6,7 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-This repository is under active development. The current v0.1 work establishes the technology-neutral failure-case contract before adding the first substantive corpus tranche.
+This repository is under active v0.1 development. The technology-neutral failure-case contract, repository validator, CI validation, and the first substantive authority failure tranche are now represented in the repository.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -24,12 +24,23 @@ The corpus is **evidence, not authority**. A case can cite normative specificati
 schemas/                     Versioned machine-readable case contract
 corpus/                      Consumable machine-readable failure cases
 docs/taxonomy.md             Initial classification vocabulary
+docs/*-observations.md       Non-normative downstream research signals
 tests/fixtures/              Positive and negative validation fixtures
-tests/                       Executable schema and validator invariants
+tests/                       Executable schema, validator, and corpus invariants
 tools/validate.py            Repository and adopter validation CLI
 licensing/                   Machine-readable artifact licensing policy
 requirements-dev.txt         Test dependency
 ```
+
+## Current corpus
+
+The initial authority tranche is under [`corpus/authority/`](corpus/authority/) and establishes three technology-neutral failure propositions:
+
+- `DTF-001` — stale authority evidence after revocation;
+- `DTF-002` — delegated authority exceeds permitted scope;
+- `DTF-003` — delegation survives loss of its authority source.
+
+Derived research signals for lifecycle modelling, executable governance, and trust-infrastructure observability are recorded separately in [`docs/authority-tranche-observations.md`](docs/authority-tranche-observations.md) so they do not expand the core schema by accident.
 
 ## Validate the current contract and corpus
 

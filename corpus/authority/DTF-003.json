@@ -1,0 +1,63 @@
+{
+  "id": "DTF-003",
+  "title": "delegation-survives-loss-of-authority-source",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["authorization", "delegation", "lifecycle", "evidence", "agent"],
+  "failure_classes": ["authority", "lifecycle-state", "missing-evidence"],
+  "proposition": {
+    "statement": "A delegation must not continue to establish current authority when the authority source on which that delegation depends has been withdrawn, revoked, or cannot currently be established, unless an explicit rule preserves that authority for the decision context."
+  },
+  "preconditions": [
+    "A delegation derives its authority from an identified upstream authority source.",
+    "That authority source is later withdrawn, revoked, or becomes unverifiable for the current decision context.",
+    "A relying decision subsequently attempts to use the dependent delegation as current authority."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates a delegation after the state of its required authority source has materially changed or can no longer be established."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "relationship",
+      "statement": "Evidence showing that the delegation depends on the identified authority source."
+    },
+    {
+      "category": "authority-state",
+      "statement": "Current evidence for the authority source from which the delegation derives authority."
+    },
+    {
+      "category": "lifecycle-state",
+      "statement": "Evidence of withdrawal, revocation, replacement, or unresolved lifecycle state affecting the authority source."
+    },
+    {
+      "category": "temporal",
+      "statement": "Evidence establishing the relevant authority-source state before the relying decision."
+    },
+    {
+      "category": "freshness",
+      "statement": "Evidence sufficient to determine that the authority-source state used by the relying decision is current enough for that decision."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS from the dependent delegation after its required authority source has been established as withdrawn or revoked and no preservation rule applies."
+    },
+    {
+      "condition": "The system cannot establish the current state of the required authority source but treats the dependent delegation as current authority."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/7",
+      "note": "Repository judgment record for the initial authority failure tranche."
+    }
+  ]
+}

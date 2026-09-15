@@ -1,0 +1,59 @@
+{
+  "id": "DTF-001",
+  "title": "stale-authority-evidence-after-revocation",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["trust-registry", "authorization", "lifecycle", "evidence"],
+  "failure_classes": ["stale-evidence", "authority", "lifecycle-state"],
+  "proposition": {
+    "statement": "A relying system must not treat authority evidence that predates a material revocation or withdrawal as proof of current authority unless an explicit historical-verification rule makes that evidence relevant to the question being asked."
+  },
+  "preconditions": [
+    "Authority evidence was produced or observed at time t1 while the authority was valid.",
+    "A revocation or withdrawal became effective at time t2 after t1.",
+    "A relying decision at time t3 after t2 asks whether the authority is current."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates current authority using evidence whose observation or production time predates the material revocation or withdrawal."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Evidence establishing the authority state relevant to the relying decision."
+    },
+    {
+      "category": "lifecycle-state",
+      "statement": "Evidence of the revocation or withdrawal and the state it establishes."
+    },
+    {
+      "category": "freshness",
+      "statement": "Evidence sufficient to determine whether the authority evidence is current for the decision context."
+    },
+    {
+      "category": "temporal",
+      "statement": "Times for evidence production or observation, revocation effectiveness, and the relying decision."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for current authority solely from evidence known to predate the material revocation or withdrawal."
+    },
+    {
+      "condition": "The system cannot establish evidence freshness but converts that uncertainty into PASS."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/7",
+      "note": "Repository judgment record for the initial authority failure tranche."
+    }
+  ]
+}

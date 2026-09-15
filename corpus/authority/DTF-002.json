@@ -1,0 +1,59 @@
+{
+  "id": "DTF-002",
+  "title": "delegated-authority-exceeds-permitted-scope",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["authorization", "delegation", "governance", "evidence", "agent"],
+  "failure_classes": ["authority", "scope-escalation"],
+  "proposition": {
+    "statement": "A delegated actor must not exercise or be credited with authority beyond the scope that the authoritative delegation chain permits."
+  },
+  "preconditions": [
+    "A principal or other competent authority grants a bounded scope to a delegate.",
+    "The delegate attempts or is credited with an action outside that bounded scope.",
+    "The relying decision depends on the delegation as authority for the attempted action."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates an action whose requested scope exceeds, is not included in, or cannot be derived from the authoritative delegation scope."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "relationship",
+      "statement": "Evidence of the delegation chain linking the actor to the authority source."
+    },
+    {
+      "category": "authority-state",
+      "statement": "Evidence that the authority source is competent for the delegated scope."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence defining the permitted delegated scope and any attenuation or downstream-delegation constraints."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence sufficient to establish that the scope statement originates from the authoritative delegation source."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for an action whose scope is outside the scope established by the authoritative delegation chain."
+    },
+    {
+      "condition": "The system treats an omitted, unresolved, or unverified delegation scope as unrestricted authority."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/7",
+      "note": "Repository judgment record for the initial authority failure tranche."
+    }
+  ]
+}
