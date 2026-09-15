@@ -6,7 +6,7 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-This repository is under active v0.1 development. The technology-neutral failure-case contract, repository validator, CI validation, and the first substantive authority failure tranche are now represented in the repository.
+The v0.1 baseline now contains a technology-neutral failure-case schema, repository validator, CI validation, dual licensing, contributor/adopter guidance, and an initial twelve-case corpus spanning authority, lifecycle, composition, and evidence failures.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -22,27 +22,31 @@ The corpus is **evidence, not authority**. A case can cite normative specificati
 
 ```text
 schemas/                     Versioned machine-readable case contract
-corpus/                      Consumable machine-readable failure cases
-docs/taxonomy.md             Initial classification vocabulary
+corpus/authority/            DTF-001 through DTF-003
+corpus/lifecycle/            DTF-004 through DTF-006
+corpus/composition/          DTF-007 through DTF-009
+corpus/evidence/             DTF-010 through DTF-012
+docs/taxonomy.md             Classification vocabulary
+docs/authoring-cases.md      Case authoring guidance
+docs/consuming-the-corpus.md Adopter guidance
 docs/*-observations.md       Non-normative downstream research signals
-tests/fixtures/              Positive and negative validation fixtures
-tests/                       Executable schema, validator, and corpus invariants
+tests/                       Schema, validator, corpus, and baseline invariants
 tools/validate.py            Repository and adopter validation CLI
 licensing/                   Machine-readable artifact licensing policy
-requirements-dev.txt         Test dependency
 ```
 
-## Current corpus
+## Initial corpus
 
-The initial authority tranche is under [`corpus/authority/`](corpus/authority/) and establishes three technology-neutral failure propositions:
-
-- `DTF-001` — stale authority evidence after revocation;
-- `DTF-002` — delegated authority exceeds permitted scope;
-- `DTF-003` — delegation survives loss of its authority source.
+| Range | Focus | Representative failures |
+|---|---|---|
+| DTF-001–003 | Authority | stale authority, scope escalation, dependent delegation after authority loss |
+| DTF-004–006 | Lifecycle | revocation, supersession, current vs historical validity |
+| DTF-007–009 | Composition | false independence, authoritative conflict, undeclared transitivity |
+| DTF-010–012 | Evidence | missing evidence, unresolved freshness, policy/version mismatch |
 
 Derived research signals for lifecycle modelling, executable governance, and trust-infrastructure observability are recorded separately in [`docs/authority-tranche-observations.md`](docs/authority-tranche-observations.md) so they do not expand the core schema by accident.
 
-## Validate the current contract and corpus
+## Validate the contract and corpus
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -50,11 +54,13 @@ python -m unittest discover -s tests -v
 python tools/validate.py
 ```
 
-The tests and validator establish structural conformance, collection-level identity uniqueness, and rejection of important unsafe forms. A green result does not establish normative correctness, case completeness, severity, applicability, or implementation assurance.
+The tests and validator establish structural conformance, collection-level identity uniqueness, baseline case continuity, and rejection of important unsafe forms. A green result does not establish normative correctness, case completeness, severity, applicability, or implementation assurance.
 
-## Current schema
+## Authoring and adoption
 
-The v0.1 schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json). Its classification vocabulary and extension boundary are documented in [`docs/taxonomy.md`](docs/taxonomy.md).
+Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
+
+The v0.1 schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json).
 
 ## Licensing
 
@@ -64,6 +70,10 @@ This repository uses a dual-license model based on artifact type:
 - Source code, validators, tests, machine-readable schemas, fixtures, corpus entries, executable configuration, and generated machine-readable evidence are licensed under **Apache License 2.0 (Apache-2.0)**. See [`LICENSE-CODE`](LICENSE-CODE).
 
 The repository-level mapping is summarized in [`LICENSE`](LICENSE) and published in machine-readable form at [`licensing/artifact-license-policy.json`](licensing/artifact-license-policy.json). An explicit file-level license notice takes precedence if one is present.
+
+## Security
+
+Security-sensitive implementation findings should follow [`SECURITY.md`](SECURITY.md), not be disclosed through public corpus cases or issues. The public corpus is not an incident repository.
 
 ## Project ownership
 
