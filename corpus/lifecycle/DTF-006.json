@@ -6,7 +6,7 @@
   "domains": ["lifecycle", "evidence", "interoperability"],
   "failure_classes": ["historical-validity", "lifecycle-state"],
   "proposition": {
-    "statement": "A relying system must not infer that an artifact or event was never valid merely because its authority, status, or availability was later withdrawn, revoked, or superseded."
+    "statement": "A relying system must not infer that an artifact or event lacked historical validity merely because its authority, status, or availability was later withdrawn, revoked, or superseded."
   },
   "preconditions": [
     "The artifact or event was valid under the applicable rules at historical time t1.",
