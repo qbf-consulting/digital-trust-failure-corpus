@@ -1,0 +1,61 @@
+# Curated national-flower release codenames
+#
+# Source: https://en.wikipedia.org/wiki/List_of_national_flowers
+# Snapshot reviewed: 2026-09-15
+#
+# This is a deliberately curated, deduplicated set of human-facing names from
+# the article's national-plant sections. It is release metadata only; it is not
+# a botanical or normative dataset. Changes to this pool go through repository
+# review. Blank lines and lines beginning with # are ignored.
+
+Calla Lily
+Ruizia Boutoniana
+Yellow Trumpet
+Tropicbird Orchid
+King Protea
+Jasmine
+Flame Lily
+Tulip
+Water Lily
+Blue Poppy
+Simpoh Ayer
+Romduol
+Lotus
+Melati
+Poppy Anemone
+Cherry Blossom
+Black Iris
+Arfaj
+Champa
+Chinese Hibiscus
+Pink Polyantha Rose
+Scabiosa Comosa
+Paduak
+Tree Rhododendron
+Korean Mountain Magnolia
+Faqqua Iris
+Common Jasmine
+Sampaguita
+Royal Jasmine
+Singapore Orchid
+Mugunghwa
+Blue-star Water-lily
+Plum Blossom
+Golden Shower Tree
+Tribulus Omanense
+Strawberry Tree
+Ruta Graveolens
+Maltese Rock-centaury
+Daisy
+Flax Flower
+Red Poppy
+Peony
+Chamomile
+Thistle
+Natalie's Ramonda
+Tilia
+Carnation
+Harebell
+Edelweiss
+Sunflower
+Daffodil
