@@ -1,0 +1,15 @@
+{
+  "id": "DTF-901",
+  "title": "invalid-missing-evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["evidence"],
+  "failure_classes": ["missing-evidence"],
+  "proposition": {"statement": "A failure case without required evidence is not evaluable."},
+  "preconditions": [],
+  "trigger": {"statement": "Validation evaluates a case with no evidence requirements."},
+  "expected": {"dispositions": {"PASS": "prohibited", "DENY": "allowed", "INDETERMINATE": "allowed"}},
+  "evidence_required": [],
+  "falsification": [{"condition": "The invalid case is accepted despite lacking evidence requirements."}],
+  "references": []
+}

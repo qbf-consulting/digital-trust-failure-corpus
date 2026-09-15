@@ -1,0 +1,15 @@
+{
+  "id": "DTF-902",
+  "title": "invalid-missing-falsification",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["evidence"],
+  "failure_classes": ["missing-evidence"],
+  "proposition": {"statement": "A failure case without falsification evidence cannot establish what would prove it wrong."},
+  "preconditions": [],
+  "trigger": {"statement": "Validation evaluates a case with no falsification condition."},
+  "expected": {"dispositions": {"PASS": "prohibited", "DENY": "allowed", "INDETERMINATE": "allowed"}},
+  "evidence_required": [{"category": "provenance", "statement": "Evidence sufficient to evaluate the proposition."}],
+  "falsification": [],
+  "references": []
+}
