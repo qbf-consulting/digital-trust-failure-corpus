@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "policy_version": "1.0",
+  "project": "Digital Trust Failure Corpus",
+  "default_rule": "classify by artifact type; an explicit file-level license notice takes precedence",
+  "licenses": {
+    "content": {
+      "spdx": "CC-BY-4.0",
+      "license_file": "LICENSE-CONTENT",
+      "applies_to": [
+        "human-readable documentation",
+        "taxonomy and explanatory prose",
+        "governance and contribution prose",
+        "narrative examples",
+        "diagrams",
+        "release notes and changelog content"
+      ]
+    },
+    "software": {
+      "spdx": "Apache-2.0",
+      "license_file": "LICENSE-CODE",
+      "applies_to": [
+        "source code and scripts",
+        "validators and tests",
+        "machine-readable schemas",
+        "machine-readable corpus entries",
+        "test vectors and fixtures",
+        "machine-readable mappings",
+        "executable configuration",
+        "generated machine-readable evidence artifacts"
+      ]
+    }
+  },
+  "path_guidance": [
+    {
+      "paths": ["*.md", "docs/**/*.md", "CONTRIBUTING.md", "SECURITY.md"],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "paths": ["schemas/**", "corpus/**", "tests/**", "tools/**", ".github/workflows/**", "**/*.json", "**/*.yaml", "**/*.yml", "**/*.py"],
+      "license": "Apache-2.0"
+    }
+  ]
+}
