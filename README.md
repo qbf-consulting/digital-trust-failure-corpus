@@ -6,7 +6,9 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-The v0.1 baseline now contains a technology-neutral failure-case schema, repository validator, CI validation, dual licensing, contributor/adopter guidance, and an initial twelve-case corpus spanning authority, lifecycle, composition, and evidence failures.
+Current development baseline: **v0.1.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.1.0 release notes`](docs/release-notes-v0.1.0.md).
+
+The v0.1.0 baseline contains a technology-neutral failure-case schema, repository validator, CI validation, dual licensing, contributor/adopter guidance, and an initial twelve-case corpus spanning authority, lifecycle, composition, and evidence failures.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
