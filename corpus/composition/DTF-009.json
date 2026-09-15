@@ -1,0 +1,39 @@
+{
+  "id": "DTF-009",
+  "title": "undeclared-transitive-trust-crosses-boundary",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["composition", "trust-registry", "governance", "interoperability"],
+  "failure_classes": ["implicit-transitivity", "authority"],
+  "proposition": {
+    "statement": "A relying system must not infer that trust, recognition, accreditation, or authority is transitive across another actor or registry boundary unless a competent rule explicitly permits that transitivity for the relevant scope."
+  },
+  "preconditions": [
+    "Actor or authority A recognises B for a stated scope.",
+    "B recognises C for some scope or proposition.",
+    "No competent rule has established that A's recognition of B extends transitively to C for the relying decision."
+  ],
+  "trigger": {
+    "statement": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "relationship", "statement": "Evidence of the declared relationships among the actors or authorities in the chain."},
+    {"category": "authority-state", "statement": "Evidence establishing the authority and scope of each actor that participates in the recognition chain."},
+    {"category": "policy", "statement": "Evidence of any competent rule that permits, constrains, or prohibits transitive recognition for the relevant scope."},
+    {"category": "composition", "statement": "Evidence showing how separate recognition relationships are being composed into the relying conclusion."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule."},
+    {"condition": "The system treats an undeclared transitivity policy as permissive rather than unresolved or prohibited."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/11", "note": "Repository judgment record for the composition failure tranche."}
+  ]
+}

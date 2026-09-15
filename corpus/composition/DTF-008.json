@@ -1,0 +1,39 @@
+{
+  "id": "DTF-008",
+  "title": "conflicting-authoritative-sources-collapse-to-pass",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["composition", "evidence", "trust-registry", "governance"],
+  "failure_classes": ["conflicting-evidence", "authority"],
+  "proposition": {
+    "statement": "A relying system must not collapse materially conflicting authoritative evidence into PASS merely because at least one authoritative source supports the desired proposition."
+  },
+  "preconditions": [
+    "Two or more sources are authoritative for aspects of the relying decision.",
+    "Their current evidence materially conflicts for the proposition being evaluated.",
+    "No applicable precedence, reconciliation, or conflict-resolution rule resolves the disagreement."
+  ],
+  "trigger": {
+    "statement": "The relying system evaluates the proposition while authoritative conflict remains unresolved."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "authority-state", "statement": "Evidence establishing the authority and scope of each materially relevant source."},
+    {"category": "composition", "statement": "Evidence exposing the conflicting assertions in the context in which they are composed."},
+    {"category": "policy", "statement": "Any applicable precedence, reconciliation, or conflict-resolution rule for the sources."},
+    {"category": "freshness", "statement": "Evidence sufficient to establish that the conflicting source states are current enough for comparison."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS by selecting a supportive authoritative source while silently ignoring an unresolved conflicting authoritative source."},
+    {"condition": "The system interprets absence of a conflict-resolution rule as permission to choose whichever authoritative source produces PASS."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/11", "note": "Repository judgment record for the composition failure tranche."}
+  ]
+}

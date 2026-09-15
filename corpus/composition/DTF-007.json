@@ -1,0 +1,38 @@
+{
+  "id": "DTF-007",
+  "title": "false-independence-from-common-control",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["composition", "evidence", "governance"],
+  "failure_classes": ["false-independence", "provenance"],
+  "proposition": {
+    "statement": "A relying system must not treat multiple evidence items as independent corroboration when they resolve to a common controlling authority or common dependency that materially undermines the independence claim."
+  },
+  "preconditions": [
+    "Two or more evidence items are presented as independent support for a proposition.",
+    "The evidence items share a controlling authority, dependency, or provenance path material to the proposition.",
+    "The relying decision gives additional weight because the evidence appears independent."
+  ],
+  "trigger": {
+    "statement": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {"category": "composition", "statement": "Evidence describing dependencies and relationships among the evidence sources being composed."},
+    {"category": "provenance", "statement": "Evidence sufficient to trace each asserted source to its controlling or originating authority."},
+    {"category": "authority-state", "statement": "Evidence identifying the authority or authorities whose control is material to the independence claim."}
+  ],
+  "falsification": [
+    {"condition": "The system returns PASS because it counts materially dependent evidence as independent corroboration."},
+    {"condition": "The system cannot establish source independence but treats separate presentation as proof of independence."}
+  ],
+  "references": [
+    {"type": "issue", "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/11", "note": "Repository judgment record for the composition failure tranche."}
+  ]
+}
