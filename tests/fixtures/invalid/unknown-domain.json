@@ -1,0 +1,15 @@
+{
+  "id": "DTF-903",
+  "title": "invalid-unknown-domain",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": ["invented-domain"],
+  "failure_classes": ["missing-evidence"],
+  "proposition": {"statement": "An unrecognised taxonomy value must not silently enter the stable core vocabulary."},
+  "preconditions": [],
+  "trigger": {"statement": "Validation evaluates a case containing an unknown domain."},
+  "expected": {"dispositions": {"PASS": "prohibited", "DENY": "allowed", "INDETERMINATE": "allowed"}},
+  "evidence_required": [{"category": "provenance", "statement": "Evidence of the classification vocabulary used by the case."}],
+  "falsification": [{"condition": "The invalid case is accepted with an unknown domain value."}],
+  "references": []
+}
