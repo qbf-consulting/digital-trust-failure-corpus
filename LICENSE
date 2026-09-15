@@ -1,0 +1,30 @@
+Digital Trust Failure Corpus — Licensing Map
+
+Copyright (c) 2026 Digital Trust Failure Corpus contributors
+
+This repository contains materials distributed under two licenses. The applicable
+license is determined by artifact type, unless a file explicitly states otherwise.
+
+1. Documentation and explanatory content — CC BY 4.0
+
+   Human-readable documentation, taxonomy prose, governance and contribution prose,
+   narrative examples, release notes, diagrams, and other explanatory material are
+   licensed under the Creative Commons Attribution 4.0 International License
+   (CC-BY-4.0).
+
+   See LICENSE-CONTENT for the license notice and terms reference.
+
+2. Software and executable artifacts — Apache License 2.0
+
+   Source code, scripts, validators, tests, machine-readable schemas, corpus entries,
+   fixtures, machine-readable mappings, executable configuration, and generated
+   machine-readable evidence artifacts are licensed under the Apache License,
+   Version 2.0 (Apache-2.0).
+
+   See LICENSE-CODE for the license notice and terms reference.
+
+Machine-readable classification rules are published at
+licensing/artifact-license-policy.json.
+
+Third-party material, if any, remains subject to its respective license and
+attribution requirements.

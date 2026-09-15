@@ -22,26 +22,37 @@ The corpus is **evidence, not authority**. A case can cite normative specificati
 
 ```text
 schemas/                     Versioned machine-readable case contract
+corpus/                      Consumable machine-readable failure cases
 docs/taxonomy.md             Initial classification vocabulary
-tests/fixtures/valid/        Canonical valid fixtures
-tests/test_schema.py         Executable schema invariants
+tests/fixtures/              Positive and negative validation fixtures
+tests/                       Executable schema and validator invariants
+tools/validate.py            Repository and adopter validation CLI
+licensing/                   Machine-readable artifact licensing policy
 requirements-dev.txt         Test dependency
 ```
 
-Additional corpus, validation, contribution, licensing, and CI surfaces will be introduced through bounded issues and pull requests.
-
-## Validate the current contract
+## Validate the current contract and corpus
 
 ```bash
 python -m pip install -r requirements-dev.txt
 python -m unittest discover -s tests -v
+python tools/validate.py
 ```
 
-The tests establish that the schema itself is valid, the canonical fixture validates, and important unsafe or contradictory forms are rejected.
+The tests and validator establish structural conformance, collection-level identity uniqueness, and rejection of important unsafe forms. A green result does not establish normative correctness, case completeness, severity, applicability, or implementation assurance.
 
 ## Current schema
 
 The v0.1 schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json). Its classification vocabulary and extension boundary are documented in [`docs/taxonomy.md`](docs/taxonomy.md).
+
+## Licensing
+
+This repository uses a dual-license model based on artifact type:
+
+- Human-readable documentation, taxonomy prose, governance and contribution prose, diagrams, narrative examples, and release notes are licensed under **Creative Commons Attribution 4.0 International (CC-BY-4.0)**. See [`LICENSE-CONTENT`](LICENSE-CONTENT).
+- Source code, validators, tests, machine-readable schemas, fixtures, corpus entries, executable configuration, and generated machine-readable evidence are licensed under **Apache License 2.0 (Apache-2.0)**. See [`LICENSE-CODE`](LICENSE-CODE).
+
+The repository-level mapping is summarized in [`LICENSE`](LICENSE) and published in machine-readable form at [`licensing/artifact-license-policy.json`](licensing/artifact-license-policy.json). An explicit file-level license notice takes precedence if one is present.
 
 ## Project ownership
 
