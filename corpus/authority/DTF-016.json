@@ -1,0 +1,64 @@
+{
+  "id": "DTF-016",
+  "title": "revocation-ignored-during-active-agent-interaction",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "delegation",
+    "lifecycle"
+  ],
+  "failure_classes": [
+    "authority",
+    "lifecycle-state",
+    "stale-evidence"
+  ],
+  "proposition": {
+    "statement": "Revocation effective before a new material commitment must prevent that commitment even when the surrounding agent interaction began while authority was valid."
+  },
+  "preconditions": [
+    "An agent interaction began under valid authority.",
+    "The authority is revoked while the interaction remains active.",
+    "A new material commitment is attempted after revocation."
+  ],
+  "trigger": {
+    "statement": "The interaction continues to admit commitments using cached or session-start authority state."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "lifecycle-state",
+      "statement": "Revocation event and effective time."
+    },
+    {
+      "category": "freshness",
+      "statement": "Evidence that status was rechecked at the material transition."
+    },
+    {
+      "category": "temporal",
+      "statement": "Interaction start, revocation and commitment times."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "A post-revocation commitment is PASS because the session predated revocation."
+    },
+    {
+      "condition": "Stale cached authority state is treated as current beyond policy."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}
