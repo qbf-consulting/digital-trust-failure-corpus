@@ -1,0 +1,63 @@
+{
+  "id": "DTF-017",
+  "title": "approval-bound-to-wrong-or-stale-action",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "governance",
+    "evidence"
+  ],
+  "failure_classes": [
+    "authority",
+    "policy-mismatch"
+  ],
+  "proposition": {
+    "statement": "An approval must not authorize a material commitment when it covers a different, superseded or stale action than the one being admitted."
+  },
+  "preconditions": [
+    "Policy requires additional human or organizational approval.",
+    "An approval artifact exists.",
+    "The commitment action differs materially from the action bound to the approval or the approval is stale."
+  ],
+  "trigger": {
+    "statement": "The relying system treats presence of any approval as sufficient and admits the changed commitment."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "cryptographic",
+      "statement": "Evidence binding approval to the exact action or canonical action digest."
+    },
+    {
+      "category": "temporal",
+      "statement": "Approval validity and material commitment time."
+    },
+    {
+      "category": "policy",
+      "statement": "Approval threshold and binding rules."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "A mismatched action digest still produces PASS."
+    },
+    {
+      "condition": "A superseded approval is reused after the material action changes."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}
