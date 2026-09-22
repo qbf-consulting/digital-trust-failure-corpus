@@ -80,3 +80,8 @@ Security-sensitive implementation findings should follow [`SECURITY.md`](SECURIT
 ## Project ownership
 
 Digital Trust Failure Corpus is an open QBF Consulting project intended to be consumable by independent standards, assurance, governance, interoperability, and implementation communities without requiring adoption of QBF-specific semantics.
+
+
+## Authority-at-commitment failure tranche
+
+Draft cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and revoked mandates, iterative scope expansion, stale or mismatched approvals, reputation/capability substitution, and unreconstructable historical commitment authority. They reuse the existing failure-case contract; no schema expansion was required.
