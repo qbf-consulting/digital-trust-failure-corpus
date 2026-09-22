@@ -18,8 +18,15 @@ class AuthorityCorpusTests(unittest.TestCase):
         cls.case_paths = sorted(AUTHORITY_DIR.glob("DTF-*.json"))
         cls.cases = [json.loads(path.read_text(encoding="utf-8")) for path in cls.case_paths]
 
-    def test_initial_authority_tranche_contains_expected_cases(self):
-        self.assertEqual([case["id"] for case in self.cases], ["DTF-001", "DTF-002", "DTF-003"])
+    def test_authority_family_contains_expected_cases(self):
+        self.assertEqual(
+            [case["id"] for case in self.cases],
+            [
+                "DTF-001", "DTF-002", "DTF-003",
+                "DTF-013", "DTF-014", "DTF-015", "DTF-016",
+                "DTF-017", "DTF-018", "DTF-019",
+            ],
+        )
 
     def test_all_authority_cases_validate(self):
         for path, case in zip(self.case_paths, self.cases):
