@@ -2,6 +2,27 @@
 
 All notable changes to Digital Trust Failure Corpus are recorded here.
 
+## 0.2.0 — 2026-09-22
+
+Authority-at-material-commitment expansion.
+
+### Added
+
+- Seven draft authority failure cases, DTF-013 through DTF-019.
+- Explicit failure propositions for valid-signature/authority substitution, expired mandates, iterative scope expansion, revocation during active interactions, stale or wrong-action approvals, reputation/capability substitution, and unreconstructable historical authority.
+- Evidence and falsification requirements that distinguish identity, general authorization, and authority for the exact material commitment.
+
+### Assurance and compatibility
+
+- The failure-case JSON Schema remains **v0.1.0** because the new cases fit the existing contract without schema or taxonomy expansion.
+- Case versions remain independent semantic versions; repository release version and schema version are no longer assumed to move in lockstep.
+- All cases remain `draft`; inclusion remains evidence, not normative authority.
+- Existing DTF-001–012 content is unchanged.
+
+### Release boundary
+
+v0.2.0 expands corpus coverage without changing the case contract. It does not define a negotiation protocol, legal enforceability, universal authorization policy, or severity model.
+
 ## 0.1.0 — 2026-09-15
 
 Initial development baseline.

@@ -1,0 +1,63 @@
+{
+  "id": "DTF-015",
+  "title": "authority-limit-exceeded-during-iterative-action",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "delegation",
+    "composition"
+  ],
+  "failure_classes": [
+    "authority",
+    "scope-escalation"
+  ],
+  "proposition": {
+    "statement": "An iterative exchange must not permit a later offer or action to exceed the actor's mandate merely because earlier actions were in scope."
+  },
+  "preconditions": [
+    "The actor has a bounded mandate.",
+    "The interaction permits multiple proposals or revisions.",
+    "A later material action exceeds a value, counterparty, field or other mandate constraint."
+  ],
+  "trigger": {
+    "statement": "A later counteroffer or revised action is accepted without re-evaluating the material constraints."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Current authority applicable at the material transition."
+    },
+    {
+      "category": "policy",
+      "statement": "Constraint policy and evaluated results for the exact action."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence linking the final action to the authority evaluation rather than an earlier interaction state."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The final commitment is PASS even though a material constraint is exceeded."
+    },
+    {
+      "condition": "Authority is checked only once at interaction initiation."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}

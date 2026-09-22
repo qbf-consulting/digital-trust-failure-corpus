@@ -1,0 +1,70 @@
+{
+  "id": "DTF-019",
+  "title": "historical-commitment-authority-unreconstructable",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "delegation",
+    "evidence",
+    "lifecycle"
+  ],
+  "failure_classes": [
+    "authority",
+    "historical-validity",
+    "missing-evidence",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A consequential commitment cannot be reliably defended when the system cannot reconstruct the mandate, policy, status, approval and exact action evaluated at the original commitment time."
+  },
+  "preconditions": [
+    "A material commitment was previously admitted or denied.",
+    "A later audit, dispute or review asks what authority existed at that historical time.",
+    "One or more decision inputs or provenance references are unavailable or overwritten."
+  ],
+  "trigger": {
+    "statement": "The system presents current authority state or an agent explanation as though it proves the historical decision basis."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "temporal",
+      "statement": "Historical commitment/evaluation time distinct from reconstruction time."
+    },
+    {
+      "category": "provenance",
+      "statement": "References to the exact mandate, policy, action and decision artifacts used."
+    },
+    {
+      "category": "authority-state",
+      "statement": "Historical authority/status evidence or an explicit statement that it cannot be established."
+    },
+    {
+      "category": "relationship",
+      "statement": "Approval or delegation lineage relevant to the historical decision."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "Current state is substituted for historical state without qualification."
+    },
+    {
+      "condition": "Missing historical evidence is silently represented as verified historical authority."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}

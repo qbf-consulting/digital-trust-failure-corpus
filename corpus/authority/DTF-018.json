@@ -1,0 +1,61 @@
+{
+  "id": "DTF-018",
+  "title": "reputation-or-capability-substituted-for-authority",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "governance",
+    "composition"
+  ],
+  "failure_classes": [
+    "authority"
+  ],
+  "proposition": {
+    "statement": "Reputation, capability advertisement, technical ability or assurance posture must not enlarge or substitute for principal-derived authority to create a material commitment."
+  },
+  "preconditions": [
+    "The actor has a favorable reputation, capability claim, or assurance result.",
+    "The exact principal-derived commitment authority is absent or narrower than the requested action."
+  ],
+  "trigger": {
+    "statement": "The relying system admits the commitment because a non-authority signal is favorable."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Evidence of actual principal-derived authority."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence that reputation/capability/assurance inputs remain advisory or technically scoped rather than authorization grants."
+    },
+    {
+      "category": "policy",
+      "statement": "Policy showing which inputs can establish permission."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system derives PASS from reputation without an authority grant."
+    },
+    {
+      "condition": "Capability to execute is treated as authorization to commit."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}
