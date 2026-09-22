@@ -2,6 +2,11 @@ name: publish release
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "release/publish-request.json"
 
 permissions:
   contents: write
@@ -28,7 +33,32 @@ jobs:
       - name: Require main branch
         run: |
           if [[ "${GITHUB_REF}" != "refs/heads/main" ]]; then
-            echo "Release publication must be dispatched from main; got ${GITHUB_REF}." >&2
+            echo "Release publication must run from main; got ${GITHUB_REF}." >&2
+            exit 1
+          fi
+
+      - name: Validate PR-driven release request
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          if [[ ! -f release/publish-request.json ]]; then
+            echo "Missing release/publish-request.json." >&2
+            exit 1
+          fi
+
+          VERSION="$(tr -d '[:space:]' < VERSION)"
+          REQUEST_VERSION="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("release/publish-request.json").read_text())
+          value = data.get("version")
+          if not isinstance(value, str) or not value.strip():
+              raise SystemExit("publish-request.json must contain a non-empty string version")
+          print(value.strip())
+          PY
+          )"
+
+          if [[ "${REQUEST_VERSION}" != "${VERSION}" ]]; then
+            echo "Release request version ${REQUEST_VERSION} does not match VERSION ${VERSION}." >&2
             exit 1
           fi
 
