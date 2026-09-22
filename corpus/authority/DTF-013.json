@@ -1,0 +1,62 @@
+{
+  "id": "DTF-013",
+  "title": "valid-signature-mistaken-for-commitment-authority",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "delegation",
+    "evidence"
+  ],
+  "failure_classes": [
+    "authority"
+  ],
+  "proposition": {
+    "statement": "A valid signature or authenticated agent identity must not be treated as proof that the principal authorized the exact material commitment."
+  },
+  "preconditions": [
+    "The actor can authenticate and produce a valid signature.",
+    "A material commitment is presented for reliance.",
+    "Action-specific principal-derived authority has not been established."
+  ],
+  "trigger": {
+    "statement": "The relying system accepts the commitment because the message signature verifies."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Evidence of the principal-derived mandate or authority applicable to the exact action."
+    },
+    {
+      "category": "cryptographic",
+      "statement": "Evidence binding the signature to the exact action, without treating signature validity as authorization."
+    },
+    {
+      "category": "policy",
+      "statement": "The policy that determines action-specific commitment authority."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS solely because the signature or actor identity verifies."
+    },
+    {
+      "condition": "The system cannot establish the mandate but converts the missing evidence into PASS."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}
