@@ -1,0 +1,64 @@
+{
+  "id": "DTF-014",
+  "title": "expired-mandate-accepted-at-commitment",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "delegation",
+    "lifecycle"
+  ],
+  "failure_classes": [
+    "authority",
+    "lifecycle-state",
+    "stale-evidence"
+  ],
+  "proposition": {
+    "statement": "A mandate that expired before a material commitment was made must not authorize that new commitment."
+  },
+  "preconditions": [
+    "A mandate previously authorized the actor.",
+    "The mandate has an explicit validity end.",
+    "The material commitment occurs after that end."
+  ],
+  "trigger": {
+    "statement": "The relying system accepts the commitment using the previously valid but expired mandate."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Authority state applicable at the commitment time."
+    },
+    {
+      "category": "temporal",
+      "statement": "Mandate validity interval and material commitment time."
+    },
+    {
+      "category": "lifecycle-state",
+      "statement": "Evidence establishing expiry and any superseding authority."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS when commitment time is later than the mandate validity end."
+    },
+    {
+      "condition": "The system checks mandate validity only at session start and not at the material transition."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/22",
+      "note": "Authority-at-commitment cross-repository tranche judgment record."
+    }
+  ]
+}
