@@ -6,9 +6,9 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-Current development baseline: **v0.1.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.1.0 release notes`](docs/release-notes-v0.1.0.md).
+Current development baseline: **v0.2.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.2.0 release notes`](docs/release-notes-v0.2.0.md).
 
-The v0.1.0 baseline contains a technology-neutral failure-case schema, repository validator, CI validation, dual licensing, contributor/adopter guidance, and an initial twelve-case corpus spanning authority, lifecycle, composition, and evidence failures.
+The v0.2.0 baseline retains the v0.1.0 failure-case schema and expands the corpus to nineteen draft cases, including seven authority-at-material-commitment failures. Repository release version, schema version, and case version are distinct lifecycle dimensions.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -24,7 +24,7 @@ The corpus is **evidence, not authority**. A case can cite normative specificati
 
 ```text
 schemas/                     Versioned machine-readable case contract
-corpus/authority/            DTF-001 through DTF-003
+corpus/authority/            DTF-001–003 and DTF-013–019
 corpus/lifecycle/            DTF-004 through DTF-006
 corpus/composition/          DTF-007 through DTF-009
 corpus/evidence/             DTF-010 through DTF-012
@@ -42,6 +42,7 @@ licensing/                   Machine-readable artifact licensing policy
 | Range | Focus | Representative failures |
 |---|---|---|
 | DTF-001–003 | Authority | stale authority, scope escalation, dependent delegation after authority loss |
+| DTF-013–019 | Authority at commitment | signature/authority substitution, expiry, revocation, iterative scope exceedance, approval binding, historical reconstruction |
 | DTF-004–006 | Lifecycle | revocation, supersession, current vs historical validity |
 | DTF-007–009 | Composition | false independence, authoritative conflict, undeclared transitivity |
 | DTF-010–012 | Evidence | missing evidence, unresolved freshness, policy/version mismatch |
@@ -62,7 +63,7 @@ The tests and validator establish structural conformance, collection-level ident
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
 
-The v0.1 schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json).
+The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); v0.2.0 expands corpus content without changing that contract.
 
 ## Licensing
 
@@ -84,4 +85,4 @@ Digital Trust Failure Corpus is an open QBF Consulting project intended to be co
 
 ## Authority-at-commitment failure tranche
 
-Draft cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and revoked mandates, iterative scope expansion, stale or mismatched approvals, reputation/capability substitution, and unreconstructable historical commitment authority. They reuse the existing failure-case contract; no schema expansion was required.
+Cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and revoked mandates, iterative scope expansion, stale or mismatched approvals, reputation/capability substitution, and unreconstructable historical commitment authority. They reuse the existing failure-case contract; no schema expansion was required.
