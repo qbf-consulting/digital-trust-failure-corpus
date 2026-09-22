@@ -20,13 +20,13 @@ class RepositoryBaselineTests(unittest.TestCase):
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertTrue(path.is_file())
 
-    def test_v0_1_initial_corpus_has_contiguous_twelve_case_ids(self):
+    def test_current_corpus_has_contiguous_nineteen_case_ids(self):
         cases = []
         for path in sorted(CORPUS.rglob("DTF-*.json")):
             cases.append(json.loads(path.read_text(encoding="utf-8")))
         self.assertEqual(
             sorted(case["id"] for case in cases),
-            [f"DTF-{number:03d}" for number in range(1, 13)],
+            [f"DTF-{number:03d}" for number in range(1, 20)],
         )
 
 
