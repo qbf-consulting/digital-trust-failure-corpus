@@ -18,7 +18,7 @@ class LifecycleCorpusTests(unittest.TestCase):
         cls.cases = [json.loads(path.read_text(encoding="utf-8")) for path in cls.case_paths]
 
     def test_lifecycle_tranche_contains_expected_cases(self):
-        self.assertEqual([case["id"] for case in self.cases], ["DTF-004", "DTF-005", "DTF-006"])
+        self.assertEqual([case["id"] for case in self.cases], ["DTF-004", "DTF-005", "DTF-006", "DTF-031"])
 
     def test_all_lifecycle_cases_validate(self):
         for path, case in zip(self.case_paths, self.cases):

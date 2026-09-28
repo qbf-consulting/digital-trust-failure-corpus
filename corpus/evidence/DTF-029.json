@@ -1,0 +1,115 @@
+{
+  "id": "DTF-029",
+  "title": "decision-transition-basis-misattributed",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "authorization",
+    "evidence",
+    "governance",
+    "composition"
+  ],
+  "failure_classes": [
+    "authority",
+    "provenance",
+    "policy-mismatch"
+  ],
+  "proposition": {
+    "statement": "A relying system must not represent a material decision transition as an authority change when the causal basis was instead a change in evidence, policy, lifecycle state, correction, or evaluation context."
+  },
+  "preconditions": [
+    "A material decision changes from a prior outcome to a different outcome.",
+    "The change can be caused by one or more distinguishable inputs such as authority, evidence, policy, lifecycle state, correction, or evaluation context.",
+    "The actual causal basis is not an authority grant, transfer, or revocation."
+  ],
+  "trigger": {
+    "statement": "The system records, communicates, or relies on the changed decision as though authority changed merely because the outcome became more or less permissive."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "provenance",
+      "statement": "Evidence linking the prior and current decision to the material inputs evaluated for each."
+    },
+    {
+      "category": "authority-state",
+      "statement": "Evidence establishing whether authority actually changed across the decision transition."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence of the governing policy and whether policy applicability or version changed."
+    },
+    {
+      "category": "lifecycle-state",
+      "statement": "Evidence of any lifecycle-state change material to the transition."
+    },
+    {
+      "category": "other",
+      "statement": "Evidence identifying the causal transition category and any correction or evaluation-context change."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "A decision record asserts an authority change while the only evidenced material change is evidence, policy, lifecycle state, correction, or evaluation context."
+    },
+    {
+      "condition": "A more permissive outcome is treated as proof that new authority was granted when no authority event can be established."
+    },
+    {
+      "condition": "The system cannot reconstruct why the outcome changed but reports the transition as verified authority change."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/35",
+      "note": "Repository judgment record for the decision-resolution failure tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://github.com/qbf-consulting/trust-systems-meta-model",
+      "note": "Canonical semantic context for authority non-amplification, decision-basis separation, and explicit resolution."
+    },
+    {
+      "type": "implementation",
+      "locator": "https://github.com/qbf-consulting/trust-infrastructure-schemas",
+      "note": "Portable decision-resolution evidence contract context."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/qbf-consulting/agent-registry-protocol/pull/61",
+      "note": "Adversarial authority-resolution evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/trust-protocol-interop-lab/pull/250",
+      "note": "Executable ARA decision-resolution pressure evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/rahp-toolkit/pull/817",
+      "note": "Experimental assurance treatment; evidence, not authority for this corpus."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents",
+      "note": "Read-only research provenance; not a normative dependency."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/BRIEF.md",
+      "note": "Read-only research provenance for authority pressure and unresolved concern."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/experiments/SIMULATION_01_RUNBOOK.md",
+      "note": "Read-only experimental provenance for authority discrimination."
+    }
+  ]
+}

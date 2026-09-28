@@ -1,0 +1,119 @@
+{
+  "id": "DTF-031",
+  "title": "resolved-condition-remains-blocking-after-valid-resolution",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "authorization",
+    "evidence",
+    "lifecycle",
+    "governance"
+  ],
+  "failure_classes": [
+    "lifecycle-state",
+    "stale-evidence",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A relying system must not continue to treat a material condition as unresolved after current admissible evidence positively establishes resolution under the applicable policy and authority context."
+  },
+  "preconditions": [
+    "A material condition was previously established as unresolved and blocked or deferred a consequential decision.",
+    "Current admissible evidence later satisfies the applicable resolution requirement.",
+    "The resolution evidence remains valid and current for the decision context."
+  ],
+  "trigger": {
+    "statement": "The relying system continues to block, defer, or report the condition as unresolved because it preserves the earlier unresolved state without reassessing current admissible evidence."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "provenance",
+      "statement": "Evidence linking the unresolved condition to the later resolution event."
+    },
+    {
+      "category": "freshness",
+      "statement": "Evidence that the claimed resolution remains current for the relying decision."
+    },
+    {
+      "category": "temporal",
+      "statement": "Evidence distinguishing the time the condition was established, the time resolution became effective, and the time of the relying decision."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence that the resolution event satisfies the applicable resolution rule."
+    },
+    {
+      "category": "authority-state",
+      "statement": "Where authority is material, evidence that the authority state supporting resolution is valid for the action and evaluation time."
+    },
+    {
+      "category": "lifecycle-state",
+      "statement": "Evidence showing the condition transition from unresolved to resolved or the reason it must be reopened."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system continues to block solely because the condition was once unresolved even though current admissible resolution evidence is sufficient."
+    },
+    {
+      "condition": "A valid resolution event is ignored without evidence that it became stale, revoked, conflicting, superseded, or otherwise invalid."
+    },
+    {
+      "condition": "The system cannot distinguish legitimate continued blocking from failure to re-evaluate the resolved condition."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/35",
+      "note": "Repository judgment record for the decision-resolution failure tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://github.com/qbf-consulting/trust-systems-meta-model",
+      "note": "Canonical semantic context for authority non-amplification, decision-basis separation, and explicit resolution."
+    },
+    {
+      "type": "implementation",
+      "locator": "https://github.com/qbf-consulting/trust-infrastructure-schemas",
+      "note": "Portable decision-resolution evidence contract context."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/qbf-consulting/agent-registry-protocol/pull/61",
+      "note": "Adversarial authority-resolution evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/trust-protocol-interop-lab/pull/250",
+      "note": "Executable ARA decision-resolution pressure evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/rahp-toolkit/pull/817",
+      "note": "Experimental assurance treatment; evidence, not authority for this corpus."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents",
+      "note": "Read-only research provenance; not a normative dependency."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/BRIEF.md",
+      "note": "Read-only research provenance for authority pressure and unresolved concern."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/experiments/SIMULATION_01_RUNBOOK.md",
+      "note": "Read-only experimental provenance for authority discrimination."
+    }
+  ]
+}

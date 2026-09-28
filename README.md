@@ -6,9 +6,9 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-Current development baseline: **v0.2.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.2.0 release notes`](docs/release-notes-v0.2.0.md).
+Current development baseline: **v0.3.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.3.0 release notes`](docs/release-notes-v0.3.0.md).
 
-The v0.2.0 baseline retains the v0.1.0 failure-case schema and expands the corpus to nineteen draft cases, including seven authority-at-material-commitment failures. Repository release version, schema version, and case version are distinct lifecycle dimensions.
+The v0.3.0 baseline retains the v0.1.0 failure-case schema and expands the corpus to thirty-one draft cases, adding cross-specification seam and decision-resolution failures without changing the core contract. Repository release version, schema version, and case version are distinct lifecycle dimensions.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -24,10 +24,10 @@ The corpus is **evidence, not authority**. A case can cite normative specificati
 
 ```text
 schemas/                     Versioned machine-readable case contract
-corpus/authority/            DTF-001–003 and DTF-013–019
-corpus/lifecycle/            DTF-004 through DTF-006
-corpus/composition/          DTF-007 through DTF-009
-corpus/evidence/             DTF-010 through DTF-012
+corpus/authority/            DTF-001–003, DTF-013–019, DTF-028
+corpus/lifecycle/            DTF-004–006 and DTF-031
+corpus/composition/          DTF-007–009 and DTF-020–024
+corpus/evidence/             DTF-010–012, DTF-025–027, DTF-029–030
 docs/taxonomy.md             Classification vocabulary
 docs/authoring-cases.md      Case authoring guidance
 docs/consuming-the-corpus.md Adopter guidance
@@ -46,6 +46,8 @@ licensing/                   Machine-readable artifact licensing policy
 | DTF-004–006 | Lifecycle | revocation, supersession, current vs historical validity |
 | DTF-007–009 | Composition | false independence, authoritative conflict, undeclared transitivity |
 | DTF-010–012 | Evidence | missing evidence, unresolved freshness, policy/version mismatch |
+| DTF-020–027 | Cross-specification seams | semantic ownership, lifecycle stage reuse, composition validity, quorum independence, provenance/evidence sufficiency, workflow/assurance substitution |
+| DTF-028–031 | Decision resolution | authority laundering, causal-basis misattribution, silent resolution, false persistence |
 
 Derived research signals for lifecycle modelling, executable governance, and trust-infrastructure observability are recorded separately in [`docs/authority-tranche-observations.md`](docs/authority-tranche-observations.md) so they do not expand the core schema by accident.
 
@@ -63,7 +65,7 @@ The tests and validator establish structural conformance, collection-level ident
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
 
-The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); v0.2.0 expands corpus content without changing that contract.
+The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); v0.3.0 expands corpus content without changing that contract.
 
 ## Licensing
 

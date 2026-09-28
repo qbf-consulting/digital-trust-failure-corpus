@@ -1,0 +1,72 @@
+{
+  "id": "DTF-022",
+  "title": "context-binding-mistaken-for-execution-success",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "composition",
+    "authorization",
+    "evidence",
+    "interoperability"
+  ],
+  "failure_classes": [
+    "provenance",
+    "missing-evidence"
+  ],
+  "proposition": {
+    "statement": "A valid binding between an artifact and a task, transaction, exchange, or context must not by itself be treated as evidence that the intended execution, acceptance, completion, settlement, or legitimate effect actually occurred."
+  },
+  "preconditions": [
+    "An artifact is validly bound to a task, transaction, exchange, or context.",
+    "Execution or effect status is a separate proposition from the binding itself.",
+    "Evidence establishing successful execution or effect is absent, unresolved, or contradictory."
+  ],
+  "trigger": {
+    "statement": "The relying system interprets the valid binding as proof of execution or effect and returns PASS for completion or success."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "relationship",
+      "statement": "Evidence establishing the binding between the artifact and the intended task, transaction, exchange, or context."
+    },
+    {
+      "category": "other",
+      "statement": "Evidence independently establishing execution, acceptance, completion, settlement, or effect as required by the relying proposition."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence linking claimed execution or effect to the competent source that observed or established it."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence preserving the semantic distinction between context binding and execution/effect status."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for successful execution solely because a valid context binding exists."
+    },
+    {
+      "condition": "The system cannot produce execution or effect evidence but represents the binding itself as completion evidence."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/29",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}

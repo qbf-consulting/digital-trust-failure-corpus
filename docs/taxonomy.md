@@ -78,3 +78,16 @@ Use `other` sparingly. Repeated use for the same concept is evidence that the ta
 The core case contract is technology-neutral. Implementation-specific material such as DID methods, credential formats, TRQP operations, ARA relationships, RAHP labels, API endpoints, or vendor-specific telemetry belongs in later bindings/adapters rather than new free-form fields in the core case.
 
 References preserve provenance but do not make a corpus case normative. The authority of a referenced specification, governance framework, implementation, incident report, or paper remains external to this repository.
+
+
+## Reusable cross-case terminology
+
+The following terms are used descriptively across v0.3 cases without becoming new failure-class enum values:
+
+- **composition seam** — the boundary where separately valid components must satisfy an additional cross-component semantic or evidence obligation;
+- **authority laundering** — non-authoritative signals are transformed, repeated, aggregated, endorsed, projected, or otherwise combined until a relying system treats them as authority that competent provenance and scope do not establish;
+- **decision-basis misattribution** — a material decision change is attributed to the wrong causal category, such as treating an evidence or policy change as an authority change;
+- **explicit resolution** — a material unresolved condition changes state because an admissible, inspectable event resolves it, rather than because processing merely progressed;
+- **false persistence** — a previously unresolved condition remains blocking after current admissible evidence establishes resolution.
+
+These terms aid authoring and review. The canonical machine-readable classification remains the bounded `failure_classes` vocabulary above.

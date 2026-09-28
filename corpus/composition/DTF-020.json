@@ -1,0 +1,72 @@
+{
+  "id": "DTF-020",
+  "title": "semantic-ownership-ambiguous-at-composition-seam",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "composition",
+    "interoperability",
+    "governance",
+    "authorization"
+  ],
+  "failure_classes": [
+    "provenance",
+    "policy-mismatch"
+  ],
+  "proposition": {
+    "statement": "A relying system must not resolve a material semantic fact across a composition seam when the competent owner of that fact, or an explicit reconciliation rule between participating specifications, cannot be established."
+  },
+  "preconditions": [
+    "Two or more specifications or components contribute to a composed decision.",
+    "A material fact such as authority, completion, status, acceptance, or policy applicability affects the relying proposition.",
+    "Ownership of that fact is ambiguous, overlapping, or unstated and no explicit reconciliation rule establishes which source governs."
+  ],
+  "trigger": {
+    "statement": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Evidence identifying the competent authority, if authority determines ownership of the material fact."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence identifying the applicable rule for semantic ownership or reconciliation across the seam."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence describing the participating components and the semantic contract at their boundary."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence showing which component or authority produced the material fact relied upon."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule."
+    },
+    {
+      "condition": "A component is treated as owner of a material fact solely because it produced the most convenient or most recent value."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/27",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}

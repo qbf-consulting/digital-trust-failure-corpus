@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.3.0 — 2026-09-28
+
+Cross-specification seam and decision-resolution expansion.
+
+### Added
+
+- Eight cross-specification seam cases, DTF-020 through DTF-027, covering semantic ownership ambiguity, cross-stage lifecycle reuse, context-binding/execution substitution, component/composition validity substitution, quorum independence, provenance depth, selective evidence completeness, and workflow/assurance substitution.
+- Four decision-resolution cases, DTF-028 through DTF-031, covering authority laundering, decision-basis misattribution, silent unresolved-condition clearance, and false persistence after valid resolution.
+- Dedicated regression suites for the cross-specification and decision-resolution tranches.
+- Decision-resolution judgment documentation with explicit cross-repository authority boundaries and read-only upstream research provenance.
+
+### Assurance and compatibility
+
+- The failure-case JSON Schema remains **v0.1.0**; all twelve new cases fit the existing contract and taxonomy.
+- The corpus is contiguous from DTF-001 through DTF-031.
+- PASS remains prohibited for each represented failure condition; DENY and INDETERMINATE remain available where evidence and policy legitimately distinguish them.
+- Cross-component success, operational workflow success, repeated non-authority signals, and prior unresolved state do not silently become broader assurance or authority claims.
+
+### Release boundary
+
+v0.3.0 expands the failure corpus and its falsification surface without turning DTFC into a normative authority, protocol, severity scheme, or assurance certification system. External references preserve provenance and context only.
+
 All notable changes to Digital Trust Failure Corpus are recorded here.
 
 ## 0.2.0 — 2026-09-22

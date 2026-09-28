@@ -1,0 +1,112 @@
+{
+  "id": "DTF-030",
+  "title": "unresolved-material-condition-cleared-without-resolution-evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "evidence",
+    "lifecycle",
+    "governance"
+  ],
+  "failure_classes": [
+    "missing-evidence",
+    "lifecycle-state",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A relying system must not treat a material unresolved condition as resolved solely because workflow progressed, actors agreed, confidence increased, an assertion was repeated, or processing advanced without evidence of an admissible resolution event."
+  },
+  "preconditions": [
+    "A material condition has been explicitly established as unresolved for a consequential decision or action.",
+    "The condition has identified evidence, authority, policy, lifecycle, correction, or other admissible resolution requirements.",
+    "No admissible resolution event has yet been established."
+  ],
+  "trigger": {
+    "statement": "The workflow advances or receives non-resolution signals and the system clears the unresolved condition without evidence that its material basis changed."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "provenance",
+      "statement": "Evidence establishing the unresolved condition, its identifier, and the basis on which it was created."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence identifying what events or evidence are admissible to resolve the condition."
+    },
+    {
+      "category": "temporal",
+      "statement": "Evidence distinguishing condition establishment, workflow progression, and claimed resolution times."
+    },
+    {
+      "category": "other",
+      "statement": "Evidence of the actual resolution event and its causal category."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS after workflow progression when no admissible resolution event is evidenced."
+    },
+    {
+      "condition": "Peer pressure, repetition, consensus, confidence, or reputation is treated as resolution evidence."
+    },
+    {
+      "condition": "The unresolved condition disappears from retained state without a reconstructable resolution basis."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/35",
+      "note": "Repository judgment record for the decision-resolution failure tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://github.com/qbf-consulting/trust-systems-meta-model",
+      "note": "Canonical semantic context for authority non-amplification, decision-basis separation, and explicit resolution."
+    },
+    {
+      "type": "implementation",
+      "locator": "https://github.com/qbf-consulting/trust-infrastructure-schemas",
+      "note": "Portable decision-resolution evidence contract context."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/qbf-consulting/agent-registry-protocol/pull/61",
+      "note": "Adversarial authority-resolution evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/trust-protocol-interop-lab/pull/250",
+      "note": "Executable ARA decision-resolution pressure evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/rahp-toolkit/pull/817",
+      "note": "Experimental assurance treatment; evidence, not authority for this corpus."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents",
+      "note": "Read-only research provenance; not a normative dependency."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/BRIEF.md",
+      "note": "Read-only research provenance for authority pressure and unresolved concern."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/experiments/SIMULATION_01_RUNBOOK.md",
+      "note": "Read-only experimental provenance for authority discrimination."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "DTF-021",
+  "title": "earlier-lifecycle-check-reused-at-later-material-stage",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "composition",
+    "lifecycle",
+    "authorization",
+    "evidence"
+  ],
+  "failure_classes": [
+    "stale-evidence",
+    "lifecycle-state"
+  ],
+  "proposition": {
+    "statement": "A relying system must not treat lifecycle state established at an earlier composition stage as sufficient evidence of lifecycle state at a later material authorization or execution boundary when relevant state may have changed."
+  },
+  "preconditions": [
+    "Lifecycle or status is evaluated at issuance, discovery, presentation, or an earlier authorization stage.",
+    "A later material stage is reached after time has passed or another component has acted.",
+    "Revocation, suspension, expiry, authority state, or applicable policy could have changed between the two stages.",
+    "No freshness or re-evaluation rule positively establishes continuity."
+  ],
+  "trigger": {
+    "statement": "The later component reuses the earlier lifecycle result and returns PASS without obtaining current-enough evidence for the later material boundary."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "lifecycle-state",
+      "statement": "Evidence of lifecycle state at the later material stage."
+    },
+    {
+      "category": "temporal",
+      "statement": "Evidence distinguishing the earlier evaluation time from the later material decision or execution time."
+    },
+    {
+      "category": "freshness",
+      "statement": "Evidence that the lifecycle observation is current enough for the later decision."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence describing which stage performed the earlier check and which stage relies on it later."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS at execution using only an earlier lifecycle check when intervening state change is possible and continuity is unproved."
+    },
+    {
+      "condition": "A stale earlier-stage status result is treated as equivalent to a later-stage current-state evaluation."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/28",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}
