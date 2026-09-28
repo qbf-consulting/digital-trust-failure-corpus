@@ -1,0 +1,115 @@
+{
+  "id": "DTF-028",
+  "title": "authority-laundering-through-non-authoritative-signals",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "agent",
+    "authorization",
+    "delegation",
+    "governance",
+    "composition"
+  ],
+  "failure_classes": [
+    "authority",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A relying system must not treat communication, repetition, consensus, endorsement, aggregation, projection, discovery, reputation, capability, or unrelated authority as establishing authority that cannot be traced to a competent authority source and applicable scope."
+  },
+  "preconditions": [
+    "One or more non-authoritative signals are available to the relying system.",
+    "The authority required for the consequential action is absent, narrower, out of scope, or otherwise not positively established.",
+    "The signals may be repeated, aggregated, endorsed, projected, or presented by actors with reputation, capability, or unrelated authority."
+  ],
+  "trigger": {
+    "statement": "The relying system treats the combined or transformed non-authoritative signals as sufficient authority for the consequential action."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "authority-state",
+      "statement": "Evidence identifying the competent authority source and the authority actually held for the requested action."
+    },
+    {
+      "category": "relationship",
+      "statement": "Evidence of any delegation path and its applicable scope."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence preserving which source produced each signal and what authority, if any, that source possessed."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence that repetition, aggregation, endorsement, projection, discovery, reputation, capability, or consensus did not amplify authority."
+    },
+    {
+      "category": "policy",
+      "statement": "Policy identifying which inputs are capable of establishing authorization."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS because multiple non-authoritative actors repeat or agree with an instruction."
+    },
+    {
+      "condition": "Reputation, capability, discovery, endorsement, projection, or aggregation causes the evaluated authority to exceed the authority established by competent provenance."
+    },
+    {
+      "condition": "Authority for one scope is treated as authority for an unrelated requested scope without a valid delegation or governing rule."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/35",
+      "note": "Repository judgment record for the decision-resolution failure tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://github.com/qbf-consulting/trust-systems-meta-model",
+      "note": "Canonical semantic context for authority non-amplification, decision-basis separation, and explicit resolution."
+    },
+    {
+      "type": "implementation",
+      "locator": "https://github.com/qbf-consulting/trust-infrastructure-schemas",
+      "note": "Portable decision-resolution evidence contract context."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/qbf-consulting/agent-registry-protocol/pull/61",
+      "note": "Adversarial authority-resolution evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/trust-protocol-interop-lab/pull/250",
+      "note": "Executable ARA decision-resolution pressure evidence."
+    },
+    {
+      "type": "pull-request",
+      "locator": "https://github.com/sankarshanmukhopadhyay/rahp-toolkit/pull/817",
+      "note": "Experimental assurance treatment; evidence, not authority for this corpus."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents",
+      "note": "Read-only research provenance; not a normative dependency."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/BRIEF.md",
+      "note": "Read-only research provenance for authority pressure and unresolved concern."
+    },
+    {
+      "type": "other",
+      "locator": "https://github.com/JessHines360/protocol-of-care-for-agents/blob/main/experiments/SIMULATION_01_RUNBOOK.md",
+      "note": "Read-only experimental provenance for authority discrimination."
+    }
+  ]
+}
