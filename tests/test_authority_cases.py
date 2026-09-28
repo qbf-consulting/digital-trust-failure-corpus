@@ -24,7 +24,7 @@ class AuthorityCorpusTests(unittest.TestCase):
             [
                 "DTF-001", "DTF-002", "DTF-003",
                 "DTF-013", "DTF-014", "DTF-015", "DTF-016",
-                "DTF-017", "DTF-018", "DTF-019",
+                "DTF-017", "DTF-018", "DTF-019", "DTF-028",
             ],
         )
 
