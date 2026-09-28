@@ -1,0 +1,72 @@
+{
+  "id": "DTF-024",
+  "title": "quorum-count-mistaken-for-independent-approval",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "composition",
+    "governance",
+    "authorization",
+    "evidence"
+  ],
+  "failure_classes": [
+    "false-independence",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "Meeting an N-of-M threshold must not by itself establish independent approval when the relying proposition requires independence and the counted approvers may share control, incentives, authority, evidence sources, or material coordination."
+  },
+  "preconditions": [
+    "A numeric quorum or threshold is satisfied by nominally distinct approvers.",
+    "The relying proposition requires materially independent approval rather than count alone.",
+    "Common control, coordination, dependence, or independence evidence is unresolved or absent."
+  ],
+  "trigger": {
+    "statement": "The relying system converts threshold satisfaction into PASS for independent approval without establishing the required independence."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "composition",
+      "statement": "Evidence describing dependence and control relationships among counted approvers."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence establishing the sources and derivation of each approval."
+    },
+    {
+      "category": "relationship",
+      "statement": "Evidence of relationships relevant to independence, coordination, or common control."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence defining whether the relying proposition requires independence in addition to numeric quorum."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for independent approval solely because the numeric threshold was met while independence is unresolved."
+    },
+    {
+      "condition": "Multiple approvals controlled by the same material authority are counted as independent without an explicit rule permitting that interpretation."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/31",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}
