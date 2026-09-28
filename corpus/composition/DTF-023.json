@@ -1,0 +1,72 @@
+{
+  "id": "DTF-023",
+  "title": "component-validity-mistaken-for-composition-validity",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "composition",
+    "interoperability",
+    "governance",
+    "evidence"
+  ],
+  "failure_classes": [
+    "provenance",
+    "policy-mismatch"
+  ],
+  "proposition": {
+    "statement": "Independent PASS results for participating components must not automatically imply PASS for their composition when the composed relying proposition introduces additional semantic, policy, authority, lifecycle, privacy, evidence, or contestability obligations at the seam."
+  },
+  "preconditions": [
+    "Two or more components validate independently for their local propositions.",
+    "The composition introduces at least one additional semantic or evidence obligation not established by those local validations.",
+    "The seam obligation is not evaluated or cannot be established."
+  ],
+  "trigger": {
+    "statement": "The relying system derives composition PASS directly from the component PASS results without evaluating the material seam obligation."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "composition",
+      "statement": "Evidence identifying the semantic contract and material obligations introduced by the composition."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence of any governing rules that apply only to the composed proposition."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence distinguishing local component results from composition-level evidence."
+    },
+    {
+      "category": "other",
+      "statement": "Evidence sufficient to establish every material seam obligation required for composition PASS."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system computes Composition(A,B)=PASS solely because A=PASS and B=PASS while an additional seam obligation is unevaluated."
+    },
+    {
+      "condition": "A local conformance result is represented as composition assurance without evidence for the composed proposition."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/30",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}
