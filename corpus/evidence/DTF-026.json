@@ -1,0 +1,69 @@
+{
+  "id": "DTF-026",
+  "title": "selective-valid-evidence-mistaken-for-complete-evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "evidence",
+    "governance",
+    "authorization",
+    "privacy"
+  ],
+  "failure_classes": [
+    "missing-evidence",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "Individually valid disclosed evidence items must not be treated as a complete evidentiary basis when material omitted, contradictory, or unavailable evidence could change the relying decision and completeness has not been established for the scoped proposition."
+  },
+  "preconditions": [
+    "The disclosed evidence items are individually valid.",
+    "The relying decision requires a materially complete evidentiary basis for the scoped proposition.",
+    "Material counter-evidence may be omitted, hidden, unavailable, or otherwise unestablished.",
+    "No rule establishes that the disclosed set is complete enough for the proposition."
+  ],
+  "trigger": {
+    "statement": "The relying system converts validity of the disclosed subset into PASS for evidentiary completeness or sufficiency."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "policy",
+      "statement": "Evidence defining what completeness or sufficiency means for the scoped relying proposition."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence establishing how the disclosed evidence set was selected and whether material sources are omitted or unavailable."
+    },
+    {
+      "category": "other",
+      "statement": "Evidence that the disclosed set is complete enough for the scoped claim, or an explicit diagnostic that completeness is unresolved."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for a completeness-dependent proposition merely because every disclosed item is individually valid."
+    },
+    {
+      "condition": "Known or potentially material omitted evidence is ignored without a rule showing that it is outside the scoped proposition."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/33",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}
