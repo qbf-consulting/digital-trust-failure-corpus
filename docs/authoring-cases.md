@@ -69,3 +69,12 @@ Schema extension is justified only when multiple concrete cases demonstrate that
 ## Privacy and incident material
 
 Do not place confidential, personal, regulated, or non-public incident data in a corpus case. Generalise the proposition and use public provenance when possible. Security-sensitive findings should follow `SECURITY.md` rather than being disclosed through a public case or issue.
+
+
+## Composition and decision-resolution discipline
+
+For cross-specification or multi-stage cases, identify the exact local proposition each component establishes and the broader proposition the relying system incorrectly infers. Local PASS, successful execution, valid binding, quorum satisfaction, provenance depth, or valid disclosed evidence must not be silently promoted into a broader composition or assurance claim.
+
+For decision-resolution cases, preserve whether a material transition was caused by authority, evidence, policy, lifecycle state, correction, or evaluation context. An unresolved condition should disappear because of an admissible, reconstructable resolution event; conversely, valid current resolution evidence should trigger reassessment rather than indefinite blocking.
+
+Prefer existing taxonomy values where they faithfully describe the mechanism. A memorable failure name such as “authority laundering” does not by itself justify a new failure-class enum.
