@@ -12,6 +12,14 @@ The v0.3.0 baseline retains the v0.1.0 failure-case schema and expands the corpu
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
+## Documentation site
+
+The rendered documentation and generated corpus catalogue are published through GitHub Pages:
+
+**https://qbf-consulting.github.io/digital-trust-failure-corpus/**
+
+The Pages site is a presentation layer over this repository. Individual case pages are generated directly from the canonical JSON under `corpus/` during the documentation build; the rendered site does not become a second source of truth.
+
 ## Core design principles
 
 - Failure propositions should be falsifiable.
