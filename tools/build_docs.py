@@ -46,8 +46,8 @@ def _render_case(path: Path, case: dict) -> str:
         "",
         "| Dimension | Values |",
         "|---|---|",
-        f"| Domains | {', '.join(f'`{_text(v)}`' for v in case['domains'])} |",
-        f"| Failure classes | {', '.join(f'`{_text(v)}`' for v in case['failure_classes'])} |",
+        f"| Domains | {_code_list(case['domains'])} |",
+        f"| Failure classes | {_code_list(case['failure_classes'])} |",
         "",
         "## Preconditions",
         "",
@@ -118,7 +118,7 @@ def _render_index(cases) -> str:
     for case_id, _path, case in cases:
         page = f"{case_id}.md"
         title = case["title"].replace("-", " ")
-        domains = ", ".join(f"`{_text(v)}`" for v in case["domains"])
+        domains = _code_list(case["domains"])
         lines.append(
             f"| [{case_id}]({page}) | {title} | `{case['status']}` | {domains} |"
         )
