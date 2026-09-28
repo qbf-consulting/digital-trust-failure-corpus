@@ -1,0 +1,68 @@
+{
+  "id": "DTF-025",
+  "title": "provenance-depth-mistaken-for-assurance-depth",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "evidence",
+    "composition",
+    "governance",
+    "interoperability"
+  ],
+  "failure_classes": [
+    "provenance",
+    "false-independence"
+  ],
+  "proposition": {
+    "statement": "Additional provenance hops, transformations, credentials, signatures, or attestations must not be treated as stronger assurance unless they establish an additional material assurance proposition rather than merely lengthening or repeating the evidence chain."
+  },
+  "preconditions": [
+    "An evidence chain contains multiple provenance, transformation, credential, signature, or attestation hops.",
+    "The relying system attributes greater confidence or assurance to the chain because it is longer.",
+    "The additional hops do not establish independence, corroboration, a new material fact, or another relevant assurance property."
+  ],
+  "trigger": {
+    "statement": "The relying system returns PASS or increases assurance solely because the provenance chain contains more steps or artifacts."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "provenance",
+      "statement": "Evidence describing the origin and derivation of every material hop in the chain."
+    },
+    {
+      "category": "composition",
+      "statement": "Evidence showing whether additional hops establish independence, corroboration, or another material assurance property."
+    },
+    {
+      "category": "other",
+      "statement": "Evidence identifying the additional assurance proposition, if any, established by each added hop."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system increases assurance because the provenance chain is longer even though no additional material proposition is established."
+    },
+    {
+      "condition": "Repeated transformation or re-attestation of the same underlying source is treated as independent corroboration."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/32",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}
