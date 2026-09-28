@@ -42,6 +42,10 @@
       "statement": "Evidence that the claimed resolution remains current for the relying decision."
     },
     {
+      "category": "temporal",
+      "statement": "Evidence distinguishing the time the condition was established, the time resolution became effective, and the time of the relying decision."
+    },
+    {
       "category": "policy",
       "statement": "Evidence that the resolution event satisfies the applicable resolution rule."
     },
