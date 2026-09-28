@@ -18,7 +18,7 @@ class CompositionCorpusTests(unittest.TestCase):
         cls.cases = [json.loads(path.read_text(encoding="utf-8")) for path in cls.case_paths]
 
     def test_composition_tranche_contains_expected_cases(self):
-        self.assertEqual([case["id"] for case in self.cases], ["DTF-007", "DTF-008", "DTF-009"])
+        self.assertEqual([case["id"] for case in self.cases], ["DTF-007", "DTF-008", "DTF-009", "DTF-020", "DTF-021", "DTF-022", "DTF-023", "DTF-024"])
 
     def test_all_composition_cases_validate(self):
         for path, case in zip(self.case_paths, self.cases):
