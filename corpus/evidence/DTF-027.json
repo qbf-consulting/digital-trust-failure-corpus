@@ -1,0 +1,68 @@
+{
+  "id": "DTF-027",
+  "title": "workflow-success-mistaken-for-assurance-success",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "evidence",
+    "governance",
+    "interoperability",
+    "composition"
+  ],
+  "failure_classes": [
+    "missing-evidence",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "Successful workflow execution, schema validation, test execution, signature verification, CI completion, or artifact generation must not by itself establish the substantive trust or assurance proposition that the process was intended to examine."
+  },
+  "preconditions": [
+    "A workflow, validator, test, signature check, CI run, or artifact-generation process completes successfully.",
+    "The substantive trust or assurance proposition requires additional evidence, interpretation, or semantic judgment.",
+    "Material evidence remains missing, unresolved, conflicting, or outside the successful process's scope."
+  ],
+  "trigger": {
+    "statement": "The system or operator treats operational process success as substantive assurance PASS."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "other",
+      "statement": "Evidence identifying the substantive trust or assurance proposition being claimed."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence distinguishing process execution records from evidence supporting the substantive proposition."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence defining what must be established before the substantive proposition may be reported as PASS."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "A green CI or validator result is represented as assurance PASS even though required substantive evidence was never evaluated."
+    },
+    {
+      "condition": "Successful signature or schema verification is treated as proof of authorization, legitimacy, safety, or another broader proposition outside the check's semantics."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/34",
+      "note": "Repository judgment record for this failure proposition."
+    },
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/26",
+      "note": "Parent cross-specification seam tranche."
+    }
+  ]
+}
