@@ -1,0 +1,43 @@
+site_name: Digital Trust Failure Corpus
+site_description: Machine-readable failure propositions, evidence requirements, and falsification criteria for digital trust systems.
+site_url: https://qbf-consulting.github.io/digital-trust-failure-corpus/
+repo_url: https://github.com/qbf-consulting/digital-trust-failure-corpus
+repo_name: qbf-consulting/digital-trust-failure-corpus
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  navigation_depth: 4
+
+nav:
+  - Home: index.md
+  - Corpus:
+      - Catalogue: corpus/index.md
+  - Guides:
+      - Taxonomy: taxonomy.md
+      - Consuming the corpus: consuming-the-corpus.md
+      - Authoring cases: authoring-cases.md
+      - Validation: validation.md
+  - Research notes:
+      - Authority tranche observations: authority-tranche-observations.md
+      - Decision-resolution observations: decision-resolution-tranche-observations.md
+  - Releases:
+      - v0.3.0: release-notes-v0.3.0.md
+      - v0.2.0: release-notes-v0.2.0.md
+      - v0.1.0: release-notes-v0.1.0.md
+      - Release process: releasing.md
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - toc:
+      permalink: true
+
+strict: true
+
+extra:
+  status: v0.3.0
