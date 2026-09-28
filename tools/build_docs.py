@@ -25,6 +25,10 @@ def _text(value):
     return str(value).replace("|", "\\|").strip()
 
 
+def _code_list(values):
+    return ", ".join(f"`{_text(value)}`" for value in values)
+
+
 def _render_case(path: Path, case: dict) -> str:
     rel = path.relative_to(ROOT).as_posix()
     lines = [
