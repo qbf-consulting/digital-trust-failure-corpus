@@ -1,0 +1,67 @@
+{
+  "id": "DTF-034",
+  "title": "legitimate-disclosure-reused-beyond-relying-purpose",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "privacy",
+    "credential",
+    "governance"
+  ],
+  "failure_classes": [
+    "policy-mismatch",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A successful and initially legitimate disclosure must not be treated as continuing permission to retain, transfer, profile, resell, or otherwise process the disclosed information beyond the purpose, audience, retention period, or governance basis applicable to the relying transaction."
+  },
+  "preconditions": [
+    "The holder or subject legitimately disclosed information for a stated relying purpose.",
+    "The initial presentation or verification completed successfully.",
+    "A later processing action is materially different from or extends beyond the original relying transaction."
+  ],
+  "trigger": {
+    "statement": "A downstream party performs secondary processing and relies on the fact of successful presentation rather than establishing an applicable purpose, policy, authority, or other governance basis for that later use."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "policy",
+      "statement": "Evidence of the purpose, audience, retention, transfer, and secondary-use rules governing the original disclosure and the later processing action."
+    },
+    {
+      "category": "temporal",
+      "statement": "Evidence distinguishing the original disclosure time from later retention, transfer, profiling, or reuse."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence identifying the actor and processing chain responsible for the secondary use."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system treats successful presentation as sufficient basis for materially different downstream processing without evaluating the applicable purpose or policy."
+    },
+    {
+      "condition": "Data is retained or transferred beyond an applicable bound while the decision record continues to represent the processing as within the original relying purpose."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/39",
+      "note": "Repository judgment record for the privacy/correlation tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://www.w3.org/TR/vc-data-model-threat-model/",
+      "note": "Research provenance: W3C VC Data Model Threat Model v2.1, Unauthorized Post-Presentation Use of Data; draft/work in progress, not corpus authority."
+    }
+  ]
+}

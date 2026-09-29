@@ -15,16 +15,16 @@ class ReleaseBaselineTests(unittest.TestCase):
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         self.assertTrue(schema["$id"].endswith("/0.1.0"))
 
-    def test_v0_3_release_contains_thirty_one_cases(self):
+    def test_current_development_preserves_v0_3_release_cases_and_extends_contiguously(self):
         cases = [
             json.loads(path.read_text(encoding="utf-8"))
             for path in sorted(CORPUS.rglob("DTF-*.json"))
         ]
-        self.assertEqual(len(cases), 31)
-        self.assertEqual(
-            sorted(case["id"] for case in cases),
-            [f"DTF-{number:03d}" for number in range(1, 32)],
-        )
+        ids = sorted(case["id"] for case in cases)
+        released_v0_3_ids = [f"DTF-{number:03d}" for number in range(1, 32)]
+
+        self.assertTrue(set(released_v0_3_ids) <= set(ids))
+        self.assertEqual(ids, [f"DTF-{number:03d}" for number in range(1, 38)])
 
     def test_cases_remain_draft_and_use_case_level_semver(self):
         for path in sorted(CORPUS.rglob("DTF-*.json")):

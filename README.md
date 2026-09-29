@@ -8,7 +8,7 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 Current development baseline: **v0.3.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.3.0 release notes`](docs/release-notes-v0.3.0.md).
 
-The v0.3.0 baseline retains the v0.1.0 failure-case schema and expands the corpus to thirty-one draft cases, adding cross-specification seam and decision-resolution failures without changing the core contract. Repository release version, schema version, and case version are distinct lifecycle dimensions.
+The latest release remains v0.3.0. Current development retains the v0.1.0 failure-case schema and extends the corpus to thirty-seven draft cases, adding a privacy/correlation tranche after the released cross-specification seam and decision-resolution work. Repository release version, schema version, and case version are distinct lifecycle dimensions.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -36,6 +36,7 @@ corpus/authority/            DTF-001–003, DTF-013–019, DTF-028
 corpus/lifecycle/            DTF-004–006 and DTF-031
 corpus/composition/          DTF-007–009 and DTF-020–024
 corpus/evidence/             DTF-010–012, DTF-025–027, DTF-029–030
+corpus/privacy/              DTF-032–037
 docs/taxonomy.md             Classification vocabulary
 docs/authoring-cases.md      Case authoring guidance
 docs/consuming-the-corpus.md Adopter guidance
@@ -56,8 +57,9 @@ licensing/                   Machine-readable artifact licensing policy
 | DTF-010–012 | Evidence | missing evidence, unresolved freshness, policy/version mismatch |
 | DTF-020–027 | Cross-specification seams | semantic ownership, lifecycle stage reuse, composition validity, quorum independence, provenance/evidence sufficiency, workflow/assurance substitution |
 | DTF-028–031 | Decision resolution | authority laundering, causal-basis misattribution, silent resolution, false persistence |
+| DTF-032–037 | Privacy and correlation | proof-metadata correlation, status-query observability, purpose overrun, issuer-side unlinkability failure, aggregation, retention concentration |
 
-Derived research signals for lifecycle modelling, executable governance, and trust-infrastructure observability are recorded separately in [`docs/authority-tranche-observations.md`](docs/authority-tranche-observations.md) so they do not expand the core schema by accident.
+Derived research signals and tranche judgments are recorded separately in `docs/*-observations.md`, including [`docs/privacy-correlation-tranche-observations.md`](docs/privacy-correlation-tranche-observations.md), so they do not expand the core schema by accident.
 
 ## Validate the contract and corpus
 
@@ -73,7 +75,7 @@ The tests and validator establish structural conformance, collection-level ident
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
 
-The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); v0.3.0 expands corpus content without changing that contract.
+The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); the released v0.3.0 baseline and current privacy/correlation development both use that same contract.
 
 ## Licensing
 

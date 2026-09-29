@@ -1,5 +1,22 @@
 # Changelog
 
+## Unreleased
+
+Privacy and correlation failure expansion.
+
+### Added
+
+- Six draft privacy/correlation cases, DTF-032 through DTF-037, covering proof-mechanism correlation, status-query observability, post-presentation purpose overrun, authoritative-participant unlinkability failure, disclosure aggregation, and verification-artefact retention concentration.
+- Dedicated regression coverage for the tranche.
+- Modeling observations that preserve the W3C VC Data Model Threat Model v2.1 as research provenance while keeping DTF technology-neutral and non-normative.
+
+### Assurance and compatibility
+
+- The failure-case JSON Schema remains **v0.1.0**; all six cases fit the existing contract and taxonomy.
+- The corpus is contiguous from DTF-001 through DTF-037 in current development.
+- No new failure-class enum was introduced: existing `correlation`, `policy-mismatch`, and `provenance` semantics are sufficient for this tranche.
+- Cryptographic or local verification success does not establish privacy safety for the composed transaction.
+
 ## 0.3.0 — 2026-09-28
 
 Cross-specification seam and decision-resolution expansion.

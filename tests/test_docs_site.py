@@ -28,7 +28,7 @@ class DocumentationSiteTests(unittest.TestCase):
 
     def test_generated_catalogue_source_covers_contiguous_corpus(self):
         ids = [case_id for case_id, _path, _case in self.cases]
-        self.assertEqual(ids, [f"DTF-{n:03d}" for n in range(1, 32)])
+        self.assertEqual(ids, [f"DTF-{n:03d}" for n in range(1, 38)])
 
     def test_every_case_renders_required_assurance_sections(self):
         for case_id, path, case in self.cases:
