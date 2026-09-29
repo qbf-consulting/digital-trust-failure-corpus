@@ -1,0 +1,67 @@
+{
+  "id": "DTF-032",
+  "title": "securing-mechanism-creates-cross-context-correlator",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "privacy",
+    "credential",
+    "evidence"
+  ],
+  "failure_classes": [
+    "correlation",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A relying system must not assert cross-context unlinkability merely because the disclosed credential payload lacks a stable identifier when proof values, verification-method references, timestamps, or other securing metadata remain linkable across interactions."
+  },
+  "preconditions": [
+    "Credential or presentation payload data is intended to avoid or minimize stable cross-context identifiers.",
+    "The securing mechanism or its metadata is visible to more than one relying context.",
+    "The privacy claim depends on interactions remaining unlinkable or not readily correlatable."
+  ],
+  "trigger": {
+    "statement": "A verifier, colluding verifiers, or another observer can link otherwise separate interactions using stable or distinctive securing-mechanism data while the system still reports the intended privacy property as satisfied."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "cryptographic",
+      "statement": "Evidence describing the securing mechanism and which proof, key-reference, timestamp, or related values are exposed in each interaction."
+    },
+    {
+      "category": "composition",
+      "statement": "Cross-context observations sufficient to test whether securing metadata creates a stable or probabilistic join."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence identifying which component or authority generated the correlating proof material or metadata."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for unlinkability while repeated or otherwise distinctive proof metadata links interactions across contexts."
+    },
+    {
+      "condition": "Privacy analysis inspects only the credential payload and excludes observable securing-mechanism metadata that materially enables correlation."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/39",
+      "note": "Repository judgment record for the privacy/correlation tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://www.w3.org/TR/vc-data-model-threat-model/",
+      "note": "Research provenance: W3C VC Data Model Threat Model v2.1, Signature-Based Correlation; draft/work in progress, not corpus authority."
+    }
+  ]
+}
