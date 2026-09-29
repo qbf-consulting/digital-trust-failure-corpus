@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.4.0 — 2026-09-29
 
 Privacy and correlation failure expansion.
 
@@ -16,6 +16,10 @@ Privacy and correlation failure expansion.
 - The corpus is contiguous from DTF-001 through DTF-037 in current development.
 - No new failure-class enum was introduced: existing `correlation`, `policy-mismatch`, and `provenance` semantics are sufficient for this tranche.
 - Cryptographic or local verification success does not establish privacy safety for the composed transaction.
+
+### Release boundary
+
+v0.4.0 adds a materially new privacy/correlation failure family without changing the core schema or turning DTFC into a privacy threat encyclopedia. External threat-model references preserve provenance; the corpus cases remain technology-neutral falsifiable propositions.
 
 ## 0.3.0 — 2026-09-28
 

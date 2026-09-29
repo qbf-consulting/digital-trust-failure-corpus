@@ -8,14 +8,14 @@ CORPUS = ROOT / "corpus"
 
 
 class ReleaseBaselineTests(unittest.TestCase):
-    def test_repository_version_is_v0_3_0(self):
-        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.3.0")
+    def test_repository_version_is_v0_4_0(self):
+        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.4.0")
 
     def test_schema_contract_remains_v0_1_0_when_unchanged(self):
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         self.assertTrue(schema["$id"].endswith("/0.1.0"))
 
-    def test_current_development_preserves_v0_3_release_cases_and_extends_contiguously(self):
+    def test_v0_4_release_preserves_prior_cases_and_is_contiguous(self):
         cases = [
             json.loads(path.read_text(encoding="utf-8"))
             for path in sorted(CORPUS.rglob("DTF-*.json"))
@@ -35,7 +35,7 @@ class ReleaseBaselineTests(unittest.TestCase):
 
     def test_release_documentation_exists(self):
         self.assertTrue((ROOT / "CHANGELOG.md").is_file())
-        self.assertTrue((ROOT / "docs" / "release-notes-v0.3.0.md").is_file())
+        self.assertTrue((ROOT / "docs" / "release-notes-v0.4.0.md").is_file())
 
 
 if __name__ == "__main__":

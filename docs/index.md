@@ -1,6 +1,6 @@
 # Digital Trust Failure Corpus
 
-**Current repository baseline: v0.3.0 · 31 draft cases · failure-case schema v0.1.0**
+**Current repository baseline: v0.4.0 · 37 draft cases · failure-case schema v0.1.0**
 
 Digital Trust Failure Corpus (DTFC) is a machine-readable corpus of failure conditions, adversarial configurations, invalid trust propositions, and expected safe outcomes for digital trust systems.
 
@@ -15,7 +15,7 @@ The corpus provides reusable failure propositions, evidence requirements, and fa
 - [Consume DTFC safely](consuming-the-corpus.md)
 - [Author a case](authoring-cases.md)
 - [Validate the repository](validation.md)
-- [Read the v0.3.0 release notes](release-notes-v0.3.0.md)
+- [Read the v0.4.0 release notes](release-notes-v0.4.0.md)
 
 ## Current corpus
 
@@ -28,6 +28,7 @@ The corpus provides reusable failure propositions, evidence requirements, and fa
 | DTF-013–019 | Authority at commitment |
 | DTF-020–027 | Cross-specification seams |
 | DTF-028–031 | Decision resolution |
+| DTF-032–037 | Privacy and correlation |
 
 The [catalogue](corpus/index.md) and individual case pages are generated directly from the committed JSON corpus during the documentation build. They are rendered views, not a second source of truth.
 
