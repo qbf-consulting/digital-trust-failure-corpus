@@ -1,0 +1,68 @@
+{
+  "id": "DTF-035",
+  "title": "authoritative-participant-defeats-intended-unlinkability",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "privacy",
+    "credential",
+    "governance",
+    "composition"
+  ],
+  "failure_classes": [
+    "correlation",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A relying system must not assert an unlinkability or minimization property without testing whether identifiers, proof configuration, issuance cadence, renewal behavior, or other metadata controlled by an authoritative participant can recreate a cross-context correlator."
+  },
+  "preconditions": [
+    "The system claims or relies on a privacy property that interactions should remain unlinkable or minimally correlatable.",
+    "An issuer, registry, operator, or other authoritative participant controls metadata or lifecycle behavior visible across interactions.",
+    "The controlled values or behavior are not independently shown to preserve the declared privacy property."
+  ],
+  "trigger": {
+    "statement": "Authoritative participant choices create a stable or distinctive join across interactions while local credential and proof validation continue to succeed."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "provenance",
+      "statement": "Evidence identifying which participant controls each potentially correlating identifier, metadata field, proof choice, issuance event, or renewal behavior."
+    },
+    {
+      "category": "composition",
+      "statement": "Cross-context evidence testing whether the combined issuer- or operator-controlled surfaces enable correlation."
+    },
+    {
+      "category": "policy",
+      "statement": "Evidence defining the unlinkability or minimization property that the deployment claims to provide."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system returns PASS for unlinkability while issuer-controlled or operator-controlled metadata consistently links otherwise separate interactions."
+    },
+    {
+      "condition": "Assessment assumes that an authoritative participant preserves privacy merely because that participant is authorized to issue or operate the relevant component."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/39",
+      "note": "Repository judgment record for the privacy/correlation tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://www.w3.org/TR/vc-data-model-threat-model/",
+      "note": "Research provenance: W3C VC Data Model Threat Model v2.1 privacy threats concerning correlation and deployment behavior; draft/work in progress, not corpus authority."
+    }
+  ]
+}
