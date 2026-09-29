@@ -6,9 +6,9 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-Current development baseline: **v0.3.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.3.0 release notes`](docs/release-notes-v0.3.0.md).
+Current development baseline: **v0.4.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.4.0 release notes`](docs/release-notes-v0.4.0.md).
 
-The latest release remains v0.3.0. Current development retains the v0.1.0 failure-case schema and extends the corpus to thirty-seven draft cases, adding a privacy/correlation tranche after the released cross-specification seam and decision-resolution work. Repository release version, schema version, and case version are distinct lifecycle dimensions.
+v0.4.0 retains the v0.1.0 failure-case schema and contains thirty-seven draft cases, adding the privacy/correlation tranche to the previously released cross-specification seam and decision-resolution work. Repository release version, schema version, and case version are distinct lifecycle dimensions.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -75,7 +75,7 @@ The tests and validator establish structural conformance, collection-level ident
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
 
-The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); the released v0.3.0 baseline and current privacy/correlation development both use that same contract.
+The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); the v0.4.0 release continues to use that same contract.
 
 ## Licensing
 
