@@ -1,0 +1,72 @@
+{
+  "id": "DTF-033",
+  "title": "status-resolution-exposes-presentation-activity",
+  "version": "0.1.0",
+  "status": "draft",
+  "domains": [
+    "privacy",
+    "credential",
+    "lifecycle",
+    "evidence"
+  ],
+  "failure_classes": [
+    "correlation",
+    "provenance"
+  ],
+  "proposition": {
+    "statement": "A relying system must not treat a status or revocation check as privacy-neutral when the act, target, timing, or requesting context of resolution allows an issuer, status provider, or observer to infer credential presentation activity or relationships."
+  },
+  "preconditions": [
+    "A relying party resolves credential, authorization, revocation, or lifecycle status through an observable service or interaction.",
+    "The privacy objective requires limiting issuer or status-provider knowledge of where or when a credential is used.",
+    "The status result itself may be minimal and semantically correct."
+  ],
+  "trigger": {
+    "statement": "The status-resolution event exposes a credential-specific or context-specific observation that permits usage correlation, while the verification flow still treats privacy assurance as satisfied."
+  },
+  "expected": {
+    "dispositions": {
+      "PASS": "prohibited",
+      "DENY": "allowed",
+      "INDETERMINATE": "allowed"
+    }
+  },
+  "evidence_required": [
+    {
+      "category": "relationship",
+      "statement": "Evidence describing which parties can observe status-resolution requests and what relationship information those observations reveal."
+    },
+    {
+      "category": "temporal",
+      "statement": "Evidence of request timing and whether timing can be associated with a presentation or relying-party event."
+    },
+    {
+      "category": "composition",
+      "statement": "Cross-context observations sufficient to test whether status-resolution activity creates a join between otherwise separate interactions."
+    },
+    {
+      "category": "provenance",
+      "statement": "Evidence identifying the status source and any intermediaries able to observe the request."
+    }
+  ],
+  "falsification": [
+    {
+      "condition": "The system reports PASS for the privacy proposition even though the status provider can associate credential-specific requests with distinct presentation events."
+    },
+    {
+      "condition": "Assessment examines only the content of the status response and ignores privacy-significant metadata created by making the lookup."
+    }
+  ],
+  "references": [
+    {
+      "type": "issue",
+      "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/39",
+      "note": "Repository judgment record for the privacy/correlation tranche."
+    },
+    {
+      "type": "specification",
+      "locator": "https://www.w3.org/TR/vc-data-model-threat-model/",
+      "note": "Research provenance: W3C VC Data Model Threat Model v2.1, Correlation via Status and Revocation Lookup; draft/work in progress, not corpus authority."
+    }
+  ]
+}
