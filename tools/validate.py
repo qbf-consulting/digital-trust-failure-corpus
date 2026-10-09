@@ -79,6 +79,13 @@ def validate_case_files(
         case_id = str(case["id"])
         title = str(case["title"])
 
+        # Corpus-level invariant: an observed failure cannot be a successful PASS.
+        # Keep this validator-side for schema v0.1.0 compatibility.
+        if case["expected"]["dispositions"]["PASS"] != "prohibited":
+            findings.append(
+                ValidationFinding(path, "failure case must prohibit PASS; expected.dispositions.PASS must be prohibited")
+            )
+
         if case_id in seen_ids:
             findings.append(
                 ValidationFinding(
