@@ -3,8 +3,17 @@
   "title": "stale-authority-evidence-after-revocation",
   "version": "0.1.0",
   "status": "draft",
-  "domains": ["trust-registry", "authorization", "lifecycle", "evidence"],
-  "failure_classes": ["stale-evidence", "authority", "lifecycle-state"],
+  "domains": [
+    "trust-registry",
+    "authorization",
+    "lifecycle",
+    "evidence"
+  ],
+  "failure_classes": [
+    "stale-evidence",
+    "authority",
+    "lifecycle-state"
+  ],
   "proposition": {
     "statement": "A relying system must not treat authority evidence that predates a material revocation or withdrawal as proof of current authority unless an explicit historical-verification rule makes that evidence relevant to the question being asked."
   },
@@ -54,6 +63,11 @@
       "type": "issue",
       "locator": "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/7",
       "note": "Repository judgment record for the initial authority failure tranche."
+    },
+    {
+      "type": "other",
+      "locator": "https://cwe.mitre.org/data/definitions/863.html",
+      "note": "Informative mapping to CWE-863 Incorrect Authorization; CWE is broader and does not establish the temporal evidence requirements or normative status of this DTFC case."
     }
   ]
 }
