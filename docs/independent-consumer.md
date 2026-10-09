@@ -14,7 +14,7 @@ To run the example, obtain the DTF-001 `version` from its canonical JSON file an
 python -m tools.run_independent_consumer --request examples/independent-consumer/stale-authority.json --case-version 0.1.0 --case-revision "$(git rev-parse HEAD)"
 ```
 
-The case-version argument must match the actual case version; replace `0.1.0` if necessary. The stale-authority example is expected to yield DENY and a SATISFIED harness verdict. The active, in-scope example returns PASS, which is unsafe *for the stale-authority challenge*, but is not intrinsically unsafe for a legitimately authorized action. The harness does not prove the target's real-world authority semantics.
+The case-version argument must match the actual case version; replace `0.1.0` if necessary. The stale-authority example is expected to yield DENY and a SATISFIED harness verdict. The intentionally defective `defective_authority_target.py` returns PASS for the **same revoked-authority input** and produces a VIOLATED verdict. This paired adverse-condition test avoids the misleading comparison with a legitimately active authority. The harness does not prove the target's real-world authority semantics.
 
 ## Trust and evidence boundaries
 
