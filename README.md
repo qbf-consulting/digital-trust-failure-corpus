@@ -86,6 +86,8 @@ A [tool-output instruction/data boundary review](docs/tool-output-boundary-resea
 
 The [experimental case maturity and release gates](docs/case-maturity-and-release-gates.md) distinguish draft cases from independently reviewed, evidenced, and externally exercised cases. A [bounded eight-record CWE triage](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/record-triage.json) is available as preliminary research, **not** a complete external-corpus overlap audit.
 
+A [three-source, 37-case semantic screening](docs/external-semantic-screening.md) provides 111 documented source-to-case judgments with explicit evidence limits. It is research, not an executed conformance or independent adoption test.
+
 ## Authoring and adoption
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
