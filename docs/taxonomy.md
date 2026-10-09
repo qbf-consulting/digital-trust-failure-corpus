@@ -50,7 +50,7 @@ The core vocabulary has three decision outcomes:
 - `DENY`: the proposition is sufficiently established as unsafe or impermissible for the consuming decision context.
 - `INDETERMINATE`: available evidence is insufficient, unresolved, conflicting, or otherwise unable to support PASS or DENY.
 
-For each outcome, a case declares `allowed`, `prohibited`, or `not-applicable`. The schema requires every failure case to permit at least one of `DENY` or `INDETERMINATE`. This prevents a failure case from defining PASS as its only safe outcome.
+For each outcome, a case declares `allowed`, `prohibited`, or `not-applicable`. The v0.1.0 schema requires every failure case to permit at least one of `DENY` or `INDETERMINATE`. **Additionally, the corpus validator rejects any failure case whose `expected.dispositions.PASS` is not `prohibited`, across all case families.** A failure condition cannot be accepted as PASS. This invariant is enforced validator-side to avoid silently introducing a breaking change to the published v0.1.0 schema; direct schema-only adopters must also run the validator or apply an equivalent check. The schema contract may be tightened in a coordinated future revision.
 
 The corpus does not force a consumer to choose DENY when INDETERMINATE is also safe, or vice versa. That policy belongs to the consuming system unless a cited normative authority requires a particular result.
 
