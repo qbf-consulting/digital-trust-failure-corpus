@@ -4,7 +4,7 @@ import subprocess
 import unittest
 from pathlib import Path
 from tools.execute_binding import ROOT
-from tools.run_independent_consumer import run
+from tools.run_independent_consumer import run, verify_capture
 
 TARGET = ROOT / "examples/independent-consumer/authority_target.py"
 
@@ -30,6 +30,16 @@ class IndependentConsumerTests(unittest.TestCase):
         result = run(TARGET, dict(authority_state="active", action="commit",
                                   authorized_actions=["commit"]), case_version(), revision())
         self.assertEqual(result["result"]["test_verdict"], "VIOLATED")
+
+    def test_capture_integrity_and_tampering(self):
+        request = dict(authority_state="revoked", action="commit",
+                       authorized_actions=["commit"])
+        capture = run(TARGET, request, case_version(), revision())
+        self.assertTrue(verify_capture(capture, TARGET, request))
+        changed_request = dict(request, authority_state="active")
+        self.assertFalse(verify_capture(capture, TARGET, changed_request))
+        capture["evidence"]["response"]["disposition"] = "PASS"
+        self.assertFalse(verify_capture(capture, TARGET, request))
 
     def test_missing_input_fails_closed(self):
         with self.assertRaises(RuntimeError):
