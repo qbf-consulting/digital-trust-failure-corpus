@@ -9,6 +9,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 from tools.execute_binding import ROOT, evaluate
 
+def verify_capture(capture, target, request):
+    """Verify recorded response, target source, and request digests against supplied bytes."""
+    evidence = capture["evidence"]
+    request_bytes = json.dumps(request, sort_keys=True, separators=(",", ":")).encode()
+    checks = (
+        (evidence["target_sha256"], hashlib.sha256(Path(target).read_bytes()).hexdigest()),
+        (evidence["request_sha256"], hashlib.sha256(request_bytes).hexdigest()),
+        (evidence["response_sha256"], hashlib.sha256(
+            json.dumps(evidence["response"], sort_keys=True).encode()).hexdigest()),
+    )
+    return all(recorded == actual for recorded, actual in checks)
+
+
 def run(target, request, case_version, case_revision, *, timeout=5):
     target = Path(target).resolve()
     request_bytes = json.dumps(request, sort_keys=True, separators=(",", ":")).encode()
@@ -22,7 +35,7 @@ def run(target, request, case_version, case_revision, *, timeout=5):
         raise ValueError("Target returned invalid JSON") from exc
     if not isinstance(output, dict) or output.get("disposition") not in ("PASS", "DENY", "INDETERMINATE"):
         raise ValueError("Target returned invalid disposition")
-    digest = hashlib.sha256(completed.stdout).hexdigest()
+    digest = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()
     target_digest = hashlib.sha256(target.read_bytes()).hexdigest()
     binding = dict(binding_version="0.1.0", case_id="DTF-001", case_version=case_version,
                    case_revision=case_revision, adapter="fixture-v1",
