@@ -21,8 +21,13 @@ def evaluate_opa(opa, policy, request, timeout=15):
          "--stdin-input", "data.dtfc.authority.allow"],
         input=request_bytes, capture_output=True, timeout=timeout, check=True)
     data = json.loads(completed.stdout)
-    expressions = data.get("result", [{}])[0].get("expressions", [])
-    if len(expressions) != 1 or type(expressions[0].get("value")) is not bool:
+    results = data.get("result") if isinstance(data, dict) else None
+    if not isinstance(results, list) or len(results) != 1 or not isinstance(results[0], dict):
+        raise ValueError("OPA result missing exactly one decision result")
+    expressions = results[0].get("expressions")
+    if (not isinstance(expressions, list) or len(expressions) != 1
+            or not isinstance(expressions[0], dict)
+            or type(expressions[0].get("value")) is not bool):
         raise ValueError("OPA result missing a single boolean decision")
     disposition = "PASS" if expressions[0]["value"] else "DENY"
     return dict(disposition=disposition, target_version=version.stdout.decode(errors="replace").strip(),
