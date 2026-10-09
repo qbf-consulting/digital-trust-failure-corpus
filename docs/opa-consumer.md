@@ -2,7 +2,7 @@
 
 Candidate tracked in #48. The engine is maintained by the Open Policy Agent project; the example Rego policies and JSON fixtures remain DTFC-maintained. This demonstrates an **external engine integration**, not independent community adoption, external authority-state verification, or certification.
 
-Install a pinned official OPA CLI binary using its upstream release instructions. Record the release version and SHA-256 digest of the executable. From the repository root:
+CI installs the official OPA v1.9.0 Linux amd64 static executable and **verifies** its SHA-256 digest (`66fa66f3b730b2fb086003863428b382b2898d343adb4b5dfab5598b4d739eed`) before executing the integration test. The paired safe/defective policy run passed in GitHub Actions validation run 37949364290. For local reproduction, obtain the same binary from the upstream release, verify its SHA-256 digest, and use its absolute path below. Other platforms require their own verified release artifact. This digest is a local binary-integrity check, not independent evidence attestation. From the repository root:
 
 ```sh
 python tools/run_opa_consumer.py --opa /path/to/opa --policy examples/opa-consumer/safe.rego --input examples/independent-consumer/stale-authority.json
