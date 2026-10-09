@@ -42,6 +42,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           REF_NAME: ${{ github.ref }}
           ACTOR: ${{ github.actor }}
+          RELEASE_APPROVAL_CONFIGURED: ${{ vars.RELEASE_APPROVAL_CONFIGURED }}
         run: |
           python tools/check_release_request.py \
             --request release/publish-request.json \
