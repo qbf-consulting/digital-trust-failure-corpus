@@ -1,0 +1,5 @@
+{
+  "authority_state": "active",
+  "action": "commit",
+  "authorized_actions": ["commit"]
+}
