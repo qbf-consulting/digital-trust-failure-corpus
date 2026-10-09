@@ -10,7 +10,7 @@ The corpus provides reusable failure propositions, evidence requirements, and fa
 
 ## Start here
 
-- [Browse the complete corpus](corpus/index.md)
+- [Browse the complete corpus](https://qbf-consulting.github.io/digital-trust-failure-corpus/corpus/)
 - [Understand the taxonomy](taxonomy.md)
 - [Consume DTFC safely](consuming-the-corpus.md)
 - [Author a case](authoring-cases.md)
@@ -30,7 +30,7 @@ The corpus provides reusable failure propositions, evidence requirements, and fa
 | DTF-028–031 | Decision resolution |
 | DTF-032–037 | Privacy and correlation |
 
-The [catalogue](corpus/index.md) and individual case pages are generated directly from the committed JSON corpus during the documentation build. They are rendered views, not a second source of truth.
+The [catalogue](https://qbf-consulting.github.io/digital-trust-failure-corpus/corpus/) and individual case pages are generated directly from the committed JSON corpus during the documentation build. They are rendered views, not a second source of truth.
 
 ## Reproduce locally
 
