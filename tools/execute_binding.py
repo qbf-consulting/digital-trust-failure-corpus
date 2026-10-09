@@ -4,12 +4,16 @@ import argparse
 import json
 from pathlib import Path
 import jsonschema
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 
 def evaluate(binding, corpus_root=ROOT / "corpus"):
     schema = json.loads((ROOT / "schemas/execution-binding.schema.json").read_text())
     jsonschema.validate(binding, schema)
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    if binding["case_revision"] != revision:
+        raise ValueError("Case revision must match checked-out repository HEAD")
     matches = [p for p in corpus_root.rglob("*.json") if json.loads(p.read_text()).get("id") == binding["case_id"]]
     if len(matches) != 1:
         raise ValueError("Case must resolve uniquely")
