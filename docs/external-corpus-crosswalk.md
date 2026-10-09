@@ -1,6 +1,6 @@
 # External corpus crosswalk: bounded research tranche (2026-10-09)
 
-**Canonical machine-readable register:** [crosswalk.json](../../research/external-sources/crosswalk.json). This is a non-normative research sidecar, **not** an expansion of the 37 canonical DTFC cases or of the v0.1 failure-case schema.
+**Canonical machine-readable register:** [crosswalk.json](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/crosswalk.json). This is a non-normative research sidecar, **not** an expansion of the 37 canonical DTFC cases or of the v0.1 failure-case schema.
 
 ## Method and scope
 
