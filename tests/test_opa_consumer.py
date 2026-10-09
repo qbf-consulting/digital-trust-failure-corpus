@@ -16,7 +16,7 @@ class OpaAdapterTests(unittest.TestCase):
             with self.subTest(payload=payload):
                 with tempfile.TemporaryDirectory() as temp:
                     binary = Path(temp) / "fake-opa"
-                    binary.write_text('#!/usr/bin/env python3\\nimport sys\\nif "version" in sys.argv: print("test-only")\\nelse: print(' + repr(payload) + ')\\n')
+                    binary.write_text('#!/usr/bin/env python3\nimport sys\nif "version" in sys.argv: print("test-only")\nelse: print(' + repr(payload) + ')\n')
                     binary.chmod(0o755)
                     with self.assertRaises(ValueError):
                         evaluate_opa(binary, ROOT / "examples/opa-consumer/safe.rego", {})
