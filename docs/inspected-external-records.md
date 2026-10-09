@@ -21,3 +21,7 @@ Both mappings are separate portable research records; the canonical schema and c
 The sources were inspected at their publicly accessible primary pages. The W3C document is a **Group Note Draft** and not an endorsed standard. The register uses source IDs, URLs and original DTFC paraphrases, not copied payloads or upstream prose. Reuse licensing for any future redistribution of external content must be checked separately.
 
 The earlier [three-source matrix](external-semantic-screening.md) covers all 37 canonical cases for three selected records; this new eight-record sample adds direct inspection and candidate dispositions, **not** 8 × 37 full semantic judgments. CI verifies structure and references, not independent technical correctness. Independent DTFC adoption remains tracked in #45/#48.
+
+## Complete screening matrix
+
+The [eight-record coverage matrix](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/eight-record-coverage-matrix.json) records 296 conservative judgments (eight source records × 37 canonical cases), including explicit negative findings. The unit is a source-to-case *screening judgment*, not an executable conformance result or independently peer-reviewed semantic equivalence. `python -m unittest tests.test_eight_record_coverage` checks structural completeness. The record links were carried forward from the earlier inspected register; they were not independently re-fetched in this matrix increment. No independent adoption or release-readiness inference follows.

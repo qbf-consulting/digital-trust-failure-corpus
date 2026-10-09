@@ -1,0 +1,2152 @@
+{
+  "schema_version": "0.1.0",
+  "reviewed_at": "2026-10-09",
+  "method": "Conservative screening of each of eight individually identified source records against all 37 canonical case propositions, triggers, evidence categories and falsification conditions. Negative judgments mean not established, not proven impossible. No execution or independent peer review claimed.",
+  "source_records": [
+    {
+      "family": "MITRE CWE",
+      "id": "CWE-862",
+      "url": "https://cwe.mitre.org/data/definitions/862.html",
+      "title": "Missing authorization",
+      "source_status": "CWE 4.20 online entry",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "MITRE CWE",
+      "id": "CWE-863",
+      "url": "https://cwe.mitre.org/data/definitions/863.html",
+      "title": "Incorrect authorization",
+      "source_status": "CWE 4.20 online entry",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T4",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t4-signature-based-correlation",
+      "title": "Signature-based correlation",
+      "source_status": "Group Note Draft, work in progress",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T5",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t5-correlation-via-status-and-revocation-lookup",
+      "title": "Status lookup correlation",
+      "source_status": "Group Note Draft, work in progress",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T10",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t10-identifier-based-correlation",
+      "title": "Identifier-based correlation",
+      "source_status": "Group Note Draft, work in progress",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T18",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t18-issuer-side-correlation-and-privacy-subversion",
+      "title": "Issuer-side correlation",
+      "source_status": "Group Note Draft, work in progress",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "OWASP LLM Top 10 2025",
+      "id": "LLM01:2025",
+      "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "title": "Prompt injection",
+      "source_status": "OWASP 2025 published risk category",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "OWASP LLM Top 10 2025",
+      "id": "LLM02:2025",
+      "url": "https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/",
+      "title": "Sensitive information disclosure",
+      "source_status": "OWASP 2025 published risk category",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    }
+  ],
+  "judgments": [
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-002",
+      "classification": "adjacent",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "The CWE-862 source is adjacent to DTF-002 (delegated action must stay within granted scope) but does not establish the complete DTF trigger, required evidence or falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-013",
+      "classification": "adjacent",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "The CWE-862 source is adjacent to DTF-013 (signature/agent identity cannot prove mandate for commitment) but does not establish the complete DTF trigger, required evidence or falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-018",
+      "classification": "adjacent",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "The CWE-862 source is adjacent to DTF-018 (capability/reputation cannot replace principal-derived authority) but does not establish the complete DTF trigger, required evidence or falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-020 (composition seam must have competent semantic owner): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-021 (earlier lifecycle check cannot substitute for later stage): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-028",
+      "classification": "adjacent",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "The CWE-862 source is adjacent to DTF-028 (non-authoritative signals cannot be promoted to authority) but does not establish the complete DTF trigger, required evidence or falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-032 (proof metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-033 (status lookup can expose presentation activity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-034 (legitimate disclosure cannot authorize unrelated reuse): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-035",
+      "classification": "not-established",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-035 (issuer/operator metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-036",
+      "classification": "not-established",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-036 (individually minimal disclosures can compose into profiling): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-862",
+      "case_id": "DTF-037",
+      "classification": "not-established",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "No direct overlap established between CWE-862 (Missing authorization) and DTF-037 (retained verification artifacts can enable later correlation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A missing authorization check is not itself evidence of an overscoped delegation, expired mandate, or authority laundering."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-001",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-001 (revoked authority evidence cannot establish current authority) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-002",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-002 (delegated action must stay within granted scope) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-003",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-003 (dependent delegation cannot outlive withdrawn source) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-008",
+      "classification": "adjacent",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "The CWE-863 source is adjacent to DTF-008 (conflicting authoritative evidence cannot be silently resolved) but does not establish the complete DTF trigger, required evidence or falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-009",
+      "classification": "adjacent",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "The CWE-863 source is adjacent to DTF-009 (recognition cannot transit without governing rule) but does not establish the complete DTF trigger, required evidence or falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-013",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-013 (signature/agent identity cannot prove mandate for commitment) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-014",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-014 (expired mandate cannot authorize later commitment) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-015",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-015 (later counteroffer requires fresh scope evaluation) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-016",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-016 (post-revocation commitment cannot rely on session-start authority) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-017",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-017 (approval for stale action cannot authorize changed commitment) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-018",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-018 (capability/reputation cannot replace principal-derived authority) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-019",
+      "classification": "adjacent",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "The CWE-863 source is adjacent to DTF-019 (historical decision must preserve original mandate and policy basis) but does not establish the complete DTF trigger, required evidence or falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-020",
+      "classification": "adjacent",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "The CWE-863 source is adjacent to DTF-020 (composition seam must have competent semantic owner) but does not establish the complete DTF trigger, required evidence or falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-021",
+      "classification": "adjacent",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "The CWE-863 source is adjacent to DTF-021 (earlier lifecycle check cannot substitute for later stage) but does not establish the complete DTF trigger, required evidence or falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-028",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "The CWE-863 source mechanism can instantiate DTF-028 (non-authoritative signals cannot be promoted to authority) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-029",
+      "classification": "adjacent",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "The CWE-863 source is adjacent to DTF-029 (decision change cannot be misattributed to authority change) but does not establish the complete DTF trigger, required evidence or falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-032 (proof metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-033 (status lookup can expose presentation activity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-034 (legitimate disclosure cannot authorize unrelated reuse): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-035",
+      "classification": "not-established",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-035 (issuer/operator metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-036",
+      "classification": "not-established",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-036 (individually minimal disclosures can compose into profiling): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-037",
+      "classification": "not-established",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "No direct overlap established between CWE-863 (Incorrect authorization) and DTF-037 (retained verification artifacts can enable later correlation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. General incorrect authorization can encompass this narrower DTF mechanism but does not establish its specific preconditions."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-002",
+      "classification": "not-established",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-002 (delegated action must stay within granted scope): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-013",
+      "classification": "not-established",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-013 (signature/agent identity cannot prove mandate for commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-018",
+      "classification": "not-established",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-018 (capability/reputation cannot replace principal-derived authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-020 (composition seam must have competent semantic owner): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-021 (earlier lifecycle check cannot substitute for later stage): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-028",
+      "classification": "not-established",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-028 (non-authoritative signals cannot be promoted to authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-032",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The T4 source mechanism can instantiate DTF-032 (proof metadata can defeat unlinkability) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-033 (status lookup can expose presentation activity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "No direct overlap established between T4 (Signature-based correlation) and DTF-034 (legitimate disclosure cannot authorize unrelated reuse): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-035",
+      "classification": "adjacent",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The T4 source is adjacent to DTF-035 (issuer/operator metadata can defeat unlinkability) but does not establish the complete DTF trigger, required evidence or falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-036",
+      "classification": "adjacent",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The T4 source is adjacent to DTF-036 (individually minimal disclosures can compose into profiling) but does not establish the complete DTF trigger, required evidence or falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T4",
+      "case_id": "DTF-037",
+      "classification": "adjacent",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The T4 source is adjacent to DTF-037 (retained verification artifacts can enable later correlation) but does not establish the complete DTF trigger, required evidence or falsification conditions. Signature/proof metadata correlation differs from issuer control, combined disclosure, and retained verification evidence."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-002",
+      "classification": "not-established",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-002 (delegated action must stay within granted scope): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-013",
+      "classification": "not-established",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-013 (signature/agent identity cannot prove mandate for commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-018",
+      "classification": "not-established",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-018 (capability/reputation cannot replace principal-derived authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-020 (composition seam must have competent semantic owner): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-021",
+      "classification": "adjacent",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "The T5 source is adjacent to DTF-021 (earlier lifecycle check cannot substitute for later stage) but does not establish the complete DTF trigger, required evidence or falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-028",
+      "classification": "not-established",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-028 (non-authoritative signals cannot be promoted to authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between T5 (Status lookup correlation) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-032",
+      "classification": "adjacent",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The T5 source is adjacent to DTF-032 (proof metadata can defeat unlinkability) but does not establish the complete DTF trigger, required evidence or falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-033",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "The T5 source mechanism can instantiate DTF-033 (status lookup can expose presentation activity) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-034",
+      "classification": "adjacent",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "The T5 source is adjacent to DTF-034 (legitimate disclosure cannot authorize unrelated reuse) but does not establish the complete DTF trigger, required evidence or falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-035",
+      "classification": "adjacent",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The T5 source is adjacent to DTF-035 (issuer/operator metadata can defeat unlinkability) but does not establish the complete DTF trigger, required evidence or falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-036",
+      "classification": "adjacent",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The T5 source is adjacent to DTF-036 (individually minimal disclosures can compose into profiling) but does not establish the complete DTF trigger, required evidence or falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-037",
+      "classification": "adjacent",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The T5 source is adjacent to DTF-037 (retained verification artifacts can enable later correlation) but does not establish the complete DTF trigger, required evidence or falsification conditions. Status-lookup observability is distinct from retention, proof metadata, or composition-stage freshness."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-002",
+      "classification": "not-established",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-002 (delegated action must stay within granted scope): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-013",
+      "classification": "not-established",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-013 (signature/agent identity cannot prove mandate for commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-018",
+      "classification": "not-established",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-018 (capability/reputation cannot replace principal-derived authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-020 (composition seam must have competent semantic owner): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-021 (earlier lifecycle check cannot substitute for later stage): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-028",
+      "classification": "not-established",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-028 (non-authoritative signals cannot be promoted to authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-032",
+      "classification": "adjacent",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The T10 source is adjacent to DTF-032 (proof metadata can defeat unlinkability) but does not establish the complete DTF trigger, required evidence or falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-033 (status lookup can expose presentation activity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "No direct overlap established between T10 (Identifier-based correlation) and DTF-034 (legitimate disclosure cannot authorize unrelated reuse): the source record does not supply the case-specific trigger, required evidence and falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-035",
+      "classification": "adjacent",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The T10 source is adjacent to DTF-035 (issuer/operator metadata can defeat unlinkability) but does not establish the complete DTF trigger, required evidence or falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-036",
+      "classification": "adjacent",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The T10 source is adjacent to DTF-036 (individually minimal disclosures can compose into profiling) but does not establish the complete DTF trigger, required evidence or falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T10",
+      "case_id": "DTF-037",
+      "classification": "adjacent",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The T10 source is adjacent to DTF-037 (retained verification artifacts can enable later correlation) but does not establish the complete DTF trigger, required evidence or falsification conditions. A stable identifier can correlate without multiple individually non-identifying disclosures; composition is not established."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-002",
+      "classification": "not-established",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-002 (delegated action must stay within granted scope): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-013",
+      "classification": "not-established",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-013 (signature/agent identity cannot prove mandate for commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-018",
+      "classification": "not-established",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-018 (capability/reputation cannot replace principal-derived authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-020 (composition seam must have competent semantic owner): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-021 (earlier lifecycle check cannot substitute for later stage): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-028",
+      "classification": "not-established",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-028 (non-authoritative signals cannot be promoted to authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-032",
+      "classification": "adjacent",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The T18 source is adjacent to DTF-032 (proof metadata can defeat unlinkability) but does not establish the complete DTF trigger, required evidence or falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-033",
+      "classification": "adjacent",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "The T18 source is adjacent to DTF-033 (status lookup can expose presentation activity) but does not establish the complete DTF trigger, required evidence or falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "No direct overlap established between T18 (Issuer-side correlation) and DTF-034 (legitimate disclosure cannot authorize unrelated reuse): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-035",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The T18 source mechanism can instantiate DTF-035 (issuer/operator metadata can defeat unlinkability) when its specific trigger, evidence and falsification requirements hold; this is narrower than source-category equivalence. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-036",
+      "classification": "adjacent",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The T18 source is adjacent to DTF-036 (individually minimal disclosures can compose into profiling) but does not establish the complete DTF trigger, required evidence or falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "T18",
+      "case_id": "DTF-037",
+      "classification": "adjacent",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The T18 source is adjacent to DTF-037 (retained verification artifacts can enable later correlation) but does not establish the complete DTF trigger, required evidence or falsification conditions. Issuer-controlled privacy metadata is distinct from status-lookup, proof-only and retained-evidence mechanisms."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-002",
+      "classification": "adjacent",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "The LLM01:2025 source is adjacent to DTF-002 (delegated action must stay within granted scope) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-010",
+      "classification": "adjacent",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "The LLM01:2025 source is adjacent to DTF-010 (missing required evidence cannot establish PASS) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-013",
+      "classification": "adjacent",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "The LLM01:2025 source is adjacent to DTF-013 (signature/agent identity cannot prove mandate for commitment) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-018",
+      "classification": "adjacent",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "The LLM01:2025 source is adjacent to DTF-018 (capability/reputation cannot replace principal-derived authority) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-020",
+      "classification": "adjacent",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "The LLM01:2025 source is adjacent to DTF-020 (composition seam must have competent semantic owner) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-021 (earlier lifecycle check cannot substitute for later stage): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-023",
+      "classification": "adjacent",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "The LLM01:2025 source is adjacent to DTF-023 (component PASS cannot automatically prove composed PASS) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-026",
+      "classification": "adjacent",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "The LLM01:2025 source is adjacent to DTF-026 (valid subset cannot prove evidence completeness) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-027",
+      "classification": "adjacent",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "The LLM01:2025 source is adjacent to DTF-027 (workflow or CI success cannot prove substantive assurance) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-028",
+      "classification": "adjacent",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "The LLM01:2025 source is adjacent to DTF-028 (non-authoritative signals cannot be promoted to authority) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-030",
+      "classification": "adjacent",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "The LLM01:2025 source is adjacent to DTF-030 (workflow progression cannot silently resolve unresolved condition) but does not establish the complete DTF trigger, required evidence or falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-032 (proof metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-033 (status lookup can expose presentation activity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-034 (legitimate disclosure cannot authorize unrelated reuse): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-035",
+      "classification": "not-established",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-035 (issuer/operator metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-036",
+      "classification": "not-established",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-036 (individually minimal disclosures can compose into profiling): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM01:2025",
+      "case_id": "DTF-037",
+      "classification": "not-established",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "No direct overlap established between LLM01:2025 (Prompt injection) and DTF-037 (retained verification artifacts can enable later correlation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Prompt injection only becomes a DTFC authority failure when consequential untrusted instructions are promoted to authority; category alone cannot establish that outcome."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-001 (revoked authority evidence cannot establish current authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-002",
+      "classification": "not-established",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-002 (delegated action must stay within granted scope): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-003 (dependent delegation cannot outlive withdrawn source): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-004 (revoked artifact cannot pass current-validity check): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-005 (superseded artifact cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-006 (current withdrawal cannot negate historical validity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-007 (shared dependency cannot count as independent corroboration): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-008 (conflicting authoritative evidence cannot be silently resolved): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-009 (recognition cannot transit without governing rule): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-010 (missing required evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-011 (unestablished freshness cannot count as current): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-012 (incompatible policy-version evidence cannot establish PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-013",
+      "classification": "not-established",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-013 (signature/agent identity cannot prove mandate for commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-014 (expired mandate cannot authorize later commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-015 (later counteroffer requires fresh scope evaluation): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-016 (post-revocation commitment cannot rely on session-start authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-017 (approval for stale action cannot authorize changed commitment): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-018",
+      "classification": "not-established",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-018 (capability/reputation cannot replace principal-derived authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-019 (historical decision must preserve original mandate and policy basis): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-020 (composition seam must have competent semantic owner): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-021 (earlier lifecycle check cannot substitute for later stage): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-022 (context binding cannot prove execution or effect): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-023 (component PASS cannot automatically prove composed PASS): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-024 (approval quorum count cannot prove independence): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-025 (longer provenance chain cannot automatically improve assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-026 (valid subset cannot prove evidence completeness): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-027 (workflow or CI success cannot prove substantive assurance): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-028",
+      "classification": "not-established",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-028 (non-authoritative signals cannot be promoted to authority): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-029 (decision change cannot be misattributed to authority change): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-030 (workflow progression cannot silently resolve unresolved condition): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-031 (valid resolution evidence cannot remain incorrectly blocked): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-032 (proof metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-033 (status lookup can expose presentation activity): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-034",
+      "classification": "adjacent",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "The LLM02:2025 source is adjacent to DTF-034 (legitimate disclosure cannot authorize unrelated reuse) but does not establish the complete DTF trigger, required evidence or falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-035",
+      "classification": "not-established",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "No direct overlap established between LLM02:2025 (Sensitive information disclosure) and DTF-035 (issuer/operator metadata can defeat unlinkability): the source record does not supply the case-specific trigger, required evidence and falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-036",
+      "classification": "adjacent",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The LLM02:2025 source is adjacent to DTF-036 (individually minimal disclosures can compose into profiling) but does not establish the complete DTF trigger, required evidence or falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    },
+    {
+      "source_id": "LLM02:2025",
+      "case_id": "DTF-037",
+      "classification": "adjacent",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The LLM02:2025 source is adjacent to DTF-037 (retained verification artifacts can enable later correlation) but does not establish the complete DTF trigger, required evidence or falsification conditions. Sensitive information disclosure does not by itself establish legitimate initial disclosure followed by prohibited secondary processing."
+    }
+  ],
+  "limitations": [
+    "A 296-cell semantic screening matrix is not 296 executed conformance tests.",
+    "Source categories do not establish a specific deployment or incident.",
+    "No third-party adoption is established by this research.",
+    "W3C source is a draft; source URLs and licensing should be independently rechecked before reuse.",
+    "The source record links and descriptions originate from the existing issue #54 research and are not independently re-fetched in this increment."
+  ]
+}
