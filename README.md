@@ -75,6 +75,8 @@ The tests and validator establish structural conformance, collection-level ident
 
 An additive, fixture-only consumption experiment is documented in [Executable consumption](docs/executable-consumption.md). It defines separate binding/result contracts and a reference evaluator with positive and negative regression tests for DTF-001, DTF-023 and DTF-027. Synthetic observations are not external implementation evidence or assurance certification. The canonical 37-case corpus and v0.1.0 case schema remain unchanged.
 
+A separate-process [authority consumer experiment](docs/independent-consumer.md) invokes a standalone target and records response/source digests. It is a reproducible local integration demonstration, **not** proof of independent third-party adoption.
+
 ## Authoring and adoption
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
