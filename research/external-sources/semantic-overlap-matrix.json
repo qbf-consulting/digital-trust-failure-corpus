@@ -1,0 +1,814 @@
+{
+  "schema_version": "0.1.0",
+  "reviewed_at": "2026-10-09",
+  "method": "Manual comparison of all 37 canonical propositions, triggers, evidence categories and falsification conditions against three individually identified primary-source categories; conservative negative dispositions; not an execution test.",
+  "source_records": [
+    {
+      "id": "CWE-863",
+      "family": "MITRE CWE",
+      "url": "https://cwe.mitre.org/data/definitions/863.html",
+      "kind": "weakness-class",
+      "proposition": "Authorization checks can be incorrectly enforced for a protected action."
+    },
+    {
+      "id": "T5",
+      "family": "W3C VC Data Model Threat Model v2.1",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t5-correlation-via-status-and-revocation-lookup",
+      "kind": "draft-threat",
+      "proposition": "Status and revocation lookup metadata can disclose presentation activity and enable correlation."
+    },
+    {
+      "id": "LLM01",
+      "family": "OWASP Top 10 for LLM Applications 2025",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf",
+      "kind": "risk-category",
+      "proposition": "Direct or indirect injected instructions can manipulate an LLM application; action authority is one possible failure outcome."
+    }
+  ],
+  "judgments": [
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-001",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "The DTF proposition (revoked authority evidence cannot establish current authority) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-002",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "The DTF proposition (delegated action must stay within granted scope) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-003",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "The DTF proposition (dependent delegation cannot outlive withdrawn source) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "The DTF proposition (revoked artifact cannot pass current-validity check) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "The DTF proposition (superseded artifact cannot count as current) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "The DTF proposition (current withdrawal cannot negate historical validity) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "The DTF proposition (shared dependency cannot count as independent corroboration) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-008",
+      "classification": "adjacent",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "The DTF proposition (conflicting authoritative evidence cannot be silently resolved) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-009",
+      "classification": "adjacent",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "The DTF proposition (recognition cannot transit without governing rule) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "The DTF proposition (missing required evidence cannot establish PASS) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "The DTF proposition (unestablished freshness cannot count as current) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "The DTF proposition (incompatible policy-version evidence cannot establish PASS) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-013",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "The DTF proposition (signature/agent identity cannot prove mandate for commitment) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-014",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "The DTF proposition (expired mandate cannot authorize later commitment) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-015",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "The DTF proposition (later counteroffer requires fresh scope evaluation) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-016",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "The DTF proposition (post-revocation commitment cannot rely on session-start authority) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-017",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "The DTF proposition (approval for stale action cannot authorize changed commitment) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-018",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "The DTF proposition (capability/reputation cannot replace principal-derived authority) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-019",
+      "classification": "adjacent",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "The DTF proposition (historical decision must preserve original mandate and policy basis) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-020",
+      "classification": "adjacent",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "The DTF proposition (composition seam must have competent semantic owner) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-021",
+      "classification": "adjacent",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "The DTF proposition (earlier lifecycle check cannot substitute for later stage) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "The DTF proposition (context binding cannot prove execution or effect) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "The DTF proposition (component PASS cannot automatically prove composed PASS) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "The DTF proposition (approval quorum count cannot prove independence) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "The DTF proposition (longer provenance chain cannot automatically improve assurance) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "The DTF proposition (valid subset cannot prove evidence completeness) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "The DTF proposition (workflow or CI success cannot prove substantive assurance) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-028",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "The DTF proposition (non-authoritative signals cannot be promoted to authority) expresses a trust-decision failure that can instantiate this source's weakness-class in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-029",
+      "classification": "adjacent",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "The DTF proposition (decision change cannot be misattributed to authority change) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "The DTF proposition (workflow progression cannot silently resolve unresolved condition) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "The DTF proposition (valid resolution evidence cannot remain incorrectly blocked) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The DTF proposition (proof metadata can defeat unlinkability) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "The DTF proposition (status lookup can expose presentation activity) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "The DTF proposition (legitimate disclosure cannot authorize unrelated reuse) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-035",
+      "classification": "not-established",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The DTF proposition (issuer/operator metadata can defeat unlinkability) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-036",
+      "classification": "not-established",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The DTF proposition (individually minimal disclosures can compose into profiling) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "CWE-863",
+      "case_id": "DTF-037",
+      "classification": "not-established",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The DTF proposition (retained verification artifacts can enable later correlation) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "The DTF proposition (revoked authority evidence cannot establish current authority) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-002",
+      "classification": "not-established",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "The DTF proposition (delegated action must stay within granted scope) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "The DTF proposition (dependent delegation cannot outlive withdrawn source) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "The DTF proposition (revoked artifact cannot pass current-validity check) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "The DTF proposition (superseded artifact cannot count as current) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "The DTF proposition (current withdrawal cannot negate historical validity) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "The DTF proposition (shared dependency cannot count as independent corroboration) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "The DTF proposition (conflicting authoritative evidence cannot be silently resolved) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "The DTF proposition (recognition cannot transit without governing rule) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-010",
+      "classification": "not-established",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "The DTF proposition (missing required evidence cannot establish PASS) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "The DTF proposition (unestablished freshness cannot count as current) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "The DTF proposition (incompatible policy-version evidence cannot establish PASS) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-013",
+      "classification": "not-established",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "The DTF proposition (signature/agent identity cannot prove mandate for commitment) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "The DTF proposition (expired mandate cannot authorize later commitment) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "The DTF proposition (later counteroffer requires fresh scope evaluation) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "The DTF proposition (post-revocation commitment cannot rely on session-start authority) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "The DTF proposition (approval for stale action cannot authorize changed commitment) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-018",
+      "classification": "not-established",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "The DTF proposition (capability/reputation cannot replace principal-derived authority) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "The DTF proposition (historical decision must preserve original mandate and policy basis) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-020",
+      "classification": "not-established",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "The DTF proposition (composition seam must have competent semantic owner) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-021",
+      "classification": "adjacent",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "The DTF proposition (earlier lifecycle check cannot substitute for later stage) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "The DTF proposition (context binding cannot prove execution or effect) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-023",
+      "classification": "not-established",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "The DTF proposition (component PASS cannot automatically prove composed PASS) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "The DTF proposition (approval quorum count cannot prove independence) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "The DTF proposition (longer provenance chain cannot automatically improve assurance) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-026",
+      "classification": "not-established",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "The DTF proposition (valid subset cannot prove evidence completeness) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-027",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "The DTF proposition (workflow or CI success cannot prove substantive assurance) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-028",
+      "classification": "not-established",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "The DTF proposition (non-authoritative signals cannot be promoted to authority) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "The DTF proposition (decision change cannot be misattributed to authority change) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-030",
+      "classification": "not-established",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "The DTF proposition (workflow progression cannot silently resolve unresolved condition) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "The DTF proposition (valid resolution evidence cannot remain incorrectly blocked) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-032",
+      "classification": "adjacent",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The DTF proposition (proof metadata can defeat unlinkability) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-033",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "The DTF proposition (status lookup can expose presentation activity) expresses a trust-decision failure that can instantiate this source's draft-threat in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-034",
+      "classification": "adjacent",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "The DTF proposition (legitimate disclosure cannot authorize unrelated reuse) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-035",
+      "classification": "adjacent",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The DTF proposition (issuer/operator metadata can defeat unlinkability) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-036",
+      "classification": "adjacent",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The DTF proposition (individually minimal disclosures can compose into profiling) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "T5",
+      "case_id": "DTF-037",
+      "classification": "adjacent",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The DTF proposition (retained verification artifacts can enable later correlation) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-001",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked authority evidence cannot establish current authority",
+      "reason": "The DTF proposition (revoked authority evidence cannot establish current authority) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-002",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "delegated action must stay within granted scope",
+      "reason": "The DTF proposition (delegated action must stay within granted scope) expresses a trust-decision failure that can instantiate this source's risk-category in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-003",
+      "classification": "not-established",
+      "case_proposition_summary": "dependent delegation cannot outlive withdrawn source",
+      "reason": "The DTF proposition (dependent delegation cannot outlive withdrawn source) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-004",
+      "classification": "not-established",
+      "case_proposition_summary": "revoked artifact cannot pass current-validity check",
+      "reason": "The DTF proposition (revoked artifact cannot pass current-validity check) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-005",
+      "classification": "not-established",
+      "case_proposition_summary": "superseded artifact cannot count as current",
+      "reason": "The DTF proposition (superseded artifact cannot count as current) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-006",
+      "classification": "not-established",
+      "case_proposition_summary": "current withdrawal cannot negate historical validity",
+      "reason": "The DTF proposition (current withdrawal cannot negate historical validity) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-007",
+      "classification": "not-established",
+      "case_proposition_summary": "shared dependency cannot count as independent corroboration",
+      "reason": "The DTF proposition (shared dependency cannot count as independent corroboration) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-008",
+      "classification": "not-established",
+      "case_proposition_summary": "conflicting authoritative evidence cannot be silently resolved",
+      "reason": "The DTF proposition (conflicting authoritative evidence cannot be silently resolved) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-009",
+      "classification": "not-established",
+      "case_proposition_summary": "recognition cannot transit without governing rule",
+      "reason": "The DTF proposition (recognition cannot transit without governing rule) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-010",
+      "classification": "adjacent",
+      "case_proposition_summary": "missing required evidence cannot establish PASS",
+      "reason": "The DTF proposition (missing required evidence cannot establish PASS) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-011",
+      "classification": "not-established",
+      "case_proposition_summary": "unestablished freshness cannot count as current",
+      "reason": "The DTF proposition (unestablished freshness cannot count as current) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-012",
+      "classification": "not-established",
+      "case_proposition_summary": "incompatible policy-version evidence cannot establish PASS",
+      "reason": "The DTF proposition (incompatible policy-version evidence cannot establish PASS) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-013",
+      "classification": "adjacent",
+      "case_proposition_summary": "signature/agent identity cannot prove mandate for commitment",
+      "reason": "The DTF proposition (signature/agent identity cannot prove mandate for commitment) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-014",
+      "classification": "not-established",
+      "case_proposition_summary": "expired mandate cannot authorize later commitment",
+      "reason": "The DTF proposition (expired mandate cannot authorize later commitment) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-015",
+      "classification": "not-established",
+      "case_proposition_summary": "later counteroffer requires fresh scope evaluation",
+      "reason": "The DTF proposition (later counteroffer requires fresh scope evaluation) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-016",
+      "classification": "not-established",
+      "case_proposition_summary": "post-revocation commitment cannot rely on session-start authority",
+      "reason": "The DTF proposition (post-revocation commitment cannot rely on session-start authority) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-017",
+      "classification": "not-established",
+      "case_proposition_summary": "approval for stale action cannot authorize changed commitment",
+      "reason": "The DTF proposition (approval for stale action cannot authorize changed commitment) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-018",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "capability/reputation cannot replace principal-derived authority",
+      "reason": "The DTF proposition (capability/reputation cannot replace principal-derived authority) expresses a trust-decision failure that can instantiate this source's risk-category in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-019",
+      "classification": "not-established",
+      "case_proposition_summary": "historical decision must preserve original mandate and policy basis",
+      "reason": "The DTF proposition (historical decision must preserve original mandate and policy basis) requires a distinct authority trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-020",
+      "classification": "adjacent",
+      "case_proposition_summary": "composition seam must have competent semantic owner",
+      "reason": "The DTF proposition (composition seam must have competent semantic owner) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-021",
+      "classification": "not-established",
+      "case_proposition_summary": "earlier lifecycle check cannot substitute for later stage",
+      "reason": "The DTF proposition (earlier lifecycle check cannot substitute for later stage) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-022",
+      "classification": "not-established",
+      "case_proposition_summary": "context binding cannot prove execution or effect",
+      "reason": "The DTF proposition (context binding cannot prove execution or effect) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-023",
+      "classification": "adjacent",
+      "case_proposition_summary": "component PASS cannot automatically prove composed PASS",
+      "reason": "The DTF proposition (component PASS cannot automatically prove composed PASS) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-024",
+      "classification": "not-established",
+      "case_proposition_summary": "approval quorum count cannot prove independence",
+      "reason": "The DTF proposition (approval quorum count cannot prove independence) requires a distinct composition trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-025",
+      "classification": "not-established",
+      "case_proposition_summary": "longer provenance chain cannot automatically improve assurance",
+      "reason": "The DTF proposition (longer provenance chain cannot automatically improve assurance) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-026",
+      "classification": "adjacent",
+      "case_proposition_summary": "valid subset cannot prove evidence completeness",
+      "reason": "The DTF proposition (valid subset cannot prove evidence completeness) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-027",
+      "classification": "adjacent",
+      "case_proposition_summary": "workflow or CI success cannot prove substantive assurance",
+      "reason": "The DTF proposition (workflow or CI success cannot prove substantive assurance) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-028",
+      "classification": "mechanism-overlap",
+      "case_proposition_summary": "non-authoritative signals cannot be promoted to authority",
+      "reason": "The DTF proposition (non-authoritative signals cannot be promoted to authority) expresses a trust-decision failure that can instantiate this source's risk-category in a narrower, falsifiable setting; source category alone is not equivalent to DTF semantics."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-029",
+      "classification": "not-established",
+      "case_proposition_summary": "decision change cannot be misattributed to authority change",
+      "reason": "The DTF proposition (decision change cannot be misattributed to authority change) requires a distinct evidence trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-030",
+      "classification": "adjacent",
+      "case_proposition_summary": "workflow progression cannot silently resolve unresolved condition",
+      "reason": "The DTF proposition (workflow progression cannot silently resolve unresolved condition) shares a possible causal or evidentiary boundary, but the source does not establish the case-specific trigger and falsification conditions."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-031",
+      "classification": "not-established",
+      "case_proposition_summary": "valid resolution evidence cannot remain incorrectly blocked",
+      "reason": "The DTF proposition (valid resolution evidence cannot remain incorrectly blocked) requires a distinct lifecycle trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "case_proposition_summary": "proof metadata can defeat unlinkability",
+      "reason": "The DTF proposition (proof metadata can defeat unlinkability) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-033",
+      "classification": "not-established",
+      "case_proposition_summary": "status lookup can expose presentation activity",
+      "reason": "The DTF proposition (status lookup can expose presentation activity) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-034",
+      "classification": "not-established",
+      "case_proposition_summary": "legitimate disclosure cannot authorize unrelated reuse",
+      "reason": "The DTF proposition (legitimate disclosure cannot authorize unrelated reuse) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-035",
+      "classification": "not-established",
+      "case_proposition_summary": "issuer/operator metadata can defeat unlinkability",
+      "reason": "The DTF proposition (issuer/operator metadata can defeat unlinkability) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-036",
+      "classification": "not-established",
+      "case_proposition_summary": "individually minimal disclosures can compose into profiling",
+      "reason": "The DTF proposition (individually minimal disclosures can compose into profiling) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    },
+    {
+      "source_id": "LLM01",
+      "case_id": "DTF-037",
+      "classification": "not-established",
+      "case_proposition_summary": "retained verification artifacts can enable later correlation",
+      "reason": "The DTF proposition (retained verification artifacts can enable later correlation) requires a distinct privacy trigger and evidence/falsification condition not supplied by this source record; no direct equivalence established."
+    }
+  ],
+  "limitations": [
+    "Three selected source records are weakness/threat/risk categories, not concrete incidents or executable test assertions.",
+    "Judgments are source-to-DTFC semantic screening, not independent review or proof of source-specific implementation.",
+    "W3C Group Note Draft is work in progress; no normative status inferred.",
+    "No upstream text or payload imported.",
+    "Additional AVID/ATLAS/test-suite record sampling and demonstrated improvement acceptance in #54 remain open."
+  ]
+}
