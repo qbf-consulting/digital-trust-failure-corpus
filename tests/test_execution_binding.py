@@ -1,6 +1,7 @@
 """Positive and negative regression coverage for the additive fixture adapter."""
 import json
 import unittest
+import subprocess
 from pathlib import Path
 from tools.execute_binding import ROOT, evaluate
 
@@ -16,7 +17,7 @@ def binding(case_id, observed="DENY"):
     expected = next(k for k in ("DENY", "INDETERMINATE")
                     if case["expected"]["dispositions"][k] == "allowed")
     return dict(binding_version="0.1.0", case_id=case_id, case_version=case["version"],
-                case_revision="main-reference-fixture", adapter="fixture-v1",
+                case_revision=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(), adapter="fixture-v1",
                 scenario="synthetic adverse condition", expected=expected,
                 observed=observed, evidence=["synthetic:observation-1"])
 
@@ -48,6 +49,18 @@ class ExecutionBindingTests(unittest.TestCase):
     def test_unknown_adapter_rejected(self):
         b = binding("DTF-001")
         b["adapter"] = "unsupported"
+        with self.assertRaises(Exception):
+            evaluate(b)
+
+    def test_wrong_revision_rejected(self):
+        b = binding("DTF-001")
+        b["case_revision"] = "0" * 40
+        with self.assertRaises(ValueError):
+            evaluate(b)
+
+    def test_malformed_revision_rejected(self):
+        b = binding("DTF-001")
+        b["case_revision"] = "main"
         with self.assertRaises(Exception):
             evaluate(b)
 
