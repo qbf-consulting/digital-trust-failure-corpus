@@ -19,3 +19,34 @@ The fixture adapter requires nonempty evidence references but does not resolve o
 Bind the same cases to a genuinely external implementation. Capture target version, input fixtures, observed decision, evidence digests, collection timestamp and replay instructions. Compare results across two independent runs. Record any schema pressure before extending the core contract.
 
 No confidential assessment or incident materials belong in this public repository.
+
+## Portable fixture binding v0.2 (additive)
+
+The new `schemas/execution-binding-v0.2.schema.json` and `schemas/execution-result-v0.2.schema.json` are **opt-in**, preserving the existing v0.1 `case_revision`/Git HEAD contract. The portable v0.2 binding uses `case_sha256` computed over UTF-8 JSON with sorted keys, compact separators, Unicode preserved and NaN prohibited. This is **DTFC normalization, not RFC 8785 JSON Canonicalization Scheme**. Whitespace and object key ordering do not change the digest; changes to values and array order do. A consumer must supply the canonical case JSON in its local corpus directory.
+
+Reproduce from a checkout or vendored archive without Git metadata:
+
+```bash
+python -m unittest tests.test_portable_binding -v
+python tools/execute_portable_binding.py my-binding-v0.2.json --corpus-root ./corpus
+```
+
+Example binding structure:
+
+```json
+{
+  "binding_version": "0.2.0",
+  "case_id": "DTF-001",
+  "case_version": "0.1.0",
+  "case_sha256": "<64-character SHA-256 of canonical case JSON>",
+  "adapter": "fixture-v1",
+  "scenario": "synthetic revoked authority",
+  "expected": "DENY",
+  "observed": "PASS",
+  "evidence": ["synthetic:unverified"]
+}
+```
+
+The example digest is intentionally a placeholder and must be computed from the exact canonical case using `tools.case_digest.case_sha256`; check the actual case version and permitted expected disposition before use. The runner rejects missing, duplicated, mismatched-version or changed cases. A `SATISFIED` result only means that **author-supplied** `observed` data agrees with the case's disposition rule. The result explicitly states `execution_class: author-supplied-fixture`. This is **not an executed target test**, verified evidence, independent adoption or conformance.
+
+Current illustrative paired coverage: **3/37 cases** (DTF-001, DTF-023, DTF-027), all fixture-only in this runner. Independently executed target coverage from this new v0.2 runner: **0/37**. The separate pinned OPA demonstration executes a synthetic safe/defective policy pair for DTF-001 and must be reported separately; it does not change fixture-only coverage. See #63 for the next actual target-adapter and conformance-report increment.
