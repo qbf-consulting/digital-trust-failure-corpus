@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0",
+  "review_date": "2026-10-09",
+  "scope": "bounded external-source crosswalk, not case import",
+  "records": [
+    {
+      "source": "MITRE CWE",
+      "source_id": "CWE-863",
+      "url": "https://cwe.mitre.org/data/definitions/863.html",
+      "kind": "weakness-class",
+      "case_ids": [
+        "DTF-001",
+        "DTF-002"
+      ],
+      "disposition": "cross-reference",
+      "confidence": "high",
+      "rationale": "Incorrect authorization overlaps stale authority and scope exceedance, but the CWE does not encode the temporal evidence needed by DTFC.",
+      "reuse": "Link and original summary only; no upstream text copied."
+    },
+    {
+      "source": "MITRE CWE",
+      "source_id": "CWE-841",
+      "url": "https://cwe.mitre.org/data/definitions/841.html",
+      "kind": "weakness-class",
+      "case_ids": [
+        "DTF-017",
+        "DTF-026"
+      ],
+      "disposition": "inspect-overlap",
+      "confidence": "medium",
+      "rationale": "Workflow ordering and skipped steps could overlap iterative scope/approval and workflow-to-assurance substitution; exact case fit requires further semantic review.",
+      "reuse": "Link and original summary only; no upstream text copied."
+    },
+    {
+      "source": "MITRE ATLAS",
+      "source_id": "AML.T0051",
+      "url": "https://atlas.mitre.org/techniques/AML.T0051",
+      "kind": "attack-technique",
+      "case_ids": [
+        "DTF-002",
+        "DTF-028"
+      ],
+      "disposition": "coverage-gap",
+      "confidence": "medium",
+      "rationale": "Prompt injection is an attack mechanism, not itself proof of authority misuse. Assess whether untrusted instructions are promoted to action authority beyond existing scope-escalation and authority-laundering cases.",
+      "reuse": "Technique ID and URL only; do not import attack descriptions or examples."
+    },
+    {
+      "source": "W3C VC Data Model 2.0 Test Suite",
+      "source_id": "vc-data-model-2.0-test-suite",
+      "url": "https://github.com/w3c/vc-data-model-2.0-test-suite",
+      "kind": "conformance-suite",
+      "case_ids": [
+        "DTF-010",
+        "DTF-025"
+      ],
+      "disposition": "test-pattern",
+      "confidence": "medium",
+      "rationale": "Endpoint-based issuer/verifier tests offer a model for executable adapters, but interoperability success cannot establish evidence sufficiency or DTFC assurance by itself.",
+      "reuse": "Link only; upstream tests have their own W3C licensing; do not copy code."
+    },
+    {
+      "source": "AVID",
+      "source_id": "AVID-report-vulnerability-model",
+      "url": "https://avidml.org/database/",
+      "kind": "evidence-database",
+      "case_ids": [],
+      "disposition": "method-reference",
+      "confidence": "high",
+      "rationale": "Report versus recurring vulnerability distinction is useful for DTFC research provenance. No specific AVID record is yet shown to map uniquely to a DTFC failure case.",
+      "reuse": "Link and independently authored interpretation only; do not bulk-import records."
+    }
+  ]
+}

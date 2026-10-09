@@ -77,6 +77,10 @@ An additive, fixture-only consumption experiment is documented in [Executable co
 
 A separate-process [authority consumer experiment](docs/independent-consumer.md) invokes a standalone target and records response/source digests. It is a reproducible local integration demonstration, **not** proof of independent third-party adoption.
 
+## External source research and mappings
+
+A [bounded external corpus crosswalk](docs/external-corpus-crosswalk.md) and its [machine-readable research register](research/external-sources/crosswalk.json) examine CWE, MITRE ATLAS, the W3C VC 2.0 test suite, and AVID. These non-normative research sidecars distinguish cross-references, test patterns, and unconfirmed coverage gaps. The DTF-001 case carries an informative CWE-863 mapping. No external records were imported, and the canonical schema and 37-case baseline are unchanged.
+
 ## Authoring and adoption
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
