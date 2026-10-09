@@ -88,6 +88,8 @@ The [experimental case maturity and release gates](docs/case-maturity-and-releas
 
 A [three-source, 37-case semantic screening](docs/external-semantic-screening.md) provides 111 documented source-to-case judgments with explicit evidence limits. It is research, not an executed conformance or independent adoption test.
 
+The [eight directly inspected external records](docs/inspected-external-records.md) include case-specific W3C T4/DTF-032 and T18/DTF-035 provenance bindings; these are informative research mappings, not evidence of third-party adoption.
+
 ## Authoring and adoption
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
