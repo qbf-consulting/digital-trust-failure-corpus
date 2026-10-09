@@ -4,7 +4,7 @@ This additive demonstration addresses #21 and #43. The canonical corpus remains 
 
 ## Execution
 
-`python tools/execute_binding.py examples/execution/dtf-001-deny.json`
+`python -m unittest tests.test_execution_binding -v` (from the repository root), followed by `python -m unittest discover -s tests -v`. The CLI accepts a JSON binding file: `python tools/execute_binding.py path/to/binding.json`. The tests generate fixtures directly from the canonical case records.
 
 A binding names a canonical case ID/version and source revision, identifies an adapter, and records an illustrative observed target disposition. The reference `fixture-v1` adapter **does not invoke a real system**: it demonstrates portable evaluation and evidence-record shape only. A real consumer must replace the fixture adapter with an authenticated target invocation and verifiable evidence collection. The declared `case_revision` is a consumer-provided pin, not a verified checkout assertion in this prototype.
 
