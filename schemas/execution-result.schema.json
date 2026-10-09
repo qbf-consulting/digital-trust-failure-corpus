@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DTFC Execution Result 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "binding_version",
+    "case_id",
+    "case_version",
+    "case_revision",
+    "scenario",
+    "target_disposition",
+    "test_verdict",
+    "evidence"
+  ],
+  "properties": {
+    "binding_version": {
+      "const": "0.1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "case_version": {
+      "type": "string"
+    },
+    "case_revision": {
+      "type": "string"
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "target_disposition": {
+      "enum": [
+        "PASS",
+        "DENY",
+        "INDETERMINATE"
+      ]
+    },
+    "test_verdict": {
+      "enum": [
+        "SATISFIED",
+        "VIOLATED"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
