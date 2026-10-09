@@ -63,5 +63,28 @@ class ExecutionBindingTests(unittest.TestCase):
         with self.assertRaises(Exception):
             evaluate(b)
 
+
+    def test_invalid_expected_outcome_rejected(self):
+        b = binding("DTF-001")
+        case = load_case("DTF-001")
+        invalid = next((k for k in ("DENY", "INDETERMINATE")
+                        if case["expected"]["dispositions"][k] != "allowed"), None)
+        if invalid is None:
+            self.skipTest("case permits both safe dispositions")
+        b["expected"] = invalid
+        with self.assertRaises(ValueError):
+            evaluate(b)
+
+    def test_binding_additional_property_rejected(self):
+        b = binding("DTF-001")
+        b["untrusted_override"] = "PASS"
+        with self.assertRaises(Exception):
+            evaluate(b)
+
+    def test_repeated_evaluation_is_deterministic(self):
+        b = binding("DTF-023")
+        b["observed"] = b["expected"]
+        self.assertEqual(evaluate(b), evaluate(b))
+
 if __name__ == "__main__":
     unittest.main()
