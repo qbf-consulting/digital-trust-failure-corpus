@@ -83,6 +83,9 @@ A [bounded external corpus crosswalk](docs/external-corpus-crosswalk.md) and its
 
 A [tool-output instruction/data boundary review](docs/tool-output-boundary-research.md) examines MITRE ATLAS indirect prompt injection and OWASP agentic scenarios against existing DTFC authority cases, with a [hypothetical paired scenario](research/tool-output-boundary/scenario.json). It concludes that the core authorization failure is already represented by DTF-028/002/018; the fixture is **not** an executed agent test.
 
+
+The [experimental case maturity and release gates](docs/case-maturity-and-release-gates.md) distinguish draft cases from independently reviewed, evidenced, and externally exercised cases. A [bounded eight-record CWE triage](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/record-triage.json) is available as preliminary research, **not** a complete external-corpus overlap audit.
+
 ## Authoring and adoption
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
