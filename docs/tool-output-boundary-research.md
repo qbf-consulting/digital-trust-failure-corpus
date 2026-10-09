@@ -37,7 +37,7 @@ No third-party code, attack payload or prose has been copied. Upstream licensing
 
 ## Paired, identical-input thought experiment
 
-See [machine-readable fixture](../research/tool-output-boundary/scenario.json). A single untrusted tool response is supplied to two *hypothetical* consumer behaviours:
+See [machine-readable fixture](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/tool-output-boundary/scenario.json). A single untrusted tool response is supplied to two *hypothetical* consumer behaviours:
 
 - **Safe:** treat response as data, summarize relevant facts, do not invoke the unrelated consequential tool.
 - **Unsafe:** interpret the embedded instruction as a new command and invoke that tool.
