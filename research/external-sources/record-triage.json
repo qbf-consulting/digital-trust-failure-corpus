@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1.0",
+  "as_of": "2026-10-09",
+  "scope": "Eight specific MITRE CWE weakness records; single source family; preliminary mapping only",
+  "records": [
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-862",
+      "title": "Missing Authorization",
+      "url": "https://cwe.mitre.org/data/definitions/862.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-002",
+      "disposition": "candidate-overlap",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-287",
+      "title": "Improper Authentication",
+      "url": "https://cwe.mitre.org/data/definitions/287.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-018",
+      "disposition": "adjacent",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-345",
+      "title": "Insufficient Verification of Data Authenticity",
+      "url": "https://cwe.mitre.org/data/definitions/345.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-010",
+      "disposition": "adjacent",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-294",
+      "title": "Authentication Bypass by Capture-replay",
+      "url": "https://cwe.mitre.org/data/definitions/294.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-001",
+      "disposition": "adjacent",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-613",
+      "title": "Insufficient Session Expiration",
+      "url": "https://cwe.mitre.org/data/definitions/613.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-001",
+      "disposition": "adjacent",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-200",
+      "title": "Exposure of Sensitive Information to an Unauthorized Actor",
+      "url": "https://cwe.mitre.org/data/definitions/200.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-037",
+      "disposition": "adjacent",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-863",
+      "title": "Incorrect Authorization",
+      "url": "https://cwe.mitre.org/data/definitions/863.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-001",
+      "disposition": "informative-reference-already-added",
+      "confidence": "high",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-841",
+      "title": "Improper Enforcement of Behavioral Workflow",
+      "url": "https://cwe.mitre.org/data/definitions/841.html",
+      "kind": "weakness-class",
+      "candidate_case_id": "DTF-026",
+      "disposition": "candidate-overlap",
+      "confidence": "low",
+      "rights": "Identifiers and links only; upstream content not imported",
+      "note": "Candidate mapping only; no complete 37-case proposition/evidence/falsification review. CWE classification does not prove DTFC case equivalence."
+    }
+  ]
+}
