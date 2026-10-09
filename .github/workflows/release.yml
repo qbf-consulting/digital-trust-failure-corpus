@@ -2,14 +2,9 @@ name: publish release
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "release/publish-request.json"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: publish-release
@@ -19,6 +14,11 @@ jobs:
   publish:
     name: publish-release
     runs-on: ubuntu-latest
+    # GitHub environment must be configured with required human reviewers and
+    # deployment-branch restriction to main before this job can publish.
+    environment: release-publication
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -37,30 +37,19 @@ jobs:
             exit 1
           fi
 
-      - name: Validate PR-driven release request
-        if: ${{ github.event_name == 'push' }}
+      - name: Verify release request and execution identity
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref }}
+          ACTOR: ${{ github.actor }}
+          RELEASE_APPROVAL_CONFIGURED: ${{ vars.RELEASE_APPROVAL_CONFIGURED }}
         run: |
-          if [[ ! -f release/publish-request.json ]]; then
-            echo "Missing release/publish-request.json." >&2
-            exit 1
-          fi
-
-          VERSION="$(tr -d '[:space:]' < VERSION)"
-          REQUEST_VERSION="$(python - <<'PY'
-          import json
-          from pathlib import Path
-          data = json.loads(Path("release/publish-request.json").read_text())
-          value = data.get("version")
-          if not isinstance(value, str) or not value.strip():
-              raise SystemExit("publish-request.json must contain a non-empty string version")
-          print(value.strip())
-          PY
-          )"
-
-          if [[ "${REQUEST_VERSION}" != "${VERSION}" ]]; then
-            echo "Release request version ${REQUEST_VERSION} does not match VERSION ${VERSION}." >&2
-            exit 1
-          fi
+          python tools/check_release_request.py \
+            --request release/publish-request.json \
+            --version-file VERSION \
+            --event "${EVENT_NAME}" \
+            --ref "${REF_NAME}" \
+            --actor "${ACTOR}"
 
       - name: Install validation dependency
         run: python -m pip install -r requirements-dev.txt

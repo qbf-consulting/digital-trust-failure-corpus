@@ -1,49 +1,35 @@
-# Release publication
+# Release publication and authorization
 
-This repository supports two release-publication paths:
+## Current state
 
-1. **PR-gated release request** — preferred for normal governed releases.
-2. **Manual workflow dispatch** — retained for maintainer recovery or explicitly supervised publication.
+**v0.4.0 is an already published historical release.** The existing `release/publish-request.json` records its provenance, not an instruction to republish it. A later maturity review concluded that the research then available did not justify *another* release; this does not invalidate the historical v0.4.0 tag.
 
-## PR-gated release request
+**Prospective publication is manual-only and fail-closed.** Changing `release/publish-request.json` no longer triggers publication. A maintainer must explicitly dispatch `publish release` from `main`. The job references the GitHub environment `release-publication`, which **must be configured outside the repository** before use.
 
-A release is requested by changing `release/publish-request.json` in a reviewed pull request:
+## Required one-time GitHub configuration
 
-```json
-{
-  "version": "0.2.0",
-  "requested_by": "maintainer-login",
-  "reason": "Short release rationale"
-}
-```
+A repository administrator must configure **Settings → Environments → release-publication**:
 
-The request is intentionally separate from `VERSION`. This makes the publication authorization event explicit and auditable.
+1. Enable **required reviewers** with an authorized human approver, preferably separate from the dispatcher where team policy permits. Do not enable bypass by administrators for normal publication.
+2. Restrict deployments to the protected `main` branch.
+3. Only after verifying both settings, define environment-scoped variable `RELEASE_APPROVAL_CONFIGURED=true`. Do not set this at repository or organization scope. Without the variable, publication fails closed.
+4. Maintain an active branch ruleset requiring a PR and validation checks. Current ruleset `protect-main` requires PRs and `validate` but **zero approving reviews**; strengthening review requirements for release-critical changes requires an administrator. CODEOWNERS alone is not approval enforcement.
+5. Re-verify environment reviewers, branch restrictions and actor permissions before the first publication. These settings are **not asserted as configured by this PR**.
 
-When the request PR is merged to `main`, the `publish release` workflow:
+The release workflow permits dispatch by GitHub actor `sankarshanmukhopadhyay` only. The `requested_by` field is audit metadata, **not authentication**. The GitHub event actor, environment reviewer gate and branch ruleset supply separate controls. The job's write permission is scoped to release publication.
 
-1. requires the request version to equal the repository `VERSION`;
-2. runs the complete release-gate test suite and corpus validator;
-3. requires the corresponding `docs/release-notes-v<version>.md`;
-4. refuses to overwrite an existing tag or GitHub Release;
-5. selects an unused codename from `release/national-flower-codenames.txt`;
-6. publishes `v<version>` against the merged `main` commit;
-7. marks the release as **Latest**; and
-8. verifies the published title and Latest state.
+## Publication sequence
 
-A mismatched version, missing notes, failed validation, or existing tag/release stops publication.
+1. Prepare a normal PR changing `VERSION`, changelog, release notes, relevant baselines and `release/publish-request.json`. Record the release rationale and resolve review findings.
+2. Merge after the required repository checks and any human review required by the configured ruleset.
+3. Explicitly dispatch **Actions → publish release → Run workflow** from `main`. The protected `release-publication` environment must approve the job.
+4. The preflight checks manual event, `main`, authorized dispatching actor, approval-configuration attestation, matching `VERSION` and nonempty rationale.
+5. The workflow reruns tests and corpus validation on its checked-out commit, requires matching release notes, rejects existing tags/releases, publishes against `GITHUB_SHA`, marks **Latest** and verifies title and latest status.
 
-## Preparing the next release
+The workflow's own tests execute against the checkout SHA, but **do not consume a separately attested, SHA-specific validation workflow result**. This remains a follow-up assurance requirement under issue #62. Never describe a green test alone as independent human authorization.
 
-A release-preparation PR SHOULD update, as applicable:
+## Recovery and failure boundaries
 
-- `VERSION`;
-- `CHANGELOG.md`;
-- `docs/release-notes-v<version>.md`;
-- corpus/schema/tests for the release; and
-- `release/publish-request.json` when publication is approved.
+There is no push-triggered or reviewer-free emergency publication bypass. For recovery, repair the environment/reviewer configuration and rerun an explicitly approved dispatch. An existing tag or GitHub Release is never overwritten by the workflow. If the protected environment is not configured, the publication job must not be run.
 
-The release-request change SHOULD be the final explicit publication signal. Projects or automation consuming this repository should treat the GitHub Release/tag as the published release boundary, not the presence of an unreleased `VERSION` value alone.
-
-## Authority boundary
-
-Merging a change to `release/publish-request.json` is the repository-governed authorization to attempt publication. GitHub Actions is the enforcement mechanism; passing CI is evidence that the configured release gates were satisfied, not an independent certification of corpus correctness.
+Release flower codenames are presentation metadata selected from a repository snapshot; the immutable version tag is the machine-readable release identity.

@@ -30,8 +30,8 @@ Existing cases DTF-001–037, source crosswalk #50 and tool-output review #52 ha
 
 ## Release-readiness decision
 
-Corpus validation, documentation and experimental OPA execution are valuable, but do not establish independent third-party DTFC consumption. #45/#48 remain open; #54 record-level external-source comparison is not yet complete. **Decision: do not cut a release on the strength of this review.** A release may be considered after the roadmap owner explicitly assesses provenance, independently exercised use, documentation, test stability and unresolved issues.
+Corpus validation, documentation and experimental OPA execution are valuable, but do not establish independent third-party DTFC consumption. #45/#48 remain open; #54 completed its bounded eight-source by 37-case semantic screening in PR #59, which does not establish independent adoption or executable conformance. **Prospective decision: do not cut another release on the strength of this review.** This is not a retrospective rejection of the already published v0.4.0 release. A release may be considered after the roadmap owner explicitly assesses provenance, independently exercised use, documentation, test stability and unresolved issues.
 
 ## Research acceptance boundary
 
-The source-level crosswalk is not an exhaustive record-by-record review of AVID, ATLAS or W3C assertions. A claim of all-37-case overlap review requires recording each source/case judgment and reviewing the actual proposition, trigger, evidence and falsification, not just category matches. Issue #54 owns that work.
+The source-level crosswalk is not an exhaustive record-by-record review of AVID, ATLAS or W3C assertions. A claim of all-37-case overlap review requires recording each source/case judgment and reviewing the actual proposition, trigger, evidence and falsification, not just category matches. Issue #54 closed after recording 296 source/case screening judgments in PR #59. Those are conservative research judgments, not independently reviewed equivalence or executed test vectors.
