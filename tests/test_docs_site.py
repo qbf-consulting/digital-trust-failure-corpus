@@ -54,6 +54,18 @@ class DocumentationSiteTests(unittest.TestCase):
         for case_id, _path, _case in self.cases:
             self.assertIn(f"[{case_id}]({case_id}.md)", rendered)
 
+    def test_all_top_level_documentation_pages_are_in_site_nav(self):
+        config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+        nav = config.split("nav:", 1)[1].split("\nmarkdown_extensions:", 1)[0]
+        for path in sorted((ROOT / "docs").glob("*.md")):
+            with self.subTest(page=path.name):
+                self.assertIn(": " + path.name, nav)
+
+    def test_catalogue_link_resolves_from_plain_source_checkout(self):
+        landing = (ROOT / "docs/index.md").read_text(encoding="utf-8")
+        self.assertNotIn("](corpus/index.md)", landing)
+        self.assertIn("https://qbf-consulting.github.io/digital-trust-failure-corpus/corpus/", landing)
+
     def test_site_states_non_authoritative_boundary(self):
         landing = (ROOT / "docs" / "index.md").read_text(encoding="utf-8")
         self.assertIn("evidence, not authority", landing)

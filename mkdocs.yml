@@ -26,6 +26,16 @@ nav:
       - Authority tranche observations: authority-tranche-observations.md
       - Decision-resolution observations: decision-resolution-tranche-observations.md
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md
+  - Executable experiments:
+      - Portable execution bindings: executable-consumption.md
+      - Standalone consumer: independent-consumer.md
+      - OPA integration: opa-consumer.md
+  - External research:
+      - Source crosswalk: external-corpus-crosswalk.md
+      - Semantic screening: external-semantic-screening.md
+      - Inspected source records: inspected-external-records.md
+      - Tool-output boundary: tool-output-boundary-research.md
+      - Case maturity and release gates: case-maturity-and-release-gates.md
   - Releases:
       - v0.4.0: release-notes-v0.4.0.md
       - v0.3.0: release-notes-v0.3.0.md
