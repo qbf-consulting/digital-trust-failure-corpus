@@ -29,7 +29,7 @@ class ExternalSourceCrosswalkTests(unittest.TestCase):
                 seen.add(key)
                 self.assertEqual(len(record["case_ids"]), len(set(record["case_ids"])))
                 for case_id in record["case_ids"]:
-                    self.assertRegex(case_id, r"^DTF-\\d{3}$")
+                    self.assertRegex(case_id, r"^DTF-\d{3}$")
                     self.assertEqual(len(list((ROOT / "corpus").rglob(case_id + ".json"))), 1)
 
     def test_informative_mapping_is_in_canonical_case(self):
