@@ -7,6 +7,7 @@ from tools.execute_binding import ROOT
 from tools.run_independent_consumer import run, verify_capture
 
 TARGET = ROOT / "examples/independent-consumer/authority_target.py"
+DEFECTIVE_TARGET = ROOT / "examples/independent-consumer/defective_authority_target.py"
 
 def case_version():
     for p in (ROOT / "corpus").rglob("*.json"):
@@ -26,8 +27,8 @@ class IndependentConsumerTests(unittest.TestCase):
         self.assertEqual(result["result"]["target_disposition"], "DENY")
         self.assertEqual(len(result["evidence"]["response_sha256"]), 64)
 
-    def test_pass_for_nonadverse_fixture_is_not_proof_of_case(self):
-        result = run(TARGET, dict(authority_state="active", action="commit",
+    def test_revoked_authority_wrongly_permitted_is_violation(self):
+        result = run(DEFECTIVE_TARGET, dict(authority_state="revoked", action="commit",
                                   authorized_actions=["commit"]), case_version(), revision())
         self.assertEqual(result["result"]["test_verdict"], "VIOLATED")
 
