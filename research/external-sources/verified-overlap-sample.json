@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "reviewed_at": "2026-10-09",
+  "scope": "Four record-level judgments across two source families, non-exhaustive and not the 37-case matrix",
+  "records": [
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-863",
+      "url": "https://cwe.mitre.org/data/definitions/863.html",
+      "kind": "weakness",
+      "case_id": "DTF-001",
+      "disposition": "existing-informative-reference",
+      "basis": "Incorrect authorization is broader than revoked authority; DTF-001 is a concrete lifecycle-aware authorization proposition, not equivalent to all CWE-863 instances."
+    },
+    {
+      "source": "MITRE CWE",
+      "id": "CWE-862",
+      "url": "https://cwe.mitre.org/data/definitions/862.html",
+      "kind": "weakness",
+      "case_id": "DTF-002",
+      "disposition": "adjacent-no-new-case",
+      "basis": "Missing authorization check is distinct from improperly scoped delegated authority; do not claim direct equivalence."
+    },
+    {
+      "source": "W3C VC Data Model Threat Model v2.1",
+      "id": "T5",
+      "url": "https://www.w3.org/TR/vc-data-model-threat-model/#t5-correlation-via-status-and-revocation-lookup",
+      "kind": "threat",
+      "case_id": "DTF-033",
+      "disposition": "existing-provenance",
+      "basis": "Status/revocation lookups can expose presentation activity; DTF-033 already expresses this as a falsifiable privacy proposition. W3C document is a draft and is provenance, not DTFC authority."
+    },
+    {
+      "source": "W3C VC Data Model Threat Model v2.1",
+      "id": "T5-status-lookup-pattern",
+      "url": "https://www.w3.org/TR/vc-data-model-threat-model/",
+      "kind": "threat-pattern",
+      "case_id": "DTF-037",
+      "disposition": "adjacent-no-new-case",
+      "basis": "Status-query observability does not itself establish retained verification artifact correlation; DTF-037 requires additional retention evidence."
+    }
+  ]
+}
