@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1.0",
+  "reviewed_at": "2026-10-09",
+  "scope": "Eight directly inspected individual primary-source records across three source families; source-level judgment, not independent review or complete source-specific 37-case audit.",
+  "rights": "Only identifiers, hyperlinks and original DTFC paraphrases recorded. Upstream text, test vectors and incident data are not imported; reuse permissions must be separately checked before redistribution.",
+  "records": [
+    {
+      "family": "MITRE CWE",
+      "id": "CWE-862",
+      "url": "https://cwe.mitre.org/data/definitions/862.html",
+      "title": "Missing authorization",
+      "case_id": "DTF-002",
+      "disposition": "adjacent",
+      "basis": "Missing authorization is not the same as a present but overscoped delegation. DTF-002 requires a delegation scope and its authoritative chain.",
+      "source_status": "CWE 4.20 online entry",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "MITRE CWE",
+      "id": "CWE-863",
+      "url": "https://cwe.mitre.org/data/definitions/863.html",
+      "title": "Incorrect authorization",
+      "case_id": "DTF-001",
+      "disposition": "informative-reference",
+      "basis": "General incorrect authorization is broader than the temporal revocation condition and historical-rule exception of DTF-001.",
+      "source_status": "CWE 4.20 online entry",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T4",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t4-signature-based-correlation",
+      "title": "Signature-based correlation",
+      "case_id": "DTF-032",
+      "disposition": "direct-mechanism",
+      "basis": "Repeated proof values, signature material and key identifiers can link presentations despite payload minimization. DTF-032 captures the privacy assurance proposition.",
+      "source_status": "Group Note Draft, work in progress",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T5",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t5-correlation-via-status-and-revocation-lookup",
+      "title": "Status lookup correlation",
+      "case_id": "DTF-033",
+      "disposition": "direct-mechanism",
+      "basis": "Credential-specific status requests can expose presentation events; DTF-033 tests the observable lookup, not just the returned status value.",
+      "source_status": "Group Note Draft, work in progress",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T10",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t10-identifier-based-correlation",
+      "title": "Identifier-based correlation",
+      "case_id": "DTF-036",
+      "disposition": "adjacent",
+      "basis": "A single long-lived identifier may correlate by itself; DTF-036 specifically requires a combined disclosure whose parts are individually non-identifying. No equivalence.",
+      "source_status": "Group Note Draft, work in progress",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "W3C VC Threat Model v2.1",
+      "id": "T18",
+      "url": "https://www.w3.org/TR/2026/DNOTE-vc-data-model-threat-model-2.1-20260927/#t18-issuer-side-correlation-and-privacy-subversion",
+      "title": "Issuer-side correlation",
+      "case_id": "DTF-035",
+      "disposition": "direct-mechanism",
+      "basis": "Issuer-controlled issuance cadence, keys and metadata can defeat privacy despite valid credential/proof checks, the falsification target of DTF-035.",
+      "source_status": "Group Note Draft, work in progress",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "OWASP LLM Top 10 2025",
+      "id": "LLM01:2025",
+      "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "title": "Prompt injection",
+      "case_id": "DTF-028",
+      "disposition": "conditional-overlap",
+      "basis": "Only injection that promotes untrusted instructions to decision authority matches DTF-028; other output manipulation or exfiltration requires different propositions.",
+      "source_status": "OWASP 2025 published risk category",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    },
+    {
+      "family": "OWASP LLM Top 10 2025",
+      "id": "LLM02:2025",
+      "url": "https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/",
+      "title": "Sensitive information disclosure",
+      "case_id": "DTF-034",
+      "disposition": "adjacent",
+      "basis": "Sensitive disclosure is broader than DTF-034's initially authorized presentation followed by purpose-incompatible secondary processing.",
+      "source_status": "OWASP 2025 published risk category",
+      "inspected": "primary source page",
+      "reproduction": "Review linked source and canonical case proposition, trigger, required evidence and falsification; compare exact condition.",
+      "rights": "Identifiers and links only; no upstream bulk content imported."
+    }
+  ]
+}
