@@ -26,6 +26,17 @@ Compared selected external *source-level* material against the current DTFC case
 
 **5. AVID: retain evidence provenance distinctions.** AVID separates concrete reports from recurring vulnerabilities. DTFC should preserve that distinction in research evidence: a report is not automatically a generalizable, falsifiable case.
 
+## Focused agentic-technique overlap check
+
+Reviewed canonical DTF-002, DTF-003, DTF-018 and DTF-028 in addition to DTF-001. For a prompt-injection-like scenario where lower-trust text induces an agent to act:
+
+- **DTF-002** already prohibits delegated action beyond established scope. An injected instruction does not enlarge the authoritative delegation.
+- **DTF-028** already prohibits promoting communication or repeated non-authoritative instructions into competent authority.
+- **DTF-018** already prohibits treating technical ability or reputation as authority to make a material commitment.
+- **DTF-003** addresses downstream delegation when its underlying authority source is revoked, a distinct but adjacent condition.
+
+**Disposition:** do not create a generic `prompt-injection` DTFC case. The attack technique is an input vector; these cases capture the authorization/evidence failure mechanisms. A novel case would need a different falsifiable proposition, for example an independently demonstrated tool-output integrity or instruction/data boundary that cannot be represented by these cases. No such gap is established in this tranche. The ATLAS reference remains a research-level mapping, not a new canonical reference.
+
 ## Adoption boundaries
 
 - Do **not** bulk import external records or copy upstream test fixtures, code, or prose. External rights and attribution must be evaluated per artifact before reuse.
