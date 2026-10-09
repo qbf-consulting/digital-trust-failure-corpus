@@ -6,6 +6,21 @@ from pathlib import Path
 from tools.run_opa_consumer import ROOT, evaluate_opa
 
 class OpaAdapterTests(unittest.TestCase):
+    def test_malformed_result_shapes_rejected(self):
+        malformed = ["null", "{}", '{"result":null}', '{"result":{}}',
+                     '{"result":[null]}', '{"result":[{}]}',
+                     '{"result":[{"expressions":null}]}',
+                     '{"result":[{"expressions":[null]}]}',
+                     '{"result":[{"expressions":[{"value":"false"}]}]}']
+        for payload in malformed:
+            with self.subTest(payload=payload):
+                with tempfile.TemporaryDirectory() as temp:
+                    binary = Path(temp) / "fake-opa"
+                    binary.write_text('#!/usr/bin/env python3\\nimport sys\\nif "version" in sys.argv: print("test-only")\\nelse: print(' + repr(payload) + ')\\n')
+                    binary.chmod(0o755)
+                    with self.assertRaises(ValueError):
+                        evaluate_opa(binary, ROOT / "examples/opa-consumer/safe.rego", {})
+
     def test_missing_binary_is_execution_failure(self):
         with self.assertRaises(OSError):
             evaluate_opa("/nonexistent/opa", ROOT / "examples/opa-consumer/safe.rego", {})
