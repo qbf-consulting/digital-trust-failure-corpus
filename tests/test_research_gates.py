@@ -25,7 +25,7 @@ class ResearchGatesTests(unittest.TestCase):
     def test_maturity_gate_is_not_automatic(self):
         note = (ROOT / "docs/case-maturity-and-release-gates.md").read_text()
         self.assertIn("Current maturity decision: Draft", note)
-        self.assertIn("do not cut a release", note)
+        self.assertIn("do not cut another release", note)
         self.assertIn("no core schema or taxonomy revision", note)
 
 if __name__ == "__main__":
