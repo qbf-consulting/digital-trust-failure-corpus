@@ -27,6 +27,8 @@ nav:
       - Authority tranche observations: authority-tranche-observations.md
       - Decision-resolution observations: decision-resolution-tranche-observations.md
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md
+      - Observability vector reference: observability-vector-reference.md
+      - Observability tranche completion: observability-tranche-completion-record.md
       - Observability-induced harm examination: observability-induced-harm.md
   - Executable experiments:
       - Conformance vectors: conformance-vectors.md
