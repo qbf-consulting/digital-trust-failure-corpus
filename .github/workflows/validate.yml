@@ -44,6 +44,9 @@ jobs:
       - name: Validate research source crosswalk
         run: python -m tools.validate_research_register
 
+      - name: Validate inspected research source records
+        run: python -m tools.validate_inspected_sources
+
       - name: Verify taxonomy coverage report
         run: python -m tools.taxonomy_coverage > /tmp/dtfc-taxonomy-coverage.json
 
