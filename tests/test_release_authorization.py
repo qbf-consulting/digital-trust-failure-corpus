@@ -59,8 +59,11 @@ class ReleaseAuthorizationTests(unittest.TestCase):
         start = workflow.index("python -m tools.verify_release_inputs")
         end = workflow.index("--expected-sha", start)
         command = workflow[start:end]
-        self.assertNotIn("\\\\\\\\", command, "Shell continuation must use one backslash")
-        self.assertEqual(command.count("\\\\\n"), 3)
+        continuations = command.splitlines()[:3]
+        self.assertEqual(len(continuations), 3)
+        for line in continuations:
+            self.assertTrue(line.rstrip().endswith(chr(92)))
+            self.assertFalse(line.rstrip().endswith(chr(92) * 2))
 
     def test_workflow_requires_manual_dispatch_and_environment(self):
         workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/release.yml").read_text()
