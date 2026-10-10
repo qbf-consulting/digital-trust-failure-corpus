@@ -60,6 +60,24 @@ class ConformanceVectorTests(unittest.TestCase):
                     self.assertEqual(len(outcome["target_sha256"]), 64)
                     self.assertEqual(len(outcome["response_sha256"]), 64)
 
+    def test_target_revision_pin_tampering_fails_before_execution(self):
+        vector = copy.deepcopy(self.vector)
+        vector["target_git_blob_sha1"]["safe"] = "0" * 40
+        with patch("tools.run_conformance.subprocess.run") as launched:
+            with self.assertRaisesRegex(ValueError, "pinned Git blob"):
+                execute_vector(vector)
+            launched.assert_not_called()
+
+    def test_target_revision_pin_contract_rejects_missing_and_invalid(self):
+        for update in (None, {"safe": "invalid", "defective": self.vector["target_git_blob_sha1"]["defective"]}):
+            vector = copy.deepcopy(self.vector)
+            if update is None:
+                del vector["target_git_blob_sha1"]
+            else:
+                vector["target_git_blob_sha1"] = update
+            with self.assertRaises(ValueError):
+                execute_vector(vector)
+
     def test_unknown_adapter_and_path_fail_closed(self):
         for change in ({"adapter": "shell-v1"}, {"targets": {"safe": "../../tmp/malicious.py",
                          "defective": self.vector["targets"]["defective"]}}):

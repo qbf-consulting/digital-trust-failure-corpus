@@ -27,12 +27,12 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
     errors = sorted(VECTOR_VALIDATOR.iter_errors(vector), key=lambda e: str(e.path))
     if errors:
         raise ValueError("Invalid conformance vector schema: " + errors[0].message)
-    if vector.get("vector_version") != "0.1.0" or vector.get("adapter") != "python-subprocess-v1":
+    if vector.get("vector_version") != "0.2.0" or vector.get("adapter") != "python-subprocess-v1":
         raise ValueError("Unknown vector version or adapter")
     if vector.get("execution_class") != "executed-synthetic-target":
         raise ValueError("Unverified execution class")
     required = {"vector_version", "case_id", "case_version", "execution_class", "adapter",
-                "request", "expected_safe", "expected_defective", "targets"}
+                "request", "expected_safe", "expected_defective", "targets", "target_git_blob_sha1"}
     if set(vector) != required:
         raise ValueError("Unknown or missing conformance vector fields")
     for role in ("safe", "defective"):
@@ -67,7 +67,11 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
         target = ROOT / relative
         if not target.is_file() or target.is_symlink():
             raise ValueError("Target missing or not a regular file")
-        source_before = hashlib.sha256(target.read_bytes()).hexdigest()
+        source_bytes = target.read_bytes()
+        source_before = hashlib.sha256(source_bytes).hexdigest()
+        git_blob_sha1 = hashlib.sha1(b"blob " + str(len(source_bytes)).encode("ascii") + bytes([0]) + source_bytes).hexdigest()
+        if git_blob_sha1 != vector["target_git_blob_sha1"][role]:
+            raise ValueError("Target source does not match pinned Git blob object ID")
         try:
             process = subprocess.run([sys.executable, str(target)], input=payload,
                                      capture_output=True, timeout=10, check=False)
@@ -94,6 +98,7 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
         outcomes[role] = {
             "target": relative,
             "target_sha256": source_before,
+            "pinned_target_git_blob_sha1": git_blob_sha1,
             "request_sha256": hashlib.sha256(payload).hexdigest(),
             "response_sha256": hashlib.sha256(process.stdout).hexdigest(),
             "raw_response": process.stdout.decode("utf-8"),

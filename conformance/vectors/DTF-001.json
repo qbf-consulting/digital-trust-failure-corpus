@@ -1,14 +1,29 @@
 {
-  "vector_version": "0.1.0",
+  "vector_version": "0.2.0",
   "case_id": "DTF-001",
   "case_version": "0.1.0",
   "execution_class": "executed-synthetic-target",
   "adapter": "python-subprocess-v1",
-  "request": {"authority_state":"revoked","action":"read","authorized_actions":["read"]},
-  "expected_safe": ["DENY","INDETERMINATE"],
-  "expected_defective": ["PASS"],
+  "request": {
+    "authority_state": "revoked",
+    "action": "read",
+    "authorized_actions": [
+      "read"
+    ]
+  },
+  "expected_safe": [
+    "DENY",
+    "INDETERMINATE"
+  ],
+  "expected_defective": [
+    "PASS"
+  ],
   "targets": {
     "safe": "examples/independent-consumer/authority_target.py",
     "defective": "examples/independent-consumer/defective_authority_target.py"
+  },
+  "target_git_blob_sha1": {
+    "safe": "bd35584ee460b5cf6426d2d2bfb059068d61b0fa",
+    "defective": "c1b5568f45bd39cf3c948ab40bfe9e26977f6d9f"
   }
 }
