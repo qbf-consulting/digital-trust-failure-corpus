@@ -18,3 +18,16 @@ Vectors are experimental sidecars; the canonical failure-case schema remains v0.
 `schemas/conformance-vector.schema.json` defines the experimental v0.1.0 vector envelope using JSON Schema Draft 2020-12. The runner validates this contract **before** resolving cases or launching any subprocess. The schema constrains the adapter and target paths to the current synthetic reference implementation; the runner also rejects a pair using the same target twice and validates canonical case version and semantic verdicts. The schema is not a generic arbitrary-executable plugin interface, nor does it establish independent target provenance. The core failure-case schema is unchanged.
 
 The subprocess runner rejects missing/symlink targets, target launch failures, timeouts and any change in target file SHA-256 observed before versus after execution. This is **local file-integrity checking**, not authenticated upstream provenance or a guarantee against all time-of-check/time-of-use races. Independent target revision pinning remains outstanding.
+
+## Worked paired evidence: DTF-023 and DTF-027
+
+These examples are reproducible using `python -m tools.run_conformance` from a checked-out repository with development dependencies installed. Inspect `results[]` by `case_id` and `outcomes.safe` / `outcomes.defective` in the generated JSON. Every example invokes two **local Python processes**, not a supplied fixture verdict.
+
+| Case | Identical adverse input | Safe observed disposition | Defective observed disposition | Harness verdicts |
+|---|---|---|---|---|
+| DTF-023 | Both components PASS, seam obligation unevaluated | INDETERMINATE | PASS | SATISFIED / VIOLATED |
+| DTF-027 | Workflow success, substantive evidence missing | INDETERMINATE | PASS | SATISFIED / VIOLATED |
+
+For DTF-023, the safe target declines to infer composition assurance from two component-level successes. For DTF-027, the safe target declines to infer substantive assurance from successful workflow completion. The defective targets deliberately conflate the corresponding propositions. These are **test verdicts about the case invariant**, not certification or a claim that the broader system is assured.
+
+The JSON result includes `request_sha256`, `response_sha256`, `target_sha256`, `raw_response`, `replay_command`, and the canonical `case_sha256`. To replay a target manually, pipe the vector's `request` JSON into its corresponding Python script and compare the raw JSON disposition. The hashes are calculated locally; they do not authenticate an external developer, immutable upstream revision, or independent operator. Source-control revision and run timestamp must be captured separately by any evidence collector asserting historical provenance. An unavailable, malformed, timed-out, or semantically inconsistent target raises an error and is **not counted as SATISFIED**. A valid INDETERMINATE disposition is allowed only where the canonical case permits it.

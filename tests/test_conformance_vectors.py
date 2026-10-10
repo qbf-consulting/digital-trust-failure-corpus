@@ -42,6 +42,24 @@ class ConformanceVectorTests(unittest.TestCase):
         self.assertEqual(outcomes["defective"]["test_verdict"], "VIOLATED")
         self.assertEqual(outcomes["safe"]["request_sha256"], outcomes["defective"]["request_sha256"])
 
+    def test_worked_evidence_is_observed_and_hashed_for_seam_cases(self):
+        report = run()
+        by_id = {result["case_id"]: result for result in report["results"]}
+        for case_id in ("DTF-023", "DTF-027"):
+            with self.subTest(case_id=case_id):
+                result = by_id[case_id]
+                safe = result["outcomes"]["safe"]
+                defective = result["outcomes"]["defective"]
+                self.assertEqual(safe["disposition"], "INDETERMINATE")
+                self.assertEqual(defective["disposition"], "PASS")
+                self.assertEqual(safe["test_verdict"], "SATISFIED")
+                self.assertEqual(defective["test_verdict"], "VIOLATED")
+                self.assertEqual(safe["request_sha256"], defective["request_sha256"])
+                for outcome in (safe, defective):
+                    self.assertEqual(json.loads(outcome["raw_response"])["disposition"], outcome["disposition"])
+                    self.assertEqual(len(outcome["target_sha256"]), 64)
+                    self.assertEqual(len(outcome["response_sha256"]), 64)
+
     def test_unknown_adapter_and_path_fail_closed(self):
         for change in ({"adapter": "shell-v1"}, {"targets": {"safe": "../../tmp/malicious.py",
                          "defective": self.vector["targets"]["defective"]}}):
