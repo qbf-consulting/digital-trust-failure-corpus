@@ -8,8 +8,10 @@ CORPUS = ROOT / "corpus"
 
 
 class ReleaseBaselineTests(unittest.TestCase):
-    def test_repository_version_is_v0_4_0(self):
-        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.4.0")
+    def test_repository_version_has_corresponding_release_notes(self):
+        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        self.assertRegex(version, r"^[0-9]+\.[0-9]+\.[0-9]+$")
+        self.assertTrue((ROOT / "docs" / f"release-notes-v{version}.md").is_file())
 
     def test_schema_contract_remains_v0_1_0_when_unchanged(self):
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
