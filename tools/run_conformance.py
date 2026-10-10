@@ -69,7 +69,7 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
             raise ValueError("Target missing or not a regular file")
         source_bytes = target.read_bytes()
         source_before = hashlib.sha256(source_bytes).hexdigest()
-        git_blob_sha1 = hashlib.sha1(b"blob " + str(len(source_bytes)).encode("ascii") + b"\\0" + source_bytes).hexdigest()
+        git_blob_sha1 = hashlib.sha1(b"blob " + str(len(source_bytes)).encode("ascii") + bytes([0]) + source_bytes).hexdigest()
         if git_blob_sha1 != vector["target_git_blob_sha1"][role]:
             raise ValueError("Target source does not match pinned Git blob object ID")
         try:
