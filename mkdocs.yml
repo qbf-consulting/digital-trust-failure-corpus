@@ -48,6 +48,7 @@ nav:
       - v0.2.0: release-notes-v0.2.0.md
       - v0.1.0: release-notes-v0.1.0.md
       - Release process: releasing.md
+      - Non-publishing safety preflight: release-safety-preflight.md
 
 markdown_extensions:
   - tables

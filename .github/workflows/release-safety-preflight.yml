@@ -1,0 +1,45 @@
+name: release safety preflight (no publication)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  negative-probes:
+    name: non-publishing release probes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Exercise negative authorization and release input cases
+        run: |
+          python -m unittest tests.test_release_authorization tests.test_release_inputs -v
+      - name: Verify existing release is rejected without publication
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.verify_release_inputs import verify_release_inputs
+          version = Path("VERSION")
+          notes = Path("docs") / ("release-notes-v" + version.read_text().strip() + ".md")
+          tag = "v" + version.read_text().strip()
+          try:
+              verify_release_inputs(version, notes, {tag}, "a" * 40, "a" * 40)
+          except ValueError as exc:
+              if "already exists" not in str(exc):
+                  raise
+          else:
+              raise AssertionError("Duplicate release tag was not rejected")
+          print("PASS: duplicate-tag preflight rejected, no publication attempted")
+          PY
+      - name: Record provenance and non-publication boundary
+        run: |
+          echo "### Non-publishing release preflight" >> "$GITHUB_STEP_SUMMARY"
+          echo "Commit: ${GITHUB_SHA}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Actor: ${GITHUB_ACTOR}" >> "$GITHUB_STEP_SUMMARY"
+          echo "No release publication, tag creation, environment approval, or protected workflow dispatch occurs." >> "$GITHUB_STEP_SUMMARY"
