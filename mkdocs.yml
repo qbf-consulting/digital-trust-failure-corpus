@@ -36,6 +36,8 @@ nav:
       - Inspected source records: inspected-external-records.md
       - Tool-output boundary: tool-output-boundary-research.md
       - Case maturity and release gates: case-maturity-and-release-gates.md
+  - Project execution:
+      - Evidence-gated tranche: evidence-gated-execution-tranche.md
   - Releases:
       - v0.4.0: release-notes-v0.4.0.md
       - v0.3.0: release-notes-v0.3.0.md
