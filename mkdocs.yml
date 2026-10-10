@@ -27,6 +27,7 @@ nav:
       - Authority tranche observations: authority-tranche-observations.md
       - Decision-resolution observations: decision-resolution-tranche-observations.md
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md
+      - Observability-induced harm examination: observability-induced-harm.md
   - Executable experiments:
       - Conformance vectors: conformance-vectors.md
       - Independent target admission: independent-target-admission.md
