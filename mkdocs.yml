@@ -19,6 +19,7 @@ nav:
       - Catalogue: corpus/index.md
   - Guides:
       - Taxonomy: taxonomy.md
+      - Descriptive taxonomy coverage: taxonomy-coverage.md
       - Consuming the corpus: consuming-the-corpus.md
       - Authoring cases: authoring-cases.md
       - Validation: validation.md
