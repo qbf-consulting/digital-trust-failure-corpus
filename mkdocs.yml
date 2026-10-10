@@ -29,6 +29,7 @@ nav:
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md
   - Executable experiments:
       - Conformance vectors: conformance-vectors.md
+      - Independent target admission: independent-target-admission.md
       - Executed synthetic target pair: executed-target-pair.md
       - Portable execution bindings: executable-consumption.md
       - Standalone consumer: independent-consumer.md
