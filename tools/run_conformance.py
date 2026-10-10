@@ -27,8 +27,8 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
     for role in ("safe", "defective"):
         dispositions = vector["expected_" + role]
         if (not isinstance(dispositions, list) or not dispositions
-                or len(dispositions) != len(set(dispositions))
-                or any(value not in ("PASS", "DENY", "INDETERMINATE") for value in dispositions)):
+                or any(not isinstance(value, str) or value not in ("PASS", "DENY", "INDETERMINATE") for value in dispositions)
+                or len(dispositions) != len(set(dispositions))):
             raise ValueError("Invalid expected disposition set")
     targets = vector["targets"]
     if not isinstance(targets, dict) or set(targets) != {"safe", "defective"}:
