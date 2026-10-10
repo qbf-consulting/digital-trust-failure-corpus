@@ -24,6 +24,14 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-dev.txt
 
+      - name: Enforce canonical case-version bumps
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "${BASE_SHA}"
+          python -m tools.check_case_versions --base "${BASE_SHA}"
+
       - name: Install validation dependency
         run: python -m pip install -r requirements-dev.txt
 
