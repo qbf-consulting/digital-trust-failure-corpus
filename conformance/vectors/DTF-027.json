@@ -1,0 +1,22 @@
+{
+  "vector_version": "0.1.0",
+  "case_id": "DTF-027",
+  "case_version": "0.1.0",
+  "execution_class": "executed-synthetic-target",
+  "adapter": "python-subprocess-v1",
+  "request": {
+    "workflow_status": "success",
+    "substantive_evidence": "missing"
+  },
+  "expected_safe": [
+    "DENY",
+    "INDETERMINATE"
+  ],
+  "expected_defective": [
+    "PASS"
+  ],
+  "targets": {
+    "safe": "examples/independent-consumer/workflow_assurance_target.py",
+    "defective": "examples/independent-consumer/defective_workflow_assurance_target.py"
+  }
+}

@@ -17,6 +17,10 @@ VECTOR_VALIDATOR = Draft202012Validator(VECTOR_SCHEMA)
 ALLOWED_TARGETS = frozenset({
     "examples/independent-consumer/authority_target.py",
     "examples/independent-consumer/defective_authority_target.py",
+    "examples/independent-consumer/composition_target.py",
+    "examples/independent-consumer/defective_composition_target.py",
+    "examples/independent-consumer/workflow_assurance_target.py",
+    "examples/independent-consumer/defective_workflow_assurance_target.py",
 })
 
 def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
