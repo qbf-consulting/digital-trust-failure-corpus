@@ -27,6 +27,7 @@ nav:
       - Decision-resolution observations: decision-resolution-tranche-observations.md
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md
   - Executable experiments:
+      - Executed synthetic target pair: executed-target-pair.md
       - Portable execution bindings: executable-consumption.md
       - Standalone consumer: independent-consumer.md
       - OPA integration: opa-consumer.md
