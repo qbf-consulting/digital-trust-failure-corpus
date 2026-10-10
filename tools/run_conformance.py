@@ -61,8 +61,17 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
         if relative not in ALLOWED_TARGETS:
             raise ValueError("Unknown or unsafe target path")
         target = ROOT / relative
-        process = subprocess.run([sys.executable, str(target)], input=payload,
-                                 capture_output=True, timeout=10, check=False)
+        if not target.is_file() or target.is_symlink():
+            raise ValueError("Target missing or not a regular file")
+        source_before = hashlib.sha256(target.read_bytes()).hexdigest()
+        try:
+            process = subprocess.run([sys.executable, str(target)], input=payload,
+                                     capture_output=True, timeout=10, check=False)
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            raise ValueError("Target unavailable or timed out") from exc
+        source_after = hashlib.sha256(target.read_bytes()).hexdigest()
+        if source_before != source_after:
+            raise ValueError("Target changed during execution")
         if process.returncode != 0:
             raise ValueError("Target exited unsuccessfully")
         try:
@@ -80,7 +89,7 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
             raise ValueError("Paired safe/defective invariant failed")
         outcomes[role] = {
             "target": relative,
-            "target_sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
+            "target_sha256": source_before,
             "request_sha256": hashlib.sha256(payload).hexdigest(),
             "response_sha256": hashlib.sha256(process.stdout).hexdigest(),
             "raw_response": process.stdout.decode("utf-8"),
