@@ -17,7 +17,7 @@ A repository administrator must have configured GitHub environment `release-publ
 3. Wait for protected-environment approval. The job checks event, branch, actor, configuration attestation, version/rationale, tests, corpus, release notes and existing tags.
 4. On success, the workflow publishes `v<version>` against its exact `GITHUB_SHA`, marks the release Latest, and verifies the result.
 
-The workflow will not overwrite an existing tag or release. There is no push-triggered publication path. The workflow re-executes its own validation on the checked-out SHA; externally attested SHA-specific validation remains tracked in #62.
+The protected workflow now also runs `python -m tools.verify_release_inputs` against its exact checkout SHA, the nonempty version-specific notes and remote tags before resolving release metadata. This is an internal preflight, not external CI attestation or proof of configured human reviewers. The workflow will not overwrite an existing tag or release. There is no push-triggered publication path. The workflow re-executes its own validation on the checked-out SHA; externally attested SHA-specific validation remains tracked in #62.
 
 ## Version and naming
 
