@@ -53,13 +53,21 @@
         "safe": {
           "enum": [
             "examples/independent-consumer/authority_target.py",
-            "examples/independent-consumer/defective_authority_target.py"
+            "examples/independent-consumer/defective_authority_target.py",
+            "examples/independent-consumer/composition_target.py",
+            "examples/independent-consumer/defective_composition_target.py",
+            "examples/independent-consumer/workflow_assurance_target.py",
+            "examples/independent-consumer/defective_workflow_assurance_target.py"
           ]
         },
         "defective": {
           "enum": [
             "examples/independent-consumer/authority_target.py",
-            "examples/independent-consumer/defective_authority_target.py"
+            "examples/independent-consumer/defective_authority_target.py",
+            "examples/independent-consumer/composition_target.py",
+            "examples/independent-consumer/defective_composition_target.py",
+            "examples/independent-consumer/workflow_assurance_target.py",
+            "examples/independent-consumer/defective_workflow_assurance_target.py"
           ]
         }
       }
