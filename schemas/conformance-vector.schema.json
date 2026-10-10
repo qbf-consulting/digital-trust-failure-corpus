@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "DTFC experimental paired conformance vector v0.1.0",
+  "title": "DTFC experimental paired conformance vector v0.2.0",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -12,11 +12,12 @@
     "request",
     "expected_safe",
     "expected_defective",
-    "targets"
+    "targets",
+    "target_git_blob_sha1"
   ],
   "properties": {
     "vector_version": {
-      "const": "0.1.0"
+      "const": "0.2.0"
     },
     "case_id": {
       "type": "string",
@@ -69,6 +70,24 @@
             "examples/independent-consumer/workflow_assurance_target.py",
             "examples/independent-consumer/defective_workflow_assurance_target.py"
           ]
+        }
+      }
+    },
+    "target_git_blob_sha1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "safe",
+        "defective"
+      ],
+      "properties": {
+        "safe": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "defective": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
         }
       }
     }
