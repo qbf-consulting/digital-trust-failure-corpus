@@ -24,6 +24,22 @@ class ResearchRegisterTests(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertTrue(validate_register(data, CASES))
 
+    def test_malformed_url_is_rejected_without_crashing(self):
+        for url in (
+            "https://[broken",
+            "https://example.org:99999/path",
+            "https://example.org:bad/path",
+            "https://example.org/%GG",
+            "https://example.org/path\\nInjected: header",
+            "https:///no-host",
+            "https://example.org:0/path",
+        ):
+            data = copy.deepcopy(GOOD)
+            data["records"][0]["url"] = url
+            with self.subTest(url=url):
+                errors = validate_register(data, CASES)
+                self.assertTrue(any("invalid HTTPS URL" in e for e in errors), errors)
+
     def test_duplicate_source_rejected(self):
         data = copy.deepcopy(GOOD)
         data["records"].append(copy.deepcopy(data["records"][0]))
