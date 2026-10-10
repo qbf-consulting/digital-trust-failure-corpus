@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hypothetical tool-output boundary research scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "status",
+    "sources",
+    "existing_case_ids",
+    "user_task",
+    "tool_response",
+    "authorization_assumption",
+    "expected",
+    "evidence_needed",
+    "disposition",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "hypothetical-not-executed"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^https://"
+      }
+    },
+    "existing_case_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^DTF-[0-9]{3,}$"
+      }
+    },
+    "user_task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_response": {
+      "type": "object",
+      "required": [
+        "origin",
+        "content"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "origin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "authorization_assumption": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected": {
+      "type": "object",
+      "required": [
+        "safe",
+        "unsafe"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "safe": {
+          "$ref": "#/$defs/outcome"
+        },
+        "unsafe": {
+          "$ref": "#/$defs/outcome"
+        }
+      }
+    },
+    "evidence_needed": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "disposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "consequential_tool_called"
+      ],
+      "properties": {
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequential_tool_called": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
