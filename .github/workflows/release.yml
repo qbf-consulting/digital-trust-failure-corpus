@@ -14,8 +14,8 @@ jobs:
   publish:
     name: publish-release
     runs-on: ubuntu-latest
-    # GitHub environment must be configured with required human reviewers and
-    # deployment-branch restriction to main before this job can publish.
+    # Single-maintainer authorization: GitHub environment must restrict to main.
+    # No independent reviewer approval is claimed or required in this model.
     environment: release-publication
     permissions:
       contents: write
@@ -42,7 +42,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           REF_NAME: ${{ github.ref }}
           ACTOR: ${{ github.actor }}
-          RELEASE_APPROVAL_CONFIGURED: ${{ vars.RELEASE_APPROVAL_CONFIGURED }}
+          RELEASE_AUTHORIZATION_MODE: ${{ vars.RELEASE_AUTHORIZATION_MODE }}
         run: |
           python tools/check_release_request.py \
             --request release/publish-request.json \
