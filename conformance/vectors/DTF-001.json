@@ -1,0 +1,14 @@
+{
+  "vector_version": "0.1.0",
+  "case_id": "DTF-001",
+  "case_version": "0.1.0",
+  "execution_class": "executed-synthetic-target",
+  "adapter": "python-subprocess-v1",
+  "request": {"authority_state":"revoked","action":"read","authorized_actions":["read"]},
+  "expected_safe": ["DENY","INDETERMINATE"],
+  "expected_defective": ["PASS"],
+  "targets": {
+    "safe": "examples/independent-consumer/authority_target.py",
+    "defective": "examples/independent-consumer/defective_authority_target.py"
+  }
+}
