@@ -1,5 +1,5 @@
 {
-  "vector_version": "0.1.0",
+  "vector_version": "0.2.0",
   "case_id": "DTF-023",
   "case_version": "0.1.0",
   "execution_class": "executed-synthetic-target",
@@ -21,5 +21,9 @@
   "targets": {
     "safe": "examples/independent-consumer/composition_target.py",
     "defective": "examples/independent-consumer/defective_composition_target.py"
+  },
+  "target_git_blob_sha1": {
+    "safe": "ba337fc3eed36d23b6fe84b3579d5b50d1df60a1",
+    "defective": "63adfca301acb79d2418fe850dd3a94893e457f5"
   }
 }
