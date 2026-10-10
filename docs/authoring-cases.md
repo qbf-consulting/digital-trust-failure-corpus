@@ -18,7 +18,7 @@ Each case must contain the fields required by `schemas/failure-case.schema.json`
 
 ### `id`, `title`, `version`, `status`
 
-Use a stable `DTF-NNN` identifier and a lowercase hyphenated canonical title. Case versions use semantic-version syntax. New cases normally begin as `draft`.
+Use a stable `DTF-NNN` identifier and a lowercase hyphenated canonical title. Case versions use semantic-version syntax. New cases normally begin as `draft`. On an existing canonical case, a changed normalized JSON value (including changes to propositions, evidence, references or status) requires a monotonically increased case version; key order and whitespace alone do not. The PR validation workflow compares changed cases with the base revision. This is a conservative content-change gate, not an automatic determination of semantic significance or independent review.
 
 ### `domains`
 
