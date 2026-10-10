@@ -16,3 +16,5 @@ Vectors are experimental sidecars; the canonical failure-case schema remains v0.
 ## Machine-readable vector contract
 
 `schemas/conformance-vector.schema.json` defines the experimental v0.1.0 vector envelope using JSON Schema Draft 2020-12. The runner validates this contract **before** resolving cases or launching any subprocess. The schema constrains the adapter and target paths to the current synthetic reference implementation; the runner also rejects a pair using the same target twice and validates canonical case version and semantic verdicts. The schema is not a generic arbitrary-executable plugin interface, nor does it establish independent target provenance. The core failure-case schema is unchanged.
+
+The subprocess runner rejects missing/symlink targets, target launch failures, timeouts and any change in target file SHA-256 observed before versus after execution. This is **local file-integrity checking**, not authenticated upstream provenance or a guarantee against all time-of-check/time-of-use races. Independent target revision pinning remains outstanding.

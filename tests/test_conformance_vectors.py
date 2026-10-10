@@ -3,6 +3,8 @@ import copy
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
+import subprocess
 from pathlib import Path
 from tools.run_conformance import ROOT, execute_vector, run
 
@@ -17,6 +19,13 @@ class ConformanceVectorTests(unittest.TestCase):
             vector.update(change)
             with self.subTest(change=change), self.assertRaises(ValueError):
                 execute_vector(vector)
+
+    def test_unavailable_and_timed_out_target_fail_closed(self):
+        for failure in (OSError("unavailable"), subprocess.TimeoutExpired("python", 10)):
+            with self.subTest(failure=type(failure).__name__):
+                with patch("tools.run_conformance.subprocess.run", side_effect=failure):
+                    with self.assertRaisesRegex(ValueError, "unavailable or timed out"):
+                        execute_vector(self.vector)
 
     def test_pair_executes_and_reports_real_denominator(self):
         report = run()
