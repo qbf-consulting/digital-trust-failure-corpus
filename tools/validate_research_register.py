@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from urllib.parse import urlsplit
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -31,8 +32,23 @@ def validate_register(data: dict, case_ids: set[str]) -> list[str]:
         if not isinstance(url, str):
             errors.append(f"Record {i}: missing URL")
         else:
-            parsed = urlsplit(url)
-            if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password or any(c.isspace() for c in url):
+            # Structural check only; URL reachability and authorship are not asserted.
+            try:
+                parsed = urlsplit(url)
+                host = parsed.hostname
+                port = parsed.port
+                valid = (
+                    parsed.scheme == "https"
+                    and bool(host)
+                    and not parsed.username
+                    and not parsed.password
+                    and not any(ord(c) < 33 or ord(c) == 127 for c in url)
+                    and not re.search(r"%(?![0-9a-fA-F]{2})", url)
+                    and (port is None or 1 <= port <= 65535)
+                )
+            except (ValueError, TypeError):
+                valid = False
+            if not valid:
                 errors.append(f"Record {i}: invalid HTTPS URL")
         ids = item.get("case_ids")
         if not isinstance(ids, list) or any(not isinstance(v, str) or v not in case_ids for v in ids):
