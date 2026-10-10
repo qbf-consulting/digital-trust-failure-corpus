@@ -41,6 +41,12 @@ jobs:
       - name: Validate corpus
         run: python tools/validate.py
 
+      - name: Validate research source crosswalk
+        run: python -m tools.validate_research_register
+
+      - name: Verify taxonomy coverage report
+        run: python -m tools.taxonomy_coverage > /tmp/dtfc-taxonomy-coverage.json
+
       - name: Install pinned OPA release
         run: |
           curl --fail --location --retry 3 --silent --show-error \
