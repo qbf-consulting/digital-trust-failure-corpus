@@ -54,6 +54,14 @@ class ReleaseAuthorizationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             check_request(**{**self.good, "actor": "untrusted-contributor"})
 
+    def test_release_input_preflight_shell_continuations(self):
+        workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/release.yml").read_text()
+        start = workflow.index("python -m tools.verify_release_inputs")
+        end = workflow.index("--expected-sha", start)
+        command = workflow[start:end]
+        self.assertNotIn("\\\\\\\\", command, "Shell continuation must use one backslash")
+        self.assertEqual(command.count("\\\\\n"), 3)
+
     def test_workflow_requires_manual_dispatch_and_environment(self):
         workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/release.yml").read_text()
         self.assertIn("workflow_dispatch:", workflow)
