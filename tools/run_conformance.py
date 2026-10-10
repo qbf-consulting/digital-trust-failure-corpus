@@ -8,14 +8,21 @@ import subprocess
 import sys
 from pathlib import Path
 from tools.case_digest import case_sha256, load_unique_case
+from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
+VECTOR_SCHEMA = json.loads((ROOT / "schemas/conformance-vector.schema.json").read_text(encoding="utf-8"))
+Draft202012Validator.check_schema(VECTOR_SCHEMA)
+VECTOR_VALIDATOR = Draft202012Validator(VECTOR_SCHEMA)
 ALLOWED_TARGETS = frozenset({
     "examples/independent-consumer/authority_target.py",
     "examples/independent-consumer/defective_authority_target.py",
 })
 
 def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
+    errors = sorted(VECTOR_VALIDATOR.iter_errors(vector), key=lambda e: str(e.path))
+    if errors:
+        raise ValueError("Invalid conformance vector schema: " + errors[0].message)
     if vector.get("vector_version") != "0.1.0" or vector.get("adapter") != "python-subprocess-v1":
         raise ValueError("Unknown vector version or adapter")
     if vector.get("execution_class") != "executed-synthetic-target":

@@ -10,6 +10,14 @@ class ConformanceVectorTests(unittest.TestCase):
     def setUp(self):
         self.vector = json.loads((ROOT / "conformance/vectors/DTF-001.json").read_text())
 
+    def test_vector_schema_rejects_wrong_types_before_execution(self):
+        for change in ({"case_id": 1}, {"request": []}, {"targets": []},
+                       {"vector_version": "9.0.0"}, {"expected_safe": "DENY"}):
+            vector = copy.deepcopy(self.vector)
+            vector.update(change)
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                execute_vector(vector)
+
     def test_pair_executes_and_reports_real_denominator(self):
         report = run()
         self.assertEqual(report["total_canonical_cases"], 37)
