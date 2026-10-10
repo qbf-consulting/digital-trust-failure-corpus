@@ -63,9 +63,9 @@ jobs:
         env:
           EXPECTED_SHA: ${{ github.sha }}
         run: |
-          python -m tools.verify_release_inputs \\
-            --version-file VERSION \\
-            --notes-dir docs \\
+          python -m tools.verify_release_inputs \
+            --version-file VERSION \
+            --notes-dir docs \
             --expected-sha "${EXPECTED_SHA}"
 
       - name: Resolve release inputs
