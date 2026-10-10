@@ -20,15 +20,15 @@ class ReleaseAuthorizationTests(unittest.TestCase):
         self.good = dict(request=self.request, version_file=self.version,
                          event="workflow_dispatch", ref="refs/heads/main",
                          actor="sankarshanmukhopadhyay",
-                         approval_configured="true")
+                         authorization_mode="single-maintainer")
 
-    def test_approved_manual_request_passes_preflight_only(self):
+    def test_authorized_single_maintainer_manual_request_passes_preflight_only(self):
         check_request(**self.good)
 
-    def test_unapproved_environment_fails_closed(self):
-        for flag in ("", "false", "TRUE"):
+    def test_unconfigured_or_mismatched_mode_fails_closed(self):
+        for flag in ("", "false", "true", "reviewer-gated", "SINGLE-MAINTAINER"):
             with self.subTest(flag=flag), self.assertRaises(ValueError):
-                check_request(**{**self.good, "approval_configured": flag})
+                check_request(**{**self.good, "authorization_mode": flag})
 
     def test_push_and_wrong_branch_fail(self):
         for delta in ({"event": "push"}, {"ref": "refs/heads/feature"}):
@@ -59,7 +59,7 @@ class ReleaseAuthorizationTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:", workflow)
         self.assertNotIn("\n  push:", workflow)
         self.assertIn("environment: release-publication", workflow)
-        self.assertIn("RELEASE_APPROVAL_CONFIGURED: ${{ vars.RELEASE_APPROVAL_CONFIGURED }}", workflow)
+        self.assertIn("RELEASE_AUTHORIZATION_MODE: ${{ vars.RELEASE_AUTHORIZATION_MODE }}", workflow)
 
 if __name__ == "__main__":
     unittest.main()
