@@ -59,6 +59,15 @@ jobs:
           python -m unittest discover -s tests -v
           python tools/validate.py
 
+      - name: Verify live release inputs against exact checkout
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          python -m tools.verify_release_inputs \\
+            --version-file VERSION \\
+            --notes-dir docs \\
+            --expected-sha "${EXPECTED_SHA}"
+
       - name: Resolve release inputs
         id: release
         env:
