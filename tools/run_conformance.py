@@ -20,6 +20,23 @@ def execute_vector(vector: dict, corpus_root: Path = ROOT / "corpus") -> dict:
         raise ValueError("Unknown vector version or adapter")
     if vector.get("execution_class") != "executed-synthetic-target":
         raise ValueError("Unverified execution class")
+    required = {"vector_version", "case_id", "case_version", "execution_class", "adapter",
+                "request", "expected_safe", "expected_defective", "targets"}
+    if set(vector) != required:
+        raise ValueError("Unknown or missing conformance vector fields")
+    for role in ("safe", "defective"):
+        dispositions = vector["expected_" + role]
+        if (not isinstance(dispositions, list) or not dispositions
+                or any(not isinstance(value, str) or value not in ("PASS", "DENY", "INDETERMINATE") for value in dispositions)
+                or len(dispositions) != len(set(dispositions))):
+            raise ValueError("Invalid expected disposition set")
+    targets = vector["targets"]
+    if not isinstance(targets, dict) or set(targets) != {"safe", "defective"}:
+        raise ValueError("Exactly two target roles required")
+    if targets["safe"] == targets["defective"]:
+        raise ValueError("Paired target paths must be distinct")
+    if any(not isinstance(path, str) or path not in ALLOWED_TARGETS for path in targets.values()):
+        raise ValueError("Unknown or unsafe target path")
     case_id = vector["case_id"]
     case = load_unique_case(corpus_root, case_id)
     if vector.get("case_version") != case["version"]:

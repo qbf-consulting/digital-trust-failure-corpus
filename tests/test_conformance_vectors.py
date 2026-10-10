@@ -36,6 +36,23 @@ class ConformanceVectorTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 execute_vector(v)
 
+    def test_malformed_vector_contract_fails_closed(self):
+        malformed = [
+            {"extra": "unrecognized"},
+            {"expected_safe": []},
+            {"expected_safe": ["DENY", "DENY"]},
+            {"expected_safe": ["ALLOW"]},
+            {"expected_safe": [{"unexpected": "object"}]},
+            {"targets": {"safe": self.vector["targets"]["safe"],
+                         "defective": self.vector["targets"]["safe"]}},
+            {"targets": {"safe": self.vector["targets"]["safe"]}},
+        ]
+        for change in malformed:
+            vector = copy.deepcopy(self.vector)
+            vector.update(change)
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                execute_vector(vector)
+
     def test_empty_vector_directory_has_zero_coverage(self):
         with tempfile.TemporaryDirectory() as d:
             report = run(Path(d))
