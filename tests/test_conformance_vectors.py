@@ -30,9 +30,13 @@ class ConformanceVectorTests(unittest.TestCase):
     def test_pair_executes_and_reports_real_denominator(self):
         report = run()
         self.assertEqual(report["total_canonical_cases"], 37)
-        self.assertEqual(report["paired_executed_cases"], 1)
+        self.assertEqual(report["paired_executed_cases"], 3)
         self.assertEqual(report["independent_target_cases"], 0)
         self.assertEqual(report["independent_consumer_cases"], 0)
+        self.assertEqual(set(report["paired_executed_case_ids"]), {"DTF-001", "DTF-023", "DTF-027"})
+        for result in report["results"]:
+            self.assertEqual(result["outcomes"]["safe"]["test_verdict"], "SATISFIED")
+            self.assertEqual(result["outcomes"]["defective"]["test_verdict"], "VIOLATED")
         outcomes = report["results"][0]["outcomes"]
         self.assertEqual(outcomes["safe"]["test_verdict"], "SATISFIED")
         self.assertEqual(outcomes["defective"]["test_verdict"], "VIOLATED")
