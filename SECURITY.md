@@ -10,7 +10,7 @@ A disagreement with a corpus proposition, taxonomy term, evidence requirement, o
 
 Do not disclose an unpatched vulnerability, secret, credential, personal data, confidential incident record, or other sensitive material in a public issue or corpus entry.
 
-Use GitHub's private vulnerability reporting facility for this repository when available. If private reporting is not available, contact QBF Consulting through a private organizational contact channel rather than publishing exploit details.
+Use GitHub's private vulnerability reporting facility for this repository when available. If private reporting is unavailable, contact **ask@qbfconsulting.digital** privately with a minimal initial report. Do not include exploit code, secrets, personal data or sensitive artifacts in the first message; coordinate a secure transfer channel before sending them. The public contact mailbox is a routing point, not a guaranteed encrypted reporting channel.
 
 Include enough information to reproduce and assess the problem without including unnecessary sensitive data.
 
