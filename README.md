@@ -46,7 +46,7 @@ tools/validate.py            Repository and adopter validation CLI
 licensing/                   Machine-readable artifact licensing policy
 ```
 
-## Initial corpus
+## Corpus coverage (37 draft cases)
 
 | Range | Focus | Representative failures |
 |---|---|---|
@@ -77,7 +77,7 @@ An additive, fixture-only consumption experiment is documented in [Executable co
 
 A separate-process [authority consumer experiment](docs/independent-consumer.md) invokes a standalone target and records response/source digests. It is a reproducible local integration demonstration, **not** proof of independent third-party adoption.
 
-## External source research and mappings
+The [executed DTF-001 synthetic target pair](docs/executed-target-pair.md) invokes two local subprocess targets with the **same revoked-authority request** and hashes the target sources, request and responses. This establishes 1/37 executed **synthetic** paired cases, not independent target or consumer adoption. The separate portable v0.2 fixture experiment covers 3/37 fixture-only paired cases; these figures are not additive. Reproduce the executed pair with `python -m tools.execute_target_pair --role paired`. See the [evidence-gated execution plan](docs/evidence-gated-execution-tranche.md) for remaining acceptance gates.\n\n## External source research and mappings
 
 A [bounded external corpus crosswalk](docs/external-corpus-crosswalk.md) and its [machine-readable research register](research/external-sources/crosswalk.json) examine CWE, MITRE ATLAS, the W3C VC 2.0 test suite, and AVID. These non-normative research sidecars distinguish cross-references, test patterns, and unconfirmed coverage gaps. The DTF-001 case carries an informative CWE-863 mapping. No external records were imported, and the canonical schema and 37-case baseline are unchanged.
 
@@ -86,7 +86,7 @@ A [tool-output instruction/data boundary review](docs/tool-output-boundary-resea
 
 The [experimental case maturity and release gates](docs/case-maturity-and-release-gates.md) distinguish draft cases from independently reviewed, evidenced, and externally exercised cases. A [bounded eight-record CWE triage](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/record-triage.json) is available as preliminary research, **not** a complete external-corpus overlap audit.
 
-A [three-source, 37-case semantic screening](docs/external-semantic-screening.md) provides 111 documented source-to-case judgments with explicit evidence limits. It is research, not an executed conformance or independent adoption test.
+A [three-source, 37-case semantic screening](docs/external-semantic-screening.md) includes an initial 111 judgments and was expanded to 296 judgments across eight inspected source records and 37 cases, with explicit evidence limits. It is research, not an executed conformance or independent adoption test.
 
 The [eight directly inspected external records](docs/inspected-external-records.md) include case-specific W3C T4/DTF-032 and T18/DTF-035 provenance bindings; these are informative research mappings, not evidence of third-party adoption.
 
