@@ -40,6 +40,7 @@ nav:
       - Inspected source records: inspected-external-records.md
       - Tool-output boundary: tool-output-boundary-research.md
       - Case maturity and release gates: case-maturity-and-release-gates.md
+      - Case quality review checklist: case-quality-review-checklist.md
   - Project execution:
       - Evidence-gated tranche: evidence-gated-execution-tranche.md
   - Releases:
