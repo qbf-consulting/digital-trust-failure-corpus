@@ -1,5 +1,5 @@
 {
-  "vector_version": "0.1.0",
+  "vector_version": "0.2.0",
   "case_id": "DTF-027",
   "case_version": "0.1.0",
   "execution_class": "executed-synthetic-target",
@@ -18,5 +18,9 @@
   "targets": {
     "safe": "examples/independent-consumer/workflow_assurance_target.py",
     "defective": "examples/independent-consumer/defective_workflow_assurance_target.py"
+  },
+  "target_git_blob_sha1": {
+    "safe": "3387c655c841879b3e4df2e493d3b16b1bdb7843",
+    "defective": "0625d41608f3b1dbdd5e852fe7efda38fefb30ac"
   }
 }
