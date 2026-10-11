@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "requested_by": "sankarshanmukhopadhyay",
-  "reason": "Publish the privacy and correlation failure tranche DTF-032 through DTF-037"
+  "reason": "Publish the experimental DTFC audit-hardening and bounded executable evidence tranche, with explicit residual-risk acceptance recorded in issues #60 and #62"
 }

@@ -27,6 +27,9 @@ nav:
       - Authority tranche observations: authority-tranche-observations.md
       - Decision-resolution observations: decision-resolution-tranche-observations.md
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md
+      - Observability vector reference: observability-vector-reference.md
+      - Observability tranche completion: observability-tranche-completion-record.md
+      - Observability-induced harm examination: observability-induced-harm.md
   - Executable experiments:
       - Conformance vectors: conformance-vectors.md
       - Independent target admission: independent-target-admission.md
@@ -40,9 +43,13 @@ nav:
       - Inspected source records: inspected-external-records.md
       - Tool-output boundary: tool-output-boundary-research.md
       - Case maturity and release gates: case-maturity-and-release-gates.md
+      - Case quality review checklist: case-quality-review-checklist.md
   - Project execution:
       - Evidence-gated tranche: evidence-gated-execution-tranche.md
+      - Pre-publication assurance checkpoint: prepublication-assurance-checkpoint-2026-10-10.md
+      - Audit residual disposition proposal: audit-residual-disposition-proposal-2026-10-10.md
   - Releases:
+      - v0.5.0 (experimental): release-notes-v0.5.0.md
       - v0.4.0: release-notes-v0.4.0.md
       - v0.3.0: release-notes-v0.3.0.md
       - v0.2.0: release-notes-v0.2.0.md
