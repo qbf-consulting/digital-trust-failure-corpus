@@ -1,0 +1,97 @@
+schema_version: cpc-determination-v0.1
+case_id: CPC-001
+title: Delegated-agent revocation consumer protection case
+status: synthetic_fixture_added
+last_updated: "2026-10-13"
+
+scope:
+  statement: >-
+    This determination covers the repository-owned synthetic CPC-001 protected-resource
+    fixture only. It does not cover production deployment, independent reproduction,
+    ARPA conformance, RAHP assessment, consumer usability, or third-party implementation
+    evidence.
+  execution_class: executed-synthetic-target
+  authoritative_repository: qbf-consulting/digital-trust-failure-corpus
+
+claim_determination_values:
+  SUPPORTED: Claim supported within the stated scope by cited evidence.
+  CONTRADICTED: Evidence contradicts the claim within the stated scope.
+  INDETERMINATE: Evidence is incomplete, stale, conflicting, unavailable, or insufficient.
+  NOT_ASSESSED: The claim has not yet been evaluated.
+
+claims:
+  - id: C1
+    claim: Delegation is limited to defined subject, action, resource and validity context.
+    assurance_determination: INDETERMINATE
+    synthetic_fixture_observation: fixture_exercises_bounded_action_and_resource_scope
+    reason: >-
+      The safe fixture includes bounded action/resource checks, but no reviewed authority
+      schema, external implementation, or independently reproduced evidence exists yet.
+
+  - id: C2
+    claim: The consumer can determine what authority has been granted.
+    assurance_determination: NOT_ASSESSED
+    synthetic_fixture_observation: not_exercised
+    reason: >-
+      The executable fixture evaluates authorization behaviour only. It does not provide
+      or test a consumer-facing inspection surface.
+
+  - id: C3
+    claim: Out-of-scope actions are rejected.
+    assurance_determination: INDETERMINATE
+    synthetic_fixture_observation: safe_target_denies_out_of_scope_action_and_resource
+    reason: >-
+      The synthetic target tests out-of-scope action and resource denial, but the evidence
+      remains repository-owned fixture evidence only.
+
+  - id: C4
+    claim: Revocation prevents subsequent authorization after the defined effective point.
+    assurance_determination: INDETERMINATE
+    synthetic_fixture_observation: safe_target_denies_post_revocation_action_and_defective_target_is_detected
+    reason: >-
+      The fixture includes post-revocation denial and deliberately defective-target detection,
+      but no independent reproduction or non-synthetic enforcement target exists yet.
+
+  - id: C5
+    claim: Missing, stale or contradictory authority evidence does not silently authorize consequential action.
+    assurance_determination: INDETERMINATE
+    synthetic_fixture_observation: safe_target_returns_indeterminate_for_stale_unavailable_and_conflicting_authority
+    reason: >-
+      The fixture covers stale, unavailable and conflicting authority states, but the evidence
+      is not yet bound to a release evidence bundle or independent replay.
+
+  - id: C6
+    claim: Material authorization decisions are attributable and reconstructable.
+    assurance_determination: INDETERMINATE
+    synthetic_fixture_observation: runner_emits_machine_readable_observations
+    reason: >-
+      The runner emits observation records and target digests, but persisted evidence packaging,
+      provenance validation and independent replay are not complete.
+
+  - id: C7
+    claim: The consumer can identify and challenge a disputed action.
+    assurance_determination: NOT_ASSESSED
+    synthetic_fixture_observation: not_exercised
+    reason: >-
+      The executable fixture does not yet include a challenge, correction, notification or
+      redress workflow.
+
+current_stop_point:
+  reached: true
+  description: >-
+    CPC-001 now has a baseline, protection contracts, revocation semantics, traceability,
+    a synthetic safe protected-resource target, a deliberately defective target, a runner,
+    and unit tests requiring defect detection. This is the first defensible stop point for
+    the executable fixture tranche.
+  next_required_evidence_gate: >-
+    Treat GitHub Actions completion as the authoritative CI validation result, then decide
+    whether to merge this synthetic fixture packet or open a separate implementation/evidence
+    tranche.
+
+explicit_non_claims:
+  - No production service has been assessed.
+  - No independent implementation has been assessed.
+  - No independent reproduction has occurred.
+  - No consumer usability evidence has been collected.
+  - No ARPA conformance or RAHP assurance determination is claimed.
+  - No CPC-001 claim is fully SUPPORTED for assurance purposes.

@@ -1,0 +1,251 @@
+schema_version: "0.1.0"
+case_id: "CPC-001"
+title: "Delegated-agent revocation consumer protection contracts"
+status: "draft-protection-contracts"
+created: "2026-10-13"
+
+purpose: >-
+  Define the consumer protection behaviours that CPC-001 must verify before any
+  assurance claim can be marked supported. These contracts are intentionally
+  technology-neutral. ARPA may supply authority and lifecycle evidence, but the
+  relying service remains responsible for action-specific authorization and
+  enforcement.
+
+normative_status: >-
+  This file is a CPC-001 research contract. It is not a DTFC corpus case, not an
+  ARPA specification amendment, and not an assurance determination.
+
+claim_determination_values:
+  - SUPPORTED
+  - CONTRADICTED
+  - INDETERMINATE
+  - NOT_ASSESSED
+
+shared_terms:
+  consumer: >-
+    The person or accountable party that grants, inspects, relies on, withdraws,
+    or challenges delegated authority.
+  agent: >-
+    The actor attempting to perform an action under delegated authority.
+  relying_service: >-
+    The product or service that controls the protected resource and evaluates
+    whether the attempted action is authorized.
+  authority_evidence: >-
+    Evidence about identity, delegation, lifecycle, recognition, revocation,
+    approval, scope, freshness or policy state that may inform an authorization
+    decision.
+  protected_action: >-
+    A consequential action whose execution or acceptance may affect the consumer,
+    another party, or a protected resource.
+  evaluation_time: >-
+    The time at which the relying service evaluates whether the protected action
+    is authorized.
+  revocation_effective_time: >-
+    The time from which the consumer withdrawal is intended to invalidate future
+    authorization under the revoked delegation, subject to the explicitly stated
+    convergence and in-flight-action semantics.
+  enforcement_convergence_bound: >-
+    The maximum documented period or event boundary within which the relying
+    service must stop authorizing new protected actions under revoked authority.
+    A missing or unstated bound is an assurance gap.
+
+contracts:
+  - id: "CP-001"
+    name: "Bounded delegation representation"
+    consumer_protection_goal: >-
+      The consumer and relying service can identify the subject, agent, action,
+      resource, validity interval and material constraints of delegated authority.
+    required_behaviour:
+      - Delegation must identify the consumer/principal, agent, allowed action class or exact action, protected resource scope and validity interval.
+      - Material constraints such as amount, counterparty, jurisdiction, workflow state or approval requirement must be preserved by authorization evaluation.
+      - A capability claim, identifier, signature, registry entry or discovery record must not independently authorize a protected action.
+    failure_condition:
+      - The service authorizes a protected action from identity, discovery, authentication or capability metadata alone.
+      - The service cannot reconstruct the scope or constraints used for the authorization decision.
+    minimum_evidence:
+      - authority envelope fixture or equivalent authority record
+      - protected action request fixture
+      - policy/evaluator input record
+      - authorization decision record
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-002"
+    name: "Exact-action authorization binding"
+    consumer_protection_goal: >-
+      The action evaluated for authorization is the same action later executed or accepted.
+    required_behaviour:
+      - The relying service must evaluate the exact protected action or a canonical action digest.
+      - A materially different action, resource, value, counterparty or workflow state must require a fresh authorization evaluation.
+      - Approval evidence, where required, must bind to the same exact action or digest.
+    failure_condition:
+      - An approval or delegation for one action authorizes a materially different action.
+      - A resource identifier or material parameter is substituted after evaluation without detection.
+    minimum_evidence:
+      - canonical action or digest fixture
+      - evaluated request and executed request comparison
+      - authorization decision record
+      - negative resource-substitution test
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-003"
+    name: "Out-of-scope denial"
+    consumer_protection_goal: >-
+      The agent cannot exceed delegated scope without the service denying the protected action.
+    required_behaviour:
+      - Out-of-scope action class, resource, amount, counterparty, validity interval or approval state must not be silently permitted.
+      - If the service cannot determine whether an action is within scope, the result must be deny or indeterminate according to documented fail-safe policy.
+    failure_condition:
+      - The service permits an out-of-scope protected action.
+      - Missing scope evidence is treated as authorization.
+    minimum_evidence:
+      - positive in-scope test
+      - negative action-scope test
+      - negative resource-scope test
+      - negative constraint-exceedance test
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-004"
+    name: "Revocation effectiveness"
+    consumer_protection_goal: >-
+      Consumer withdrawal prevents new protected actions under the revoked delegation after the documented effective point and convergence boundary.
+    required_behaviour:
+      - Revocation must have an explicit effective time or event boundary.
+      - Enforcement convergence must be separately stated from revocation recording.
+      - A post-revocation protected action under the revoked authority must be denied after the documented convergence boundary.
+      - The service must record the authority state and evaluation time used for the decision.
+    failure_condition:
+      - The service permits a new protected action after revocation should have become enforceable.
+      - The service records revocation but continues using stale cached authorization without a documented and tested freshness policy.
+      - The service cannot identify whether the action occurred before or after the effective revocation boundary.
+    minimum_evidence:
+      - revocation event record
+      - pre-revocation allow test
+      - post-revocation deny test
+      - cache/freshness behaviour evidence
+      - timestamps for request, evaluation, revocation and decision
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-005"
+    name: "Safe handling of missing, stale or conflicting authority evidence"
+    consumer_protection_goal: >-
+      The consumer is not exposed to unauthorized consequential action merely because material authority evidence is unavailable, stale or contradictory.
+    required_behaviour:
+      - Missing authority evidence must not become allow.
+      - Stale authority evidence must respect the documented freshness policy.
+      - Conflicting competent authority sources must produce deny or indeterminate unless a documented precedence rule resolves the conflict.
+      - Unsupported critical authority extensions must fail safely.
+    failure_condition:
+      - The service permits a protected action when material evidence is missing, stale, conflicting or unsupported.
+      - The service cannot distinguish unavailable evidence from affirmative authority.
+    minimum_evidence:
+      - unavailable-authority-source test
+      - stale-state test
+      - conflicting-source test
+      - unsupported-critical-extension test, where applicable
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-006"
+    name: "Replay and reuse resistance"
+    consumer_protection_goal: >-
+      Previously accepted authority or request evidence cannot be replayed to obtain unauthorized repeat execution.
+    required_behaviour:
+      - The service must bind authorization evidence to a request, nonce, action digest, state transition, idempotency key or equivalent replay-control mechanism appropriate to the protected action.
+      - Reuse of a prior accepted request must not create an unauthorized second protected effect.
+      - Replay after revocation must be denied or treated as a duplicate non-effectful request according to documented semantics.
+    failure_condition:
+      - A prior accepted authorization or request is reused to create a new unauthorized effect.
+      - Replay after revocation is accepted as a new protected action.
+    minimum_evidence:
+      - replay test before revocation
+      - replay test after revocation
+      - idempotency or state-transition evidence
+      - authorization decision trace
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-007"
+    name: "Concurrent revocation and action ordering"
+    consumer_protection_goal: >-
+      The service defines and tests how it handles actions that race with revocation.
+    required_behaviour:
+      - The service must define ordering semantics for action evaluation, action execution, revocation receipt and revocation effectiveness.
+      - In-flight action behaviour must be explicit: complete, cancel, compensate, hold for review, or deny.
+      - The service must record enough evidence to reconstruct the ordering basis used.
+    failure_condition:
+      - The service cannot explain whether a contested action was before or after the revocation boundary.
+      - Race conditions produce inconsistent outcomes without a documented policy.
+    minimum_evidence:
+      - concurrent revocation/action test
+      - event-ordering trace
+      - in-flight-action disposition record
+      - reconstruction record
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-008"
+    name: "Attributable authorization decision evidence"
+    consumer_protection_goal: >-
+      Material authorization decisions are reconstructable by an independent reviewer without relying on unstated implementation knowledge.
+    required_behaviour:
+      - Each material decision must identify the request, agent, consumer/principal, authority evidence, policy version, evaluation time, decision and reason category.
+      - Evidence records must be integrity-checkable in the evidence package.
+      - Historical reconstruction must distinguish the historical decision time from later review time.
+    failure_condition:
+      - A material authorization decision cannot be reconstructed.
+      - Evidence records can be altered without detection.
+      - Later reconstruction silently uses different authority state from the original decision.
+    minimum_evidence:
+      - decision evidence record
+      - source/version digest
+      - evidence manifest entry
+      - tamper-detection test
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-009"
+    name: "Consumer inspection"
+    consumer_protection_goal: >-
+      The consumer can inspect active, expired and revoked delegated authority and the consequential actions performed under it within the case boundary.
+    required_behaviour:
+      - The consumer-facing view must show the material scope of granted authority.
+      - Revoked authority must be distinguishable from active authority.
+      - Consequential actions must be linked to the delegation or decision evidence that authorized them.
+      - The view must not expose unnecessary sensitive data in order to provide accountability.
+    failure_condition:
+      - The consumer cannot determine what authority exists or whether it was revoked.
+      - The consumer cannot associate a consequential action with the relevant delegation or authorization decision.
+    minimum_evidence:
+      - consumer inspection fixture or screenshot-free structured observation
+      - active/delegated authority view evidence
+      - revoked authority view evidence
+      - action-to-decision linkage evidence
+    initial_determination: "NOT_ASSESSED"
+
+  - id: "CP-010"
+    name: "Challenge and correction path"
+    consumer_protection_goal: >-
+      A consumer can challenge a disputed action and the service can route the challenge to a responsible authority or remediation workflow.
+    required_behaviour:
+      - The service must identify where a consumer can contest a disputed action.
+      - A challenge must reference the relevant authorization decision and evidence.
+      - The case must distinguish technical denial/allow correctness from consumer remedy completeness.
+      - Missing remediation evidence must remain an assurance limitation, not be inferred from the existence of logs.
+    failure_condition:
+      - A disputed protected action has no identifiable challenge route.
+      - The challenge cannot be linked to the decision evidence.
+      - The service claims consumer remedy without demonstrated workflow evidence.
+    minimum_evidence:
+      - challenge initiation record
+      - decision-to-challenge linkage
+      - remediation or escalation workflow evidence
+      - limitation statement if remedy is only simulated
+    initial_determination: "NOT_ASSESSED"
+
+assurance_rules:
+  - id: "AR-001"
+    rule: "A passing implementation test is not an assurance determination."
+  - id: "AR-002"
+    rule: "A claim cannot be SUPPORTED without evidence that covers the relevant protection contract and adversarial condition."
+  - id: "AR-003"
+    rule: "Missing, stale, conflicting, unavailable or unverifiable evidence must not be converted into success."
+  - id: "AR-004"
+    rule: "Consumer-facing protection claims require consumer-facing evidence or must be limited to engineering feasibility."
+  - id: "AR-005"
+    rule: "Known-defect detection is required before verification is described as adversarially meaningful."

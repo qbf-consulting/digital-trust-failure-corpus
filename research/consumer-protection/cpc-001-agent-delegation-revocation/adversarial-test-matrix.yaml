@@ -1,0 +1,164 @@
+schema_version: "0.1.0"
+artifact_type: adversarial_test_matrix
+case_id: CPC-001
+status: baseline
+
+principle: >-
+  CPC-001 must identify how consumer protection claims could fail and preserve
+  those challenges as explicit tests, non-applicability determinations, or
+  residual limitations.
+
+test_matrix:
+  - id: ADV-001
+    challenge: agent_requests_out_of_scope_action
+    adversary_class: actor
+    linked_claims: [C1, C3]
+    expected_behavior: deny
+    required_evidence:
+      - authorization_decision_trace
+      - scope_contract
+    status: not_executed
+
+  - id: ADV-002
+    challenge: agent_substitutes_resource_identifier
+    adversary_class: actor
+    linked_claims: [C1, C3]
+    expected_behavior: deny
+    required_evidence:
+      - request_record
+      - resource_scope_check
+      - denial_trace
+    status: not_executed
+
+  - id: ADV-003
+    challenge: agent_reuses_revoked_authority
+    adversary_class: actor
+    linked_claims: [C4]
+    expected_behavior: deny_after_effective_revocation_point
+    required_evidence:
+      - revocation_event_record
+      - post_revocation_request
+      - timestamped_denial_trace
+    status: not_executed
+
+  - id: ADV-004
+    challenge: replay_previously_accepted_request
+    adversary_class: actor
+    linked_claims: [C3, C4, C6]
+    expected_behavior: no_unauthorized_repeat_execution
+    required_evidence:
+      - original_request_record
+      - replay_request_record
+      - state_transition_record
+    status: not_executed
+
+  - id: ADV-005
+    challenge: enforcement_point_uses_stale_authority_state
+    adversary_class: environment
+    linked_claims: [C4, C5]
+    expected_behavior: respects_documented_freshness_guarantee
+    required_evidence:
+      - cache_policy
+      - stale_state_fixture
+      - enforcement_trace
+    status: not_executed
+
+  - id: ADV-006
+    challenge: revocation_concurrent_with_action
+    adversary_class: environment
+    linked_claims: [C4, C6]
+    expected_behavior: follows_defined_ordering_rule
+    required_evidence:
+      - ordering_semantics
+      - concurrent_execution_trace
+      - resulting_decision_record
+    status: not_executed
+
+  - id: ADV-007
+    challenge: authority_source_unavailable
+    adversary_class: environment
+    linked_claims: [C5]
+    expected_behavior: no_unsupported_authorization_of_consequential_action
+    required_evidence:
+      - failure_injection_record
+      - fallback_policy
+      - decision_trace
+    status: not_executed
+
+  - id: ADV-008
+    challenge: missing_or_contradictory_authority_evidence
+    adversary_class: environment
+    linked_claims: [C5, C6]
+    expected_behavior: deny_or_indeterminate_according_to_documented_policy_never_silent_permit
+    required_evidence:
+      - malformed_or_conflict_fixture
+      - policy_mapping
+      - decision_trace
+    status: not_executed
+
+  - id: ADV-009
+    challenge: consumer_revokes_during_long_running_task
+    adversary_class: environment
+    linked_claims: [C4, C6]
+    expected_behavior: in_flight_action_handling_matches_documented_semantics
+    required_evidence:
+      - lifecycle_policy
+      - in_flight_task_trace
+      - consumer_visible_status_record
+    status: not_executed
+
+  - id: ADV-010
+    challenge: evidence_record_modified_after_execution
+    adversary_class: reviewer
+    linked_claims: [C6, C7]
+    expected_behavior: integrity_verification_detects_tampering
+    required_evidence:
+      - original_evidence_digest
+      - tampered_evidence_fixture
+      - digest_validation_result
+    status: not_executed
+
+  - id: ADV-011
+    challenge: permitted_action_has_unexpected_harmful_consequence
+    adversary_class: reviewer
+    linked_claims: [C2, C6, C7]
+    expected_behavior: harm_is_identified_and_review_or_challenge_path_is_exercised
+    required_evidence:
+      - incident_simulation_record
+      - consumer_review_path
+      - remediation_or_escalation_trace
+    status: not_executed
+
+  - id: ADV-012
+    challenge: reviewer_changes_critical_assumption_or_input
+    adversary_class: reviewer
+    linked_claims: [C7]
+    expected_behavior: determination_changes_or_limitation_is_recorded
+    required_evidence:
+      - modified_assumption_record
+      - sensitivity_result
+      - updated_claim_determination
+    status: not_executed
+
+  - id: ADV-013
+    challenge: intentionally_defective_implementation_allows_post_revocation_action
+    adversary_class: reviewer
+    linked_claims: [C4, C7]
+    expected_behavior: verification_suite_detects_failure
+    required_evidence:
+      - defective_target_revision
+      - failing_test_result
+      - assurance_determination_change
+    status: not_executed
+
+coverage_rules:
+  - id: CR-001
+    rule: A mandatory adversarial challenge must not disappear from the matrix because implementation is difficult.
+  - id: CR-002
+    rule: Not applicable determinations must explain why the challenge is outside the current service boundary.
+  - id: CR-003
+    rule: Unsupported or unexecuted adversarial tests must become residual limitations, not implied successes.
+  - id: CR-004
+    rule: Known-defect detection is required before CPC-001 can claim that its verification suite is meaningfully adversarial.
+  - id: CR-005
+    rule: Reviewer-facing challenges are part of the assurance case, not optional documentation.

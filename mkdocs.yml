@@ -30,6 +30,7 @@ nav:
       - Observability vector reference: observability-vector-reference.md
       - Observability tranche completion: observability-tranche-completion-record.md
       - Observability-induced harm examination: observability-induced-harm.md
+      - Consumer protection CPC-001: consumer-protection-cpc-001.md
   - Executable experiments:
       - Conformance vectors: conformance-vectors.md
       - Independent target admission: independent-target-admission.md

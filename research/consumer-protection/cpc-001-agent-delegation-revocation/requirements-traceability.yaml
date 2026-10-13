@@ -1,0 +1,229 @@
+schema_version: "0.1.0"
+case_id: "CPC-001"
+title: "CPC-001 requirements traceability"
+status: "draft-traceability"
+created: "2026-10-13"
+
+purpose: >-
+  Map consumer protection claims to protection contracts, adversarial conditions,
+  evidence records and assurance dispositions. This file is a planning and review
+  artifact. It does not mark any claim as supported.
+
+claim_status_values:
+  SUPPORTED: "Evidence covers the claim, relevant adversarial conditions and stated limitations."
+  CONTRADICTED: "Evidence shows the claim is false or materially unsafe under tested conditions."
+  INDETERMINATE: "Execution or review occurred, but evidence is incomplete, conflicting or insufficient."
+  NOT_ASSESSED: "The claim has not yet been executed or assessed."
+
+claims:
+  - id: "C1"
+    claim: "Delegation is limited to a defined subject, agent, action, resource, validity interval and material constraints."
+    protection_contracts:
+      - "CP-001"
+      - "CP-002"
+      - "CP-003"
+    adversarial_conditions:
+      - "ADV-001"
+      - "ADV-002"
+      - "ADV-008"
+    minimum_tests:
+      - "T-CPC-001-IN-SCOPE-ALLOW"
+      - "T-CPC-001-OUT-OF-SCOPE-DENY"
+      - "T-CPC-001-RESOURCE-SUBSTITUTION-DENY"
+    required_evidence_records:
+      - "authority-envelope"
+      - "protected-action-request"
+      - "policy-version"
+      - "authorization-decision"
+    current_status: "NOT_ASSESSED"
+
+  - id: "C2"
+    claim: "The consumer can determine what delegated authority has been granted and whether it remains active."
+    protection_contracts:
+      - "CP-009"
+    adversarial_conditions:
+      - "ADV-012"
+    minimum_tests:
+      - "T-CPC-001-CONSUMER-ACTIVE-AUTHORITY-VIEW"
+      - "T-CPC-001-CONSUMER-REVOKED-AUTHORITY-VIEW"
+    required_evidence_records:
+      - "consumer-view-observation"
+      - "authority-state-snapshot"
+      - "action-to-decision-linkage"
+    current_status: "NOT_ASSESSED"
+    limitation: >-
+      Consumer-facing evidence in the first tranche may establish inspectability of
+      structured records, not usability or comprehension by real consumers.
+
+  - id: "C3"
+    claim: "Out-of-scope protected actions are rejected or fail safely."
+    protection_contracts:
+      - "CP-003"
+      - "CP-005"
+    adversarial_conditions:
+      - "ADV-001"
+      - "ADV-002"
+      - "ADV-008"
+    minimum_tests:
+      - "T-CPC-001-WRONG-ACTION-DENY"
+      - "T-CPC-001-WRONG-RESOURCE-DENY"
+      - "T-CPC-001-CONSTRAINT-EXCEEDANCE-DENY"
+      - "T-CPC-001-MISSING-SCOPE-EVIDENCE-NOT-ALLOW"
+    required_evidence_records:
+      - "negative-authorization-results"
+      - "policy-evaluator-inputs"
+      - "decision-reason-categories"
+    current_status: "NOT_ASSESSED"
+
+  - id: "C4"
+    claim: "Revocation prevents subsequent protected actions under the revoked authority after the defined effective and convergence boundary."
+    protection_contracts:
+      - "CP-004"
+      - "CP-007"
+      - "CP-008"
+    adversarial_conditions:
+      - "ADV-003"
+      - "ADV-005"
+      - "ADV-006"
+      - "ADV-009"
+    minimum_tests:
+      - "T-CPC-001-PRE-REVOCATION-ALLOW"
+      - "T-CPC-001-REVOCATION-RECORDED"
+      - "T-CPC-001-POST-REVOCATION-DENY"
+      - "T-CPC-001-STALE-CACHE-NOT-ALLOW"
+      - "T-CPC-001-CONCURRENT-ORDERING-RECORDED"
+    required_evidence_records:
+      - "revocation-event"
+      - "authority-source-checkpoint"
+      - "pre-revocation-decision"
+      - "post-revocation-decision"
+      - "cache-freshness-evidence"
+      - "decision-timestamps"
+    current_status: "NOT_ASSESSED"
+
+  - id: "C5"
+    claim: "Missing, stale, conflicting or unsupported authority evidence does not silently authorize consequential action."
+    protection_contracts:
+      - "CP-005"
+    adversarial_conditions:
+      - "ADV-005"
+      - "ADV-007"
+      - "ADV-008"
+    minimum_tests:
+      - "T-CPC-001-AUTHORITY-SOURCE-UNAVAILABLE-NOT-ALLOW"
+      - "T-CPC-001-STALE-AUTHORITY-NOT-ALLOW"
+      - "T-CPC-001-CONFLICTING-AUTHORITY-NOT-ALLOW"
+      - "T-CPC-001-UNSUPPORTED-CRITICAL-EXTENSION-NOT-ALLOW"
+    required_evidence_records:
+      - "unavailable-source-result"
+      - "stale-state-result"
+      - "conflict-resolution-policy"
+      - "critical-extension-result"
+    current_status: "NOT_ASSESSED"
+
+  - id: "C6"
+    claim: "Authorization evidence cannot be replayed or reused to create unauthorized protected effects."
+    protection_contracts:
+      - "CP-006"
+      - "CP-008"
+    adversarial_conditions:
+      - "ADV-004"
+      - "ADV-003"
+    minimum_tests:
+      - "T-CPC-001-REPLAY-DUPLICATE-NO-EFFECT"
+      - "T-CPC-001-REPLAY-AFTER-REVOCATION-DENY"
+    required_evidence_records:
+      - "idempotency-or-state-transition-record"
+      - "replay-request"
+      - "replay-decision"
+    current_status: "NOT_ASSESSED"
+
+  - id: "C7"
+    claim: "Material authorization decisions are attributable and reconstructable by an independent reviewer."
+    protection_contracts:
+      - "CP-008"
+    adversarial_conditions:
+      - "ADV-010"
+      - "ADV-012"
+    minimum_tests:
+      - "T-CPC-001-DECISION-RECONSTRUCTION"
+      - "T-CPC-001-EVIDENCE-TAMPER-DETECTION"
+    required_evidence_records:
+      - "evidence-manifest"
+      - "decision-record"
+      - "source-digest"
+      - "result-digest"
+      - "replay-command"
+    current_status: "NOT_ASSESSED"
+
+  - id: "C8"
+    claim: "A consumer can identify and challenge a disputed action within the case boundary."
+    protection_contracts:
+      - "CP-010"
+      - "CP-009"
+    adversarial_conditions:
+      - "ADV-011"
+      - "ADV-012"
+    minimum_tests:
+      - "T-CPC-001-DISPUTED-ACTION-LINKED-TO-DECISION"
+      - "T-CPC-001-CHALLENGE-ROUTE-AVAILABLE"
+    required_evidence_records:
+      - "disputed-action-record"
+      - "challenge-initiation-record"
+      - "decision-to-challenge-linkage"
+    current_status: "NOT_ASSESSED"
+    limitation: >-
+      A simulated challenge path does not establish real-world remedy sufficiency.
+      Remedy maturity must be assessed separately if the case is later applied to
+      a production service.
+
+execution_gates:
+  - id: "G1"
+    name: "Protection contracts complete"
+    required_artifacts:
+      - "protection-contracts.yaml"
+      - "revocation-semantics.md"
+      - "requirements-traceability.yaml"
+    completion_condition: >-
+      Every material claim has at least one protection contract, adversarial
+      condition, minimum test and required evidence record.
+    current_status: "draft"
+
+  - id: "G2"
+    name: "Reference implementation selected"
+    required_artifacts:
+      - "implementation-selection.md"
+      - "service-boundary.md"
+    completion_condition: >-
+      The service boundary and implementation owner are identified without
+      duplicating protocol implementation inside DTFC.
+    current_status: "not_started"
+
+  - id: "G3"
+    name: "Executable tests added"
+    required_artifacts:
+      - "test-plan.yaml"
+      - "evidence-record examples"
+      - "known-defect fixture"
+    completion_condition: >-
+      Positive, negative and intentionally defective execution paths are runnable
+      and produce machine-readable evidence.
+    current_status: "not_started"
+
+  - id: "G4"
+    name: "Assurance determination produced"
+    required_artifacts:
+      - "assurance-case.yaml"
+      - "findings.md"
+      - "limitations.md"
+    completion_condition: >-
+      Each claim is determined using the published evidence, with unsupported
+      claims left indeterminate or not assessed.
+    current_status: "not_started"
+
+review_invariants:
+  - "Do not mark a claim SUPPORTED from documentation alone."
+  - "Do not infer consumer usability from structured inspectability."
+  - "Do not merge discovery, identity, capability, authority and enforcement into a single success condition."
+  - "Do not allow a green local test run to substitute for independent reproduction."
+  - "Do not treat an implementation defect as a project failure if the evidence process detects and reports it."
