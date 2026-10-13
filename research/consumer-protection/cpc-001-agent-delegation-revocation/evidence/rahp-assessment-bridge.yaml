@@ -1,0 +1,130 @@
+schema_version: "0.1.0"
+case_id: CPC-001
+artifact_type: rahp_assessment_bridge
+status: BRIDGE_NOT_EXECUTED
+rahp_assessment_completed: false
+
+purpose: >-
+  Map CPC-001 claims, evidence classes and open gates into an assessment-ready
+  package that can be consumed by RAHP or an equivalent assurance process.
+  This bridge is a preparation artifact. It is not a RAHP result.
+
+assessment_subject:
+  repository: qbf-consulting/digital-trust-failure-corpus
+  case_path: research/consumer-protection/cpc-001-agent-delegation-revocation
+  evidence_path: research/consumer-protection/cpc-001-agent-delegation-revocation/evidence
+  current_evidence_classes:
+    - source-contract
+    - executed-synthetic-target
+    - ci-executed-synthetic-target
+  absent_evidence_classes:
+    - independent-reproduction
+    - non-synthetic-implementation
+    - consumer-usability-validation
+    - rahp-executed-assessment
+
+assessment_boundary:
+  permitted_assessment_question: >-
+    Does the current CPC-001 package contain a coherent, traceable and
+    reproducible synthetic evidence scaffold for delegated-agent revocation?
+  prohibited_assessment_questions:
+    - Does CPC-001 establish production product or service safety?
+    - Does CPC-001 establish ARPA conformance?
+    - Does CPC-001 establish independent reproduction?
+    - Does CPC-001 establish consumer usability?
+    - Does CPC-001 establish that RAHP has already assessed the case?
+
+claim_mapping:
+  - claim_id: C1
+    claim: Delegation is bounded to specified actor, action, resource and time semantics.
+    evidence_inputs:
+      - protection-contracts.yaml
+      - requirements-traceability.yaml
+      - examples/cpc-001/protected_resource.py
+      - tools/execute_cpc001.py
+    current_assessment_state: INDETERMINATE
+    reason: Synthetic fixture evidence exists, but no independent or non-synthetic implementation evidence exists.
+  - claim_id: C2
+    claim: The consumer can inspect granted authority.
+    evidence_inputs:
+      - protection-contracts.yaml
+      - requirements-traceability.yaml
+    current_assessment_state: NOT_ASSESSED
+    reason: No consumer-facing interface or user comprehension evidence exists.
+  - claim_id: C3
+    claim: Out-of-scope actions are denied.
+    evidence_inputs:
+      - examples/cpc-001/protected_resource.py
+      - examples/cpc-001/defective_protected_resource.py
+      - tests/test_cpc001_executable_fixture.py
+    current_assessment_state: INDETERMINATE
+    reason: Repository-owned synthetic tests exist; external implementation and independent reproduction are absent.
+  - claim_id: C4
+    claim: Revocation prevents later authorization within the specified boundary.
+    evidence_inputs:
+      - revocation-semantics.md
+      - examples/cpc-001/protected_resource.py
+      - tests/test_cpc001_executable_fixture.py
+    current_assessment_state: INDETERMINATE
+    reason: Post-revocation synthetic defect detection exists; distributed or product enforcement evidence is absent.
+  - claim_id: C5
+    claim: Missing, stale or contradictory authority evidence does not silently authorize consequential action.
+    evidence_inputs:
+      - protection-contracts.yaml
+      - examples/cpc-001/protected_resource.py
+      - tests/test_cpc001_executable_fixture.py
+    current_assessment_state: INDETERMINATE
+    reason: Synthetic stale/unavailable/conflict handling exists, but broader operational evidence is absent.
+  - claim_id: C6
+    claim: Material authorization decisions are attributable and reconstructable.
+    evidence_inputs:
+      - evidence/evidence-manifest.yaml
+      - evidence/reproduction-instructions.md
+      - tools/execute_cpc001.py
+    current_assessment_state: INDETERMINATE
+    reason: Evidence manifest and machine-readable observations exist, but signed/provenanced evidence packaging is absent.
+  - claim_id: C7
+    claim: A consumer can identify and challenge a disputed action.
+    evidence_inputs:
+      - protection-contracts.yaml
+      - requirements-traceability.yaml
+    current_assessment_state: NOT_ASSESSED
+    reason: Challenge/correction workflow and consumer-facing evidence do not yet exist.
+
+minimum_rahp_inputs:
+  required:
+    - case-manifest.yaml
+    - baseline-architecture.md
+    - protection-contracts.yaml
+    - revocation-semantics.md
+    - requirements-traceability.yaml
+    - adversarial-test-matrix.yaml
+    - evidence/current-determination.yaml
+    - evidence/evidence-manifest.yaml
+    - evidence/reproduction-instructions.md
+    - evidence/independent-reproduction-record-template.yaml
+  optional_when_available:
+    - completed independent reproduction record
+    - non-synthetic implementation binding
+    - RAHP execution transcript
+    - signed or checksummed evidence bundle
+
+assessment_expected_output:
+  allowed_dispositions:
+    - SUPPORTED_FOR_SYNTHETIC_FIXTURE_ONLY
+    - INDETERMINATE
+    - NOT_ASSESSED
+    - CONTRADICTED
+  disallowed_dispositions:
+    - PRODUCTION_SAFE
+    - INDEPENDENTLY_REPRODUCED
+    - ARPA_CONFORMANT
+    - RAHP_ASSESSED
+    - CONSUMER_USABILITY_VALIDATED
+
+stop_condition:
+  bridge_ready: true
+  next_required_action: >-
+    Run a real RAHP assessment or equivalent assurance review against this bridge
+    and persist the assessment result separately. This bridge must not be edited
+    to imply that assessment has already occurred.
