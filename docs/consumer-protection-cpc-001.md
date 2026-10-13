@@ -1,6 +1,6 @@
 # Consumer Protection Case 001: delegated-agent revocation
 
-Status: **publication entry point for a baseline work packet**. This page introduces CPC-001 for readers who consume the repository through documentation rather than the `research/` tree.
+Status: **publication entry point for a baseline and protection-contract work packet**. This page introduces CPC-001 for readers who consume the repository through documentation rather than the `research/` tree.
 
 Canonical source artifacts live at:
 
@@ -28,7 +28,7 @@ This page does not claim that:
 - consumer usability has been validated with real users;
 - synthetic local execution is independent adoption evidence.
 
-## Current baseline artifacts
+## Current artifacts
 
 | Artifact | Purpose |
 | --- | --- |
@@ -36,6 +36,26 @@ This page does not claim that:
 | `case-manifest.yaml` | Machine-readable claims, gates, evidence expectations, and repository roles |
 | `baseline-architecture.md` | Artifact placement, evidence lifecycle, publication model, and adversarial-resistance posture |
 | `adversarial-test-matrix.yaml` | Initial actor, environment, and reviewer challenge matrix |
+| `protection-contracts.yaml` | Draft testable consumer protection behaviours |
+| `revocation-semantics.md` | Revocation effectiveness, convergence, stale-state and in-flight-action semantics |
+| `requirements-traceability.yaml` | Claim-to-contract-to-test-to-evidence mapping |
+
+## Protection contracts now defined
+
+The current draft contracts cover:
+
+- bounded delegation representation;
+- exact-action authorization binding;
+- out-of-scope denial;
+- revocation effectiveness;
+- safe handling of missing, stale or conflicting authority evidence;
+- replay and reuse resistance;
+- concurrent revocation and action ordering;
+- attributable authorization decision evidence;
+- consumer inspection; and
+- challenge and correction path.
+
+These contracts treat registry or identity evidence as inputs to an action-specific authorization decision. They do not treat discovery, authentication, registration, capability claims or signatures as sufficient commitment authority.
 
 ## How to read the case
 
@@ -52,7 +72,8 @@ No claim should be treated as supported unless the case identifies the implement
 The next tranche should produce:
 
 - selected reference enforcement environment;
-- concrete protection contracts;
+- service-boundary document;
+- executable fixture binding for each mandatory protection contract;
 - positive and negative authorization tests;
 - post-revocation denial tests;
 - stale, missing, contradictory, unavailable, replay, and tamper tests;
