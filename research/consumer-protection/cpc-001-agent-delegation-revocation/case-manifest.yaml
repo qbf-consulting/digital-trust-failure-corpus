@@ -1,0 +1,170 @@
+schema_version: "0.1.0"
+artifact_type: consumer_protection_case_manifest
+case_id: CPC-001
+case_slug: delegated-agent-revocation
+title: Delegated-agent revocation consumer protection case
+status: baseline
+tracking_issue: "https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/111"
+
+proposition: >-
+  A consumer should be able to withdraw delegated authority from an agent and
+  have that withdrawal reliably enforced within explicitly stated scope, timing,
+  and evidence limits.
+
+scope:
+  environment: synthetic_reference_workflow
+  production_certification: false
+  personal_data_required: false
+  secrets_required: false
+  canonical_corpus_case: false
+
+consumer_journey:
+  - id: CJ-001
+    step: grant_bounded_authority
+    expected_protection: authority_scope_is_explicit
+  - id: CJ-002
+    step: inspect_granted_authority
+    expected_protection: consumer_can_view_material_scope
+  - id: CJ-003
+    step: perform_in_scope_action
+    expected_protection: permitted_action_is_attributable
+  - id: CJ-004
+    step: attempt_out_of_scope_action
+    expected_protection: out_of_scope_action_is_denied
+  - id: CJ-005
+    step: revoke_authority
+    expected_protection: revocation_effective_point_is_defined
+  - id: CJ-006
+    step: attempt_post_revocation_action
+    expected_protection: post_revocation_action_is_denied
+  - id: CJ-007
+    step: inspect_decision_evidence
+    expected_protection: material_decisions_are_reconstructable
+
+claims:
+  - id: C1
+    claim: Delegation is limited to defined subject, action, resource, and validity constraints.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - authority_contract
+      - positive_authorization_test
+      - negative_scope_test
+  - id: C2
+    claim: The consumer can inspect the material authority granted to the agent.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - consumer_inspection_record
+      - authority_summary_fixture
+  - id: C3
+    claim: Out-of-scope actions are rejected.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - negative_scope_test_result
+      - authorization_decision_trace
+  - id: C4
+    claim: Revocation prevents subsequent authorization after the defined effective point.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - revocation_event_record
+      - post_revocation_denial_test
+      - timestamped_decision_trace
+  - id: C5
+    claim: Missing, stale, unavailable, or contradictory authority evidence does not silently permit consequential action.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - stale_state_test
+      - missing_authority_test
+      - contradictory_authority_test
+      - unavailable_authority_test
+  - id: C6
+    claim: Material authorization decisions are attributable and reconstructable.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - evidence_manifest
+      - decision_record_schema
+      - replay_or_reproduction_record
+  - id: C7
+    claim: A reviewer can independently reproduce or challenge the material findings.
+    determination: NOT_ASSESSED
+    required_evidence:
+      - reproduction_instructions
+      - pinned_source_revisions
+      - checksums
+      - independent_reproduction_report
+
+repository_roles:
+  canonical_case_record:
+    repository: qbf-consulting/digital-trust-failure-corpus
+    path: research/consumer-protection/cpc-001-agent-delegation-revocation
+  candidate_authority_semantics:
+    repository: qbf-consulting/agent-registry-protocol
+    status: to_be_inspected
+  candidate_assurance_execution:
+    repository: sankarshanmukhopadhyay/rahp-toolkit
+    status: to_be_inspected
+  candidate_reference_enforcement:
+    repository: null
+    status: not_selected
+
+execution_gates:
+  - id: G0
+    name: Repository and evidence architecture baseline
+    exit_condition: Artifact ownership, publication path, evidence lifecycle, and candidate component roles are documented.
+    status: in_progress
+  - id: G1
+    name: Consumer harm and baseline definition
+    exit_condition: Harm model and baseline consumer journey are testable without assuming a preferred protocol.
+    status: not_started
+  - id: G2
+    name: Protection contracts
+    exit_condition: Each mandatory protection has an observable test or documented alternative determination method.
+    status: not_started
+  - id: G3
+    name: Reference integration
+    exit_condition: The complete grant-inspect-act-revoke-deny lifecycle executes without manual result manipulation.
+    status: not_started
+  - id: G4
+    name: Adversarial verification
+    exit_condition: Positive, negative, stale-state, replay, failure, and known-defect checks are executed or explicitly marked not applicable.
+    status: not_started
+  - id: G5
+    name: Assurance determination
+    exit_condition: Claims are mapped to evidence, limitations, and residual risks.
+    status: not_started
+  - id: G6
+    name: Independent reproduction
+    exit_condition: A reviewer can reproduce material findings or the limits of reproducibility are recorded.
+    status: not_started
+  - id: G7
+    name: Publication
+    exit_condition: Technical record, readable documentation, and versioned evidence package are accessible and link-checked.
+    status: not_started
+
+minimum_evidence_record:
+  required_fields:
+    - case_id
+    - run_id
+    - subject_implementation
+    - immutable_revision
+    - environment_profile
+    - configuration_digest
+    - claim_id
+    - test_id
+    - expected_result
+    - observed_result
+    - result
+    - evidence_artifact
+    - artifact_digest
+    - limitations
+
+claim_determination_values:
+  - SUPPORTED
+  - CONTRADICTED
+  - INDETERMINATE
+  - NOT_ASSESSED
+
+assurance_boundary:
+  green_tests_are_not_sufficient: true
+  missing_evidence_must_not_pass: true
+  synthetic_execution_is_not_independent_adoption: true
+  historical_determinations_must_not_be_silently_rewritten: true
