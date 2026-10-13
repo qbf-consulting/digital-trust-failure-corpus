@@ -35,8 +35,10 @@ Derived artifacts in this directory are advisory research outputs. They must not
 ```text
 graph_builder.py                  Deterministic graph extraction and optional PyG conversion
 build_graph.py                    CLI wrapper for JSON graph export and optional PyG smoke check
+graph_report.py                   Deterministic Markdown report generator from graph JSON
 requirements-experimental.txt     Optional PyTorch / PyTorch Geometric dependencies
-tests/test_graph_builder.py       Unit tests for graph extraction and dependency isolation
+reports/baseline-graph-report.md  Committed baseline report artifact
+tests/                            Unit tests for extraction, reporting, and dependency isolation
 ```
 
 ## Run the tests
@@ -56,6 +58,20 @@ python experiments/pytorch-geometric/build_graph.py \
 ```
 
 The output is deterministic JSON with typed nodes and edges.
+
+## Generate the baseline graph report
+
+```bash
+python experiments/pytorch-geometric/build_graph.py \
+  --corpus corpus \
+  --output /tmp/dtfc-graph.json
+
+python experiments/pytorch-geometric/graph_report.py \
+  --graph /tmp/dtfc-graph.json \
+  --output experiments/pytorch-geometric/reports/baseline-graph-report.md
+```
+
+The report records deterministic graph facts. It is not an embedding report, cluster report, link-prediction report, maturity assessment, or assurance decision.
 
 ## Optional PyTorch Geometric smoke check
 
@@ -98,8 +114,7 @@ This experiment does not provide:
 
 If this tranche is useful, the next increments should remain separately reviewable:
 
-1. add a graph summary report;
-2. add nearest-neighbour baselines using deterministic graph metrics;
-3. compare deterministic neighbours with embedding neighbours;
-4. add human-review fixtures for whether discovered relationships are useful;
-5. only then consider a small PyG training script.
+1. add nearest-neighbour baselines using deterministic graph metrics;
+2. compare deterministic neighbours with embedding neighbours;
+3. add human-review fixtures for whether discovered relationships are useful;
+4. only then consider a small PyG training script.
