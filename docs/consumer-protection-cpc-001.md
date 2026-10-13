@@ -1,6 +1,6 @@
 # Consumer Protection Case 001: delegated-agent revocation
 
-Status: **publication entry point for a baseline and protection-contract work packet**. This page introduces CPC-001 for readers who consume the repository through documentation rather than the `research/` tree.
+Status: **publication entry point for a baseline, protection-contract and executable-fixture work packet**. This page introduces CPC-001 for readers who consume the repository through documentation rather than the `research/` tree.
 
 Canonical source artifacts live at:
 
@@ -32,13 +32,17 @@ This page does not claim that:
 
 | Artifact | Purpose |
 | --- | --- |
-| `README.md` | Case overview, repository roles, non-goals, and next tranche |
+| `README.md` | Case overview, repository roles, non-goals, executable fixture and next tranche |
 | `case-manifest.yaml` | Machine-readable claims, gates, evidence expectations, and repository roles |
 | `baseline-architecture.md` | Artifact placement, evidence lifecycle, publication model, and adversarial-resistance posture |
 | `adversarial-test-matrix.yaml` | Initial actor, environment, and reviewer challenge matrix |
 | `protection-contracts.yaml` | Draft testable consumer protection behaviours |
 | `revocation-semantics.md` | Revocation effectiveness, convergence, stale-state and in-flight-action semantics |
 | `requirements-traceability.yaml` | Claim-to-contract-to-test-to-evidence mapping |
+| `examples/cpc-001/protected_resource.py` | Synthetic safe protected-resource target |
+| `examples/cpc-001/defective_protected_resource.py` | Synthetic known-defective target |
+| `tools/execute_cpc001.py` | Local execution runner that emits evidence records |
+| `tests/test_cpc001_executable_fixture.py` | Unit tests for contract scenarios and known-defect detection |
 
 ## Protection contracts now defined
 
@@ -57,6 +61,24 @@ The current draft contracts cover:
 
 These contracts treat registry or identity evidence as inputs to an action-specific authorization decision. They do not treat discovery, authentication, registration, capability claims or signatures as sufficient commitment authority.
 
+## Executable fixture
+
+Run the focused fixture tests with:
+
+```bash
+python -m unittest tests.test_cpc001_executable_fixture -v
+```
+
+Run the paired safe/defective fixture directly with:
+
+```bash
+python tools/execute_cpc001.py --role paired
+```
+
+The fixture currently exercises in-scope allow, out-of-scope denial, post-revocation denial, stale evidence handling, unavailable authority handling, conflicting authority handling, replay denial and known-defect detection.
+
+The execution class is `executed-synthetic-target`. This is local fixture evidence only.
+
 ## How to read the case
 
 Read CPC-001 as a claim-and-evidence scaffold:
@@ -71,15 +93,11 @@ No claim should be treated as supported unless the case identifies the implement
 
 The next tranche should produce:
 
-- selected reference enforcement environment;
-- service-boundary document;
-- executable fixture binding for each mandatory protection contract;
-- positive and negative authorization tests;
-- post-revocation denial tests;
-- stale, missing, contradictory, unavailable, replay, and tamper tests;
-- intentionally defective implementation evidence;
+- evidence-result schema or invariant checks;
+- persisted fixture-result bundle;
 - evidence manifest with pinned source revisions and digests;
-- assurance determination distinguishing `SUPPORTED`, `CONTRADICTED`, `INDETERMINATE`, and `NOT_ASSESSED` claims.
+- first assurance determination over the fixture evidence;
+- explicit disposition of which claims are fixture-supported, contradicted, indeterminate or still not assessed.
 
 ## Consumer-facing interpretation
 
