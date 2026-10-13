@@ -1,0 +1,114 @@
+schema_version: "0.1.0"
+case_id: "CPC-001"
+artifact_type: "non-synthetic-implementation-admission"
+status: "ADMISSION_NOT_STARTED"
+non_synthetic_implementation_selected: false
+non_synthetic_implementation_evidence_present: false
+
+purpose: >-
+  Define the minimum admission criteria for binding CPC-001 to an externally
+  maintained, product-like, or otherwise non-synthetic implementation target.
+  This artifact is an admission gate only. It does not select a target and does
+  not provide non-synthetic implementation evidence.
+
+current_boundary:
+  existing_evidence_classes:
+    - "source-contract"
+    - "executed-synthetic-target"
+    - "ci-executed-synthetic-target"
+    - "independent-reproduction-template"
+    - "rahp-assessment-bridge"
+  absent_evidence_classes:
+    - "completed-independent-reproduction"
+    - "completed-rahp-assessment"
+    - "non-synthetic-implementation"
+    - "consumer-usability-validation"
+    - "production-safety-evidence"
+
+admission_requirements:
+  - id: "NSI-001"
+    name: "implementation ownership and maintenance boundary"
+    required: true
+    evidence_required:
+      - "repository or artifact location"
+      - "maintainer or accountable owner"
+      - "license and use boundary"
+      - "statement distinguishing implementation owner from DTFC case owner"
+  - id: "NSI-002"
+    name: "immutable target revision"
+    required: true
+    evidence_required:
+      - "commit, tag, release digest or immutable artifact identifier"
+      - "source retrieval instructions"
+      - "hash or equivalent integrity check when applicable"
+  - id: "NSI-003"
+    name: "protected resource and enforcement boundary"
+    required: true
+    evidence_required:
+      - "protected action/resource description"
+      - "authorization decision point"
+      - "policy evaluation point"
+      - "revocation state source"
+      - "bypass assumptions and limitations"
+  - id: "NSI-004"
+    name: "scenario mapping"
+    required: true
+    evidence_required:
+      - "mapping from CPC-001 protection contracts to target behaviours"
+      - "explicitly unsupported contracts"
+      - "test oracle for allow, deny, indeterminate and replay outcomes"
+  - id: "NSI-005"
+    name: "execution adapter"
+    required: true
+    evidence_required:
+      - "adapter command or API invocation"
+      - "input fixture format"
+      - "output/result contract"
+      - "failure handling semantics"
+  - id: "NSI-006"
+    name: "known-defect or negative-control strategy"
+    required: true
+    evidence_required:
+      - "defective configuration, mutation, or negative-control target"
+      - "expected violation"
+      - "evidence that the test suite detects the violation"
+  - id: "NSI-007"
+    name: "data and safety boundary"
+    required: true
+    evidence_required:
+      - "confirmation that no production personal data, credentials or secrets are required"
+      - "sanitized fixture data or synthetic input set"
+      - "publication and redaction constraints"
+  - id: "NSI-008"
+    name: "reproducibility and independence path"
+    required: true
+    evidence_required:
+      - "local reproduction command"
+      - "CI or equivalent automation path"
+      - "independent reviewer/environment instructions"
+
+minimum_admission_result:
+  admitted_values:
+    - "ADMITTED_FOR_NON_SYNTHETIC_TESTING"
+    - "NOT_ADMITTED"
+    - "ADMISSION_INDETERMINATE"
+  current_value: "NOT_ADMITTED"
+  reason: >-
+    No non-synthetic implementation target has been selected or evidenced.
+    CPC-001 remains bounded to repository-owned synthetic and CI-executed
+    synthetic evidence.
+
+prohibited_claims:
+  - "This artifact proves product or service safety."
+  - "This artifact proves consumer usability."
+  - "This artifact proves ARPA conformance."
+  - "This artifact proves RAHP assessment completion."
+  - "This artifact proves independent reproduction."
+  - "This artifact proves that a non-synthetic implementation has passed CPC-001."
+
+next_gate:
+  required_artifact: "completed non-synthetic implementation binding record"
+  required_state_change:
+    non_synthetic_implementation_selected: true
+    non_synthetic_implementation_evidence_present: true
+    minimum_admission_result: "ADMITTED_FOR_NON_SYNTHETIC_TESTING"
