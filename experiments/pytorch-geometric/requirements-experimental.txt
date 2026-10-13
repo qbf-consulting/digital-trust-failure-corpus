@@ -1,0 +1,3 @@
+# Optional experiment dependencies. Do not install these for the core DTFC validation path.
+torch>=2.3
+torch-geometric>=2.5
