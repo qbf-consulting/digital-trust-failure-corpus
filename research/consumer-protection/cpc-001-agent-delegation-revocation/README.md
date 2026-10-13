@@ -1,6 +1,6 @@
 # CPC-001: Delegated-agent revocation consumer protection case
 
-Status: **baseline work packet**. This directory defines the first Consumer Protection Case (CPC) as a research and assurance artifact. It is not a canonical `DTF-*` corpus case, not a production safety certification, and not a claim that any implementation is currently assured.
+Status: **baseline and protection-contract work packet**. This directory defines the first Consumer Protection Case (CPC) as a research and assurance artifact. It is not a canonical `DTF-*` corpus case, not a production safety certification, and not a claim that any implementation is currently assured.
 
 Tracks: [#111](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/111)
 
@@ -35,6 +35,9 @@ CPC-001 is scoped to a synthetic, non-production reference workflow:
 | `case-manifest.yaml` | Machine-readable case identity, claims, repository roles, gates, and evidence expectations | Baseline |
 | `baseline-architecture.md` | Repository placement, evidence lifecycle, publication path, and adversarial-resistance model | Baseline |
 | `adversarial-test-matrix.yaml` | Initial challenge matrix for negative, stale-state, replay, concurrency, and tamper cases | Baseline |
+| `protection-contracts.yaml` | Testable consumer protection behaviours for delegation, revocation, fail-safe handling, evidence and challenge | Draft contracts |
+| `revocation-semantics.md` | Explicit revocation timing, convergence, stale-state and in-flight-action semantics | Draft semantics |
+| `requirements-traceability.yaml` | Mapping from claims to protection contracts, adversarial conditions, minimum tests and evidence records | Draft traceability |
 
 ## Repository ownership model
 
@@ -46,6 +49,23 @@ This repository owns the consumer protection case, harm model, evidence contract
 | `qbf-consulting/agent-registry-protocol` | Candidate source for agent authority, delegation, revocation, and relationship semantics |
 | `sankarshanmukhopadhyay/rahp-toolkit` | Candidate assessment and evidence evaluation mechanism, where its existing interfaces fit |
 | Interoperability/reference implementation repository, if selected | Candidate executable service boundary and enforcement demonstration |
+
+## Protection-contract posture
+
+CPC-001 now defines ten draft protection contracts:
+
+1. bounded delegation representation;
+2. exact-action authorization binding;
+3. out-of-scope denial;
+4. revocation effectiveness;
+5. safe handling of missing, stale or conflicting authority evidence;
+6. replay and reuse resistance;
+7. concurrent revocation/action ordering;
+8. attributable authorization decision evidence;
+9. consumer inspection; and
+10. challenge and correction path.
+
+These contracts intentionally distinguish authority evidence from relying-service enforcement. A registry, identifier, capability claim, signature or discovery record does not independently authorize a protected action.
 
 ## Non-goals
 
@@ -71,16 +91,19 @@ Every material claim must identify:
 
 A green test result is evidence for a bounded claim. It is not consumer safety assurance by itself.
 
+All CPC-001 claims remain `NOT_ASSESSED` until execution evidence is generated and reviewed.
+
 ## Immediate next tranche
 
-The next tranche should convert this baseline into an executable reference case:
+The next tranche should select the reference implementation boundary and bind the draft contracts to executable fixtures:
 
 1. Select the smallest credible reference enforcement environment.
-2. Bind the protection contracts to implementation fixtures.
-3. Execute positive and negative authorization tests.
-4. Introduce an intentionally defective implementation and confirm that the tests detect it.
-5. Generate an evidence package with pinned source revisions and digests.
-6. Produce an assurance determination that distinguishes supported, contradicted, indeterminate, and unassessed claims.
+2. Define the service boundary and protected resource.
+3. Bind the protection contracts to implementation fixtures.
+4. Execute positive and negative authorization tests.
+5. Introduce an intentionally defective implementation and confirm that the tests detect it.
+6. Generate an evidence package with pinned source revisions and digests.
+7. Produce an assurance determination that distinguishes supported, contradicted, indeterminate, and unassessed claims.
 
 ## Completion rule
 
