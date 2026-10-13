@@ -1,0 +1,99 @@
+schema_version: "0.1.0"
+case_id: CPC-001
+artifact_type: candidate-target-selection-register
+status: CANDIDATE_SELECTION_NOT_STARTED
+candidate_target_selected: false
+candidate_target_admitted: false
+non_synthetic_evidence_present: false
+
+purpose: >-
+  Provide a machine-readable register for evaluating candidate non-synthetic
+  implementation targets before CPC-001 binds any target as evidence.
+
+current_evidence_boundary:
+  executed_evidence_classes:
+    - executed-synthetic-target
+    - ci-executed-synthetic-target
+  absent_evidence_classes:
+    - independent-reproduction
+    - non-synthetic-implementation
+    - completed-rahp-assessment
+    - consumer-usability-validation
+
+selection_principles:
+  - id: STP-001
+    name: implementation ownership must be explicit
+    requirement: >-
+      A candidate must identify its owner, maintainer, repository or artifact
+      authority, license boundary and maintenance status before evaluation.
+  - id: STP-002
+    name: protected action boundary must be concrete
+    requirement: >-
+      A candidate must expose or document the protected resource, exact action,
+      authorization evaluation point and revocation enforcement point.
+  - id: STP-003
+    name: executable binding must be reproducible
+    requirement: >-
+      A candidate must provide a pinned revision or immutable artifact digest,
+      replay command and adapter boundary sufficient for independent replay.
+  - id: STP-004
+    name: negative-control path must exist
+    requirement: >-
+      A candidate must allow a safe negative-control strategy that demonstrates
+      the test harness can detect revocation, stale-state or replay defects.
+  - id: STP-005
+    name: no production secrets or personal data
+    requirement: >-
+      A candidate must not require production credentials, personal data,
+      customer data, private keys, or live consequential action.
+  - id: STP-006
+    name: registry or identity evidence is not sufficient
+    requirement: >-
+      A candidate must distinguish identity, discovery, registration, capability
+      and signature evidence from action-specific authorization enforcement.
+
+candidate_records: []
+
+minimum_candidate_record_fields:
+  - candidate_id
+  - candidate_name
+  - owner_or_maintainer
+  - repository_or_artifact_url
+  - pinned_revision_or_digest
+  - license_or_access_terms
+  - protected_resource
+  - protected_action
+  - authorization_decision_point
+  - revocation_enforcement_point
+  - execution_adapter
+  - replay_command
+  - negative_control_strategy
+  - data_boundary
+  - safety_boundary
+  - evidence_retention_boundary
+  - reviewer_notes
+  - admission_recommendation
+
+allowed_admission_recommendations:
+  - NOT_REVIEWED
+  - REJECT
+  - NEEDS_MORE_EVIDENCE
+  - ADMIT_FOR_EXPERIMENTAL_BINDING
+
+prohibited_current_claims:
+  - CPC-001 has selected a non-synthetic implementation target.
+  - CPC-001 has admitted a non-synthetic implementation target.
+  - CPC-001 has non-synthetic implementation evidence.
+  - CPC-001 establishes product or service safety.
+  - CPC-001 establishes ARPA conformance.
+  - CPC-001 has completed RAHP assessment.
+  - CPC-001 has completed independent reproduction.
+
+stop_condition:
+  current_tranche_complete_when: >-
+    The repository contains a target-selection register, guidance and tests
+    that prevent candidate review metadata from being treated as admitted
+    implementation evidence.
+  next_gate: >-
+    Select one concrete candidate target and complete a candidate record, or
+    pause CPC-001 until a credible candidate implementation is available.
