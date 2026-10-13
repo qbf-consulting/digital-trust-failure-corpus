@@ -1,6 +1,6 @@
 # CPC-001: Delegated-agent revocation consumer protection case
 
-Status: **baseline and protection-contract work packet**. This directory defines the first Consumer Protection Case (CPC) as a research and assurance artifact. It is not a canonical `DTF-*` corpus case, not a production safety certification, and not a claim that any implementation is currently assured.
+Status: **baseline, protection-contract and executable-fixture work packet**. This directory defines the first Consumer Protection Case (CPC) as a research and assurance artifact. It is not a canonical `DTF-*` corpus case, not a production safety certification, and not a claim that any implementation is currently assured.
 
 Tracks: [#111](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/111)
 
@@ -38,6 +38,10 @@ CPC-001 is scoped to a synthetic, non-production reference workflow:
 | `protection-contracts.yaml` | Testable consumer protection behaviours for delegation, revocation, fail-safe handling, evidence and challenge | Draft contracts |
 | `revocation-semantics.md` | Explicit revocation timing, convergence, stale-state and in-flight-action semantics | Draft semantics |
 | `requirements-traceability.yaml` | Mapping from claims to protection contracts, adversarial conditions, minimum tests and evidence records | Draft traceability |
+| `examples/cpc-001/protected_resource.py` | Synthetic protected resource that enforces the draft contracts for local testing | Executable fixture |
+| `examples/cpc-001/defective_protected_resource.py` | Intentionally defective target that ignores revocation, stale authority and replay state | Known-defect fixture |
+| `tools/execute_cpc001.py` | Runner that emits executed-synthetic-target evidence for the safe and defective targets | Executable fixture |
+| `tests/test_cpc001_executable_fixture.py` | Unit tests for safe behaviour and known-defect detection | Test coverage |
 
 ## Repository ownership model
 
@@ -67,6 +71,24 @@ CPC-001 now defines ten draft protection contracts:
 
 These contracts intentionally distinguish authority evidence from relying-service enforcement. A registry, identifier, capability claim, signature or discovery record does not independently authorize a protected action.
 
+## Executable fixture posture
+
+The executable fixture is intentionally narrow. It tests a synthetic protected resource against the draft contracts and confirms that an intentionally defective implementation is detected.
+
+Run the focused CPC-001 tests with:
+
+```bash
+python -m unittest tests.test_cpc001_executable_fixture -v
+```
+
+Run the paired fixture directly with:
+
+```bash
+python tools/execute_cpc001.py --role paired
+```
+
+The runner records `execution_class: executed-synthetic-target`, source digests, request digests, response digests, expected disposition, observed disposition and verdict. These outputs are local execution evidence only. They are not production assurance, not independent adoption, and not consumer usability validation.
+
 ## Non-goals
 
 CPC-001 does not attempt to:
@@ -91,19 +113,17 @@ Every material claim must identify:
 
 A green test result is evidence for a bounded claim. It is not consumer safety assurance by itself.
 
-All CPC-001 claims remain `NOT_ASSESSED` until execution evidence is generated and reviewed.
+All CPC-001 claims remain `NOT_ASSESSED` until execution evidence is generated, retained and reviewed through an assurance determination.
 
 ## Immediate next tranche
 
-The next tranche should select the reference implementation boundary and bind the draft contracts to executable fixtures:
+The next tranche should turn executed fixture output into an explicit evidence package:
 
-1. Select the smallest credible reference enforcement environment.
-2. Define the service boundary and protected resource.
-3. Bind the protection contracts to implementation fixtures.
-4. Execute positive and negative authorization tests.
-5. Introduce an intentionally defective implementation and confirm that the tests detect it.
-6. Generate an evidence package with pinned source revisions and digests.
-7. Produce an assurance determination that distinguishes supported, contradicted, indeterminate, and unassessed claims.
+1. Generate a machine-readable evidence bundle from `tools/execute_cpc001.py --role paired`.
+2. Pin source revisions and file digests.
+3. Add schema or invariant checks for the CPC-001 result contract.
+4. Produce a first assurance determination that distinguishes fixture-supported, contradicted, indeterminate and unassessed claims.
+5. Preserve the limits: synthetic local execution is not independent implementation evidence.
 
 ## Completion rule
 
