@@ -1,0 +1,63 @@
+schema_version: "0.1.0"
+record_type: "cpc-001-independent-reproduction-record"
+case_id: "CPC-001"
+status: "TEMPLATE_NOT_EXECUTED"
+
+reproduction_subject:
+  repository: "qbf-consulting/digital-trust-failure-corpus"
+  source_revision: "<commit-sha-under-review>"
+  evidence_manifest: "research/consumer-protection/cpc-001-agent-delegation-revocation/evidence/evidence-manifest.yaml"
+  reproduction_instructions: "research/consumer-protection/cpc-001-agent-delegation-revocation/evidence/reproduction-instructions.md"
+
+reviewer:
+  name_or_handle: "<reviewer-name-or-handle>"
+  affiliation_or_role: "<affiliation-or-role>"
+  relationship_to_author: "independent | same-organization | original-author | unknown"
+  independence_statement: "<brief statement of independence, constraints or conflicts>"
+
+execution_environment:
+  executed_at_utc: "<YYYY-MM-DDTHH:MM:SSZ>"
+  operating_system: "<os-and-version>"
+  python_version: "<python-version>"
+  dependency_install_command: "python -m pip install -r requirements-dev.txt"
+  checkout_command: "git clone https://github.com/qbf-consulting/digital-trust-failure-corpus && git checkout <source_revision>"
+
+commands_executed:
+  - command: "python -m unittest discover -s tests -v"
+    expected_result: "success"
+    observed_result: "<success | failure | not-run>"
+    output_artifact: "<path-or-url-to-log>"
+  - command: "python tools/validate.py"
+    expected_result: "success"
+    observed_result: "<success | failure | not-run>"
+    output_artifact: "<path-or-url-to-log>"
+  - command: "python tools/execute_cpc001.py --role paired"
+    expected_result: "safe target satisfies scenarios; defective target is detected"
+    observed_result: "<success | failure | not-run>"
+    output_artifact: "<path-or-url-to-json-result>"
+
+evidence_observed:
+  safe_target_result: "<satisfied | violated | indeterminate | not-run>"
+  defective_target_detected: "<true | false | not-run>"
+  post_revocation_defect_detected: "<true | false | not-run>"
+  stale_authority_defect_detected: "<true | false | not-run>"
+  replay_defect_detected: "<true | false | not-run>"
+
+claim_boundary:
+  independent_reproduction_completed: false
+  reason: "Template record only. This field must not be changed to true without a completed reviewer record and retained evidence."
+  permitted_claim: "A completed record may support independent reproduction of the repository-owned synthetic CPC-001 fixture under the recorded environment."
+  prohibited_claims:
+    - "Production product or service safety"
+    - "Consumer usability validation"
+    - "ARPA conformance"
+    - "RAHP assessment"
+    - "Non-synthetic implementation evidence"
+
+reviewer_determination:
+  result: "<reproduced | not-reproduced | partially-reproduced | not-executed>"
+  summary: "<reviewer-summary>"
+  discrepancies:
+    - "<discrepancy-or-none>"
+  limitations:
+    - "<limitation-or-none>"
