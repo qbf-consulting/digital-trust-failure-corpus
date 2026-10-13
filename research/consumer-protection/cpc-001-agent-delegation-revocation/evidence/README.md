@@ -4,13 +4,21 @@ Status: **synthetic executable evidence boundary**.
 
 This directory documents how CPC-001 evidence is generated, validated, and interpreted. It does not contain independent third-party implementation evidence and does not make a production assurance claim.
 
+## Evidence package contents
+
+| Artifact | Purpose | Status |
+| --- | --- | --- |
+| `current-determination.yaml` | Claim-by-claim current determination boundary | Present |
+| `evidence-manifest.yaml` | Source revisions, CI run identifiers, fixture evidence class and assurance boundary | Present |
+| `reproduction-instructions.md` | Commands and interpretation rules for synthetic fixture reproduction | Present |
+
 ## Evidence classes
 
 | Evidence class | Source | Current status | Assurance meaning |
 | --- | --- | --- | --- |
 | `source-contract` | CPC-001 Markdown/YAML artifacts | Present | Describes intended claims and protection contracts |
 | `executed-synthetic-target` | `tools/execute_cpc001.py` invoking repository-owned safe/defective targets | Added as executable path | Demonstrates local fixture behaviour and known-defect detection |
-| `ci-executed-synthetic-target` | GitHub Actions running repository tests | Pending CI | Will confirm the executable path under CI conditions |
+| `ci-executed-synthetic-target` | GitHub Actions running repository tests | Present for PR #112 | Confirms repository-owned fixture and guardrail tests executed successfully in CI for the recorded PR head |
 | `independent-reproduction` | Separate reviewer/environment replaying the fixture | Not present | Required before claiming independent reproducibility |
 | `non-synthetic-implementation` | Externally maintained or product-like enforcement implementation | Not present | Required before claiming product/service implementation evidence |
 
@@ -53,13 +61,11 @@ It cannot support statements such as:
 
 Generated evidence should be treated as a build artifact unless it is intentionally versioned as a release evidence bundle. If persisted in the repository, it must be labelled as synthetic and bound to exact source revisions or file digests.
 
-## Stop condition for this tranche
+## Stop condition for this evidence tranche
 
-The executable tranche reaches a defensible stop point when the repository contains:
+The evidence-package tranche reaches a defensible stop point when the repository contains:
 
-- a runnable safe target;
-- a runnable deliberately defective target;
-- a runner that emits machine-readable observations;
-- unit tests that require safe success and defective-target failure;
-- a current determination explaining what the fixture supports and what remains unassessed; and
-- a PR note identifying the next evidence gate.
+- a manifest identifying PR #112, the merged source revision, the PR head revision and CI run identifiers;
+- reproduction instructions for the synthetic fixture;
+- tests that prevent CI success from being promoted to full assurance;
+- explicit disclosure that independent reproduction, non-synthetic implementation evidence, RAHP assessment and consumer-usability evidence remain absent.

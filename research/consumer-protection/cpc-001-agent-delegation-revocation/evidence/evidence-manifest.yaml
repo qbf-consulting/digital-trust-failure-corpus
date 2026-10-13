@@ -1,0 +1,69 @@
+schema_version: "0.1.0"
+case_id: CPC-001
+case_name: delegated-agent-revocation
+status: synthetic-evidence-package
+
+source:
+  merged_pr: 112
+  merged_commit_sha: 6723329668d1feb8815c9c1f74fcf3e9d928d891
+  pr_head_sha: 4b6392c7f2e9916b428356c764732a688f7c936a
+  evidence_package_branch: research/cpc-001-evidence-package
+  canonical_case_path: research/consumer-protection/cpc-001-agent-delegation-revocation
+
+ci_evidence:
+  evidence_class: ci-executed-synthetic-target
+  validation_workflow:
+    run_id: 38332556409
+    run_number: 222
+    conclusion: success
+  documentation_workflow:
+    run_id: 38332556517
+    run_number: 143
+    conclusion: success
+  interpretation: >-
+    GitHub Actions executed the repository validation and documentation workflows
+    successfully for the CPC-001 baseline PR head. This confirms repository CI
+    execution of the synthetic fixture and documentation checks for that head.
+    It does not establish independent reproduction, production suitability,
+    ARPA conformance, RAHP assessment, or consumer usability.
+
+fixture_evidence:
+  evidence_class: executed-synthetic-target
+  safe_target: examples/cpc-001/protected_resource.py
+  defective_target: examples/cpc-001/defective_protected_resource.py
+  runner: tools/execute_cpc001.py
+  local_command: python tools/execute_cpc001.py --role paired
+  validation_command: python -m unittest discover -s tests -v
+  required_observations:
+    - safe target satisfies all mandatory synthetic contract scenarios
+    - defective target is detected as unsafe
+    - post-revocation defect is visible
+    - stale-authority defect is visible
+    - replay defect is visible
+
+claim_boundary:
+  permitted_statement: >-
+    The repository-owned CPC-001 synthetic fixture and CI checks detect the
+    deliberately defective protected-resource target under the included test
+    scenarios.
+  prohibited_statements:
+    - CPC-001 is independently reproduced.
+    - CPC-001 demonstrates product or service safety.
+    - ARPA is conformant because this fixture passes.
+    - RAHP has assessed CPC-001.
+    - Consumers can successfully use a revocation control in practice.
+    - Synthetic CI success is independent adoption evidence.
+
+assurance_boundary:
+  assurance_determination: INDETERMINATE
+  reason: >-
+    Synthetic execution and successful CI are useful evidence that the fixture
+    and guardrail tests work, but they do not satisfy independent reproduction,
+    non-synthetic implementation, usability, or RAHP assessment gates.
+  next_evidence_gate: independent reproduction or non-synthetic implementation binding
+
+integrity_expectations:
+  - Evidence bundles must identify exact source revisions.
+  - Generated results must be labelled as synthetic unless produced by a non-synthetic target.
+  - CI run identifiers must not be treated as durable evidence without source commit context.
+  - Historical determinations must not be overwritten by later evidence.
