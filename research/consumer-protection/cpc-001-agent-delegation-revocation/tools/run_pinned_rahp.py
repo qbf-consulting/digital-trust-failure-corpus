@@ -57,6 +57,11 @@ def main() -> int:
         for index, ref in enumerate(refs):
             source = (BASE / ref if ref.startswith(("examples/", "tests/", "tools/")) else CPC / ref)
             found = source.is_file()
+            if found:
+                tracked_path = str(source.relative_to(BASE))
+                pinned = subprocess.check_output(["git", "-C", str(BASE), "show", f"{DTFC_PIN}:{tracked_path}"])
+                if pinned != source.read_bytes():
+                    raise SystemExit(f"Evidence content differs from pinned DTFC revision: {tracked_path}")
             files[ref] = {
                 "present": found, "sha256": sha256(source.read_bytes()) if found else None
             }
