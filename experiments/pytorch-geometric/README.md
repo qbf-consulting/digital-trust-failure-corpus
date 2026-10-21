@@ -36,6 +36,7 @@ Derived artifacts in this directory are advisory research outputs. They must not
 graph_builder.py                  Deterministic graph extraction and optional PyG conversion
 build_graph.py                    CLI wrapper for JSON graph export and optional PyG smoke check
 graph_report.py                   Deterministic Markdown report generator from graph JSON
+related_cases.py                  Transparent non-ML case-neighbour ranking
 requirements-experimental.txt     Optional PyTorch / PyTorch Geometric dependencies
 reports/baseline-graph-report.md  Committed baseline report artifact
 tests/                            Unit tests for extraction, reporting, and dependency isolation
@@ -72,6 +73,26 @@ python experiments/pytorch-geometric/graph_report.py \
 ```
 
 The report records deterministic graph facts. It is not an embedding report, cluster report, link-prediction report, maturity assessment, or assurance decision.
+
+## Generate deterministic related-case neighbours (#123)
+
+The comparison is derived from the graph export, with a fixed per-shared-feature weight:
+failure class 5, domain 3, evidence category 2, reference type 1, expected disposition 1.
+Shared features are deduplicated, zero-overlap pairs omitted, and ties resolved by
+ascending case ID. Results are deterministic and entirely standard-library based.
+
+```bash
+python experiments/pytorch-geometric/build_graph.py --corpus corpus --output /tmp/dtfc-graph.json
+python experiments/pytorch-geometric/related_cases.py --graph /tmp/dtfc-graph.json \
+  --output experiments/pytorch-geometric/reports/related-case-baseline.md
+python -m unittest discover -s experiments/pytorch-geometric/tests -v
+```
+
+This is a review aid, not evidence of case equivalence or assurance. Shared broad
+dispositions or common evidence categories can create non-specific neighbours.
+Before training or embedding models, reviewers should sample suggested pairs and
+compare their usefulness against direct taxonomy filtering. No PyTorch/PyG dependency
+is added to normal validation.
 
 ## Optional PyTorch Geometric smoke check
 

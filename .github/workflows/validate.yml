@@ -38,6 +38,9 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
+      - name: Validate deterministic graph research sidecar
+        run: python -m unittest discover -s experiments/pytorch-geometric/tests -v
+
       - name: Validate corpus
         run: python tools/validate.py
 
