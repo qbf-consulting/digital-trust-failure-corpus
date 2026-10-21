@@ -14,7 +14,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-BASE = Path(__file__).resolve().parents[3]
+BASE = Path(__file__).resolve().parents[4]
 CPC = BASE / "research/consumer-protection/cpc-001-agent-delegation-revocation"
 CLAIM_FILES = {
     "C1": ["protection-contracts.yaml", "requirements-traceability.yaml", "examples/cpc-001/protected_resource.py"],
