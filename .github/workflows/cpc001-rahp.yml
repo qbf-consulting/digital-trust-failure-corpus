@@ -1,0 +1,36 @@
+name: CPC-001 pinned RAHP reasoning evidence
+on:
+  pull_request:
+    paths:
+      - 'research/consumer-protection/cpc-001-agent-delegation-revocation/**'
+      - '.github/workflows/cpc001-rahp.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reason:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          path: dtfc
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: sankarshanmukhopadhyay/rahp-toolkit
+          ref: 7cd34ed53c537a43c0c5ed1a526a3748055e3f1c
+          path: rahp
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.12'
+      - name: Validate pinned RAHP evaluation
+        run: |
+          python dtfc/research/consumer-protection/cpc-001-agent-delegation-revocation/tools/run_pinned_rahp.py --rahp rahp --output output
+          python -m json.tool output/cpc001-rahp-reasoning-result.json > /dev/null
+          sha256sum output/*
+      - name: Upload actual execution outputs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02c2cf # v4
+        with:
+          name: cpc001-rahp-reasoning
+          path: output/
+          if-no-files-found: error
+          retention-days: 90
