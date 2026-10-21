@@ -61,6 +61,14 @@ class RelatedCasesTests(unittest.TestCase):
             graph["edges"].append({"source": "case:DTF-001", "target": "x", "type": "unknown"})
             related_cases(graph)
 
+    def test_committed_baseline_reproducible_from_corpus(self):
+        from graph_builder import build_from_corpus
+        root = ROOT.parents[1]
+        graph = build_from_corpus(root / "corpus").as_dict()
+        expected = render_report(related_cases(graph))
+        committed = (ROOT / "reports" / "related-case-baseline.md").read_text(encoding="utf-8")
+        self.assertEqual(committed, expected)
+
     def test_output_declares_boundary(self):
         markdown = render_report(related_cases(fixture()))
         self.assertIn("not equivalence", markdown)
