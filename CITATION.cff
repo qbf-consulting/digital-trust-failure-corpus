@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the version or commit used; this citation does not imply independent certification or upstream endorsement."
+title: "Digital Trust Failure Corpus"
+type: dataset
+authors:
+  - family-names: Mukhopadhyay
+    given-names: Sankarshan
+repository-code: https://github.com/qbf-consulting/digital-trust-failure-corpus
+version: "0.4.0"
+abstract: "Machine-readable evidence and falsification cases for digital trust systems; corpus inclusion does not confer normative authority."
