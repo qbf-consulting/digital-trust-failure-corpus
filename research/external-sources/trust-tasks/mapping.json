@@ -1,0 +1,292 @@
+{
+  "schema_version": "0.1.0",
+  "review_date": "2026-11-12",
+  "source": {
+    "repository": "trustoverip/dtgwg-trust-tasks-tf",
+    "commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+    "registry_url": "https://trusttasks.org/registry",
+    "framework_spec_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/SPEC.md"
+  },
+  "scope": {
+    "selection": "twelve versioned draft task specifications across five deliberately chosen families",
+    "families": [
+      "acl",
+      "auth",
+      "credential-exchange",
+      "registry",
+      "policy"
+    ],
+    "canonical_case_schema_changed": false,
+    "independent_target_executions": 0,
+    "independent_consumer_replays": 0
+  },
+  "specifications": [
+    {
+      "slug": "acl/change-role",
+      "version": "0.3",
+      "category": "access-control",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/acl/change-role/0.3",
+      "source_path": "specs/acl/change-role/0.3/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/acl/change-role/0.3/spec.md"
+    },
+    {
+      "slug": "acl/grant",
+      "version": "0.3",
+      "category": "access-control",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/acl/grant/0.3",
+      "source_path": "specs/acl/grant/0.3/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/acl/grant/0.3/spec.md"
+    },
+    {
+      "slug": "acl/revoke",
+      "version": "0.3",
+      "category": "access-control",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/acl/revoke/0.3",
+      "source_path": "specs/acl/revoke/0.3/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/acl/revoke/0.3/spec.md"
+    },
+    {
+      "slug": "auth/revoke-session",
+      "version": "0.2",
+      "category": "authentication",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/auth/revoke-session/0.2",
+      "source_path": "specs/auth/revoke-session/0.2/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/auth/revoke-session/0.2/spec.md"
+    },
+    {
+      "slug": "credential-exchange/issue",
+      "version": "0.1",
+      "category": "credentials",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/credential-exchange/issue/0.1",
+      "source_path": "specs/credential-exchange/issue/0.1/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/credential-exchange/issue/0.1/spec.md"
+    },
+    {
+      "slug": "credential-exchange/present",
+      "version": "0.1",
+      "category": "credentials",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/credential-exchange/present/0.1",
+      "source_path": "specs/credential-exchange/present/0.1/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/credential-exchange/present/0.1/spec.md"
+    },
+    {
+      "slug": "credential-exchange/request",
+      "version": "0.1",
+      "category": "credentials",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/credential-exchange/request/0.1",
+      "source_path": "specs/credential-exchange/request/0.1/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/credential-exchange/request/0.1/spec.md"
+    },
+    {
+      "slug": "policy/activate",
+      "version": "0.1",
+      "category": "governance",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/policy/activate/0.1",
+      "source_path": "specs/policy/activate/0.1/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/policy/activate/0.1/spec.md"
+    },
+    {
+      "slug": "policy/evaluate",
+      "version": "0.4",
+      "category": "governance",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/policy/evaluate/0.4",
+      "source_path": "specs/policy/evaluate/0.4/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/policy/evaluate/0.4/spec.md"
+    },
+    {
+      "slug": "policy/upsert",
+      "version": "0.3",
+      "category": "governance",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/policy/upsert/0.3",
+      "source_path": "specs/policy/upsert/0.3/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/policy/upsert/0.3/spec.md"
+    },
+    {
+      "slug": "registry/authorization",
+      "version": "0.2",
+      "category": "governance",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/registry/authorization/0.2",
+      "source_path": "specs/registry/authorization/0.2/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/registry/authorization/0.2/spec.md"
+    },
+    {
+      "slug": "registry/recognition",
+      "version": "0.2",
+      "category": "governance",
+      "status": "draft",
+      "type_uri": "https://trusttasks.org/spec/registry/recognition/0.2",
+      "source_path": "specs/registry/recognition/0.2/spec.md",
+      "source_url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/registry/recognition/0.2/spec.md"
+    }
+  ],
+  "judgments": [
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.3",
+      "case_id": "DTF-021",
+      "classification": "mechanism-overlap",
+      "rationale": "Role changes use current-role compare-and-swap and ordered updates; reusing a pre-change role check at a later privileged action crosses the lifecycle boundary.",
+      "test_hypothesis": "Run stale-fromRole and post-demotion decisions with explicit ordering and observable versions.",
+      "authority_boundary": "Task conformance at role-change time does not by itself establish downstream authorization freshness.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.3",
+      "case_id": "DTF-002",
+      "classification": "mechanism-overlap",
+      "rationale": "A grant can overrun the granting principal's permitted act/approve/capability ceiling if the maintainer substitutes a signed request for a scoped authority check.",
+      "test_hypothesis": "Test an unauthorized grant with an otherwise well-formed proof against the maintainer's authoritative grant policy.",
+      "authority_boundary": "The task declares grant effects and proof requirements; the consumer owns scope enforcement and applicable governance policy.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.3",
+      "case_id": "DTF-034",
+      "classification": "adjacent",
+      "rationale": "The grant includes named purposes for later reads, creating a potential downstream purpose-overrun boundary distinct from correctness of grant acceptance.",
+      "test_hypothesis": "Observe reads carrying a declared purpose and subsequent reuse against the separately governing purpose policy.",
+      "authority_boundary": "Grant semantics alone do not demonstrate an actual secondary-use privacy violation.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.3",
+      "case_id": "DTF-016",
+      "classification": "mechanism-overlap",
+      "rationale": "The specification makes revoked authority effective at the next authorization decision, exposing a time-of-check boundary for in-flight or subsequent decisions.",
+      "test_hypothesis": "After successful revoke, execute a formerly authorized action and verify decision-time effective authority.",
+      "authority_boundary": "The task specifies revocation semantics; propagation and execution enforcement belong to the implementation.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/auth/revoke-session/0.2",
+      "case_id": "DTF-004",
+      "classification": "mechanism-overlap",
+      "rationale": "The specified session revocation requires subsequent access and refresh-token uses to fail; retaining a stale session state would defeat the lifecycle transition.",
+      "test_hypothesis": "Revoke a session, then replay access and refresh tokens including a later refresh attempt.",
+      "authority_boundary": "A structurally valid revocation document is not proof that every downstream verifier invalidated the session.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/credential-exchange/issue/0.1",
+      "case_id": "DTF-025",
+      "classification": "adjacent",
+      "rationale": "The specification distinguishes credential issuer signature from the delivery envelope proof; combining valid proofs does not establish stronger governance assurance than either supports.",
+      "test_hypothesis": "Compare issuer-proof and delivery-attribution evidence with the actual reliance proposition under test.",
+      "authority_boundary": "The task itself explicitly separates proofs; this is a consumer interpretation risk, not an identified specification defect.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/credential-exchange/present/0.1",
+      "case_id": "DTF-032",
+      "classification": "adjacent",
+      "rationale": "The specification binds a presentation to verifier nonce and audience while disclosing holder claims; other proof or envelope metadata may still be cross-context correlatable.",
+      "test_hypothesis": "Compare separately consented presentations across audiences and inspect stable proof and transport identifiers.",
+      "authority_boundary": "No correlation defect is asserted by the spec; exposure depends on credential format, wallets, transport and deployment.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/credential-exchange/present/0.1",
+      "case_id": "DTF-034",
+      "classification": "mechanism-overlap",
+      "rationale": "The stated presentation purpose restricts subsequent reuse, while the verifier retains disclosed material; a valid presentation need not authorize secondary use.",
+      "test_hypothesis": "Observe a correctly accepted presentation and a subsequent reuse inconsistent with the purpose restriction.",
+      "authority_boundary": "Purpose compliance is a relying-party operational obligation, not demonstrated by schema conformance.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/credential-exchange/request/0.1",
+      "case_id": "DTF-013",
+      "classification": "adjacent",
+      "rationale": "A holder's key-binding proof and task document proof establish different facts; treating possession of a signing key as sufficient issuing authority would substitute proof for permission.",
+      "test_hypothesis": "Submit a valid key-bound request lacking entitlement under the issuer's policy and inspect the decision.",
+      "authority_boundary": "The task's request/proof semantics do not define the issuer's independent eligibility policy.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/policy/activate/0.1",
+      "case_id": "DTF-021",
+      "classification": "mechanism-overlap",
+      "rationale": "Activation changes the authoritative policy for a purpose immediately; continued use of a cached previous policy at a later material decision creates a lifecycle-stage mismatch.",
+      "test_hypothesis": "Activate a new policy, then execute a subsequent decision using current versus stale policy identity.",
+      "authority_boundary": "Task-level activation success is not proof that every consumer refreshed its policy state.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/policy/evaluate/0.4",
+      "case_id": "DTF-024",
+      "classification": "adjacent",
+      "rationale": "The requireConsent decision now carries explicit quorum and requester-exclusion members; a consumer may still misinterpret the count as independent approval.",
+      "test_hypothesis": "Exercise approvals with overlapping controllers and policy-specific independence constraints.",
+      "authority_boundary": "Having quorum fields does not establish independence of real approving principals.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/policy/evaluate/0.4",
+      "case_id": "DTF-027",
+      "classification": "mechanism-overlap",
+      "rationale": "The task is explicitly a non-persisting dry-run; interpreting its successful output as a deployed policy or effective runtime decision confuses process success with assurance.",
+      "test_hypothesis": "Compare preview evaluation with actual active policy and authoritative execution outcome.",
+      "authority_boundary": "The dry-run does not activate policy or establish production enforcement.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/policy/upsert/0.3",
+      "case_id": "DTF-012",
+      "classification": "mechanism-overlap",
+      "rationale": "Version-checked policy updates affect subsequent requests; a stale module, out-of-order write or policy/version mismatch can make a decision rely on obsolete policy.",
+      "test_hypothesis": "Test expectedVersion conflict and decision after successfully updating the active policy module.",
+      "authority_boundary": "Parsing and persistence success do not establish authorization or semantic adequacy of the policy.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/registry/authorization/0.2",
+      "case_id": "DTF-012",
+      "classification": "mechanism-overlap",
+      "rationale": "An authorization query is evaluated under an authority-defined action/resource vocabulary and a validity window; a response can be misused when its policy or evaluation context no longer applies.",
+      "test_hypothesis": "Check query context, effective time, record validity window, governance policy version and subsequent decision.",
+      "authority_boundary": "The query result is source evidence, not universal permission for a different action, policy or time.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/registry/recognition/0.2",
+      "case_id": "DTF-028",
+      "classification": "mechanism-overlap",
+      "rationale": "Recognition and authorization are separate registry operations; treating a positive recognition response as permission to act launders a non-authorizing signal.",
+      "test_hypothesis": "Return positive recognition without authorization and verify that the action remains independently gated.",
+      "authority_boundary": "A registry may correctly report recognition even when the relying party must reject the action.",
+      "assessment_state": "research-screened",
+      "execution_evidence": "none"
+    }
+  ],
+  "limitations": [
+    "Mappings are original DTFC research interpretations, not Trust Tasks normative assertions or upstream acceptance.",
+    "Task-family screening does not imply every category member shares the listed failure mechanisms.",
+    "No target implementation was executed; test hypotheses are proposals, not observed results.",
+    "Source commit pins repository bytes only; structural validation does not independently validate substantive judgments.",
+    "Draft versions can evolve. A subsequent registry revision requires a new screening decision, not silent update."
+  ]
+}

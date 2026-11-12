@@ -1,6 +1,6 @@
 # Digital Trust Failure Corpus
 
-**Current repository baseline: v0.4.0 · 37 draft cases · failure-case schema v0.1.0**
+**Current published repository release: v0.5.0 (experimental) · 37 draft cases · failure-case schema v0.1.0**
 
 Digital Trust Failure Corpus (DTFC) is a machine-readable corpus of failure conditions, adversarial configurations, invalid trust propositions, and expected safe outcomes for digital trust systems.
 
@@ -15,7 +15,7 @@ The corpus provides reusable failure propositions, evidence requirements, and fa
 - [Consume DTFC safely](consuming-the-corpus.md)
 - [Author a case](authoring-cases.md)
 - [Validate the repository](validation.md)
-- [Read the v0.4.0 release notes](release-notes-v0.4.0.md)
+- [Read the v0.5.0 experimental release notes](release-notes-v0.5.0.md)
 
 ## Current corpus
 
@@ -47,3 +47,7 @@ mkdocs build --strict
 DTFC does not define the normative semantics of external protocols, standards, governance systems, or assurance methods. Consumers remain responsible for mapping each technology-neutral failure proposition to authoritative specifications, policies, evidence sources, and implementation contexts.
 
 Canonical project source: [GitHub repository](https://github.com/qbf-consulting/digital-trust-failure-corpus).
+
+## Version-pinned external applicability research
+
+The [Trust Tasks crosswalk](trust-tasks-crosswalk.md) documents a bounded twelve-task screening against existing DTF cases. Its judgments are non-authoritative research and are not external target execution evidence. The upstream Trust Tasks specification remains authoritative for task behavior.

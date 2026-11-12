@@ -47,3 +47,7 @@ Reviewed canonical DTF-002, DTF-003, DTF-018 and DTF-028 in addition to DTF-001.
 ## Evidence limits
 
 This tranche contains a source-level crosswalk and one case-level mapping, not a completed exhaustive 37-case review. Source URLs are provided for independent inspection; links are not evidence that external projects have adopted DTFC.
+
+## Complementary task-specific screening (2026-11-12)
+
+The [Trust Tasks Registry applicability crosswalk](trust-tasks-crosswalk.md) separately examines twelve source-pinned, versioned operations. Unlike this crosswalk of vulnerability catalogues and source records, it asks whether a specific operational specification exposes a testable DTFC failure boundary. Its judgments are a non-normative research sidecar; they are not a new canonical case tranche, defect finding, or independent target test.
