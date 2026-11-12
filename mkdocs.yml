@@ -41,6 +41,7 @@ nav:
   - External research:
       - Source crosswalk: external-corpus-crosswalk.md
       - Semantic screening: external-semantic-screening.md
+      - Trust Tasks applicability: trust-tasks-crosswalk.md
       - Inspected source records: inspected-external-records.md
       - Tool-output boundary: tool-output-boundary-research.md
       - Case maturity and release gates: case-maturity-and-release-gates.md
@@ -67,4 +68,4 @@ markdown_extensions:
 strict: true
 
 extra:
-  status: v0.4.0
+  status: v0.5.0-experimental

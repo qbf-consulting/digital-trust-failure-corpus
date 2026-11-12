@@ -6,9 +6,9 @@ The project provides reusable failure cases, evidence requirements, and falsific
 
 ## Status
 
-Current development baseline: **v0.4.0**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.4.0 release notes`](docs/release-notes-v0.4.0.md).
+Current published repository release: **v0.5.0 (experimental)**. See [`VERSION`](VERSION), [`CHANGELOG.md`](CHANGELOG.md), and the [`v0.5.0 release notes`](docs/release-notes-v0.5.0.md).
 
-v0.4.0 retains the v0.1.0 failure-case schema and contains thirty-seven draft cases, adding the privacy/correlation tranche to the previously released cross-specification seam and decision-resolution work. Repository release version, schema version, and case version are distinct lifecycle dimensions.
+v0.5.0 retains the v0.1.0 failure-case schema and contains thirty-seven draft cases, adding the privacy/correlation tranche to the previously released cross-specification seam and decision-resolution work. Repository release version, schema version, and case version are distinct lifecycle dimensions.
 
 The corpus is **evidence, not authority**. A case can cite normative specifications, governance frameworks, implementations, papers, or incidents, but inclusion here does not make the case itself normative.
 
@@ -96,7 +96,7 @@ The [eight directly inspected external records](docs/inspected-external-records.
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
 
-The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); the v0.4.0 release continues to use that same contract.
+The unchanged v0.1 case schema is at [`schemas/failure-case.schema.json`](schemas/failure-case.schema.json); the v0.5.0 release continues to use that same contract.
 
 ## Licensing
 
@@ -119,3 +119,7 @@ Digital Trust Failure Corpus is an open QBF Consulting project intended to be co
 ## Authority-at-commitment failure tranche
 
 Cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and revoked mandates, iterative scope expansion, stale or mismatched approvals, reputation/capability substitution, and unreconstructable historical commitment authority. They reuse the existing failure-case contract; no schema expansion was required.
+
+## Version-pinned Trust Tasks applicability research
+
+A [bounded twelve-task Trust Tasks crosswalk](docs/trust-tasks-crosswalk.md) screens five operational families against existing DTFC propositions at an immutable upstream revision. The [machine-readable mappings](research/external-sources/trust-tasks/mapping.json) include task-level rationale, test hypotheses and authority boundaries. These are informative research judgments, not executed target tests, specification defects, external adoption, or canonical case extensions. Independent target and consumer evidence remain open in #48 and #45.
