@@ -29,7 +29,7 @@ def validate_mapping(data):
         slug, version = s["slug"], s["version"]
         if not re.fullmatch(r"[a-z][a-z0-9-]*(?:/[a-z][a-z0-9-]*)+", slug):
             raise ValueError("invalid task slug")
-        if not re.fullmatch(r"[0-9]+\\.[0-9]+", version):
+        if not re.fullmatch(r"[0-9]+\.[0-9]+", version):
             raise ValueError("invalid version")
         if s["status"] != "draft":
             raise ValueError("unreviewed maturity promotion")
