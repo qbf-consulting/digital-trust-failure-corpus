@@ -47,7 +47,7 @@ class ConsentCaseExaminationTests(unittest.TestCase):
         self.assertIn("bridge",row["rationale"].lower())
     def test_cache_lifecycle_under_revocation(self):
         for suffix in ("list/1.0","list/1.1","revoke/1.0"):
-            record=next(r for r in self.data["records"] if r["type_uri"].endswith(suffix))
+            record=next(r for r in self.data["records"] if r["type_uri"] == "https://trusttasks.org/spec/consent/" + suffix)
             self.assertEqual(next(x for x in record["decisions"] if x["case_id"]=="DTF-021")["disposition"],"conditional-candidate")
 
 if __name__=="__main__":
