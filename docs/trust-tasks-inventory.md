@@ -32,3 +32,20 @@ The [ACL screening](trust-tasks-acl-review.md) evaluates seven source-pinned cur
 ## Source-derived crosswalk coverage
 
 The [coverage matrix](trust-tasks-coverage.md) combines the original pilot and the ACL research slice without double counting the overlap. It makes the remaining screening queue visible by family. Publication reconciliation and independent semantic review remain open.
+
+
+## Reconcile with the actual upstream registry build
+
+An offline [registry reconciliation command](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/tools/reconcile_trust_tasks_registry.py) can verify source bytes and the generated catalogue against the pinned inventory. It compares both files in every discovered pair, enforces exact registry membership and reports upstream lifecycle statuses. Run from a local clone of DTFC:
+
+```bash
+git clone https://github.com/trustoverip/dtgwg-trust-tasks-tf.git /tmp/dtgwg-trust-tasks-tf
+git -C /tmp/dtgwg-trust-tasks-tf checkout f21a98ec8383352d18629a08dd5dd23935456142
+cd /tmp/dtgwg-trust-tasks-tf
+npm ci
+npm run build
+cd /path/to/digital-trust-failure-corpus
+python -m tools.reconcile_trust_tasks_registry --checkout /tmp/dtgwg-trust-tasks-tf
+```
+
+The pinned upstream `scripts/build-registry.mjs` derives `website/registry.json` from validated spec front matter and paired schemas. This reproduction requires an external upstream checkout and npm toolchain; **the command's implementation and synthetic negative tests do not establish that the full upstream build was executed here**. An actual successful run and an inspectable source/build evidence record are still required before #135's publication-reconciliation acceptance criterion can be checked. Even a successful reconciliation would not establish DTFC semantic-review completeness.
