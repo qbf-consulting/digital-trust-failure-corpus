@@ -1,0 +1,297 @@
+{
+  "schema_version": "0.2.0",
+  "scope": "trust-ceremony-receipt-family-case-examination",
+  "upstream": {
+    "repository": "trustoverip/dtgwg-trust-tasks-tf",
+    "commit": "f21a98ec8383352d18629a08dd5dd23935456142"
+  },
+  "dtfc_case_revision": "2543472b49d36c1fa9f9c14de4199b303349b6ed",
+  "dtfc_case_count": 37,
+  "method": "Author-side 37-case canonical consideration for source-pinned trust-ceremony-receipt/0.1; every decision is tied to the current canonical case version. A conditional candidate requires a consuming reliance and an observed failure of a complete proposition, while not-established-from-task is not deployment-wide safe/no-match. No independent approval or external execution.",
+  "records": [
+    {
+      "type_uri": "https://trusttasks.org/spec/trust-ceremony-receipt/0.1",
+      "source_path": "specs/trust-ceremony-receipt/0.1/spec.md",
+      "source_blob": "2ae9e3fe5dbbe8e635dbdc98a19ce7375621de08",
+      "schema_blob": "ac7b1b63a86a3e9e70f8f82ef9fe9f12879e0e5e",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "This receipt describes a past enactment and does not contain delegated authority evidence being reused after a later identified revocation."
+        },
+        {
+          "case_id": "DTF-002",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "No delegated action is granted to a third-party actor by this receipt; role bindings and step issuers are evidence attributes, not an authorization delegation."
+        },
+        {
+          "case_id": "DTF-003",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The document does not assert an upstream delegation remains valid after its founding authority source has been withdrawn."
+        },
+        {
+          "case_id": "DTF-004",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The source does not declare an artifact currently valid notwithstanding an authoritative revocation status; it evaluates ceremony evidence."
+        },
+        {
+          "case_id": "DTF-005",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The verifier resolves a definition by a pinned digest, not a superseded document accepted as its current authoritative successor."
+        },
+        {
+          "case_id": "DTF-006",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "A historical ceremony may remain a true historical event after present revocation; the source does not substitute current withdrawal for historical validity."
+        },
+        {
+          "case_id": "DTF-007",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "Multiple recorders may attest the same enactment, but a relying system cannot infer independent corroboration merely from two receipts if recorder control or source evidence is shared.",
+          "test_hypothesis": "Have two nominal recorder VIDs under common organizational control attest one step collection and attempt an independence PASS; require control-domain evidence.",
+          "authority_boundary": "Recorder identity count versus materially independent control and observation.",
+          "source_section": "What the recorder does and does not attest"
+        },
+        {
+          "case_id": "DTF-008",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The receipt does not adjudicate two irreconcilable determinations by authorities of equal competence; it assesses the pinned ceremony definition and retained step evidence."
+        },
+        {
+          "case_id": "DTF-009",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "Recorder/step role bindings do not establish a transitive A→B→C recognition or delegation path accepted without a competent source."
+        },
+        {
+          "case_id": "DTF-010",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A recorder's payload.complete and enumerated steps cannot establish verified completion when terminal step documents or the pinned definition are unavailable; the source explicitly requires an unresolved result.",
+          "test_hypothesis": "Return payload.complete=true with no held terminal step document, then ask for verified enactment completion; require INDETERMINATE rather than PASS.",
+          "authority_boundary": "Recorder attestation versus verifier's evidence-required completion claim.",
+          "source_section": "Conformance / verifier rules 2, 5, 7"
+        },
+        {
+          "case_id": "DTF-011",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "The optional maxDuration bound cannot be evaluated from a receipt that lacks each step's issuedAt; an auditor cannot claim time-bound compliance without sufficient dated steps.",
+          "test_hypothesis": "Use a definition with maxDuration and a receipt without held step timestamps; request fresh/time-bound completion and require indeterminate evidence.",
+          "authority_boundary": "Definition's temporal condition versus unavailable step timing.",
+          "source_section": "What a verifier is not required to check"
+        },
+        {
+          "case_id": "DTF-012",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The pinned definitionDigest identifies the ceremony rules used for verification; no claim of compliance with a different governance policy version is made by the receipt alone."
+        },
+        {
+          "case_id": "DTF-013",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "The recorder's valid signature authenticates who produced the receipt, not a principal grant authorizing a consequential action or a commitment.",
+          "test_hypothesis": "Present a valid recorder-signed receipt to authorize a privileged action that has no principal authority; require DENY.",
+          "authority_boundary": "Recorder proof/attribution versus independent principal-derived action authority.",
+          "source_section": "Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "No actor's formerly valid mandate is accepted after expiry for a new material commitment solely by verification of a historical receipt."
+        },
+        {
+          "case_id": "DTF-015",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "There is no offer/counteroffer iteration where an actor increases the scope of a constrained negotiation."
+        },
+        {
+          "case_id": "DTF-016",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "No new agent commitment within an ongoing interaction is authorized from pre-revocation session state by the ceremony receipt itself."
+        },
+        {
+          "case_id": "DTF-017",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The receipt is not an approval artifact bound to an exact future action; using it as authorization would cross a separate commitment boundary."
+        },
+        {
+          "case_id": "DTF-018",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The claim that a recorder is named in the definition is not a reputation/capability score offered as authorization for a later commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A complete historical flow receipt does not necessarily preserve the approval policy, mandate and authority state needed to reconstruct a particular consequential commitment.",
+          "test_hypothesis": "Provide complete signed ceremony steps but omit the historical actor mandate or applicable policy snapshot and demand indeterminate commitment authority.",
+          "authority_boundary": "Flow completion evidence versus effective decision-time authority provenance.",
+          "source_section": "What the recorder does and does not attest; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The recorder's enumeration, step issuer's content attestation and verifier's completion judgment are explicitly distinct semantic responsibilities, not an ambiguous single owner."
+        },
+        {
+          "case_id": "DTF-021",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The specification verifies one pinned historical enactment against its definition; it does not itself carry a previously assessed lifecycle state forward to a later material operation."
+        },
+        {
+          "case_id": "DTF-022",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A receipt bound to the correct definition and enactment does not establish that every step's content is legitimate or every downstream material effect occurred.",
+          "test_hypothesis": "Provide valid definitionDigest and recorder proof but no held step documents; refuse a separate external-effect-success PASS.",
+          "authority_boundary": "Correct contextual binding versus authenticated step execution and effect.",
+          "source_section": "What the recorder does and does not attest"
+        },
+        {
+          "case_id": "DTF-023",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "Recorder proof, verified steps and definition digest can independently validate while a composed nested ceremony remains unverified; a parent PASS cannot cover child semantics by inheritance.",
+          "test_hypothesis": "Include a nested ceremony step without its own independently verified child receipt and challenge a parent-level end-to-end completion PASS.",
+          "authority_boundary": "Parent ceremony completion versus nested flow's unverified independent obligation.",
+          "source_section": "What a verifier is not required to check"
+        },
+        {
+          "case_id": "DTF-024",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A threshold.ofStep count can be met by nominally distinct artifacts while common control makes an independent-approval claim unproven where the relying governance policy requires independence.",
+          "test_hypothesis": "Supply threshold steps by nominally distinct enrolled issuers controlled by one principal; require a separate independence check before independent-approval PASS.",
+          "authority_boundary": "Numeric enactment step threshold versus governance independence requirement.",
+          "source_section": "Conformance / de-duplication and threshold"
+        },
+        {
+          "case_id": "DTF-025",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "Multiple signatures, recorders, chained steps or salted digests establish provenance/consistency propositions but do not automatically yield stronger semantic or authority assurance.",
+          "test_hypothesis": "Add a second recorder repeating the same unverified list and claim higher substantive trust without new evidence; reject assurance inflation.",
+          "authority_boundary": "Receipt provenance depth versus independently established material proposition.",
+          "source_section": "What the recorder does and does not attest"
+        },
+        {
+          "case_id": "DTF-026",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "The receipt's enumerated steps can all be valid yet omit an unheld intermediate or trailing step; completeness requires observed successors and signed terminal marker under the pinned definition.",
+          "test_hypothesis": "Omit an unheld intermediate that has no held successor, keep enumerated steps internally consistent and test that complete-history PASS is not inferred.",
+          "authority_boundary": "Individually verifiable step subset versus exhaustive enactment evidence.",
+          "source_section": "Truncation; What a verifier is not required to check"
+        },
+        {
+          "case_id": "DTF-027",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A well-formed signed receipt and successful verifier workflow establish only the propositions actually checked, not necessarily that all step contents, completion and external effects were independently verified.",
+          "test_hypothesis": "Validate recorder proof and shape without held terminal document, then request completed-ceremony assurance; reject inflated PASS.",
+          "authority_boundary": "Receipt workflow success versus substantive enactment assurance.",
+          "source_section": "What the recorder does and does not attest"
+        },
+        {
+          "case_id": "DTF-028",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "Recorder authority to attest a historical flow is not authority to authorize downstream commitments; ceremony membership itself grants no permissions.",
+          "test_hypothesis": "Supply a valid signed completion receipt to a material-action gate with no relevant mandate and demand DENY.",
+          "authority_boundary": "Authorized recorder attestation versus competent authorization to act.",
+          "source_section": "Security & Privacy / A receipt is not an authorization"
+        },
+        {
+          "case_id": "DTF-029",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "No changed PASS/DENY decision is represented as a change in competent authority merely because more historical evidence was obtained."
+        },
+        {
+          "case_id": "DTF-030",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "If a verifier has already marked completion unresolved due to missing definition or terminal evidence, the recorder's asserted payload.complete cannot validly clear that condition.",
+          "test_hypothesis": "Record unresolved terminal-step absence, then feed payload.complete=true without new signed terminal evidence; retain INDETERMINATE.",
+          "authority_boundary": "Recorded unresolved evidence prerequisite versus actual resolution event.",
+          "source_section": "Conformance / verifier rules 2, 5, 7"
+        },
+        {
+          "case_id": "DTF-031",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not establish a valid resolution event being ignored to keep an earlier blocked material decision unresolved."
+        },
+        {
+          "case_id": "DTF-032",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "Step digests are salted per enactment, and the receipt does not assert presentation-level unlinkability in the presence of stable securing metadata."
+        },
+        {
+          "case_id": "DTF-033",
+          "case_version": "0.1.0",
+          "disposition": "not-established-from-task",
+          "rationale": "No issuer-observable credential status lookup tied to a credential presentation is required for verifying this receipt."
+        },
+        {
+          "case_id": "DTF-034",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A legitimate receipt disclosure for verifying one ceremony does not authorize secondary profiling of participants or unrelated process analytics.",
+          "test_hypothesis": "Disclose the receipt to an authorized auditor then build unrelated participation scores without separate purpose authorization; reject secondary processing.",
+          "authority_boundary": "Enactment verification purpose versus unrelated downstream use.",
+          "source_section": "Bearer; Security & Privacy / Enumeration is disclosure"
+        },
+        {
+          "case_id": "DTF-035",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "A ceremony declaring enactmentPrivacy: blinded expresses an unlinkability constraint; issuing or aggregating an identifying participant enumeration under that claim may defeat the intended property.",
+          "test_hypothesis": "Declare blinded ceremony, distribute a full participant-enumerating receipt and test whether cross-context identities remain unlinkable; reject privacy PASS if not.",
+          "authority_boundary": "Definition-declared enactment privacy versus recorder-generated participant joins.",
+          "source_section": "Bearer; Security & Privacy / Enumeration is disclosure"
+        },
+        {
+          "case_id": "DTF-036",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "Each step's issuer VID, role, type and order can appear individually necessary while the combined receipt enumerates a sensitive participant relationship graph.",
+          "test_hypothesis": "Join role bindings, step issuers and ordered enactment events to reconstruct a person or relationship while claiming individual-field minimality; challenge PASS.",
+          "authority_boundary": "Locally justified step metadata versus combined identification risk.",
+          "source_section": "Exposure; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "case_version": "0.1.0",
+          "disposition": "conditional-candidate",
+          "rationale": "Retained receipts include stable role/issuer and event identifiers that can support durable joins across otherwise distinct ceremonies beyond a justified evidentiary retention scope.",
+          "test_hypothesis": "Retain signed receipts and role identifiers indefinitely after the stated audit need, then correlate participants across enactments; require bounded retention governance.",
+          "authority_boundary": "Permitted historical evidence retention versus durable cross-context correlation.",
+          "source_section": "Bearer; Security & Privacy"
+        }
+      ]
+    }
+  ]
+}
