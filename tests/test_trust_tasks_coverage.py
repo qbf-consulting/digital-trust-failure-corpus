@@ -20,7 +20,7 @@ class CoverageTests(unittest.TestCase):
                           stats["overlapping_source_versions"], stats["screened_unique"], stats["pending"]),
                          (1391, 12, 7, 3, 16, 1375))
         self.assertFalse(stats["semantic_review_complete"])
-        self.assertFalse(stats["inventory_publication_reconciled"])
+        self.assertTrue(stats["inventory_publication_reconciled"])
 
     def test_generated_docs_are_derived(self):
         self.assertEqual(render(calculate(self.inventory, self.pilot, self.acl)), DOC.read_text())

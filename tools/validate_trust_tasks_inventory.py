@@ -24,7 +24,7 @@ def check(data, pilot):
         raise ValueError("incorrect upstream authority")
     if not HEX.fullmatch(source["git_tree_sha"]):
         raise ValueError("invalid pinned tree")
-    if source["status_metadata_verified"] is not False:
+    if source["status_metadata_verified"] is not True:
         raise ValueError("unsubstantiated status verification")
     records = data["records"]
     if len(records) != 1391:
@@ -54,6 +54,18 @@ def check(data, pilot):
         raise ValueError("sample screening not reconciled with original pilot")
     if len({x[0] for x in seen}) < 1:
         raise ValueError("no inventory")
+    att = json.loads((ROOT / "research/external-sources/trust-tasks/registry-reconciliation.json").read_text())
+    if (att["source_repository"] != source["repository"]
+        or att["upstream_commit"] != source["commit"]
+        or att["upstream_tree_sha"] != source["git_tree_sha"]
+        or att["workflow_conclusion"] != "success"
+        or att["source_pairs"] != len(records)
+        or att["registry_versions"] != len(records)
+        or sum(att["status_counts"].values()) != len(records)
+        or att["publication_membership_reconciled"] is not True
+        or att["semantic_review_complete"] is not False
+        or att["independent_execution"] is not False):
+        raise ValueError("unsubstantiated registry reconciliation attestation")
     return Counter(x["review_state"] for x in records)
 
 

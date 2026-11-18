@@ -6,7 +6,7 @@ This record is an **inventory baseline**, not a complete semantic crosswalk. The
 
 Upstream: [trustoverip/dtgwg-trust-tasks-tf at f21a98ec8383352d18629a08dd5dd23935456142](https://github.com/trustoverip/dtgwg-trust-tasks-tf/tree/f21a98ec8383352d18629a08dd5dd23935456142). The upstream `scripts/lib/specs.mjs` discovers version directories containing **both** `spec.md` and `payload.schema.json`; missing one is a build error. Nested slug segments are legal. The committed [inventory](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/inventory.json) preserves the git blob SHAs for both files in every pair.
 
-From the pinned Git tree, **1,391 complete versioned pairs** were found, with no unmatched spec or payload file. The directory structure represents **894 distinct slugs** across **43 top-level families**. These are source-tree counts, **not independently verified published registry membership or maturity status**. Front-matter publication/status semantics and generated-registry equivalence remain unverified, so the denominator must not be called a complete authoritative published registry population.
+From the pinned Git tree, **1,391 complete versioned pairs** were found, with no unmatched spec or payload file. The directory structure represents **894 distinct slugs** across **43 top-level families**. The [pinned upstream registry build](https://github.com/qbf-consulting/digital-trust-failure-corpus/actions/runs/44263516864) successfully reconciled all **1,391 generated entries** against **1,391 complete source pairs**. The status census is **1,318 draft, 73 retired**. The [reconciliation record](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/registry-reconciliation.json) preserves provenance. The count includes retired published historical versions, and does not establish semantic applicability.
 
 ## Evidence states and remaining work
 
@@ -16,12 +16,12 @@ Run `python -m tools.validate_trust_tasks_inventory` and `python -m unittest tes
 
 ## Follow-on gates
 
-1. Reproduce upstream-generated registry membership and front matter, including non-published/internal categories; reconcile counts and statuses before calling the inventory *authoritative*.
+1. **Completed:** pinned upstream registry generation and exact membership/status reconciliation (run 44263516864).
 2. Define reviewed/no-match/blocked rationale and version-delta records from actual source inspection. Review a full representative family before scaling to the remaining inventory.
 3. Complete genuine evidence-backed review states for all in-scope versions. Record gaps without manufactured mapping relationships.
 4. Validate generated documentation against the source records and perform independent semantic review. Execution evidence and deployments remain distinct from crosswalk applicability (see #45, #48 and #134).
 
-**Disposition:** Inventory structurally enumerated at a source pin; **registry publication reconciliation and comprehensive semantic review still open**. No DTF schema or case changes, no independent target execution and no release assertion.
+**Disposition:** Pinned source and published registry membership reconciled; **comprehensive semantic review remains open**. No DTF schema or case changes, no independent target execution and no release assertion.
 
 
 ## First source-specific ACL review slice
@@ -48,4 +48,4 @@ cd /path/to/digital-trust-failure-corpus
 python -m tools.reconcile_trust_tasks_registry --checkout /tmp/dtgwg-trust-tasks-tf
 ```
 
-The pinned upstream `scripts/build-registry.mjs` derives `website/registry.json` from validated spec front matter and paired schemas. This reproduction requires an external upstream checkout and npm toolchain; **the command's implementation and synthetic negative tests do not establish that the full upstream build was executed here**. An actual successful run and an inspectable source/build evidence record are still required before #135's publication-reconciliation acceptance criterion can be checked. Even a successful reconciliation would not establish DTFC semantic-review completeness.
+The pinned upstream `scripts/build-registry.mjs` derives `website/registry.json` from validated spec front matter and paired schemas. This reproduction requires an external upstream checkout and npm toolchain; **the full upstream build was subsequently executed successfully in CI**. The successful full build and reconciliation are evidenced by workflow run 44263516864; semantic-review completeness remains open. Even a successful reconciliation would not establish DTFC semantic-review completeness.

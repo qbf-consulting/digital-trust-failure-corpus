@@ -5,7 +5,7 @@
     "commit": "f21a98ec8383352d18629a08dd5dd23935456142",
     "git_tree_sha": "f21a98ec8383352d18629a08dd5dd23935456142",
     "discovery_rule": "scripts/lib/specs.mjs: spec.md + payload.schema.json pair",
-    "status_metadata_verified": false
+    "status_metadata_verified": true
   },
   "records": [
     {

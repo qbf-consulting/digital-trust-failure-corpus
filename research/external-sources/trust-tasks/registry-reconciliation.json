@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "upstream_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "upstream_tree_sha": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
+  "workflow_run_url": "https://github.com/qbf-consulting/digital-trust-failure-corpus/actions/runs/44263516864",
+  "workflow_conclusion": "success",
+  "source_pairs": 1391,
+  "registry_versions": 1391,
+  "status_counts": {
+    "draft": 1318,
+    "retired": 73
+  },
+  "publication_membership_reconciled": true,
+  "semantic_review_complete": false,
+  "independent_execution": false
+}
