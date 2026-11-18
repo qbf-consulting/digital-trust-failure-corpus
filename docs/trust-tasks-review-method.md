@@ -32,7 +32,8 @@ without claiming independent acceptance. The complete-case machine records for
 [capability governance](trust-tasks-governance-case-examination.md), and
 [delegated task consent](trust-tasks-task-consent-case-examination.md), and
 [discovery](trust-tasks-discovery-case-examination.md), and
-[consent](trust-tasks-consent-case-examination.md) demonstrate
+[consent](trust-tasks-consent-case-examination.md), and
+[ceremony receipt](trust-tasks-ceremony-receipt-case-examination.md) demonstrate
 this intermediate evidence level. Each record includes one decision for every
 canonical case, distinguishes a falsifiable conditional candidate from a
 `not-established-from-task` observation, and pins source/schema hashes.
