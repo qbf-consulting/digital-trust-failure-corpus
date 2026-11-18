@@ -153,7 +153,9 @@ def main() -> None:
         )
 
     (OUTPUT / "index.md").write_text(_render_index(cases), encoding="utf-8")
-    from build_trust_tasks_pages import generate as generate_task_pages
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from tools.build_trust_tasks_pages import generate as generate_task_pages
     generate_task_pages()
     print(f"Generated {len(cases)} case pages in {OUTPUT.relative_to(ROOT)}")
 
