@@ -1,6 +1,6 @@
 # Trust Tasks applicability coverage (derived research)
 
-Generated from the pinned DTFC inventory, the original pilot and source-qualified ACL, Consent and supplementary research.
+Generated from pinned inventory, original pilot and source-qualified ACL, Consent and supplementary research.
 Registry membership and statuses are source-pinned and CI-reconciled; this page does not establish independent semantic review or execution evidence.
 
 **Upstream revision:** `f21a98ec8383352d18629a08dd5dd23935456142`  
