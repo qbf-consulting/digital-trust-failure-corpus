@@ -157,6 +157,8 @@ def main() -> None:
     sys.path.insert(0, str(ROOT))
     from tools.build_trust_tasks_pages import generate as generate_task_pages
     generate_task_pages()
+    from tools.trust_tasks_assessment_report import generate as generate_assessment_report
+    generate_assessment_report()
     print(f"Generated {len(cases)} case pages in {OUTPUT.relative_to(ROOT)}")
 
 
