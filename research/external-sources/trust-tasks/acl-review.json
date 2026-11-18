@@ -601,7 +601,7 @@
       "local_proposition": "Changes that widen approve authority or remove expiration are consequential permission increases that must be checked under the maintainer's policy.",
       "unsupported_inference": "The ability to edit a non-role field implies unrestricted ability to widen authority and clear previously bounded grants.",
       "test_hypothesis": "Attempt to widen approve or remove expiresAt as a caller without the relevant privileged permission, and verify explicit denial.",
-      "authority_boundary": "The ACL maintainer owns the authorization policy for privileged amendments.",
+      "authority_boundary": "The ACL maintainer owns authorization policy for privileged amendments, including expansion of approval scope and removal of a bounded expiry.",
       "evidence_to_check": [
         "requester's effective amend permission",
         "current entry, changed authority fields and policy decision"
