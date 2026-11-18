@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "scope": "trust-task-discovery-family-case-examination",
   "upstream": {
     "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -21,47 +21,56 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event."
+          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
           "disposition": "not-established-from-task",
-          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone."
+          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked."
+          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid."
+          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor."
+          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity."
+          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition."
+          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities."
+          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another."
+          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -69,17 +78,20 @@
           "rationale": "A filtered supportedTypes response is a scoped subset, not an exhaustive authority or service inventory; no-match across an unrequested namespace is not evidenced.",
           "test_hypothesis": "Query only one slug family, omit an existing supported type in another family, and test that the discoverer does not conclude global absence.",
           "authority_boundary": "Pattern-filtered reply versus universe-wide availability evidence.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
           "disposition": "not-established-from-task",
-          "rationale": "The responder's advertised acceptance policy is time/context-bounded and may not establish freshness at a later material decision."
+          "rationale": "The responder's advertised acceptance policy is time/context-bounded and may not establish freshness at a later material decision.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "The 0.1/0.2 frameworkVersion difference establishes protocol-envelope compatibility, not a material trust decision claiming evaluation under the wrong governance policy. DTF-012's identified policy-version preconditions are not established by discovery alone."
+          "rationale": "The 0.1/0.2 frameworkVersion difference establishes protocol-envelope compatibility, not a material trust decision claiming evaluation under the wrong governance policy. DTF-012's identified policy-version preconditions are not established by discovery alone.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
@@ -87,27 +99,32 @@
           "rationale": "Even correctly authenticated discovery is a service advertisement, not a principal-signed authorization for an unrelated commitment.",
           "test_hypothesis": "Accept a valid signed discovery response, then attempt a material action with no principal authorization; require denial.",
           "authority_boundary": "Responder attribution versus authorized principal commitment.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task."
+          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate."
+          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery."
+          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation."
+          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
@@ -115,22 +132,26 @@
           "rationale": "The source explicitly calls presence of a Type URI advisory and requires the full subsequent acceptance pipeline.",
           "test_hypothesis": "Discover an offered type and submit it from an unauthorized actor; reject using independent runtime policy.",
           "authority_boundary": "Capability advertisement versus permission to execute.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment."
+          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established."
+          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery-time support or acceptance metadata may be stale at a later material execution boundary; later authorization remains independently required."
+          "rationale": "Discovery-time support or acceptance metadata may be stale at a later material execution boundary; later authorization remains independently required.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
@@ -138,7 +159,8 @@
           "rationale": "An authenticated supportedTypes exchange never proves the subsequent task was accepted or its effect occurred.",
           "test_hypothesis": "Record successful discovery and then make the actual task fail; require execution result to remain failed or unresolved.",
           "authority_boundary": "Discovery negotiation versus executed effect.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
@@ -146,17 +168,20 @@
           "rationale": "Two locally conforming stages, discovery and task execution, still need separate validity, origin and authority checks at the composition seam.",
           "test_hypothesis": "Use a valid discovery response but an unauthorized or expired follow-on task; refuse composed-success PASS.",
           "authority_boundary": "Advisory negotiation followed by actual task acceptance.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim."
+          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
           "disposition": "not-established-from-task",
-          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops."
+          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -164,7 +189,8 @@
           "rationale": "The pattern-matched list can be individually valid yet incomplete for an improperly broad relying proposition.",
           "test_hypothesis": "Request a limited type pattern and claim absence of all other types; require scoped/indeterminate completeness.",
           "authority_boundary": "Selected supportedTypes set versus a complete service claim.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -172,7 +198,8 @@
           "rationale": "Discovery success establishes only exchanged capability hints; later execution and substantive assurance remain separate.",
           "test_hypothesis": "Complete discovery successfully, then fail the following material authorization; reject global assurance PASS.",
           "authority_boundary": "Successful capability exchange versus operational governance guarantee.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
@@ -180,52 +207,62 @@
           "rationale": "Repeated discovery replies, signed metadata and supported types cannot be transformed into principal-derived action authority.",
           "test_hypothesis": "Repeat or endorse the same supportedTypes list under several channels without valid authorization; deny material commitment.",
           "authority_boundary": "Derived capability signals versus competent source authority.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy."
+          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event."
+          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence."
+          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata."
+          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity."
+          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
           "disposition": "not-established-from-task",
-          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing."
+          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee."
+          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
           "disposition": "not-established-from-task",
-          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established."
+          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator."
+          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator.",
+          "case_version": "0.1.0"
         }
       ]
     },
@@ -241,47 +278,56 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event."
+          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
           "disposition": "not-established-from-task",
-          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone."
+          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked."
+          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid."
+          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor."
+          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity."
+          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition."
+          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities."
+          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another."
+          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -289,17 +335,20 @@
           "rationale": "A filtered supportedTypes response is a scoped subset, not an exhaustive authority or service inventory; no-match across an unrequested namespace is not evidenced.",
           "test_hypothesis": "Query only one slug family, omit an existing supported type in another family, and test that the discoverer does not conclude global absence.",
           "authority_boundary": "Pattern-filtered reply versus universe-wide availability evidence.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
           "disposition": "not-established-from-task",
-          "rationale": "The responder's advertised acceptance policy is time/context-bounded and may not establish freshness at a later material decision."
+          "rationale": "The responder's advertised acceptance policy is time/context-bounded and may not establish freshness at a later material decision.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "The 0.1/0.2 frameworkVersion difference establishes protocol-envelope compatibility, not a material trust decision claiming evaluation under the wrong governance policy. DTF-012's identified policy-version preconditions are not established by discovery alone."
+          "rationale": "The 0.1/0.2 frameworkVersion difference establishes protocol-envelope compatibility, not a material trust decision claiming evaluation under the wrong governance policy. DTF-012's identified policy-version preconditions are not established by discovery alone.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
@@ -307,27 +356,32 @@
           "rationale": "Even correctly authenticated discovery is a service advertisement, not a principal-signed authorization for an unrelated commitment.",
           "test_hypothesis": "Accept a valid signed discovery response, then attempt a material action with no principal authorization; require denial.",
           "authority_boundary": "Responder attribution versus authorized principal commitment.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task."
+          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate."
+          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery."
+          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation."
+          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
@@ -335,22 +389,26 @@
           "rationale": "The source explicitly calls presence of a Type URI advisory and requires the full subsequent acceptance pipeline.",
           "test_hypothesis": "Discover an offered type and submit it from an unauthorized actor; reject using independent runtime policy.",
           "authority_boundary": "Capability advertisement versus permission to execute.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment."
+          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established."
+          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery-time support or acceptance metadata may be stale at a later material execution boundary; later authorization remains independently required."
+          "rationale": "Discovery-time support or acceptance metadata may be stale at a later material execution boundary; later authorization remains independently required.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
@@ -358,7 +416,8 @@
           "rationale": "An authenticated supportedTypes exchange never proves the subsequent task was accepted or its effect occurred.",
           "test_hypothesis": "Record successful discovery and then make the actual task fail; require execution result to remain failed or unresolved.",
           "authority_boundary": "Discovery negotiation versus executed effect.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
@@ -366,17 +425,20 @@
           "rationale": "Two locally conforming stages, discovery and task execution, still need separate validity, origin and authority checks at the composition seam.",
           "test_hypothesis": "Use a valid discovery response but an unauthorized or expired follow-on task; refuse composed-success PASS.",
           "authority_boundary": "Advisory negotiation followed by actual task acceptance.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim."
+          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
           "disposition": "not-established-from-task",
-          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops."
+          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -384,7 +446,8 @@
           "rationale": "The pattern-matched list can be individually valid yet incomplete for an improperly broad relying proposition.",
           "test_hypothesis": "Request a limited type pattern and claim absence of all other types; require scoped/indeterminate completeness.",
           "authority_boundary": "Selected supportedTypes set versus a complete service claim.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -392,7 +455,8 @@
           "rationale": "Discovery success establishes only exchanged capability hints; later execution and substantive assurance remain separate.",
           "test_hypothesis": "Complete discovery successfully, then fail the following material authorization; reject global assurance PASS.",
           "authority_boundary": "Successful capability exchange versus operational governance guarantee.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
@@ -400,52 +464,62 @@
           "rationale": "Repeated discovery replies, signed metadata and supported types cannot be transformed into principal-derived action authority.",
           "test_hypothesis": "Repeat or endorse the same supportedTypes list under several channels without valid authorization; deny material commitment.",
           "authority_boundary": "Derived capability signals versus competent source authority.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy."
+          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event."
+          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence."
+          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata."
+          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity."
+          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
           "disposition": "not-established-from-task",
-          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing."
+          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee."
+          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
           "disposition": "not-established-from-task",
-          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established."
+          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator."
+          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator.",
+          "case_version": "0.1.0"
         }
       ],
       "version_delta": {
@@ -469,47 +543,56 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event."
+          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
           "disposition": "not-established-from-task",
-          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone."
+          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked."
+          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid."
+          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor."
+          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity."
+          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition."
+          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities."
+          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another."
+          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -517,7 +600,8 @@
           "rationale": "A filtered supportedTypes response is a scoped subset, not an exhaustive authority or service inventory; no-match across an unrequested namespace is not evidenced.",
           "test_hypothesis": "Query only one slug family, omit an existing supported type in another family, and test that the discoverer does not conclude global absence.",
           "authority_boundary": "Pattern-filtered reply versus universe-wide availability evidence.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
@@ -525,12 +609,14 @@
           "rationale": "0.3 adds an optional acceptanceWindow with maxAgeSeconds and clockSkewSeconds; an old response does not establish the responder's current age policy at later execution.",
           "test_hypothesis": "Cache an acceptanceWindow, change responder policy, then send a document within old but outside current age limit; require rejection.",
           "authority_boundary": "Advertised acceptance-window observation versus current material freshness policy.",
-          "source_section": "Acceptance window"
+          "source_section": "Acceptance window",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "Framework/version metadata describes processing compatibility, not substantive evaluation under a different policy version."
+          "rationale": "Framework/version metadata describes processing compatibility, not substantive evaluation under a different policy version.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
@@ -538,27 +624,32 @@
           "rationale": "Even correctly authenticated discovery is a service advertisement, not a principal-signed authorization for an unrelated commitment.",
           "test_hypothesis": "Accept a valid signed discovery response, then attempt a material action with no principal authorization; require denial.",
           "authority_boundary": "Responder attribution versus authorized principal commitment.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task."
+          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate."
+          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery."
+          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation."
+          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
@@ -566,17 +657,20 @@
           "rationale": "The source explicitly calls presence of a Type URI advisory and requires the full subsequent acceptance pipeline.",
           "test_hypothesis": "Discover an offered type and submit it from an unauthorized actor; reject using independent runtime policy.",
           "authority_boundary": "Capability advertisement versus permission to execute.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment."
+          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established."
+          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
@@ -584,7 +678,8 @@
           "rationale": "Advertised supportedTypes and acceptanceWindow describe an earlier moment; the full later task acceptance pipeline remains authoritative.",
           "test_hypothesis": "Discover a broad acceptance window then tighten it before execution; force re-evaluation of current window and deny stale use.",
           "authority_boundary": "Discovery-time window versus execution-time acceptance.",
-          "source_section": "Acceptance window; Conformance"
+          "source_section": "Acceptance window; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
@@ -592,7 +687,8 @@
           "rationale": "An authenticated supportedTypes exchange never proves the subsequent task was accepted or its effect occurred.",
           "test_hypothesis": "Record successful discovery and then make the actual task fail; require execution result to remain failed or unresolved.",
           "authority_boundary": "Discovery negotiation versus executed effect.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
@@ -600,17 +696,20 @@
           "rationale": "Two locally conforming stages, discovery and task execution, still need separate validity, origin and authority checks at the composition seam.",
           "test_hypothesis": "Use a valid discovery response but an unauthorized or expired follow-on task; refuse composed-success PASS.",
           "authority_boundary": "Advisory negotiation followed by actual task acceptance.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim."
+          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
           "disposition": "not-established-from-task",
-          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops."
+          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -618,7 +717,8 @@
           "rationale": "The pattern-matched list can be individually valid yet incomplete for an improperly broad relying proposition.",
           "test_hypothesis": "Request a limited type pattern and claim absence of all other types; require scoped/indeterminate completeness.",
           "authority_boundary": "Selected supportedTypes set versus a complete service claim.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -626,7 +726,8 @@
           "rationale": "Discovery success establishes only exchanged capability hints; later execution and substantive assurance remain separate.",
           "test_hypothesis": "Complete discovery successfully, then fail the following material authorization; reject global assurance PASS.",
           "authority_boundary": "Successful capability exchange versus operational governance guarantee.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
@@ -634,52 +735,62 @@
           "rationale": "Repeated discovery replies, signed metadata and supported types cannot be transformed into principal-derived action authority.",
           "test_hypothesis": "Repeat or endorse the same supportedTypes list under several channels without valid authorization; deny material commitment.",
           "authority_boundary": "Derived capability signals versus competent source authority.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy."
+          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event."
+          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence."
+          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata."
+          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity."
+          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
           "disposition": "not-established-from-task",
-          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing."
+          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee."
+          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
           "disposition": "not-established-from-task",
-          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established."
+          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator."
+          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator.",
+          "case_version": "0.1.0"
         }
       ],
       "version_delta": {
@@ -703,47 +814,56 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event."
+          "rationale": "Discovery is advisory and does not establish a current delegated authority after an identified revocation event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
           "disposition": "not-established-from-task",
-          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone."
+          "rationale": "Type support is a service capability assertion; no actual delegated actor exercising an out-of-scope grant is specified by discovery alone.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked."
+          "rationale": "The response does not preserve a dependent delegation whose authority source has subsequently been revoked.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid."
+          "rationale": "Listing a supported Type URI is not a judgment that a revoked artifact remains currently valid.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor."
+          "rationale": "The exchange does not declare a previously superseded artifact to be the current authoritative successor.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity."
+          "rationale": "No historical validity question is answered by treating the present removal of a supported type as erasure of past validity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition."
+          "rationale": "The responder does not present multiple supposedly independent corroborating authorities for one trust proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities."
+          "rationale": "The protocol does not reconcile materially conflicting determinations from two competent authorities.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another."
+          "rationale": "Discovery does not assert a transitive trust-recognition chain from one registry or party to another.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -751,7 +871,8 @@
           "rationale": "A filtered supportedTypes response is a scoped subset, not an exhaustive authority or service inventory; no-match across an unrequested namespace is not evidenced.",
           "test_hypothesis": "Query only one slug family, omit an existing supported type in another family, and test that the discoverer does not conclude global absence.",
           "authority_boundary": "Pattern-filtered reply versus universe-wide availability evidence.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
@@ -759,12 +880,14 @@
           "rationale": "0.4 distinguishes maxAgeSeconds for documents without expiresAt from expiryHorizonSeconds for those declaring an expiry; later changes cannot be inferred from cached acceptance policy.",
           "test_hypothesis": "Use cached window metadata to submit an expired or beyond-horizon document after policy changes; require current bounds.",
           "authority_boundary": "Advertised temporal policy versus authoritative later acceptance decision.",
-          "source_section": "Acceptance window"
+          "source_section": "Acceptance window",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "Framework/version metadata describes processing compatibility, not substantive evaluation under a different policy version."
+          "rationale": "Framework/version metadata describes processing compatibility, not substantive evaluation under a different policy version.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
@@ -772,27 +895,32 @@
           "rationale": "Even correctly authenticated discovery is a service advertisement, not a principal-signed authorization for an unrelated commitment.",
           "test_hypothesis": "Accept a valid signed discovery response, then attempt a material action with no principal authorization; require denial.",
           "authority_boundary": "Responder attribution versus authorized principal commitment.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task."
+          "rationale": "An expiring actor mandate authorizing a new commitment after expiry is not defined by this read-only meta-task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate."
+          "rationale": "The discovery operation contains no series of later offers that can exceed an iterative negotiating mandate.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery."
+          "rationale": "No agent interaction begins under authority and then attempts a new commitment after mid-interaction mandate revocation within discovery.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation."
+          "rationale": "No independently approved exact action is substituted or stale at a later commitment in this advisory operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
@@ -800,17 +928,20 @@
           "rationale": "The source explicitly calls presence of a Type URI advisory and requires the full subsequent acceptance pipeline.",
           "test_hypothesis": "Discover an offered type and submit it from an unauthorized actor; reject using independent runtime policy.",
           "authority_boundary": "Capability advertisement versus permission to execute.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment."
+          "rationale": "The discovery response cannot reconstruct the full mandate, decision-time policy and approval evidence of a past material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established."
+          "rationale": "The responder owns its advertised support/acceptance rules while the relying executor owns its later policy; no ambiguous owner of a single decisive fact is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
@@ -818,7 +949,8 @@
           "rationale": "A valid earlier discovery response cannot establish that a subsequently presented document satisfies the effective max-age or expiry horizon.",
           "test_hypothesis": "Cache advertised acceptanceWindow and then submit a document past the consumer's current expiryHorizonSeconds; require rejection.",
           "authority_boundary": "Discovered acceptance window versus execution-time temporal enforcement.",
-          "source_section": "Acceptance window; Conformance"
+          "source_section": "Acceptance window; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
@@ -826,7 +958,8 @@
           "rationale": "An authenticated supportedTypes exchange never proves the subsequent task was accepted or its effect occurred.",
           "test_hypothesis": "Record successful discovery and then make the actual task fail; require execution result to remain failed or unresolved.",
           "authority_boundary": "Discovery negotiation versus executed effect.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
@@ -834,17 +967,20 @@
           "rationale": "Two locally conforming stages, discovery and task execution, still need separate validity, origin and authority checks at the composition seam.",
           "test_hypothesis": "Use a valid discovery response but an unauthorized or expired follow-on task; refuse composed-success PASS.",
           "authority_boundary": "Advisory negotiation followed by actual task acceptance.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim."
+          "rationale": "The operation defines no N-of-M approver threshold with an unverified independence claim.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
           "disposition": "not-established-from-task",
-          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops."
+          "rationale": "Repeated or additionally signed discovery metadata cannot establish independent assurance merely through more provenance hops.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -852,7 +988,8 @@
           "rationale": "The pattern-matched list can be individually valid yet incomplete for an improperly broad relying proposition.",
           "test_hypothesis": "Request a limited type pattern and claim absence of all other types; require scoped/indeterminate completeness.",
           "authority_boundary": "Selected supportedTypes set versus a complete service claim.",
-          "source_section": "Conformance; Pattern grammar"
+          "source_section": "Conformance; Pattern grammar",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -860,7 +997,8 @@
           "rationale": "Discovery success establishes only exchanged capability hints; later execution and substantive assurance remain separate.",
           "test_hypothesis": "Complete discovery successfully, then fail the following material authorization; reject global assurance PASS.",
           "authority_boundary": "Successful capability exchange versus operational governance guarantee.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
@@ -868,52 +1006,62 @@
           "rationale": "Repeated discovery replies, signed metadata and supported types cannot be transformed into principal-derived action authority.",
           "test_hypothesis": "Repeat or endorse the same supportedTypes list under several channels without valid authorization; deny material commitment.",
           "authority_boundary": "Derived capability signals versus competent source authority.",
-          "source_section": "Conformance"
+          "source_section": "Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy."
+          "rationale": "No transition between substantive governance decisions is incorrectly attributed to a change in authority instead of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event."
+          "rationale": "An unresolved material condition is not declared cleared by a discovery result without an admissible resolution event.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence."
+          "rationale": "No genuinely resolved condition is left incorrectly blocking a separate material decision after positive resolution evidence.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata."
+          "rationale": "The exchange does not claim cross-context credential-presentation unlinkability while exposing reusable securing metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity."
+          "rationale": "It does not perform issuer-observable credential status resolution linked to presentation activity.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
           "disposition": "not-established-from-task",
-          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing."
+          "rationale": "A requiredExt advertisement may induce first-time oversharing but does not by itself establish a legitimate disclosure followed by later secondary processing.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee."
+          "rationale": "The enumerated supported types are deployment metadata; no authoritative participant is shown undermining a stated cross-context unlinkability guarantee.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
           "disposition": "not-established-from-task",
-          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established."
+          "rationale": "Supported-type and extension metadata can fingerprint deployments, but no claim that individually minimal disclosures combine into a privacy-preserving result is established.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
           "disposition": "not-established-from-task",
-          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator."
+          "rationale": "The discovery response is described as exchange-scoped; no retained verification transcript is demonstrated to create a cross-purpose durable correlator.",
+          "case_version": "0.1.0"
         }
       ],
       "version_delta": {
