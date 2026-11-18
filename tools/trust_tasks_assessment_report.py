@@ -12,6 +12,7 @@ from pathlib import Path
 from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, ROOT
 from tools.validate_acl_review import PATH as ACL_PATH
 from tools.validate_consent_review import PATH as CONSENT_PATH, check as check_consent
+from tools.validate_additional_screenings import PATH as ADDITIONAL_PATH, check as check_additional
 from tools.validate_acl_deltas import validate as validate_deltas
 from tools.validate_historical_acl_screening import check as check_history
 from tools.trust_tasks_coverage import calculate
@@ -53,6 +54,8 @@ def review_decision(record, case_ids):
 def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None):
     consent = json.loads(CONSENT_PATH.read_text()) if consent is None else consent
     check_consent(consent, inventory)
+    additional=json.loads(ADDITIONAL_PATH.read_text())
+    check_additional(additional, inventory)
     accepted = [] if accepted is None else accepted
     coverage = calculate(inventory, pilot, acl)
     validate_deltas(acl, inventory)
@@ -152,6 +155,25 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
         x["candidate_mappings"].append({
             "case_id": record["case_id"], "case_version": record["case_version"],
             "classification": record["classification"], "source": "consent",
+            "rationale": record["rationale"], "authority_boundary": record["authority_boundary"],
+            "test_hypothesis": record["test_hypothesis"],
+            "independent_review": "not-established", "execution_evidence": "none",
+        })
+    for record in additional["records"]:
+        uri = record["task_type_uri"]
+        if uri not in indexed:
+            raise ValueError("unknown additional research version")
+        x = indexed[uri]
+        if record["source_blob"] != x["source"]["spec_blob"] or record["source_path"] != x["source"]["path"]:
+            raise ValueError("additional source provenance mismatch")
+        if record["case_id"] not in cases or record["case_version"] != cases[record["case_id"]]:
+            raise ValueError("invalid additional case reference")
+        if record["independent_review"] != "not-established" or record["execution_evidence"] != "none":
+            raise ValueError("unsupported assurance promotion")
+        x["screening_state"] = "research-screened"
+        x["candidate_mappings"].append({
+            "case_id": record["case_id"], "case_version": record["case_version"],
+            "classification": record["classification"], "source": "additional",
             "rationale": record["rationale"], "authority_boundary": record["authority_boundary"],
             "test_hypothesis": record["test_hypothesis"],
             "independent_review": "not-established", "execution_evidence": "none",

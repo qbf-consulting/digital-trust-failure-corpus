@@ -7,6 +7,7 @@ from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, ROOT
 from tools.validate_acl_review import PATH as ACL_PATH, check as check_acl
 from tools.validate_historical_acl_screening import check as check_history
 from tools.validate_consent_review import PATH as CONSENT_PATH, check as check_consent
+from tools.validate_additional_screenings import PATH as ADDITIONAL_PATH, check as check_additional
 
 OUTPUT = ROOT / "docs" / "trust-tasks"
 URI = "https://trusttasks.org/spec/"
@@ -22,7 +23,9 @@ def case_versions():
         found[case["id"]] = case["version"]
     return found
 
-def build_pages(inventory, pilot, acl, consent=None):
+def build_pages(inventory, pilot, acl, consent=None, additional=None):
+    additional=json.loads(ADDITIONAL_PATH.read_text()) if additional is None else additional
+    check_additional(additional, inventory)
     consent = json.loads(CONSENT_PATH.read_text()) if consent is None else consent
     check_consent(consent, inventory)
     stats = calculate(inventory, pilot, acl)
@@ -39,6 +42,8 @@ def build_pages(inventory, pilot, acl, consent=None):
         screenings[item["task_type_uri"]].append(("acl", item))
     for item in consent["records"]:
         screenings[item["task_type_uri"]].append(("consent", item))
+    for item in additional["records"]:
+        screenings[item["task_type_uri"]].append(("additional", item))
     for uri, entries in screenings.items():
         if uri not in rows:
             raise ValueError("unregistered mapped Type URI")
@@ -54,7 +59,7 @@ def build_pages(inventory, pilot, acl, consent=None):
             for key in ("rationale", "test_hypothesis", "authority_boundary"):
                 if not item.get(key):
                     raise ValueError("absent mapping evidence")
-            if origin in {"acl","consent"}:
+            if origin in {"acl","consent","additional"}:
                 if item["source_blob"] != rows[uri]["spec_blob"] or item["source_path"] != rows[uri]["path"]:
                     raise ValueError("screened source digest mismatch")
             else:
