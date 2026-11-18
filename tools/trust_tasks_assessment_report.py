@@ -95,6 +95,7 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
             "independent_review_state": "not-established",
             "execution_evidence_state": "none",
             "candidate_mappings": [],
+            "author_case_examination": {"state": "not-examined"},
             "version_delta": "not-evaluated",
         }
     for record in pilot["judgments"]:
@@ -198,6 +199,25 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
             raise ValueError("reviewed version differs from registered source")
         review_decision(review, set(cases))
         indexed[uri]["independent_review_state"] = review["decision"]
+    from tools.trust_tasks_author_case_index import load as load_author_cases
+    author_cases = load_author_cases(inventory)
+    if not set(author_cases) <= set(indexed):
+        raise ValueError("author case outside reconciled inventory")
+    for uri, bundle in author_cases.items():
+        source = bundle["record"]
+        entry = indexed[uri]
+        if entry["screening_state"] != "research-screened":
+            raise ValueError("full author case review lacks separately recorded source screening")
+        entry["author_case_examination"] = {
+            "state": "author-case-examined",
+            "canonical_case_count": len(source["decisions"]),
+            "conditional_candidates": sum(d["disposition"] == "conditional-candidate" for d in source["decisions"]),
+            "not_established_from_task": sum(d["disposition"] == "not-established-from-task" for d in source["decisions"]),
+            "canonical_case_revision": bundle["case_revision"],
+            "research_record_url": bundle["record_url"],
+            "independent_acceptance": "not-established",
+            "target_execution": "not-established",
+        }
     rows = [indexed[key] for key in sorted(indexed)]
     covered = sum(x["screening_state"] == "research-screened" for x in rows)
     independent = sum(x["independent_review_state"] in {"reviewed-mapped", "reviewed-no-match"} for x in rows)
@@ -209,6 +229,7 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
         c = fam[row["family"]]
         c["inventory"] += 1
         c["screened"] += row["screening_state"] == "research-screened"
+        c["author_case_examined"] += row["author_case_examination"]["state"] == "author-case-examined"
         c["pending"] += row["screening_state"] == "needs-review"
         c["reviewed"] += row["independent_review_state"] in {"reviewed-mapped", "reviewed-no-match"}
         c["blocked"] += row["independent_review_state"] == "blocked-evidence"
@@ -232,6 +253,14 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
             "screened_versions": covered,
             "pending_versions": len(rows) - covered,
             "candidate_judgments": candidates,
+            "author_case_examined_versions": len(author_cases),
+            "author_case_comparisons": sum(len(v["record"]["decisions"]) for v in author_cases.values()),
+            "author_conditional_candidates": sum(
+                sum(d["disposition"] == "conditional-candidate" for d in v["record"]["decisions"])
+                for v in author_cases.values()),
+            "author_not_established_from_task": sum(
+                sum(d["disposition"] == "not-established-from-task" for d in v["record"]["decisions"])
+                for v in author_cases.values()),
             "independently_reviewed_versions": independent,
             "blocked_review_versions": blocked,
             "independent_review_complete": independent == len(rows) and blocked == 0,
@@ -242,6 +271,7 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
             "inventory": "registry-reconciled",
             "screening": ["needs-review", "research-screened"],
             "classification": ["mechanism-overlap", "adjacent"],
+            "author_case_examination": ["not-examined", "author-case-examined"],
             "provenance": ["pinned-spec-blob"],
             "independent_review": ["not-established", "reviewed-mapped", "reviewed-no-match", "blocked-evidence"],
             "execution": ["none"],
@@ -276,6 +306,10 @@ def render(report):
         "| Versions with preliminary DTFC screening | " + str(s["screened_versions"]) + " |",
         "| Versions awaiting screening | " + str(s["pending_versions"]) + " |",
         "| Conditional research judgments | " + str(s["candidate_judgments"]) + " |",
+        "| Versions with full author-side 37-case examination | " + str(s["author_case_examined_versions"]) + " |",
+        "| Author-side canonical case comparisons | " + str(s["author_case_comparisons"]) + " |",
+        "| Conditional author-side candidate cells | " + str(s["author_conditional_candidates"]) + " |",
+        "| Not established from task source | " + str(s["author_not_established_from_task"]) + " |",
         "| Independently reviewed task versions | " + str(s["independently_reviewed_versions"]) + " |",
         "| Blocked semantic reviews (unresolved) | " + str(s["blocked_review_versions"]) + " |",
         "",
@@ -285,6 +319,14 @@ def render(report):
         report["authority"]["upstream_commit"] + ").",
         "See [CI evidence](" + report["authority"]["publication_evidence_url"] + ").",
         "This establishes a complete **source census**, not a complete semantic assessment.", "",
+        "## Source-qualified full-case research", "",
+        "Four existing families have complete 37-case **author-side** matrices; these",
+        "are not independently accepted semantic dispositions or implementation tests.",
+        "Not established from task source is weaker than a reviewed no-match and",
+        "must not be interpreted as evidence of universal safety.", "",
+        "The version navigator links to the exact family examination for each",
+        "examined task. The [research checkpoint](../trust-tasks-research-checkpoint.md)",
+        "provides an actionable DTG/Trust Tasks negative-test agenda.", "",
         "## What the preliminary research shows", "",
         "**Authority:** A correctly signed or processed operation does not automatically",
         "give a relying system permission to act beyond the granting principal's scope.", "",
