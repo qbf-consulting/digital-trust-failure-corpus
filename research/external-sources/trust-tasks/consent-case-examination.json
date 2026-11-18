@@ -1,0 +1,1885 @@
+{
+  "schema_version": "0.1.0",
+  "scope": "consent-family-case-examination",
+  "upstream": {
+    "repository": "trustoverip/dtgwg-trust-tasks-tf",
+    "commit": "f21a98ec8383352d18629a08dd5dd23935456142"
+  },
+  "dtfc_case_revision": "9cbf3f2c157f1845f5d2849039f72351ba1441bb",
+  "dtfc_case_count": 37,
+  "method": "Source-version-specific author assessment of all 37 existing cases for eight consent operations; not-established-from-task is a bounded absence of source preconditions, not deployment safety. No independent acceptance or executed consumer tests.",
+  "records": [
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+      "source_path": "specs/consent/approve-request/0.1/spec.md",
+      "source_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+      "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approve-request/0.1, the requester asks an approver device to authorize read or converse for one opaque conversation and agent, binding the separately signed decision to a single-use challenge; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/approver-list/1.0",
+      "source_path": "specs/consent/approver-list/1.0/spec.md",
+      "source_blob": "c3b005b85fa777af83a260855dc4f732063511f0",
+      "schema_blob": "10e869ad255445316fad63fa4e0cda4199fc5476",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-list/1.0, the VTA lists only approver routing bindings the requesting operator is entitled to see, optionally filtered by platform/context; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+      "source_path": "specs/consent/approver-set/1.0/spec.md",
+      "source_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+      "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/approver-set/1.0, a context admin sets the authorized approver and opaque wake/bridge-relay route for an exact platform/context binding; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+      "source_path": "specs/consent/decision/1.0/spec.md",
+      "source_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+      "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/decision/1.0, the VTA accepts a directly signed operator decision or a weaker explicitly recorded bridge-attested choice, checks authorization and consumes challenge before storing a grant; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/list/1.0",
+      "source_path": "specs/consent/list/1.0/spec.md",
+      "source_blob": "08b580afcebdd5384fbca900e392b1b003eb63e1",
+      "schema_blob": "6a3f3b0296f0a2a203bbaad683ca1d2744a3b61e",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.0, the VTA returns agent-scoped consent grants using optional since cursor; the bridge persistently caches them for local allow/deny enforcement; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+      "source_path": "specs/consent/list/1.1/spec.md",
+      "source_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+      "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/list/1.1, the VTA provides agent-scoped grant changes with an issuer-bound syncToken and nextSyncToken, while a bridge maintains its local consent enforcement cache; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        }
+      ],
+      "version_delta": {
+        "compared_with": "https://trusttasks.org/spec/consent/list/1.0",
+        "claim": "1.1 renames the 1.0 request since cursor to syncToken and response cursor to nextSyncToken, and requires tokens to be issued by the consumer; the incremental semantics remain similar but the wire fields are incompatible.",
+        "source_sections": [
+          "Changes from 1.0",
+          "Conformance"
+        ]
+      }
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+      "source_path": "specs/consent/request/1.0/spec.md",
+      "source_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+      "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/request/1.0, an enrolled bridge holds inbound messages in default-deny, asks the VTA for a subject/scope decision, and must not deliver the messages to the agent until allow is recorded; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+      "source_path": "specs/consent/revoke/1.0/spec.md",
+      "source_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+      "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No previously valid delegation or status evidence is shown being reused after a documented effective revocation by this operation alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; A bounded principal-to-delegate grant exceeding its authoritative scope requires a consequential relying action, not merely the consent message format.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No required upstream authority source is shown withdrawn while a downstream derivative delegation continues to be accepted.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The source does not ask a verifier to accept a previously revoked credential or artifact as currently valid.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The task source does not designate a superseded policy or credential as a currently governing successor artifact.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No historical-validity determination is made by substituting the present withdrawn status for decision-time facts.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The operation does not claim that separately collected attestations from commonly controlled sources are materially independent.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No independently competent contradictory authorities are reconciled into an unjustified PASS by this task contract.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The task does not assert transitive A-to-C recognition based solely on A-to-B and B-to-C relationships.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; An incomplete consent record or missing proof cannot establish a positive relying proposition unless the downstream policy accepts absent evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; Freshness of authorization or grant state at a later enforcement point cannot be inferred from this task message alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The source does not present a decision as compliant with one policy while consuming evidence evaluated under another identified policy version.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; A valid signature proves authorship, but a separate current actor authority decision is required before granting a consequential privilege.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The operation does not establish an expired actor mandate nonetheless accepted for a later commitment.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; There is no iterative counteroffer sequence whose revised material terms exceed a previously bounded negotiation authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No active agent commitment is actually admitted after a mid-interaction mandate revocation by the task document alone.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The task itself does not demonstrate approval for one exact action being reused for a materially changed action at later execution.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; A consent operation's advertisement or capability does not independently confer principal-derived commitment authority.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The specification does not establish a historical reliance inquiry lacking the decision-time authorization and policy evidence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The source identifies the bridge/VTA/approver roles rather than leaving ownership of a decisive fact undefined by itself.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The source alone cannot establish that an earlier valid grant or enrollment check is reused later without re-evaluation.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; A validly bound consent request or decision is not sufficient by itself to prove that a downstream conversation was delivered or that an external action succeeded.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The complete composition can require additional enforcement checks even when individual bridge, VTA and approver components validate locally.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No N-of-M independent-approval claim is specified for this operation; any organizational quorum requirement must be introduced explicitly.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; A longer chain of signatures or bridge statements is not substantively stronger assurance absent an added material fact or independent basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; Authentic individual consent items cannot prove that all relevant approvals, revocations and counter-evidence are present in the decision scope.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; Successful routing, listing or recording of consent is not proof of downstream authorized, effective and privacy-compliant access.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; An announcement, relay message, device hint or capability signal is not a competent source of principal authorization.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The task does not misdescribe an outcome shift as proof that competent authority changed instead of the evidence or policy basis.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; An explicitly unresolved authorization prerequisite is not marked resolved by the task source merely because a workflow progressed.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No positive resolution event is shown being ignored while an older unresolved condition remains incorrectly blocking a consequential decision.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; The contract does not assert credential-presentation unlinkability based on payload minimization despite stable proof metadata.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No observable credential-status lookup linked to a presentation is required by the operation's stated payload and response.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; Secondary processing beyond the consent decision's original purpose needs distinct facts and policy, not just an initially valid exchange.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; An assertion of cross-context unlinkability is not established, so actor-controlled stable metadata alone does not prove violation of such a claim.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; No actual combined privacy-minimality PASS is inferred merely from individually acceptable fields without evidence of the composed relying context.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "For consent/revoke/1.0, the VTA checks issuer authority, deletes the exact subject grant, signals caching bridges, and returns the subject to default-deny; A privacy failure from durable records requires identified retention beyond a justified basis and a linking/correlation consequence.",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    }
+  ]
+}
