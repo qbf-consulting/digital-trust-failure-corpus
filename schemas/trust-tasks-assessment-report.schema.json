@@ -18,7 +18,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "0.1.0"
+      "const": "0.2.0"
     },
     "report_type": {
       "const": "source-pinned-trust-tasks-dtfc-research"
@@ -72,7 +72,11 @@
         "blocked_review_versions",
         "independent_review_complete",
         "semantic_completion_claim",
-        "publication_state"
+        "publication_state",
+        "author_case_examined_versions",
+        "author_case_comparisons",
+        "author_conditional_candidates",
+        "author_not_established_from_task"
       ],
       "properties": {
         "registry_versions": {
@@ -119,6 +123,22 @@
         },
         "publication_state": {
           "const": "research-checkpoint"
+        },
+        "author_case_examined_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "author_case_comparisons": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "author_conditional_candidates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "author_not_established_from_task": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
@@ -130,7 +150,8 @@
         "classification",
         "provenance",
         "independent_review",
-        "execution"
+        "execution",
+        "author_case_examination"
       ],
       "properties": {
         "inventory": {
@@ -165,6 +186,12 @@
           "items": {
             "type": "string"
           }
+        },
+        "author_case_examination": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false
@@ -179,7 +206,8 @@
           "screened",
           "pending",
           "reviewed",
-          "blocked"
+          "blocked",
+          "author_case_examined"
         ],
         "properties": {
           "family": {
@@ -205,6 +233,10 @@
           "blocked": {
             "type": "integer",
             "minimum": 0
+          },
+          "author_case_examined": {
+            "type": "integer",
+            "minimum": 0
           }
         },
         "additionalProperties": false
@@ -225,7 +257,8 @@
           "independent_review_state",
           "execution_evidence_state",
           "candidate_mappings",
-          "version_delta"
+          "version_delta",
+          "author_case_examination"
         ],
         "additionalProperties": false,
         "properties": {
@@ -360,6 +393,68 @@
           "version_delta": {
             "type": "string",
             "minLength": 1
+          },
+          "author_case_examination": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "state"
+                ],
+                "properties": {
+                  "state": {
+                    "const": "not-examined"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "state",
+                  "canonical_case_count",
+                  "conditional_candidates",
+                  "not_established_from_task",
+                  "canonical_case_revision",
+                  "research_record_url",
+                  "independent_acceptance",
+                  "target_execution"
+                ],
+                "properties": {
+                  "state": {
+                    "const": "author-case-examined"
+                  },
+                  "canonical_case_count": {
+                    "const": 37
+                  },
+                  "conditional_candidates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 37
+                  },
+                  "not_established_from_task": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 37
+                  },
+                  "canonical_case_revision": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{40}$"
+                  },
+                  "research_record_url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "independent_acceptance": {
+                    "const": "not-established"
+                  },
+                  "target_execution": {
+                    "const": "not-established"
+                  }
+                }
+              }
+            ]
           }
         }
       }

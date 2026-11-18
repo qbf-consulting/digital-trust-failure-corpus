@@ -235,7 +235,7 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
         c["blocked"] += row["independent_review_state"] == "blocked-evidence"
     candidates = sum(len(x["candidate_mappings"]) for x in rows)
     return {
-        "schema_version": "0.1.0",
+        "schema_version": "0.2.0",
         "report_type": "source-pinned-trust-tasks-dtfc-research",
         "objective": "Determine version-specific DTFC applicability or justified no-match at the consuming trust boundary, with falsification evidence and independent semantic challenge.",
         "authority": {
