@@ -43,14 +43,14 @@ the original screening records do not themselves establish full 37-case
 consideration or independent acceptance; the two new complete-case research
 records below preserve that distinction.
 
-## New: complete author-side case examination of two families
+## Complete author-side case examination of three families
 
-The [audit family case examination](trust-tasks-audit-case-examination.md) ,
+The [audit family case examination](trust-tasks-audit-case-examination.md),
 [capability-governance family case examination](trust-tasks-governance-case-examination.md), and
 [task-consent case examination](trust-tasks-task-consent-case-examination.md)
-add **all 37 canonical-case comparisons for each of six source-screened
-versions**. This is new substantive research depth, not six more versions
-added to the 51 screened or 41 independently established failures.
+add **all 37 canonical-case comparisons for each of ten previously source-screened
+versions**. This adds substantive research depth without changing the 51
+preliminary screening count or fabricating independently established failures.
 
 | Case-level measure | Author research result |
 |---|---:|
