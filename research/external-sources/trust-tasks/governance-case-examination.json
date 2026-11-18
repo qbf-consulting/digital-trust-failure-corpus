@@ -1,0 +1,658 @@
+{
+  "schema_version": "0.1.0",
+  "scope": "governance-family-case-examination",
+  "upstream": {
+    "repository": "trustoverip/dtgwg-trust-tasks-tf",
+    "commit": "f21a98ec8383352d18629a08dd5dd23935456142"
+  },
+  "dtfc_case_revision": "f8474835702740ea8001667f1b838a4736abd981",
+  "dtfc_case_count": 37,
+  "method": "Each canonical case considered against exact pinned source; not-established-from-task does not imply no-match in any consuming implementation. Candidate tests unexecuted and no independent acceptance.",
+  "records": [
+    {
+      "type_uri": "https://trusttasks.org/spec/governance/capability/disable/0.1",
+      "source_path": "specs/governance/capability/disable/0.1/spec.md",
+      "source_blob": "b844622bc1625a978d3704bf3fb0dadd5c107b3a",
+      "schema_blob": "f4ba541faf58fd5880b256cf5dc0636b30d152e7",
+      "source_sections": "Abstract; Request; Response; Security & Privacy",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The task exposes capability state but does not itself describe reuse of pre-revocation authority evidence after an effective withdrawal."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "A governance operator and any companion delegate remain bound by identified role and manifest namespace scope; exercising permissions outside those bounds is a distinct consumer failure."
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "A companion's host-issued namespace delegation may depend on an authority source, but this task does not demonstrate reliance after that source has been withdrawn."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "Capability state is not itself a credential-artifact validity determination under authoritative revocation rules."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "conditional-candidate",
+          "rationale": "Disable preserves historical registry records but changes current effective state; relying on an old enabled record as present enablement would be unsafe.",
+          "test_hypothesis": "Disable after a prior enabled response, then exercise handler from an old snapshot; reject current-enabled PASS.",
+          "authority_boundary": "Historical record versus current capability lifecycle.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "conditional-candidate",
+          "rationale": "Retained records deliberately preserve historical auditability, so a consumer must not infer earlier governance operations never existed merely because the capability is now disabled.",
+          "test_hypothesis": "Disable an earlier valid capability and inspect a historical event; verify past effective state remains reconstructable.",
+          "authority_boundary": "Present disablement versus historical validity determination.",
+          "source_section": "Abstract"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not present multiple independently controlled attestations as independent corroboration."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not resolve a conflict among equally authoritative, incompatible governance sources."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The host may delegate a companion namespace, but no A→B→C transitive recognition rule is established."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "A management view or status response is bounded to the host's reported state; a false PASS requires a consumer to need and omit additional current evidence."
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "The source does not by itself establish a currentness requirement violated by undated evidence; later consumers may introduce this requirement."
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "Versioned manifest/configuration metadata does not itself assert compliance against a different incompatible decision-policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "conditional-candidate",
+          "rationale": "A signed disabling request must be tied to community operator authority; accepting any valid signer would allow unauthorized destructive governance changes.",
+          "test_hypothesis": "Present signed disablement from an authenticated non-operator; require authorization DENY.",
+          "authority_boundary": "Community governance operator authority before changing state.",
+          "source_section": "Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "Issued-at requirements constrain stale/replayed operations, but no identified mandate is shown expiring before a separate commitment."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "These operations do not carry iterative offers that grow outside a bounded negotiating mandate."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "conditional-candidate",
+          "rationale": "Disablement stops handlers even when an interaction started while capability was enabled; later material action must not rely on the old capability state.",
+          "test_hypothesis": "Begin a delegated action, disable the capability, then attempt a subsequent material handler execution; require refusal.",
+          "authority_boundary": "Active interaction versus current host enablement.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "Elevated consent may be required under deployment policy, but the task does not alone supply a stale approval authorizing a changed exact action."
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "An advertised capability or manifest title is never principal-derived authority for a material commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "Historical capability state is relevant to later audit, but a failure also needs an actual material commitment whose effective authority basis is unavailable."
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The host and companion each have specified namespace responsibilities; an ambiguous competent owner of a decisive composed fact is not established here."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "The capability disappears from discovery and its handlers stop on disable; a previously valid advertisement cannot justify later execution.",
+          "test_hypothesis": "Discover capability while enabled; disable; invoke a handler relying on cached discovery; require rejection.",
+          "authority_boundary": "Discovery-time state versus execution-time effective capability state.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "A task response reporting enablement is not merely a context-binding proof; the proposition requires a separate claimed execution effect and missing effect evidence."
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "Host, companion and downstream handler may each satisfy local checks; an asserted combined PASS would require independent seam obligations beyond those checks."
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "No N-of-M independence proposition is made by these management operation schemas."
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "Extra signatures, manifests or provenance hops do not inherently strengthen assurance absent a new material independently evidenced proposition."
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "A capability list or management result is not itself a claim that a materially complete governance evidence set was presented."
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "conditional-candidate",
+          "rationale": "Successful disablement preserves historical records but does not prove that every external adapter has subsequently enforced the effective state.",
+          "test_hypothesis": "Disable capability, then test an adapter with stale enablement cache; refuse claim of global enforcement based only on response.",
+          "authority_boundary": "Host disablement result versus downstream adapter enforcement.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "Discoverability, a human-readable manifest title or a service DID cannot confer authority outside the host's policy and delegated vocabulary."
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "A changed enabled state does not itself misattribute an evidence/policy change as a transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not assert clearance of an explicitly unresolved material condition without an admissible resolution event."
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No prior blocked decision is shown remaining blocked after a valid positive resolution."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation makes no credential-presentation unlinkability claim dependent on proof metadata."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "These capability-management tasks do not perform an observable credential status check during presentation."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "The metadata disclosed by capability management is not shown being reused after a legitimate disclosure for a materially different secondary purpose."
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "A public companion delegate DID alone does not establish a failed system claim of intended cross-context unlinkability."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "A capability manifest may contain metadata, but no combined minimal-disclosure privacy claim or identifying composition is established by the source."
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "Stored manifests and capability records are not a demonstrated retained verification-transcript correlation surface beyond a justified purpose."
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/governance/capability/enable/0.1",
+      "source_path": "specs/governance/capability/enable/0.1/spec.md",
+      "source_blob": "05eb99cf9db328bc2a50c77dcfc1fa366b29a96d",
+      "schema_blob": "0a547a0bfb1c01beed89bffd021e209dffa9225b",
+      "source_sections": "Abstract; Conformance; Request; Response; Security & Privacy",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The task exposes capability state but does not itself describe reuse of pre-revocation authority evidence after an effective withdrawal."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "conditional-candidate",
+          "rationale": "A companion writes delegated registry tuples only within vocabulary.actions in the supplied manifest; a host must reject an out-of-scope tuple even after successful enablement.",
+          "test_hypothesis": "Enable a companion under a narrow declared action vocabulary, then attempt an unrelated registry write; require rejection.",
+          "authority_boundary": "Host namespace delegation scope versus delegate ability to write registry tuples.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "A companion's host-issued namespace delegation may depend on an authority source, but this task does not demonstrate reliance after that source has been withdrawn."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "Capability state is not itself a credential-artifact validity determination under authoritative revocation rules."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation can change current capability status; a later actor could rely on superseded state, but the task alone does not establish that reliance."
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "Retaining capability records allows historical audit, but no consumer is specified as wrongly invalidating a formerly legitimate event after disablement."
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not present multiple independently controlled attestations as independent corroboration."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not resolve a conflict among equally authoritative, incompatible governance sources."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The host may delegate a companion namespace, but no A→B→C transitive recognition rule is established."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "A management view or status response is bounded to the host's reported state; a false PASS requires a consumer to need and omit additional current evidence."
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "The source does not by itself establish a currentness requirement violated by undated evidence; later consumers may introduce this requirement."
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "Versioned manifest/configuration metadata does not itself assert compliance against a different incompatible decision-policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "conditional-candidate",
+          "rationale": "A signed enable request is not evidence of community-operator role; the host MUST independently restrict this state-changing operation.",
+          "test_hypothesis": "Sign an enable request as a valid non-operator actor; require denial independent of signature validity.",
+          "authority_boundary": "Community governance host's operator role decision.",
+          "source_section": "Security & Privacy"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "Issued-at requirements constrain stale/replayed operations, but no identified mandate is shown expiring before a separate commitment."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "These operations do not carry iterative offers that grow outside a bounded negotiating mandate."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "Capability disablement may interrupt active service, but no new agent commitment after a mid-interaction authority revocation is established by the task alone."
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "conditional-candidate",
+          "rationale": "The host SHOULD apply elevated operator consent, with any deployment-specific approval bound to this exact activation, version, delegate and configuration.",
+          "test_hypothesis": "Supply approval for one manifest/configuration and mutate the delegate or config before enablement; test policy-required reapproval.",
+          "authority_boundary": "Approver's consent scope and exact governance state change.",
+          "source_section": "Security & Privacy; Request"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "An advertised capability or manifest title is never principal-derived authority for a material commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "Historical capability state is relevant to later audit, but a failure also needs an actual material commitment whose effective authority basis is unavailable."
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The host and companion each have specified namespace responsibilities; an ambiguous competent owner of a decisive composed fact is not established here."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "Enablement changes active handlers and discovery state; a previously negative capability snapshot cannot prove present disablement and subsequent use requires current state.",
+          "test_hypothesis": "Cache no-capability discovery, enable the capability, then assert continued absence; require current host state.",
+          "authority_boundary": "Current capability lifecycle at the consequential relying decision.",
+          "source_section": "Abstract; Response"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "A task response reporting enablement is not merely a context-binding proof; the proposition requires a separate claimed execution effect and missing effect evidence."
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "conditional-candidate",
+          "rationale": "A companion may have locally valid manifest/config while its registry writes exceed host vocabulary scope; composed assurance requires checking both boundaries.",
+          "test_hypothesis": "Verify valid signed enablement and config, then attempt an out-of-manifest companion write; reject composed governance PASS.",
+          "authority_boundary": "Host/delegate composed policy and namespace controls.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "No N-of-M independence proposition is made by these management operation schemas."
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "Extra signatures, manifests or provenance hops do not inherently strengthen assurance absent a new material independently evidenced proposition."
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "A capability list or management result is not itself a claim that a materially complete governance evidence set was presented."
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "conditional-candidate",
+          "rationale": "Successful enable response reports activation, but a downstream relying decision must not infer externally enforced security or policy merely because enabling succeeded.",
+          "test_hypothesis": "Return enabled=true yet make an unrelated governance assurance claim without evidence of effective handler enforcement; refuse assurance PASS.",
+          "authority_boundary": "Enablement workflow result versus independent enforcement claim.",
+          "source_section": "Response; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "conditional-candidate",
+          "rationale": "Manifest titles are expressly not authorization predicates and the host MUST restrict the enable actor to operator authority.",
+          "test_hypothesis": "Supply a trusted-looking manifest title and a valid non-operator signature; verify the host does not accept it as governance authority.",
+          "authority_boundary": "Manifest metadata versus authoritative operator role.",
+          "source_section": "Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "A changed enabled state does not itself misattribute an evidence/policy change as a transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not assert clearance of an explicitly unresolved material condition without an admissible resolution event."
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No prior blocked decision is shown remaining blocked after a valid positive resolution."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation makes no credential-presentation unlinkability claim dependent on proof metadata."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "These capability-management tasks do not perform an observable credential status check during presentation."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "The metadata disclosed by capability management is not shown being reused after a legitimate disclosure for a materially different secondary purpose."
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "A public companion delegate DID alone does not establish a failed system claim of intended cross-context unlinkability."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "A capability manifest may contain metadata, but no combined minimal-disclosure privacy claim or identifying composition is established by the source."
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "Stored manifests and capability records are not a demonstrated retained verification-transcript correlation surface beyond a justified purpose."
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/governance/capability/list/0.1",
+      "source_path": "specs/governance/capability/list/0.1/spec.md",
+      "source_blob": "c48c904b20948bd31eae63b97fa9821849f38cb6",
+      "schema_blob": "9bce4ab9627b1c46abcb0c80b1a82b2a3ae02341",
+      "source_sections": "Abstract; Request; Response; Security & Privacy",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The task exposes capability state but does not itself describe reuse of pre-revocation authority evidence after an effective withdrawal."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "A governance operator and any companion delegate remain bound by identified role and manifest namespace scope; exercising permissions outside those bounds is a distinct consumer failure."
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "A companion's host-issued namespace delegation may depend on an authority source, but this task does not demonstrate reliance after that source has been withdrawn."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "Capability state is not itself a credential-artifact validity determination under authoritative revocation rules."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation can change current capability status; a later actor could rely on superseded state, but the task alone does not establish that reliance."
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "Retaining capability records allows historical audit, but no consumer is specified as wrongly invalidating a formerly legitimate event after disablement."
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not present multiple independently controlled attestations as independent corroboration."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not resolve a conflict among equally authoritative, incompatible governance sources."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The host may delegate a companion namespace, but no A→B→C transitive recognition rule is established."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "conditional-candidate",
+          "rationale": "The default filter is enabled, whereas status=available explicitly lists possible non-enabled capabilities; treating availability as currently executable omits required enablement evidence.",
+          "test_hypothesis": "Query status=available, select disabled entry, and attempt execution; demand a positive enabled-state check.",
+          "authority_boundary": "Management availability representation versus actual enabled status.",
+          "source_section": "Request; Response"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "conditional-candidate",
+          "rationale": "The list reports observed enablement but does not supply a freshness guarantee for a later material execution.",
+          "test_hypothesis": "Cache a valid enabled list, disable the capability, then act later; require current status evidence.",
+          "authority_boundary": "Observed listing time versus later execution time.",
+          "source_section": "Response; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "Versioned manifest/configuration metadata does not itself assert compliance against a different incompatible decision-policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "A signed management request proves origin but cannot substitute for the community operator authority needed to change enabled state."
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "Issued-at requirements constrain stale/replayed operations, but no identified mandate is shown expiring before a separate commitment."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "These operations do not carry iterative offers that grow outside a bounded negotiating mandate."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "Capability disablement may interrupt active service, but no new agent commitment after a mid-interaction authority revocation is established by the task alone."
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "Elevated consent may be required under deployment policy, but the task does not alone supply a stale approval authorizing a changed exact action."
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "conditional-candidate",
+          "rationale": "An advertised capability, its title or manifest proves neither actor authorization nor the host's commitment authority.",
+          "test_hypothesis": "Return a valid available manifest to unauthorized actor and attempt consequential operation; require independent principal authorization.",
+          "authority_boundary": "Capability metadata versus principal-derived authority.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "Historical capability state is relevant to later audit, but a failure also needs an actual material commitment whose effective authority basis is unavailable."
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The host and companion each have specified namespace responsibilities; an ambiguous competent owner of a decisive composed fact is not established here."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "A valid enabled listing may become stale before subsequent execution after disabling or reconfiguration.",
+          "test_hypothesis": "Read enabled listing, disable module, then execute from cached view; reject or refresh.",
+          "authority_boundary": "Listing-time lifecycle versus later execution.",
+          "source_section": "Abstract; Response"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "A task response reporting enablement is not merely a context-binding proof; the proposition requires a separate claimed execution effect and missing effect evidence."
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "Host, companion and downstream handler may each satisfy local checks; an asserted combined PASS would require independent seam obligations beyond those checks."
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "No N-of-M independence proposition is made by these management operation schemas."
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "Extra signatures, manifests or provenance hops do not inherently strengthen assurance absent a new material independently evidenced proposition."
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "A capability list or management result is not itself a claim that a materially complete governance evidence set was presented."
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "not-established-from-task",
+          "rationale": "Successful state-changing workflow does not necessarily demonstrate the later enforcement or governance assurance outcome asserted by a consumer."
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "conditional-candidate",
+          "rationale": "The task warns manifest title has no authorization meaning and capabilities are for management display, not delegation or principal authority.",
+          "test_hypothesis": "Supply a plausible manifest with a forged operator implication; reject authority based on title or availability alone.",
+          "authority_boundary": "Non-authoritative manifest metadata versus competent authority source.",
+          "source_section": "Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "A changed enabled state does not itself misattribute an evidence/policy change as a transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not assert clearance of an explicitly unresolved material condition without an admissible resolution event."
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No prior blocked decision is shown remaining blocked after a valid positive resolution."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation makes no credential-presentation unlinkability claim dependent on proof metadata."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "These capability-management tasks do not perform an observable credential status check during presentation."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "The metadata disclosed by capability management is not shown being reused after a legitimate disclosure for a materially different secondary purpose."
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "A public companion delegate DID alone does not establish a failed system claim of intended cross-context unlinkability."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "A capability manifest may contain metadata, but no combined minimal-disclosure privacy claim or identifying composition is established by the source."
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "Stored manifests and capability records are not a demonstrated retained verification-transcript correlation surface beyond a justified purpose."
+        }
+      ]
+    }
+  ]
+}
