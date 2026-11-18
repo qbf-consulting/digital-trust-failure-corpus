@@ -9,6 +9,12 @@ on:
       - "docs/**"
       - "corpus/**"
       - "tools/build_docs.py"
+      - "tools/build_trust_tasks_pages.py"
+      - "tools/trust_tasks_assessment_report.py"
+      - "tools/trust_tasks_coverage.py"
+      - "tools/validate_consent_review.py"
+      - "research/external-sources/trust-tasks/**"
+      - "schemas/trust-tasks-assessment-report.schema.json"
   push:
     branches:
       - main
@@ -19,6 +25,12 @@ on:
       - "docs/**"
       - "corpus/**"
       - "tools/build_docs.py"
+      - "tools/build_trust_tasks_pages.py"
+      - "tools/trust_tasks_assessment_report.py"
+      - "tools/trust_tasks_coverage.py"
+      - "tools/validate_consent_review.py"
+      - "research/external-sources/trust-tasks/**"
+      - "schemas/trust-tasks-assessment-report.schema.json"
   workflow_dispatch:
 
 concurrency:
