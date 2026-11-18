@@ -68,7 +68,7 @@ def check_family(data, inventory, family, targets, version_deltas=None, cases=No
         delta = indexed[uri].get("version_delta")
         if (not delta or delta.get("compared_with") != expected[0]
             or any(token not in delta.get("claim", "") for token in expected[1])
-            or not delta.get("source_sections")):
+            or not (delta.get("source_sections") or delta.get("reviewed_sections"))):
             raise ValueError("missing source-specific semantic version delta")
     return {
         "versions": len(records),
