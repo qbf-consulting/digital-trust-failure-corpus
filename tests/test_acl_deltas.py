@@ -31,7 +31,7 @@ class ACLDeltaTests(unittest.TestCase):
 
     def test_forged_review_status(self):
         obj = copy.deepcopy(self.review)
-        obj["historical"][0]["applicability_review"] = "reviewed-no-match"
+        obj["historical"][0]["applicability_review"] = "independently-approved"
         with self.assertRaises(ValueError):
             validate(obj, self.inventory)
 

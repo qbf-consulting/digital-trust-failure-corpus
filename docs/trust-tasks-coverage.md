@@ -6,17 +6,17 @@ Registry membership and statuses are source-pinned and CI-reconciled; this page 
 **Upstream revision:** `f21a98ec8383352d18629a08dd5dd23935456142`  
 **Versioned source pairs:** 1391  
 **Original pilot:** 12  
-**ACL source screening:** 7  
+**ACL source screening:** 20  
 **Overlap:** 3  
-**Distinct source-screened versions:** 16  
-**Not yet source-screened:** 1375  
+**Distinct source-screened versions:** 29  
+**Not yet source-screened:** 1362  
 
 Screened means DTFC-authored research mapping, **not** independent verification or all-case semantic completeness.
 Historical versions do not inherit screened status from a later version.
 
 | Family | Source versions | Original pilot | ACL screening | Distinct screened | Pending |
 |---|---:|---:|---:|---:|---:|
-| `acl` | 20 | 3 | 7 | 7 | 13 |
+| `acl` | 20 | 3 | 20 | 20 | 0 |
 | `audit` | 3 | 0 | 0 | 0 | 3 |
 | `auth` | 79 | 1 | 0 | 1 | 78 |
 | `backup` | 7 | 0 | 0 | 0 | 7 |

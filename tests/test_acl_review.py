@@ -12,7 +12,7 @@ class ACLReviewTests(unittest.TestCase):
         cls.inventory = json.loads(MANIFEST.read_text())
 
     def test_acl_review_scope(self):
-        self.assertEqual(check(self.data, self.inventory)["history_pending_delta"], 13)
+        self.assertEqual(check(self.data, self.inventory)["history_source_delta_screened"], 13)
 
     def test_missing_current_mapping(self):
         data = copy.deepcopy(self.data)
