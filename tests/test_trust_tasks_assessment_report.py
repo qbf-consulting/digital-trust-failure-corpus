@@ -68,3 +68,29 @@ class AssessmentReportTests(unittest.TestCase):
             "reviewer":"Reviewer A","reviewed_source_blob":"1"*40,
             "case_ids":["DTF-002"],"reasoning":"source checked","challenge_record":""
         },{"DTF-002"})
+
+    def test_blocked_evidence_does_not_count_as_review_complete(self):
+        row=self.inv["records"][0]
+        review={
+            "task_type_uri":"https://trusttasks.org/spec/"+row["slug"]+"/"+row["version"],
+            "decision":"blocked-evidence",
+            "independent_review":"challenged-unresolved",
+            "reviewer":"External reviewer (synthetic test only)",
+            "reviewed_source_blob":row["spec_blob"],
+            "case_ids":[],
+            "reasoning":"The available source evidence supports contradictory interpretations.",
+            "challenge_record":"Synthetic unresolved challenge test; not a real reviewer."
+        }
+        result=build_report(self.inv,self.pilot,self.acl,self.att,accepted=[review])
+        self.assertEqual(result["summary"]["independently_reviewed_versions"],0)
+        self.assertEqual(result["summary"]["blocked_review_versions"],1)
+        self.assertFalse(result["summary"]["independent_review_complete"])
+
+    def test_blocked_result_cannot_claim_completed_review(self):
+        with self.assertRaises(ValueError):
+            review_decision({
+                "decision":"blocked-evidence","independent_review":"completed",
+                "reviewer":"Reviewer A","reviewed_source_blob":"1"*40,
+                "case_ids":[],"reasoning":"Contradiction still unresolved",
+                "challenge_record":"Contradictory evidence"
+            },{"DTF-002"})
