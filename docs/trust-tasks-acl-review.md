@@ -23,3 +23,21 @@ The upstream ACL source itself describes meaningful changes: `acl/list` changed 
 Run `python -m tools.validate_acl_review` and `python -m unittest tests.test_acl_review -v`. The checker fails closed on missing source versions, unsupported reviewed-status promotion, stale canonical case references, and fabricated independent evidence. This is **structural validation of source-qualified research judgments**, not independent semantic peer review or execution of the upstream tasks.
 
 Further work: front-matter/catalogue reconciliation, material historical-version delta assessment, independently reviewed no-match decisions, broader families and generated coverage. An external reviewer must inspect the upstream source and challenge the DTFC mapping before treating any judgment as accepted assurance.
+
+## Historical-version source-delta screening
+
+All 13 historical ACL versions now carry a source-pinned baseline or material-change rationale in the research JSON. The six original 0.1 versions are baselines; the seven later historical versions are materially changed successors. The evidence includes version-specific source sections and Git blob identities.
+
+**Crucial distinction:** the delta screening covers *why mapping inheritance cannot be assumed*. It does **not** constitute a DTFC applicability review of any historical version. The 13 historical applicability decisions remain `needs-review`, and no independent peer review or target execution is claimed. A later current-version mapping is not a historical mapping.
+
+| Version transition | Material interpretive change |
+|---|---|
+| `acl/change-role/0.1 → 0.2` | Explicit authority ceilings, grantor bounds and capability rechecking |
+| `acl/grant/0.1 → 0.2` | Explicit authorization axes, proof/issuedAt and grantor authority limits |
+| `acl/list/0.1 → 0.2` | Hierarchical direction, capability/resource filters and AclEntry 0.2 |
+| `acl/list/0.2 → 0.3` | Pagination wire fields and completeness signaling |
+| `acl/revoke/0.1 → 0.2` | Explicit entry/act-scope revocation and next-decision effect |
+| `acl/show/0.1 → 0.2` | Explicit authority fields and policy-constrained redaction |
+| `acl/update/0.1 → 0.2` | Explicit authority fields, privilege-bound replacement, narrowing restrictions |
+
+Later current revisions introduce the purpose-scoped 0.3 entry model (and `acl/list/0.4`). The current research is pinned to the upstream Git revision, including draft text, and should be challenged on its actual source semantics. Reproduce structural gates with `python -m tools.validate_acl_deltas`; passing validation alone does not attest that the mapping is semantically correct.

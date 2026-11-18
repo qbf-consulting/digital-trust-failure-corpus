@@ -114,67 +114,197 @@
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.1",
       "source_blob": "2ff41d44cb76f95302b4eb5ad3dcce4354227c27",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "baseline",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Initial state-checked role transition; policy authorization checks and proof are specified, but explicit capability ceiling semantics of 0.2 are not represented.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/change-role/0.1/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.2",
       "source_blob": "ee024febcfbf681e2168a591a649197d3042f3d0",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Introduces explicit AclEntry 0.2 role ceilings, effective-capability recheck and grantor delegation bounds; prior 0.1 mapping cannot be inherited.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/change-role/0.2/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.1",
       "source_blob": "f5b115d062dd6eceb4514ee5867b3d758d1f1310",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "baseline",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Creates an ACL entry with role and optional scopes; permission depends on maintainer policy. Does not declare the explicit capability/purpose semantics of later versions.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/grant/0.1/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.2",
       "source_blob": "b57e80d9dbbc2e093b1c52253b51b2596d6fd9ae",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Abstract; Conformance; Authorization",
+        "rationale": "Replaces implicit scopes with explicit act/approve, keys and capabilities and grantor-ceiling checks; materially changes authority-boundary evidence.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/grant/0.2/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/list/0.1",
       "source_blob": "58d8e84c6ddce4fe07a6795e591291073278c9bc",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "baseline",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Enumerates ACL entries with optional scope and paging cursor; neither later explicit hierarchical filter semantics nor current completeness behavior is established.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/list/0.1/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/list/0.2",
       "source_blob": "a6d91030e0db831fe7aadc3f6ceee4bc18d259cd",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Introduces explicit AclEntry 0.2, hierarchical context/direction and capability/resource filters; source and tested query coverage differ from 0.1.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/list/0.2/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/list/0.3",
       "source_blob": "ae51ce865e6b4b6abf913cbc39d3dbf9930fd020",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Changes from 0.2",
+        "rationale": "Changes request pageSize to limit, response cursor to nextCursor and removes truncated; pagination completeness evidence is not version-equivalent.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/list/0.3/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.1",
       "source_blob": "3262742f09e3d4feabb1067148eac6844d0292cf",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "baseline",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Removes subject or subtracts named scopes and permits self-revocation under policy; later act-axis narrowing behavior cannot be assumed.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/revoke/0.1/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.2",
       "source_blob": "1bbd9545be050b22ed30f8ec631bb398e7df61d1",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Replaces remove-scopes representation with explicit entry removal or strict act-scope narrowing; requires next-decision effect and authority bounds.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/revoke/0.2/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/show/0.1",
       "source_blob": "a9bfd1e94a3252086098941dec788750172bc68a",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "baseline",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Returns one ACL entry or null, with maintainer disclosure policy. Future explicit AclEntry and redaction semantics are not inherited.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/show/0.1/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/show/0.2",
       "source_blob": "092b9141a7153688404da17d976437293eee9d9a",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Returns explicit AclEntry 0.2 authority axes and policy-governed redaction; non-disclosure may yield null rather than proof of absence.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/show/0.2/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/update/0.1",
       "source_blob": "9e70d19a3ae9fadfb362af403da3e0d685ee657d",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "baseline",
+        "source_section": "Abstract; Conformance; Security & Privacy",
+        "rationale": "Changes non-role ACL attributes with original scopes and allowedKeys representation; material authority fields are version-specific.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/update/0.1/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/update/0.2",
       "source_blob": "9fd9b8fa9a49966e94b3c0638a83b711faf36eee",
-      "review_state": "needs-version-delta-review"
+      "review_state": "needs-version-delta-review",
+      "version_delta_evidence": {
+        "assessment": "material-change",
+        "source_section": "Abstract; Conformance",
+        "rationale": "Replaces scopes/allowedKeys with explicit act/keys, capability and approve scopes; disallows act narrowing and evaluates grantor ceilings.",
+        "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+        "source_path": "specs/acl/update/0.2/spec.md",
+        "mapping_reuse": "not-authorized",
+        "scope": "source-version semantics only"
+      },
+      "applicability_review": "needs-review"
     }
   ],
   "negative_controls": [
@@ -190,5 +320,18 @@
     "Historical ACL versions are accounted for but their material semantic deltas remain unreviewed.",
     "These relationships are a first-pass source-grounded sample, not an exhaustive case-by-task mapping.",
     "No independent target execution or deployment failure evidence has been produced."
-  ]
+  ],
+  "version_delta_review": {
+    "status": "source-qualified-delta-screened",
+    "historical_applicability_complete": false,
+    "current_source_screenings": 7,
+    "historical_version_delta_records": 13,
+    "historical_applicability_reviews": 0,
+    "independent_semantic_peer_review": false,
+    "notes": [
+      "All historical source versions are accounted for; delta screening does not substitute for a case-by-case DTFC applicability assessment.",
+      "Material version changes prevent automatic mapping inheritance; baseline versions have no predecessor in the pinned family.",
+      "Upstream draft versions may change in place; this analysis is valid only at the pinned Git revision."
+    ]
+  }
 }
