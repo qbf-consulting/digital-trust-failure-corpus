@@ -28,13 +28,13 @@ judgments, also passed in
 | Retired historical versions | 73 |
 | Distinct task slugs | 894 |
 | Top-level families | 43 |
-| Source-screened versions | 29 |
-| Versions requiring source-specific screening | 1,362 |
+| Source-screened versions | 37 |
+| Versions requiring source-specific screening | 1,354 |
 | Independently approved comprehensive semantic reviews | 0 evidenced |
 | Independently maintained consumer executions | 0 evidenced |
 
-The 29 preliminary screenings comprise 12 original pilot versions and 20
-ACL-family versions, with three overlaps. An ACL source-version delta study
+The 37 preliminary screenings comprise 12 original pilot versions, 20
+ACL-family versions and eight Consent-family versions, with three overlaps. An ACL source-version delta study
 is separately available for all 13 historical ACL versions. The resulting
 mapping hypotheses retain source anchors, canonical DTFC cases, authority
 boundaries and falsification tests. They are conditional research findings;
@@ -50,7 +50,8 @@ by an independent semantic reviewer.
    The denominator and screened numerator are distinct; unreviewed entries
    cannot silently become reviewed no-matches.
 3. [Read the existing conditional crosswalk](trust-tasks-crosswalk.md)
-   and [ACL source-specific study](trust-tasks-acl-review.md).
+   [ACL source-specific study](trust-tasks-acl-review.md), and
+   [Consent research screening](trust-tasks-consent-review.md).
 4. [Apply the review protocol](trust-tasks-review-method.md)
    to challenge an existing link or substantiate a new case-specific mapping.
 
@@ -76,10 +77,14 @@ similarity.
 These findings identify falsifiable **consumer** failure seams, not verified
 incident manifestations or upstream specification defects.
 
+**Consent approval is not the same as an authenticated prompt.** The source distinguishes
+signed operator decisions from bridge attestations and requires authoritative grant
+state to remain current at the delivery boundary.
+
 ## What remains unestablished
 
 The research has **not** produced a defensible mapping/no-match assessment
-across the remaining 1,362 versions, a complete case-by-case search for any
+across the remaining 1,354 versions, a complete case-by-case search for any
 version, independently reviewed semantic determinations, or external target
 execution. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.

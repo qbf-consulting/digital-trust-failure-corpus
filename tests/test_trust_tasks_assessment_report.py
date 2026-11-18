@@ -22,7 +22,7 @@ class AssessmentReportTests(unittest.TestCase):
     def test_real_source_report(self):
         r=self.report()
         s=r["summary"]
-        self.assertEqual((s["registry_versions"],s["screened_versions"],s["pending_versions"]), (1391,29,1362))
+        self.assertEqual((s["registry_versions"],s["screened_versions"],s["pending_versions"]), (1391,37,1354))
         self.assertEqual(s["independently_reviewed_versions"],0)
         self.assertFalse(s["semantic_completion_claim"])
         self.assertEqual(len(r["records"]),1391)
@@ -31,7 +31,7 @@ class AssessmentReportTests(unittest.TestCase):
 
     def test_unreviewed_is_not_no_match(self):
         r=self.report()
-        self.assertEqual(sum(x["screening_state"]=="needs-review" for x in r["records"]),1362)
+        self.assertEqual(sum(x["screening_state"]=="needs-review" for x in r["records"]),1354)
         self.assertFalse(any(x["independent_review_state"]=="reviewed-no-match" for x in r["records"]))
 
     def test_missing_source_is_rejected(self):

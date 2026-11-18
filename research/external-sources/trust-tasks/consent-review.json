@@ -1,0 +1,204 @@
+{
+  "schema_version": "0.1.0",
+  "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "family": "consent",
+  "assessment_kind": "source-specific author research screening; not independently reviewed or complete corpus matching",
+  "records": [
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+      "source_path": "specs/consent/approve-request/0.1/spec.md",
+      "source_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "source_section": "Abstract; Conformance",
+      "local_proposition": "The authenticated prompt to an approver creates a pending request and challenge; it does not itself establish that an authorized operator made a valid consent decision.",
+      "unsupported_inference": "An authenticated request can be misread as sufficient approval without a returned decision and challenge match.",
+      "rationale": "The pinned consent/approve-request/0.1 specification presents a conditional consuming-system adjacent with DTF-010. The authenticated prompt to an approver creates a pending request and challenge; it does not itself establish that an authorized operator made a valid consent decision.",
+      "test_hypothesis": "When the prompt was delivered but the matching decision is absent or has expired, attempt to release inbound content, and require a valid recorded decision before delivery.",
+      "authority_boundary": "The VTA and bridge are responsible for pending status and enforcement; the human approver remains the authority for the requested disclosure.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/approver-list/1.0",
+      "source_path": "specs/consent/approver-list/1.0/spec.md",
+      "source_blob": "c3b005b85fa777af83a260855dc4f732063511f0",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "source_section": "Conformance; Security & Privacy",
+      "local_proposition": "An authorized, filtered approver-binding list reflects visible routing records for a particular issuer and query; it does not establish universal absence of other permitted approvers.",
+      "unsupported_inference": "A filtered or visibility-restricted empty listing may be mistaken for authoritative proof that no approver exists.",
+      "rationale": "The pinned consent/approver-list/1.0 specification presents a conditional consuming-system adjacent with DTF-010. An authorized, filtered approver-binding list reflects visible routing records for a particular issuer and query; it does not establish universal absence of other permitted approvers.",
+      "test_hypothesis": "Query as an operator with limited context visibility and receive an empty result while another context has a binding; test that no global absence claim is accepted.",
+      "authority_boundary": "The VTA controls authorized binding visibility; any consuming inventory assertion must establish its actual filter, access policy and completeness.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+      "source_path": "specs/consent/approver-set/1.0/spec.md",
+      "source_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Conformance; Security & Privacy",
+      "local_proposition": "Setting the approver binding is a privileged context-specific operation; a verified issuer proof does not permit a caller to reroute consent prompts outside the issuer's administrative scope.",
+      "unsupported_inference": "A party that can submit a signed task could otherwise substitute its own route or operator as the decision authority.",
+      "rationale": "The pinned consent/approver-set/1.0 specification presents a conditional consuming-system mechanism-overlap with DTF-002. Setting the approver binding is a privileged context-specific operation; a verified issuer proof does not permit a caller to reroute consent prompts outside the issuer's administrative scope.",
+      "test_hypothesis": "Submit a validly signed approver-set from a non-admin in the target context; confirm that the VTA refuses it and preserves the existing routing binding.",
+      "authority_boundary": "The VTA is authoritative for context administration and approver routing; signature validity is necessary but not sufficient for granting routing authority.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+      "source_path": "specs/consent/decision/1.0/spec.md",
+      "source_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-013",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "source_section": "Abstract; Conformance; Security & Privacy",
+      "local_proposition": "The source distinguishes directly signed operator decisions from bridge-attested decisions; the latter authenticates an enrolled bridge's account of an external operator action, not the operator's own signature.",
+      "unsupported_inference": "A verified bridge proof may be incorrectly elevated into proof that the human operator directly authorized the exact consent commitment.",
+      "rationale": "The pinned consent/decision/1.0 specification presents a conditional consuming-system adjacent with DTF-013. The source distinguishes directly signed operator decisions from bridge-attested decisions; the latter authenticates an enrolled bridge's account of an external operator action, not the operator's own signature.",
+      "test_hypothesis": "Present a bridge-attested allow as though the operator cryptographically signed it and test that the relying audit or enforcement logic preserves the evidence-mode distinction.",
+      "authority_boundary": "The VTA verifies the bridge's enrollment and approver authorization under policy; bridge attestation is not interchangeable with a directly signed operator commitment.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/list/1.0",
+      "source_path": "specs/consent/list/1.0/spec.md",
+      "source_blob": "08b580afcebdd5384fbca900e392b1b003eb63e1",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Abstract; Security & Privacy",
+      "local_proposition": "The bridge caches grants for efficient local enforcement, but the authoritative consent state may change after the cache was populated; local availability does not imply lifecycle freshness.",
+      "unsupported_inference": "A cached consent grant may be reused at the later inbound-delivery boundary after its authoritative lifecycle state changes.",
+      "rationale": "The pinned consent/list/1.0 specification presents a conditional consuming-system mechanism-overlap with DTF-021. The bridge caches grants for efficient local enforcement, but the authoritative consent state may change after the cache was populated; local availability does not imply lifecycle freshness.",
+      "test_hypothesis": "Revoke a grant at the VTA after the bridge caches it, then deliver an inbound message; require a status refresh or proven continuity before the bridge allows the message.",
+      "authority_boundary": "The VTA owns authoritative grant state; the bridge owns the material enforcement decision and cannot replace current consent with an unchecked stale cache.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+      "source_path": "specs/consent/list/1.1/spec.md",
+      "source_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Changes from 1.0; Conformance; Security & Privacy",
+      "local_proposition": "Version 1.1 identifies its incremental change-stream token as syncToken/nextSyncToken and requires VTA-issued tokens; correct token syntax does not guarantee the consumer has observed every material revocation.",
+      "unsupported_inference": "Confusing an incremental sync position with complete current authorization evidence could permit stale consent to authorize later delivery.",
+      "rationale": "The pinned consent/list/1.1 specification presents a conditional consuming-system mechanism-overlap with DTF-021. Version 1.1 identifies its incremental change-stream token as syncToken/nextSyncToken and requires VTA-issued tokens; correct token syntax does not guarantee the consumer has observed every material revocation.",
+      "test_hypothesis": "Replay a stale or non-issued syncToken after consent revocation and test that the bridge cannot treat a partial or rejected sync as current evidence sufficient to release new inbound content.",
+      "authority_boundary": "The VTA defines authoritative change-stream tokens; the bridge must establish its local cache continuity at the later inbound-policy decision.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+      "source_path": "specs/consent/request/1.0/spec.md",
+      "source_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Abstract; Conformance; Security & Privacy",
+      "local_proposition": "A request for consent is pending evidence of an unmet permission condition; the bridge must hold inbound messages until a matching affirmative decision is recorded and current.",
+      "unsupported_inference": "The existence of a valid prompt or pending record can be laundered into an affirmative permission despite the absence of decision evidence.",
+      "rationale": "The pinned consent/request/1.0 specification presents a conditional consuming-system mechanism-overlap with DTF-010. A request for consent is pending evidence of an unmet permission condition; the bridge must hold inbound messages until a matching affirmative decision is recorded and current.",
+      "test_hypothesis": "Submit a well-formed request with a live challenge but no corresponding valid allow, then attempt to deliver the held message; confirm that the bridge remains default-deny.",
+      "authority_boundary": "The bridge is the policy enforcement point and the VTA handles approver routing; neither may treat a request as a completed grant.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+      "source_path": "specs/consent/revoke/1.0/spec.md",
+      "source_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Abstract; Conformance; Security & Privacy",
+      "local_proposition": "Successful consent revocation restores default-deny and requires the bridge's local enforcement view to stop accepting the formerly valid grant for later inbound decisions.",
+      "unsupported_inference": "A previously valid cached grant can be accepted as presently valid after an authoritative consent revocation has become effective.",
+      "rationale": "The pinned consent/revoke/1.0 specification presents a conditional consuming-system mechanism-overlap with DTF-004. Successful consent revocation restores default-deny and requires the bridge's local enforcement view to stop accepting the formerly valid grant for later inbound decisions.",
+      "test_hypothesis": "Revoke the subject's grant at the VTA, delay bridge-cache refresh and attempt to deliver more conversation content; verify rejection before the next material delivery.",
+      "authority_boundary": "The VTA owns authoritative revocation and signaling, while the bridge must enforce current default-deny after revocation becomes effective.",
+      "evidence_required": [
+        "source-authenticated request and returned result",
+        "current maintainer/bridge policy and materially ordered decision records"
+      ],
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false
+    }
+  ],
+  "version_delta": {
+    "task": "consent/list",
+    "old_version": "1.0",
+    "new_version": "1.1",
+    "semantic_change": "Incremental change stream token renamed from since/cursor to syncToken/nextSyncToken; issued-token validation and consumer cache-continuity semantics must be reviewed separately.",
+    "equivalence_asserted": false
+  },
+  "limitations": [
+    "One candidate failure proposition per version is not an exhaustive examination of all 37 canonical cases.",
+    "The family contains two versions of consent/list; mappings are version-specific and are not inherited.",
+    "No reviewer acceptance, independent conformance execution or implementation defect is evidenced."
+  ]
+}

@@ -17,10 +17,10 @@ class NavigationTests(unittest.TestCase):
         pages=build_pages(self.inventory,self.pilot,self.acl)
         self.assertEqual(len(pages),44)
         self.assertIn("1391",pages["index.md"])
-        self.assertIn("1362",pages["index.md"])
+        self.assertIn("1354",pages["index.md"])
         self.assertIn("Independently reviewed:** 0",pages["index.md"])
-        self.assertEqual(sum(s.count(" | "+chr(96)+"needs-review"+chr(96)+" |") for n,s in pages.items() if n!="index.md"),1362)
-        self.assertEqual(sum(s.count(" | "+chr(96)+"research-screened"+chr(96)+" |") for n,s in pages.items() if n!="index.md"),29)
+        self.assertEqual(sum(s.count(" | "+chr(96)+"needs-review"+chr(96)+" |") for n,s in pages.items() if n!="index.md"),1354)
+        self.assertEqual(sum(s.count(" | "+chr(96)+"research-screened"+chr(96)+" |") for n,s in pages.items() if n!="index.md"),37)
 
     def test_no_match_is_not_implicit(self):
         self.assertIn("Unscreened versions are unresolved",build_pages(self.inventory,self.pilot,self.acl)["vta.md"])

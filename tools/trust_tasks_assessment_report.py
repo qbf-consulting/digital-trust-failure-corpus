@@ -11,6 +11,7 @@ from pathlib import Path
 
 from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, ROOT
 from tools.validate_acl_review import PATH as ACL_PATH
+from tools.validate_consent_review import PATH as CONSENT_PATH, check as check_consent
 from tools.validate_acl_deltas import validate as validate_deltas
 from tools.validate_historical_acl_screening import check as check_history
 from tools.trust_tasks_coverage import calculate
@@ -46,7 +47,9 @@ def review_decision(record, case_ids):
     return True
 
 
-def build_report(inventory, pilot, acl, attestation, accepted=None):
+def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None):
+    consent = json.loads(CONSENT_PATH.read_text()) if consent is None else consent
+    check_consent(consent, inventory)
     accepted = [] if accepted is None else accepted
     coverage = calculate(inventory, pilot, acl)
     validate_deltas(acl, inventory)
@@ -128,6 +131,27 @@ def build_report(inventory, pilot, acl, attestation, accepted=None):
             "test_hypothesis": record["test_hypothesis"],
             "independent_review": "not-established",
             "execution_evidence": "none",
+        })
+    for record in consent["records"]:
+        uri = record["task_type_uri"]
+        if uri not in indexed:
+            raise ValueError("unknown consent version")
+        x = indexed[uri]
+        if (record["source_blob"] != x["source"]["spec_blob"]
+            or record["source_path"] != x["source"]["path"]
+            or record["source_commit"] != x["source"]["commit"]):
+            raise ValueError("consent source provenance mismatch")
+        if record["case_id"] not in cases or record["case_version"] != cases[record["case_id"]]:
+            raise ValueError("unresolved consent canonical case")
+        if record["independent_review"] != "not-established" or record["execution_evidence"] != "none" or record["case_search_complete"] is not False:
+            raise ValueError("consent research incorrectly promoted to assurance")
+        x["screening_state"] = "research-screened"
+        x["candidate_mappings"].append({
+            "case_id": record["case_id"], "case_version": record["case_version"],
+            "classification": record["classification"], "source": "consent",
+            "rationale": record["rationale"], "authority_boundary": record["authority_boundary"],
+            "test_hypothesis": record["test_hypothesis"],
+            "independent_review": "not-established", "execution_evidence": "none",
         })
     for record in acl["historical"]:
         uri = record["task_type_uri"]
@@ -239,6 +263,8 @@ def render(report):
         "valid observation unsuitable at a later decision.", "",
         "**Evidence:** A filtered, paginated or redacted ACL result is not proof",
         "of universal absence of an authorization.", "",
+        "**Consent:** A signed prompt is not an approval; a bridge-attested answer is",
+        "not interchangeable with a directly signed operator decision.", "",
         "**Versions:** Purpose, pagination and authority semantics changed across",
         "ACL versions. A mapping must refer to the actual version assessed.", "",
         "These are **testable hypotheses**, not observed implementation defects.", "",
@@ -256,7 +282,7 @@ def render(report):
         "|---|---|",
         "| 1. Review contract | Evidence states, source linkage and negative tests defined |",
         "| 2. ACL reference family | Version-specific preliminary screening complete; independent full-case review pending |",
-        "| 3. Other families | Source inventory complete; " + str(s["pending_versions"]) + " versions require semantic screening |",
+        "| 3. Other families | Consent family source-screened; " + str(s["pending_versions"]) + " versions require semantic screening |",
         "| 4. Independent challenge | No completed independent semantic review evidenced |",
         "| 5. Publication | Source-derived human and JSON reports generated with the existing documentation build |",
         "| 6. Close-out | Research checkpoint only; the final exhaustive acceptance gate is not met |",
