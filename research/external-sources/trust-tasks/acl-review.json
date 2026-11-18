@@ -1,0 +1,194 @@
+{
+  "schema_version": "0.1.0",
+  "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "family": "acl",
+  "assessment_type": "DTFC-authored source-specific research screening",
+  "current": [
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.3",
+      "source_path": "specs/acl/change-role/0.3/spec.md",
+      "source_blob": "7ad91772c10225d114834a89256b9bbb6dacf3c3",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Conformance",
+      "rationale": "An earlier role observation is insufficient to establish current privilege after a demotion or another relevant state change.",
+      "test_hypothesis": "Execute after an intervening demotion using only pre-demotion role evidence; check that the relying decision does not PASS.",
+      "authority_boundary": "Mutation belongs to the ACL maintainer; a subsequent relying decision must establish current authorization.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.3",
+      "source_path": "specs/acl/grant/0.3/spec.md",
+      "source_blob": "a75399f34e19e3a69b626a4a056146f831ea9bc0",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Authorization",
+      "rationale": "The ACL maintainer must bound the grant by the granter's authority, including the relevant capability and purpose scope; a valid signature does not enlarge delegation.",
+      "test_hypothesis": "Submit a signed grant exceeding the granter's present purpose or capability ceiling; verify authority is not conferred.",
+      "authority_boundary": "The maintainer's policy governs grant authority independently of the task document proof.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.4",
+      "source_path": "specs/acl/list/0.4/spec.md",
+      "source_blob": "62784c516a8f910b2a2512afdabfd9a55eacaa1c",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "source_section": "Conformance",
+      "rationale": "A filtered, paged ACL enumeration need not establish completeness of a revocation sweep; using a partial view as proof of no remaining grant requires conditions not supplied by the read alone.",
+      "test_hypothesis": "Use a partial page as evidence of exhaustive absent grants; require affirmative completeness, filter, pagination and authority evidence.",
+      "authority_boundary": "List results cover the maintainer's authorized query context, not universal absence of access.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.3",
+      "source_path": "specs/acl/revoke/0.3/spec.md",
+      "source_blob": "90ed49a37d47b94faddfe1eda6f9f3e46a3dabf8",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Conformance",
+      "rationale": "Removing or narrowing an ACL entry does not prove that a later consumer refreshed a previously accepted grant or scope observation.",
+      "test_hypothesis": "After revocation, exercise a previously authorized operation using stale ACL evidence; verify current-state reevaluation.",
+      "authority_boundary": "The maintainer owns revocation; the consuming enforcement point owns its freshness evaluation.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/show/0.3",
+      "source_path": "specs/acl/show/0.3/spec.md",
+      "source_blob": "f539e0b56337247b0ca3a433be3f3fe7fa5397df",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "source_section": "Conformance",
+      "rationale": "The maintainer may return entry:null to conceal existence under disclosure policy; this answer alone cannot positively establish absence of the underlying grant.",
+      "test_hypothesis": "Request a concealed subject, obtain entry:null, then attempt to infer that no grant exists; require evidence beyond the policy-filtered response.",
+      "authority_boundary": "The maintainer owns disclosure policy; downstream consumers must not turn deliberately limited visibility into authoritative absence.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/swap-key/0.1",
+      "source_path": "specs/acl/swap-key/0.1/spec.md",
+      "source_blob": "81a034d1475fc58c934cdffb37de6d153ee55281",
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Conformance",
+      "rationale": "Atomic rebinding of an ACL subject requires persistent authentication artifacts tied to the retired subject to be revoked; their acceptance after effect is a current-validity failure.",
+      "test_hypothesis": "Execute swap-key then attempt access with the retired subject's persistent session; confirm the subsequent authorization is refused.",
+      "authority_boundary": "The maintainer owns retirement and session invalidation; downstream systems enforce current artifact state.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/update/0.3",
+      "source_path": "specs/acl/update/0.3/spec.md",
+      "source_blob": "308a1620f6a84591ae28529382fe13277398628c",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Changes from 0.2",
+      "rationale": "A purpose-widening or capability-changing ACL update remains bounded by the editor's authority; accepting an update beyond that bound produces scope escalation.",
+      "test_hypothesis": "Submit a purpose-widening update exceeding the editor's delegated purposes and verify rejection.",
+      "authority_boundary": "The maintainer decides under the current delegation and purpose policy, not by task signature alone.",
+      "review_state": "research-screened",
+      "execution_evidence": "none",
+      "independent_review": "not-established"
+    }
+  ],
+  "historical": [
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.1",
+      "source_blob": "2ff41d44cb76f95302b4eb5ad3dcce4354227c27",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.2",
+      "source_blob": "ee024febcfbf681e2168a591a649197d3042f3d0",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.1",
+      "source_blob": "f5b115d062dd6eceb4514ee5867b3d758d1f1310",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.2",
+      "source_blob": "b57e80d9dbbc2e093b1c52253b51b2596d6fd9ae",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.1",
+      "source_blob": "58d8e84c6ddce4fe07a6795e591291073278c9bc",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.2",
+      "source_blob": "a6d91030e0db831fe7aadc3f6ceee4bc18d259cd",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.3",
+      "source_blob": "ae51ce865e6b4b6abf913cbc39d3dbf9930fd020",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.1",
+      "source_blob": "3262742f09e3d4feabb1067148eac6844d0292cf",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.2",
+      "source_blob": "1bbd9545be050b22ed30f8ec631bb398e7df61d1",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/show/0.1",
+      "source_blob": "a9bfd1e94a3252086098941dec788750172bc68a",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/show/0.2",
+      "source_blob": "092b9141a7153688404da17d976437293eee9d9a",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/update/0.1",
+      "source_blob": "9e70d19a3ae9fadfb362af403da3e0d685ee657d",
+      "review_state": "needs-version-delta-review"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/update/0.2",
+      "source_blob": "9fd9b8fa9a49966e94b3c0638a83b711faf36eee",
+      "review_state": "needs-version-delta-review"
+    }
+  ],
+  "negative_controls": [
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/swap-key/0.1",
+      "case_id": "DTF-032",
+      "classification": "not-established",
+      "rationale": "Atomic VID rebinding does not alone establish the cross-context, linkable-proof-metadata and claimed-unlinkability preconditions of DTF-032. No such privacy proposition is demonstrated."
+    }
+  ],
+  "limitations": [
+    "Screening is independent DTFC interpretation, not normative upstream approval or conformance.",
+    "Historical ACL versions are accounted for but their material semantic deltas remain unreviewed.",
+    "These relationships are a first-pass source-grounded sample, not an exhaustive case-by-task mapping.",
+    "No independent target execution or deployment failure evidence has been produced."
+  ]
+}
