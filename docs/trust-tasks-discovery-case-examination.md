@@ -10,11 +10,11 @@ Every one of the **four** published `trust-task-discovery` source versions has b
 
 | Source version | Canonical cases considered | Conditional candidate cells | Not established from source |
 |---|---:|---:|---:|
-| [0.1](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.1/spec.md) | 37 | 9 | 28 |
+| [0.1](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.1/spec.md) | 37 | 8 | 29 |
 | [0.2](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.2/spec.md) | 37 | 9 | 28 |
 | [0.3](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.3/spec.md) | 37 | 10 | 27 |
 | [0.4](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.4/spec.md) | 37 | 10 | 27 |
-| **Total** | **148** | **38** | **110** |
+| **Total** | **148** | **36** | **112** |
 
 These are not independently accepted case mappings, vulnerabilities or executed consumer results. A case that cannot be established **from discovery alone** may be relevant to a later composed operation. Positive candidates are conditional on the full canonical preconditions, an actual relying proposition and observed consumer behavior.
 
@@ -27,7 +27,7 @@ These are not independently accepted case mappings, vulnerabilities or executed 
 | `0.3` | Adds optional `acceptanceWindow` with `maxAgeSeconds` and `clockSkewSeconds`, governing `issuedAt`. | An older discovery client with closed schema rejects the new field; `issuedAt` bounds may differ from a consumer honoring `expiresAt`. |
 | `0.4` | Adds `expiryHorizonSeconds` to distinguish stated `expiresAt` from age limits on documents without expiry. | An already signed document can be outside current acceptance rules; 0.3's narrower window must not be assumed to describe 0.4's expiry behavior. |
 
-Each changed source version has an explicit delta record in the machine matrix. The source's version fallback guidance is not a license to inherit a later version's temporal or evidence semantics.
+The 0.1/0.2 framework-version difference is **not itself DTF-012**: an envelope compatibility change does not establish the canonical case's incompatible governance policy/evidence decision. Each changed source version has an explicit delta record in the machine matrix. The source's version fallback guidance is not a license to inherit a later version's temporal or evidence semantics.
 
 ## Actionable negative/control cases for DTG / Trust Tasks
 

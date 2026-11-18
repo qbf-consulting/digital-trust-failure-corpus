@@ -57,15 +57,15 @@ preliminary screening count or fabricating independently established failures.
 |---|---:|
 | Fully case-examined pinned task versions | 14 of 1,391 |
 | Explicit case comparisons | 518 |
-| Conditional candidate applicability cells | 116 |
-| Case comparisons not established by task semantics | 402 |
+| Conditional candidate applicability cells | 114 |
+| Case comparisons not established by task semantics | 404 |
 | Previously source-screened versions still lacking full case comparison | 37 |
 | Versions not yet source-screened | 1,340 |
 | Independently accepted 37-case dispositions | 0 |
 | Independent consumer executions | 0 |
 
-The 116 cells include overlapping scenarios across task versions. They are
-**not** 116 verified defects, incidents or new DTFC propositions.
+The 114 cells include overlapping scenarios across task versions. They are
+**not** 114 verified defects, incidents or new DTFC propositions.
 `not-established-from-task` is *not* an independently reviewed no-match or
 proof of safety: it means that the task contract alone does not establish
 all preconditions of the canonical failure. A composed deployment can add
