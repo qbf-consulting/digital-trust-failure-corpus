@@ -28,8 +28,9 @@ is not PASS. An AI-assisted self-review cannot be counted as independent approva
 
 An author may substantively examine all 37 canonical cases for a pinned task
 without claiming independent acceptance. The complete-case machine records for
-[audit](trust-tasks-audit-case-examination.md) and
-[capability governance](trust-tasks-governance-case-examination.md) demonstrate
+[audit](trust-tasks-audit-case-examination.md) ,
+[capability governance](trust-tasks-governance-case-examination.md), and
+[delegated task consent](trust-tasks-task-consent-case-examination.md) demonstrate
 this intermediate evidence level. Each record includes one decision for every
 canonical case, distinguishes a falsifiable conditional candidate from a
 `not-established-from-task` observation, and pins source/schema hashes.
