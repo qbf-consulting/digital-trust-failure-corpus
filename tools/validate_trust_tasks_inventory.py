@@ -12,7 +12,7 @@ MANIFEST = ROOT / "research/external-sources/trust-tasks/inventory.json"
 PILOT = ROOT / "research/external-sources/trust-tasks/mapping.json"
 PIN = "f21a98ec8383352d18629a08dd5dd23935456142"
 HEX = re.compile(r"^[0-9a-f]{40}$")
-VERSION = re.compile(r"^[0-9]+\\.[0-9]+$")
+VERSION = re.compile(r"^[0-9]+\.[0-9]+$")
 STATES = {"sample-screened", "needs-review", "reviewed-no-match", "reviewed-mapped", "blocked-evidence"}
 
 
