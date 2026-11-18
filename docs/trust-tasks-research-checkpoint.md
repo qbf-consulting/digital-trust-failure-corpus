@@ -28,13 +28,14 @@ judgments, also passed in
 | Retired historical versions | 73 |
 | Distinct task slugs | 894 |
 | Top-level families | 43 |
-| Source-screened versions | 37 |
-| Versions requiring source-specific screening | 1,354 |
+| Source-screened versions | 51 |
+| Versions requiring source-specific screening | 1,340 |
 | Independently approved comprehensive semantic reviews | 0 evidenced |
 | Independently maintained consumer executions | 0 evidenced |
 
-The 37 preliminary screenings comprise 12 original pilot versions, 20
-ACL-family versions and eight Consent-family versions, with three overlaps. An ACL source-version delta study
+The 51 preliminary screenings comprise 12 original pilot versions, 20 ACL-family
+versions, eight Consent-family versions and 14 audit/governance/privileged-approval/
+discovery versions, with three overlaps. An ACL source-version delta study
 is separately available for all 13 historical ACL versions. The resulting
 mapping hypotheses retain source anchors, canonical DTFC cases, authority
 boundaries and falsification tests. They are conditional research findings;
@@ -51,7 +52,8 @@ by an independent semantic reviewer.
    cannot silently become reviewed no-matches.
 3. [Read the existing conditional crosswalk](trust-tasks-crosswalk.md)
    [ACL source-specific study](trust-tasks-acl-review.md), and
-   [Consent research screening](trust-tasks-consent-review.md).
+   [Consent research screening](trust-tasks-consent-review.md) and
+   [cross-family screening](trust-tasks-cross-family-review.md).
 4. [Apply the review protocol](trust-tasks-review-method.md)
    to challenge an existing link or substantiate a new case-specific mapping.
 
@@ -84,7 +86,7 @@ state to remain current at the delivery boundary.
 ## What remains unestablished
 
 The research has **not** produced a defensible mapping/no-match assessment
-across the remaining 1,354 versions, a complete case-by-case search for any
+across the remaining 1,340 versions, a complete case-by-case search for any
 version, independently reviewed semantic determinations, or external target
 execution. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
