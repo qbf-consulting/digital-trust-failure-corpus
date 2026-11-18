@@ -22,6 +22,14 @@ class NavigationTests(unittest.TestCase):
         self.assertEqual(sum(s.count(" | "+chr(96)+"needs-review"+chr(96)+" |") for n,s in pages.items() if n!="index.md"),1340)
         self.assertEqual(sum(s.count(" | "+chr(96)+"research-screened"+chr(96)+" |") for n,s in pages.items() if n!="index.md"),51)
 
+    def test_examined_version_navigates_to_complete_case_matrix(self):
+        pages=build_pages(self.inventory,self.pilot,self.acl)
+        self.assertIn("Full author-side case-examined:** 14",pages["index.md"])
+        self.assertIn("Author case comparisons:** 518",pages["index.md"])
+        self.assertIn("[37-case author matrix](../trust-tasks-audit-case-examination.md)",pages["audit.md"])
+        self.assertIn("[37-case author matrix](../trust-tasks-discovery-case-examination.md)",pages["trust-task-discovery.md"])
+        self.assertIn("not examined",pages["vta.md"])
+
     def test_no_match_is_not_implicit(self):
         self.assertIn("Unscreened versions are unresolved",build_pages(self.inventory,self.pilot,self.acl)["vta.md"])
 
