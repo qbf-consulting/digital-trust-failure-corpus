@@ -78,11 +78,8 @@
         },
         {
           "case_id": "DTF-012",
-          "disposition": "conditional-candidate",
-          "rationale": "The 0.1 frameworkVersion field describes MAJOR.MINOR compatibility, not a full PATCH-specific policy or envelope compliance claim.",
-          "test_hypothesis": "Advertise frameworkVersion=0.6 in a 0.1 reply, then assert full patch-specific compatibility without checking the actual consumer baseline; reject claim.",
-          "authority_boundary": "0.1 framework metadata versus exact later compatibility contract.",
-          "source_section": "Conformance"
+          "disposition": "not-established-from-task",
+          "rationale": "The 0.1/0.2 frameworkVersion difference establishes protocol-envelope compatibility, not a material trust decision claiming evaluation under the wrong governance policy. DTF-012's identified policy-version preconditions are not established by discovery alone."
         },
         {
           "case_id": "DTF-013",
@@ -301,11 +298,8 @@
         },
         {
           "case_id": "DTF-012",
-          "disposition": "conditional-candidate",
-          "rationale": "0.2 upgrades frameworkVersion to MAJOR.MINOR.PATCH; a consumer relying on the truncated 0.1 representation as a specific 0.2 baseline could misstate policy/evidence compatibility.",
-          "test_hypothesis": "Return 0.2 frameworkVersion under a 0.1-only validator, then assert compatibility when validation failed or version identity changed.",
-          "authority_boundary": "Framework version reporting versus a substantive policy version claim.",
-          "source_section": "Relationship to 0.1"
+          "disposition": "not-established-from-task",
+          "rationale": "The 0.1/0.2 frameworkVersion difference establishes protocol-envelope compatibility, not a material trust decision claiming evaluation under the wrong governance policy. DTF-012's identified policy-version preconditions are not established by discovery alone."
         },
         {
           "case_id": "DTF-013",
