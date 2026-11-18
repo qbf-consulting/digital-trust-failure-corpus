@@ -43,29 +43,30 @@ the original screening records do not themselves establish full 37-case
 consideration or independent acceptance; the two new complete-case research
 records below preserve that distinction.
 
-## Complete author-side case examination of four families
+## Complete author-side case examination of five families
 
 The [audit family case examination](trust-tasks-audit-case-examination.md),
 [capability-governance family case examination](trust-tasks-governance-case-examination.md), and
 [task-consent case examination](trust-tasks-task-consent-case-examination.md), and
-[discovery case examination](trust-tasks-discovery-case-examination.md)
-add **all 37 canonical-case comparisons for each of fourteen previously source-screened
+[discovery case examination](trust-tasks-discovery-case-examination.md), and
+[consent case examination](trust-tasks-consent-case-examination.md)
+add **all 37 canonical-case comparisons for each of twenty-two previously source-screened
 versions**. This adds substantive research depth without changing the 51
 preliminary screening count or fabricating independently established failures.
 
 | Case-level measure | Author research result |
 |---|---:|
-| Fully case-examined pinned task versions | 14 of 1,391 |
-| Explicit case comparisons | 518 |
-| Conditional candidate applicability cells | 114 |
-| Case comparisons not established by task semantics | 404 |
-| Previously source-screened versions still lacking full case comparison | 37 |
+| Fully case-examined pinned task versions | 22 of 1,391 |
+| Explicit case comparisons | 814 |
+| Conditional candidate applicability cells | 175 |
+| Case comparisons not established by task semantics | 639 |
+| Previously source-screened versions still lacking full case comparison | 29 |
 | Versions not yet source-screened | 1,340 |
 | Independently accepted 37-case dispositions | 0 |
 | Independent consumer executions | 0 |
 
-The 114 cells include overlapping scenarios across task versions. They are
-**not** 114 verified defects, incidents or new DTFC propositions.
+The 175 cells include overlapping scenarios across task versions. They are
+**not** 175 verified defects, incidents or new DTFC propositions.
 `not-established-from-task` is *not* an independently reviewed no-match or
 proof of safety: it means that the task contract alone does not establish
 all preconditions of the canonical failure. A composed deployment can add
@@ -81,6 +82,7 @@ asserting either applicability or non-applicability.
 | Audit purpose and retention | Reuse a legitimate retrieved tail for member scoring or retain its identifiers after the oversight purpose expires. | DTF-034, DTF-037 | Reject secondary use absent a separate governance basis; enforce bounded retention. |
 | Capability delegation | Sign an enable request as non-operator, or enable a real companion then write a registry tuple outside `vocabulary.actions`. | DTF-002, DTF-013, DTF-023 | Host checks operator role and rejects out-of-scope delegate action. |
 | Capability lifecycle | Cache enablement, disable handlers, and attempt a later material execution or assert historical invalidity. | DTF-005, DTF-006, DTF-016, DTF-021 | Deny later execution while preserving earlier effective history. |
+| Consent cache revocation | Revoke a group grant after a bridge persists an allow, then attempt delivery from stale cache. | DTF-001, DTF-010, DTF-021 | Require fresh VTA grant state or default-deny; 1.0 cursor differs from 1.1 syncToken. |
 | Consent proof versus factor | Use valid WebAuthn evidence without approver-own-DID assertion, or revoke approver before execution. | DTF-013, DTF-017, DTF-021, DTF-023 | Require own-DID proof, current approval eligibility, exact action and state. |
 | Advisory grant notice | Receive an authentic notice without a current stored grant, then resubmit. | DTF-010, DTF-022, DTF-027 | Ignore notice as authority; fail closed on authoritative grant lookup. |
 | Discovery expiry horizon | Cache a broad 0.4 acceptanceWindow, then tighten expiryHorizonSeconds before a material request. | DTF-011, DTF-021 | Enforce the actual consumer's current expiry policy at task acceptance. |
@@ -137,7 +139,7 @@ state to remain current at the delivery boundary.
 
 The research has **not** produced a defensible mapping/no-match assessment
 across the remaining population. A complete author-side 37-case examination
-now exists for **fourteen** versions, but the other 37 screened versions and 1,340
+now exists for **twenty-two** versions, but the other 29 screened versions and 1,340
 unscreened versions still lack complete case comparison. Independent semantic
 acceptance and external target execution also remain unestablished. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
