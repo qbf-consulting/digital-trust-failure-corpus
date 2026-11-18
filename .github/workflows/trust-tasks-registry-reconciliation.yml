@@ -1,0 +1,73 @@
+name: Trust Tasks pinned registry reconciliation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/trust-tasks-registry-reconciliation.yml'
+      - 'tools/reconcile_trust_tasks_registry.py'
+      - 'research/external-sources/trust-tasks/inventory.json'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/trust-tasks-registry-reconciliation.yml'
+      - 'tools/reconcile_trust_tasks_registry.py'
+      - 'research/external-sources/trust-tasks/inventory.json'
+
+permissions:
+  contents: read
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout DTFC
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          path: dtfc
+
+      - name: Checkout pinned upstream Trust Tasks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: trustoverip/dtgwg-trust-tasks-tf
+          ref: f21a98ec8383352d18629a08dd5dd23935456142
+          fetch-depth: 0
+          persist-credentials: false
+          path: upstream
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: upstream/package-lock.json
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.12'
+
+      - name: Verify upstream revision
+        run: |
+          test "$(git -C upstream rev-parse HEAD)" = "f21a98ec8383352d18629a08dd5dd23935456142"
+
+      - name: Build upstream generated registry
+        working-directory: upstream
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+
+      - name: Reconcile pinned registry
+        working-directory: dtfc
+        run: |
+          python -m tools.reconcile_trust_tasks_registry --checkout "$GITHUB_WORKSPACE/upstream" | tee "$RUNNER_TEMP/trust-tasks-reconciliation.json"
+          {
+            echo "### Pinned upstream registry reconciliation"
+            echo '~~~json'
+            cat "$RUNNER_TEMP/trust-tasks-reconciliation.json"
+            echo '~~~'
+            echo
+            echo "This verifies source-pair and generated-registry identity, not DTFC semantic completeness or independent target execution."
+          } >> "$GITHUB_STEP_SUMMARY"
