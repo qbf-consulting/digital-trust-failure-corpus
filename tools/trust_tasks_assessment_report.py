@@ -281,7 +281,8 @@ def render(report):
         "3. Check the stated trust boundary, preconditions and negative test.",
         "4. Treat a missing mapping as **not reviewed**, not a safe/no-match outcome.",
         "5. Request substantive independent review before treating a mapping as accepted.", "",
-        "The [machine-readable report](assessment-report.json) has a record for",
+        "The [machine-readable report](assessment-report.json) and",
+        "[JSON Schema](assessment-report.schema.json) document the data contract. A record exists for"
         "every task version. The [review method](../trust-tasks-review-method.md)",
         "explains how to evaluate mappings and genuine no-matches.", "",
         "## Completion against the six work packages", "",
@@ -313,7 +314,13 @@ def generate(output=OUTPUT):
     att = json.loads((ROOT / "research/external-sources/trust-tasks/registry-reconciliation.json").read_text())
     report = build_report(inventory, pilot, acl, att)
     output.mkdir(parents=True, exist_ok=True)
-    (output / "assessment-report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    from jsonschema import Draft202012Validator
+    schema_path = ROOT / "schemas" / "trust-tasks-assessment-report.schema.json"
+    schema = json.loads(schema_path.read_text())
+    Draft202012Validator.check_schema(schema)
+    Draft202012Validator(schema).validate(report)
+    (output / "assessment-report.schema.json").write_text(json.dumps(schema, indent=2) + "\\n", encoding="utf-8")
+    (output / "assessment-report.json").write_text(json.dumps(report, indent=2) + "\\n", encoding="utf-8")
     (output / "assessment-report.md").write_text(render(report), encoding="utf-8")
     print("Generated human and machine Trust Tasks assessment reports")
 

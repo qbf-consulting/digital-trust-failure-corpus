@@ -94,3 +94,25 @@ class AssessmentReportTests(unittest.TestCase):
                 "case_ids":[],"reasoning":"Contradiction still unresolved",
                 "challenge_record":"Contradictory evidence"
             },{"DTF-002"})
+
+    def test_machine_schema_accepts_source_report(self):
+        from jsonschema import Draft202012Validator
+        schema=json.loads((ROOT / "schemas/trust-tasks-assessment-report.schema.json").read_text())
+        Draft202012Validator.check_schema(schema)
+        Draft202012Validator(schema).validate(self.report())
+
+    def test_machine_schema_rejects_false_review_state(self):
+        from jsonschema import Draft202012Validator, ValidationError
+        schema=json.loads((ROOT / "schemas/trust-tasks-assessment-report.schema.json").read_text())
+        report=self.report()
+        report["records"][0]["independent_review_state"]="safe"
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(schema).validate(report)
+
+    def test_machine_schema_rejects_missing_provenance(self):
+        from jsonschema import Draft202012Validator, ValidationError
+        schema=json.loads((ROOT / "schemas/trust-tasks-assessment-report.schema.json").read_text())
+        report=self.report()
+        report["records"][0]["source"].pop("spec_blob")
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(schema).validate(report)

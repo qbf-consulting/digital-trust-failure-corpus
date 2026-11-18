@@ -1,0 +1,375 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qbf-consulting.github.io/digital-trust-failure-corpus/trust-tasks/assessment-report.schema.json",
+  "title": "DTFC Trust Tasks Source-Pinned Assessment Report",
+  "description": "Presentation contract only. Source-specific semantic correctness and independent governance authority require external evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "objective",
+    "authority",
+    "summary",
+    "review_dimensions",
+    "families",
+    "records",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "report_type": {
+      "const": "source-pinned-trust-tasks-dtfc-research"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "upstream_repository",
+        "upstream_commit",
+        "publication_evidence_url",
+        "canonical_dtfc_case_count",
+        "external_execution_evidenced"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "upstream_repository": {
+          "const": "trustoverip/dtgwg-trust-tasks-tf"
+        },
+        "upstream_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "publication_evidence_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "canonical_dtfc_case_count": {
+          "const": 37
+        },
+        "external_execution_evidenced": {
+          "const": false
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_versions",
+        "draft_versions",
+        "retired_versions",
+        "families",
+        "screened_versions",
+        "pending_versions",
+        "candidate_judgments",
+        "independently_reviewed_versions",
+        "blocked_review_versions",
+        "independent_review_complete",
+        "semantic_completion_claim",
+        "publication_state"
+      ],
+      "properties": {
+        "registry_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "draft_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retired_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "families": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "screened_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pending_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidate_judgments": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "independently_reviewed_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_review_versions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "independent_review_complete": {
+          "type": "boolean"
+        },
+        "semantic_completion_claim": {
+          "const": false
+        },
+        "publication_state": {
+          "const": "research-checkpoint"
+        }
+      }
+    },
+    "review_dimensions": {
+      "type": "object",
+      "required": [
+        "inventory",
+        "screening",
+        "classification",
+        "provenance",
+        "independent_review",
+        "execution"
+      ],
+      "properties": {
+        "inventory": {
+          "type": "string"
+        },
+        "screening": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "classification": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "independent_review": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "execution": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "inventory",
+          "screened",
+          "pending",
+          "reviewed",
+          "blocked"
+        ],
+        "properties": {
+          "family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inventory": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "screened": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pending": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reviewed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "blocked": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type_uri",
+          "family",
+          "slug",
+          "version",
+          "source",
+          "inventory_state",
+          "screening_state",
+          "independent_review_state",
+          "execution_evidence_state",
+          "candidate_mappings",
+          "version_delta"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type_uri": {
+            "type": "string",
+            "pattern": "^https://trusttasks\\.org/spec/.+/[0-9]+\\.[0-9]+$"
+          },
+          "family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+$"
+          },
+          "source": {
+            "type": "object",
+            "required": [
+              "commit",
+              "path",
+              "spec_blob",
+              "schema_blob",
+              "provenance_strength"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^specs/.+/[0-9]+\\.[0-9]+/spec\\.md$"
+              },
+              "spec_blob": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "schema_blob": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "provenance_strength": {
+                "const": "pinned-spec-blob"
+              }
+            }
+          },
+          "inventory_state": {
+            "const": "registry-reconciled"
+          },
+          "screening_state": {
+            "enum": [
+              "needs-review",
+              "research-screened"
+            ]
+          },
+          "independent_review_state": {
+            "enum": [
+              "not-established",
+              "reviewed-mapped",
+              "reviewed-no-match",
+              "blocked-evidence"
+            ]
+          },
+          "execution_evidence_state": {
+            "const": "none"
+          },
+          "candidate_mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "case_id",
+                "case_version",
+                "classification",
+                "source",
+                "rationale",
+                "authority_boundary",
+                "test_hypothesis",
+                "independent_review",
+                "execution_evidence"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "case_id": {
+                  "type": "string",
+                  "pattern": "^DTF-[0-9]{3}$"
+                },
+                "case_version": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "classification": {
+                  "enum": [
+                    "mechanism-overlap",
+                    "adjacent"
+                  ]
+                },
+                "source": {
+                  "enum": [
+                    "pilot",
+                    "acl",
+                    "consent"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "authority_boundary": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "test_hypothesis": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "independent_review": {
+                  "const": "not-established"
+                },
+                "execution_evidence": {
+                  "const": "none"
+                }
+              }
+            }
+          },
+          "version_delta": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}
