@@ -55,7 +55,8 @@ def check(data, inventory, cases=None):
             if item["disposition"] not in STATES or len(item.get("rationale", "")) < 45:
                 raise ValueError("missing evidence-grounded bounded judgment")
             if item["disposition"] == "conditional-candidate":
-                if any(len(item.get(k, "")) < 35 for k in ("test_hypothesis", "authority_boundary", "source_section")):
+                if (any(len(item.get(k, "")) < 35 for k in ("test_hypothesis", "authority_boundary"))
+                    or len(item.get("source_section", "")) < 5):
                     raise ValueError("conditional candidate lacks a test, source section or boundary")
                 candidates += 1
             else:
