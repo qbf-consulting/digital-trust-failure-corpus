@@ -50,7 +50,7 @@ class DiscoveryCaseExaminationTests(unittest.TestCase):
         for record in self.data["records"][2:]:
             case = next(x for x in record["decisions"] if x["case_id"] == "DTF-021")
             self.assertEqual(case["disposition"], "conditional-candidate")
-            self.assertIn("window", case["rationale"].lower())
+            self.assertIn("window", case["authority_boundary"].lower())
 
     def test_missing_v04_delta(self):
         x = copy.deepcopy(self.data); x["records"][3].pop("version_delta"); self.reject(x)
