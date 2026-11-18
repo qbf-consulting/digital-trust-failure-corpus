@@ -34,13 +34,13 @@ class AssessmentReportTests(unittest.TestCase):
         s=r["summary"]
         self.assertEqual(r["schema_version"], "0.2.0")
         self.assertEqual((s["author_case_examined_versions"], s["author_case_comparisons"]),
-                         (14, 518))
+                         (22, 814))
         self.assertEqual((s["author_conditional_candidates"],
-                          s["author_not_established_from_task"]), (114, 404))
+                          s["author_not_established_from_task"]), (175, 639))
         complete=[x for x in r["records"] if x["author_case_examination"]["state"] == "author-case-examined"]
-        self.assertEqual(len(complete), 14)
-        self.assertEqual(sum(x["author_case_examination"]["canonical_case_count"] for x in complete), 518)
-        self.assertEqual(sum(x["author_case_examination"]["state"] == "not-examined" for x in r["records"]), 1377)
+        self.assertEqual(len(complete), 22)
+        self.assertEqual(sum(x["author_case_examination"]["canonical_case_count"] for x in complete), 814)
+        self.assertEqual(sum(x["author_case_examination"]["state"] == "not-examined" for x in r["records"]), 1369)
         self.assertFalse(any(x["independent_review_state"] != "not-established" for x in complete))
         self.assertIn("Not established from task source", render(r))
 
@@ -59,6 +59,7 @@ class AssessmentReportTests(unittest.TestCase):
                   if x["author_case_examination"]["state"] == "author-case-examined"}
         self.assertIn("https://trusttasks.org/spec/audit/list/0.1",examined)
         self.assertIn("https://trusttasks.org/spec/audit/list/0.2",examined)
+        self.assertIn("https://trusttasks.org/spec/consent/list/1.1",examined)
         self.assertNotIn("https://trusttasks.org/spec/acl/grant/0.3",examined)
 
     def test_unreviewed_is_not_no_match(self):
