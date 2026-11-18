@@ -43,6 +43,7 @@ nav:
       - Semantic screening: external-semantic-screening.md
       - Trust Tasks applicability: trust-tasks-crosswalk.md
       - Trust Tasks pinned inventory: trust-tasks-inventory.md
+      - Trust Tasks coverage: trust-tasks-coverage.md
       - Trust Tasks ACL research slice: trust-tasks-acl-review.md
       - Inspected source records: inspected-external-records.md
       - Tool-output boundary: tool-output-boundary-research.md

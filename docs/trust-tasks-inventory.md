@@ -27,3 +27,8 @@ Run `python -m tools.validate_trust_tasks_inventory` and `python -m unittest tes
 ## First source-specific ACL review slice
 
 The [ACL screening](trust-tasks-acl-review.md) evaluates seven source-pinned current operation versions against existing DTFC cases; thirteen historical versions remain explicitly pending version-delta review. The screening has no independently executed test evidence and does not close the registry-wide semantic-review gate.
+
+
+## Source-derived crosswalk coverage
+
+The [coverage matrix](trust-tasks-coverage.md) combines the original pilot and the ACL research slice without double counting the overlap. It makes the remaining screening queue visible by family. Publication reconciliation and independent semantic review remain open.
