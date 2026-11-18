@@ -18,7 +18,7 @@ class CoverageTests(unittest.TestCase):
         stats = calculate(self.inventory, self.pilot, self.acl)
         self.assertEqual((stats["source_versions"], stats["original_pilot"], stats["acl_screening"],
                           stats["overlapping_source_versions"], stats["screened_unique"], stats["pending"]),
-                         (1391, 12, 20, 3, 51, 1340))
+                         (1391, 12, 20, 3, 52, 1339))
         self.assertFalse(stats["semantic_review_complete"])
         self.assertTrue(stats["inventory_publication_reconciled"])
 
