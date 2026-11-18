@@ -13,7 +13,7 @@ A boundary test is only a hypothetical test until run on an identified consuming
 
 ## Challenge 1: audit/verify/0.1 and DTF-010
 
-**Sources:** [task specification](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/audit/verify/0.1/spec.md) (Abstract, Conformance, Security & Privacy); [DTF-010](../corpus/evidence/DTF-010.json).
+**Sources:** [task specification](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/audit/verify/0.1/spec.md) (Abstract, Conformance, Security & Privacy); [DTF-010](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/corpus/evidence/DTF-010.json).
 
 **Existing candidate:** `mechanism-overlap` for a consumer interpreting `verified: true` as complete, externally authentic audit evidence.
 
@@ -25,7 +25,7 @@ A boundary test is only a hypothetical test until run on an identified consuming
 
 ## Challenge 2: governance/capability/list/0.1 and DTF-010 versus DTF-018
 
-**Sources:** [task specification](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/governance/capability/list/0.1/spec.md) (Request, Response, Security & Privacy); [DTF-010](../corpus/evidence/DTF-010.json); [DTF-018](../corpus/authority/DTF-018.json).
+**Sources:** [task specification](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/governance/capability/list/0.1/spec.md) (Request, Response, Security & Privacy); [DTF-010](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/corpus/evidence/DTF-010.json); [DTF-018](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/corpus/authority/DTF-018.json).
 
 **Existing candidate:** `DTF-010` (`adjacent`) because `available` is not `enabled`.
 
@@ -37,7 +37,7 @@ A boundary test is only a hypothetical test until run on an identified consuming
 
 ## Challenge 3: trust-task-discovery/0.4 and authority, freshness, privacy
 
-**Sources:** [task specification](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.4/spec.md) (Conformance, Acceptance window); [DTF-018](../corpus/authority/DTF-018.json); [DTF-021](../corpus/composition/DTF-021.json); [DTF-034](../corpus/privacy/DTF-034.json).
+**Sources:** [task specification](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/specs/trust-task-discovery/0.4/spec.md) (Conformance, Acceptance window); [DTF-018](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/corpus/authority/DTF-018.json); [DTF-021](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/corpus/composition/DTF-021.json); [DTF-034](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/corpus/privacy/DTF-034.json).
 
 **Existing candidate:** DTF-021 (`adjacent`), because a previously discovered acceptance policy can become stale.
 
