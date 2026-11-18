@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "scope": "audit-family-case-examination",
   "upstream": {
     "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -21,7 +21,8 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "The operation reads or checks audit evidence but does not itself establish an authority-revocation timeline for a later authorization decision."
+          "rationale": "The operation reads or checks audit evidence but does not itself establish an authority-revocation timeline for a later authorization decision.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
@@ -29,42 +30,50 @@
           "rationale": "The community-wide audit-read gate is explicit; a consumer must reject a context-limited actor trying to obtain the whole audit tail on authority that does not permit that scope.",
           "test_hypothesis": "Request full-log history using only context-scoped authorization; require DENY and audit the governing capability evidence.",
           "authority_boundary": "Maintainer's community-wide audit-read authorization, not proof of request origin.",
-          "source_section": "Security & Privacy / Data carried"
+          "source_section": "Security & Privacy / Data carried",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "There is no dependent delegation whose upstream authority source is withdrawn or becomes unverifiable."
+          "rationale": "There is no dependent delegation whose upstream authority source is withdrawn or becomes unverifiable.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not establish current validity of a previously revoked credential or other artifact."
+          "rationale": "The task does not establish current validity of a previously revoked credential or other artifact.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not select a superseded policy or artifact as presently authoritative."
+          "rationale": "The task does not select a superseded policy or artifact as presently authoritative.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not claim that present withdrawal erases validity at an earlier historical time."
+          "rationale": "The task does not claim that present withdrawal erases validity at an earlier historical time.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "There is no requirement or claim that multiple evidence items originate from materially independent controllers."
+          "rationale": "There is no requirement or claim that multiple evidence items originate from materially independent controllers.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not reconcile two conflicting authorities with equal competence over a relying proposition."
+          "rationale": "The task does not reconcile two conflicting authorities with equal competence over a relying proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "No A-to-B-to-C transitive recognition or authority chain is asserted by the task."
+          "rationale": "No A-to-B-to-C transitive recognition or authority chain is asserted by the task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -72,47 +81,56 @@
           "rationale": "A filtered first page is not evidence of exhaustive absence or completeness. The pagination continuation must be resolved under the identical filter scope before a complete-tail claim.",
           "test_hypothesis": "Return a partial page with a valid continuation while a later page contains a disqualifying event; reject an exhaustive absence PASS.",
           "authority_boundary": "Auditor's completeness determination after maintainer pagination.",
-          "source_section": "Paging; Conformance"
+          "source_section": "Paging; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
           "disposition": "not-established-from-task",
-          "rationale": "The source does not supply the currentness requirement or show a consumer representing undated evidence as current."
+          "rationale": "The source does not supply the currentness requirement or show a consumer representing undated evidence as current.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "No relying decision is declared conformant to a policy version different from the version used to evaluate it."
+          "rationale": "No relying decision is declared conformant to a policy version different from the version used to evaluate it.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
           "disposition": "not-established-from-task",
-          "rationale": "Request/response proof attribution does not itself authorize an unrelated material commitment."
+          "rationale": "Request/response proof attribution does not itself authorize an unrelated material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "No expiring actor mandate and post-expiry material commitment are specified."
+          "rationale": "No expiring actor mandate and post-expiry material commitment are specified.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "There is no iterative negotiation whose later offer exceeds a mandate limit."
+          "rationale": "There is no iterative negotiation whose later offer exceeds a mandate limit.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not authorize a new agent commitment after a mid-interaction revocation."
+          "rationale": "The task does not authorize a new agent commitment after a mid-interaction revocation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not admit a materially changed commitment under an earlier approval artifact."
+          "rationale": "The task does not admit a materially changed commitment under an earlier approval artifact.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
           "disposition": "not-established-from-task",
-          "rationale": "The availability or integrity of an audit record cannot itself grant principal-derived authority for a later material commitment."
+          "rationale": "The availability or integrity of an audit record cannot itself grant principal-derived authority for a later material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
@@ -120,32 +138,38 @@
           "rationale": "The auditor retains a signed historical snapshot specifically for later disputes; downstream commitment reconstruction is conditional on retaining the decision-time mandate, policy and event provenance, not only event presence.",
           "test_hypothesis": "Provide a signed log event without the effective approval/policy inputs; require an indeterminate historical-authority result.",
           "authority_boundary": "Audit record versus decision-time authority reconstruction.",
-          "source_section": "Retention; Consent/purpose"
+          "source_section": "Retention; Consent/purpose",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "No conflicting specification owners of one decisive fact are identified merely by listing or verifying the log."
+          "rationale": "No conflicting specification owners of one decisive fact are identified merely by listing or verifying the log.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not itself reuse a prior lifecycle determination as authority at a later execution boundary."
+          "rationale": "The task does not itself reuse a prior lifecycle determination as authority at a later execution boundary.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
           "disposition": "not-established-from-task",
-          "rationale": "A signed or verified audit result is not an assertion that the underlying recorded transaction actually settled or had legitimate effect."
+          "rationale": "A signed or verified audit result is not an assertion that the underlying recorded transaction actually settled or had legitimate effect.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
           "disposition": "not-established-from-task",
-          "rationale": "The operation alone does not establish a composed multi-component PASS that omits an additional seam obligation."
+          "rationale": "The operation alone does not establish a composed multi-component PASS that omits an additional seam obligation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "No N-of-M independent approval or quorum is established by the audit operation."
+          "rationale": "No N-of-M independent approval or quorum is established by the audit operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
@@ -153,7 +177,8 @@
           "rationale": "Required proofs and hash-chain metadata establish attribution or link consistency, not independent corroboration or stronger substantive assurance from added evidence hops.",
           "test_hypothesis": "Provide duplicate derived or independently unanchored audit tails; verify that the auditor does not increase assurance solely by added signatures/links.",
           "authority_boundary": "Provenance structure versus substantive assurance assertion.",
-          "source_section": "Abstract; Conformance"
+          "source_section": "Abstract; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -161,7 +186,8 @@
           "rationale": "Filtered or paginated entries may all be authentic yet omit a material counter-event; completeness depends on filter and pagination coverage.",
           "test_hypothesis": "Return a valid filtered subset excluding a known contradictory event; refuse a complete-history assurance PASS.",
           "authority_boundary": "Evidence subset versus scoped completeness requirement.",
-          "source_section": "Paging; Conformance"
+          "source_section": "Paging; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -169,37 +195,44 @@
           "rationale": "A completed signed audit-list response proves an attributed listing operation, not independent validity of the events or all their governance consequences.",
           "test_hypothesis": "Supply well-formed signed entries with a separately disputed authority basis; reject substantive authorization assurance based solely on listing success.",
           "authority_boundary": "Successful listing versus meaning of recorded events.",
-          "source_section": "Abstract; Consent/purpose"
+          "source_section": "Abstract; Consent/purpose",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
           "disposition": "not-established-from-task",
-          "rationale": "An attributable audit record does not by itself establish authority for a future consequential action."
+          "rationale": "An attributable audit record does not by itself establish authority for a future consequential action.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No material change of decision outcome is presented as an authority change rather than change of evidence or policy."
+          "rationale": "No material change of decision outcome is presented as an authority change rather than change of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "The operation does not resolve a previously blocked material condition solely through progression or repetition."
+          "rationale": "The operation does not resolve a previously blocked material condition solely through progression or repetition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No valid resolution event is disregarded while keeping a prior block in place."
+          "rationale": "No valid resolution event is disregarded while keeping a prior block in place.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not assert cross-context unlinkability for credential presentations while exposing reusable proof metadata."
+          "rationale": "The task does not assert cross-context unlinkability for credential presentations while exposing reusable proof metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not perform an observable credential-status resolution at presentation time."
+          "rationale": "The task does not perform an observable credential-status resolution at presentation time.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
@@ -207,12 +240,14 @@
           "rationale": "The specification defines oversight purpose and explicitly warns against later profiling or unrelated scoring of data already legitimately obtained.",
           "test_hypothesis": "After an authorized audit read, attempt to reuse actor history for member scoring without a new governance basis; reject or flag misuse.",
           "authority_boundary": "Auditor's post-disclosure secondary processing, distinct from maintainer's read gate.",
-          "source_section": "Security & Privacy / Consent/purpose"
+          "source_section": "Security & Privacy / Consent/purpose",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "No declared unlinkability guarantee is conditioned on issuer- or registry-controlled metadata remaining uncorrelatable."
+          "rationale": "No declared unlinkability guarantee is conditioned on issuer- or registry-controlled metadata remaining uncorrelatable.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
@@ -220,7 +255,8 @@
           "rationale": "Audit entries expose plaintext actor, target, context and open detail fields; a consumer claiming combined privacy-minimality must test linkage across entries and fields.",
           "test_hypothesis": "Combine permitted audit fields to reconstruct a sensitive person-level profile, then challenge a privacy-minimality PASS.",
           "authority_boundary": "Combined disclosure versus privacy claim at auditor.",
-          "source_section": "Security & Privacy / Data carried; Correlation"
+          "source_section": "Security & Privacy / Data carried; Correlation",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
@@ -228,7 +264,8 @@
           "rationale": "The task creates durable, attributable evidence copies outside maintainer redaction control; indefinite auditor retention can become a cross-context correlation surface.",
           "test_hypothesis": "Retrieve and retain actor-linked audit pages beyond the stated oversight period, then test whether erasure propagated and retention policy was enforced.",
           "authority_boundary": "Maintainer disclosure versus independent auditor's retained copies.",
-          "source_section": "Retention; Correlation"
+          "source_section": "Retention; Correlation",
+          "case_version": "0.1.0"
         }
       ]
     },
@@ -245,7 +282,8 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "The operation reads or checks audit evidence but does not itself establish an authority-revocation timeline for a later authorization decision."
+          "rationale": "The operation reads or checks audit evidence but does not itself establish an authority-revocation timeline for a later authorization decision.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
@@ -253,42 +291,50 @@
           "rationale": "The community-wide audit-read gate is explicit; a consumer must reject a context-limited actor trying to obtain the whole audit tail on authority that does not permit that scope.",
           "test_hypothesis": "Request full-log history using only context-scoped authorization; require DENY and audit the governing capability evidence.",
           "authority_boundary": "Maintainer's community-wide audit-read authorization, not proof of request origin.",
-          "source_section": "Security & Privacy / Data carried"
+          "source_section": "Security & Privacy / Data carried",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "There is no dependent delegation whose upstream authority source is withdrawn or becomes unverifiable."
+          "rationale": "There is no dependent delegation whose upstream authority source is withdrawn or becomes unverifiable.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not establish current validity of a previously revoked credential or other artifact."
+          "rationale": "The task does not establish current validity of a previously revoked credential or other artifact.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not select a superseded policy or artifact as presently authoritative."
+          "rationale": "The task does not select a superseded policy or artifact as presently authoritative.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not claim that present withdrawal erases validity at an earlier historical time."
+          "rationale": "The task does not claim that present withdrawal erases validity at an earlier historical time.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "There is no requirement or claim that multiple evidence items originate from materially independent controllers."
+          "rationale": "There is no requirement or claim that multiple evidence items originate from materially independent controllers.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not reconcile two conflicting authorities with equal competence over a relying proposition."
+          "rationale": "The task does not reconcile two conflicting authorities with equal competence over a relying proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "No A-to-B-to-C transitive recognition or authority chain is asserted by the task."
+          "rationale": "No A-to-B-to-C transitive recognition or authority chain is asserted by the task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -296,47 +342,56 @@
           "rationale": "A filtered first page is not evidence of exhaustive absence or completeness. The pagination continuation must be resolved under the identical filter scope before a complete-tail claim.",
           "test_hypothesis": "Return a partial page with a valid continuation while a later page contains a disqualifying event; reject an exhaustive absence PASS.",
           "authority_boundary": "Auditor's completeness determination after maintainer pagination.",
-          "source_section": "Paging; Conformance"
+          "source_section": "Paging; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
           "disposition": "not-established-from-task",
-          "rationale": "The source does not supply the currentness requirement or show a consumer representing undated evidence as current."
+          "rationale": "The source does not supply the currentness requirement or show a consumer representing undated evidence as current.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "No relying decision is declared conformant to a policy version different from the version used to evaluate it."
+          "rationale": "No relying decision is declared conformant to a policy version different from the version used to evaluate it.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
           "disposition": "not-established-from-task",
-          "rationale": "Request/response proof attribution does not itself authorize an unrelated material commitment."
+          "rationale": "Request/response proof attribution does not itself authorize an unrelated material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "No expiring actor mandate and post-expiry material commitment are specified."
+          "rationale": "No expiring actor mandate and post-expiry material commitment are specified.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "There is no iterative negotiation whose later offer exceeds a mandate limit."
+          "rationale": "There is no iterative negotiation whose later offer exceeds a mandate limit.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not authorize a new agent commitment after a mid-interaction revocation."
+          "rationale": "The task does not authorize a new agent commitment after a mid-interaction revocation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not admit a materially changed commitment under an earlier approval artifact."
+          "rationale": "The task does not admit a materially changed commitment under an earlier approval artifact.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
           "disposition": "not-established-from-task",
-          "rationale": "The availability or integrity of an audit record cannot itself grant principal-derived authority for a later material commitment."
+          "rationale": "The availability or integrity of an audit record cannot itself grant principal-derived authority for a later material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
@@ -344,32 +399,38 @@
           "rationale": "The auditor retains a signed historical snapshot specifically for later disputes; downstream commitment reconstruction is conditional on retaining the decision-time mandate, policy and event provenance, not only event presence.",
           "test_hypothesis": "Provide a signed log event without the effective approval/policy inputs; require an indeterminate historical-authority result.",
           "authority_boundary": "Audit record versus decision-time authority reconstruction.",
-          "source_section": "Retention; Consent/purpose"
+          "source_section": "Retention; Consent/purpose",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "No conflicting specification owners of one decisive fact are identified merely by listing or verifying the log."
+          "rationale": "No conflicting specification owners of one decisive fact are identified merely by listing or verifying the log.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not itself reuse a prior lifecycle determination as authority at a later execution boundary."
+          "rationale": "The task does not itself reuse a prior lifecycle determination as authority at a later execution boundary.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
           "disposition": "not-established-from-task",
-          "rationale": "A signed or verified audit result is not an assertion that the underlying recorded transaction actually settled or had legitimate effect."
+          "rationale": "A signed or verified audit result is not an assertion that the underlying recorded transaction actually settled or had legitimate effect.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
           "disposition": "not-established-from-task",
-          "rationale": "The operation alone does not establish a composed multi-component PASS that omits an additional seam obligation."
+          "rationale": "The operation alone does not establish a composed multi-component PASS that omits an additional seam obligation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "No N-of-M independent approval or quorum is established by the audit operation."
+          "rationale": "No N-of-M independent approval or quorum is established by the audit operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
@@ -377,7 +438,8 @@
           "rationale": "Required proofs and hash-chain metadata establish attribution or link consistency, not independent corroboration or stronger substantive assurance from added evidence hops.",
           "test_hypothesis": "Provide duplicate derived or independently unanchored audit tails; verify that the auditor does not increase assurance solely by added signatures/links.",
           "authority_boundary": "Provenance structure versus substantive assurance assertion.",
-          "source_section": "Abstract; Conformance"
+          "source_section": "Abstract; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -385,7 +447,8 @@
           "rationale": "Filtered or paginated entries may all be authentic yet omit a material counter-event; completeness depends on filter and pagination coverage.",
           "test_hypothesis": "Return a valid filtered subset excluding a known contradictory event; refuse a complete-history assurance PASS.",
           "authority_boundary": "Evidence subset versus scoped completeness requirement.",
-          "source_section": "Paging; Conformance"
+          "source_section": "Paging; Conformance",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -393,37 +456,44 @@
           "rationale": "A completed signed audit-list response proves an attributed listing operation, not independent validity of the events or all their governance consequences.",
           "test_hypothesis": "Supply well-formed signed entries with a separately disputed authority basis; reject substantive authorization assurance based solely on listing success.",
           "authority_boundary": "Successful listing versus meaning of recorded events.",
-          "source_section": "Abstract; Consent/purpose"
+          "source_section": "Abstract; Consent/purpose",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
           "disposition": "not-established-from-task",
-          "rationale": "An attributable audit record does not by itself establish authority for a future consequential action."
+          "rationale": "An attributable audit record does not by itself establish authority for a future consequential action.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No material change of decision outcome is presented as an authority change rather than change of evidence or policy."
+          "rationale": "No material change of decision outcome is presented as an authority change rather than change of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "The operation does not resolve a previously blocked material condition solely through progression or repetition."
+          "rationale": "The operation does not resolve a previously blocked material condition solely through progression or repetition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No valid resolution event is disregarded while keeping a prior block in place."
+          "rationale": "No valid resolution event is disregarded while keeping a prior block in place.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not assert cross-context unlinkability for credential presentations while exposing reusable proof metadata."
+          "rationale": "The task does not assert cross-context unlinkability for credential presentations while exposing reusable proof metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not perform an observable credential-status resolution at presentation time."
+          "rationale": "The task does not perform an observable credential-status resolution at presentation time.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
@@ -431,12 +501,14 @@
           "rationale": "The specification defines oversight purpose and explicitly warns against later profiling or unrelated scoring of data already legitimately obtained.",
           "test_hypothesis": "After an authorized audit read, attempt to reuse actor history for member scoring without a new governance basis; reject or flag misuse.",
           "authority_boundary": "Auditor's post-disclosure secondary processing, distinct from maintainer's read gate.",
-          "source_section": "Security & Privacy / Consent/purpose"
+          "source_section": "Security & Privacy / Consent/purpose",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "No declared unlinkability guarantee is conditioned on issuer- or registry-controlled metadata remaining uncorrelatable."
+          "rationale": "No declared unlinkability guarantee is conditioned on issuer- or registry-controlled metadata remaining uncorrelatable.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
@@ -444,7 +516,8 @@
           "rationale": "Audit entries expose plaintext actor, target, context and open detail fields; a consumer claiming combined privacy-minimality must test linkage across entries and fields.",
           "test_hypothesis": "Combine permitted audit fields to reconstruct a sensitive person-level profile, then challenge a privacy-minimality PASS.",
           "authority_boundary": "Combined disclosure versus privacy claim at auditor.",
-          "source_section": "Security & Privacy / Data carried; Correlation"
+          "source_section": "Security & Privacy / Data carried; Correlation",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
@@ -452,7 +525,8 @@
           "rationale": "The task creates durable, attributable evidence copies outside maintainer redaction control; indefinite auditor retention can become a cross-context correlation surface.",
           "test_hypothesis": "Retrieve and retain actor-linked audit pages beyond the stated oversight period, then test whether erasure propagated and retention policy was enforced.",
           "authority_boundary": "Maintainer disclosure versus independent auditor's retained copies.",
-          "source_section": "Retention; Correlation"
+          "source_section": "Retention; Correlation",
+          "case_version": "0.1.0"
         }
       ],
       "version_delta": {
@@ -479,47 +553,56 @@
         {
           "case_id": "DTF-001",
           "disposition": "not-established-from-task",
-          "rationale": "The operation reads or checks audit evidence but does not itself establish an authority-revocation timeline for a later authorization decision."
+          "rationale": "The operation reads or checks audit evidence but does not itself establish an authority-revocation timeline for a later authorization decision.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-002",
           "disposition": "not-established-from-task",
-          "rationale": "Audit-read capability is required, but the task does not specify a delegated actor attempting a grant beyond a bounded delegation chain."
+          "rationale": "Audit-read capability is required, but the task does not specify a delegated actor attempting a grant beyond a bounded delegation chain.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-003",
           "disposition": "not-established-from-task",
-          "rationale": "There is no dependent delegation whose upstream authority source is withdrawn or becomes unverifiable."
+          "rationale": "There is no dependent delegation whose upstream authority source is withdrawn or becomes unverifiable.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-004",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not establish current validity of a previously revoked credential or other artifact."
+          "rationale": "The task does not establish current validity of a previously revoked credential or other artifact.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-005",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not select a superseded policy or artifact as presently authoritative."
+          "rationale": "The task does not select a superseded policy or artifact as presently authoritative.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-006",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not claim that present withdrawal erases validity at an earlier historical time."
+          "rationale": "The task does not claim that present withdrawal erases validity at an earlier historical time.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-007",
           "disposition": "not-established-from-task",
-          "rationale": "There is no requirement or claim that multiple evidence items originate from materially independent controllers."
+          "rationale": "There is no requirement or claim that multiple evidence items originate from materially independent controllers.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-008",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not reconcile two conflicting authorities with equal competence over a relying proposition."
+          "rationale": "The task does not reconcile two conflicting authorities with equal competence over a relying proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-009",
           "disposition": "not-established-from-task",
-          "rationale": "No A-to-B-to-C transitive recognition or authority chain is asserted by the task."
+          "rationale": "No A-to-B-to-C transitive recognition or authority chain is asserted by the task.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-010",
@@ -527,47 +610,56 @@
           "rationale": "A true internal chain check with nonzero skipped envelopes or without an external authenticity anchor does not establish full verified authentic history.",
           "test_hypothesis": "Return verified=true with legacySkipped>0; require a narrower claim or indeterminate completeness and authenticity.",
           "authority_boundary": "Internal store-consistency check versus auditor's external authenticity/completeness decision.",
-          "source_section": "Conformance; Security & Privacy"
+          "source_section": "Conformance; Security & Privacy",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-011",
           "disposition": "not-established-from-task",
-          "rationale": "The source does not supply the currentness requirement or show a consumer representing undated evidence as current."
+          "rationale": "The source does not supply the currentness requirement or show a consumer representing undated evidence as current.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-012",
           "disposition": "not-established-from-task",
-          "rationale": "No relying decision is declared conformant to a policy version different from the version used to evaluate it."
+          "rationale": "No relying decision is declared conformant to a policy version different from the version used to evaluate it.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-013",
           "disposition": "not-established-from-task",
-          "rationale": "Request/response proof attribution does not itself authorize an unrelated material commitment."
+          "rationale": "Request/response proof attribution does not itself authorize an unrelated material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-014",
           "disposition": "not-established-from-task",
-          "rationale": "No expiring actor mandate and post-expiry material commitment are specified."
+          "rationale": "No expiring actor mandate and post-expiry material commitment are specified.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-015",
           "disposition": "not-established-from-task",
-          "rationale": "There is no iterative negotiation whose later offer exceeds a mandate limit."
+          "rationale": "There is no iterative negotiation whose later offer exceeds a mandate limit.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-016",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not authorize a new agent commitment after a mid-interaction revocation."
+          "rationale": "The task does not authorize a new agent commitment after a mid-interaction revocation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-017",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not admit a materially changed commitment under an earlier approval artifact."
+          "rationale": "The task does not admit a materially changed commitment under an earlier approval artifact.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-018",
           "disposition": "not-established-from-task",
-          "rationale": "The availability or integrity of an audit record cannot itself grant principal-derived authority for a later material commitment."
+          "rationale": "The availability or integrity of an audit record cannot itself grant principal-derived authority for a later material commitment.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-019",
@@ -575,32 +667,38 @@
           "rationale": "Even internally consistent audit-chain evidence cannot reconstruct the authority basis of a historical commitment without preserved policy, mandate and approval provenance.",
           "test_hypothesis": "Verify an internally consistent log lacking the decision-time authority snapshot; reject a complete historical-legitimacy determination.",
           "authority_boundary": "Hash integrity versus historical authority reconstruction.",
-          "source_section": "Abstract; Security & Privacy"
+          "source_section": "Abstract; Security & Privacy",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-020",
           "disposition": "not-established-from-task",
-          "rationale": "No conflicting specification owners of one decisive fact are identified merely by listing or verifying the log."
+          "rationale": "No conflicting specification owners of one decisive fact are identified merely by listing or verifying the log.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-021",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not itself reuse a prior lifecycle determination as authority at a later execution boundary."
+          "rationale": "The task does not itself reuse a prior lifecycle determination as authority at a later execution boundary.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-022",
           "disposition": "not-established-from-task",
-          "rationale": "A signed or verified audit result is not an assertion that the underlying recorded transaction actually settled or had legitimate effect."
+          "rationale": "A signed or verified audit result is not an assertion that the underlying recorded transaction actually settled or had legitimate effect.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-023",
           "disposition": "not-established-from-task",
-          "rationale": "The operation alone does not establish a composed multi-component PASS that omits an additional seam obligation."
+          "rationale": "The operation alone does not establish a composed multi-component PASS that omits an additional seam obligation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-024",
           "disposition": "not-established-from-task",
-          "rationale": "No N-of-M independent approval or quorum is established by the audit operation."
+          "rationale": "No N-of-M independent approval or quorum is established by the audit operation.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-025",
@@ -608,7 +706,8 @@
           "rationale": "Unkeyed hash-chain links can be recomputed by an attacker holding the store; longer chains do not add an independent anchor or authenticity proposition.",
           "test_hypothesis": "Rewrite a suffix and recompute all links while preserving local verified=true; demand external anchoring for an authenticity claim.",
           "authority_boundary": "Local integrity versus independent provenance assurance.",
-          "source_section": "Security & Privacy / Consistency, not authenticity"
+          "source_section": "Security & Privacy / Consistency, not authenticity",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-026",
@@ -616,7 +715,8 @@
           "rationale": "Skipped unparseable/legacy envelopes and valid-prefix truncation may leave the checked entries internally consistent but insufficient for an evidentially complete audit conclusion.",
           "test_hypothesis": "Supply an internally consistent prefix with missing historical tail or nonzero skips and challenge a completeness PASS.",
           "authority_boundary": "Verified subset of chainable entries versus completeness of event evidence.",
-          "source_section": "Abstract; Security & Privacy"
+          "source_section": "Abstract; Security & Privacy",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-027",
@@ -624,57 +724,68 @@
           "rationale": "Successful hash-chain verification is explicitly limited to internal consistency and may not be presented as authenticity or external assurance.",
           "test_hypothesis": "Give verified=true from an adversary-controlled store with a recomputed chain and reject substantive authenticity PASS.",
           "authority_boundary": "Workflow success versus source authenticity/governance conclusion.",
-          "source_section": "Security & Privacy"
+          "source_section": "Security & Privacy",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-028",
           "disposition": "not-established-from-task",
-          "rationale": "An attributable audit record does not by itself establish authority for a future consequential action."
+          "rationale": "An attributable audit record does not by itself establish authority for a future consequential action.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-029",
           "disposition": "not-established-from-task",
-          "rationale": "No material change of decision outcome is presented as an authority change rather than change of evidence or policy."
+          "rationale": "No material change of decision outcome is presented as an authority change rather than change of evidence or policy.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-030",
           "disposition": "not-established-from-task",
-          "rationale": "The operation does not resolve a previously blocked material condition solely through progression or repetition."
+          "rationale": "The operation does not resolve a previously blocked material condition solely through progression or repetition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-031",
           "disposition": "not-established-from-task",
-          "rationale": "No valid resolution event is disregarded while keeping a prior block in place."
+          "rationale": "No valid resolution event is disregarded while keeping a prior block in place.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-032",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not assert cross-context unlinkability for credential presentations while exposing reusable proof metadata."
+          "rationale": "The task does not assert cross-context unlinkability for credential presentations while exposing reusable proof metadata.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-033",
           "disposition": "not-established-from-task",
-          "rationale": "The task does not perform an observable credential-status resolution at presentation time."
+          "rationale": "The task does not perform an observable credential-status resolution at presentation time.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-034",
           "disposition": "not-established-from-task",
-          "rationale": "A secondary use beyond the original audit-oversight purpose would need its own policy basis; mere authorized read is not proof of misuse."
+          "rationale": "A secondary use beyond the original audit-oversight purpose would need its own policy basis; mere authorized read is not proof of misuse.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-035",
           "disposition": "not-established-from-task",
-          "rationale": "No declared unlinkability guarantee is conditioned on issuer- or registry-controlled metadata remaining uncorrelatable."
+          "rationale": "No declared unlinkability guarantee is conditioned on issuer- or registry-controlled metadata remaining uncorrelatable.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-036",
           "disposition": "not-established-from-task",
-          "rationale": "The audit source can expose multiple identifiers and contextual fields, but whether a consumer claims combined privacy-minimality is a separate proposition."
+          "rationale": "The audit source can expose multiple identifiers and contextual fields, but whether a consumer claims combined privacy-minimality is a separate proposition.",
+          "case_version": "0.1.0"
         },
         {
           "case_id": "DTF-037",
           "disposition": "not-established-from-task",
-          "rationale": "This read-only integrity operation returns counts and hash-head metadata, not individual auditor-retained presentation or log tails; downstream storage could exist but is not established here."
+          "rationale": "This read-only integrity operation returns counts and hash-head metadata, not individual auditor-retained presentation or log tails; downstream storage could exist but is not established here.",
+          "case_version": "0.1.0"
         }
       ]
     }
