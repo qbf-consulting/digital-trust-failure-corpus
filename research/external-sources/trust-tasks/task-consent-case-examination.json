@@ -1,0 +1,918 @@
+{
+  "schema_version": "0.1.0",
+  "scope": "task-consent-family-case-examination",
+  "upstream": {
+    "repository": "trustoverip/dtgwg-trust-tasks-tf",
+    "commit": "f21a98ec8383352d18629a08dd5dd23935456142"
+  },
+  "dtfc_case_revision": "3763a73016dcb841d67e16aedf842a6c9efe0c43",
+  "dtfc_case_count": 37,
+  "method": "All canonical case propositions considered per source-pinned task version; conditional means falsifiable consumer hypothesis, not observed failure; not-established-from-task is not reviewed-no-match in a deployment. No independent acceptance or target execution.",
+  "records": [
+    {
+      "type_uri": "https://trusttasks.org/spec/task-consent/decision/0.1",
+      "source_path": "specs/task-consent/decision/0.1/spec.md",
+      "source_blob": "3700a869369509088bb86a49ee5d7ebe8905aa7f",
+      "schema_blob": "095004db715b7331b0309e370935f5fd13ca3db4",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The approval flow rechecks current authority, but the task contract alone does not show a later relying actor accepting authority evidence after effective revocation."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "conditional-candidate",
+          "rationale": "Approval has bounded policy, approver-set and payload scope; treating the decision as authority over a different privileged action exceeds the permitted scope.",
+          "test_hypothesis": "Apply a signed decision to an action outside its approved payload/approver-set; require refusal.",
+          "authority_boundary": "Current executor policy and decision-specific delegated approval authority.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "No dependent delegated authority is established as surviving revocation or loss of an identified upstream authority source."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "The specification does not assert that a revoked credential or artifact remains currently valid after an authoritative status change."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not establish reliance on a superseded document as the currently authoritative successor version."
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "conditional-candidate",
+          "rationale": "Revoking an approver blocks new executions but must not erase history of a prior valid signed authorization.",
+          "test_hypothesis": "Revoke approver after a completed historical task; verify the decision record still supports its original historical context.",
+          "authority_boundary": "Current enrollment status versus decision-time historical authority.",
+          "source_section": "Security & Privacy / Retention"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The protocol does not assert two separately observed approval artifacts have independent control or evidence provenance beyond the defined signer checks."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "No competing equally authoritative source pair is shown returning materially contradictory decisions without a reconciliation rule."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The flow does not establish A→B→C authority through an ungoverned transitive recognition or accreditation chain."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "A valid consent message cannot independently establish that an executing system has the current required grant, policy, enrollment and state evidence."
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "Issuance, expiry and pending-state checks constrain time, but the source does not itself show an unprovably fresh observation being accepted as current."
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor reevaluates its own policy at material execution; the source alone does not establish a PASS claimed against a different incompatible policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "conditional-candidate",
+          "rationale": "The approver's assertionMethod proof carries the decision; a transport bearer authentication is explicitly insufficient authorization.",
+          "test_hypothesis": "Submit a decision through an authenticated channel using a proof with authentication purpose but no approver assertionMethod; require rejection.",
+          "authority_boundary": "Approver DID assertion authority versus channel authentication.",
+          "source_section": "The proof is the authorization; Conformance"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "The task supplies expiry and one-use authorization constraints, but no independently identified mandate-expiry violation for a new material commitment is observed."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "A multi-offer negotiation that exceeds a bounded mandate is not part of the declared consent flow."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "A revoked approver must not authorize a new commitment, but no actually executed post-revocation commitment is evidenced by the task source."
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "conditional-candidate",
+          "rationale": "The executor MUST rederive digest and verify pinned state at execution, so a valid earlier decision cannot authorize a changed action.",
+          "test_hypothesis": "Approve original digest, modify pending payload/state before execute, and require rejection.",
+          "authority_boundary": "Exact approved action and current executor state.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "Neither a consent notice nor an authenticated prompt supplies principal-derived authority for an unrelated material commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "conditional-candidate",
+          "rationale": "The signed decision remains durable because it is essential evidence of who authorized a privileged action; a historical dispute depends on preserving that approval and applicable policy.",
+          "test_hypothesis": "Remove approval or effective policy records after execution, then attempt historical authority reconstruction; require INDETERMINATE.",
+          "authority_boundary": "Historical commitment evidence vs current state.",
+          "source_section": "Security & Privacy / Retention"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor owns effects and policy evaluation while the approver controls human choice; no unresolved ownership ambiguity is established by those specified roles."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "Approval may precede revocation of approver enrollment or policy change; execution MUST re-evaluate both.",
+          "test_hypothesis": "Revoke approver after decision receipt but before task execution and demand rejection.",
+          "authority_boundary": "Approval-time eligibility versus execution-time authority.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "A bound, successfully delivered consent artifact is not necessarily proof that the privileged task executed successfully; downstream execution evidence is separate."
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "Local checks at requester, approver, relay and executor may pass while the composed flow fails if a material execution seam is omitted."
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "conditional-candidate",
+          "rationale": "The executor counts distinct approvers for minApprovals; if a consuming governance claim requires independent approval, distinct identities alone do not prove independence.",
+          "test_hypothesis": "Provide threshold signatures by two controlled devices under common governing control and challenge claimed independent approval.",
+          "authority_boundary": "Count of approvals versus independence of controlling authority.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "An additional signature or factor is not automatically independent or substantively greater assurance without a new verified proposition."
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "Presenting some correct effects or approvals does not prove completeness when a material consequence or contradictory factor was omitted."
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "conditional-candidate",
+          "rationale": "Threshold met and single-use grant issued does not by itself prove the authorized task actually executed or achieved its intended effect.",
+          "test_hypothesis": "Produce a granted decision response while execution subsequently fails; refuse execution-success assurance PASS.",
+          "authority_boundary": "Approval workflow versus executed effect.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "The requester, transport relay, authenticated prompt or notification can influence workflow without becoming a competent authority for the actual commitment."
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not misreport a change caused by evidence or policy reevaluation as if it necessarily represented transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "There is no direct record of a materially unresolved prerequisite being marked resolved solely because the flow advanced without an admissible resolution event."
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No instance is established where a positive admissible resolution occurred but the executor retained an invalid block."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not assert credential-presentation unlinkability merely because payload identifiers are minimized while proof metadata remains linkable."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "The consent exchange does not perform a credential status check revealing presentation activity to an issuer or status provider."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "conditional-candidate",
+          "rationale": "Durable signed approver decisions serve accountability, not behavioural performance scoring or choice of pliable approvers.",
+          "test_hypothesis": "Use a lawful decision history to rank approvers by willingness to approve outside the original mandate; reject processing.",
+          "authority_boundary": "Approval evidence retention versus unrelated secondary analytics.",
+          "source_section": "Security & Privacy / Consent/purpose"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "Stable approver identifiers are acknowledged within the executor's enrolment scope, not represented as a universal cross-context unlinkability guarantee."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "Combining requester, subject, origin or approval metadata can reveal identities, but no actual claim of combined privacy-minimality is established by source conformance."
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "conditional-candidate",
+          "rationale": "Durable approval evidence can become correlatable when joined with retained effects snapshots or long-term person-level histories beyond authorization audit.",
+          "test_hypothesis": "Retain signed decisions with full rendered personal diffs and analyze across cases; test purpose/retention limitation.",
+          "authority_boundary": "Executor audit retention versus durable cross-purpose correlation.",
+          "source_section": "Security & Privacy / Retention"
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/task-consent/decision/0.2",
+      "source_path": "specs/task-consent/decision/0.2/spec.md",
+      "source_blob": "dab6b60c6f782b9f29123e9f6ec3ea97475f7fa5",
+      "schema_blob": "4263dd84b78c24595df84e11e52aec4cba1de198",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The approval flow rechecks current authority, but the task contract alone does not show a later relying actor accepting authority evidence after effective revocation."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "conditional-candidate",
+          "rationale": "The approver's own DID proof cannot be replaced by a delegated or console key; approval stays within the enrolled signer and exact action scope.",
+          "test_hypothesis": "Present approval signed by console/delegate key with a valid supplemental factor; require notAnApprover.",
+          "authority_boundary": "Own-DID approval authority versus delegated signing capability.",
+          "source_section": "The proof is the authorization; Conformance"
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "No dependent delegated authority is established as surviving revocation or loss of an identified upstream authority source."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "The specification does not assert that a revoked credential or artifact remains currently valid after an authoritative status change."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not establish reliance on a superseded document as the currently authoritative successor version."
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "conditional-candidate",
+          "rationale": "Current revocation of approver or factor cannot retroactively erase a historically valid decision, whose durable signed record remains separately relevant.",
+          "test_hypothesis": "Rotate or revoke enrollment after a completed historical action; require as-of decision evidence be interpreted separately.",
+          "authority_boundary": "Historical signed decision vs current enrollment state.",
+          "source_section": "Security & Privacy / Retention"
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The protocol does not assert two separately observed approval artifacts have independent control or evidence provenance beyond the defined signer checks."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "No competing equally authoritative source pair is shown returning materially contradictory decisions without a reconciliation rule."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The flow does not establish A→B→C authority through an ungoverned transitive recognition or accreditation chain."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "not-established-from-task",
+          "rationale": "A valid consent message cannot independently establish that an executing system has the current required grant, policy, enrollment and state evidence."
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "Issuance, expiry and pending-state checks constrain time, but the source does not itself show an unprovably fresh observation being accepted as current."
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor reevaluates its own policy at material execution; the source alone does not establish a PASS claimed against a different incompatible policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "conditional-candidate",
+          "rationale": "A valid WebAuthn factor or relay signature does not establish the decision signer; assertionMethod proof by the approver's own DID remains mandatory.",
+          "test_hypothesis": "Attach valid WebAuthn evidence but no approver-own-DID assertionMethod proof and require refusal.",
+          "authority_boundary": "Proof of principal assent versus supplemental device presence.",
+          "source_section": "The proof is the authorization; Conformance"
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "The task supplies expiry and one-use authorization constraints, but no independently identified mandate-expiry violation for a new material commitment is observed."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "A multi-offer negotiation that exceeds a bounded mandate is not part of the declared consent flow."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "A revoked approver must not authorize a new commitment, but no actually executed post-revocation commitment is evidenced by the task source."
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "conditional-candidate",
+          "rationale": "Optional actionId and evidence must bind to the same challenge, digest and action as the pending task; stale or mismatched values cannot authorize execution.",
+          "test_hypothesis": "Substitute actionId or factor from another request after approval; require actionMismatch/evidenceInvalid.",
+          "authority_boundary": "Specific task and state bound to approver's authorization.",
+          "source_section": "What changed from 0.1; Conformance"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "Neither a consent notice nor an authenticated prompt supplies principal-derived authority for an unrelated material commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "conditional-candidate",
+          "rationale": "The durable decision and its factor evidence provide an authorization audit record but do not alone preserve complete decision-time policy, enrollment or execution provenance.",
+          "test_hypothesis": "Remove policy/enrollment snapshot after execution and challenge full historical authority reconstruction.",
+          "authority_boundary": "Durable decision proof versus reconstructed original commitment authority.",
+          "source_section": "Security & Privacy / Retention"
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor owns effects and policy evaluation while the approver controls human choice; no unresolved ownership ambiguity is established by those specified roles."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "The executor must re-evaluate current approval eligibility and policy at execution even with valid supplemental factor evidence.",
+          "test_hypothesis": "Revoke enrollment after valid passkey-backed decision, then execute; require refusal.",
+          "authority_boundary": "Factor verification and approval time versus execution-time authority.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "A bound, successfully delivered consent artifact is not necessarily proof that the privileged task executed successfully; downstream execution evidence is separate."
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "conditional-candidate",
+          "rationale": "Own-DID decision proof and optional WebAuthn/approverSigned factor prove different propositions; local success for both must not bypass pending action/policy/state checks.",
+          "test_hypothesis": "Accept valid proof and valid factor bound to mismatched actionId; require composed execution rejection.",
+          "authority_boundary": "Proof, factor, action binding and runtime authorization.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "conditional-candidate",
+          "rationale": "Threshold counts distinct approver identities; adding WebAuthn does not show that approvers are independently controlled where policy requires that stronger claim.",
+          "test_hypothesis": "Collect N decisions all under common controlling authority, each with valid factors; reject claimed independent approval.",
+          "authority_boundary": "Distinct signers and factors versus governance independence.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "conditional-candidate",
+          "rationale": "Additional evidence proves presence of a factor, not a second independent authorizing principal; lengthening proof material must not inflate independent authority assurance.",
+          "test_hypothesis": "Present valid factor from same approver and claim two independent approvals; require a separate independence predicate.",
+          "authority_boundary": "Additional factor versus independent authority assurance.",
+          "source_section": "The proof is the authorization"
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "Presenting some correct effects or approvals does not prove completeness when a material consequence or contradictory factor was omitted."
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "conditional-candidate",
+          "rationale": "A granted response may represent an approval threshold, but parked execution can still fail; do not conflate signature/factor success with completed effect.",
+          "test_hypothesis": "Return granted after threshold then simulate parked operation failure; reject accomplished-action PASS.",
+          "authority_boundary": "Consent decision success versus actual executed result.",
+          "source_section": "Authorization; Response"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "The requester, transport relay, authenticated prompt or notification can influence workflow without becoming a competent authority for the actual commitment."
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not misreport a change caused by evidence or policy reevaluation as if it necessarily represented transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "There is no direct record of a materially unresolved prerequisite being marked resolved solely because the flow advanced without an admissible resolution event."
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No instance is established where a positive admissible resolution occurred but the executor retained an invalid block."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not assert credential-presentation unlinkability merely because payload identifiers are minimized while proof metadata remains linkable."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "The consent exchange does not perform a credential status check revealing presentation activity to an issuer or status provider."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "conditional-candidate",
+          "rationale": "Recorded approvals and device factor IDs serve authorization evidence, not generalized performance profiling or automated targeting of compliant approvers.",
+          "test_hypothesis": "Retain factor-backed decisions and select approvers based on past consent patterns absent policy basis; reject secondary use.",
+          "authority_boundary": "Authorization retention vs secondary profiling.",
+          "source_section": "Security & Privacy / Consent/purpose"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "Stable approver identifiers are acknowledged within the executor's enrolment scope, not represented as a universal cross-context unlinkability guarantee."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "Combining requester, subject, origin or approval metadata can reveal identities, but no actual claim of combined privacy-minimality is established by source conformance."
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "conditional-candidate",
+          "rationale": "Durably stored factor identifiers and signed decisions can create long-lived per-person/device linkability when retained or joined beyond the justified audit period.",
+          "test_hypothesis": "Aggregate WebAuthn credential IDs, reason text and approval times beyond the authorization record's minimum retention; test bounded processing.",
+          "authority_boundary": "Recorded factor evidence versus durable correlation surface.",
+          "source_section": "Security & Privacy / Retention"
+        }
+      ],
+      "version_delta": {
+        "compared_with": "https://trusttasks.org/spec/task-consent/decision/0.1",
+        "claim": "0.2 adds optional evidence (WebAuthn or approverSigned) and actionId for parked VTC actions. The required approver-own-DID assertionMethod proof remains the authorization and evidence is additional, not a substitute. 0.2 allows executor to run parked VTC action at threshold; do not assume entire-version equivalence.",
+        "source_sections": [
+          "What changed from 0.1",
+          "Conformance",
+          "Authorization",
+          "Security & Privacy"
+        ]
+      }
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/task-consent/granted/0.1",
+      "source_path": "specs/task-consent/granted/0.1/spec.md",
+      "source_blob": "dc7b134f579013f5ba740f8526e204e7dc9fda73",
+      "schema_blob": "855232f1e9c68faa0d0577c64a6a5a8b1c1aaa39",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The approval flow rechecks current authority, but the task contract alone does not show a later relying actor accepting authority evidence after effective revocation."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "Approval remains bounded by executor policy and an enrolled approver's scope; the task does not itself grant an unbounded third-party delegation."
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "No dependent delegated authority is established as surviving revocation or loss of an identified upstream authority source."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "The specification does not assert that a revoked credential or artifact remains currently valid after an authoritative status change."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not establish reliance on a superseded document as the currently authoritative successor version."
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "Current enrollment revocation must not rewrite the historical fact that an approval was valid when recorded; a false historical-invalidity judgment is not shown by task conformance alone."
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The protocol does not assert two separately observed approval artifacts have independent control or evidence provenance beyond the defined signer checks."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "No competing equally authoritative source pair is shown returning materially contradictory decisions without a reconciliation rule."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The flow does not establish A→B→C authority through an ungoverned transitive recognition or accreditation chain."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "conditional-candidate",
+          "rationale": "The notice is explicitly only a doorbell: absent authoritative single-use grant lookup at executor, a successful notice cannot prove permission.",
+          "test_hypothesis": "Forge or replay granted notice without stored grant and attempt resubmit; require deny/no current grant.",
+          "authority_boundary": "Advisory notification versus executor's authoritative stored grant.",
+          "source_section": "Abstract; Conformance"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "Issuance, expiry and pending-state checks constrain time, but the source does not itself show an unprovably fresh observation being accepted as current."
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor reevaluates its own policy at material execution; the source alone does not establish a PASS claimed against a different incompatible policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "Identity proof and approval authorization are separate propositions; the specified assertions do not themselves demonstrate a deployed consumer wrongly treating transport authentication as assent."
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "The task supplies expiry and one-use authorization constraints, but no independently identified mandate-expiry violation for a new material commitment is observed."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "A multi-offer negotiation that exceeds a bounded mandate is not part of the declared consent flow."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "A revoked approver must not authorize a new commitment, but no actually executed post-revocation commitment is evidenced by the task source."
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "not-established-from-task",
+          "rationale": "Challenge, exact payload digest and prior state must match at execution; an incorrect binding requires an identified consumer accepting an altered or stale action."
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "Neither a consent notice nor an authenticated prompt supplies principal-derived authority for an unrelated material commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "A durable approval may be needed to reconstruct prior authority; missing policy or approval provenance in a later dispute is not demonstrated by the specification alone."
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor owns effects and policy evaluation while the approver controls human choice; no unresolved ownership ambiguity is established by those specified roles."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "A stored grant can expire or policy can change between notice and resubmit; the executor must re-evaluate current authorization.",
+          "test_hypothesis": "Expire or revoke grant after notice, then resubmit original task; require refusal.",
+          "authority_boundary": "Notice-time grant observation versus execution-time authority.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "conditional-candidate",
+          "rationale": "Delivery and digest correlation only bind the notice to a pending task; neither establishes that task already executed.",
+          "test_hypothesis": "Deliver authentic granted notification and suppress actual resubmit; ensure no completion is inferred.",
+          "authority_boundary": "Notification receipt versus actual task execution.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "not-established-from-task",
+          "rationale": "Local checks at requester, approver, relay and executor may pass while the composed flow fails if a material execution seam is omitted."
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "An N-of-M threshold is a count of distinct approvers; independence is an additional proposition only when relying policy demands it."
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "An additional signature or factor is not automatically independent or substantively greater assurance without a new verified proposition."
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "not-established-from-task",
+          "rationale": "Presenting some correct effects or approvals does not prove completeness when a material consequence or contradictory factor was omitted."
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "conditional-candidate",
+          "rationale": "The task reports advisory workflow progress, not completed privileged operation or substantive assurance.",
+          "test_hypothesis": "Receive authentic notice with resubmit failing current policy; reject assertion of successful underlying task.",
+          "authority_boundary": "Event notification success versus authorization/execution success.",
+          "source_section": "Abstract; Security & Privacy"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "conditional-candidate",
+          "rationale": "The transport-authenticated notice conveys no action authority; a relying actor cannot promote a low-stakes hint into permission.",
+          "test_hypothesis": "Replay signed notice after grant consumed and attempt unauthorized action; require current grant check.",
+          "authority_boundary": "Informative notice versus independently established executor authorization.",
+          "source_section": "Security & Privacy"
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not misreport a change caused by evidence or policy reevaluation as if it necessarily represented transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "conditional-candidate",
+          "rationale": "The notice cannot resolve a blocked approval or task execution condition without stored single-use grant and current policy evidence.",
+          "test_hypothesis": "Mark pending approval resolved on notice alone when the grant is absent; require unresolved/denied result.",
+          "authority_boundary": "Advisory progress event versus formal resolution evidence.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No instance is established where a positive admissible resolution occurred but the executor retained an invalid block."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not assert credential-presentation unlinkability merely because payload identifiers are minimized while proof metadata remains linkable."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "The consent exchange does not perform a credential status check revealing presentation activity to an issuer or status provider."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "not-established-from-task",
+          "rationale": "The initial consent-related disclosure has a bounded purpose; a secondary profiling or unrelated processing step is an external consumer act requiring distinct authority."
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "Stable approver identifiers are acknowledged within the executor's enrolment scope, not represented as a universal cross-context unlinkability guarantee."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "not-established-from-task",
+          "rationale": "Combining requester, subject, origin or approval metadata can reveal identities, but no actual claim of combined privacy-minimality is established by source conformance."
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "not-established-from-task",
+          "rationale": "Consent artifacts may be retained for accountability; a harmful durable correlation surface depends on retained data scope and secondary use beyond that requirement."
+        }
+      ]
+    },
+    {
+      "type_uri": "https://trusttasks.org/spec/task-consent/request/0.1",
+      "source_path": "specs/task-consent/request/0.1/spec.md",
+      "source_blob": "12b65d218275e63d9e122d60417284617f324e50",
+      "schema_blob": "e31782d0aab04fd9b0cee020aac4e600acc33a1c",
+      "assessment_state": "author-case-examined",
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established",
+      "decisions": [
+        {
+          "case_id": "DTF-001",
+          "disposition": "not-established-from-task",
+          "rationale": "The approval flow rechecks current authority, but the task contract alone does not show a later relying actor accepting authority evidence after effective revocation."
+        },
+        {
+          "case_id": "DTF-002",
+          "disposition": "not-established-from-task",
+          "rationale": "Approval remains bounded by executor policy and an enrolled approver's scope; the task does not itself grant an unbounded third-party delegation."
+        },
+        {
+          "case_id": "DTF-003",
+          "disposition": "not-established-from-task",
+          "rationale": "No dependent delegated authority is established as surviving revocation or loss of an identified upstream authority source."
+        },
+        {
+          "case_id": "DTF-004",
+          "disposition": "not-established-from-task",
+          "rationale": "The specification does not assert that a revoked credential or artifact remains currently valid after an authoritative status change."
+        },
+        {
+          "case_id": "DTF-005",
+          "disposition": "not-established-from-task",
+          "rationale": "The operation does not establish reliance on a superseded document as the currently authoritative successor version."
+        },
+        {
+          "case_id": "DTF-006",
+          "disposition": "not-established-from-task",
+          "rationale": "Current enrollment revocation must not rewrite the historical fact that an approval was valid when recorded; a false historical-invalidity judgment is not shown by task conformance alone."
+        },
+        {
+          "case_id": "DTF-007",
+          "disposition": "not-established-from-task",
+          "rationale": "The protocol does not assert two separately observed approval artifacts have independent control or evidence provenance beyond the defined signer checks."
+        },
+        {
+          "case_id": "DTF-008",
+          "disposition": "not-established-from-task",
+          "rationale": "No competing equally authoritative source pair is shown returning materially contradictory decisions without a reconciliation rule."
+        },
+        {
+          "case_id": "DTF-009",
+          "disposition": "not-established-from-task",
+          "rationale": "The flow does not establish A→B→C authority through an ungoverned transitive recognition or accreditation chain."
+        },
+        {
+          "case_id": "DTF-010",
+          "disposition": "conditional-candidate",
+          "rationale": "When effects and consequences are both empty, the approver MUST explicitly be told that effects are unknown; a UI that presents this as no effect substitutes missing evidence for safety.",
+          "test_hypothesis": "Omit all computed effects and fallback consequences; require the UI to say consequences unknown, not harmless.",
+          "authority_boundary": "Executor-computed effects evidence versus human reliance at prompt.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-011",
+          "disposition": "not-established-from-task",
+          "rationale": "Issuance, expiry and pending-state checks constrain time, but the source does not itself show an unprovably fresh observation being accepted as current."
+        },
+        {
+          "case_id": "DTF-012",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor reevaluates its own policy at material execution; the source alone does not establish a PASS claimed against a different incompatible policy version."
+        },
+        {
+          "case_id": "DTF-013",
+          "disposition": "not-established-from-task",
+          "rationale": "Identity proof and approval authorization are separate propositions; the specified assertions do not themselves demonstrate a deployed consumer wrongly treating transport authentication as assent."
+        },
+        {
+          "case_id": "DTF-014",
+          "disposition": "not-established-from-task",
+          "rationale": "The task supplies expiry and one-use authorization constraints, but no independently identified mandate-expiry violation for a new material commitment is observed."
+        },
+        {
+          "case_id": "DTF-015",
+          "disposition": "not-established-from-task",
+          "rationale": "A multi-offer negotiation that exceeds a bounded mandate is not part of the declared consent flow."
+        },
+        {
+          "case_id": "DTF-016",
+          "disposition": "not-established-from-task",
+          "rationale": "A revoked approver must not authorize a new commitment, but no actually executed post-revocation commitment is evidenced by the task source."
+        },
+        {
+          "case_id": "DTF-017",
+          "disposition": "conditional-candidate",
+          "rationale": "The consent request binds exact payload, challenge and prior state; a requester can try to change payload or state after the displayed effects.",
+          "test_hypothesis": "Alter the payload after a valid effects preview but before approval/execution; require mismatch and new consent.",
+          "authority_boundary": "Executor plan, displayed effects and subsequently executed payload/state.",
+          "source_section": "Binding; Time of check, time of use"
+        },
+        {
+          "case_id": "DTF-018",
+          "disposition": "not-established-from-task",
+          "rationale": "Neither a consent notice nor an authenticated prompt supplies principal-derived authority for an unrelated material commitment."
+        },
+        {
+          "case_id": "DTF-019",
+          "disposition": "not-established-from-task",
+          "rationale": "A durable approval may be needed to reconstruct prior authority; missing policy or approval provenance in a later dispute is not demonstrated by the specification alone."
+        },
+        {
+          "case_id": "DTF-020",
+          "disposition": "not-established-from-task",
+          "rationale": "The executor owns effects and policy evaluation while the approver controls human choice; no unresolved ownership ambiguity is established by those specified roles."
+        },
+        {
+          "case_id": "DTF-021",
+          "disposition": "conditional-candidate",
+          "rationale": "The executor MUST re-evaluate policy and approver enrollment at execution rather than only at prompt issuance.",
+          "test_hypothesis": "Revoke the approver or change statePin after prompt creation; execution must fail despite a valid earlier prompt.",
+          "authority_boundary": "Prior-state authorization vs execution-time effective authority.",
+          "source_section": "Time of check, time of use"
+        },
+        {
+          "case_id": "DTF-022",
+          "disposition": "not-established-from-task",
+          "rationale": "A bound, successfully delivered consent artifact is not necessarily proof that the privileged task executed successfully; downstream execution evidence is separate."
+        },
+        {
+          "case_id": "DTF-023",
+          "disposition": "conditional-candidate",
+          "rationale": "Using a separate diff renderer rather than the same compiled handler can produce locally valid prompt and execution with semantically inconsistent effects.",
+          "test_hypothesis": "Configure a task with hidden key rotation; show a naive one-field diff and execute handler with key changes; reject composed consent PASS.",
+          "authority_boundary": "Effect-generation implementation and actual handler execution seam.",
+          "source_section": "The executor is the authority; Conformance"
+        },
+        {
+          "case_id": "DTF-024",
+          "disposition": "not-established-from-task",
+          "rationale": "An N-of-M threshold is a count of distinct approvers; independence is an additional proposition only when relying policy demands it."
+        },
+        {
+          "case_id": "DTF-025",
+          "disposition": "not-established-from-task",
+          "rationale": "An additional signature or factor is not automatically independent or substantively greater assurance without a new verified proposition."
+        },
+        {
+          "case_id": "DTF-026",
+          "disposition": "conditional-candidate",
+          "rationale": "The surface MUST render every executor effect even for unrecognized kinds; omitting one materially hidden consequence breaks complete informed consent.",
+          "test_hypothesis": "Provide an unfamiliar effect kind with a critical summary; require verbatim rendering before approval.",
+          "authority_boundary": "Complete consequences presented to approver, not schema-only field validity.",
+          "source_section": "Conformance"
+        },
+        {
+          "case_id": "DTF-027",
+          "disposition": "conditional-candidate",
+          "rationale": "A successful dry-run prompt is not evidence that the handler actually executed under the same state and authorization.",
+          "test_hypothesis": "Produce a valid, signed effects preview, then change authoritative state before real execution; reject automatic assurance PASS.",
+          "authority_boundary": "Plan success versus later execution and commitment result.",
+          "source_section": "The executor is the authority; Time of check, time of use"
+        },
+        {
+          "case_id": "DTF-028",
+          "disposition": "not-established-from-task",
+          "rationale": "The requester, transport relay, authenticated prompt or notification can influence workflow without becoming a competent authority for the actual commitment."
+        },
+        {
+          "case_id": "DTF-029",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not misreport a change caused by evidence or policy reevaluation as if it necessarily represented transfer of authority."
+        },
+        {
+          "case_id": "DTF-030",
+          "disposition": "not-established-from-task",
+          "rationale": "There is no direct record of a materially unresolved prerequisite being marked resolved solely because the flow advanced without an admissible resolution event."
+        },
+        {
+          "case_id": "DTF-031",
+          "disposition": "not-established-from-task",
+          "rationale": "No instance is established where a positive admissible resolution occurred but the executor retained an invalid block."
+        },
+        {
+          "case_id": "DTF-032",
+          "disposition": "not-established-from-task",
+          "rationale": "The task does not assert credential-presentation unlinkability merely because payload identifiers are minimized while proof metadata remains linkable."
+        },
+        {
+          "case_id": "DTF-033",
+          "disposition": "not-established-from-task",
+          "rationale": "The consent exchange does not perform a credential status check revealing presentation activity to an issuer or status provider."
+        },
+        {
+          "case_id": "DTF-034",
+          "disposition": "conditional-candidate",
+          "rationale": "The request names subject, origin and personal before/after values for a single approval purpose; downstream profiling is materially different processing.",
+          "test_hypothesis": "Approve a prompt, then reuse effect snapshots to profile a subject without an independent governance basis; reject secondary use.",
+          "authority_boundary": "Bounded approver disclosure versus later unrelated processing.",
+          "source_section": "Security & Privacy / Consent/purpose"
+        },
+        {
+          "case_id": "DTF-035",
+          "disposition": "not-established-from-task",
+          "rationale": "Stable approver identifiers are acknowledged within the executor's enrolment scope, not represented as a universal cross-context unlinkability guarantee."
+        },
+        {
+          "case_id": "DTF-036",
+          "disposition": "conditional-candidate",
+          "rationale": "Multiple individually necessary request fields may compose into a sensitive activity timeline at the approver device; a privacy-minimality claim needs combined-data examination.",
+          "test_hypothesis": "Aggregate subject, origin, requester and before/after values across prompts; challenge any claim that the combined history is non-identifying.",
+          "authority_boundary": "Combined personal metadata at the approver surface.",
+          "source_section": "Security & Privacy / Correlation"
+        },
+        {
+          "case_id": "DTF-037",
+          "disposition": "conditional-candidate",
+          "rationale": "Prompt copies are exchange-scoped yet contain personal before/after values; notification history or screenshots can create durable unauthorized copies.",
+          "test_hypothesis": "Retain prompt diffs in a long-lived approval history after expiry; test retention minimization and unauthorized correlation.",
+          "authority_boundary": "Approver device exchange disclosure versus durable retained evidence.",
+          "source_section": "Security & Privacy / Retention"
+        }
+      ]
+    }
+  ]
+}
