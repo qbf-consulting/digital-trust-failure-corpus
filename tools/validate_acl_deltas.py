@@ -27,7 +27,7 @@ def validate(data, inventory):
             raise ValueError("invalid or duplicate historical spec")
         history[key] = row
         d = row["version_delta_evidence"]
-        if row["review_state"] != "needs-version-delta-review" or row["applicability_review"] != "needs-review":
+        if row["review_state"] != "source-delta-screened" or row["applicability_review"] != "research-screened":
             raise ValueError("semantic review status incorrectly promoted")
         if d["source_commit"] != PIN or d["source_path"] != source[key]["path"] or row["source_blob"] != source[key]["spec_blob"]:
             raise ValueError("historical source evidence does not match pinned source")
@@ -40,7 +40,7 @@ def validate(data, inventory):
     if set(source) != set(currents) | set(history) or len(currents) != 7 or len(history) != 13:
         raise ValueError("ACL family version inventory not reconciled")
     result = data["version_delta_review"]
-    if result["historical_version_delta_records"] != len(history) or result["historical_applicability_reviews"] != 0 or result["historical_applicability_complete"] is not False or result["independent_semantic_peer_review"] is not False:
+    if result["historical_version_delta_records"] != len(history) or result["historical_applicability_screenings"] != 13 or result["historical_applicability_reviews"] != 0 or result["historical_applicability_complete"] is not False or result["independent_semantic_peer_review"] is not False:
         raise ValueError("false historical applicability or independent review claim")
     return {"family_versions": len(source), "current_screened": len(currents),
             "historical_delta_screened": len(history), "historical_applicability_reviewed": 0,

@@ -15,7 +15,7 @@ def calculate(inventory, pilot, acl):
     check_inventory(inventory, pilot)
     check_acl(acl, inventory)
     original = {x["slug"] + "/" + x["version"] for x in pilot["specifications"]}
-    reviewed_acl = {x["task_type_uri"].removeprefix(PREFIX) for x in acl["current"]}
+    reviewed_acl = {x["task_type_uri"].removeprefix(PREFIX) for x in acl["current"] + acl["historical_screenings"]}
     all_ids = {x["slug"] + "/" + x["version"] for x in inventory["records"]}
     if not reviewed_acl <= all_ids or not original <= all_ids:
         raise ValueError("crosswalk refers to absent inventory task")

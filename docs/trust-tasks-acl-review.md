@@ -41,3 +41,9 @@ All 13 historical ACL versions now carry a source-pinned baseline or material-ch
 | `acl/update/0.1 → 0.2` | Explicit authority fields, privilege-bound replacement, narrowing restrictions |
 
 Later current revisions introduce the purpose-scoped 0.3 entry model (and `acl/list/0.4`). The current research is pinned to the upstream Git revision, including draft text, and should be challenged on its actual source semantics. Reproduce structural gates with `python -m tools.validate_acl_deltas`; passing validation alone does not attest that the mapping is semantically correct.
+
+## Historical applicability research screening
+
+The 13 historical ACL versions now have source-specific conditional mapping hypotheses, with local proposition, unsupported downstream inference, required evidence and a falsification test. These are DTFC-authored **research screenings**. They are not definitive no-match or all-case-complete determinations, independent reviews or execution results. The mapping contract forbids automatic version inheritance and the validator rejects assertions of independent approval. Together with seven current-version screenings, the ACL family's 20 source versions have initial conditional hypotheses, not exhaustive assurance.
+
+Run `python -m unittest tests.test_historical_acl_screening -v` alongside the other ACL checks. Source-specific mappings may be challenged or superseded following independent review.

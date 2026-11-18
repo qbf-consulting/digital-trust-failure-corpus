@@ -114,7 +114,7 @@
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.1",
       "source_blob": "2ff41d44cb76f95302b4eb5ad3dcce4354227c27",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "baseline",
         "source_section": "Abstract; Conformance",
@@ -124,12 +124,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.2",
       "source_blob": "ee024febcfbf681e2168a591a649197d3042f3d0",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Abstract; Conformance",
@@ -139,12 +139,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.1",
       "source_blob": "f5b115d062dd6eceb4514ee5867b3d758d1f1310",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "baseline",
         "source_section": "Abstract; Conformance",
@@ -154,12 +154,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.2",
       "source_blob": "b57e80d9dbbc2e093b1c52253b51b2596d6fd9ae",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Abstract; Conformance; Authorization",
@@ -169,12 +169,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/list/0.1",
       "source_blob": "58d8e84c6ddce4fe07a6795e591291073278c9bc",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "baseline",
         "source_section": "Abstract; Conformance",
@@ -184,12 +184,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/list/0.2",
       "source_blob": "a6d91030e0db831fe7aadc3f6ceee4bc18d259cd",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Abstract; Conformance",
@@ -199,12 +199,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/list/0.3",
       "source_blob": "ae51ce865e6b4b6abf913cbc39d3dbf9930fd020",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Changes from 0.2",
@@ -214,12 +214,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.1",
       "source_blob": "3262742f09e3d4feabb1067148eac6844d0292cf",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "baseline",
         "source_section": "Abstract; Conformance",
@@ -229,12 +229,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.2",
       "source_blob": "1bbd9545be050b22ed30f8ec631bb398e7df61d1",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Abstract; Conformance",
@@ -244,12 +244,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/show/0.1",
       "source_blob": "a9bfd1e94a3252086098941dec788750172bc68a",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "baseline",
         "source_section": "Abstract; Conformance",
@@ -259,12 +259,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/show/0.2",
       "source_blob": "092b9141a7153688404da17d976437293eee9d9a",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Abstract; Conformance",
@@ -274,12 +274,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/update/0.1",
       "source_blob": "9e70d19a3ae9fadfb362af403da3e0d685ee657d",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "baseline",
         "source_section": "Abstract; Conformance; Security & Privacy",
@@ -289,12 +289,12 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     },
     {
       "task_type_uri": "https://trusttasks.org/spec/acl/update/0.2",
       "source_blob": "9fd9b8fa9a49966e94b3c0638a83b711faf36eee",
-      "review_state": "needs-version-delta-review",
+      "review_state": "source-delta-screened",
       "version_delta_evidence": {
         "assessment": "material-change",
         "source_section": "Abstract; Conformance",
@@ -304,7 +304,7 @@
         "mapping_reuse": "not-authorized",
         "scope": "source-version semantics only"
       },
-      "applicability_review": "needs-review"
+      "applicability_review": "research-screened"
     }
   ],
   "negative_controls": [
@@ -332,6 +332,308 @@
       "All historical source versions are accounted for; delta screening does not substitute for a case-by-case DTFC applicability assessment.",
       "Material version changes prevent automatic mapping inheritance; baseline versions have no predecessor in the pinned family.",
       "Upstream draft versions may change in place; this analysis is valid only at the pinned Git revision."
-    ]
-  }
+    ],
+    "historical_applicability_screenings": 13
+  },
+  "historical_screenings": [
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.1",
+      "source_path": "specs/acl/change-role/0.1/spec.md",
+      "source_blob": "2ff41d44cb76f95302b4eb5ad3dcce4354227c27",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "Accepting a role transition after checking the maintainer's current state establishes that local mutation; it does not guarantee later authorization against that role remains fresh.",
+      "unsupported_inference": "A downstream authorization based only on the pre-transition role remains valid after a role change.",
+      "test_hypothesis": "With a current authorization decision after a role demotion, submit a stale pre-demotion role observation and test that the decision does not treat it as current authority.",
+      "authority_boundary": "Local mutation is the ACL maintainer's authority; the later relying system must obtain status continuity or fresh state.",
+      "evidence_to_check": [
+        "role-change precondition and current ACL state",
+        "role-change evidence plus time of later relying decision"
+      ],
+      "rationale": "The source-specific change-role/0.1 behavior presents a conditional adjacent relationship to DTF-021; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/change-role/0.2",
+      "source_path": "specs/acl/change-role/0.2/spec.md",
+      "source_blob": "ee024febcfbf681e2168a591a649197d3042f3d0",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "local_proposition": "Role transition is bounded by the changing authority's current role and effective capabilities; the maintainer must re-check the resulting entry against the changer's ceilings.",
+      "unsupported_inference": "A valid role-change request or authenticated issuer automatically establishes permission to confer greater capabilities.",
+      "test_hypothesis": "Attempt promotion above the changer's role or effective capability ceiling, and verify that the maintainer denies it rather than silently discarding excess capability.",
+      "authority_boundary": "The maintainer establishes delegated authority and role ceilings under its current policy.",
+      "evidence_to_check": [
+        "challenger's current stored authority and target role",
+        "effective capability ceiling comparison and decision result"
+      ],
+      "rationale": "The source-specific change-role/0.2 behavior presents a conditional mechanism-overlap relationship to DTF-002; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.1",
+      "source_path": "specs/acl/grant/0.1/spec.md",
+      "source_blob": "f5b115d062dd6eceb4514ee5867b3d758d1f1310",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "The ACL maintainer decides whether the requesting authority may assign the requested role; proof of identity is not itself proof of policy permission for assignment.",
+      "unsupported_inference": "A signed grant automatically establishes unrestricted delegation or broader scope without a policy check.",
+      "test_hypothesis": "Present a signed grant for a role that the current granting authority cannot assign; test for denial rather than acceptance solely on proof validity.",
+      "authority_boundary": "The maintainer's assignment policy, not the producer's signature alone, is authoritative.",
+      "evidence_to_check": [
+        "authenticated issuer and requested role",
+        "maintainer's effective assignment policy and decision"
+      ],
+      "rationale": "The source-specific grant/0.1 behavior presents a conditional adjacent relationship to DTF-002; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/grant/0.2",
+      "source_path": "specs/acl/grant/0.2/spec.md",
+      "source_blob": "b57e80d9dbbc2e093b1c52253b51b2596d6fd9ae",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Authorization",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "local_proposition": "The 0.2 grant requires explicit act and capability scopes and bounds the new entry by the granter's own effective authority.",
+      "unsupported_inference": "Omitted scope, proof validity or a requested role permits delegated capabilities beyond the granter's ceiling.",
+      "test_hypothesis": "Submit an explicit capability and act-scope grant beyond the granter's effective authority; test that the consumer refuses the widened grant.",
+      "authority_boundary": "The maintainer resolves the granter's current role and delegation bounds before granting.",
+      "evidence_to_check": [
+        "granter's current role and effective scopes",
+        "requested explicit grant and policy evaluation evidence"
+      ],
+      "rationale": "The source-specific grant/0.2 behavior presents a conditional mechanism-overlap relationship to DTF-002; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.1",
+      "source_path": "specs/acl/list/0.1/spec.md",
+      "source_blob": "58d8e84c6ddce4fe07a6795e591291073278c9bc",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "The listing operation is filtered and paginated; one returned page establishes only what that authorized query returned, not exhaustive absence of other grants.",
+      "unsupported_inference": "An empty or partial page proves the global absence of a grant or other disqualifying authority.",
+      "test_hypothesis": "Produce a first page while a later page includes a relevant grant, then verify a relying system does not treat the first page as exhaustive absence evidence.",
+      "authority_boundary": "The query's scope, disclosure policy and completion evidence govern the usable observation.",
+      "evidence_to_check": [
+        "query filters, paging parameters and result set",
+        "completion cursor and authority for the requested enumeration"
+      ],
+      "rationale": "The source-specific list/0.1 behavior presents a conditional adjacent relationship to DTF-010; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.2",
+      "source_path": "specs/acl/list/0.2/spec.md",
+      "source_blob": "a6d91030e0db831fe7aadc3f6ceee4bc18d259cd",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "Context direction and effective capability filters affect membership; an incomplete or incorrectly directed query cannot establish absence of grants in a broader context.",
+      "unsupported_inference": "Zero results for a narrow directed filter establish that no authority exists across every related context.",
+      "test_hypothesis": "Query a narrower context with a direction-sensitive filter and assert no grants in a wider context; check that reliance requires correct filter scope and pagination.",
+      "authority_boundary": "The ACL maintainer defines filters; the relying consumer is responsible for the scope of its absence claim.",
+      "evidence_to_check": [
+        "filter direction, query scope and effective capabilities",
+        "pagination completeness and maintainer disclosure policy"
+      ],
+      "rationale": "The source-specific list/0.2 behavior presents a conditional adjacent relationship to DTF-010; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/list/0.3",
+      "source_path": "specs/acl/list/0.3/spec.md",
+      "source_blob": "ae51ce865e6b4b6abf913cbc39d3dbf9930fd020",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Changes from 0.2",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "The 0.3 wire convention makes nextCursor absence the end-of-page sequence signal; the older cursor/truncated shape is not interchangeable.",
+      "unsupported_inference": "An absent obsolete truncated field or an incomplete version-mismatched page proves the full result set was enumerated.",
+      "test_hypothesis": "Interpret a 0.3 response with 0.2 pagination semantics and attempt an exhaustive negative claim; test that version-aware pagination evidence is required.",
+      "authority_boundary": "The task defines version-specific paging; downstream evidence consumers must interpret the actual version.",
+      "evidence_to_check": [
+        "versioned request and response wire fields",
+        "nextCursor continuation chain and filter-consistent last page"
+      ],
+      "rationale": "The source-specific list/0.3 behavior presents a conditional adjacent relationship to DTF-010; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.1",
+      "source_path": "specs/acl/revoke/0.1/spec.md",
+      "source_blob": "3262742f09e3d4feabb1067148eac6844d0292cf",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "Revoking a subject or some named scopes changes the maintainer's ACL; a downstream action made later needs independently current authority information.",
+      "unsupported_inference": "A stale pre-revocation authority observation remains valid merely because the original grant was legitimate.",
+      "test_hypothesis": "After full or partial revocation, attempt later authorization using only the pre-revocation ACL view; verify nonacceptance without current-state evidence.",
+      "authority_boundary": "The maintainer effects revocation; relying execution must establish current authority.",
+      "evidence_to_check": [
+        "successful revocation record and its effective time",
+        "later authorization boundary and freshness continuity"
+      ],
+      "rationale": "The source-specific revoke/0.1 behavior presents a conditional adjacent relationship to DTF-021; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/revoke/0.2",
+      "source_path": "specs/acl/revoke/0.2/spec.md",
+      "source_blob": "1bbd9545be050b22ed30f8ec631bb398e7df61d1",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "local_proposition": "The explicit entry/act-scope revocation takes effect at the subject's next authorization decision, where earlier grant observations must not substitute for state re-evaluation.",
+      "unsupported_inference": "A previous authorization snapshot remains sufficient after a narrower act scope or full removal.",
+      "test_hypothesis": "Revoke or narrow act scope and immediately exercise a now-disallowed action using stale evidence; verify the later decision rejects it.",
+      "authority_boundary": "The maintainer governs revocation state and the downstream enforcement boundary governs freshness.",
+      "evidence_to_check": [
+        "authoritative narrowing/removal and temporal ordering",
+        "subsequent authorization decision and source of current state"
+      ],
+      "rationale": "The source-specific revoke/0.2 behavior presents a conditional mechanism-overlap relationship to DTF-021; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/show/0.1",
+      "source_path": "specs/acl/show/0.1/spec.md",
+      "source_blob": "a9bfd1e94a3252086098941dec788750172bc68a",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "A successful ACL lookup establishes a point-in-time entry under the query policy, not assurance of its lifecycle state at a later consequential decision.",
+      "unsupported_inference": "An earlier positive entry lookup remains authoritative indefinitely after intervening revocation or role change.",
+      "test_hypothesis": "Observe a valid ACL entry, change it at the maintainer and attempt authorization using only the old lookup; require fresh status or established continuity.",
+      "authority_boundary": "The maintainer answers at lookup time; downstream relying decisions own lifecycle freshness.",
+      "evidence_to_check": [
+        "point-in-time response and lookup time",
+        "later lifecycle change and material decision time"
+      ],
+      "rationale": "The source-specific show/0.1 behavior presents a conditional adjacent relationship to DTF-021; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/show/0.2",
+      "source_path": "specs/acl/show/0.2/spec.md",
+      "source_blob": "092b9141a7153688404da17d976437293eee9d9a",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "The 0.2 explicit ACL entry is a read of effective authority at the query boundary; its metadata alone cannot assert continuity through subsequent changes.",
+      "unsupported_inference": "The explicit AclEntry 0.2 fields turn a snapshot into an unbounded present authorization guarantee.",
+      "test_hypothesis": "Read an entry, change its act scope, and ask a separate consumer to authorize using only the old snapshot; require the later boundary's freshness evidence.",
+      "authority_boundary": "The ACL maintainer provides the entry; the relying consumer controls current authorization.",
+      "evidence_to_check": [
+        "entry authority axes and lookup context",
+        "intervening change history and downstream decision evidence"
+      ],
+      "rationale": "The source-specific show/0.2 behavior presents a conditional adjacent relationship to DTF-021; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/update/0.1",
+      "source_path": "specs/acl/update/0.1/spec.md",
+      "source_blob": "9e70d19a3ae9fadfb362af403da3e0d685ee657d",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance; Security & Privacy",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "adjacent",
+      "local_proposition": "Changes that widen approve authority or remove expiration are consequential permission increases that must be checked under the maintainer's policy.",
+      "unsupported_inference": "The ability to edit a non-role field implies unrestricted ability to widen authority and clear previously bounded grants.",
+      "test_hypothesis": "Attempt to widen approve or remove expiresAt as a caller without the relevant privileged permission, and verify explicit denial.",
+      "authority_boundary": "The ACL maintainer owns the authorization policy for privileged amendments.",
+      "evidence_to_check": [
+        "requester's effective amend permission",
+        "current entry, changed authority fields and policy decision"
+      ],
+      "rationale": "The source-specific update/0.1 behavior presents a conditional adjacent relationship to DTF-002; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/acl/update/0.2",
+      "source_path": "specs/acl/update/0.2/spec.md",
+      "source_blob": "9fd9b8fa9a49966e94b3c0638a83b711faf36eee",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_section": "Conformance",
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "local_proposition": "The explicit 0.2 update checks changed act, capability and approval scopes against both stored entry and granter authority; signing an update is not unlimited delegation.",
+      "unsupported_inference": "A signed amendment may add effective capabilities or approval scope beyond the editor's current authority.",
+      "test_hypothesis": "Amend capabilities or approve scope beyond the editor's scope and verify rejection with the applicable authority error.",
+      "authority_boundary": "The maintainer resolves policy and effective authority before persisting scope changes.",
+      "evidence_to_check": [
+        "editor's current effective authority and amendment",
+        "scope comparisons, relevant rejection code and persisted state"
+      ],
+      "rationale": "The source-specific update/0.2 behavior presents a conditional mechanism-overlap relationship to DTF-002; the named negative test requires additional relying-context evidence and does not allege an upstream defect.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "complete_case_exhaustiveness": false
+    }
+  ]
 }

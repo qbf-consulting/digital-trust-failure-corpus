@@ -45,7 +45,7 @@ def check(data, inventory):
         uri = entry["task_type_uri"]
         if uri not in existing or uri in history or uri in reviewed:
             raise ValueError("unknown, duplicate or reviewed historical source")
-        if entry["source_blob"] != existing[uri]["spec_blob"] or entry["review_state"] != "needs-version-delta-review":
+        if entry["source_blob"] != existing[uri]["spec_blob"] or entry["review_state"] != "source-delta-screened":
             raise ValueError("historical equivalence not established")
         history[uri] = entry
     if set(history) != set(existing) - set(reviewed):
@@ -54,7 +54,7 @@ def check(data, inventory):
         if item["classification"] != "not-established" or item["task_type_uri"] not in reviewed or len(item["rationale"]) < 80:
             raise ValueError("invalid no-overlap negative control")
     return {"acl_source_versions": len(existing), "current_screened": len(reviewed),
-            "history_pending_delta": len(history), "semantic_review_complete": False}
+            "history_source_delta_screened": len(history), "semantic_review_complete": False}
 
 
 def main():
