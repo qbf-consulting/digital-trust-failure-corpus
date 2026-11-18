@@ -2,11 +2,11 @@
 import json
 from tools.validate_trust_tasks_inventory import MANIFEST, ROOT
 PATH=ROOT/"research/external-sources/trust-tasks/additional-screenings.json"
-FAMILIES={"audit","governance","task-consent","trust-task-discovery"}
+FAMILIES={"audit","governance","task-consent","trust-task-discovery","trust-ceremony-receipt"}
 def check(data,inventory):
     source={"https://trusttasks.org/spec/"+r["slug"]+"/"+r["version"]:r for r in inventory["records"] if r["slug"].split("/")[0] in FAMILIES}
     rows=data["records"]
-    if data["source_commit"]!=inventory["source"]["commit"] or set(data["families"])!=FAMILIES or len(source)!=14 or len(rows)!=14 or set(source)!={r["task_type_uri"] for r in rows}:
+    if data["source_commit"]!=inventory["source"]["commit"] or set(data["families"])!=FAMILIES or len(source)!=15 or len(rows)!=15 or set(source)!={r["task_type_uri"] for r in rows}:
         raise ValueError("unreconciled family inventory")
     for r in rows:
         ref=source[r["task_type_uri"]]

@@ -5,6 +5,7 @@
     "audit",
     "governance",
     "task-consent",
+    "trust-ceremony-receipt",
     "trust-task-discovery"
   ],
   "records": [
@@ -254,6 +255,24 @@
       "rationale": "The specification distinguishes maximum document age from explicit expiresAt horizon, preventing unconditional validity inference.",
       "test_hypothesis": "Use a discovery response to justify a document beyond the current maximum age or expiry; verify rejection.",
       "authority_boundary": "The receiver enforces current temporal validity and separately checks principal authority at action time.",
+      "review_state": "research-screened",
+      "independent_review": "not-established",
+      "execution_evidence": "none",
+      "case_search_complete": false,
+      "version_inheritance": "not-authorized"
+    },
+    {
+      "task_type_uri": "https://trusttasks.org/spec/trust-ceremony-receipt/0.1",
+      "source_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+      "source_path": "specs/trust-ceremony-receipt/0.1/spec.md",
+      "source_blob": "2ae9e3fe5dbbe8e635dbdc98a19ce7375621de08",
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "classification": "mechanism-overlap",
+      "source_section": "Truncation; Conformance / verifier rules 7 and 10; What a verifier is not required to check",
+      "rationale": "A recorder-signed receipt can list individually correct steps while omitting an unheld intermediate or tail. The source explicitly limits completeness claims to the terminal and successor step evidence available to the verifier.",
+      "test_hypothesis": "Construct a receipt listing all visible steps while withholding an intermediate whose successor is not held, or a signed terminal step; demand that the verifier refuse an exhaustive-completion PASS.",
+      "authority_boundary": "The recorder's enumerated attestation is weaker than the verifier's independently established complete enactment evidence.",
       "review_state": "research-screened",
       "independent_review": "not-established",
       "execution_evidence": "none",
