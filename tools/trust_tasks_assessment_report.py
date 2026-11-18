@@ -319,8 +319,8 @@ def generate(output=OUTPUT):
     schema = json.loads(schema_path.read_text())
     Draft202012Validator.check_schema(schema)
     Draft202012Validator(schema).validate(report)
-    (output / "assessment-report.schema.json").write_text(json.dumps(schema, indent=2) + "\\n", encoding="utf-8")
-    (output / "assessment-report.json").write_text(json.dumps(report, indent=2) + "\\n", encoding="utf-8")
+    (output / "assessment-report.schema.json").write_text(json.dumps(schema, indent=2) + "\n", encoding="utf-8")
+    (output / "assessment-report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     (output / "assessment-report.md").write_text(render(report), encoding="utf-8")
     print("Generated human and machine Trust Tasks assessment reports")
 
