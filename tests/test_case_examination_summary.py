@@ -28,8 +28,8 @@ class CaseExaminationSummaryTests(unittest.TestCase):
             "Explicit case comparisons": str(total("comparisons")),
             "Conditional candidate applicability cells": str(total("conditional_candidates")),
             "Case comparisons not established by task semantics": str(total("not_established_from_task")),
-            "Previously source-screened versions still lacking full case comparison": str(51 - total("versions")),
-            "Versions not yet source-screened": "1,340",
+            "Previously source-screened versions still lacking full case comparison": str(52 - total("versions")),
+            "Versions not yet source-screened": "1,339",
             "Independently accepted 37-case dispositions": "0",
         }
         for label, value in measures.items():

@@ -4,7 +4,7 @@ class AdditionalTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data=json.loads(PATH.read_text());cls.inv=json.loads(MANIFEST.read_text())
-    def test_pinned(self):self.assertEqual(check(self.data,self.inv)["screened"],14)
+    def test_pinned(self):self.assertEqual(check(self.data,self.inv)["screened"],15)
     def test_missing(self):
         d=copy.deepcopy(self.data);d["records"].pop()
         with self.assertRaises(ValueError):check(d,self.inv)

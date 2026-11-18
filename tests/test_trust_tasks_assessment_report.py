@@ -22,7 +22,7 @@ class AssessmentReportTests(unittest.TestCase):
     def test_real_source_report(self):
         r=self.report()
         s=r["summary"]
-        self.assertEqual((s["registry_versions"],s["screened_versions"],s["pending_versions"]), (1391,51,1340))
+        self.assertEqual((s["registry_versions"],s["screened_versions"],s["pending_versions"]), (1391,52,1339))
         self.assertEqual(s["independently_reviewed_versions"],0)
         self.assertFalse(s["semantic_completion_claim"])
         self.assertEqual(len(r["records"]),1391)
@@ -34,13 +34,13 @@ class AssessmentReportTests(unittest.TestCase):
         s=r["summary"]
         self.assertEqual(r["schema_version"], "0.2.0")
         self.assertEqual((s["author_case_examined_versions"], s["author_case_comparisons"]),
-                         (22, 814))
+                         (23, 851))
         self.assertEqual((s["author_conditional_candidates"],
-                          s["author_not_established_from_task"]), (175, 639))
+                          s["author_not_established_from_task"]), (192, 659))
         complete=[x for x in r["records"] if x["author_case_examination"]["state"] == "author-case-examined"]
-        self.assertEqual(len(complete), 22)
-        self.assertEqual(sum(x["author_case_examination"]["canonical_case_count"] for x in complete), 814)
-        self.assertEqual(sum(x["author_case_examination"]["state"] == "not-examined" for x in r["records"]), 1369)
+        self.assertEqual(len(complete), 23)
+        self.assertEqual(sum(x["author_case_examination"]["canonical_case_count"] for x in complete), 851)
+        self.assertEqual(sum(x["author_case_examination"]["state"] == "not-examined" for x in r["records"]), 1368)
         self.assertFalse(any(x["independent_review_state"] != "not-established" for x in complete))
         self.assertIn("Not established from task source", render(r))
 
@@ -64,7 +64,7 @@ class AssessmentReportTests(unittest.TestCase):
 
     def test_unreviewed_is_not_no_match(self):
         r=self.report()
-        self.assertEqual(sum(x["screening_state"]=="needs-review" for x in r["records"]),1340)
+        self.assertEqual(sum(x["screening_state"]=="needs-review" for x in r["records"]),1339)
         self.assertFalse(any(x["independent_review_state"]=="reviewed-no-match" for x in r["records"]))
 
     def test_missing_source_is_rejected(self):
