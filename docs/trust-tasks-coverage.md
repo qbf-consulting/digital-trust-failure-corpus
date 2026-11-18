@@ -1,7 +1,7 @@
 # Trust Tasks applicability coverage (derived research)
 
 Generated from the pinned DTFC inventory, the original 12-task screening and the bounded ACL review.
-This page does not establish upstream publication status, independent semantic review, or execution evidence.
+Registry membership and statuses are source-pinned and CI-reconciled; this page does not establish independent semantic review or execution evidence.
 
 **Upstream revision:** `f21a98ec8383352d18629a08dd5dd23935456142`  
 **Versioned source pairs:** 1391  
@@ -62,8 +62,8 @@ Historical versions do not inherit screened status from a later version.
 
 ## Interpretation and reproduction
 
-Each row is an inventory item, not an assurance result. Source status, publication eligibility and
-version-delta equivalence still require upstream front-matter and registry reconciliation.
+Each row is an inventory item, not an assurance result. Version-delta equivalence and substantive
+DTFC applicability remain unverified despite successful upstream registry reconciliation.
 A screened task may have more applicable DTFC cases than currently documented; a pending task
 is not a reviewed no-match. A mapping hypothesis is not evidence that an implementation failed.
 
