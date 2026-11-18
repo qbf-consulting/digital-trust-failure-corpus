@@ -110,7 +110,9 @@ def build_pages(inventory, pilot, acl):
                   "negative-test hypothesis. A mapping is a candidate consuming-system seam.",
                   "It does not establish upstream defect, independently tested conformance,",
                   "complete applicability, or accepted semantic peer review.",
-                  "See [review method](../trust-tasks-review-method.md) and",
+                  "See [technical report](assessment-report.md),",
+                  "[machine-readable report](assessment-report.json),",
+                  "[review method](../trust-tasks-review-method.md) and",
                   "[coverage](../trust-tasks-coverage.md).", ""])
     pages["index.md"] = "\n".join(index)
     if len(groups) != 43 or len(pages) != 44:

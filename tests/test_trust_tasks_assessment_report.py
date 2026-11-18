@@ -1,0 +1,70 @@
+"""Assurance false-success regression on actual pinned assessment inputs."""
+import copy
+import json
+import unittest
+from tools.trust_tasks_assessment_report import build_report, render, review_decision
+from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, ROOT
+from tools.validate_acl_review import PATH as ACL_PATH
+
+ATTEST = ROOT / "research/external-sources/trust-tasks/registry-reconciliation.json"
+
+class AssessmentReportTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.inv = json.loads(MANIFEST.read_text())
+        cls.pilot = json.loads(PILOT.read_text())
+        cls.acl = json.loads(ACL_PATH.read_text())
+        cls.att = json.loads(ATTEST.read_text())
+
+    def report(self, i=None, p=None, a=None, att=None):
+        return build_report(i or self.inv,p or self.pilot,a or self.acl,att or self.att)
+
+    def test_real_source_report(self):
+        r=self.report()
+        s=r["summary"]
+        self.assertEqual((s["registry_versions"],s["screened_versions"],s["pending_versions"]), (1391,29,1362))
+        self.assertEqual(s["independently_reviewed_versions"],0)
+        self.assertFalse(s["semantic_completion_claim"])
+        self.assertEqual(len(r["records"]),1391)
+        self.assertEqual(len(r["families"]),43)
+        self.assertIn("not a complete semantic assessment",render(r))
+
+    def test_unreviewed_is_not_no_match(self):
+        r=self.report()
+        self.assertEqual(sum(x["screening_state"]=="needs-review" for x in r["records"]),1362)
+        self.assertFalse(any(x["independent_review_state"]=="reviewed-no-match" for x in r["records"]))
+
+    def test_missing_source_is_rejected(self):
+        i=copy.deepcopy(self.inv);i["records"].pop()
+        with self.assertRaises(ValueError):self.report(i=i)
+
+    def test_fake_independent_approval_fails(self):
+        a=copy.deepcopy(self.acl);a["current"][0]["independent_review"]="completed"
+        with self.assertRaises(ValueError):self.report(a=a)
+
+    def test_fake_execution_fails(self):
+        p=copy.deepcopy(self.pilot);p["judgments"][0]["execution_evidence"]="independent"
+        with self.assertRaises(ValueError):self.report(p=p)
+
+    def test_bad_registry_evidence_fails(self):
+        a=copy.deepcopy(self.att);a["registry_versions"]=1200
+        with self.assertRaises(ValueError):self.report(att=a)
+
+    def test_unknown_case_fails(self):
+        a=copy.deepcopy(self.acl);a["historical_screenings"][0]["case_id"]="DTF-999"
+        with self.assertRaises(ValueError):self.report(a=a)
+
+    def test_no_match_without_full_case_review_fails(self):
+        with self.assertRaises(ValueError):review_decision({
+            "decision":"reviewed-no-match","independent_review":"completed",
+            "reviewer":"Reviewer A", "reviewed_source_blob":"1"*40,
+            "case_ids":[],"cases_examined":["DTF-002"],
+            "reasoning":"Source inspected.","challenge_record":"challenge #1"
+        },{"DTF-002","DTF-003"})
+
+    def test_independent_approval_without_challenge_fails(self):
+        with self.assertRaises(ValueError):review_decision({
+            "decision":"reviewed-mapped","independent_review":"completed",
+            "reviewer":"Reviewer A","reviewed_source_blob":"1"*40,
+            "case_ids":["DTF-002"],"reasoning":"source checked","challenge_record":""
+        },{"DTF-002"})
