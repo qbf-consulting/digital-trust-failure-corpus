@@ -49,6 +49,7 @@ nav:
       - Trust Tasks version navigator: trust-tasks/index.md
       - Trust Tasks review method: trust-tasks-review-method.md
       - Trust Tasks ACL research slice: trust-tasks-acl-review.md
+      - Trust Tasks consent research slice: trust-tasks-consent-review.md
       - Inspected source records: inspected-external-records.md
       - Tool-output boundary: tool-output-boundary-research.md
       - Case maturity and release gates: case-maturity-and-release-gates.md

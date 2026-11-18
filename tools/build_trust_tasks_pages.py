@@ -6,6 +6,7 @@ from tools.trust_tasks_coverage import calculate
 from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, ROOT
 from tools.validate_acl_review import PATH as ACL_PATH, check as check_acl
 from tools.validate_historical_acl_screening import check as check_history
+from tools.validate_consent_review import PATH as CONSENT_PATH, check as check_consent
 
 OUTPUT = ROOT / "docs" / "trust-tasks"
 URI = "https://trusttasks.org/spec/"
@@ -21,7 +22,9 @@ def case_versions():
         found[case["id"]] = case["version"]
     return found
 
-def build_pages(inventory, pilot, acl):
+def build_pages(inventory, pilot, acl, consent=None):
+    consent = json.loads(CONSENT_PATH.read_text()) if consent is None else consent
+    check_consent(consent, inventory)
     stats = calculate(inventory, pilot, acl)
     check_acl(acl, inventory)
     check_history(acl, inventory)
@@ -34,6 +37,8 @@ def build_pages(inventory, pilot, acl):
         screenings[item["task_type_uri"]].append(("pilot", item))
     for item in acl["current"] + acl["historical_screenings"]:
         screenings[item["task_type_uri"]].append(("acl", item))
+    for item in consent["records"]:
+        screenings[item["task_type_uri"]].append(("consent", item))
     for uri, entries in screenings.items():
         if uri not in rows:
             raise ValueError("unregistered mapped Type URI")
@@ -49,9 +54,9 @@ def build_pages(inventory, pilot, acl):
             for key in ("rationale", "test_hypothesis", "authority_boundary"):
                 if not item.get(key):
                     raise ValueError("absent mapping evidence")
-            if origin == "acl":
+            if origin in {"acl","consent"}:
                 if item["source_blob"] != rows[uri]["spec_blob"] or item["source_path"] != rows[uri]["path"]:
-                    raise ValueError("ACL source digest mismatch")
+                    raise ValueError("screened source digest mismatch")
             else:
                 if not any(s["type_uri"] == uri and s["source_path"] == rows[uri]["path"] for s in pilot["specifications"]):
                     raise ValueError("pilot source provenance mismatch")
