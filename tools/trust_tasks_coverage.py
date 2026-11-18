@@ -56,7 +56,7 @@ def render(stats):
         "Generated from the pinned DTFC inventory, the original 12-task screening and the bounded ACL review.",
         "This page does not establish upstream publication status, independent semantic review, or execution evidence.",
         "",
-        f"**Upstream revision:** \`{stats['upstream_commit']}\`  ",
+        f"**Upstream revision:** `{stats['upstream_commit']}`  ",
         f"**Versioned source pairs:** {stats['source_versions']}  ",
         f"**Original pilot:** {stats['original_pilot']}  ",
         f"**ACL source screening:** {stats['acl_screening']}  ",
@@ -71,7 +71,7 @@ def render(stats):
         "|---|---:|---:|---:|---:|---:|",
     ]
     for family, c in sorted(stats["families"].items()):
-        lines.append(f"| \`{family}\` | {c['all_versions']} | {c['original_pilot']} | {c['acl_screening']} | {c['screened_unique']} | {c['pending']} |")
+        lines.append(f"| `{family}` | {c['all_versions']} | {c['original_pilot']} | {c['acl_screening']} | {c['screened_unique']} | {c['pending']} |")
     lines += [
         "",
         "## Interpretation and reproduction",
@@ -81,12 +81,12 @@ def render(stats):
         "A screened task may have more applicable DTFC cases than currently documented; a pending task",
         "is not a reviewed no-match. A mapping hypothesis is not evidence that an implementation failed.",
         "",
-        "Run \`python -m tools.trust_tasks_coverage\` to emit this page's content or",
-        "\`python -m tools.trust_tasks_coverage --check\` to reject documentation drift.",
+        "Run `python -m tools.trust_tasks_coverage` to emit this page's content or",
+        "`python -m tools.trust_tasks_coverage --check` to reject documentation drift.",
         "The repository unit tests independently exercise false-success and missing-input conditions.",
         "",
     ]
-    return "\n".join(lines).replace("\\\`", "`")
+    return "\n".join(lines).replace("\\`", "`")
 
 
 def main():
