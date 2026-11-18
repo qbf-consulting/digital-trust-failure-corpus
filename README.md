@@ -92,6 +92,8 @@ A [three-source, 37-case semantic screening](docs/external-semantic-screening.md
 
 The [eight directly inspected external records](docs/inspected-external-records.md) include case-specific W3C T4/DTF-032 and T18/DTF-035 provenance bindings; these are informative research mappings, not evidence of third-party adoption.
 
+The [Trust Tasks registry applicability research checkpoint](docs/trust-tasks-research-checkpoint.md) provides the pinned 1,391-version census, a generated per-version navigator, and 29 preliminary source-screened versions. It explicitly does not claim exhaustive semantic review or independent implementation assurance; see [issue #135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135).
+
 ## Authoring and adoption
 
 Contributors should start with [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/authoring-cases.md`](docs/authoring-cases.md), and [`docs/taxonomy.md`](docs/taxonomy.md). Adopters should read [`docs/consuming-the-corpus.md`](docs/consuming-the-corpus.md) before binding cases to an implementation or assurance process.
