@@ -123,3 +123,6 @@ Cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and 
 ## Version-pinned Trust Tasks applicability research
 
 A [bounded twelve-task Trust Tasks crosswalk](docs/trust-tasks-crosswalk.md) screens five operational families against existing DTFC propositions at an immutable upstream revision. The [machine-readable mappings](research/external-sources/trust-tasks/mapping.json) include task-level rationale, test hypotheses and authority boundaries. These are informative research judgments, not executed target tests, specification defects, external adoption, or canonical case extensions. Independent target and consumer evidence remain open in #48 and #45.
+
+
+The [pinned Trust Tasks source inventory](docs/trust-tasks-inventory.md) structurally accounts for 1,391 versioned spec/schema pairs (12 previously screened, 1,379 not yet reviewed). This is not a claim of complete published-registry reconciliation or exhaustive semantic applicability. Follow-up is tracked in [#135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135).
