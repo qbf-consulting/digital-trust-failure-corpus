@@ -838,10 +838,10 @@
         {
           "case_id": "DTF-013",
           "disposition": "conditional-candidate",
-          "rationale": "A signature authenticates a messenger or relay, not necessarily an approved human decision under the context policy. The analysis concerns a downstream relying decision, not an asserted Trust Tasks specification defect.",
+          "rationale": "For consent/decision/1.0, an enrolled bridge may legitimately attest an out-of-band approver choice under the VTA's policy, but that bridge signature establishes a bridge assertion rather than an approver's own independently verifiable DID signature. A relying consumer that promotes bridge-attested consent to directly signed human consent crosses the source-defined evidence and authority boundary; neither mode alone licenses action outside the approved subject and scope.",
           "source_section": "Abstract; Conformance; Security & Privacy",
-          "test_hypothesis": "For consent/decision/1.0, Provide valid signature or transport identity with missing approver/admin authority; require DENY.",
-          "authority_boundary": "Identity proof versus independent action-specific authority."
+          "test_hypothesis": "For consent/decision/1.0, submit a valid enrolled bridge-attested decision and verify that evidence remains labeled bridge-attested, then submit an unenrolled bridge decision and require rejection rather than human-signature equivalence.",
+          "authority_boundary": "Enrolled bridge attestation to out-of-band human choice versus directly signed operator consent and its subject/scope authority."
         },
         {
           "case_id": "DTF-014",
