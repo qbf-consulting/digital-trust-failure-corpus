@@ -36,6 +36,22 @@ class DiscoveryCaseExaminationTests(unittest.TestCase):
         x = copy.deepcopy(self.data)
         next(d for d in x["records"][0]["decisions"] if d["disposition"] == "conditional-candidate")["authority_boundary"] = ""
         self.reject(x)
+    def test_framework_version_is_not_policy_mismatch(self):
+        for record in self.data["records"][:2]:
+            case = next(x for x in record["decisions"] if x["case_id"] == "DTF-012")
+            self.assertEqual(case["disposition"], "not-established-from-task")
+
+    def test_first_time_required_ext_is_not_secondary_use(self):
+        for record in self.data["records"]:
+            case = next(x for x in record["decisions"] if x["case_id"] == "DTF-034")
+            self.assertEqual(case["disposition"], "not-established-from-task")
+
+    def test_temporal_version_specificity(self):
+        for record in self.data["records"][2:]:
+            case = next(x for x in record["decisions"] if x["case_id"] == "DTF-021")
+            self.assertEqual(case["disposition"], "conditional-candidate")
+            self.assertIn("window", case["rationale"].lower())
+
     def test_missing_v04_delta(self):
         x = copy.deepcopy(self.data); x["records"][3].pop("version_delta"); self.reject(x)
     def test_wrong_expiry_version_delta(self):
