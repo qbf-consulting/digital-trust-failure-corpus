@@ -6,13 +6,16 @@ from pathlib import Path
 from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, check as check_inventory
 from tools.validate_acl_review import PATH as ACL_PATH, check as check_acl
 from tools.validate_consent_review import PATH as CONSENT_PATH, check as check_consent
+from tools.validate_additional_screenings import PATH as ADDITIONAL_PATH, check as check_additional
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / "docs" / "trust-tasks-coverage.md"
 PREFIX = "https://trusttasks.org/spec/"
 
 
-def calculate(inventory, pilot, acl, consent=None):
+def calculate(inventory, pilot, acl, consent=None, additional=None):
+    additional=json.loads(ADDITIONAL_PATH.read_text()) if additional is None else additional
+    check_additional(additional,inventory)
     consent = json.loads(CONSENT_PATH.read_text()) if consent is None else consent
     check_consent(consent, inventory)
     check_inventory(inventory, pilot)
@@ -23,7 +26,8 @@ def calculate(inventory, pilot, acl, consent=None):
     if not reviewed_acl <= all_ids or not original <= all_ids:
         raise ValueError("crosswalk refers to absent inventory task")
     reviewed_consent = {x["task_type_uri"].removeprefix(PREFIX) for x in consent["records"]}
-    screened = original | reviewed_acl | reviewed_consent
+    screened_additional={x['task_type_uri'].removeprefix(PREFIX) for x in additional['records']}
+    screened = original | reviewed_acl | reviewed_consent | screened_additional
     counts = {}
     for row in inventory["records"]:
         family = row["slug"].split("/")[0]
@@ -36,6 +40,8 @@ def calculate(inventory, pilot, acl, consent=None):
             c["acl_screening"] += 1
         if key in reviewed_consent:
             c["consent_screening"] += 1
+        if key in screened_additional:
+            c["additional_screening"] += 1
         if key in screened:
             c["screened_unique"] += 1
         else:
@@ -46,6 +52,7 @@ def calculate(inventory, pilot, acl, consent=None):
         "original_pilot": len(original),
         "acl_screening": len(reviewed_acl),
         "consent_screening": len(reviewed_consent),
+        "additional_screening": len(screened_additional),
         "overlapping_source_versions": len(original & reviewed_acl),
         "screened_unique": len(screened),
         "pending": len(all_ids - screened),
@@ -60,7 +67,7 @@ def render(stats):
     lines = [
         "# Trust Tasks applicability coverage (derived research)",
         "",
-        "Generated from the pinned DTFC inventory, the original pilot, ACL and consent research screens.",
+        "Generated from pinned inventory, original pilot and source-qualified ACL, Consent and supplementary research.",
         "Registry membership and statuses are source-pinned and CI-reconciled; this page does not establish independent semantic review or execution evidence.",
         "",
         f"**Upstream revision:** `{stats['upstream_commit']}`  ",
@@ -68,6 +75,7 @@ def render(stats):
         f"**Original pilot:** {stats['original_pilot']}  ",
         f"**ACL source screening:** {stats['acl_screening']}  ",
         f"**Consent source screening:** {stats['consent_screening']}  ",
+        f"**Additional source screening:** {stats['additional_screening']}  ",
         f"**Overlap:** {stats['overlapping_source_versions']}  ",
         f"**Distinct source-screened versions:** {stats['screened_unique']}  ",
         f"**Not yet source-screened:** {stats['pending']}  ",
@@ -75,11 +83,11 @@ def render(stats):
         "Screened means DTFC-authored research mapping, **not** independent verification or all-case semantic completeness.",
         "Historical versions do not inherit screened status from a later version.",
         "",
-        "| Family | Source versions | Original pilot | ACL screening | Consent screening | Distinct screened | Pending |",
-        "|---|---:|---:|---:|---:|---:|---:|",
+        "| Family | Source versions | Original pilot | ACL screening | Consent screening | Additional screening | Distinct screened | Pending |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for family, c in sorted(stats["families"].items()):
-        lines.append(f"| `{family}` | {c['all_versions']} | {c['original_pilot']} | {c['acl_screening']} | {c['consent_screening']} | {c['screened_unique']} | {c['pending']} |")
+        lines.append(f"| `{family}` | {c['all_versions']} | {c['original_pilot']} | {c['acl_screening']} | {c['consent_screening']} | {c['additional_screening']} | {c['screened_unique']} | {c['pending']} |")
     lines += [
         "",
         "## Interpretation and reproduction",
