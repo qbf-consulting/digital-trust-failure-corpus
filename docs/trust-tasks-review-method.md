@@ -47,3 +47,7 @@ is not PASS. An AI-assisted self-review cannot be counted as independent approva
 The published [coverage summary](trust-tasks-coverage.md) remains a preliminary,
 non-normative research finding. It is shareable as a source-complete versioned
 registry index, not as completed task-to-failure assurance.
+
+## Unresolved independent challenge
+
+A contested interpretation is recorded as `blocked-evidence` with a source-pinned challenge record. It is **not** a completed independent review and does **not** count toward the semantic-completeness numerator. An unresolved contradiction must not be converted to an accepted mapping, a reviewed no-match, or a positive assurance result. The report contract tests this false-success case.

@@ -30,7 +30,10 @@ def review_decision(record, case_ids):
     """Validate an additional admitted review; never infer approval from screening."""
     if record["decision"] not in {"reviewed-mapped", "reviewed-no-match", "blocked-evidence"}:
         raise ValueError("unrecognized semantic review outcome")
-    if record["independent_review"] != "completed":
+    if record["decision"] == "blocked-evidence":
+        if record["independent_review"] != "challenged-unresolved":
+            raise ValueError("blocked interpretation must stay unresolved")
+    elif record["independent_review"] != "completed":
         raise ValueError("review cannot be admitted without independent challenge")
     if not record.get("reviewer") or not record.get("reviewed_source_blob"):
         raise ValueError("unbound reviewer or source version")
@@ -175,7 +178,8 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
         indexed[uri]["independent_review_state"] = review["decision"]
     rows = [indexed[key] for key in sorted(indexed)]
     covered = sum(x["screening_state"] == "research-screened" for x in rows)
-    independent = sum(x["independent_review_state"] != "not-established" for x in rows)
+    independent = sum(x["independent_review_state"] in {"reviewed-mapped", "reviewed-no-match"} for x in rows)
+    blocked = sum(x["independent_review_state"] == "blocked-evidence" for x in rows)
     if covered != coverage["screened_unique"] or covered + (len(rows) - covered) != len(rows):
         raise ValueError("screening/report denominator mismatch")
     fam = defaultdict(lambda: Counter())
@@ -184,7 +188,8 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
         c["inventory"] += 1
         c["screened"] += row["screening_state"] == "research-screened"
         c["pending"] += row["screening_state"] == "needs-review"
-        c["reviewed"] += row["independent_review_state"] != "not-established"
+        c["reviewed"] += row["independent_review_state"] in {"reviewed-mapped", "reviewed-no-match"}
+        c["blocked"] += row["independent_review_state"] == "blocked-evidence"
     candidates = sum(len(x["candidate_mappings"]) for x in rows)
     return {
         "schema_version": "0.1.0",
@@ -206,7 +211,8 @@ def build_report(inventory, pilot, acl, attestation, accepted=None, consent=None
             "pending_versions": len(rows) - covered,
             "candidate_judgments": candidates,
             "independently_reviewed_versions": independent,
-            "independent_review_complete": independent == len(rows),
+            "blocked_review_versions": blocked,
+            "independent_review_complete": independent == len(rows) and blocked == 0,
             "semantic_completion_claim": False,
             "publication_state": "research-checkpoint",
         },
@@ -249,6 +255,7 @@ def render(report):
         "| Versions awaiting screening | " + str(s["pending_versions"]) + " |",
         "| Conditional research judgments | " + str(s["candidate_judgments"]) + " |",
         "| Independently reviewed task versions | " + str(s["independently_reviewed_versions"]) + " |",
+        "| Blocked semantic reviews (unresolved) | " + str(s["blocked_review_versions"]) + " |",
         "",
         "The upstream source inventory and published registry were reconciled at",
         "[" + report["authority"]["upstream_commit"] + "](" +
