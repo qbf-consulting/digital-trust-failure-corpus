@@ -28,6 +28,8 @@ def build_pages(inventory, pilot, acl, consent=None, additional=None):
     check_additional(additional, inventory)
     consent = json.loads(CONSENT_PATH.read_text()) if consent is None else consent
     check_consent(consent, inventory)
+    from tools.trust_tasks_author_case_index import load as load_author_cases
+    author_cases = load_author_cases(inventory)
     stats = calculate(inventory, pilot, acl)
     check_acl(acl, inventory)
     check_history(acl, inventory)
@@ -77,28 +79,33 @@ def build_pages(inventory, pilot, acl, consent=None, additional=None):
         "**Upstream:** " + TICK + inventory["source"]["commit"] + TICK + "  ",
         "**Versioned tasks:** " + str(len(rows)) + "  ",
         "**Research-screened:** " + str(len(screenings)) + "  ",
+        "**Full author-side case-examined:** " + str(len(author_cases)) + "  ",
+        "**Author case comparisons:** " + str(37 * len(author_cases)) + "  ",
         "**Pending:** " + str(len(rows)-len(screenings)) + "  ",
         "**Independently reviewed:** 0  ",
         "**Independent target executions:** 0", "",
-        "| Family | Versions | Screened | Pending |", "|---|---:|---:|---:|",
+        "| Family | Versions | Screened | Pending | Author case-examined |",
+        "|---|---:|---:|---:|---:|",
     ]
     pages = {}
     for family, items in sorted(groups.items()):
         items.sort(key=lambda p: (p[1]["slug"], tuple(map(int, p[1]["version"].split(".")))))
         covered = sum(uri in screenings for uri, _ in items)
-        index.append("| [" + family + "](" + family + ".md) | " + str(len(items)) + " | " + str(covered) + " | " + str(len(items)-covered) + " |")
+        index.append("| [" + family + "](" + family + ".md) | " + str(len(items)) + " | " + str(covered) + " | " + str(len(items)-covered) + " | " + str(sum(uri in author_cases for uri, _ in items)) + " |")
         lines = ["# " + family + " task versions", "",
                  "Pinned upstream sources and preliminary DTFC screening; not semantic assurance.", "",
                  "[Family index](index.md)", "",
-                 "| Version | Screening | Conditional DTF cases |",
-                 "|---|---|---|"]
+                 "| Version | Screening | Conditional DTF cases | Full author case examination |",
+                 "|---|---|---|---|"]
         for uri, row in items:
             label = row["slug"] + "/" + row["version"]
             link = GIT + inventory["source"]["commit"] + "/" + row["path"]
             ids = sorted({i["case_id"] for _, i in screenings.get(uri, [])})
             cases = ", ".join("[" + ident + "](../corpus/" + ident + ".md)" for ident in ids) if ids else "not assessed"
             status = "research-screened" if uri in screenings else "needs-review"
-            lines.append("| [" + label + "](" + link + ") | " + TICK + status + TICK + " | " + cases + " |")
+            deep = author_cases.get(uri)
+            deep_link = ("[37-case author matrix](" + deep["report_page"] + ")" if deep else "not examined")
+            lines.append("| [" + label + "](" + link + ") | " + TICK + status + TICK + " | " + cases + " | " + deep_link + " |")
         lines.extend(["", "## Research mapping rationale", ""])
         for uri, row in items:
             if uri not in screenings:
@@ -116,6 +123,10 @@ def build_pages(inventory, pilot, acl, consent=None, additional=None):
                       "A screened version may have additional unexamined DTFC failures.", ""])
         pages[family + ".md"] = "\n".join(lines)
     index.extend(["", "## Interpretation", "",
+                  "Full author case-examination covers 14 versions, not the entire inventory.",
+                  "Each reviewed case is a qualified research decision, not independent",
+                  "semantic approval or an execution verdict. Not-established-from-task",
+                  "is not a deployment-level no-match. See the linked family reports.", "",
                   "Use the pinned task source, the canonical failure case, and the stated",
                   "negative-test hypothesis. A mapping is a candidate consuming-system seam.",
                   "It does not establish upstream defect, independently tested conformance,",
