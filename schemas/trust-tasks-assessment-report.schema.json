@@ -332,7 +332,8 @@
                   "enum": [
                     "pilot",
                     "acl",
-                    "consent"
+                    "consent",
+                    "additional"
                   ]
                 },
                 "rationale": {
