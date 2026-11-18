@@ -1,0 +1,133 @@
+"""Reproducible Trust Tasks version navigator; inventory is not semantic assurance."""
+import json
+from collections import defaultdict
+from pathlib import Path
+from tools.trust_tasks_coverage import calculate
+from tools.validate_trust_tasks_inventory import MANIFEST, PILOT, ROOT
+from tools.validate_acl_review import PATH as ACL_PATH, check as check_acl
+from tools.validate_historical_acl_screening import check as check_history
+
+OUTPUT = ROOT / "docs" / "trust-tasks"
+URI = "https://trusttasks.org/spec/"
+GIT = "https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/"
+TICK = chr(96)
+
+def case_versions():
+    found = {}
+    for path in (ROOT / "corpus").rglob("DTF-*.json"):
+        case = json.loads(path.read_text())
+        if case["id"] in found:
+            raise ValueError("duplicate canonical case")
+        found[case["id"]] = case["version"]
+    return found
+
+def build_pages(inventory, pilot, acl):
+    stats = calculate(inventory, pilot, acl)
+    check_acl(acl, inventory)
+    check_history(acl, inventory)
+    rows = {URI + x["slug"] + "/" + x["version"]: x for x in inventory["records"]}
+    if len(rows) != stats["source_versions"]:
+        raise ValueError("duplicate inventory URI")
+    versions = case_versions()
+    screenings = defaultdict(list)
+    for item in pilot["judgments"]:
+        screenings[item["task_type_uri"]].append(("pilot", item))
+    for item in acl["current"] + acl["historical_screenings"]:
+        screenings[item["task_type_uri"]].append(("acl", item))
+    for uri, entries in screenings.items():
+        if uri not in rows:
+            raise ValueError("unregistered mapped Type URI")
+        for origin, item in entries:
+            if item["case_id"] not in versions or item.get("case_version", versions[item["case_id"]]) != versions[item["case_id"]]:
+                raise ValueError("invalid canonical case version")
+            if item["classification"] not in {"mechanism-overlap", "adjacent"}:
+                raise ValueError("unsupported classification")
+            if item.get("review_state", item.get("assessment_state")) != "research-screened":
+                raise ValueError("unjustified reviewed state")
+            if item.get("independent_review", "not-established") != "not-established" or item["execution_evidence"] != "none":
+                raise ValueError("false assurance evidence")
+            for key in ("rationale", "test_hypothesis", "authority_boundary"):
+                if not item.get(key):
+                    raise ValueError("absent mapping evidence")
+            if origin == "acl":
+                if item["source_blob"] != rows[uri]["spec_blob"] or item["source_path"] != rows[uri]["path"]:
+                    raise ValueError("ACL source digest mismatch")
+            else:
+                if not any(s["type_uri"] == uri and s["source_path"] == rows[uri]["path"] for s in pilot["specifications"]):
+                    raise ValueError("pilot source provenance mismatch")
+    if len(screenings) != stats["screened_unique"]:
+        raise ValueError("screened numerator inconsistent")
+    groups = defaultdict(list)
+    for uri, row in rows.items():
+        groups[row["slug"].split("/")[0]].append((uri, row))
+    index = [
+        "# Trust Tasks versioned navigator", "",
+        "Derived from a pinned upstream registry and DTFC's research sidecars. A pending",
+        "version is NOT a reviewed non-match. A candidate mapping is NOT a defect report.", "",
+        "**Upstream:** " + TICK + inventory["source"]["commit"] + TICK + "  ",
+        "**Versioned tasks:** " + str(len(rows)) + "  ",
+        "**Research-screened:** " + str(len(screenings)) + "  ",
+        "**Pending:** " + str(len(rows)-len(screenings)) + "  ",
+        "**Independently reviewed:** 0  ",
+        "**Independent target executions:** 0", "",
+        "| Family | Versions | Screened | Pending |", "|---|---:|---:|---:|",
+    ]
+    pages = {}
+    for family, items in sorted(groups.items()):
+        items.sort(key=lambda p: (p[1]["slug"], tuple(map(int, p[1]["version"].split(".")))))
+        covered = sum(uri in screenings for uri, _ in items)
+        index.append("| [" + family + "](" + family + ".md) | " + str(len(items)) + " | " + str(covered) + " | " + str(len(items)-covered) + " |")
+        lines = ["# " + family + " task versions", "",
+                 "Pinned upstream sources and preliminary DTFC screening; not semantic assurance.", "",
+                 "[Family index](index.md)", "",
+                 "| Version | Screening | Conditional DTF cases |",
+                 "|---|---|---|"]
+        for uri, row in items:
+            label = row["slug"] + "/" + row["version"]
+            link = GIT + inventory["source"]["commit"] + "/" + row["path"]
+            ids = sorted({i["case_id"] for _, i in screenings.get(uri, [])})
+            cases = ", ".join("[" + ident + "](../corpus/" + ident + ".md)" for ident in ids) if ids else "not assessed"
+            status = "research-screened" if uri in screenings else "needs-review"
+            lines.append("| [" + label + "](" + link + ") | " + TICK + status + TICK + " | " + cases + " |")
+        lines.extend(["", "## Research mapping rationale", ""])
+        for uri, row in items:
+            if uri not in screenings:
+                continue
+            lines.extend(["### " + row["slug"] + "/" + row["version"], "",
+                          "Pinned source blob: " + TICK + row["spec_blob"] + TICK + "  ",
+                          "Independent review: " + TICK + "not-established" + TICK + "  ",
+                          "Execution evidence: " + TICK + "none" + TICK, ""])
+            for origin, item in screenings[uri]:
+                lines.extend(["**" + item["case_id"] + " / " + item["classification"] + " / " + origin + "**", "",
+                              "Conditional rationale: " + item["rationale"], "",
+                              "Authority boundary: " + item["authority_boundary"], "",
+                              "Falsification hypothesis: " + item["test_hypothesis"], ""])
+        lines.extend(["", "Unscreened versions are unresolved, not safe or no-match.",
+                      "A screened version may have additional unexamined DTFC failures.", ""])
+        pages[family + ".md"] = "\n".join(lines)
+    index.extend(["", "## Interpretation", "",
+                  "Use the pinned task source, the canonical failure case, and the stated",
+                  "negative-test hypothesis. A mapping is a candidate consuming-system seam.",
+                  "It does not establish upstream defect, independently tested conformance,",
+                  "complete applicability, or accepted semantic peer review.",
+                  "See [review method](../trust-tasks-review-method.md) and",
+                  "[coverage](../trust-tasks-coverage.md).", ""])
+    pages["index.md"] = "\n".join(index)
+    if len(groups) != 43 or len(pages) != 44:
+        raise ValueError("unexpected published family inventory")
+    return pages
+
+def generate(output=OUTPUT):
+    inventory = json.loads(MANIFEST.read_text())
+    pilot = json.loads(PILOT.read_text())
+    acl = json.loads(ACL_PATH.read_text())
+    pages = build_pages(inventory, pilot, acl)
+    output.mkdir(parents=True, exist_ok=True)
+    for path in output.glob("*.md"):
+        path.unlink()
+    for path, contents in pages.items():
+        (output / path).write_text(contents, encoding="utf-8")
+    print("Generated", len(pages), "Trust Tasks navigation pages")
+
+if __name__ == "__main__":
+    generate()
