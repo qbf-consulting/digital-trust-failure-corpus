@@ -24,6 +24,22 @@ version, including retired versions, **without** claiming complete semantic revi
 Unreviewed is not a no-match. Missing, stale, conflicting or unavailable evidence
 is not PASS. An AI-assisted self-review cannot be counted as independent approval.
 
+## Author-side full case examination
+
+An author may substantively examine all 37 canonical cases for a pinned task
+without claiming independent acceptance. The complete-case machine records for
+[audit](trust-tasks-audit-case-examination.md) and
+[capability governance](trust-tasks-governance-case-examination.md) demonstrate
+this intermediate evidence level. Each record includes one decision for every
+canonical case, distinguishes a falsifiable conditional candidate from a
+`not-established-from-task` observation, and pins source/schema hashes.
+
+This intermediate class is **not** `reviewed-no-match`: not establishing the
+case's preconditions from a task specification is weaker than disproving a
+candidate in a known consuming system. Case-level rationale and negative tests
+are necessary but do not establish a deployed consumer response, global
+non-applicability or an independent reviewer decision.
+
 ## Reviewer acceptance path
 
 1. Open the exact upstream Type URI and source commit, including its metadata,

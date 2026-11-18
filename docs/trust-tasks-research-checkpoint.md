@@ -39,8 +39,52 @@ discovery versions, with three overlaps. An ACL source-version delta study
 is separately available for all 13 historical ACL versions. The resulting
 mapping hypotheses retain source anchors, canonical DTFC cases, authority
 boundaries and falsification tests. They are conditional research findings;
-they have **not** been established as complete 37-case judgments or approved
-by an independent semantic reviewer.
+the original screening records do not themselves establish full 37-case
+consideration or independent acceptance; the two new complete-case research
+records below preserve that distinction.
+
+## New: complete author-side case examination of two families
+
+The [audit family case examination](trust-tasks-audit-case-examination.md) and
+[capability-governance family case examination](trust-tasks-governance-case-examination.md)
+add **all 37 canonical-case comparisons for each of six source-screened
+versions**. This is new substantive research depth, not six more versions
+added to the 51 screened or 41 independently established failures.
+
+| Case-level measure | Author research result |
+|---|---:|
+| Fully case-examined pinned task versions | 6 of 1,391 |
+| Explicit case comparisons | 222 |
+| Conditional candidate applicability cells | 41 |
+| Case comparisons not established by task semantics | 181 |
+| Previously source-screened versions still lacking full case comparison | 45 |
+| Versions not yet source-screened | 1,340 |
+| Independently accepted 37-case dispositions | 0 |
+| Independent consumer executions | 0 |
+
+The 41 cells include overlapping scenarios across task versions. They are
+**not** 41 verified defects, incidents or new DTFC propositions.
+`not-established-from-task` is *not* an independently reviewed no-match or
+proof of safety: it means that the task contract alone does not establish
+all preconditions of the canonical failure. A composed deployment can add
+those preconditions. Review and test the actual relying proposition before
+asserting either applicability or non-applicability.
+
+**For DTG implementers, the immediately executable research agenda is:**
+
+| Boundary | Setup and falsification question | Candidate DTF cases | Control outcome |
+|---|---|---|---|
+| Audit completeness | Sign a valid first audit page with material contrary evidence on a subsequent page; does the consumer return an exhaustive PASS? | DTF-010, DTF-026 | Follow version-specific continuation and filters or return INDETERMINATE. |
+| Audit provenance | Supply `verified: true` for a restamped/truncated but locally consistent chain; does the auditor assert authenticity? | DTF-010, DTF-025, DTF-027 | Limit to internal integrity and demand independent anchoring for authenticity. |
+| Audit purpose and retention | Reuse a legitimate retrieved tail for member scoring or retain its identifiers after the oversight purpose expires. | DTF-034, DTF-037 | Reject secondary use absent a separate governance basis; enforce bounded retention. |
+| Capability delegation | Sign an enable request as non-operator, or enable a real companion then write a registry tuple outside `vocabulary.actions`. | DTF-002, DTF-013, DTF-023 | Host checks operator role and rejects out-of-scope delegate action. |
+| Capability lifecycle | Cache enablement, disable handlers, and attempt a later material execution or assert historical invalidity. | DTF-005, DTF-006, DTF-016, DTF-021 | Deny later execution while preserving earlier effective history. |
+| Management discovery | Return `status=available`, then try an unauthorized commitment or treat it as enabled. | DTF-010, DTF-018, DTF-028 | Require independent enabled-state and principal authority at execution. |
+
+These are proposed **negative/control test pairs**, not executed
+interoperability or conformance evidence. The upstream task texts already
+express many of the necessary safeguards; the test target is the consuming
+implementation's enforcement or the broader assurance inference.
 
 ## Results available for external use
 
@@ -86,9 +130,10 @@ state to remain current at the delivery boundary.
 ## What remains unestablished
 
 The research has **not** produced a defensible mapping/no-match assessment
-across the remaining 1,340 versions, a complete case-by-case search for any
-version, independently reviewed semantic determinations, or external target
-execution. No numerical score here is a coverage-of-risk or safety score.
+across the remaining population. A complete author-side 37-case examination
+now exists for **six** versions, but the other 45 screened versions and 1,340
+unscreened versions still lack complete case comparison. Independent semantic
+acceptance and external target execution also remain unestablished. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
 
 To claim the full [#135 objective](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135),
