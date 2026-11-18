@@ -22,7 +22,7 @@ def check_family(data, inventory, family, targets, version_deltas=None, cases=No
         if r["slug"].split("/")[0] == family
     }
     targets = set(targets)
-    if data.get("schema_version") != "0.1.0" or data.get("scope") != family + "-family-case-examination":
+    if data.get("schema_version") != "0.2.0" or data.get("scope") != family + "-family-case-examination":
         raise ValueError("unsupported source-qualified case-examination contract")
     if data.get("upstream") != {
         "repository": inventory["source"]["repository"],
@@ -53,6 +53,10 @@ def check_family(data, inventory, family, targets, version_deltas=None, cases=No
         if len(decisions) != 37 or {d["case_id"] for d in decisions} != set(cases):
             raise ValueError("missing, duplicated or unrelated canonical case")
         for d in decisions:
+            # A stable DTF identifier is not a stable semantic proposition.
+            # Re-evaluate each judgment if its canonical case version changes.
+            if d.get("case_version") != cases[d["case_id"]]:
+                raise ValueError("canonical case semantic version changed or not pinned")
             if d.get("disposition") not in VALID_DISPOSITIONS or len(d.get("rationale", "")) < 45:
                 raise ValueError("unsupported classification or missing rationale")
             if d["disposition"] == "conditional-candidate":

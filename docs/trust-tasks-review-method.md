@@ -37,6 +37,14 @@ this intermediate evidence level. Each record includes one decision for every
 canonical case, distinguishes a falsifiable conditional candidate from a
 `not-established-from-task` observation, and pins source/schema hashes.
 
+Each case decision also records the exact `case_version` from the
+authoritative DTFC proposition. A later amendment that retains `DTF-xxx`
+but changes its semantic version invalidates silent reuse of the old judgment.
+The family validators fail closed on such drift; only a source-specific
+reassessment can re-establish the disposition. The author research JSON
+sidecar contract is now `0.2.0`; this is separate from the generated
+assessment-report schema `0.2.0`, whose public fields are unchanged here.
+
 This intermediate class is **not** `reviewed-no-match`: not establishing the
 case's preconditions from a task specification is weaker than disproving a
 candidate in a known consuming system. Case-level rationale and negative tests
