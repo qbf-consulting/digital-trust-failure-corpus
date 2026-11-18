@@ -17,7 +17,7 @@ Screened means DTFC-authored research mapping, **not** independent verification 
 Historical versions do not inherit screened status from a later version.
 
 | Family | Source versions | Original pilot | ACL screening | Consent screening | Additional screening | Distinct screened | Pending |
-|---|---:|---:|---:|---:|---:|---:|
+|---|---:|---:|---:|---:|---:|---:|---:|
 | `acl` | 20 | 3 | 20 | 0 | 0 | 20 | 0 |
 | `audit` | 3 | 0 | 0 | 0 | 3 | 3 | 0 |
 | `auth` | 79 | 1 | 0 | 0 | 0 | 1 | 78 |
