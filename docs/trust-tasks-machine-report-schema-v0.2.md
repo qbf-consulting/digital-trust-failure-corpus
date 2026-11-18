@@ -11,8 +11,8 @@ independently approved.**
 ## Additive fields and consumer migration
 
 The 1,391 version records now include a required
-`author_case_examination` object. Its `state` is `not-examined` for 1,377
-versions or `author-case-examined` for the 14 full-case research versions.
+`author_case_examination` object. Its `state` is `not-examined` for 1,369
+versions or `author-case-examined` for the 22 full-case research versions.
 Examined entries include a canonical case count, source-linked research
 record, pinned case revision and counts of conditional and
 `not-established-from-task` decisions, plus explicit

@@ -123,7 +123,7 @@ def build_pages(inventory, pilot, acl, consent=None, additional=None):
                       "A screened version may have additional unexamined DTFC failures.", ""])
         pages[family + ".md"] = "\n".join(lines)
     index.extend(["", "## Interpretation", "",
-                  "Full author case-examination covers 14 versions, not the entire inventory.",
+                  "Full author case-examination covers " + str(len(author_cases)) + " versions, not the entire inventory.",
                   "Each reviewed case is a qualified research decision, not independent",
                   "semantic approval or an execution verdict. Not-established-from-task",
                   "is not a deployment-level no-match. See the linked family reports.", "",

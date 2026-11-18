@@ -4,6 +4,7 @@ import re
 import unittest
 from tools.validate_trust_tasks_inventory import ROOT, MANIFEST
 from tools.validate_audit_case_examination import PATH as AUDIT, check as audit_check
+from tools.validate_consent_case_examination import PATH as CONSENT_FAMILY, check as consent_family_check
 from tools.validate_governance_case_examination import PATH as GOVERNANCE, check as governance_check
 from tools.validate_task_consent_case_examination import PATH as CONSENT, check as consent_check
 from tools.validate_discovery_case_examination import PATH as DISCOVERY, check as discovery_check
@@ -13,6 +14,7 @@ class CaseExaminationSummaryTests(unittest.TestCase):
         inventory = json.loads(MANIFEST.read_text())
         packages = [
             audit_check(json.loads(AUDIT.read_text()), inventory),
+            consent_family_check(json.loads(CONSENT_FAMILY.read_text()), inventory),
             governance_check(json.loads(GOVERNANCE.read_text()), inventory),
             consent_check(json.loads(CONSENT.read_text()), inventory),
             discovery_check(json.loads(DISCOVERY.read_text()), inventory),

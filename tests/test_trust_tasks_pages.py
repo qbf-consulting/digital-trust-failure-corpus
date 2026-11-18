@@ -24,10 +24,11 @@ class NavigationTests(unittest.TestCase):
 
     def test_examined_version_navigates_to_complete_case_matrix(self):
         pages=build_pages(self.inventory,self.pilot,self.acl)
-        self.assertIn("Full author-side case-examined:** 14",pages["index.md"])
-        self.assertIn("Author case comparisons:** 518",pages["index.md"])
+        self.assertIn("Full author-side case-examined:** 22",pages["index.md"])
+        self.assertIn("Author case comparisons:** 814",pages["index.md"])
         self.assertIn("[37-case author matrix](../trust-tasks-audit-case-examination.md)",pages["audit.md"])
         self.assertIn("[37-case author matrix](../trust-tasks-discovery-case-examination.md)",pages["trust-task-discovery.md"])
+        self.assertIn("[37-case author matrix](../trust-tasks-consent-case-examination.md)",pages["consent.md"])
         self.assertIn("not examined",pages["vta.md"])
 
     def test_no_match_is_not_implicit(self):
