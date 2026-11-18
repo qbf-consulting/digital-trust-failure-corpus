@@ -29,6 +29,38 @@ class AssessmentReportTests(unittest.TestCase):
         self.assertEqual(len(r["families"]),43)
         self.assertIn("not a complete semantic assessment",render(r))
 
+    def test_author_case_dimensions_reconcile(self):
+        r=self.report()
+        s=r["summary"]
+        self.assertEqual(r["schema_version"], "0.2.0")
+        self.assertEqual((s["author_case_examined_versions"], s["author_case_comparisons"]),
+                         (14, 518))
+        self.assertEqual((s["author_conditional_candidates"],
+                          s["author_not_established_from_task"]), (114, 404))
+        complete=[x for x in r["records"] if x["author_case_examination"]["state"] == "author-case-examined"]
+        self.assertEqual(len(complete), 14)
+        self.assertEqual(sum(x["author_case_examination"]["canonical_case_count"] for x in complete), 518)
+        self.assertEqual(sum(x["author_case_examination"]["state"] == "not-examined" for x in r["records"]), 1377)
+        self.assertFalse(any(x["independent_review_state"] != "not-established" for x in complete))
+        self.assertIn("Not established from task source", render(r))
+
+    def test_author_review_cannot_claim_independent_approval(self):
+        from jsonschema import Draft202012Validator, ValidationError
+        schema=json.loads((ROOT / "schemas/trust-tasks-assessment-report.schema.json").read_text())
+        report=self.report()
+        examined=next(x for x in report["records"] if x["author_case_examination"]["state"] == "author-case-examined")
+        examined["author_case_examination"]["independent_acceptance"] = "completed"
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(schema).validate(report)
+
+    def test_author_case_included_by_exact_version_not_by_slug(self):
+        report=self.report()
+        examined={x["type_uri"] for x in report["records"]
+                  if x["author_case_examination"]["state"] == "author-case-examined"}
+        self.assertIn("https://trusttasks.org/spec/audit/list/0.1",examined)
+        self.assertIn("https://trusttasks.org/spec/audit/list/0.2",examined)
+        self.assertNotIn("https://trusttasks.org/spec/acl/grant/0.3",examined)
+
     def test_unreviewed_is_not_no_match(self):
         r=self.report()
         self.assertEqual(sum(x["screening_state"]=="needs-review" for x in r["records"]),1340)

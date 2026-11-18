@@ -48,6 +48,7 @@ nav:
       - Trust Tasks technical assessment report: trust-tasks/assessment-report.md
       - Trust Tasks version navigator: trust-tasks/index.md
       - Trust Tasks review method: trust-tasks-review-method.md
+      - Trust Tasks report schema migration: trust-tasks-machine-report-schema-v0.2.md
       - Trust Tasks ACL research slice: trust-tasks-acl-review.md
       - Trust Tasks consent research slice: trust-tasks-consent-review.md
       - Trust Tasks cross-family screening: trust-tasks-cross-family-review.md
