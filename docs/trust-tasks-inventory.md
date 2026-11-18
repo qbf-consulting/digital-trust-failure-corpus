@@ -22,3 +22,8 @@ Run `python -m tools.validate_trust_tasks_inventory` and `python -m unittest tes
 4. Validate generated documentation against the source records and perform independent semantic review. Execution evidence and deployments remain distinct from crosswalk applicability (see #45, #48 and #134).
 
 **Disposition:** Inventory structurally enumerated at a source pin; **registry publication reconciliation and comprehensive semantic review still open**. No DTF schema or case changes, no independent target execution and no release assertion.
+
+
+## First source-specific ACL review slice
+
+The [ACL screening](trust-tasks-acl-review.md) evaluates seven source-pinned current operation versions against existing DTFC cases; thirteen historical versions remain explicitly pending version-delta review. The screening has no independently executed test evidence and does not close the registry-wide semantic-review gate.
