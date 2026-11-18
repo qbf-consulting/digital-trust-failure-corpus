@@ -181,9 +181,9 @@
           "case_id": "DTF-024",
           "case_version": "0.1.0",
           "disposition": "conditional-candidate",
-          "rationale": "A threshold.ofStep count can be met by nominally distinct artifacts while common control makes an independent-approval claim unproven where the relying governance policy requires independence.",
-          "test_hypothesis": "Supply threshold steps by nominally distinct enrolled issuers controlled by one principal; require a separate independence check before independent-approval PASS.",
-          "authority_boundary": "Numeric enactment step threshold versus governance independence requirement.",
+          "rationale": "Where a ceremony definition uses threshold.ofStep to count approval steps, reaching the numeric threshold does not by itself establish independently controlled approvers if the consuming governance policy requires independence; the source checks duplicate identities and declared multiplicity, not organizational control.",
+          "test_hypothesis": "Use a ceremony threshold specifically over approval steps, provide distinct signed approvals controlled by one operator, and require a separate independence verdict before governance PASS.",
+          "authority_boundary": "Ceremony threshold over approval steps versus materially independent approving authorities.",
           "source_section": "Conformance / de-duplication and threshold"
         },
         {
