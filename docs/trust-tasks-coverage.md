@@ -8,10 +8,10 @@ Registry membership and statuses are source-pinned and CI-reconciled; this page 
 **Original pilot:** 12  
 **ACL source screening:** 20  
 **Consent source screening:** 8  
-**Additional source screening:** 14  
+**Additional source screening:** 15  
 **Overlap:** 3  
-**Distinct source-screened versions:** 51  
-**Not yet source-screened:** 1340  
+**Distinct source-screened versions:** 52  
+**Not yet source-screened:** 1339  
 
 Screened means DTFC-authored research mapping, **not** independent verification or all-case semantic completeness.
 Historical versions do not inherit screened status from a later version.
@@ -46,7 +46,7 @@ Historical versions do not inherit screened status from a later version.
 | `rooms` | 123 | 0 | 0 | 0 | 0 | 0 | 123 |
 | `sync` | 2 | 0 | 0 | 0 | 0 | 0 | 2 |
 | `task-consent` | 4 | 0 | 0 | 0 | 4 | 4 | 0 |
-| `trust-ceremony-receipt` | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| `trust-ceremony-receipt` | 1 | 0 | 0 | 0 | 1 | 1 | 0 |
 | `trust-task-control` | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
 | `trust-task-discovery` | 4 | 0 | 0 | 0 | 4 | 4 | 0 |
 | `trust-task-error` | 6 | 0 | 0 | 0 | 0 | 0 | 6 |

@@ -28,45 +28,47 @@ judgments, also passed in
 | Retired historical versions | 73 |
 | Distinct task slugs | 894 |
 | Top-level families | 43 |
-| Source-screened versions | 51 |
-| Versions requiring source-specific screening | 1,340 |
+| Source-screened versions | 52 |
+| Versions requiring source-specific screening | 1,339 |
 | Independently approved comprehensive semantic reviews | 0 evidenced |
 | Independently maintained consumer executions | 0 evidenced |
 
-The 51 preliminary screenings comprise 12 original pilot versions, 20 ACL-family
-versions, eight Consent-family versions and 14 audit/governance/privileged-approval/
-discovery versions, with three overlaps. An ACL source-version delta study
+The 52 preliminary screenings comprise 12 original pilot versions, 20 ACL-family
+versions, eight Consent-family versions and 15 additional audit/governance/
+privileged-approval/discovery/ceremony-receipt versions, with three overlaps. An ACL source-version delta study
 is separately available for all 13 historical ACL versions. The resulting
 mapping hypotheses retain source anchors, canonical DTFC cases, authority
 boundaries and falsification tests. They are conditional research findings;
 the original screening records do not themselves establish full 37-case
-consideration or independent acceptance; the two new complete-case research
-records below preserve that distinction.
+consideration or independent acceptance; the independently qualified complete-case research records below preserve that distinction.
 
-## Complete author-side case examination of five families
+## Complete author-side case examination of six families
 
-The [audit family case examination](trust-tasks-audit-case-examination.md),
-[capability-governance family case examination](trust-tasks-governance-case-examination.md), and
-[task-consent case examination](trust-tasks-task-consent-case-examination.md), and
-[discovery case examination](trust-tasks-discovery-case-examination.md), and
-[consent case examination](trust-tasks-consent-case-examination.md)
-add **all 37 canonical-case comparisons for each of twenty-two previously source-screened
-versions**. This adds substantive research depth without changing the 51
-preliminary screening count or fabricating independently established failures.
+The [audit](trust-tasks-audit-case-examination.md),
+[consent](trust-tasks-consent-case-examination.md),
+[capability governance](trust-tasks-governance-case-examination.md),
+[privileged task consent](trust-tasks-task-consent-case-examination.md),
+[discovery](trust-tasks-discovery-case-examination.md), and
+[ceremony receipt](trust-tasks-ceremony-receipt-case-examination.md) examinations
+provide all 37 canonical-case comparisons for **23** source-screened task
+versions. The newest case is the previously unscreened
+`trust-ceremony-receipt/0.1`, which also receives a pinned, conditional
+DTFC-026 screening record. These are substantive author-side decisions, not
+independently accepted mappings or observed implementation failures.
 
 | Case-level measure | Author research result |
 |---|---:|
-| Fully case-examined pinned task versions | 22 of 1,391 |
-| Explicit case comparisons | 814 |
-| Conditional candidate applicability cells | 175 |
-| Case comparisons not established by task semantics | 639 |
+| Fully case-examined pinned task versions | 23 of 1,391 |
+| Explicit case comparisons | 851 |
+| Conditional candidate applicability cells | 192 |
+| Case comparisons not established by task semantics | 659 |
 | Previously source-screened versions still lacking full case comparison | 29 |
-| Versions not yet source-screened | 1,340 |
+| Versions not yet source-screened | 1,339 |
 | Independently accepted 37-case dispositions | 0 |
 | Independent consumer executions | 0 |
 
-The 175 cells include overlapping scenarios across task versions. They are
-**not** 175 verified defects, incidents or new DTFC propositions.
+The 192 cells include overlapping scenarios across task versions. They are
+**not** 192 verified defects, incidents or new DTFC propositions.
 `not-established-from-task` is *not* an independently reviewed no-match or
 proof of safety: it means that the task contract alone does not establish
 all preconditions of the canonical failure. A composed deployment can add
@@ -77,6 +79,7 @@ asserting either applicability or non-applicability.
 
 | Boundary | Setup and falsification question | Candidate DTF cases | Control outcome |
 |---|---|---|---|
+| Ceremony completion evidence | Provide recorder-signed payload.complete=true without a held signed terminal step or pinned definition, and request verified completion. | DTF-010, DTF-026, DTF-027, DTF-030 | Return an evidence-limited/indeterminate result rather than a completion PASS. |
 | Audit completeness | Sign a valid first audit page with material contrary evidence on a subsequent page; does the consumer return an exhaustive PASS? | DTF-010, DTF-026 | Follow version-specific continuation and filters or return INDETERMINATE. |
 | Audit provenance | Supply `verified: true` for a restamped/truncated but locally consistent chain; does the auditor assert authenticity? | DTF-010, DTF-025, DTF-027 | Limit to internal integrity and demand independent anchoring for authenticity. |
 | Audit purpose and retention | Reuse a legitimate retrieved tail for member scoring or retain its identifiers after the oversight purpose expires. | DTF-034, DTF-037 | Reject secondary use absent a separate governance basis; enforce bounded retention. |
@@ -139,7 +142,7 @@ state to remain current at the delivery boundary.
 
 The research has **not** produced a defensible mapping/no-match assessment
 across the remaining population. A complete author-side 37-case examination
-now exists for **twenty-two** versions, but the other 29 screened versions and 1,340
+now exists for **twenty-three** versions, but the other 29 screened versions and 1,340
 unscreened versions still lack complete case comparison. Independent semantic
 acceptance and external target execution also remain unestablished. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
