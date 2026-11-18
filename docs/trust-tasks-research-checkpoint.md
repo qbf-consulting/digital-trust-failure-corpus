@@ -45,25 +45,26 @@ records below preserve that distinction.
 
 ## New: complete author-side case examination of two families
 
-The [audit family case examination](trust-tasks-audit-case-examination.md) and
-[capability-governance family case examination](trust-tasks-governance-case-examination.md)
+The [audit family case examination](trust-tasks-audit-case-examination.md) ,
+[capability-governance family case examination](trust-tasks-governance-case-examination.md), and
+[task-consent case examination](trust-tasks-task-consent-case-examination.md)
 add **all 37 canonical-case comparisons for each of six source-screened
 versions**. This is new substantive research depth, not six more versions
 added to the 51 screened or 41 independently established failures.
 
 | Case-level measure | Author research result |
 |---|---:|
-| Fully case-examined pinned task versions | 6 of 1,391 |
-| Explicit case comparisons | 222 |
-| Conditional candidate applicability cells | 41 |
-| Case comparisons not established by task semantics | 181 |
-| Previously source-screened versions still lacking full case comparison | 45 |
+| Fully case-examined pinned task versions | 10 of 1,391 |
+| Explicit case comparisons | 370 |
+| Conditional candidate applicability cells | 78 |
+| Case comparisons not established by task semantics | 292 |
+| Previously source-screened versions still lacking full case comparison | 41 |
 | Versions not yet source-screened | 1,340 |
 | Independently accepted 37-case dispositions | 0 |
 | Independent consumer executions | 0 |
 
-The 41 cells include overlapping scenarios across task versions. They are
-**not** 41 verified defects, incidents or new DTFC propositions.
+The 78 cells include overlapping scenarios across task versions. They are
+**not** 78 verified defects, incidents or new DTFC propositions.
 `not-established-from-task` is *not* an independently reviewed no-match or
 proof of safety: it means that the task contract alone does not establish
 all preconditions of the canonical failure. A composed deployment can add
@@ -79,6 +80,8 @@ asserting either applicability or non-applicability.
 | Audit purpose and retention | Reuse a legitimate retrieved tail for member scoring or retain its identifiers after the oversight purpose expires. | DTF-034, DTF-037 | Reject secondary use absent a separate governance basis; enforce bounded retention. |
 | Capability delegation | Sign an enable request as non-operator, or enable a real companion then write a registry tuple outside `vocabulary.actions`. | DTF-002, DTF-013, DTF-023 | Host checks operator role and rejects out-of-scope delegate action. |
 | Capability lifecycle | Cache enablement, disable handlers, and attempt a later material execution or assert historical invalidity. | DTF-005, DTF-006, DTF-016, DTF-021 | Deny later execution while preserving earlier effective history. |
+| Consent proof versus factor | Use valid WebAuthn evidence without approver-own-DID assertion, or revoke approver before execution. | DTF-013, DTF-017, DTF-021, DTF-023 | Require own-DID proof, current approval eligibility, exact action and state. |
+| Advisory grant notice | Receive an authentic notice without a current stored grant, then resubmit. | DTF-010, DTF-022, DTF-027 | Ignore notice as authority; fail closed on authoritative grant lookup. |
 | Management discovery | Return `status=available`, then try an unauthorized commitment or treat it as enabled. | DTF-010, DTF-018, DTF-028 | Require independent enabled-state and principal authority at execution. |
 
 These are proposed **negative/control test pairs**, not executed
@@ -131,7 +134,7 @@ state to remain current at the delivery boundary.
 
 The research has **not** produced a defensible mapping/no-match assessment
 across the remaining population. A complete author-side 37-case examination
-now exists for **six** versions, but the other 45 screened versions and 1,340
+now exists for **ten** versions, but the other 41 screened versions and 1,340
 unscreened versions still lack complete case comparison. Independent semantic
 acceptance and external target execution also remain unestablished. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
