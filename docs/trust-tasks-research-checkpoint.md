@@ -2,6 +2,8 @@
 
 **Research checkpoint · 18 November 2026 · DTFC issue #135**
 
+> **Historical research checkpoint (18 November 2026).** This page records the earlier registry-wide objective, source census and research status **as of that date**. It is preserved for provenance and is **not** the current project completion contract. Issue [#135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135) subsequently closed under a revised, deliberately bounded scope: the [representative Consent-family study](trust-tasks-representative-consent-study.md), with 296 author-side case comparisons. The 1,339 unscreened and 29 screened-but-incomplete versions are inventory states, **not obligations to finish**. The present research question, limitations and contribution guidance belong to the representative study.
+
 ## Proposition
 
 Every versioned Trust Task in a pinned upstream registry should be traceable to
@@ -29,7 +31,7 @@ judgments, also passed in
 | Distinct task slugs | 894 |
 | Top-level families | 43 |
 | Source-screened versions | 52 |
-| Versions requiring source-specific screening | 1,339 |
+| Versions not screened at this historical checkpoint (not a current work commitment) | 1,339 |
 | Independently approved comprehensive semantic reviews | 0 evidenced |
 | Independently maintained consumer executions | 0 evidenced |
 
@@ -63,7 +65,7 @@ independently accepted mappings or observed implementation failures.
 | Conditional candidate applicability cells | 192 |
 | Case comparisons not established by task semantics | 659 |
 | Previously source-screened versions still lacking full case comparison | 29 |
-| Versions not yet source-screened | 1,339 |
+| Versions not screened at this historical checkpoint | 1,339 |
 | Independently accepted 37-case dispositions | 0 |
 | Independent consumer executions | 0 |
 
@@ -147,7 +149,7 @@ unscreened versions still lack complete case comparison. Independent semantic
 acceptance and external target execution also remain unestablished. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
 
-To claim the full [#135 objective](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135),
+Under the **superseded, exhaustive** interpretation of [#135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135),
 each in-scope version must receive its own source-qualified review or a
 material-equivalence argument with reproducible evidence; non-matches must
 describe the corpus examined; contradictory or missing evidence remains
@@ -156,8 +158,7 @@ challenge. The machine-generated navigator alone cannot satisfy that gate.
 
 ## Publication and reuse decision
 
-**Publish as a reproducible, non-normative research checkpoint. Do not label
-the crosswalk exhaustive and do not close #135 or issue a completeness release.**
+**Historical disposition on 18 November 2026:** publish as a reproducible, non-normative research checkpoint; no exhaustive-completeness release was justified. The earlier instruction to keep #135 open was superseded by its subsequently revised representative-family completion contract.
 
 The result is suitable for requesting targeted external review and for
 adopters seeking concrete negative-test hypotheses. It does not certify the
