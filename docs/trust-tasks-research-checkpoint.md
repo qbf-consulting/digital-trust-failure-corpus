@@ -65,7 +65,7 @@ independently accepted mappings or observed implementation failures.
 | Conditional candidate applicability cells | 192 |
 | Case comparisons not established by task semantics | 659 |
 | Previously source-screened versions still lacking full case comparison | 29 |
-| Versions not screened at this historical checkpoint | 1,339 |
+| Versions not yet source-screened | 1,339 |
 | Independently accepted 37-case dispositions | 0 |
 | Independent consumer executions | 0 |
 
