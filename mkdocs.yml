@@ -45,7 +45,8 @@ nav:
       - Trust Tasks pinned inventory: trust-tasks-inventory.md
       - Trust Tasks coverage: trust-tasks-coverage.md
       - Trust Tasks research checkpoint: trust-tasks-research-checkpoint.md
-      - Trust Tasks technical assessment report: trust-tasks/assessment-report.md
+      - Representative consent-family study: trust-tasks-representative-consent-study.md
+      - Trust Tasks technical assessment report (historical broad-scope checkpoint): trust-tasks/assessment-report.md
       - Trust Tasks version navigator: trust-tasks/index.md
       - Trust Tasks review method: trust-tasks-review-method.md
       - Trust Tasks report schema migration: trust-tasks-machine-report-schema-v0.2.md
