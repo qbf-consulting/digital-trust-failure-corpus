@@ -1,0 +1,222 @@
+{
+  "schema_version": "0.1.0",
+  "catalog_kind": "derived-canonical-predicate-index",
+  "family": "lifecycle",
+  "records": [
+    {
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "title": "revoked-artifact-accepted-as-currently-valid",
+      "source_path": "corpus/lifecycle/DTF-004.json",
+      "source_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+      "proposition": {
+        "statement": "A relying system must not treat an artifact as currently valid after an authoritative revocation has become effective for the decision context."
+      },
+      "preconditions": [
+        "The artifact was valid before a revocation event.",
+        "An authoritative revocation became effective before the relying decision.",
+        "The relying decision asks whether the artifact is valid now."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates current validity using artifact evidence that does not incorporate the effective revocation state."
+      },
+      "evidence_required": [
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence establishing the artifact lifecycle state for the decision context."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Evidence that the revocation source is competent to change the artifact state."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence of revocation effective time and relying decision time."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence sufficient to determine that the lifecycle state is current enough for the decision."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for current validity after an authoritative revocation is known to be effective."
+        },
+        {
+          "condition": "The system cannot establish current revocation state but converts that uncertainty into PASS."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-005",
+      "case_version": "0.1.0",
+      "title": "superseded-artifact-treated-as-current",
+      "source_path": "corpus/lifecycle/DTF-005.json",
+      "source_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+      "proposition": {
+        "statement": "A relying system must not treat a superseded artifact as the current authoritative artifact unless an explicit compatibility or historical-use rule permits that reliance."
+      },
+      "preconditions": [
+        "An artifact was previously authoritative or current.",
+        "A successor artifact or state superseded it before the relying decision.",
+        "The relying decision asks for the current authoritative artifact or state."
+      ],
+      "trigger": {
+        "statement": "The relying system selects or accepts the superseded artifact as current without evaluating the supersession relationship or an applicable compatibility rule."
+      },
+      "evidence_required": [
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence establishing supersession and the current artifact or state."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence establishing when supersession became effective relative to the relying decision."
+        },
+        {
+          "category": "policy",
+          "statement": "Any compatibility or historical-use rule that permits reliance on the superseded artifact."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence linking the supersession statement to a competent source."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for current status solely from a superseded artifact when no applicable compatibility rule permits that reliance."
+        },
+        {
+          "condition": "The system ignores known supersession evidence when selecting the current authoritative artifact."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-006",
+      "case_version": "0.1.0",
+      "title": "current-withdrawal-erases-historical-validity",
+      "source_path": "corpus/lifecycle/DTF-006.json",
+      "source_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+      "proposition": {
+        "statement": "A relying system must not infer that an artifact or event lacked historical validity merely because its authority, status, or availability was later withdrawn, revoked, or superseded."
+      },
+      "preconditions": [
+        "The artifact or event was valid under the applicable rules at historical time t1.",
+        "A later lifecycle event at time t2 changes its current status or availability.",
+        "A relying decision asks whether the artifact or event was valid at t1 rather than whether it is valid now."
+      ],
+      "trigger": {
+        "statement": "The relying system answers a historical-validity question using only the artifact's current withdrawn, revoked, or superseded state."
+      },
+      "evidence_required": [
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence of the artifact state at the historical time and the later lifecycle event."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence distinguishing the historical verification time from the later lifecycle-event time."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence of the rules governing historical validity for the relevant context."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence sufficient to attribute historical and current state assertions to competent sources."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system concludes that the artifact was invalid at the historical time solely because it is withdrawn, revoked, or superseded now."
+        },
+        {
+          "condition": "The system collapses current-state evidence and historical-state evidence into a single undifferentiated validity result."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-031",
+      "case_version": "0.1.0",
+      "title": "resolved-condition-remains-blocking-after-valid-resolution",
+      "source_path": "corpus/lifecycle/DTF-031.json",
+      "source_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+      "proposition": {
+        "statement": "A relying system must not continue to treat a material condition as unresolved after current admissible evidence positively establishes resolution under the applicable policy and authority context."
+      },
+      "preconditions": [
+        "A material condition was previously established as unresolved and blocked or deferred a consequential decision.",
+        "Current admissible evidence later satisfies the applicable resolution requirement.",
+        "The resolution evidence remains valid and current for the decision context."
+      ],
+      "trigger": {
+        "statement": "The relying system continues to block, defer, or report the condition as unresolved because it preserves the earlier unresolved state without reassessing current admissible evidence."
+      },
+      "evidence_required": [
+        {
+          "category": "provenance",
+          "statement": "Evidence linking the unresolved condition to the later resolution event."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence that the claimed resolution remains current for the relying decision."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence distinguishing the time the condition was established, the time resolution became effective, and the time of the relying decision."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence that the resolution event satisfies the applicable resolution rule."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Where authority is material, evidence that the authority state supporting resolution is valid for the action and evaluation time."
+        },
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence showing the condition transition from unresolved to resolved or the reason it must be reopened."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system continues to block solely because the condition was once unresolved even though current admissible resolution evidence is sufficient."
+        },
+        {
+          "condition": "A valid resolution event is ignored without evidence that it became stale, revoked, conflicting, superseded, or otherwise invalid."
+        },
+        {
+          "condition": "The system cannot distinguish legitimate continued blocking from failure to re-evaluate the resolved condition."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    }
+  ]
+}

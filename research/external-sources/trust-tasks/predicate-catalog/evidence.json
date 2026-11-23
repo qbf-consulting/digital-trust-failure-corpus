@@ -1,0 +1,398 @@
+{
+  "schema_version": "0.1.0",
+  "catalog_kind": "derived-canonical-predicate-index",
+  "family": "evidence",
+  "records": [
+    {
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "title": "missing-evidence-interpreted-as-pass",
+      "source_path": "corpus/evidence/DTF-010.json",
+      "source_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+      "proposition": {
+        "statement": "A relying system must not interpret the absence or unavailability of evidence required to establish a proposition as positive evidence that the proposition is satisfied."
+      },
+      "preconditions": [
+        "The relying decision requires identified evidence to establish a trust proposition.",
+        "One or more required evidence items are absent, unavailable, or unresolved.",
+        "No competent policy explicitly defines absence of that evidence as satisfying the proposition."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates the proposition while required evidence is missing or unavailable."
+      },
+      "evidence_required": [
+        {
+          "category": "policy",
+          "statement": "Evidence identifying what information is required to establish the proposition for the decision context."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence or diagnostic state establishing which required information is absent, unavailable, or unresolved."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS because required evidence is absent, unavailable, or could not be retrieved."
+        },
+        {
+          "condition": "The system treats failure to observe a disqualifying condition as proof that the positive trust proposition is established."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-011",
+      "case_version": "0.1.0",
+      "title": "unverifiable-evidence-freshness-treated-as-current",
+      "source_path": "corpus/evidence/DTF-011.json",
+      "source_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+      "proposition": {
+        "statement": "A relying system must not treat evidence as current when the freshness needed for the decision context cannot be established from available temporal or lifecycle information."
+      },
+      "preconditions": [
+        "The relying decision requires evidence to be current within a bounded or otherwise meaningful freshness condition.",
+        "The available evidence does not establish when the relevant state was observed, produced, or last verified.",
+        "The relying system cannot otherwise establish that no material state change has occurred."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates current state while the age or freshness of required evidence is unresolved."
+      },
+      "evidence_required": [
+        {
+          "category": "freshness",
+          "statement": "Evidence establishing the freshness condition required for the relying decision."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence identifying relevant observation, production, verification, or effective times."
+        },
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence sufficient to determine whether a material state change could invalidate the evidence used."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for a current-state proposition when required evidence freshness cannot be established."
+        },
+        {
+          "condition": "The system assumes evidence remains current indefinitely because no newer evidence was successfully retrieved."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-012",
+      "case_version": "0.1.0",
+      "title": "decision-evidence-policy-version-mismatch",
+      "source_path": "corpus/evidence/DTF-012.json",
+      "source_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+      "proposition": {
+        "statement": "A relying system must not represent a trust decision as satisfying one policy or policy version when the material evidence or evaluation was actually produced under a different, incompatible, or unidentified policy context."
+      },
+      "preconditions": [
+        "A relying decision asserts compliance with an identified policy or policy version.",
+        "Material evidence or evaluation results were produced under another policy context, or their policy context cannot be established.",
+        "No compatibility rule establishes that the evidence remains valid under the asserted policy context."
+      ],
+      "trigger": {
+        "statement": "The relying system consumes evidence or a prior decision without reconciling the policy context under which that evidence was produced with the policy asserted for the current decision."
+      },
+      "evidence_required": [
+        {
+          "category": "policy",
+          "statement": "Evidence identifying the policy or policy version asserted for the current decision and the policy context used to produce material evidence."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence linking the material evaluation or evidence artifact to the policy context under which it was produced."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence sufficient to determine whether a policy change occurred between evidence production and the current decision."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS while representing compliance with policy version B from evidence materially evaluated only under incompatible policy version A."
+        },
+        {
+          "condition": "The system cannot establish the policy context of material evidence but attributes that evidence to the current asserted policy and returns PASS."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-025",
+      "case_version": "0.1.0",
+      "title": "provenance-depth-mistaken-for-assurance-depth",
+      "source_path": "corpus/evidence/DTF-025.json",
+      "source_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+      "proposition": {
+        "statement": "Additional provenance hops, transformations, credentials, signatures, or attestations must not be treated as stronger assurance unless they establish an additional material assurance proposition rather than merely lengthening or repeating the evidence chain."
+      },
+      "preconditions": [
+        "An evidence chain contains multiple provenance, transformation, credential, signature, or attestation hops.",
+        "The relying system attributes greater confidence or assurance to the chain because it is longer.",
+        "The additional hops do not establish independence, corroboration, a new material fact, or another relevant assurance property."
+      ],
+      "trigger": {
+        "statement": "The relying system returns PASS or increases assurance solely because the provenance chain contains more steps or artifacts."
+      },
+      "evidence_required": [
+        {
+          "category": "provenance",
+          "statement": "Evidence describing the origin and derivation of every material hop in the chain."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence showing whether additional hops establish independence, corroboration, or another material assurance property."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence identifying the additional assurance proposition, if any, established by each added hop."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system increases assurance because the provenance chain is longer even though no additional material proposition is established."
+        },
+        {
+          "condition": "Repeated transformation or re-attestation of the same underlying source is treated as independent corroboration."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "title": "selective-valid-evidence-mistaken-for-complete-evidence",
+      "source_path": "corpus/evidence/DTF-026.json",
+      "source_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+      "proposition": {
+        "statement": "Individually valid disclosed evidence items must not be treated as a complete evidentiary basis when material omitted, contradictory, or unavailable evidence could change the relying decision and completeness has not been established for the scoped proposition."
+      },
+      "preconditions": [
+        "The disclosed evidence items are individually valid.",
+        "The relying decision requires a materially complete evidentiary basis for the scoped proposition.",
+        "Material counter-evidence may be omitted, hidden, unavailable, or otherwise unestablished.",
+        "No rule establishes that the disclosed set is complete enough for the proposition."
+      ],
+      "trigger": {
+        "statement": "The relying system converts validity of the disclosed subset into PASS for evidentiary completeness or sufficiency."
+      },
+      "evidence_required": [
+        {
+          "category": "policy",
+          "statement": "Evidence defining what completeness or sufficiency means for the scoped relying proposition."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence establishing how the disclosed evidence set was selected and whether material sources are omitted or unavailable."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence that the disclosed set is complete enough for the scoped claim, or an explicit diagnostic that completeness is unresolved."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for a completeness-dependent proposition merely because every disclosed item is individually valid."
+        },
+        {
+          "condition": "Known or potentially material omitted evidence is ignored without a rule showing that it is outside the scoped proposition."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-027",
+      "case_version": "0.1.0",
+      "title": "workflow-success-mistaken-for-assurance-success",
+      "source_path": "corpus/evidence/DTF-027.json",
+      "source_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+      "proposition": {
+        "statement": "Successful workflow execution, schema validation, test execution, signature verification, CI completion, or artifact generation must not by itself establish the substantive trust or assurance proposition that the process was intended to examine."
+      },
+      "preconditions": [
+        "A workflow, validator, test, signature check, CI run, or artifact-generation process completes successfully.",
+        "The substantive trust or assurance proposition requires additional evidence, interpretation, or semantic judgment.",
+        "Material evidence remains missing, unresolved, conflicting, or outside the successful process's scope."
+      ],
+      "trigger": {
+        "statement": "The system or operator treats operational process success as substantive assurance PASS."
+      },
+      "evidence_required": [
+        {
+          "category": "other",
+          "statement": "Evidence identifying the substantive trust or assurance proposition being claimed."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence distinguishing process execution records from evidence supporting the substantive proposition."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence defining what must be established before the substantive proposition may be reported as PASS."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "A green CI or validator result is represented as assurance PASS even though required substantive evidence was never evaluated."
+        },
+        {
+          "condition": "Successful signature or schema verification is treated as proof of authorization, legitimacy, safety, or another broader proposition outside the check's semantics."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-029",
+      "case_version": "0.1.0",
+      "title": "decision-transition-basis-misattributed",
+      "source_path": "corpus/evidence/DTF-029.json",
+      "source_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+      "proposition": {
+        "statement": "A relying system must not represent a material decision transition as an authority change when the causal basis was instead a change in evidence, policy, lifecycle state, correction, or evaluation context."
+      },
+      "preconditions": [
+        "A material decision changes from a prior outcome to a different outcome.",
+        "The change can be caused by one or more distinguishable inputs such as authority, evidence, policy, lifecycle state, correction, or evaluation context.",
+        "The actual causal basis is not an authority grant, transfer, or revocation."
+      ],
+      "trigger": {
+        "statement": "The system records, communicates, or relies on the changed decision as though authority changed merely because the outcome became more or less permissive."
+      },
+      "evidence_required": [
+        {
+          "category": "provenance",
+          "statement": "Evidence linking the prior and current decision to the material inputs evaluated for each."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Evidence establishing whether authority actually changed across the decision transition."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence of the governing policy and whether policy applicability or version changed."
+        },
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence of any lifecycle-state change material to the transition."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence identifying the causal transition category and any correction or evaluation-context change."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "A decision record asserts an authority change while the only evidenced material change is evidence, policy, lifecycle state, correction, or evaluation context."
+        },
+        {
+          "condition": "A more permissive outcome is treated as proof that new authority was granted when no authority event can be established."
+        },
+        {
+          "condition": "The system cannot reconstruct why the outcome changed but reports the transition as verified authority change."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-030",
+      "case_version": "0.1.0",
+      "title": "unresolved-material-condition-cleared-without-resolution-evidence",
+      "source_path": "corpus/evidence/DTF-030.json",
+      "source_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+      "proposition": {
+        "statement": "A relying system must not treat a material unresolved condition as resolved solely because workflow progressed, actors agreed, confidence increased, an assertion was repeated, or processing advanced without evidence of an admissible resolution event."
+      },
+      "preconditions": [
+        "A material condition has been explicitly established as unresolved for a consequential decision or action.",
+        "The condition has identified evidence, authority, policy, lifecycle, correction, or other admissible resolution requirements.",
+        "No admissible resolution event has yet been established."
+      ],
+      "trigger": {
+        "statement": "The workflow advances or receives non-resolution signals and the system clears the unresolved condition without evidence that its material basis changed."
+      },
+      "evidence_required": [
+        {
+          "category": "provenance",
+          "statement": "Evidence establishing the unresolved condition, its identifier, and the basis on which it was created."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence identifying what events or evidence are admissible to resolve the condition."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence distinguishing condition establishment, workflow progression, and claimed resolution times."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence of the actual resolution event and its causal category."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS after workflow progression when no admissible resolution event is evidenced."
+        },
+        {
+          "condition": "Peer pressure, repetition, consensus, confidence, or reputation is treated as resolution evidence."
+        },
+        {
+          "condition": "The unresolved condition disappears from retained state without a reconstructable resolution basis."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    }
+  ]
+}
