@@ -48,6 +48,12 @@ DTFC does not define the normative semantics of external protocols, standards, g
 
 Canonical project source: [GitHub repository](https://github.com/qbf-consulting/digital-trust-failure-corpus).
 
+## Representative Trust Tasks research outcome
+
+The [consent-family assurance study](trust-tasks-representative-consent-study.md) is the current, bounded external applicability research deliverable. It consolidates eight pinned Trust Task versions, 296 case-level author judgments and source-qualified negative/control tests. It **does not** assert a defect in the upstream task specification, independent acceptance or observed implementation failures.
+
+The [generated Trust Tasks navigator](https://qbf-consulting.github.io/digital-trust-failure-corpus/trust-tasks/) retains the 1,391-version upstream inventory for discovery; its remaining versions are **not** a commitment to exhaustive assessment. The source-code [navigator landing page](trust-tasks/index.md) explains why the full index is generated at documentation build time.
+
 ## Version-pinned external applicability research
 
 The [Trust Tasks crosswalk](trust-tasks-crosswalk.md) documents a bounded twelve-task screening against existing DTF cases. Its judgments are non-authoritative research and are not external target execution evidence. The upstream Trust Tasks specification remains authoritative for task behavior.

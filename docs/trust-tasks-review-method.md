@@ -1,10 +1,14 @@
 # Trust Tasks applicability review and reuse
 
+## Research publication scope (24 November 2026)
+
+The current publication objective is the [representative Consent family study](trust-tasks-representative-consent-study.md), **not** completed applicability across the registry. The eight source-pinned Consent versions each have an author-side 37-case examination (296 case judgments), with conditional candidate boundaries and honest not-established-from-source outcomes. The other family records remain historical source-qualified research; they need not be expanded to meet this bounded publication outcome.
+
+The 1,391-version pinned inventory and generated navigator remain available for discovery and reproducibility. Their unscreened versions are **not a committed backlog** under this study and must not appear as reviewed-no-match. Future expansions require a new question, defined in-scope versions and a proportionate review contract. Independent semantic challenge and live target execution are separate assurance levels; neither can be claimed from author research, structural checks or CI.
+
 ## Objective
 
-For each pinned, versioned Trust Task, identify an evidence-qualified existing
-DTFC failure proposition at a concrete consumer trust boundary, or substantiate
-a no-match after inspecting the full canonical case corpus. Separate registry
+For each **selected in-scope** pinned, versioned Trust Task, identify evidence-qualified existing DTFC failure propositions at a concrete consumer trust boundary, and document when the source alone does not establish their complete preconditions. A deployment-level no-match requires additional evidence and review. Separate registry
 enumeration, preliminary screening, independent semantic review and execution.
 
 The [versioned navigator](trust-tasks/index.md) covers every pinned registry
