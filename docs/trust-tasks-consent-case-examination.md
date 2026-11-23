@@ -1,8 +1,10 @@
-# Consent operations × DTFC: complete author-side case examination
+# Consent operations × DTFC: source-pinned case matrix and technical supplement
 
 **18 November 2026 · Tracked by [#135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135)**  
 **Upstream source:** [Trust Tasks registry commit f21a98e](https://github.com/trustoverip/dtgwg-trust-tasks-tf/tree/f21a98ec8383352d18629a08dd5dd23935456142)  
 **Machine evidence:** [consent-case-examination.json](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/consent-case-examination.json).
+
+> **Reading guide:** This is the detailed source/case accounting underlying the [representative Consent research study](trust-tasks-representative-consent-study.md). Start with the primary study for family selection, analytical design, conclusions, limitations and contribution steps. This supplement retains the original author-side decisions and their negative/control hypotheses; it does not add independent evaluation.
 
 ## Scope
 
