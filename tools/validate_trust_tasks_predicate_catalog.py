@@ -25,7 +25,7 @@ SOURCE_FIELDS = {
 
 
 def git_blob(content):
-    header = b"blob " + str(len(content)).encode("ascii") + b"\\0"
+    header = b"blob " + str(len(content)).encode("ascii") + bytes([0])
     return hashlib.sha1(header + content).hexdigest()
 
 
