@@ -3,7 +3,7 @@
 
 **Research checkpoint · 24 November 2026 · QBF Consulting LLP · Non-normative**
 
-**Scope:** Eight pinned `consent/*` task versions in the [Trust Tasks registry](https://github.com/trustoverip/dtgwg-trust-tasks-tf/tree/f21a98ec8383352d18629a08dd5dd23935456142), at upstream commit `f21a98ec8383352d18629a08dd5dd23935456142`. **DTFC authority:** [37 canonical failure propositions](../corpus/index.md). **Reproducible evidence:** [296 case/version judgments](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/consent-case-examination.json), [source-specific consent screening](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/consent-review.json), [review method](trust-tasks-review-method.md). [Full per-task examination](trust-tasks-consent-case-examination.md).
+**Scope:** Eight pinned `consent/*` task versions in the [Trust Tasks registry](https://github.com/trustoverip/dtgwg-trust-tasks-tf/tree/f21a98ec8383352d18629a08dd5dd23935456142), at upstream commit `f21a98ec8383352d18629a08dd5dd23935456142`. **DTFC authority:** [37 canonical failure propositions](corpus/index.md). **Reproducible evidence:** [296 case/version judgments](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/consent-case-examination.json), [source-specific consent screening](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/consent-review.json), [review method](trust-tasks-review-method.md). [Full per-task examination](trust-tasks-consent-case-examination.md).
 
 ## Executive determination
 
