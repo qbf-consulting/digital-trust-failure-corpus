@@ -1,8 +1,9 @@
 """Fail-closed method-validation ledger for pinned Trust Tasks semantic deltas.
 
 This validates author-record provenance and known delta controls, NOT normative
-equivalence of arbitrary upstream specifications. No inherited case judgment is
-authorized by this module. Existing family validators remain authoritative.
+equivalence of arbitrary upstream specifications. Predicate-scoped inheritance
+requires explicit author-side source evidence; it is not independent acceptance.
+Existing family validators remain authoritative.
 """
 import json
 from pathlib import Path
@@ -10,6 +11,7 @@ from pathlib import Path
 from tools.validate_trust_tasks_inventory import MANIFEST, ROOT
 from tools.trust_tasks_author_case_index import load as load_author_cases
 from tools.build_trust_tasks_pages import case_versions
+from tools.validate_trust_tasks_predicate_catalog import check as check_predicate_catalog
 
 PATH = ROOT / "research/external-sources/trust-tasks/semantic-delta-controls.json"
 PREFIX = "https://trusttasks.org/spec/"
@@ -20,6 +22,7 @@ ALLOWED_DOMAINS = {
 
 
 def check(data, inventory=None, author_cases=None, cases=None):
+    check_predicate_catalog()
     inventory = json.loads(MANIFEST.read_text()) if inventory is None else inventory
     author_cases = load_author_cases(inventory) if author_cases is None else author_cases
     cases = case_versions() if cases is None else cases
