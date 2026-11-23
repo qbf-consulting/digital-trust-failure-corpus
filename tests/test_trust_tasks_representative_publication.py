@@ -32,7 +32,7 @@ class RepresentativeResearchPublicationTests(unittest.TestCase):
         self.assertIn("296 case/version judgments", doc)
         self.assertIn("not a statistically representative sample", doc)
         self.assertIn("No independent external reviewer", doc)
-        self.assertIn("not** assert exhaustive applicability", doc)
+        self.assertIn("does **not** claim exhaustive applicability", doc)
 
     def test_navigation_and_readme_discover_the_study(self):
         self.assertIn("trust-tasks-representative-consent-study.md",
