@@ -52,6 +52,15 @@ candidate in a known consuming system. Case-level rationale and negative tests
 are necessary but do not establish a deployed consumer response, global
 non-applicability or an independent reviewer decision.
 
+
+## Semantic-delta method validation (Gate B, issue #135)
+
+The source-pinned [delta control ledger](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/semantic-delta-controls.json) records six **known material version changes** already described in the six complete-family author examinations: audit pagination, consent incremental sync, task-consent action binding and supplemental proof, and discovery framework-version and acceptance-window/expiry revisions. Each comparison binds both exact spec/schema Git blobs to the pinned inventory, known delta sections, canonical case versions and candidate predicates requiring challenge.
+
+Run `python -m tools.validate_trust_tasks_semantic_deltas` to check these controls. The regression tests deliberately introduce source drift, semantic-version drift, missing anchors, incorrect marker claims, cross-contract comparisons, false reviewer acceptance and unjustified inheritance. The validator rejects all inheritance, even when source versions have identical case outcomes: source- and predicate-scoped **positive equivalence evidence** has not yet been established. This is a method-control gate, not a claim that six changes were independently verified by a tool or that all unaffected predicates can be reused.
+
+Further research must add explicit source-checked unchanged-boundary evidence and independent challenge before introducing an inheritance mode. No corpus definition, public machine report contract, Gate B case-completion numerator, or independent-review status changes through this control ledger.
+
 ## Reviewer acceptance path
 
 1. Open the exact upstream Type URI and source commit, including its metadata,
