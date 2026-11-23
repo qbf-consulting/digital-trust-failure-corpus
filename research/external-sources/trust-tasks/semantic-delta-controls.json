@@ -1,0 +1,173 @@
+{
+  "schema_version": "0.1.0",
+  "upstream": {
+    "repository": "trustoverip/dtgwg-trust-tasks-tf",
+    "commit": "f21a98ec8383352d18629a08dd5dd23935456142"
+  },
+  "assessment_kind": "author-side-method-control-no-inheritance",
+  "method": "Author-side material-delta regression controls anchored to exact existing research records and upstream Git blobs. Candidate predicates are challenges, not an exhaustive effect analysis. All other predicates remain subject to the original independent author assessments; no new judgment is inherited by this ledger. Existing canonical case definitions and report contract remain unchanged.",
+  "controls": [
+    {
+      "predecessor": "https://trusttasks.org/spec/audit/list/0.1",
+      "successor": "https://trusttasks.org/spec/audit/list/0.2",
+      "source_binding": {
+        "predecessor_spec_blob": "5faf3f68b6a706baefc3cb4a55d834995c49b2df",
+        "predecessor_schema_blob": "3c79a95c753cf1a789b7f8099fae16b2597414ae",
+        "successor_spec_blob": "5ece99f6c57884bc7f65941f606d6598ae15c494",
+        "successor_schema_blob": "4512b76162dc565899f849d4a10c88caaf35f7a1"
+      },
+      "source_sections": [
+        "Changes from 0.1",
+        "Paging"
+      ],
+      "change_domain": "pagination",
+      "change_claim": "Version 0.2 changes request pageSize to limit, response cursor/truncated to nextCursor; continuation must use the 0.2 contract. The other privacy and authority controls remain separately source-checked; no entire-version equivalence is asserted.",
+      "required_delta_tokens": [
+        "nextCursor"
+      ],
+      "candidate_predicates_to_recheck": [
+        "DTF-010",
+        "DTF-026"
+      ],
+      "inheritance": [],
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established"
+    },
+    {
+      "predecessor": "https://trusttasks.org/spec/consent/list/1.0",
+      "successor": "https://trusttasks.org/spec/consent/list/1.1",
+      "source_binding": {
+        "predecessor_spec_blob": "08b580afcebdd5384fbca900e392b1b003eb63e1",
+        "predecessor_schema_blob": "6a3f3b0296f0a2a203bbaad683ca1d2744a3b61e",
+        "successor_spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+        "successor_schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd"
+      },
+      "source_sections": [
+        "Changes from 1.0",
+        "Conformance"
+      ],
+      "change_domain": "incremental-sync",
+      "change_claim": "1.1 renames the 1.0 request since cursor to syncToken and response cursor to nextSyncToken, and requires tokens to be issued by the consumer; the incremental semantics remain similar but the wire fields are incompatible.",
+      "required_delta_tokens": [
+        "syncToken",
+        "nextSyncToken"
+      ],
+      "candidate_predicates_to_recheck": [
+        "DTF-001",
+        "DTF-010",
+        "DTF-021",
+        "DTF-026"
+      ],
+      "inheritance": [],
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established"
+    },
+    {
+      "predecessor": "https://trusttasks.org/spec/task-consent/decision/0.1",
+      "successor": "https://trusttasks.org/spec/task-consent/decision/0.2",
+      "source_binding": {
+        "predecessor_spec_blob": "3700a869369509088bb86a49ee5d7ebe8905aa7f",
+        "predecessor_schema_blob": "095004db715b7331b0309e370935f5fd13ca3db4",
+        "successor_spec_blob": "dab6b60c6f782b9f29123e9f6ec3ea97475f7fa5",
+        "successor_schema_blob": "4263dd84b78c24595df84e11e52aec4cba1de198"
+      },
+      "source_sections": [
+        "What changed from 0.1",
+        "Authorization"
+      ],
+      "change_domain": "action-binding",
+      "change_claim": "0.2 adds optional evidence (WebAuthn or approverSigned) and actionId for parked VTC actions. The required approver-own-DID assertionMethod proof remains the authorization and evidence is additional, not a substitute. 0.2 allows executor to run parked VTC action at threshold; do not assume entire-version equivalence.",
+      "required_delta_tokens": [
+        "actionId",
+        "assertionMethod"
+      ],
+      "candidate_predicates_to_recheck": [
+        "DTF-013",
+        "DTF-017",
+        "DTF-023",
+        "DTF-025"
+      ],
+      "inheritance": [],
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established"
+    },
+    {
+      "predecessor": "https://trusttasks.org/spec/trust-task-discovery/0.1",
+      "successor": "https://trusttasks.org/spec/trust-task-discovery/0.2",
+      "source_binding": {
+        "predecessor_spec_blob": "d6b10086a60d697f85937bfd9edc3246fbee077a",
+        "predecessor_schema_blob": "4873ea48fbe301277eaf7d257287db55269cb7d8",
+        "successor_spec_blob": "357e9743aa20aeab5d06517726727275d3805aa0",
+        "successor_schema_blob": "78baeebfff4929a8d5fc64e30deb39ad734518dc"
+      },
+      "source_sections": [
+        "Relationship to 0.1",
+        "Conformance"
+      ],
+      "change_domain": "framework-version",
+      "change_claim": "0.2 changes frameworkVersion from MAJOR.MINOR to MAJOR.MINOR.PATCH; 0.1 and 0.2 responses are not wire-interchangeable for strict schema consumers, while discovery remains advisory.",
+      "required_delta_tokens": [
+        "MAJOR.MINOR.PATCH"
+      ],
+      "candidate_predicates_to_recheck": [
+        "DTF-010",
+        "DTF-028"
+      ],
+      "inheritance": [],
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established"
+    },
+    {
+      "predecessor": "https://trusttasks.org/spec/trust-task-discovery/0.2",
+      "successor": "https://trusttasks.org/spec/trust-task-discovery/0.3",
+      "source_binding": {
+        "predecessor_spec_blob": "357e9743aa20aeab5d06517726727275d3805aa0",
+        "predecessor_schema_blob": "78baeebfff4929a8d5fc64e30deb39ad734518dc",
+        "successor_spec_blob": "1fb075fc2676b17d35874894ac209361b553ef3a",
+        "successor_schema_blob": "f9e60305bb3314f309677832217afd9859ef99ff"
+      },
+      "source_sections": [
+        "Acceptance window",
+        "Relationship to 0.2 and 0.1"
+      ],
+      "change_domain": "acceptance-window",
+      "change_claim": "0.3 adds optional acceptanceWindow with maxAgeSeconds/clockSkewSeconds; 0.2's closed schema rejects the new field and the window governs issuedAt even if expiresAt is present. Do not assume wire or temporal equivalence.",
+      "required_delta_tokens": [
+        "acceptanceWindow"
+      ],
+      "candidate_predicates_to_recheck": [
+        "DTF-011",
+        "DTF-021"
+      ],
+      "inheritance": [],
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established"
+    },
+    {
+      "predecessor": "https://trusttasks.org/spec/trust-task-discovery/0.3",
+      "successor": "https://trusttasks.org/spec/trust-task-discovery/0.4",
+      "source_binding": {
+        "predecessor_spec_blob": "1fb075fc2676b17d35874894ac209361b553ef3a",
+        "predecessor_schema_blob": "f9e60305bb3314f309677832217afd9859ef99ff",
+        "successor_spec_blob": "baa82a57786a763664a12a77f860182c6128ba55",
+        "successor_schema_blob": "96e07911c88959dc5ed546241c142d08bfd8d1b7"
+      },
+      "source_sections": [
+        "Acceptance window",
+        "Relationship to 0.3, 0.2 and 0.1"
+      ],
+      "change_domain": "expiry-horizon",
+      "change_claim": "0.4 adds optional expiryHorizonSeconds to acceptanceWindow to distinguish documents with expiresAt from maxAgeSeconds-only cases; 0.3's closed schema rejects this field, and 0.3's issuedAt-only window cannot be presumed equivalent.",
+      "required_delta_tokens": [
+        "expiryHorizonSeconds"
+      ],
+      "candidate_predicates_to_recheck": [
+        "DTF-011",
+        "DTF-021"
+      ],
+      "inheritance": [],
+      "independent_acceptance": "not-established",
+      "target_execution": "not-established"
+    }
+  ]
+}

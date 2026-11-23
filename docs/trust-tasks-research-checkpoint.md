@@ -142,7 +142,7 @@ state to remain current at the delivery boundary.
 
 The research has **not** produced a defensible mapping/no-match assessment
 across the remaining population. A complete author-side 37-case examination
-now exists for **twenty-three** versions, but the other 29 screened versions and 1,340
+now exists for **twenty-three** versions, but the other 29 screened versions and 1,339
 unscreened versions still lack complete case comparison. Independent semantic
 acceptance and external target execution also remain unestablished. No numerical score here is a coverage-of-risk or safety score.
 The source registry's many draft versions may change after the pinned commit.
