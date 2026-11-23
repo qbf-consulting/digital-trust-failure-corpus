@@ -20,6 +20,10 @@ The rendered documentation and generated corpus catalogue are published through 
 
 The Pages site is a presentation layer over this repository. Individual case pages are generated directly from the canonical JSON under `corpus/` during the documentation build; the rendered site does not become a second source of truth.
 
+## Representative Trust Tasks applicability research
+
+The current research deliverable is a [source-pinned Consent family assessment](docs/trust-tasks-representative-consent-study.md), covering eight consent versions against the 37 existing DTF failure propositions. It is author-side, non-normative research with falsifiable consumer-boundary hypotheses, not a certification or observed implementation audit. The full registry census is maintained as a reproducible source index, **not as a commitment to exhaustively assess all 1,391 pinned versions**. The [generated version navigator](https://qbf-consulting.github.io/digital-trust-failure-corpus/trust-tasks/) is published through GitHub Pages; the [tracked landing file](docs/trust-tasks/index.md) explains the distinction.
+
 ## Core design principles
 
 - Failure propositions should be falsifiable.
