@@ -64,7 +64,7 @@ class RepresentativeResearchPublicationTests(unittest.TestCase):
     def test_generated_navigator_links_primary_study(self):
         inventory = json.loads(MANIFEST.read_text())
         pages = build_pages(inventory, json.loads(PILOT.read_text()), json.loads(ACL.read_text()))
-        self.assertIn("representative Consent", pages["index.md"])
+        self.assertIn("Representative Consent", pages["index.md"])
         self.assertIn("../trust-tasks-representative-consent-study.md", pages["index.md"])
         self.assertIn("not** an obligation", pages["index.md"])
 
