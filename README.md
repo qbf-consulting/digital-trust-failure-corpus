@@ -96,7 +96,7 @@ A [three-source, 37-case semantic screening](docs/external-semantic-screening.md
 
 The [eight directly inspected external records](docs/inspected-external-records.md) include case-specific W3C T4/DTF-032 and T18/DTF-035 provenance bindings; these are informative research mappings, not evidence of third-party adoption.
 
-The [Trust Tasks registry applicability research checkpoint](docs/trust-tasks-research-checkpoint.md) provides the pinned 1,391-version census, a generated per-version navigator, and 29 preliminary source-screened versions. It explicitly does not claim exhaustive semantic review or independent implementation assurance; see [issue #135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135).
+The [historical Trust Tasks registry checkpoint](docs/trust-tasks-research-checkpoint.md) preserves the earlier 1,391-version pinned census, preliminary screening records and generated version navigator. The earlier exhaustive research objective was explicitly superseded; [issue #135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135) closed with the representative Consent-family study, not with a claim of registry-wide semantic coverage. The **current report, experimental design and contribution guidance** are in the [representative Consent study](docs/trust-tasks-representative-consent-study.md).
 
 ## Authoring and adoption
 
@@ -126,9 +126,7 @@ Digital Trust Failure Corpus is an open QBF Consulting project intended to be co
 
 Cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and revoked mandates, iterative scope expansion, stale or mismatched approvals, reputation/capability substitution, and unreconstructable historical commitment authority. They reuse the existing failure-case contract; no schema expansion was required.
 
-## Version-pinned Trust Tasks applicability research
+## Historical Trust Tasks research milestones (archived context)
 
-A [bounded twelve-task Trust Tasks crosswalk](docs/trust-tasks-crosswalk.md) screens five operational families against existing DTFC propositions at an immutable upstream revision. The [machine-readable mappings](research/external-sources/trust-tasks/mapping.json) include task-level rationale, test hypotheses and authority boundaries. These are informative research judgments, not executed target tests, specification defects, external adoption, or canonical case extensions. Independent target and consumer evidence remain open in #48 and #45.
+The initial [12-task pilot](docs/trust-tasks-crosswalk.md) and [pinned registry inventory](docs/trust-tasks-inventory.md) established bounded screening and the complete upstream source census. Early counts in those documents represent **their dated research stages**, not the current assessment scope or a commitment to evaluate every registry entry. The active reader-facing deliverable is the [eight-version Consent case study](docs/trust-tasks-representative-consent-study.md); the earlier issue #135 was closed under that revised contract.
 
-
-The [pinned Trust Tasks source inventory](docs/trust-tasks-inventory.md) structurally accounts for 1,391 versioned spec/schema pairs (12 previously screened, 1,379 not yet reviewed). The pinned published registry was subsequently [reconciled in CI](https://github.com/qbf-consulting/digital-trust-failure-corpus/actions/runs/44263516864), with 1,318 draft and 73 retired versions; this is not a claim of exhaustive semantic applicability. Follow-up is tracked in [#135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135).
