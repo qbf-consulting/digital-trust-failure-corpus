@@ -34,6 +34,40 @@ class RepresentativeResearchPublicationTests(unittest.TestCase):
         self.assertIn("No independent external reviewer", doc)
         self.assertIn("does **not** claim exhaustive applicability", doc)
 
+    def test_study_defines_design_criteria_and_inference_bounds(self):
+        doc = (ROOT / "docs/trust-tasks-representative-consent-study.md").read_text()
+        required = (
+            "## What was examined, and why it matters",
+            "## Selection rationale and transferability",
+            "## Design of the analytical experiment",
+            "### Worked example: a revocation after an authorized delivery grant",
+            "## Preliminary conclusions and evidentiary limits",
+            "## How to challenge, enrich or contribute",
+            "not executed tests",
+            "not 296 independent experiments",
+            "Do not infer",
+            "Independent semantic review",
+        )
+        for phrase in required:
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, doc)
+        self.assertNotIn("The original exhaustive objective is complete", doc)
+
+    def test_historical_scope_is_explicitly_superseded(self):
+        checkpoint = (ROOT / "docs/trust-tasks-research-checkpoint.md").read_text()
+        self.assertIn("Historical research checkpoint", checkpoint)
+        self.assertIn("not obligations to finish", checkpoint)
+        self.assertIn("superseded", checkpoint)
+        inventory = (ROOT / "docs/trust-tasks-inventory.md").read_text()
+        self.assertIn("Original follow-on gates (superseded research plan)", inventory)
+
+    def test_generated_navigator_links_primary_study(self):
+        inventory = json.loads(MANIFEST.read_text())
+        pages = build_pages(inventory, json.loads(PILOT.read_text()), json.loads(ACL.read_text()))
+        self.assertIn("Representative Consent", pages["index.md"])
+        self.assertIn("../trust-tasks-representative-consent-study.md", pages["index.md"])
+        self.assertIn("not** an obligation", pages["index.md"])
+
     def test_navigation_and_readme_discover_the_study(self):
         self.assertIn("trust-tasks-representative-consent-study.md",
                       (ROOT / "mkdocs.yml").read_text())

@@ -1,8 +1,8 @@
 # Trust Tasks applicability review and reuse
 
-## Research publication scope (24 November 2026)
+## Current scope and document roles (24 November 2026)
 
-The current publication objective is the [representative Consent family study](trust-tasks-representative-consent-study.md), **not** completed applicability across the registry. The eight source-pinned Consent versions each have an author-side 37-case examination (296 case judgments), with conditional candidate boundaries and honest not-established-from-source outcomes. The other family records remain historical source-qualified research; they need not be expanded to meet this bounded publication outcome.
+The published research outcome is the [representative Consent family study](trust-tasks-representative-consent-study.md), **not** completed applicability across the registry. Its [source-by-source case examination](trust-tasks-consent-case-examination.md) is the technical supplement; this method describes how its judgments can be challenged. The [November registry checkpoint](trust-tasks-research-checkpoint.md) is a historical census/earlier research status, not the current completion target. The eight source-pinned Consent versions each have an author-side 37-case examination (296 case judgments), with conditional candidate boundaries and honest not-established-from-source outcomes. The other family records remain historical source-qualified research; they need not be expanded to meet this bounded publication outcome.
 
 The 1,391-version pinned inventory and generated navigator remain available for discovery and reproducibility. Their unscreened versions are **not a committed backlog** under this study and must not appear as reviewed-no-match. Future expansions require a new question, defined in-scope versions and a proportionate review contract. Independent semantic challenge and live target execution are separate assurance levels; neither can be claimed from author research, structural checks or CI.
 
@@ -67,7 +67,11 @@ The source-pinned [delta control ledger](https://github.com/qbf-consulting/digit
 
 Run `python -m tools.validate_trust_tasks_semantic_deltas` to check these controls. The regression tests deliberately introduce source drift, semantic-version drift, missing anchors, incorrect marker claims, cross-contract comparisons, false reviewer acceptance and unjustified inheritance. The validator permits only an individually source-justified, unchanged case decision with exact source sections, matching case-version and author-case reasoning, explicit negative control and no overlap with the recorded material-delta challenge. The first such record is **DTF-002 for audit/list/0.1 → 0.2**, where both pinned versions preserve the community-wide audit-read authority requirement despite changing pagination fields. This is **one author-side predicate-scoped reuse argument**, not independent acceptance, an additional fully examined task version, or whole-version equivalence. The validator establishes integrity and admissible evidence shape; a reviewer must still substantively challenge the normative interpretation of both upstream documents.
 
-Further research must validate more unchanged-boundary claims and test whether this approach reduces *fresh* examination requirements across the 29-version screened backlog. Ambiguous comparisons remain unresolved for inheritance. No corpus definition, public machine report contract, Gate B case-completion numerator, or independent-review status changes through this control ledger.
+If a new source-driven study is commissioned, further work **could** validate more unchanged-boundary claims and assess whether this approach reduces fresh examinations. There is no obligation to work through the previous 29-version screened backlog. Ambiguous comparisons remain unresolved for inheritance. No corpus definition, public machine report contract, Gate B case-completion numerator, or independent-review status changes through this control ledger.
+
+## Replicating or challenging a bounded judgment
+
+This research is a **documentary semantic assessment** of authoritative task contracts, not a test execution. The unit is an exact source/version and canonical DTF case. First establish the local proposition justified by the task, then identify any stronger relying proposition. Compare the canonical preconditions one by one. Record an explicit, source-bounded conditional hypothesis and negative/control pair, or state why the task source alone does not establish all preconditions. Neither outcome establishes deployed behavior. See [the study's analytical design](trust-tasks-representative-consent-study.md#design-of-the-analytical-experiment) and [contribution pathway](trust-tasks-representative-consent-study.md#how-to-challenge-enrich-or-contribute).
 
 ## Reviewer acceptance path
 
@@ -90,8 +94,8 @@ Further research must validate more unchanged-boundary claims and test whether t
    not independently maintained external evidence.
 
 The published [coverage summary](trust-tasks-coverage.md) remains a preliminary,
-non-normative research finding. It is shareable as a source-complete versioned
-registry index, not as completed task-to-failure assurance.
+non-normative **historical census and screening register**. It is shareable as a source-complete versioned
+registry index, not as completed task-to-failure assurance or an outstanding research work plan.
 
 ## Unresolved independent challenge
 
