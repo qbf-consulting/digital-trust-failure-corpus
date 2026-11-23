@@ -15,7 +15,7 @@ class SemanticDeltaControlsTests(unittest.TestCase):
         summary = check(self.data)
         self.assertEqual(summary["material_delta_controls"], 6)
         self.assertEqual(summary["challenged_predicate_pairs"], 16)
-        self.assertEqual(summary["inheritance_authorized"], 0)
+        self.assertEqual(summary["inheritance_authorized"], 1)
         self.assertEqual(summary["independently_accepted"], 0)
 
     def test_altered_normative_source_blob_fails_closed(self):
@@ -75,6 +75,31 @@ class SemanticDeltaControlsTests(unittest.TestCase):
         data = copy.deepcopy(self.data)
         data["controls"][0]["independent_acceptance"] = "accepted"
         with self.assertRaisesRegex(ValueError, "fabricated independent"):
+            check(data)
+
+    def test_inherited_case_cannot_be_reclassified_as_changed(self):
+        data = copy.deepcopy(self.data)
+        data["controls"][0]["candidate_predicates_to_recheck"].append("DTF-002")
+        with self.assertRaisesRegex(ValueError, "inheritance not approved"):
+            check(data)
+
+    def test_inherited_case_requires_exact_source_sections(self):
+        data = copy.deepcopy(self.data)
+        data["controls"][0]["inheritance"][0]["successor_section"] = "Conformance"
+        with self.assertRaisesRegex(ValueError, "source-specific sections"):
+            check(data)
+
+    def test_inherited_case_requires_an_executable_falsification_proposition(self):
+        data = copy.deepcopy(self.data)
+        data["controls"][0]["inheritance"][0]["negative_control"] = ""
+        with self.assertRaisesRegex(ValueError, "substantive source argument"):
+            check(data)
+
+    def test_inherited_case_cannot_be_duplicated(self):
+        data = copy.deepcopy(self.data)
+        data["controls"][0]["inheritance"].append(
+            copy.deepcopy(data["controls"][0]["inheritance"][0]))
+        with self.assertRaisesRegex(ValueError, "duplicated"):
             check(data)
 
     def test_duplicate_control_rejected(self):
