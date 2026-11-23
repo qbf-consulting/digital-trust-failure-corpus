@@ -53,6 +53,10 @@ are necessary but do not establish a deployed consumer response, global
 non-applicability or an independent reviewer decision.
 
 
+## Canonical proposition catalog (derived, non-authoritative)
+
+The machine-readable [predicate catalog](https://github.com/qbf-consulting/digital-trust-failure-corpus/tree/main/research/external-sources/trust-tasks/predicate-catalog) preserves, without paraphrase, the canonical proposition, preconditions, trigger, evidence requirements, falsification and expected dispositions of every one of the 37 DTF cases. Each entry includes its case version, repository path and exact Git blob identity. It is an **index**, not a replacement for the original `corpus/<family>/DTF-NNN.json` authority. Run `python -m tools.validate_trust_tasks_predicate_catalog` to reconcile all five category indexes against the current canonical corpus. Any change to a case's semantics or source bytes fails closed, even if the author forgets to bump the case version; regenerate and reassess dependent judgments explicitly rather than treating the stale catalog as accepted.
+
 ## Semantic-delta method validation (Gate B, issue #135)
 
 The source-pinned [delta control ledger](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/semantic-delta-controls.json) records six **known material version changes** already described in the six complete-family author examinations: audit pagination, consent incremental sync, task-consent action binding and supplemental proof, and discovery framework-version and acceptance-window/expiry revisions. Each comparison binds both exact spec/schema Git blobs to the pinned inventory, known delta sections, canonical case versions and candidate predicates requiring challenge.
