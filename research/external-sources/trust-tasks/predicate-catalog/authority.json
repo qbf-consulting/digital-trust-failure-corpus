@@ -1,0 +1,554 @@
+{
+  "schema_version": "0.1.0",
+  "catalog_kind": "derived-canonical-predicate-index",
+  "family": "authority",
+  "records": [
+    {
+      "case_id": "DTF-001",
+      "case_version": "0.1.0",
+      "title": "stale-authority-evidence-after-revocation",
+      "source_path": "corpus/authority/DTF-001.json",
+      "source_blob": "42ca99ce075461d13f584fdf610fac90c2149371",
+      "proposition": {
+        "statement": "A relying system must not treat authority evidence that predates a material revocation or withdrawal as proof of current authority unless an explicit historical-verification rule makes that evidence relevant to the question being asked."
+      },
+      "preconditions": [
+        "Authority evidence was produced or observed at time t1 while the authority was valid.",
+        "A revocation or withdrawal became effective at time t2 after t1.",
+        "A relying decision at time t3 after t2 asks whether the authority is current."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates current authority using evidence whose observation or production time predates the material revocation or withdrawal."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Evidence establishing the authority state relevant to the relying decision."
+        },
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence of the revocation or withdrawal and the state it establishes."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence sufficient to determine whether the authority evidence is current for the decision context."
+        },
+        {
+          "category": "temporal",
+          "statement": "Times for evidence production or observation, revocation effectiveness, and the relying decision."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for current authority solely from evidence known to predate the material revocation or withdrawal."
+        },
+        {
+          "condition": "The system cannot establish evidence freshness but converts that uncertainty into PASS."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "title": "delegated-authority-exceeds-permitted-scope",
+      "source_path": "corpus/authority/DTF-002.json",
+      "source_blob": "fb68049b6586d5faf655df78d310582dac36924f",
+      "proposition": {
+        "statement": "A delegated actor must not exercise or be credited with authority beyond the scope that the authoritative delegation chain permits."
+      },
+      "preconditions": [
+        "A principal or other competent authority grants a bounded scope to a delegate.",
+        "The delegate attempts or is credited with an action outside that bounded scope.",
+        "The relying decision depends on the delegation as authority for the attempted action."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates an action whose requested scope exceeds, is not included in, or cannot be derived from the authoritative delegation scope."
+      },
+      "evidence_required": [
+        {
+          "category": "relationship",
+          "statement": "Evidence of the delegation chain linking the actor to the authority source."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Evidence that the authority source is competent for the delegated scope."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence defining the permitted delegated scope and any attenuation or downstream-delegation constraints."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence sufficient to establish that the scope statement originates from the authoritative delegation source."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for an action whose scope is outside the scope established by the authoritative delegation chain."
+        },
+        {
+          "condition": "The system treats an omitted, unresolved, or unverified delegation scope as unrestricted authority."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-003",
+      "case_version": "0.1.0",
+      "title": "delegation-survives-loss-of-authority-source",
+      "source_path": "corpus/authority/DTF-003.json",
+      "source_blob": "3f64fecf0499481667c11231760a673f9dc4b0d8",
+      "proposition": {
+        "statement": "A delegation must not continue to establish current authority when the authority source on which that delegation depends has been withdrawn, revoked, or cannot currently be established, unless an explicit rule preserves that authority for the decision context."
+      },
+      "preconditions": [
+        "A delegation derives its authority from an identified upstream authority source.",
+        "That authority source is later withdrawn, revoked, or becomes unverifiable for the current decision context.",
+        "A relying decision subsequently attempts to use the dependent delegation as current authority."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates a delegation after the state of its required authority source has materially changed or can no longer be established."
+      },
+      "evidence_required": [
+        {
+          "category": "relationship",
+          "statement": "Evidence showing that the delegation depends on the identified authority source."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Current evidence for the authority source from which the delegation derives authority."
+        },
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence of withdrawal, revocation, replacement, or unresolved lifecycle state affecting the authority source."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence establishing the relevant authority-source state before the relying decision."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence sufficient to determine that the authority-source state used by the relying decision is current enough for that decision."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS from the dependent delegation after its required authority source has been established as withdrawn or revoked and no preservation rule applies."
+        },
+        {
+          "condition": "The system cannot establish the current state of the required authority source but treats the dependent delegation as current authority."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-013",
+      "case_version": "0.1.0",
+      "title": "valid-signature-mistaken-for-commitment-authority",
+      "source_path": "corpus/authority/DTF-013.json",
+      "source_blob": "8877d7eaa9109f10363578fd8caa302a825ebcc3",
+      "proposition": {
+        "statement": "A valid signature or authenticated agent identity must not be treated as proof that the principal authorized the exact material commitment."
+      },
+      "preconditions": [
+        "The actor can authenticate and produce a valid signature.",
+        "A material commitment is presented for reliance.",
+        "Action-specific principal-derived authority has not been established."
+      ],
+      "trigger": {
+        "statement": "The relying system accepts the commitment because the message signature verifies."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Evidence of the principal-derived mandate or authority applicable to the exact action."
+        },
+        {
+          "category": "cryptographic",
+          "statement": "Evidence binding the signature to the exact action, without treating signature validity as authorization."
+        },
+        {
+          "category": "policy",
+          "statement": "The policy that determines action-specific commitment authority."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS solely because the signature or actor identity verifies."
+        },
+        {
+          "condition": "The system cannot establish the mandate but converts the missing evidence into PASS."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-014",
+      "case_version": "0.1.0",
+      "title": "expired-mandate-accepted-at-commitment",
+      "source_path": "corpus/authority/DTF-014.json",
+      "source_blob": "05c7ae25aef6423d4d37a0c7711fcabc8bef56e7",
+      "proposition": {
+        "statement": "A mandate that expired before a material commitment was made must not authorize that new commitment."
+      },
+      "preconditions": [
+        "A mandate previously authorized the actor.",
+        "The mandate has an explicit validity end.",
+        "The material commitment occurs after that end."
+      ],
+      "trigger": {
+        "statement": "The relying system accepts the commitment using the previously valid but expired mandate."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Authority state applicable at the commitment time."
+        },
+        {
+          "category": "temporal",
+          "statement": "Mandate validity interval and material commitment time."
+        },
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence establishing expiry and any superseding authority."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS when commitment time is later than the mandate validity end."
+        },
+        {
+          "condition": "The system checks mandate validity only at session start and not at the material transition."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-015",
+      "case_version": "0.1.0",
+      "title": "authority-limit-exceeded-during-iterative-action",
+      "source_path": "corpus/authority/DTF-015.json",
+      "source_blob": "1a5a30361dcf32852c52e02c21e5fd090d7a9dbf",
+      "proposition": {
+        "statement": "An iterative exchange must not permit a later offer or action to exceed the actor's mandate merely because earlier actions were in scope."
+      },
+      "preconditions": [
+        "The actor has a bounded mandate.",
+        "The interaction permits multiple proposals or revisions.",
+        "A later material action exceeds a value, counterparty, field or other mandate constraint."
+      ],
+      "trigger": {
+        "statement": "A later counteroffer or revised action is accepted without re-evaluating the material constraints."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Current authority applicable at the material transition."
+        },
+        {
+          "category": "policy",
+          "statement": "Constraint policy and evaluated results for the exact action."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence linking the final action to the authority evaluation rather than an earlier interaction state."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The final commitment is PASS even though a material constraint is exceeded."
+        },
+        {
+          "condition": "Authority is checked only once at interaction initiation."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-016",
+      "case_version": "0.1.0",
+      "title": "revocation-ignored-during-active-agent-interaction",
+      "source_path": "corpus/authority/DTF-016.json",
+      "source_blob": "59fe4963e4d802e8e4e9eba889e21fabb340a28d",
+      "proposition": {
+        "statement": "Revocation effective before a new material commitment must prevent that commitment even when the surrounding agent interaction began while authority was valid."
+      },
+      "preconditions": [
+        "An agent interaction began under valid authority.",
+        "The authority is revoked while the interaction remains active.",
+        "A new material commitment is attempted after revocation."
+      ],
+      "trigger": {
+        "statement": "The interaction continues to admit commitments using cached or session-start authority state."
+      },
+      "evidence_required": [
+        {
+          "category": "lifecycle-state",
+          "statement": "Revocation event and effective time."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence that status was rechecked at the material transition."
+        },
+        {
+          "category": "temporal",
+          "statement": "Interaction start, revocation and commitment times."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "A post-revocation commitment is PASS because the session predated revocation."
+        },
+        {
+          "condition": "Stale cached authority state is treated as current beyond policy."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-017",
+      "case_version": "0.1.0",
+      "title": "approval-bound-to-wrong-or-stale-action",
+      "source_path": "corpus/authority/DTF-017.json",
+      "source_blob": "07a9fcd3948b3d1e07f49c3d2ce668d1b8a35f10",
+      "proposition": {
+        "statement": "An approval must not authorize a material commitment when it covers a different, superseded or stale action than the one being admitted."
+      },
+      "preconditions": [
+        "Policy requires additional human or organizational approval.",
+        "An approval artifact exists.",
+        "The commitment action differs materially from the action bound to the approval or the approval is stale."
+      ],
+      "trigger": {
+        "statement": "The relying system treats presence of any approval as sufficient and admits the changed commitment."
+      },
+      "evidence_required": [
+        {
+          "category": "cryptographic",
+          "statement": "Evidence binding approval to the exact action or canonical action digest."
+        },
+        {
+          "category": "temporal",
+          "statement": "Approval validity and material commitment time."
+        },
+        {
+          "category": "policy",
+          "statement": "Approval threshold and binding rules."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "A mismatched action digest still produces PASS."
+        },
+        {
+          "condition": "A superseded approval is reused after the material action changes."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-018",
+      "case_version": "0.1.0",
+      "title": "reputation-or-capability-substituted-for-authority",
+      "source_path": "corpus/authority/DTF-018.json",
+      "source_blob": "71116863ae3b2130955965691189af39871b7eee",
+      "proposition": {
+        "statement": "Reputation, capability advertisement, technical ability or assurance posture must not enlarge or substitute for principal-derived authority to create a material commitment."
+      },
+      "preconditions": [
+        "The actor has a favorable reputation, capability claim, or assurance result.",
+        "The exact principal-derived commitment authority is absent or narrower than the requested action."
+      ],
+      "trigger": {
+        "statement": "The relying system admits the commitment because a non-authority signal is favorable."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Evidence of actual principal-derived authority."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence that reputation/capability/assurance inputs remain advisory or technically scoped rather than authorization grants."
+        },
+        {
+          "category": "policy",
+          "statement": "Policy showing which inputs can establish permission."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system derives PASS from reputation without an authority grant."
+        },
+        {
+          "condition": "Capability to execute is treated as authorization to commit."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-019",
+      "case_version": "0.1.0",
+      "title": "historical-commitment-authority-unreconstructable",
+      "source_path": "corpus/authority/DTF-019.json",
+      "source_blob": "b4ba4d5b4811158241375cb713a7c2133d2caf3c",
+      "proposition": {
+        "statement": "A consequential commitment cannot be reliably defended when the system cannot reconstruct the mandate, policy, status, approval and exact action evaluated at the original commitment time."
+      },
+      "preconditions": [
+        "A material commitment was previously admitted or denied.",
+        "A later audit, dispute or review asks what authority existed at that historical time.",
+        "One or more decision inputs or provenance references are unavailable or overwritten."
+      ],
+      "trigger": {
+        "statement": "The system presents current authority state or an agent explanation as though it proves the historical decision basis."
+      },
+      "evidence_required": [
+        {
+          "category": "temporal",
+          "statement": "Historical commitment/evaluation time distinct from reconstruction time."
+        },
+        {
+          "category": "provenance",
+          "statement": "References to the exact mandate, policy, action and decision artifacts used."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Historical authority/status evidence or an explicit statement that it cannot be established."
+        },
+        {
+          "category": "relationship",
+          "statement": "Approval or delegation lineage relevant to the historical decision."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "Current state is substituted for historical state without qualification."
+        },
+        {
+          "condition": "Missing historical evidence is silently represented as verified historical authority."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-028",
+      "case_version": "0.1.0",
+      "title": "authority-laundering-through-non-authoritative-signals",
+      "source_path": "corpus/authority/DTF-028.json",
+      "source_blob": "e38aa35bad7a88baed68770c97f2c6ebffd6abc2",
+      "proposition": {
+        "statement": "A relying system must not treat communication, repetition, consensus, endorsement, aggregation, projection, discovery, reputation, capability, or unrelated authority as establishing authority that cannot be traced to a competent authority source and applicable scope."
+      },
+      "preconditions": [
+        "One or more non-authoritative signals are available to the relying system.",
+        "The authority required for the consequential action is absent, narrower, out of scope, or otherwise not positively established.",
+        "The signals may be repeated, aggregated, endorsed, projected, or presented by actors with reputation, capability, or unrelated authority."
+      ],
+      "trigger": {
+        "statement": "The relying system treats the combined or transformed non-authoritative signals as sufficient authority for the consequential action."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Evidence identifying the competent authority source and the authority actually held for the requested action."
+        },
+        {
+          "category": "relationship",
+          "statement": "Evidence of any delegation path and its applicable scope."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence preserving which source produced each signal and what authority, if any, that source possessed."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence that repetition, aggregation, endorsement, projection, discovery, reputation, capability, or consensus did not amplify authority."
+        },
+        {
+          "category": "policy",
+          "statement": "Policy identifying which inputs are capable of establishing authorization."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS because multiple non-authoritative actors repeat or agree with an instruction."
+        },
+        {
+          "condition": "Reputation, capability, discovery, endorsement, projection, or aggregation causes the evaluated authority to exceed the authority established by competent provenance."
+        },
+        {
+          "condition": "Authority for one scope is treated as authority for an unrelated requested scope without a valid delegation or governing rule."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    }
+  ]
+}
