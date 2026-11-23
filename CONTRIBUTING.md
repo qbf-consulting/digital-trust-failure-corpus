@@ -15,6 +15,12 @@ For a substantive new case or semantic change, open an issue first. The issue sh
 
 Repository work follows a bounded **Issue → implementation → tests → PR → CI → merge** sequence. Trivial editorial corrections may use a lighter path.
 
+## Challenging an external applicability research judgment
+
+The [representative Consent-family study](docs/trust-tasks-representative-consent-study.md#how-to-challenge-enrich-or-contribute) is an existing research output, not a request to complete every Trust Tasks registry version. To challenge a judgment, open a **bounded issue** identifying the exact upstream task Type URI/version, pinned spec and schema, canonical DTF ID/version, existing claim, and a concrete competing source interpretation. State a falsifiable negative/control pair. A valid contribution may disprove a candidate; it need not add one.
+
+For execution evidence, include target and version, configuration/policy, event sequence and timing, expected and observed decisions, reproducible fixtures/commands and privacy-safe provenance. Distinguish synthetic experiments from independent external executions. A reviewer contribution should record which exact task/case judgments were independently assessed, disagreements and the review outcome. Neither a source interpretation nor a green CI run is independent assurance by itself. Sensitive deployment evidence belongs in the process described by [SECURITY.md](SECURITY.md).
+
 ## Adding a case
 
 1. Read `docs/authoring-cases.md` and `docs/taxonomy.md`.
