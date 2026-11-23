@@ -40,11 +40,9 @@ The selection was not based on a claim that Consent is the **highest-risk**, mos
 
 **Selection criteria:** complete pinned family membership; full existing canonical case accounting; meaningful cross-component reliance; a demonstrable version-specific distinction; and sufficient negative/control hypotheses to challenge without inventing implementation evidence. A future family study should document its own purpose and why existing Consent findings cannot answer that question before undertaking another full matrix.
 
-## Why this family is a meaningful representative
+## Evidence population and assessment states
 
-Consent is a useful stress test for the DTFC method because it involves multiple independently meaningful actors: an operator or approver, a context administrator, a Verifiable-Trust Agent (VTA) maintaining authoritative grants, an enrolled messaging bridge enforcing decisions, and a relying delivery process. It crosses authority, evidence, temporal state, composition and privacy boundaries, and has a source-pinned breaking change between `consent/list/1.0` and `1.1`. Its breadth demonstrates the method's ability to distinguish observed task behavior from unsupported downstream reliance. It is **purposefully selected**, not a statistically representative sample, and cannot support prevalence or safety claims across other task families.
-
-All eight versions already have explicit author-side consideration of every canonical DTF case. No additional speculative mappings were generated for this synthesis.
+The selected corpus consists of the exact eight Consent task versions, each considered against every existing canonical DTF case. No additional speculative mappings were generated for this synthesis. **It is not a statistically representative sample**: repeated judgments for closely related operations or versions are dependent observations, not independent evidence that failure is more likely.
 
 | Pinned task version | Role in the consent system | Conditional case judgments | Cases not established from task alone |
 |---|---|---:|---:|
@@ -150,13 +148,11 @@ The following are **interpretations supported by the pinned task semantics and t
 
 The current evidence warrants a **reproducible, non-normative assessment method and bounded candidate test agenda**. It does not warrant scores for risk prevalence, conformance, implementation maturity, completeness of the entire registry, independent semantic approval, or effectiveness of controls in actual deployments. Inference beyond the selected Consent family requires a fresh rationale and appropriate source/implementation evidence.
 
-## Assessment method and acceptance boundaries
+## Evidence authority and assurance boundaries
 
-The study used the existing 37 canonical DTF propositions, not an invented consent-specific failure taxonomy. Each source version has its own immutable upstream specification/schema blob and case-version pins. Each author judgment records a conditional candidate with authority boundary and falsification hypothesis, or a reason the isolated task source does not establish the full canonical preconditions. The [canonical predicate catalog](https://github.com/qbf-consulting/digital-trust-failure-corpus/tree/main/research/external-sources/trust-tasks/predicate-catalog) provides a derived, drift-checked index of those propositions; it does not supersede their canonical JSON.
+The [canonical predicate catalog](https://github.com/qbf-consulting/digital-trust-failure-corpus/tree/main/research/external-sources/trust-tasks/predicate-catalog) is a derived, drift-checked index of the existing 37 DTF cases; its authority remains with the canonical JSON case files. Exact task source/schema Git blobs and canonical case-version pins provide traceability. The research sidecar records author judgments, not an invented consent-specific failure taxonomy.
 
-The study's **claim is author-side, source-specific applicability analysis**, not formal implementation conformance. No independent external reviewer has accepted the findings; no real VTA/bridge deployment was executed against these negative/control tests. Failing a suggested negative test in an actual consumer would be evidence of that consumer's behavior, not automatic proof of a normative upstream defect. A successfully executed synthetic or CI test likewise does not certify real deployments.
-
-The family was selected after the earlier author-side family assessments for mechanism diversity and research maturity. It is not a representative *sample in a statistical sense*, and the study does not estimate failure frequency, severity or absence across the Trust Tasks registry. Other existing family matrices remain useful independent research resources, but this publication makes no assertion about registry-wide semantic review completion.
+The study's **claim is author-side, source-specific applicability analysis**, not formal implementation conformance. No independent external reviewer has accepted the findings; no real VTA/bridge deployment was executed against these negative/control tests. A failure seen in one implementation would support a bounded observation about that implementation, not an automatic upstream defect. A passing synthetic or CI check likewise cannot certify external deployment behavior. Other existing family matrices remain useful research resources, but their existence does not establish registry-wide semantic completion.
 
 ## How to challenge, enrich or contribute
 
