@@ -74,8 +74,9 @@ def check(data, inventory=None, author_cases=None, cases=None):
                 raise ValueError("material delta marker absent")
         if not row.get("required_delta_tokens"):
             raise ValueError("no semantic change markers")
-        if row.get("inheritance") != []:
-            raise ValueError("inheritance not approved by validation controls")
+        inherited = row.get("inheritance", [])
+        if not isinstance(inherited, list):
+            raise ValueError("inheritance not approved without case-specific evidence")
         affected = row.get("candidate_predicates_to_recheck", [])
         if not affected or len(affected) != len(set(affected)) or not set(affected) <= set(cases):
             raise ValueError("missing or unknown canonical challenge predicate")
@@ -88,6 +89,29 @@ def check(data, inventory=None, author_cases=None, cases=None):
         if any(prior[c]["case_version"] != cases[c] or latter[c]["case_version"] != cases[c]
                for c in cases):
             raise ValueError("canonical case revision drift")
+        inherited_ids = set()
+        for assertion in inherited:
+            cid = assertion.get("case_id")
+            if cid in inherited_ids or cid not in cases or cid in affected:
+                raise ValueError("inheritance not approved for affected, duplicated or unknown case")
+            inherited_ids.add(cid)
+            if assertion.get("mode") != "source-justified-inherited":
+                raise ValueError("inheritance not approved without scoped provenance")
+            if any(len(assertion.get(k, "")) < 75 for k in
+                   ("unchanged_normative_requirement", "semantic_justification", "negative_control")):
+                raise ValueError("inheritance not approved without substantive source argument")
+            if (assertion.get("predecessor_section") != prior[cid].get("source_section")
+                or assertion.get("successor_section") != latter[cid].get("source_section")
+                or not assertion.get("predecessor_section")):
+                raise ValueError("inheritance not approved without source-specific sections")
+            # Literal judgment preservation is necessary, but not sufficient,
+            # for semantic equivalence. The positive source claim is author-side
+            # evidence, never independent review or proof of source equality.
+            semantic_fields = ("disposition", "rationale", "authority_boundary",
+                               "test_hypothesis", "case_version")
+            if any(prior[cid].get(key) != latter[cid].get(key)
+                   for key in semantic_fields):
+                raise ValueError("inheritance not approved after changed case judgment")
         if row.get("independent_acceptance") != "not-established":
             raise ValueError("fabricated independent acceptance")
         if row.get("target_execution") != "not-established":
@@ -95,7 +119,7 @@ def check(data, inventory=None, author_cases=None, cases=None):
     return {
         "material_delta_controls": len(controls),
         "challenged_predicate_pairs": sum(len(r["candidate_predicates_to_recheck"]) for r in controls),
-        "inheritance_authorized": 0,
+        "inheritance_authorized": sum(len(r["inheritance"]) for r in controls),
         "independently_accepted": 0,
     }
 
