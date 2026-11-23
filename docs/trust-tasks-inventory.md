@@ -1,5 +1,7 @@
 # Trust Tasks source inventory and review gate (issue #135)
 
+> **Historical inventory gate.** This document preserves the source-census and early-screening milestones as recorded. Its “follow-on gates” describe the original plan, subsequently superseded by the [representative Consent study](trust-tasks-representative-consent-study.md) and revised [#135 completion contract](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135). Unscreened versions are not a current work backlog; the inventory is reusable discovery evidence.
+
 This record is an **inventory baseline**, not a complete semantic crosswalk. The prior [12-task pilot](trust-tasks-crosswalk.md) remains a separately bounded assessment and the [canonical DTF cases](corpus/index.md) remain unchanged.
 
 ## Pinned source and discovery
@@ -14,7 +16,7 @@ The inventory retains the original **12 sample-screened** versions (15 prior jud
 
 Run `python -m tools.validate_trust_tasks_inventory` and `python -m unittest tests.test_trust_tasks_inventory -v`. The validator checks pinned provenance shape, path identity, duplicates, inventory cardinality and exact reconciliation with the original pilot; it **does not independently fetch the upstream tree or substantively inspect all task prose**.
 
-## Follow-on gates
+## Original follow-on gates (superseded research plan)
 
 1. **Completed:** pinned upstream registry generation and exact membership/status reconciliation (run 44263516864).
 2. Define reviewed/no-match/blocked rationale and version-delta records from actual source inspection. Review a full representative family before scaling to the remaining inventory.
