@@ -1,0 +1,412 @@
+{
+  "schema_version": "0.1.0",
+  "catalog_kind": "derived-canonical-predicate-index",
+  "family": "composition",
+  "records": [
+    {
+      "case_id": "DTF-007",
+      "case_version": "0.1.0",
+      "title": "false-independence-from-common-control",
+      "source_path": "corpus/composition/DTF-007.json",
+      "source_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+      "proposition": {
+        "statement": "A relying system must not treat multiple evidence items as independent corroboration when they resolve to a common controlling authority or common dependency that materially undermines the independence claim."
+      },
+      "preconditions": [
+        "Two or more evidence items are presented as independent support for a proposition.",
+        "The evidence items share a controlling authority, dependency, or provenance path material to the proposition.",
+        "The relying decision gives additional weight because the evidence appears independent."
+      ],
+      "trigger": {
+        "statement": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent."
+      },
+      "evidence_required": [
+        {
+          "category": "composition",
+          "statement": "Evidence describing dependencies and relationships among the evidence sources being composed."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence sufficient to trace each asserted source to its controlling or originating authority."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Evidence identifying the authority or authorities whose control is material to the independence claim."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS because it counts materially dependent evidence as independent corroboration."
+        },
+        {
+          "condition": "The system cannot establish source independence but treats separate presentation as proof of independence."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-008",
+      "case_version": "0.1.0",
+      "title": "conflicting-authoritative-sources-collapse-to-pass",
+      "source_path": "corpus/composition/DTF-008.json",
+      "source_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+      "proposition": {
+        "statement": "A relying system must not collapse materially conflicting authoritative evidence into PASS merely because at least one authoritative source supports the desired proposition."
+      },
+      "preconditions": [
+        "Two or more sources are authoritative for aspects of the relying decision.",
+        "Their current evidence materially conflicts for the proposition being evaluated.",
+        "No applicable precedence, reconciliation, or conflict-resolution rule resolves the disagreement."
+      ],
+      "trigger": {
+        "statement": "The relying system evaluates the proposition while authoritative conflict remains unresolved."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Evidence establishing the authority and scope of each materially relevant source."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence exposing the conflicting assertions in the context in which they are composed."
+        },
+        {
+          "category": "policy",
+          "statement": "Any applicable precedence, reconciliation, or conflict-resolution rule for the sources."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence sufficient to establish that the conflicting source states are current enough for comparison."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS by selecting a supportive authoritative source while silently ignoring an unresolved conflicting authoritative source."
+        },
+        {
+          "condition": "The system interprets absence of a conflict-resolution rule as permission to choose whichever authoritative source produces PASS."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-009",
+      "case_version": "0.1.0",
+      "title": "undeclared-transitive-trust-crosses-boundary",
+      "source_path": "corpus/composition/DTF-009.json",
+      "source_blob": "bfccad840128a91048842172c50945098ba2815b",
+      "proposition": {
+        "statement": "A relying system must not infer that trust, recognition, accreditation, or authority is transitive across another actor or registry boundary unless a competent rule explicitly permits that transitivity for the relevant scope."
+      },
+      "preconditions": [
+        "Actor or authority A recognises B for a stated scope.",
+        "B recognises C for some scope or proposition.",
+        "No competent rule has established that A's recognition of B extends transitively to C for the relying decision."
+      ],
+      "trigger": {
+        "statement": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion."
+      },
+      "evidence_required": [
+        {
+          "category": "relationship",
+          "statement": "Evidence of the declared relationships among the actors or authorities in the chain."
+        },
+        {
+          "category": "authority-state",
+          "statement": "Evidence establishing the authority and scope of each actor that participates in the recognition chain."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence of any competent rule that permits, constrains, or prohibits transitive recognition for the relevant scope."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence showing how separate recognition relationships are being composed into the relying conclusion."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule."
+        },
+        {
+          "condition": "The system treats an undeclared transitivity policy as permissive rather than unresolved or prohibited."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-020",
+      "case_version": "0.1.0",
+      "title": "semantic-ownership-ambiguous-at-composition-seam",
+      "source_path": "corpus/composition/DTF-020.json",
+      "source_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+      "proposition": {
+        "statement": "A relying system must not resolve a material semantic fact across a composition seam when the competent owner of that fact, or an explicit reconciliation rule between participating specifications, cannot be established."
+      },
+      "preconditions": [
+        "Two or more specifications or components contribute to a composed decision.",
+        "A material fact such as authority, completion, status, acceptance, or policy applicability affects the relying proposition.",
+        "Ownership of that fact is ambiguous, overlapping, or unstated and no explicit reconciliation rule establishes which source governs."
+      ],
+      "trigger": {
+        "statement": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established."
+      },
+      "evidence_required": [
+        {
+          "category": "authority-state",
+          "statement": "Evidence identifying the competent authority, if authority determines ownership of the material fact."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence identifying the applicable rule for semantic ownership or reconciliation across the seam."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence describing the participating components and the semantic contract at their boundary."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence showing which component or authority produced the material fact relied upon."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule."
+        },
+        {
+          "condition": "A component is treated as owner of a material fact solely because it produced the most convenient or most recent value."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "title": "earlier-lifecycle-check-reused-at-later-material-stage",
+      "source_path": "corpus/composition/DTF-021.json",
+      "source_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+      "proposition": {
+        "statement": "A relying system must not treat lifecycle state established at an earlier composition stage as sufficient evidence of lifecycle state at a later material authorization or execution boundary when relevant state may have changed."
+      },
+      "preconditions": [
+        "Lifecycle or status is evaluated at issuance, discovery, presentation, or an earlier authorization stage.",
+        "A later material stage is reached after time has passed or another component has acted.",
+        "Revocation, suspension, expiry, authority state, or applicable policy could have changed between the two stages.",
+        "No freshness or re-evaluation rule positively establishes continuity."
+      ],
+      "trigger": {
+        "statement": "The later component reuses the earlier lifecycle result and returns PASS without obtaining current-enough evidence for the later material boundary."
+      },
+      "evidence_required": [
+        {
+          "category": "lifecycle-state",
+          "statement": "Evidence of lifecycle state at the later material stage."
+        },
+        {
+          "category": "temporal",
+          "statement": "Evidence distinguishing the earlier evaluation time from the later material decision or execution time."
+        },
+        {
+          "category": "freshness",
+          "statement": "Evidence that the lifecycle observation is current enough for the later decision."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence describing which stage performed the earlier check and which stage relies on it later."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS at execution using only an earlier lifecycle check when intervening state change is possible and continuity is unproved."
+        },
+        {
+          "condition": "A stale earlier-stage status result is treated as equivalent to a later-stage current-state evaluation."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-022",
+      "case_version": "0.1.0",
+      "title": "context-binding-mistaken-for-execution-success",
+      "source_path": "corpus/composition/DTF-022.json",
+      "source_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+      "proposition": {
+        "statement": "A valid binding between an artifact and a task, transaction, exchange, or context must not by itself be treated as evidence that the intended execution, acceptance, completion, settlement, or legitimate effect actually occurred."
+      },
+      "preconditions": [
+        "An artifact is validly bound to a task, transaction, exchange, or context.",
+        "Execution or effect status is a separate proposition from the binding itself.",
+        "Evidence establishing successful execution or effect is absent, unresolved, or contradictory."
+      ],
+      "trigger": {
+        "statement": "The relying system interprets the valid binding as proof of execution or effect and returns PASS for completion or success."
+      },
+      "evidence_required": [
+        {
+          "category": "relationship",
+          "statement": "Evidence establishing the binding between the artifact and the intended task, transaction, exchange, or context."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence independently establishing execution, acceptance, completion, settlement, or effect as required by the relying proposition."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence linking claimed execution or effect to the competent source that observed or established it."
+        },
+        {
+          "category": "composition",
+          "statement": "Evidence preserving the semantic distinction between context binding and execution/effect status."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for successful execution solely because a valid context binding exists."
+        },
+        {
+          "condition": "The system cannot produce execution or effect evidence but represents the binding itself as completion evidence."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-023",
+      "case_version": "0.1.0",
+      "title": "component-validity-mistaken-for-composition-validity",
+      "source_path": "corpus/composition/DTF-023.json",
+      "source_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+      "proposition": {
+        "statement": "Independent PASS results for participating components must not automatically imply PASS for their composition when the composed relying proposition introduces additional semantic, policy, authority, lifecycle, privacy, evidence, or contestability obligations at the seam."
+      },
+      "preconditions": [
+        "Two or more components validate independently for their local propositions.",
+        "The composition introduces at least one additional semantic or evidence obligation not established by those local validations.",
+        "The seam obligation is not evaluated or cannot be established."
+      ],
+      "trigger": {
+        "statement": "The relying system derives composition PASS directly from the component PASS results without evaluating the material seam obligation."
+      },
+      "evidence_required": [
+        {
+          "category": "composition",
+          "statement": "Evidence identifying the semantic contract and material obligations introduced by the composition."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence of any governing rules that apply only to the composed proposition."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence distinguishing local component results from composition-level evidence."
+        },
+        {
+          "category": "other",
+          "statement": "Evidence sufficient to establish every material seam obligation required for composition PASS."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system computes Composition(A,B)=PASS solely because A=PASS and B=PASS while an additional seam obligation is unevaluated."
+        },
+        {
+          "condition": "A local conformance result is represented as composition assurance without evidence for the composed proposition."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    },
+    {
+      "case_id": "DTF-024",
+      "case_version": "0.1.0",
+      "title": "quorum-count-mistaken-for-independent-approval",
+      "source_path": "corpus/composition/DTF-024.json",
+      "source_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+      "proposition": {
+        "statement": "Meeting an N-of-M threshold must not by itself establish independent approval when the relying proposition requires independence and the counted approvers may share control, incentives, authority, evidence sources, or material coordination."
+      },
+      "preconditions": [
+        "A numeric quorum or threshold is satisfied by nominally distinct approvers.",
+        "The relying proposition requires materially independent approval rather than count alone.",
+        "Common control, coordination, dependence, or independence evidence is unresolved or absent."
+      ],
+      "trigger": {
+        "statement": "The relying system converts threshold satisfaction into PASS for independent approval without establishing the required independence."
+      },
+      "evidence_required": [
+        {
+          "category": "composition",
+          "statement": "Evidence describing dependence and control relationships among counted approvers."
+        },
+        {
+          "category": "provenance",
+          "statement": "Evidence establishing the sources and derivation of each approval."
+        },
+        {
+          "category": "relationship",
+          "statement": "Evidence of relationships relevant to independence, coordination, or common control."
+        },
+        {
+          "category": "policy",
+          "statement": "Evidence defining whether the relying proposition requires independence in addition to numeric quorum."
+        }
+      ],
+      "falsification": [
+        {
+          "condition": "The system returns PASS for independent approval solely because the numeric threshold was met while independence is unresolved."
+        },
+        {
+          "condition": "Multiple approvals controlled by the same material authority are counted as independent without an explicit rule permitting that interpretation."
+        }
+      ],
+      "expected": {
+        "dispositions": {
+          "PASS": "prohibited",
+          "DENY": "allowed",
+          "INDETERMINATE": "allowed"
+        }
+      }
+    }
+  ]
+}
