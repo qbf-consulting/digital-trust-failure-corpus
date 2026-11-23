@@ -5,7 +5,7 @@
     "commit": "f21a98ec8383352d18629a08dd5dd23935456142"
   },
   "assessment_kind": "author-side-method-control-no-inheritance",
-  "method": "Author-side material-delta regression controls anchored to exact existing research records and upstream Git blobs. Candidate predicates are challenges, not an exhaustive effect analysis. All other predicates remain subject to the original independent author assessments; no new judgment is inherited by this ledger. Existing canonical case definitions and report contract remain unchanged.",
+  "method": "Source-pinned author-side delta controls. Only explicitly named, source-justified unchanged canonical predicates may reuse an existing author judgment; case/version matches and identical rationales alone are not semantic proof. All other cases require their existing independent author examination or remain unresolved for reuse. No independent reviewer or target execution is asserted.",
   "controls": [
     {
       "predecessor": "https://trusttasks.org/spec/audit/list/0.1",
@@ -29,7 +29,17 @@
         "DTF-010",
         "DTF-026"
       ],
-      "inheritance": [],
+      "inheritance": [
+        {
+          "case_id": "DTF-002",
+          "mode": "source-justified-inherited",
+          "predecessor_section": "Security & Privacy / Data carried",
+          "successor_section": "Security & Privacy / Data carried",
+          "unchanged_normative_requirement": "In both pinned audit/list specifications the audit-read capability remains community-wide: a context-scoped administrator MUST NOT receive the whole-log tail merely because they can administer their context.",
+          "semantic_justification": "Version 0.2 changes request and response pagination fields, but not the actor's community-wide audit-read authority requirement. The same consumer failure proposition and authority boundary remain documented in both author-side case records. This is scoped to DTF-002 and does not imply complete version equivalence.",
+          "negative_control": "Present a request for the full audit tail signed by a context-scoped administrator who lacks community-wide audit-read capability; both source versions must reject the request rather than elevate signature validity into sufficient authority."
+        }
+      ],
       "independent_acceptance": "not-established",
       "target_execution": "not-established"
     },
