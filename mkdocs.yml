@@ -24,6 +24,7 @@ nav:
       - Authoring cases: authoring-cases.md
       - Validation: validation.md
   - Research notes:
+      - Deployment manifestation pilot: deployment-manifestation-pilot.md
       - Authority tranche observations: authority-tranche-observations.md
       - Decision-resolution observations: decision-resolution-tranche-observations.md
       - Privacy and correlation observations: privacy-correlation-tranche-observations.md

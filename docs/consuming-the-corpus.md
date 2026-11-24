@@ -16,6 +16,8 @@ A case does **not** by itself establish:
 
 Consumers remain responsible for mapping the technology-neutral proposition to their own interfaces, policies, evidence sources, and authoritative specifications.
 
+For externally observable deployment outcomes, use the [deployment manifestation pilot](deployment-manifestation-pilot.md) to distinguish an observation, causal interpretation and consequence from a canonical failure proposition. A research mapping does not change a case disposition or establish conformance.
+
 ## Validate before consuming
 
 Install the development dependency and validate the repository or selected case paths:

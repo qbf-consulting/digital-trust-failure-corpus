@@ -12,6 +12,8 @@ Good framing:
 
 Avoid framing the core case as a product- or protocol-specific API failure unless the failure genuinely exists only in that implementation.
 
+For public deployment observations, use the [deployment manifestation pilot](deployment-manifestation-pilot.md) before proposing a new canonical case. A similar outcome may arise from different mechanisms; preserve uncertainty and avoid changing canonical propositions to fit an incident.
+
 ## Required structure
 
 Each case must contain the fields required by `schemas/failure-case.schema.json`.
