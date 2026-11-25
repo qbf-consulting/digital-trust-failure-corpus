@@ -1,0 +1,24 @@
+# False-success challenge register
+
+Issue #168. Author-side documentary falsification design; not executed against an external implementation. The four negative/control designs and canonical case sidecars remain authoritative for their respective research scope. This register tests the interpretation boundary, not a new ceremony engine.
+
+| Challenge | Negative proposition and required evidence | Control / safe determination | Research anchor |
+|---|---|---|---|
+| Authentic receipts, omitted required step | Review-required admission asserted complete from valid submit acknowledgement without competent decision. Establish criterion, actual path and missing review. | Pending or violated if asserted complete; automatic path is not defective for omitting review. | NC-JOIN-01; DTF-010/022/030 |
+| Unauthorized actor | Valid signature on removal or consent decision used despite absent applicable capability or issuer competence. Establish actor, authoritative binding, scope and decision-time state. | Deny or defer; valid proof alone does not establish competence. | NC-CONSENT-01; DTF-002/010/027 |
+| Contradictory evidence | Recorded deny presented as an allow, or authoritative current state conflicts with claimed effect. Distinguish actual competent conflict from stale advisory cache. | Respect competent precedence and scoped evidence; unresolved material conflict cannot justify PASS. DTF-008 is not established in these profiles. | DTF-010/026/027 |
+| Stale authority | Earlier valid dependent authorization used after effective withdrawal. Establish actual dependency, effect time and later reliance. | Deny dependent grant or defer if unknown; independently current authority may survive. | NC-SEPARATION-01; NC-CROSS-01; DTF-001/003/021 |
+| Invalid ordering | Review-required completion precedes required approval, or removal receipt issued before effective removal. Establish applicable ordering, not merely message arrival order. | Pending until prerequisite established; asynchronous delivery after effect is permitted. | NC-JOIN-01; DTF-022/023/030 |
+| Optional treated as mandatory | Automatically admitted applicant rejected solely because no manual review exists; permitted preauthorization rejected solely for no challenge. | Apply actual path predicate; no universal review or challenge requirement. | NC-JOIN-01; NC-CONSENT-01; DTF-031 only if its precise prior-block and admissible-resolution premises hold |
+| Partial effect represented as complete | Community removal established, downstream dependent access not checked or remains enabled. | Unknown if evidence missing; partially effective only with affirmative differing effect evidence. | NC-SEPARATION-01; DTF-022/023/027 |
+| Privacy purpose overrun | Legitimate initial disclosure followed by materially different processing without applicable purpose basis. | Separate authorized audit retention from unsupported reuse; test actual observer, purpose, joinability and retention. | DTF-034/036/037; privacy sidecar |
+| Unsupported mapping or missing cell | Merely imaginable recognition, independent quorum or commitment semantics promoted to a candidate; omitted case cell silently accepted. | Narrow unsupported mappings; reject missing, extra and duplicate cells using permanent validator. | Gate C narrowing; test_ceremony_assessment |
+| Source/version drift | Changed canonical blob, trigger, falsifier, task schema or historical comparison treated as equivalent. | Reject drift and re-evaluate substantive change; never infer compatibility from version label alone. | test_ceremony_assessment; frozen baseline |
+
+## Review boundary
+
+The canonical precondition summaries and profile-specific premises are in the family sidecars. This review narrowed 13 cells where necessary premises were not established in the selected profiles. Remaining candidates are conditional, including explicit independence-sensitive admission policy for DTF-007/024, actual non-authority causal basis for DTF-029, actual supersession for DTF-005 and specific current admissible resolution for DTF-031. No counts are a target. The structural tests exercise actual repository research inputs; they do not execute these ten deployment hypotheses or independently establish semantic correctness.
+
+## Informative functional lens
+
+A user-supplied diagram depicts Trigger → Gather → Verify → Facts → Evaluate → Verdict → Effects. Its origin and normative standing are not established; it is used only as an analytical prompt. The transitions expose four distinct questions: whether verified evidence establishes the fact; whether the correct governing policy applies; whether the decision maker is competent; and whether intended effects actually occur. Authority is cross-cutting, not a single stage. A ceremony may repeat or parallelize these functions, and a single task may span several. This lens neither changes canonical taxonomy nor asserts a linear upstream execution model.
