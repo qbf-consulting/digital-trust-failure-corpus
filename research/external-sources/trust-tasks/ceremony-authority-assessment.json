@@ -599,11 +599,11 @@
         "https://trusttasks.org/spec/vtc/members/admit/0.1"
       ],
       "sections": "Admit Conformance 6–7; VTI-APV-004,013,017",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "A referred direct-admission action may obtain additional approval.",
       "relying_proposition": "Approval of earlier subject/role authorizes a materially changed admission commitment.",
-      "precondition_analysis": "Requires policy-required approval, exact approval artifact, materially different or stale action and treatment of admission as material organizational commitment under governing policy; latter not universal.",
+      "precondition_analysis": "The direct-admission approval binding is relevant, but the selected profile does not establish an action constituting a material commitment under the canonical proposition. An approval mismatch remains a task/policy defect; reopen this mapping only with commitment semantics.",
       "trigger": "The relying system treats presence of any approval as sufficient and admits the changed commitment.",
       "falsification": [
         "A mismatched action digest still produces PASS.",
@@ -612,7 +612,7 @@
       "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
       "expected_safe_outcome": "Bind approval to exact payload; re-evaluate and obtain fresh approval if changed; refuse mismatch.",
       "potential_impact": "Applicant/community; unwanted role or admission.",
-      "comparison": "limited/conditional: existing action binding rule; ceremony makes changed-action seam explicit.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -626,11 +626,11 @@
         "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
       ],
       "sections": "Admin-remove Security & Privacy; VTI-APV-004,013,019",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Some administrative removals require second approval.",
       "relying_proposition": "Approval for one subject/disposition authorizes changed consequential removal.",
-      "precondition_analysis": "Requires policy-mandated approval, actual artifact, changed/stale action and material commitment semantics under governing policy. No universal second approval.",
+      "precondition_analysis": "Administrative confirmation does not establish a material commitment. Require actual commitment semantics, applicable approval obligation and stale or materially different approved action before mapping.",
       "trigger": "The relying system treats presence of any approval as sufficient and admits the changed commitment.",
       "falsification": [
         "A mismatched action digest still produces PASS.",
@@ -639,7 +639,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Re-bind required approval to exact removal action; honor legitimate policy alternative.",
       "potential_impact": "Member/community; irreversible wrong removal.",
-      "comparison": "limited: local approval gate plus exact payload evidence; not universal.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -765,11 +765,11 @@
         "https://trusttasks.org/spec/vtc/members/admit/0.1"
       ],
       "sections": "Submit Retention/Deciding; Admit audit; VTI-MEM-012; VTI-CMP-091",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Admission records evidence and governing criterion or approval.",
       "relying_proposition": "Historical organizational commitment can be defended using current criteria/authority.",
-      "precondition_analysis": "Requires prior admission or refusal constituting a material commitment under governing policy, later review and missing/overwritten inputs. Source requires records; does not show loss.",
+      "precondition_analysis": "Historical admission evidence is relevant, but no prior material commitment under the canonical proposition is established. Require that classification, a later historical authority inquiry and unavailable original inputs.",
       "trigger": "The system presents current authority state or an agent explanation as though it proves the historical decision basis.",
       "falsification": [
         "Current state is substituted for historical state without qualification.",
@@ -778,7 +778,7 @@
       "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
       "expected_safe_outcome": "Reconstruct original criterion, authority, evidence and decision or mark unavailable; do not substitute current state.",
       "potential_impact": "Applicant/community; inability to contest decision.",
-      "comparison": "added-value conditional: collect historical decision basis across task boundaries; commitment classification must be established.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -793,11 +793,11 @@
         "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
       ],
       "sections": "Removal audit; VTI-MEM-002,031–032; VTI-CMP-091",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Removal audit can survive record purge.",
       "relying_proposition": "Past material organizational commitment to removal is proven by present state.",
-      "precondition_analysis": "Requires material commitment classification, later dispute and missing original authority/policy/action evidence; permitted erasure not automatically a failure.",
+      "precondition_analysis": "Historical removal evidence and erasure constraints are relevant, but a material commitment is not established by removal alone. Require actual commitment semantics and missing historical decision inputs.",
       "trigger": "The system presents current authority state or an agent explanation as though it proves the historical decision basis.",
       "falsification": [
         "Current state is substituted for historical state without qualification.",
@@ -806,7 +806,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Preserve lawfully required minimum audit lineage or explicitly report historical evidence unavailable; don't reconstruct from current status.",
       "potential_impact": "Member/community; lost contestability or excess retention.",
-      "comparison": "added-value conditional: reconcile evidence retention with lawful erasure.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -932,6 +932,7 @@
     "Conditional hypotheses only; no observed failure or independent acceptance.",
     "Commitment-specific cases require actual material commitment and applicable mandate or approval semantics; consequential membership or delivery alone is insufficient.",
     "No additional deployment evidence introduced. VTI is separately pinned comparative evidence.",
-    "Per-precondition adversarial review and final matrix validation remain pending."
+    "Per-precondition adversarial review and final matrix validation remain pending.",
+    "Gate C adversarial narrowing: do not promote a merely imaginable extension beyond the selected profile into a conditional candidate. Not established does not imply safety."
   ]
 }
