@@ -48,11 +48,11 @@
         "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
       ],
       "sections": "Self-remove-receipt authenticated community; VTI-CMP-060–064",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "cross-ceremony",
       "local_proposition": "Signed removal evidence can be authentic.",
       "relying_proposition": "Credential presentations associated with separate departure/reliance contexts remain unlinkable.",
-      "precondition_analysis": "Requires privacy-minimized credential/presentation payload, observable securing metadata across contexts and declared unlinkability. Selected removal documents alone are not evidence of such credential presentation or actual correlation; this candidate is conditional on downstream credential evidence path.",
+      "precondition_analysis": "Authenticated removal documents do not establish privacy-minimized credential/presentation payload, cross-context observable securing metadata or declared unlinkability. A distinct downstream credential presentation path would require evidence before mapping.",
       "trigger": "A verifier, colluding verifiers, or another observer can link otherwise separate interactions using stable or distinctive securing-mechanism data while the system still reports the intended privacy property as satisfied.",
       "falsification": [
         "The system returns PASS for unlinkability while repeated or otherwise distinctive proof metadata links interactions across contexts.",
@@ -61,7 +61,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Test actual credential proof metadata across contexts; do not confuse ordinary member DID correlation with this securing-mechanism-specific case.",
       "potential_impact": "Departing member; cross-context reconstruction.",
-      "comparison": "limited: downstream presentation premises required; not inherent in removal exchange.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -525,6 +525,7 @@
     "Privacy objectives, actual observers, data joins and retention necessity must be established for the deployment; authorized within-context correlation is not inherently a failure.",
     "DTF-032 requires credential/presentation securing-mechanism premises, not merely stable task envelope identifiers.",
     "VTI snapshot separately pinned; compatibility not asserted.",
-    "Per-precondition adversarial review and final matrix validation remain pending."
+    "Per-precondition adversarial review and final matrix validation remain pending.",
+    "Gate C adversarial narrowing: do not promote a merely imaginable extension beyond the selected profile into a conditional candidate. Not established does not imply safety."
   ]
 }
