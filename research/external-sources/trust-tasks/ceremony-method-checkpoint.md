@@ -50,3 +50,9 @@ The analytical joining profile uses manifest/0.4 and submit/0.3, reviewed/automa
 - The study does not claim full transitive schema closure, deployment-specific policy/effect times, exhaustive upstream ceremony catalogue or cross-version conformance. These are limitations of the selected research contract; any case depending on them remains conditional or unresolved.
 
 The selected source boundaries are sufficient for bounded author-side comparative assessment; no independent review, live execution or conformance claim. Gate B remains to be performed.
+
+## Subsequent upstream context — 25 November 2026
+
+[Trust Tasks Specification PR #53](https://github.com/trustoverip/dtgwg-trust-tasks-spec/pull/53) was merged on 25 November 2026 at [revision 26597aabe1406b9ed8035ff264cc6eadef6149f8](https://github.com/trustoverip/dtgwg-trust-tasks-spec/blob/26597aabe1406b9ed8035ff264cc6eadef6149f8/spec/body.md#trust-ceremonies), spec/body.md blob `b49041b36fad03799403770db7769ec786847065`. The Git comparison against the original framework pin `bdf2cdd9256f9d7b98fe8b40c776124fc27a6084` establishes one commit ahead, zero behind. This is a dated contextual reference, not a replacement source pin.
+
+The new Trust Ceremonies section describes a governed transition and seven ordered gates for each party's decision (Trigger, Gather, Verify, Facts, Evaluate, Verdict, Effects). It is informative except for the normative Verdicts and the Replies That Carry Them subsection. Referral and additional evidence return to Gather; binding to the held exchange and appropriate verified party, re-evaluation and pre-effect checks constrain reliance. These rules align with the study's separation of local result, execution, legitimacy and effective state, without establishing equivalence of the two analytical models. No new assessment against this revision was performed; original pins, profile/case dispositions and evidence status remain unchanged.
