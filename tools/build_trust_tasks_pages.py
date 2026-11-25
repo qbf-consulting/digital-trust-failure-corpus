@@ -74,7 +74,7 @@ def build_pages(inventory, pilot, acl, consent=None, additional=None):
         groups[row["slug"].split("/")[0]].append((uri, row))
     index = [
         "# Trust Tasks versioned navigator", "",
-        "**Primary research deliverable:** [Representative Consent-family analytical study](../trust-tasks-representative-consent-study.md).",
+        "**Research studies:** [Representative Consent-family analytical study](../trust-tasks-representative-consent-study.md) and [Trust Ceremonies assurance study](../trust-ceremonies-assurance-study.md).",
         "It explains why this family was selected, the documentary method, preliminary conclusions, limits of inference and how to contribute challenges.", "",
         "This index preserves the pinned source census for discovery, **not** an obligation to assess all versions or a measure of risk coverage.", "",
         "Derived from a pinned upstream registry and DTFC's research sidecars. A pending",
