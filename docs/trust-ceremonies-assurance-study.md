@@ -64,13 +64,19 @@ The historical 1,391-version registry inventory remains available for discovery.
 
 These are analytical dimensions, not new upstream state names. A ceremony definition differs from its enactment; a task type/version differs from a particular execution. The same valid local result can appear in both negative and control scenarios. A partial effect requires affirmative evidence of differing effects, not simply absent observations.
 
-An informative functional lens, derived from a user-supplied diagram of unknown normative status, is:
+### Upstream stage gates: subsequent specification context
+
+The seven-stage model used as a functional lens in this study corresponds to the Trust Ceremony stage gates introduced in [Trust Tasks Specification PR #53](https://github.com/trustoverip/dtgwg-trust-tasks-spec/pull/53), merged on 25 November 2026 ([exact merged specification revision](https://github.com/trustoverip/dtgwg-trust-tasks-spec/blob/26597aabe1406b9ed8035ff264cc6eadef6149f8/spec/body.md#trust-ceremonies)):
 
 ```text
 Trigger → Gather → Verify → Facts → Evaluate → Verdict → Effects
 ```
 
-Verified evidence does not automatically establish the relied-upon fact; established facts do not determine applicable policy; evaluation does not establish decision competence; a verdict does not prove the effect. Authority cuts across all functions. They can recur, overlap and span multiple tasks or ceremonies. This is an analytical aid, not a linear execution model.
+The upstream section is informative except for its normative subsection on verdicts and their replies. It orders these gates for each party's decision, permits referral and requests for more evidence to return to Gather, and distinguishes an authorized negative decision from refusal of permission to invoke a task. Its normative rules bind evidence and referral decisions to the held exchange and appropriate supplying party, require policy re-evaluation after referral, and stop a task if the pre-effect recheck fails.
+
+These distinctions align with the assurance boundaries examined here: verified evidence does not itself establish permission, an applicable policy and competent decision are separate from proof, and a verdict does not prove actual effects. The DTFC contribution is to examine stronger relying propositions through canonical failure preconditions, counterexamples and cross-ceremony dependencies. The upstream ordering applies to each party's decision; the study does not infer a single global linear sequence across parties or ceremonies, or mandate a particular policy engine.
+
+This is subsequent specification context, not a migration of the original framework pin `bdf2cdd9256f9d7b98fe8b40c776124fc27a6084`. The merged revision `26597aabe1406b9ed8035ff264cc6eadef6149f8` is one commit ahead of that baseline. The 111 judgments were not re-assessed against the newer revision, and no conformance or independent validation claim follows from the conceptual alignment.
 
 ## Evidence population and dispositions
 
