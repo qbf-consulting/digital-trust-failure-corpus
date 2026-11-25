@@ -1,0 +1,252 @@
+{
+  "kind": "ceremony-study-canonical-baseline",
+  "issue": 168,
+  "revision": "1eda75842cf3b268361dc47ce8ade23b6a99c5cb",
+  "catalogs": [
+    {
+      "family": "authority",
+      "blob": "94de89c706e62de613aee40b96e4c6bd1640a156"
+    },
+    {
+      "family": "lifecycle",
+      "blob": "87747de43ce453c2d5d205ba1cfed438ae69f622"
+    },
+    {
+      "family": "composition",
+      "blob": "180f48bfa375c150e0cfaf1ee42a86948b2d9730"
+    },
+    {
+      "family": "evidence",
+      "blob": "8333b3c1858e9673e77820f20c919c96fbdd8633"
+    },
+    {
+      "family": "privacy",
+      "blob": "3dd6c52c12df123715e8a15fff48c38416c5b474"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "DTF-001",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-001.json",
+      "source_blob": "42ca99ce075461d13f584fdf610fac90c2149371"
+    },
+    {
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-002.json",
+      "source_blob": "fb68049b6586d5faf655df78d310582dac36924f"
+    },
+    {
+      "case_id": "DTF-003",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-003.json",
+      "source_blob": "3f64fecf0499481667c11231760a673f9dc4b0d8"
+    },
+    {
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "source_path": "corpus/lifecycle/DTF-004.json",
+      "source_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0"
+    },
+    {
+      "case_id": "DTF-005",
+      "case_version": "0.1.0",
+      "source_path": "corpus/lifecycle/DTF-005.json",
+      "source_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf"
+    },
+    {
+      "case_id": "DTF-006",
+      "case_version": "0.1.0",
+      "source_path": "corpus/lifecycle/DTF-006.json",
+      "source_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe"
+    },
+    {
+      "case_id": "DTF-007",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-007.json",
+      "source_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67"
+    },
+    {
+      "case_id": "DTF-008",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-008.json",
+      "source_blob": "560458a71815b57772a029295f34f3ebc42238b7"
+    },
+    {
+      "case_id": "DTF-009",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-009.json",
+      "source_blob": "bfccad840128a91048842172c50945098ba2815b"
+    },
+    {
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-010.json",
+      "source_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081"
+    },
+    {
+      "case_id": "DTF-011",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-011.json",
+      "source_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e"
+    },
+    {
+      "case_id": "DTF-012",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-012.json",
+      "source_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9"
+    },
+    {
+      "case_id": "DTF-013",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-013.json",
+      "source_blob": "8877d7eaa9109f10363578fd8caa302a825ebcc3"
+    },
+    {
+      "case_id": "DTF-014",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-014.json",
+      "source_blob": "05c7ae25aef6423d4d37a0c7711fcabc8bef56e7"
+    },
+    {
+      "case_id": "DTF-015",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-015.json",
+      "source_blob": "1a5a30361dcf32852c52e02c21e5fd090d7a9dbf"
+    },
+    {
+      "case_id": "DTF-016",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-016.json",
+      "source_blob": "59fe4963e4d802e8e4e9eba889e21fabb340a28d"
+    },
+    {
+      "case_id": "DTF-017",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-017.json",
+      "source_blob": "07a9fcd3948b3d1e07f49c3d2ce668d1b8a35f10"
+    },
+    {
+      "case_id": "DTF-018",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-018.json",
+      "source_blob": "71116863ae3b2130955965691189af39871b7eee"
+    },
+    {
+      "case_id": "DTF-019",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-019.json",
+      "source_blob": "b4ba4d5b4811158241375cb713a7c2133d2caf3c"
+    },
+    {
+      "case_id": "DTF-020",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-020.json",
+      "source_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf"
+    },
+    {
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-021.json",
+      "source_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4"
+    },
+    {
+      "case_id": "DTF-022",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-022.json",
+      "source_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d"
+    },
+    {
+      "case_id": "DTF-023",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-023.json",
+      "source_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1"
+    },
+    {
+      "case_id": "DTF-024",
+      "case_version": "0.1.0",
+      "source_path": "corpus/composition/DTF-024.json",
+      "source_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41"
+    },
+    {
+      "case_id": "DTF-025",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-025.json",
+      "source_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d"
+    },
+    {
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-026.json",
+      "source_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0"
+    },
+    {
+      "case_id": "DTF-027",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-027.json",
+      "source_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0"
+    },
+    {
+      "case_id": "DTF-028",
+      "case_version": "0.1.0",
+      "source_path": "corpus/authority/DTF-028.json",
+      "source_blob": "e38aa35bad7a88baed68770c97f2c6ebffd6abc2"
+    },
+    {
+      "case_id": "DTF-029",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-029.json",
+      "source_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201"
+    },
+    {
+      "case_id": "DTF-030",
+      "case_version": "0.1.0",
+      "source_path": "corpus/evidence/DTF-030.json",
+      "source_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c"
+    },
+    {
+      "case_id": "DTF-031",
+      "case_version": "0.1.0",
+      "source_path": "corpus/lifecycle/DTF-031.json",
+      "source_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb"
+    },
+    {
+      "case_id": "DTF-032",
+      "case_version": "0.1.0",
+      "source_path": "corpus/privacy/DTF-032.json",
+      "source_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb"
+    },
+    {
+      "case_id": "DTF-033",
+      "case_version": "0.1.0",
+      "source_path": "corpus/privacy/DTF-033.json",
+      "source_blob": "42bc6ee721049289f166817779b23683dea3a650"
+    },
+    {
+      "case_id": "DTF-034",
+      "case_version": "0.1.0",
+      "source_path": "corpus/privacy/DTF-034.json",
+      "source_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa"
+    },
+    {
+      "case_id": "DTF-035",
+      "case_version": "0.1.0",
+      "source_path": "corpus/privacy/DTF-035.json",
+      "source_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af"
+    },
+    {
+      "case_id": "DTF-036",
+      "case_version": "0.1.0",
+      "source_path": "corpus/privacy/DTF-036.json",
+      "source_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad"
+    },
+    {
+      "case_id": "DTF-037",
+      "case_version": "0.1.0",
+      "source_path": "corpus/privacy/DTF-037.json",
+      "source_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff"
+    }
+  ],
+  "verification": "Derived catalog retrieved at frozen revision. Direct canonical-file reconciliation required by validator; not yet executed."
+}
