@@ -48,11 +48,11 @@
         "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
       ],
       "sections": "Self-remove receipt Conformance; VTI-CMP-070–074",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Removal response and authenticated receipt may both originate from community.",
       "relying_proposition": "Two independent confirmations establish departure.",
-      "precondition_analysis": "Requires reliance that counts the response and receipt independently despite shared material control; mere common issuance is not failure.",
+      "precondition_analysis": "Response and receipt can share provenance, but the selected separation profile does not establish an independence-sensitive relying proposition or extra evidentiary weight attributed to apparently independent sources.",
       "trigger": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent.",
       "falsification": [
         "The system returns PASS because it counts materially dependent evidence as independent corroboration.",
@@ -61,7 +61,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Do not count the two assertions as independent; obtain independent observations if policy requires them.",
       "potential_impact": "Departing member; false assurance of erasure or access removal.",
-      "comparison": "added-value: compare common provenance across records; a single receipt inspection cannot establish the second source relationship.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -76,11 +76,11 @@
         "https://trusttasks.org/spec/consent/list/1.1"
       ],
       "sections": "Decision Conformance/Security; List scoped reads; VTI-CMP-070–074",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Recorded grant and bridge cache can reproduce same VTA decision.",
       "relying_proposition": "Independent attestations establish operator choice.",
-      "precondition_analysis": "Requires two evidence items counted independently, shared origin and additional decision weight. Cache and grant alone do not imply that claim.",
+      "precondition_analysis": "Grant and cache are linked by design. No independent corroboration requirement or decision assigning additional weight for apparent independence is established in the selected profile.",
       "trigger": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent.",
       "falsification": [
         "The system returns PASS because it counts materially dependent evidence as independent corroboration.",
@@ -89,7 +89,7 @@
       "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
       "expected_safe_outcome": "Preserve common provenance and obtain genuinely independent evidence if required.",
       "potential_impact": "Operator and conversation participants; false confidence in consent.",
-      "comparison": "limited: provenance weakness is already visible in decision contract; comparison makes duplication explicit.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -188,11 +188,11 @@
         "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
       ],
       "sections": "Submit Meeting it; VTI-CMP-030–032,050–053",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Community recognizes an issuer for a particular criterion; issuer may attest a subject.",
       "relying_proposition": "Community recognition automatically extends to an issuer-recognized third party for another scope.",
-      "precondition_analysis": "Requires actual A→B and B→C recognition, absent competent transitivity rule and reliance on inferred A→C; ordinary credential acceptance is not itself transitivity.",
+      "precondition_analysis": "Issuer acceptance and credential issuance do not establish two scoped recognition edges. No concrete A recognises B, B recognises C, and unsupported A-to-C extension is established in the selected profile.",
       "trigger": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion.",
       "falsification": [
         "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule.",
@@ -201,7 +201,7 @@
       "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
       "expected_safe_outcome": "Check exact issuer scope and explicit recognition rule; no automatic extension.",
       "potential_impact": "Applicant/community; unauthorized admission or privileges.",
-      "comparison": "limited: issuer recognition is already local; ceremony trace exposes cross-scope reliance if present.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -215,11 +215,11 @@
         "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
       ],
       "sections": "Admin-remove Conformance; VTI-CMP-050–053; VTI-ACL-070–073",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "cross-ceremony",
       "local_proposition": "Community authorizes a bounded administrator to remove a member.",
       "relying_proposition": "External party recognized by that administrator may also exercise removal or derivative authority.",
-      "precondition_analysis": "Requires concrete A→B and B→C recognition, no competent transitivity rule and relying acceptance; no such chain established by removal task.",
+      "precondition_analysis": "Bounded administrative delegation is not a two-edge recognition chain. No specific recognition relationship and unsupported transitive reliance is established.",
       "trigger": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion.",
       "falsification": [
         "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule.",
@@ -228,7 +228,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Verify explicit delegation and current scope rather than infer from recognition.",
       "potential_impact": "Member and third party; unauthorized removal or retained access.",
-      "comparison": "added-value conditional on actual cross-relationship chain; not an observed feature.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -243,11 +243,11 @@
         "https://trusttasks.org/spec/consent/decision/1.0"
       ],
       "sections": "Approver-set Conformance; Decision Approver authority",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Context admin binds approver; enrolled bridge may attest operator choice.",
       "relying_proposition": "Approver or bridge recognition extends to another party for consent.",
-      "precondition_analysis": "Requires actual chained recognition and no competent extension rule; bridge enrollment alone does not establish a second recognition edge.",
+      "precondition_analysis": "Approver binding and bridge enrollment are not two scoped recognition edges. No actual transitive recognition claim is established.",
       "trigger": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion.",
       "falsification": [
         "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule.",
@@ -256,7 +256,7 @@
       "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
       "expected_safe_outcome": "Require VTA-authorized exact issuer/context and explicit delegation where needed.",
       "potential_impact": "Operator and conversation participants; unauthorized disclosure.",
-      "comparison": "limited: local issuer checks already forbid unsupported authority; chain trace can explain inference.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -271,11 +271,11 @@
         "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
       ],
       "sections": "Submit Deciding; VTI-MEM-010–013; VTI-CMP-020–021",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Community makes admission decision; exchange communicates it.",
       "relying_proposition": "Integration may treat exchange coordinator as competent owner of admission.",
-      "precondition_analysis": "Requires actual ambiguity or unstated ownership in deployment seam and absent reconciliation; selected upstream VTI assigns community ownership.",
+      "precondition_analysis": "Community decision ownership is explicit in the selected sources. No unresolved ambiguity about ownership of a material fact is established; nonconforming assignment would require separate deployment evidence.",
       "trigger": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established.",
       "falsification": [
         "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule.",
@@ -284,7 +284,7 @@
       "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
       "expected_safe_outcome": "Identify competent decision source; refuse/defer if deployment ownership is unresolved.",
       "potential_impact": "Applicant and community; erroneous membership activation.",
-      "comparison": "limited: upstream ownership explicit; additional value is locating nonconforming deployment seam, not finding spec ambiguity.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -299,11 +299,11 @@
         "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
       ],
       "sections": "Self-remove/receipt Conformance; VTI-MEM-001,033; VTI-ACL-080–082",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Removal response and receipt assert community-side effects; downstream observes access.",
       "relying_proposition": "A convenient component owns effective downstream termination.",
-      "precondition_analysis": "Requires material fact across components, unresolved ownership/reconciliation and PASS based on inferred owner. Source timing tension alone does not prove ownership ambiguity.",
+      "precondition_analysis": "Community removal and downstream enforcement concern distinct facts. Response timing tension does not establish unresolved ownership of the same material fact.",
       "trigger": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established.",
       "falsification": [
         "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule.",
@@ -312,7 +312,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Identify owner of membership state and each enforcement fact; withhold stronger completion claim if unresolved.",
       "potential_impact": "Departing member and relying service; persistent access or misleading removal assurance.",
-      "comparison": "added-value: distinguishes multiple effect owners from request/receipt semantics.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -638,11 +638,11 @@
         "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
       ],
       "sections": "Admin-remove Security & Privacy; VTI-APV-019,022; VTI-CMP-070–074",
-      "disposition": "conditional-candidate",
+      "disposition": "not-established-within-profile",
       "attribution": "ceremony-compositional",
       "local_proposition": "Policy may require confirmation for admin removal.",
       "relying_proposition": "Numeric approval proves independent authorization.",
-      "precondition_analysis": "Requires deployment with actual threshold, independence-sensitive policy and unresolved common control; task does not mandate universal quorum.",
+      "precondition_analysis": "Administrative confirmation does not establish a numeric threshold requiring materially independent approvals. The selected path lacks those canonical premises.",
       "trigger": "The relying system converts threshold satisfaction into PASS for independent approval without establishing the required independence.",
       "falsification": [
         "The system returns PASS for independent approval solely because the numeric threshold was met while independence is unresolved.",
@@ -651,7 +651,7 @@
       "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
       "expected_safe_outcome": "Check applicable rule and eligible independent approvers if required; respect bounded single-admin alternative.",
       "potential_impact": "Member and community; captured removal or unjustified lockout.",
-      "comparison": "limited: conditional policy not demonstrated; composition exposes actor dependence.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
       "observed_failure": false,
       "independent_review": "not-established"
     },
@@ -688,6 +688,7 @@
     "Documentary conditional hypotheses, not observed failures.",
     "Each cell is one profile/case judgment; multiple variants do not increase denominator.",
     "Case-specific precondition analysis is provisional pending adversarial review and final matrix validation.",
-    "VTI snapshot is separately pinned comparative evidence, not established cross-version conformance."
+    "VTI snapshot is separately pinned comparative evidence, not established cross-version conformance.",
+    "Gate C adversarial narrowing: do not promote a merely imaginable extension beyond the selected profile into a conditional candidate. Not established does not imply safety."
   ]
 }
