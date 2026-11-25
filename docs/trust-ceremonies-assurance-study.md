@@ -6,9 +6,25 @@
 
 **Scope:** Three purposively selected analytical ceremony profiles, 13 exact Trust Task versions and 37 frozen canonical DTF propositions. [Issue #168](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/168) records the research contract. This is a companion to the [representative Consent study](trust-tasks-representative-consent-study.md), not its replacement.
 
+## Why this matters: leaving an organisation
+
+Consider a hypothetical employee whose departure is formally acknowledged, whose membership and membership-dependent authority are effectively withdrawn, and whose associated credential is revoked. Each individual operation may have succeeded. Yet a downstream service might continue to accept an earlier authorization decision, or a delegate might retain permissions whose validity depended on the employee's former authority.
+
+The reverse matters equally. If the former employee has an independently granted entitlement that remains valid under the applicable policy, indiscriminately removing it could itself be a governance failure. The question is not whether every permission was removed, but whether the particular authority relationship that justified each permission still holds.
+
+A Trust Task describes a bounded operation with its own supported proposition. A Trust Ceremony composes one or more such operations towards an intended outcome under applicable rules. The example illustrates why an assessor may need to examine both the ceremony and relationships spanning earlier and later ceremonies. It is an explanatory scenario, not an observed employment or access-control incident.
+
 ## Executive determination
 
 A valid task response can establish a narrow proposition without establishing the legitimacy or effectiveness of the composed outcome. The central research question is whether an assessor can locate the additional conditions at the relying boundary and identify a counterexample to an unjustified positive determination.
+
+Three conclusions follow from the bounded documentary assessment:
+
+- Successful local operations do not by themselves establish that the applicable ceremony path was completed or that its outcome was legitimate.
+- A legitimate decision does not by itself establish that its intended effects occurred at every relevant enforcement boundary.
+- Authority established through one ceremony may cease to justify later reliance following another, where an actual dependency and effective withdrawal are established.
+
+**The scope of trust assurance should follow the proposition being relied upon, not merely the boundary of the transaction producing the evidence.** A ceremony is therefore a useful unit of examination, not necessarily the final assurance boundary.
 
 The selected upstream contracts already distinguish several such conditions. The contribution of this study is the operationalization of those distinctions through canonical failure propositions, explicit alternative paths, temporal authority dependencies and falsifiable controls. It is not a claim of novel upstream requirements or defects in those specifications.
 
@@ -69,7 +85,7 @@ One cell represents one pinned profile × one canonical case. The author assessm
 | [Privacy](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/ceremony-privacy-assessment.json) | 16 | 2 | 18 |
 | **Total** | **74** | **37** | **111** |
 
-These are not 111 independent experiments, 74 observed failures, incidence estimates or risk rankings. Author-side adversarial review narrowed 13 initially conditional cells because additional premises were not established: independent corroboration, transitive recognition, material commitment, ambiguous ownership, independent quorum and credential-presentation privacy. The [mechanism synthesis](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/ceremony-mechanism-synthesis.md) and [false-success register](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/ceremony-false-success-review.md) record the reasoning.
+These are not 111 independent experiments, 74 observed failures, incidence estimates or risk rankings. Author-side adversarial review narrowed 13 initially conditional cells because additional premises were not established: independent corroboration, transitive recognition, material commitment, ambiguous ownership, independent quorum and credential-presentation privacy. This narrowing is a substantive negative result: the method must be capable of rejecting plausible-sounding hypotheses when the selected profile does not establish the necessary premises. It does not establish that those failures cannot occur elsewhere. The [mechanism synthesis](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/ceremony-mechanism-synthesis.md) and [false-success register](https://github.com/qbf-consulting/digital-trust-failure-corpus/blob/main/research/external-sources/trust-tasks/ceremony-false-success-review.md) record the reasoning.
 
 ## Worked examples
 
@@ -120,7 +136,30 @@ The [historical Consent comparison](https://github.com/qbf-consulting/digital-tr
 
 Composition makes missing semantic obligations and causal dependencies easier to enumerate. It is particularly useful where valid local propositions do not establish a stronger outcome across time or components. But #135 already considered stale grants, decision provenance, combined disclosure and retention. Rediscovery is not novelty. Unknown dependency, actual policy or effective state can leave both analytical methods indeterminate.
 
+For an assessor, the practical gain is a more explicit inventory of which facts are established locally, which depend on the applicable ceremony path, and which require evidence of later changes in authority or actual enforcement. The unit of examination is chosen according to the relying question:
+
+| Examination scope | What it helps establish |
+|---|---|
+| Individual task | The narrow proposition supported by a particular exchange |
+| Ceremony | Whether the applicable composed path, legitimate outcome and effective state are established, separately |
+| Cross-ceremony relationships | Whether the relevant dependencies, authority and state still justify later reliance |
+| Relying proposition | Determines which of these scopes and evidence obligations are necessary; not a new protocol abstraction |
+
 Privacy must be evaluated at the composed boundary: actual observer, purpose, linkable metadata, retention and authority for secondary use. Individually justified disclosures do not demonstrate joint privacy. Conversely, authorized within-context identification is not itself a privacy violation. Recovery must resolve the specific outstanding condition, not clear unrelated gates. Compensation is a separately authorized action, not assumed atomic rollback.
+
+## Implications for trust system design and assurance
+
+The following are practical implications of the existing conditional analysis, not additional empirical findings or normative requirements.
+
+| Audience | Design or assurance question |
+|---|---|
+| Protocol designers | What exact proposition does each successful response establish, and what stronger claim does it leave unresolved? |
+| Ceremony designers | Which steps are required on each permitted path, who owns each determination, and what evidence establishes completion? |
+| Governance authorities | Which grants depend on membership or another source of authority, and which independently granted entitlements survive a lifecycle transition? |
+| Implementers | Can the relying boundary distinguish effective authoritative change from notification, cached observation and actual enforcement? |
+| Assurance practitioners | What counterexample would disprove the stronger relying claim, and what evidence would distinguish it from a legitimate alternative or an indeterminate state? |
+
+These questions apply wherever institutional decisions and their effects span components or time. Transferability to other profiles or deployment settings requires evidence of their actual rules and dependencies; the selected study does not establish that all such systems exhibit these failures.
 
 ## Falsification agenda and evidence limits
 
