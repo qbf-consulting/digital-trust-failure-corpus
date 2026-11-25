@@ -45,6 +45,34 @@ def check(profiles, baseline, inventory):
         raise ValueError("unsupported assurance promotion")
     if not profiles.get("limitations"):
         raise ValueError("missing limitations")
+    model = profiles.get("determination_model", {})
+    expected_states = {
+        "local_task_result": {"success-response", "error", "continuation", "no-terminal-evidence"},
+        "ceremony_execution": {"satisfied", "violated", "pending", "indeterminate"},
+        "outcome_legitimacy": {"supported", "contradicted", "indeterminate", "not-requested-or-refused"},
+        "effective_state": {"established", "not-established", "partially-effective", "indeterminate"},
+    }
+    for dimension, states in expected_states.items():
+        values = model.get(dimension, [])
+        if len(values) != len(states) or set(values) != states:
+            raise ValueError("determination state drift: " + dimension)
+    require_text(model.get("kind"), "analytical vocabulary")
+    if not model.get("rules"):
+        raise ValueError("missing determination rules")
+    shared = profiles.get("shared_sources", [])
+    expected_shared = {
+        ("trustoverip/dtgwg-trust-tasks-tf", PIN, "specs/vtc/_shared/0.1/ceremony.schema.json", "d7ca69d2407cc5f621c5347ad2bad4067217d29d"),
+        ("trustoverip/dtgwg-trust-tasks-tf", PIN, "specs/vtc/_shared/0.1/admission.schema.json", "5b7264e64ea06528de0dc8fd64a7632db94345d5"),
+        ("trustoverip/dtgwg-trust-tasks-tf", PIN, "specs/consent/_shared/0.1/consent.schema.json", "b373103fb7c3687d8375e177ceaedde720fc7213"),
+        ("trustoverip/dtgwg-vti-spec", profiles["vti_commit"], "spec/11-vtc.md", "23a5b271a25e99241b54aa640e4c764b925c49e5"),
+        ("trustoverip/dtgwg-vti-spec", profiles["vti_commit"], "spec/03a-access-control.md", "04ad7d53894a9a50417111e8813e69d16c044bc9"),
+    }
+    if len(shared) != len(expected_shared) or {
+        tuple(x[k] for k in ("repository", "commit", "path", "blob")) for x in shared
+    } != expected_shared:
+        raise ValueError("shared source binding drift")
+    for source in shared:
+        require_text(source.get("boundary"), "source boundary")
     lookup = {PREFIX + x["slug"] + "/" + x["version"]: x for x in inventory["records"]}
     seen = set()
     for profile in profiles["profiles"]:
@@ -73,6 +101,25 @@ def check(profiles, baseline, inventory):
             require_text(step.get("proposition"), "proposition")
         if tasks != {PREFIX + x for x in TARGETS[pid]}:
             raise ValueError("profile task membership drift")
+        for field in ("purpose", "policy_owner", "abort_recovery", "evidence",
+                      "time_retention", "parallelism", "consent_boundary"):
+            require_text(profile.get(field), field)
+        expected_paths = {
+            "joining": {"automatic", "review", "direct"},
+            "separation": {"self", "admin"},
+            "consent": {"direct", "bridge", "preauthorization", "withdrawal"},
+        }[pid]
+        path_ids = set()
+        for path in profile.get("paths", []):
+            if path["id"] in path_ids:
+                raise ValueError("duplicate execution path")
+            path_ids.add(path["id"])
+            order = path.get("order", [])
+            if not order or len(order) != len(set(order)) or not set(order) <= TARGETS[pid]:
+                raise ValueError("invalid execution path task binding")
+            require_text(path.get("condition"), "path condition")
+        if path_ids != expected_paths:
+            raise ValueError("execution path membership drift")
     if seen != set(TARGETS):
         raise ValueError("missing profile")
     if (baseline.get("kind") != "ceremony-study-canonical-baseline"
