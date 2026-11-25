@@ -1,0 +1,1941 @@
+{
+  "issue": 168,
+  "kind": "consent-comparative-reconciliation",
+  "prior_blob": "a4e1db7f9b297ba8146c7f96589c9ed3a845c1a5",
+  "prior_case_revision": "9cbf3f2c157f1845f5d2849039f72351ba1441bb",
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "profile_blob": "feff06fe825f44af02ae468d17630060e61a0621",
+  "prior_judgments": 222,
+  "comparison_rows": 37,
+  "limitations": [
+    "Matching case version does not establish matching canonical blob across revisions; prior revision case blobs must be independently reconciled before treating prior judgments as reused evidence.",
+    "Prior judgments are referenced for comparison, not promoted to new evidence or independent acceptance.",
+    "Categories are author-side comparative interpretations; conditional extension is not demonstrated incremental value."
+  ],
+  "rows": [
+    {
+      "case_id": "DTF-001",
+      "case_version": "0.1.0",
+      "case_blob": "42ca99ce075461d13f584fdf610fac90c2149371",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Same effective revoke and later stale cache reliance; #135 worked example already composes list and revoke.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-002",
+      "case_version": "0.1.0",
+      "case_blob": "fb68049b6586d5faf655df78d310582dac36924f",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Same scope boundary; actual bounded delegation and out-of-scope action remain required.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-003",
+      "case_version": "0.1.0",
+      "case_blob": "3f64fecf0499481667c11231760a673f9dc4b0d8",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Actual upstream enrollment/delegation dependency and its loss must be shown; not established by #135 or task alone.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "case_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Distinguish validity of grant record from signature validity and authority; same stale-cache mechanism, not independent novelty.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-005",
+      "case_version": "0.1.0",
+      "case_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Actual replacement of grant by successor rather than withdrawal; no additional deployment evidence.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-006",
+      "case_version": "0.1.0",
+      "case_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Revoke prior candidate already considers historical validity; explicit historical query and earlier valid delivery required.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-007",
+      "case_version": "0.1.0",
+      "case_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Additional claim of independent corroboration and common origin must be stipulated; not simply weak bridge provenance.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-008",
+      "case_version": "0.1.0",
+      "case_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "VTA precedence over advisory cache; no unresolved competing current competent sources.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-009",
+      "case_version": "0.1.0",
+      "case_blob": "bfccad840128a91048842172c50945098ba2815b",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Requires actual two recognition edges and unsupported transitivity; enrollment alone insufficient.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "case_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Missing authoritative allow and default-deny already examined.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-011",
+      "case_version": "0.1.0",
+      "case_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Unknown currentness of cache already examined; issuer-bound token not timestamp.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-012",
+      "case_version": "0.1.0",
+      "case_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Requires actual incompatible policy versions and compliance assertion; none observed.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-013",
+      "case_version": "0.1.0",
+      "case_blob": "8877d7eaa9109f10363578fd8caa302a825ebcc3",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "scope-narrowing",
+      "rationale": "Prior signature/bridge provenance candidate does not establish principal-derived material commitment required by canonical case; retain earlier study unchanged.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-014",
+      "case_version": "0.1.0",
+      "case_blob": "05c7ae25aef6423d4d37a0c7711fcabc8bef56e7",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "No expired mandate and new material commitment shown.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-015",
+      "case_version": "0.1.0",
+      "case_blob": "1a5a30361dcf32852c52e02c21e5fd090d7a9dbf",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "No iterative mandate-constrained material commitment shown.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-016",
+      "case_version": "0.1.0",
+      "case_blob": "59fe4963e4d802e8e4e9eba889e21fabb340a28d",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "scope-narrowing",
+      "rationale": "Prior revoke candidate lacks active agent material commitment; delivery revocation alone insufficient.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-017",
+      "case_version": "0.1.0",
+      "case_blob": "07a9fcd3948b3d1e07f49c3d2ce668d1b8a35f10",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "scope-narrowing",
+      "rationale": "Prior subject/challenge/scope binding mechanism remains valid, but material commitment and approval-policy premises not established.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-018",
+      "case_version": "0.1.0",
+      "case_blob": "71116863ae3b2130955965691189af39871b7eee",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "No reputation-based material commitment under principal mandate.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-019",
+      "case_version": "0.1.0",
+      "case_blob": "b4ba4d5b4811158241375cb713a7c2133d2caf3c",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "Historical grant review is not historical commitment authority without actual commitment.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-020",
+      "case_version": "0.1.0",
+      "case_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "Grant owner and enforcement owner distinguished by selected contracts.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "case_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Same later material boundary and earlier check; prior worked example explicitly identifies it.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-022",
+      "case_version": "0.1.0",
+      "case_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior narrative prompt/decision distinction already covers binding versus effect despite no matching conditional task cell.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-023",
+      "case_version": "0.1.0",
+      "case_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Prior composed enforcement already assessed; additional privacy seam requires separate deployment obligation, not new canonical mechanism.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-024",
+      "case_version": "0.1.0",
+      "case_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "No numeric independence-sensitive threshold in selected message consent.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-025",
+      "case_version": "0.1.0",
+      "case_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Explicitly compare added provenance hops and assurance claims; prior bridge provenance distinction already known.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "case_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior scoped completeness and stale grant evidence already examined; other obligations require separate premises.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-027",
+      "case_version": "0.1.0",
+      "case_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior study explicitly separates workflow success from downstream enforcement and assurance.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-028",
+      "case_version": "0.1.0",
+      "case_blob": "e38aa35bad7a88baed68770c97f2c6ebffd6abc2",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior signal/identity versus authority boundary; trace transformations without novelty claim.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-029",
+      "case_version": "0.1.0",
+      "case_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Actual relying decision transition caused by evidence arrival rather than authority change is additional conditional question.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-030",
+      "case_version": "0.1.0",
+      "case_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior prompt/decision and missing approval control already addresses premature progression; explicit condition record is refinement.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-031",
+      "case_version": "0.1.0",
+      "case_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Prior control permits delivery after valid allow; explicit continued-blocking falsification adds a distinct question, no observation.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-032",
+      "case_version": "0.1.0",
+      "case_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "Credential/presentation securing mechanism and claimed unlinkability not established.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-033",
+      "case_version": "0.1.0",
+      "case_blob": "42bc6ee721049289f166817779b23683dea3a650",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Observable status query and explicit usage-privacy objective required; no actual lookup correlation evidence.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-034",
+      "case_version": "0.1.0",
+      "case_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior study explicitly covers secondary use beyond consent purpose.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-035",
+      "case_version": "0.1.0",
+      "case_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "conditional-extension",
+      "rationale": "Prior opaque-handle correlation known; additional actor-control-specific falsification requires declared property and observations.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-036",
+      "case_version": "0.1.0",
+      "case_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior study explicitly covers combined disclosures and joinable communication graph.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "not-established-from-task",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    },
+    {
+      "case_id": "DTF-037",
+      "case_version": "0.1.0",
+      "case_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff",
+      "ceremony_disposition": "conditional-candidate",
+      "category": "overlap",
+      "rationale": "Prior study explicitly covers durable grant history correlation and justified retention.",
+      "prior_decisions": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "disposition": "conditional-candidate",
+          "source_section": "Abstract; Definitions; Request; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "disposition": "conditional-candidate",
+          "source_section": "Changes from 1.0; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "disposition": "not-established-from-task",
+          "source_section": "Abstract; Conformance; Security & Privacy"
+        }
+      ]
+    }
+  ]
+}
