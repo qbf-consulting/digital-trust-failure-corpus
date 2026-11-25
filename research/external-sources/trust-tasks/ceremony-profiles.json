@@ -1,0 +1,171 @@
+{
+  "status": "provisional-author-profile",
+  "issue": 168,
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "framework_commit": "bdf2cdd9256f9d7b98fe8b40c776124fc27a6084",
+  "vti_commit": "83e88fcf8760f6bd159bbac09a27b002f5b656c2",
+  "independent_review": "not-established",
+  "target_execution": "not-established",
+  "profiles": [
+    {
+      "id": "joining",
+      "initial": "Applicant has no established membership.",
+      "target": "Authorized VTC membership; access evaluated separately.",
+      "actors": [
+        "applicant",
+        "community maintainer",
+        "authorized administrator"
+      ],
+      "steps": [
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+          "spec_path": "specs/vtc/join-requests/manifest/0.4/spec.md",
+          "spec_blob": "d04734db18aad2692d2c7e64a8cb7cf32f0967ff",
+          "schema_blob": "845c9f1827b16241ec9fee3faa6fd1999375665d",
+          "dependency": "policy evidence",
+          "proposition": "Applicable criterion and version, admission mode and directory disclosure."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+          "spec_path": "specs/vtc/join-requests/submit/0.3/spec.md",
+          "spec_blob": "73e3738dfd1c86bdd14b1359351ba0f021430cbe",
+          "schema_blob": "69d6feb2e64d46a2823e76548dc00428bcc43f51",
+          "dependency": "required on application path",
+          "proposition": "Proof and VP holder match; evaluate governing criterion; verdict is not uniformly admission."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/decide/0.1",
+          "spec_path": "specs/vtc/join-requests/decide/0.1/spec.md",
+          "spec_blob": "1b822327e434e9c670deb7f1a40453031c76ae1e",
+          "schema_blob": "dad0486fecbef4e2241e8f31fd600c0183ac3c4f",
+          "dependency": "conditional review",
+          "proposition": "Authorized administrator resolves pending request."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/admit/0.1",
+          "spec_path": "specs/vtc/members/admit/0.1/spec.md",
+          "spec_blob": "1317943f630b76e097c3e19a4a8954dbe99df8e6",
+          "schema_blob": "5c10564f67d91fd0f58bf3ed4a36c96247eac464",
+          "dependency": "alternative direct admission",
+          "proposition": "Live capability and role ceiling, policy referral and execution-time recheck; not subject consent."
+        }
+      ],
+      "execution": "Applicable path and required evidence established; refusal can be correct execution.",
+      "legitimacy": "Community-scoped decision under governing criterion or direct-admission policy, correct subject and role; VTI-MEM-010–013.",
+      "effective": "Current membership-derived access established at relying boundary, not inferred from credential delivery.",
+      "control": "Automatic admission must not be rejected solely for missing administrator review; direct admission must not be treated as applicant consent."
+    },
+    {
+      "id": "separation",
+      "initial": "Existing membership of same VTC.",
+      "target": "Authorized termination and applicable dependent effects.",
+      "actors": [
+        "member",
+        "community maintainer",
+        "authorized administrator",
+        "downstream verifier"
+      ],
+      "steps": [
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+          "spec_path": "specs/vtc/members/self-remove/0.1/spec.md",
+          "spec_blob": "96a50db79e1efddf9481df124460a0f2e43bdd7c",
+          "schema_blob": "a59f5b71cca3b6af8c0155d7fa348dbd3fa3a844",
+          "dependency": "self-initiated path",
+          "proposition": "Authenticated member, concrete disposition and removal result."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1",
+          "spec_path": "specs/vtc/members/self-remove-receipt/0.1/spec.md",
+          "spec_blob": "b9c1bbf4f088bf5d33b8df36bb4a52dd5284fd08",
+          "schema_blob": "bdbbac4afc4d073a2a7908a22e8f0ffd67bb0a24",
+          "dependency": "asynchronous evidence",
+          "proposition": "Community sends only after effective removal; acknowledgement is receipt delivery."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/admin-remove/0.1",
+          "spec_path": "specs/vtc/members/admin-remove/0.1/spec.md",
+          "spec_blob": "f9dbd9275c4a06e4b7b75e7426e3bd8ac922b2b2",
+          "schema_blob": "838677c6616fe06fb390bd348b21ecc815e4beea",
+          "dependency": "alternative admin path",
+          "proposition": "Community-admin capability and applicable confirmation gate."
+        }
+      ],
+      "execution": "Correct removal authority and disposition; distinguish request acceptance from effective removal; source response timing tension remains bounded.",
+      "legitimacy": "Correct relationship and authorized disposition; subject-initiated erasure not downgraded, VTI-MEM-032.",
+      "effective": "Credential status and dependent enforcement evaluated at relevant time; privacy batching cannot delay credential status, VTI-MEM-034.",
+      "control": "Preserve unrelated entitlements and permitted historical evidence; do not conflate group or network departure."
+    },
+    {
+      "id": "consent",
+      "initial": "No current permission for selected conversation/agent/scope.",
+      "target": "Current scoped allow or safe non-delivery; withdrawal returns to default-deny.",
+      "actors": [
+        "bridge",
+        "VTA",
+        "authorized approver",
+        "agent"
+      ],
+      "steps": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approver-set/1.0",
+          "spec_path": "specs/consent/approver-set/1.0/spec.md",
+          "spec_blob": "8c77f56647aca14da35933afb8440a93dfa0cf5a",
+          "schema_blob": "f2fd4d43e9270cb70d2c68cbf1ea01c4e4ff483d",
+          "dependency": "conditional prior configuration",
+          "proposition": "Context administrator binds authorized operator; routing is not consent."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_path": "specs/consent/request/1.0/spec.md",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5",
+          "dependency": "request path",
+          "proposition": "Enrolled bridge holds inbound; pending challenge and prompt."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_path": "specs/consent/approve-request/0.1/spec.md",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6",
+          "dependency": "conditional direct prompt",
+          "proposition": "Authenticated prompt and single-use challenge; not decision."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_path": "specs/consent/decision/1.0/spec.md",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669",
+          "dependency": "decision",
+          "proposition": "Authorized issuer, exact subject and challenge where required; direct or bridge-attested provenance; deny is recorded too."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_path": "specs/consent/list/1.1/spec.md",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd",
+          "dependency": "conditional synchronization",
+          "proposition": "Scoped read and issuer-controlled change token; cache advisory."
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/revoke/1.0",
+          "spec_path": "specs/consent/revoke/1.0/spec.md",
+          "spec_blob": "4c4c94e7d0e6ec337177e16c60839867c2f89388",
+          "schema_blob": "c2a65b314d2a250c08b397db29819eb42deaf3c8",
+          "dependency": "later withdrawal",
+          "proposition": "Authorized deletion and signal; default-deny."
+        }
+      ],
+      "execution": "Applicable path and exact decision binding; policy-permitted preauthorization is alternative, not missing challenge by definition.",
+      "legitimacy": "Current authoritative allow for exact subject and action; bridge-attested choice is not legal representative authority.",
+      "effective": "Bridge enforces current permission or safe deferral; revocation is not proof of downstream refresh.",
+      "control": "Recorded deny and valid preauthorization are legitimate alternative outcomes; do not infer all conversation participants consented."
+    }
+  ],
+  "limitations": [
+    "Analytical profiles, not published upstream ceremony definitions.",
+    "VTI snapshot separately pinned; compatibility not established.",
+    "Canonical case baseline and all-case examination pending.",
+    "Shared schema dependencies and full conditional paths require further inspection."
+  ]
+}
