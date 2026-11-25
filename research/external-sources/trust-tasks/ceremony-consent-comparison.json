@@ -8,7 +8,7 @@
   "prior_judgments": 222,
   "comparison_rows": 37,
   "limitations": [
-    "Matching case version does not establish matching canonical blob across revisions; prior revision case blobs must be independently reconciled before treating prior judgments as reused evidence.",
+    "Canonical case identity across the frozen revisions is supported by commit-level changed-path comparison and direct blob spot checks; historical #135 judgments retain author-only evidence status.",
     "Prior judgments are referenced for comparison, not promoted to new evidence or independent acceptance.",
     "Categories are author-side comparative interpretations; conditional extension is not demonstrated incremental value."
   ],
@@ -1937,5 +1937,351 @@
         }
       ]
     }
-  ]
+  ],
+  "case_reconciliation": {
+    "prior_revision": "9cbf3f2c157f1845f5d2849039f72351ba1441bb",
+    "current_revision": "1eda75842cf3b268361dc47ce8ade23b6a99c5cb",
+    "method": "GitHub compare_commits of exact revisions returned 21 commits, ahead/0 behind, too_large=null, with no changed paths under corpus/. Three representative prior/current blobs (DTF-001, DTF-017, DTF-037) were fetched directly and matched. This establishes immutable canonical case identity, not independent confirmation of historical analytical judgments.",
+    "status": "all-37-canonical-paths-unchanged",
+    "direct_blob_spot_checks": [
+      "DTF-001",
+      "DTF-017",
+      "DTF-037"
+    ],
+    "cases": [
+      {
+        "case_id": "DTF-001",
+        "prior_path": "corpus/authority/DTF-001.json",
+        "current_path": "corpus/authority/DTF-001.json",
+        "case_version": "0.1.0",
+        "prior_blob": "42ca99ce075461d13f584fdf610fac90c2149371",
+        "current_blob": "42ca99ce075461d13f584fdf610fac90c2149371",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-002",
+        "prior_path": "corpus/authority/DTF-002.json",
+        "current_path": "corpus/authority/DTF-002.json",
+        "case_version": "0.1.0",
+        "prior_blob": "fb68049b6586d5faf655df78d310582dac36924f",
+        "current_blob": "fb68049b6586d5faf655df78d310582dac36924f",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-003",
+        "prior_path": "corpus/authority/DTF-003.json",
+        "current_path": "corpus/authority/DTF-003.json",
+        "case_version": "0.1.0",
+        "prior_blob": "3f64fecf0499481667c11231760a673f9dc4b0d8",
+        "current_blob": "3f64fecf0499481667c11231760a673f9dc4b0d8",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-004",
+        "prior_path": "corpus/lifecycle/DTF-004.json",
+        "current_path": "corpus/lifecycle/DTF-004.json",
+        "case_version": "0.1.0",
+        "prior_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+        "current_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-005",
+        "prior_path": "corpus/lifecycle/DTF-005.json",
+        "current_path": "corpus/lifecycle/DTF-005.json",
+        "case_version": "0.1.0",
+        "prior_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+        "current_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-006",
+        "prior_path": "corpus/lifecycle/DTF-006.json",
+        "current_path": "corpus/lifecycle/DTF-006.json",
+        "case_version": "0.1.0",
+        "prior_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+        "current_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-007",
+        "prior_path": "corpus/composition/DTF-007.json",
+        "current_path": "corpus/composition/DTF-007.json",
+        "case_version": "0.1.0",
+        "prior_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+        "current_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-008",
+        "prior_path": "corpus/composition/DTF-008.json",
+        "current_path": "corpus/composition/DTF-008.json",
+        "case_version": "0.1.0",
+        "prior_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+        "current_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-009",
+        "prior_path": "corpus/composition/DTF-009.json",
+        "current_path": "corpus/composition/DTF-009.json",
+        "case_version": "0.1.0",
+        "prior_blob": "bfccad840128a91048842172c50945098ba2815b",
+        "current_blob": "bfccad840128a91048842172c50945098ba2815b",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-010",
+        "prior_path": "corpus/evidence/DTF-010.json",
+        "current_path": "corpus/evidence/DTF-010.json",
+        "case_version": "0.1.0",
+        "prior_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+        "current_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-011",
+        "prior_path": "corpus/evidence/DTF-011.json",
+        "current_path": "corpus/evidence/DTF-011.json",
+        "case_version": "0.1.0",
+        "prior_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+        "current_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-012",
+        "prior_path": "corpus/evidence/DTF-012.json",
+        "current_path": "corpus/evidence/DTF-012.json",
+        "case_version": "0.1.0",
+        "prior_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+        "current_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-013",
+        "prior_path": "corpus/authority/DTF-013.json",
+        "current_path": "corpus/authority/DTF-013.json",
+        "case_version": "0.1.0",
+        "prior_blob": "8877d7eaa9109f10363578fd8caa302a825ebcc3",
+        "current_blob": "8877d7eaa9109f10363578fd8caa302a825ebcc3",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-014",
+        "prior_path": "corpus/authority/DTF-014.json",
+        "current_path": "corpus/authority/DTF-014.json",
+        "case_version": "0.1.0",
+        "prior_blob": "05c7ae25aef6423d4d37a0c7711fcabc8bef56e7",
+        "current_blob": "05c7ae25aef6423d4d37a0c7711fcabc8bef56e7",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-015",
+        "prior_path": "corpus/authority/DTF-015.json",
+        "current_path": "corpus/authority/DTF-015.json",
+        "case_version": "0.1.0",
+        "prior_blob": "1a5a30361dcf32852c52e02c21e5fd090d7a9dbf",
+        "current_blob": "1a5a30361dcf32852c52e02c21e5fd090d7a9dbf",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-016",
+        "prior_path": "corpus/authority/DTF-016.json",
+        "current_path": "corpus/authority/DTF-016.json",
+        "case_version": "0.1.0",
+        "prior_blob": "59fe4963e4d802e8e4e9eba889e21fabb340a28d",
+        "current_blob": "59fe4963e4d802e8e4e9eba889e21fabb340a28d",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-017",
+        "prior_path": "corpus/authority/DTF-017.json",
+        "current_path": "corpus/authority/DTF-017.json",
+        "case_version": "0.1.0",
+        "prior_blob": "07a9fcd3948b3d1e07f49c3d2ce668d1b8a35f10",
+        "current_blob": "07a9fcd3948b3d1e07f49c3d2ce668d1b8a35f10",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-018",
+        "prior_path": "corpus/authority/DTF-018.json",
+        "current_path": "corpus/authority/DTF-018.json",
+        "case_version": "0.1.0",
+        "prior_blob": "71116863ae3b2130955965691189af39871b7eee",
+        "current_blob": "71116863ae3b2130955965691189af39871b7eee",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-019",
+        "prior_path": "corpus/authority/DTF-019.json",
+        "current_path": "corpus/authority/DTF-019.json",
+        "case_version": "0.1.0",
+        "prior_blob": "b4ba4d5b4811158241375cb713a7c2133d2caf3c",
+        "current_blob": "b4ba4d5b4811158241375cb713a7c2133d2caf3c",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-020",
+        "prior_path": "corpus/composition/DTF-020.json",
+        "current_path": "corpus/composition/DTF-020.json",
+        "case_version": "0.1.0",
+        "prior_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+        "current_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-021",
+        "prior_path": "corpus/composition/DTF-021.json",
+        "current_path": "corpus/composition/DTF-021.json",
+        "case_version": "0.1.0",
+        "prior_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+        "current_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-022",
+        "prior_path": "corpus/composition/DTF-022.json",
+        "current_path": "corpus/composition/DTF-022.json",
+        "case_version": "0.1.0",
+        "prior_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+        "current_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-023",
+        "prior_path": "corpus/composition/DTF-023.json",
+        "current_path": "corpus/composition/DTF-023.json",
+        "case_version": "0.1.0",
+        "prior_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+        "current_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-024",
+        "prior_path": "corpus/composition/DTF-024.json",
+        "current_path": "corpus/composition/DTF-024.json",
+        "case_version": "0.1.0",
+        "prior_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+        "current_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-025",
+        "prior_path": "corpus/evidence/DTF-025.json",
+        "current_path": "corpus/evidence/DTF-025.json",
+        "case_version": "0.1.0",
+        "prior_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+        "current_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-026",
+        "prior_path": "corpus/evidence/DTF-026.json",
+        "current_path": "corpus/evidence/DTF-026.json",
+        "case_version": "0.1.0",
+        "prior_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+        "current_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-027",
+        "prior_path": "corpus/evidence/DTF-027.json",
+        "current_path": "corpus/evidence/DTF-027.json",
+        "case_version": "0.1.0",
+        "prior_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+        "current_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-028",
+        "prior_path": "corpus/authority/DTF-028.json",
+        "current_path": "corpus/authority/DTF-028.json",
+        "case_version": "0.1.0",
+        "prior_blob": "e38aa35bad7a88baed68770c97f2c6ebffd6abc2",
+        "current_blob": "e38aa35bad7a88baed68770c97f2c6ebffd6abc2",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-029",
+        "prior_path": "corpus/evidence/DTF-029.json",
+        "current_path": "corpus/evidence/DTF-029.json",
+        "case_version": "0.1.0",
+        "prior_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+        "current_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-030",
+        "prior_path": "corpus/evidence/DTF-030.json",
+        "current_path": "corpus/evidence/DTF-030.json",
+        "case_version": "0.1.0",
+        "prior_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+        "current_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-031",
+        "prior_path": "corpus/lifecycle/DTF-031.json",
+        "current_path": "corpus/lifecycle/DTF-031.json",
+        "case_version": "0.1.0",
+        "prior_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+        "current_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-032",
+        "prior_path": "corpus/privacy/DTF-032.json",
+        "current_path": "corpus/privacy/DTF-032.json",
+        "case_version": "0.1.0",
+        "prior_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb",
+        "current_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-033",
+        "prior_path": "corpus/privacy/DTF-033.json",
+        "current_path": "corpus/privacy/DTF-033.json",
+        "case_version": "0.1.0",
+        "prior_blob": "42bc6ee721049289f166817779b23683dea3a650",
+        "current_blob": "42bc6ee721049289f166817779b23683dea3a650",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-034",
+        "prior_path": "corpus/privacy/DTF-034.json",
+        "current_path": "corpus/privacy/DTF-034.json",
+        "case_version": "0.1.0",
+        "prior_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa",
+        "current_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-035",
+        "prior_path": "corpus/privacy/DTF-035.json",
+        "current_path": "corpus/privacy/DTF-035.json",
+        "case_version": "0.1.0",
+        "prior_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af",
+        "current_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-036",
+        "prior_path": "corpus/privacy/DTF-036.json",
+        "current_path": "corpus/privacy/DTF-036.json",
+        "case_version": "0.1.0",
+        "prior_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad",
+        "current_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad",
+        "status": "unchanged-by-commit-comparison"
+      },
+      {
+        "case_id": "DTF-037",
+        "prior_path": "corpus/privacy/DTF-037.json",
+        "current_path": "corpus/privacy/DTF-037.json",
+        "case_version": "0.1.0",
+        "prior_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff",
+        "current_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff",
+        "status": "unchanged-by-commit-comparison"
+      }
+    ]
+  }
 }
