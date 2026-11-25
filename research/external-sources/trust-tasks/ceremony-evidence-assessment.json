@@ -1,0 +1,711 @@
+{
+  "kind": "ceremony-comparative-author-assessment-increment",
+  "issue": 168,
+  "family": "evidence",
+  "status": "provisional-author-judgments",
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "profile_blob": "feff06fe825f44af02ae468d17630060e61a0621",
+  "canonical_catalog_blob": "8333b3c1858e9673e77820f20c919c96fbdd8633",
+  "case_count": 8,
+  "profile_count": 3,
+  "dispositions": [
+    {
+      "profile": "joining",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "source_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+      "source_path": "corpus/evidence/DTF-010.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Manifest criteria; Submit Deciding a submission, Meeting it; VTI-MEM-010–013",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Submitted proof and presentation may verify; governing criterion can require additional evidence.",
+      "relying_proposition": "All required admission conditions are satisfied.",
+      "precondition_analysis": "Requires a specific evidence obligation under the governing criterion, absence/unavailability of that evidence and no competent rule treating absence as sufficient. A criterion expressly requiring no credential is a control, not missing evidence.",
+      "trigger": "The relying system evaluates the proposition while required evidence is missing or unavailable.",
+      "falsification": [
+        "The system returns PASS because required evidence is absent, unavailable, or could not be retrieved.",
+        "The system treats failure to observe a disqualifying condition as proof that the positive trust proposition is established."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Return requestMore, deny or applicable error when required evidence is missing; do not infer eligibility from absence of disqualification. Respect criteria requiring no credentials.",
+      "potential_impact": "Applicant/community; wrongful admission or unjustified rejection.",
+      "comparison": "limited: submit explicitly requires all governing criterion requirements; ceremony analysis shows where later review could lose the missing-evidence diagnostic.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "source_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+      "source_path": "corpus/evidence/DTF-010.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-030–034; VTI-ACL-080–082",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Authenticated removal assertion establishes its scoped claim; dependent effects may need separate evidence.",
+      "relying_proposition": "All affected access, publication and erasure obligations have been fulfilled.",
+      "precondition_analysis": "Requires identified material effect evidence missing or unresolved and no rule making absence sufficient. Absence of a record can be a legitimate erasure observation only if provenance and applicable semantics establish it; mere unavailable lookup is not positive erasure evidence.",
+      "trigger": "The relying system evaluates the proposition while required evidence is missing or unavailable.",
+      "falsification": [
+        "The system returns PASS because required evidence is absent, unavailable, or could not be retrieved.",
+        "The system treats failure to observe a disqualifying condition as proof that the positive trust proposition is established."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Report which effects are established and which remain indeterminate; do not claim all effects from missing downstream observations.",
+      "potential_impact": "Departing member and services; continuing access, misleading erasure or wrongful exclusion.",
+      "comparison": "added-value: locates separately required evidence for each downstream effect.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-010",
+      "case_version": "0.1.0",
+      "source_blob": "5e9cae6ee39dccb45ca27adc02c7f51ef12ea081",
+      "source_path": "corpus/evidence/DTF-010.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Request Default-deny; Decision Conformance; List Retention",
+      "disposition": "conditional-candidate",
+      "attribution": "task-local",
+      "local_proposition": "Unknown subject has no established allow; request accepted only indicates prompt routed.",
+      "relying_proposition": "Delivery is permitted because no denial or revocation was observed.",
+      "precondition_analysis": "Requires actual required allow evidence absent or unresolved, no policy authorizing absence; selected flow explicitly defaults to deny.",
+      "trigger": "The relying system evaluates the proposition while required evidence is missing or unavailable.",
+      "falsification": [
+        "The system returns PASS because required evidence is absent, unavailable, or could not be retrieved.",
+        "The system treats failure to observe a disqualifying condition as proof that the positive trust proposition is established."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Hold/drop absent current authorized allow; reconcile against VTA when required. Do not infer consent from silence.",
+      "potential_impact": "Conversation participants/operator; unauthorized content delivery.",
+      "comparison": "no-added-value: default-deny is explicit in individual task contract and prior Consent study.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-011",
+      "case_version": "0.1.0",
+      "source_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+      "source_path": "corpus/evidence/DTF-011.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/members/admit/0.1"
+      ],
+      "sections": "Submit Meeting it; Admit Conformance and referral; VTI-APV-017; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "VP/status check or capability observation may have been valid when performed.",
+      "relying_proposition": "Evidence remains sufficiently current for a later admission or access decision.",
+      "precondition_analysis": "Requires decision-specific freshness condition, unavailable relevant observation/verification times and no alternative proof of continuity. A signature issuedAt alone need not establish status observation time; no universal review interval assumed.",
+      "trigger": "The relying system evaluates current state while the age or freshness of required evidence is unresolved.",
+      "falsification": [
+        "The system returns PASS for a current-state proposition when required evidence freshness cannot be established.",
+        "The system assumes evidence remains current indefinitely because no newer evidence was successfully retrieved."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Identify applicable freshness rule and verify current-enough evidence; defer or refuse unsupported current-state claim; distinguish known stale evidence from unverifiable freshness.",
+      "potential_impact": "Applicant/community; erroneous admission/access.",
+      "comparison": "added-value: earlier evaluation and later execution boundaries can have different freshness obligations; direct-admit recheck already explicit.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-011",
+      "case_version": "0.1.0",
+      "source_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+      "source_path": "corpus/evidence/DTF-011.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-030–034; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Community removal evidence may describe an effective historical transition.",
+      "relying_proposition": "A downstream check establishes current membership-derived status or authority.",
+      "precondition_analysis": "Requires a later current-state proposition, meaningful freshness requirement, unknown observation/effect time and no positive continuity proof. Receipt delivery time alone is not downstream status observation time.",
+      "trigger": "The relying system evaluates current state while the age or freshness of required evidence is unresolved.",
+      "falsification": [
+        "The system returns PASS for a current-state proposition when required evidence freshness cannot be established.",
+        "The system assumes evidence remains current indefinitely because no newer evidence was successfully retrieved."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Obtain relevant current authoritative status or explicitly report unresolved freshness; do not infer freshness from no newer notification.",
+      "potential_impact": "Former member/service; stale access or unjustified lockout.",
+      "comparison": "added-value: separates transition, notification and relying observation times across enactments.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-011",
+      "case_version": "0.1.0",
+      "source_blob": "a69f935794bc2b9cf82d2d3026fae47b6d235f0e",
+      "source_path": "corpus/evidence/DTF-011.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "Decision grantedAt/expiresAt; List Retention and sync token; Revoke Conformance",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Grant and change-stream position may be known.",
+      "relying_proposition": "Cached grant is current enough for actual release despite unknown refresh/observation time.",
+      "precondition_analysis": "Requires current-delivery freshness condition, absent relevant observation time and no proof of continuity; opaque token is not timestamp or universal freshness proof; grant expiry is not sufficient evidence of non-revocation.",
+      "trigger": "The relying system evaluates current state while the age or freshness of required evidence is unresolved.",
+      "falsification": [
+        "The system returns PASS for a current-state proposition when required evidence freshness cannot be established.",
+        "The system assumes evidence remains current indefinitely because no newer evidence was successfully retrieved."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Use VTA for explicit point-check/stale token; hold/drop when no current permission established; no invented numerical cache lifetime.",
+      "potential_impact": "Participants/operator; unauthorized delivery.",
+      "comparison": "no-added-value for core cache freshness mechanism previously examined in #135; ceremony locates release decision.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-012",
+      "case_version": "0.1.0",
+      "source_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+      "source_path": "corpus/evidence/DTF-012.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Manifest requirementsGrace; Submit Which criterion governs, Deciding item 4",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Evaluation can be bound to a specific criterion version under explicit grace rules.",
+      "relying_proposition": "Admission is represented as satisfying a different incompatible criterion version.",
+      "precondition_analysis": "Requires identified asserted policy/version, material evaluation under incompatible or unidentified context and no applicable compatibility rule. Grace may expressly permit prior criterion evaluation; using it is not by itself mismatch.",
+      "trigger": "The relying system consumes evidence or a prior decision without reconciling the policy context under which that evidence was produced with the policy asserted for the current decision.",
+      "falsification": [
+        "The system returns PASS while representing compliance with policy version B from evidence materially evaluated only under incompatible policy version A.",
+        "The system cannot establish the policy context of material evidence but attributes that evidence to the current asserted policy and returns PASS."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Record actual governing criterion/version; apply compatibility/grace or re-evaluate under asserted policy; do not relabel evidence.",
+      "potential_impact": "Applicant/community; incorrect admission or arbitrary refusal.",
+      "comparison": "limited: task explicitly records governing criterion and version; ceremony trace exposes downstream relabeling.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-012",
+      "case_version": "0.1.0",
+      "source_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+      "source_path": "corpus/evidence/DTF-012.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Removal disposition and confirmation policy; VTI-VTC-030–032; VTI-CMP-090–092",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Removal/disposition may be evaluated under applicable policy when requested.",
+      "relying_proposition": "A later relying decision asserts compliance with a materially changed removal or retention policy.",
+      "precondition_analysis": "Requires actual versioned policy claim, material prior evaluation under incompatible/unidentified context, and no grandfathering or compatibility rule. Merely later policy publication does not invalidate lawful prior action.",
+      "trigger": "The relying system consumes evidence or a prior decision without reconciling the policy context under which that evidence was produced with the policy asserted for the current decision.",
+      "falsification": [
+        "The system returns PASS while representing compliance with policy version B from evidence materially evaluated only under incompatible policy version A.",
+        "The system cannot establish the policy context of material evidence but attributes that evidence to the current asserted policy and returns PASS."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Retain original policy reference, evaluate applicable policy at exact action/time, qualify historical vs current compliance; no retrospective relabeling.",
+      "potential_impact": "Member/community; improper removal disposition or retention.",
+      "comparison": "added-value conditional on actual policy transition across request, execution or later assurance.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-012",
+      "case_version": "0.1.0",
+      "source_blob": "43a3aa604af34163ea8285de57cc7a6fc76d0bf9",
+      "source_path": "corpus/evidence/DTF-012.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approver-set/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Approver-set Conformance; Decision Approver authority; VTI-CMP-090–092",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Grant evaluated for then-applicable platform/context approver and scope.",
+      "relying_proposition": "Current delivery is represented as satisfying a changed consent policy.",
+      "precondition_analysis": "Requires an identified asserted policy/version, grant/evaluation under different or unknown incompatible policy and no compatibility rule; selected payload does not itself establish a versioned policy transition.",
+      "trigger": "The relying system consumes evidence or a prior decision without reconciling the policy context under which that evidence was produced with the policy asserted for the current decision.",
+      "falsification": [
+        "The system returns PASS while representing compliance with policy version B from evidence materially evaluated only under incompatible policy version A.",
+        "The system cannot establish the policy context of material evidence but attributes that evidence to the current asserted policy and returns PASS."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Establish governing policy context and applicability; re-evaluate grant if required; do not infer new policy compliance from old record.",
+      "potential_impact": "Operator/participants; delivery outside governing rules.",
+      "comparison": "added-value conditional on deployment policy history; not established simply by changing approver binding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-025",
+      "case_version": "0.1.0",
+      "source_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+      "source_path": "corpus/evidence/DTF-025.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Authorization/Retention; Decide Conformance; receipt 0.1 recorder claim; VTI-CMP-070–074",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "VP, admission record and receipt can establish different scoped facts or repeat an existing claim.",
+      "relying_proposition": "More provenance hops establish stronger eligibility or admission assurance merely by their number.",
+      "precondition_analysis": "Requires actual multi-hop chain, increased confidence because length and no additional material proposition from added hops. A competent approval can add a genuine decision fact and must not be dismissed as mere repetition.",
+      "trigger": "The relying system returns PASS or increases assurance solely because the provenance chain contains more steps or artifacts.",
+      "falsification": [
+        "The system increases assurance because the provenance chain is longer even though no additional material proposition is established.",
+        "Repeated transformation or re-attestation of the same underlying source is treated as independent corroboration."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Identify what each hop establishes; do not increase assurance for repeated projections; credit genuine additional facts.",
+      "potential_impact": "Applicant/community; false assurance of eligibility.",
+      "comparison": "added-value: compares evidence contributions across the ceremony; distinguish provenance depth from independence (DTF-007).",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-025",
+      "case_version": "0.1.0",
+      "source_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+      "source_path": "corpus/evidence/DTF-025.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; receipt 0.1 recorder claim and verifier rules 7–11",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Removal assertion, forwarded receipt and acknowledgement have distinct roles.",
+      "relying_proposition": "Forwarding or re-attesting removal provides additional substantive assurance of all effects.",
+      "precondition_analysis": "Requires multiple derivation hops and increased confidence solely from length despite no new material fact. Acknowledgement adds delivery evidence, not necessarily stronger removal evidence.",
+      "trigger": "The relying system returns PASS or increases assurance solely because the provenance chain contains more steps or artifacts.",
+      "falsification": [
+        "The system increases assurance because the provenance chain is longer even though no additional material proposition is established.",
+        "Repeated transformation or re-attestation of the same underlying source is treated as independent corroboration."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Trace origin and contribution per hop; require actual effect observation for stronger claim.",
+      "potential_impact": "Member/service; overstated completion or erasure assurance.",
+      "comparison": "added-value: shows why delivery evidence cannot amplify removal assurance.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-025",
+      "case_version": "0.1.0",
+      "source_blob": "2050eff1dd2475edcb533521e21df53a5cadcb8d",
+      "source_path": "corpus/evidence/DTF-025.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approve-request/0.1",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Approve-request Definitions; Decision evidence mode; List scoped reads",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Prompt, bridge attestation, recorded grant and synchronized copy have separate propositions.",
+      "relying_proposition": "Longer chain upgrades bridge-attested operator choice to stronger direct or independent assurance.",
+      "precondition_analysis": "Requires actual multi-hop derivation, greater assurance attributed solely to hop count and no independent/new assurance fact. VTA recording adds authoritative grant state but does not by itself upgrade evidence of operator choice.",
+      "trigger": "The relying system returns PASS or increases assurance solely because the provenance chain contains more steps or artifacts.",
+      "falsification": [
+        "The system increases assurance because the provenance chain is longer even though no additional material proposition is established.",
+        "Repeated transformation or re-attestation of the same underlying source is treated as independent corroboration."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Preserve original evidence mode; credit grant recording for its own claim only; require separate evidence for stronger choice assurance.",
+      "potential_impact": "Operator/participants; overstated consent authenticity.",
+      "comparison": "limited: bridge provenance already examined in #135; comparative chain clarifies non-amplification.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "source_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+      "source_path": "corpus/evidence/DTF-026.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Meeting it, Requested attributes; ceremony receipt 0.1 verifier rules 4–11; VTI-CMP-070–074",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Selectively disclosed credentials may be individually valid.",
+      "relying_proposition": "Disclosed set is sufficient for all material eligibility/approval obligations.",
+      "precondition_analysis": "Requires valid subset, completeness-sensitive scoped decision, possible material omitted counter-evidence and no rule establishing subset sufficiency. Selective disclosure itself is legitimate; do not require irrelevant or unnecessary claims.",
+      "trigger": "The relying system converts validity of the disclosed subset into PASS for evidentiary completeness or sufficiency.",
+      "falsification": [
+        "The system returns PASS for a completeness-dependent proposition merely because every disclosed item is individually valid.",
+        "Known or potentially material omitted evidence is ignored without a rule showing that it is outside the scoped proposition."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate completeness against governing criterion and competent evidence rules; request only necessary evidence; defer if material omission unresolved.",
+      "potential_impact": "Applicant/community; erroneous admission or over-disclosure.",
+      "comparison": "added-value: distinguishes per-artifact validity from required path evidence while preserving selective disclosure.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "source_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+      "source_path": "corpus/evidence/DTF-026.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; ceremony receipt 0.1 verifier rules 4–11 and residual omissions; VTI-CMP-070–074",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Held removal and acknowledgement documents can verify individually.",
+      "relying_proposition": "Evidence set proves every required dependent effect and complete enactment.",
+      "precondition_analysis": "Requires individually valid subset, scoped completeness requirement, potentially material missing effect/predecessor/terminal evidence, and no sufficiency rule. Receipt verifier explicitly bounds unheld and unobserved steps.",
+      "trigger": "The relying system converts validity of the disclosed subset into PASS for evidentiary completeness or sufficiency.",
+      "falsification": [
+        "The system returns PASS for a completeness-dependent proposition merely because every disclosed item is individually valid.",
+        "Known or potentially material omitted evidence is ignored without a rule showing that it is outside the scoped proposition."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Report verified subset and missing effect evidence; do not infer complete departure effects; no blanket requirement to disclose all personal data.",
+      "potential_impact": "Member/service; incomplete revocation or misleading assurance.",
+      "comparison": "added-value: identifies completeness obligations spanning ceremony and downstream effects, not merely receipt enumeration.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-026",
+      "case_version": "0.1.0",
+      "source_blob": "f3d5dd39087158248683efb82193ebd3f1a264b0",
+      "source_path": "corpus/evidence/DTF-026.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Request subject/challenge; Decision Conformance; List scoped reads; VTI-CMP-070–074",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "A valid allow record or scoped read supports a particular subject/agent decision.",
+      "relying_proposition": "Disclosed subset establishes permission for the exact relying action and all applicable disclosure obligations.",
+      "precondition_analysis": "Requires valid subset and a specific completeness-sensitive claim, omitted material evidence (e.g. later decision or applicable independent purpose obligation), no sufficiency rule. A correctly scoped authoritative current read can suffice for grant-state claim; no universal all-participant consent requirement.",
+      "trigger": "The relying system converts validity of the disclosed subset into PASS for evidentiary completeness or sufficiency.",
+      "falsification": [
+        "The system returns PASS for a completeness-dependent proposition merely because every disclosed item is individually valid.",
+        "Known or potentially material omitted evidence is ignored without a rule showing that it is outside the scoped proposition."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Check exact query scope, material decision state and separate applicable obligations; do not interpret absence from scoped output as completeness beyond scope.",
+      "potential_impact": "Conversation participants/operator; unauthorized use or unnecessary disclosure.",
+      "comparison": "added-value only for additional scoped composition evidence obligations; stale grants already assessed in #135.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-027",
+      "case_version": "0.1.0",
+      "source_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+      "source_path": "corpus/evidence/DTF-027.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Conformance/Deciding; VTI-MEM-011; VTI-CMP-020–023; receipt verifier rules",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Task schema/proof checks or exchange completion can succeed.",
+      "relying_proposition": "Successful workflow proves legitimate admission and current access.",
+      "precondition_analysis": "Requires successful process, stronger substantive proposition requiring additional semantic evidence, and material evidence outside process scope or unresolved. A competent admission decision can establish admission, not arbitrary access.",
+      "trigger": "The system or operator treats operational process success as substantive assurance PASS.",
+      "falsification": [
+        "A green CI or validator result is represented as assurance PASS even though required substantive evidence was never evaluated.",
+        "Successful signature or schema verification is treated as proof of authorization, legitimacy, safety, or another broader proposition outside the check's semantics."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate actual verdict, governing criterion/authority and applicable current access separately; mark unsupported assurance indeterminate.",
+      "potential_impact": "Applicant/community; improper access or false admission assurance.",
+      "comparison": "added-value: separates workflow progress, completed decision and reliance; upstream already expressly distinguishes exchange completion.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-027",
+      "case_version": "0.1.0",
+      "source_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+      "source_path": "corpus/evidence/DTF-027.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-033–034; VTI-ACL-080–082",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Removal workflow and receipt acknowledgement can complete successfully.",
+      "relying_proposition": "Workflow success proves every dependent revocation and retention obligation satisfied.",
+      "precondition_analysis": "Requires actual successful process, additional substantive effect/legitimacy obligation and missing material evidence outside workflow scope; local removal result may already assert certain effects.",
+      "trigger": "The system or operator treats operational process success as substantive assurance PASS.",
+      "falsification": [
+        "A green CI or validator result is represented as assurance PASS even though required substantive evidence was never evaluated.",
+        "Successful signature or schema verification is treated as proof of authorization, legitimacy, safety, or another broader proposition outside the check's semantics."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Assess competent effect evidence and actual downstream enforcement; report partial effectiveness only where divergence observed.",
+      "potential_impact": "Member/service; continued unauthorized access or false erasure assurance.",
+      "comparison": "added-value: separate operational completion from distributed effect assurance.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-027",
+      "case_version": "0.1.0",
+      "source_blob": "8edbffce8c9a66879e87359a00e9cdba1fc0c1c0",
+      "source_path": "corpus/evidence/DTF-027.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Request Response; Decision Conformance; List Retention",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Request routing, recording and synchronization can all succeed, including a deny decision.",
+      "relying_proposition": "Successful processing proves authorized delivery or legitimate consent outcome.",
+      "precondition_analysis": "Requires successful process and stronger substantive proposition with missing/unresolved evidence; recorded deny explicitly contradicts allow. Successful schema/proof validation is not permission.",
+      "trigger": "The system or operator treats operational process success as substantive assurance PASS.",
+      "falsification": [
+        "A green CI or validator result is represented as assurance PASS even though required substantive evidence was never evaluated.",
+        "Successful signature or schema verification is treated as proof of authorization, legitimacy, safety, or another broader proposition outside the check's semantics."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Evaluate effect, scope, authoritative freshness and delivery evidence; hold/drop unless current allow established.",
+      "potential_impact": "Operator/participants; unauthorized delivery.",
+      "comparison": "no-added-value for prompt/decision/cache distinction already identified; ceremony makes operational/semantic axes explicit.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-029",
+      "case_version": "0.1.0",
+      "source_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+      "source_path": "corpus/evidence/DTF-029.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Which criterion governs, Deciding; VTI-CMP-090–092",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "A previously deferred or refused eligibility evaluation can change after admissible evidence or policy changes.",
+      "relying_proposition": "Changed eligibility result proves new authority was granted to applicant or decision-maker.",
+      "precondition_analysis": "Requires actual material decision transition, reconstructed non-authority causal basis and misattribution as authority change. Admission itself may create membership/authority; distinguish prior eligibility finding from resulting grant.",
+      "trigger": "The system records, communicates, or relies on the changed decision as though authority changed merely because the outcome became more or less permissive.",
+      "falsification": [
+        "A decision record asserts an authority change while the only evidenced material change is evidence, policy, lifecycle state, correction, or evaluation context.",
+        "A more permissive outcome is treated as proof that new authority was granted when no authority event can be established.",
+        "The system cannot reconstruct why the outcome changed but reports the transition as verified authority change."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Record prior/current evaluation inputs and actual causal category; separate eligibility transition from subsequent membership or authority event; report unresolved cause if unknown.",
+      "potential_impact": "Applicant/community; false authority provenance or incorrect delegation.",
+      "comparison": "added-value: traces decision and later authority creation as separate transitions.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-029",
+      "case_version": "0.1.0",
+      "source_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+      "source_path": "corpus/evidence/DTF-029.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-030–034; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Relying assessment can move from unverified removal to verified removal when evidence arrives.",
+      "relying_proposition": "Receipt arrival itself caused the authority withdrawal.",
+      "precondition_analysis": "Requires actual changed decision attributable to evidence arrival rather than new authority event; distinguish effective removal/revocation from subsequent observation. If removal itself changed authority, that transition is not the case.",
+      "trigger": "The system records, communicates, or relies on the changed decision as though authority changed merely because the outcome became more or less permissive.",
+      "falsification": [
+        "A decision record asserts an authority change while the only evidenced material change is evidence, policy, lifecycle state, correction, or evaluation context.",
+        "A more permissive outcome is treated as proof that new authority was granted when no authority event can be established.",
+        "The system cannot reconstruct why the outcome changed but reports the transition as verified authority change."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Record authority effect time separately from evidence observation and decision time; do not infer causal event from updated decision.",
+      "potential_impact": "Former member/service; incorrect historical attribution or enforcement window.",
+      "comparison": "added-value: cross-stage evidence arrival can change epistemic decision without changing underlying authority.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-029",
+      "case_version": "0.1.0",
+      "source_blob": "41bc6926b70b4df4da4c9e058d365d63c6d04201",
+      "source_path": "corpus/evidence/DTF-029.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Decision Conformance; List change stream/Retention",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Bridge can change decision after receiving evidence of an already established VTA grant.",
+      "relying_proposition": "Cache synchronization itself granted or revoked authority.",
+      "precondition_analysis": "Requires actual relying decision transition caused by new evidence of pre-existing state, not grant creation/revocation; actual authority event must be distinguished from its observation.",
+      "trigger": "The system records, communicates, or relies on the changed decision as though authority changed merely because the outcome became more or less permissive.",
+      "falsification": [
+        "A decision record asserts an authority change while the only evidenced material change is evidence, policy, lifecycle state, correction, or evaluation context.",
+        "A more permissive outcome is treated as proof that new authority was granted when no authority event can be established.",
+        "The system cannot reconstruct why the outcome changed but reports the transition as verified authority change."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Attribute grant to competent VTA decision, synchronization to evidence propagation; record effective/observed times and unresolved causes.",
+      "potential_impact": "Operator/participants; incorrect consent history or stale enforcement diagnosis.",
+      "comparison": "added-value conditional on causal reconstruction; cache propagation is already known from #135.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-030",
+      "case_version": "0.1.0",
+      "source_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+      "source_path": "corpus/evidence/DTF-030.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1",
+        "https://trusttasks.org/spec/vtc/members/admit/0.1"
+      ],
+      "sections": "Submit Deciding; Admit referral/execution; VTI-APV-017; VTI-CMP-080–082",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Referral or missing required evidence can establish a blocking condition.",
+      "relying_proposition": "Workflow advancement or a related approval resolves every admission condition.",
+      "precondition_analysis": "Requires explicitly identified unresolved condition, applicable resolution rule and no admissible event satisfying that specific condition. Actual competent decision may resolve referral; it does not automatically resolve other requirements.",
+      "trigger": "The workflow advances or receives non-resolution signals and the system clears the unresolved condition without evidence that its material basis changed.",
+      "falsification": [
+        "The system returns PASS after workflow progression when no admissible resolution event is evidenced.",
+        "Peer pressure, repetition, consensus, confidence, or reputation is treated as resolution evidence.",
+        "The unresolved condition disappears from retained state without a reconstructable resolution basis."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Keep condition and basis until admissible resolution; separately re-evaluate other gates; record exact resolving event or defer.",
+      "potential_impact": "Applicant/community; wrongful admission or untraceable condition clearance.",
+      "comparison": "added-value: tracks unresolved conditions across alternate paths and prevents false closure.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-030",
+      "case_version": "0.1.0",
+      "source_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+      "source_path": "corpus/evidence/DTF-030.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-033–034; VTI-ACL-080–082",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Downstream credential/access or publication effect may explicitly remain unresolved.",
+      "relying_proposition": "Receipt delivery or elapsed time clears unresolved dependent effect.",
+      "precondition_analysis": "Requires an identified material unresolved effect, admissible resolution requirements and no such event. Authentic receipt may resolve community-side condition if it attests required effect; not every downstream condition.",
+      "trigger": "The workflow advances or receives non-resolution signals and the system clears the unresolved condition without evidence that its material basis changed.",
+      "falsification": [
+        "The system returns PASS after workflow progression when no admissible resolution event is evidenced.",
+        "Peer pressure, repetition, consensus, confidence, or reputation is treated as resolution evidence.",
+        "The unresolved condition disappears from retained state without a reconstructable resolution basis."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Retain separate unresolved effect records; require competent status/enforcement evidence to clear them; do not equate acknowledgment with resolution.",
+      "potential_impact": "Member/service; stale access or misleading departure assurance.",
+      "comparison": "added-value: supports explicit evidence-linked completion and distinguishes lawful pending convergence.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-030",
+      "case_version": "0.1.0",
+      "source_blob": "bc1b26c9ae27c43001a1ce8109efa7ac2a7b029c",
+      "source_path": "corpus/evidence/DTF-030.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/approve-request/0.1",
+        "https://trusttasks.org/spec/consent/decision/1.0"
+      ],
+      "sections": "Request Conformance/Response; Approve-request challenge; Decision Conformance",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Pending consent is an explicit state tied to subject/challenge.",
+      "relying_proposition": "Prompt delivery, repeated request or bridge confidence resolves pending allow without recorded admissible decision.",
+      "precondition_analysis": "Requires actual material unresolved consent condition, defined admissible decision requirements and no valid resolving decision. Policy-permitted preauthorization is separate path, not missing challenge by definition.",
+      "trigger": "The workflow advances or receives non-resolution signals and the system clears the unresolved condition without evidence that its material basis changed.",
+      "falsification": [
+        "The system returns PASS after workflow progression when no admissible resolution event is evidenced.",
+        "Peer pressure, repetition, consensus, confidence, or reputation is treated as resolution evidence.",
+        "The unresolved condition disappears from retained state without a reconstructable resolution basis."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Keep default-deny and pending state until competent decision or applicable existing grant; do not treat repeated prompts as resolution.",
+      "potential_impact": "Operator/participants; unauthorized disclosure.",
+      "comparison": "no-added-value for core request/decision distinction already explicit; condition tracking useful across stages.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    }
+  ],
+  "limitations": [
+    "Conditional documentary hypotheses only; no observed failures or independent acceptance.",
+    "A conditional candidate requires all canonical preconditions and a concrete relying proposition; no claim that selected tasks violate their contracts.",
+    "Selective disclosure and scoped reads can legitimately establish completeness for a bounded claim; provenance hops can establish genuinely new facts.",
+    "DTF-029 requires a decision transition whose actual cause is not authority change; distinguish effective event from subsequent observation.",
+    "DTF-027 applies to this research's own CI and validation results; structural success is not substantive assurance.",
+    "Per-precondition adversarial review and final matrix validation remain pending."
+  ]
+}
