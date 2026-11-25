@@ -16,7 +16,7 @@ A departing member's credential can be revoked while a downstream service still 
 
 ## Comparison with prior Consent research
 
-The six selected source versions match #135 specification and schema blobs. The comparison sidecar records 37 rows against 222 prior judgments: 14 overlap, 12 conditional extensions, eight not established, three scope narrowings. Prior canonical case version matches are not proof of byte equivalence across revisions; until verified, use prior judgments as references rather than reused evidence. In particular #135 already considered stale cache after revocation, bridge decision provenance, combined disclosure and retained correlation. Ceremony analysis makes composition obligations systematic; it does not establish exclusive detection capability or a novel normative requirement.
+The six selected source versions match #135 specification and schema blobs. The comparison sidecar records 37 rows against 222 prior judgments: 14 overlap, 12 conditional extensions, eight not established, three scope narrowings. All 37 canonical case paths and blobs are unchanged between the historical #135 revision and frozen #168 baseline, supported by the full 21-commit changed-path comparison and direct blob checks for DTF-001, DTF-017 and DTF-037. This permits exact-proposition comparison, not elevation of earlier author judgments into independent evidence; their preconditions and interpretations remain subject to challenge. In particular #135 already considered stale cache after revocation, bridge decision provenance, combined disclosure and retained correlation. Ceremony analysis makes composition obligations systematic; it does not establish exclusive detection capability or a novel normative requirement.
 
 ## Evidence status
 
