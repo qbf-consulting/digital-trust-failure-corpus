@@ -1,0 +1,363 @@
+{
+  "kind": "ceremony-comparative-author-assessment-increment",
+  "issue": 168,
+  "family": "lifecycle",
+  "status": "provisional-author-judgments",
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "profile_blob": "feff06fe825f44af02ae468d17630060e61a0621",
+  "canonical_catalog_blob": "87747de43ce453c2d5d205ba1cfed438ae69f622",
+  "case_count": 4,
+  "profile_count": 3,
+  "dispositions": [
+    {
+      "profile": "joining",
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "source_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+      "source_path": "corpus/lifecycle/DTF-004.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Conformance, Meeting it; VTI-MEM-010–013",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Presentation credential valid at submission; review can occur later.",
+      "relying_proposition": "Previously verified credential is currently valid at a later admission boundary.",
+      "precondition_analysis": "Requires initially valid credential, competent effective revocation, later decision explicitly requiring current credential validity. Whether policy requires fresh credential check at later review is not universal.",
+      "trigger": "The relying system evaluates current validity using artifact evidence that does not incorporate the effective revocation state.",
+      "falsification": [
+        "The system returns PASS for current validity after an authoritative revocation is known to be effective.",
+        "The system cannot establish current revocation state but converts that uncertainty into PASS."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Verify status at applicable current-validity boundary; deny or defer if revoked or unestablished; do not invalidate an earlier lawful decision retroactively.",
+      "potential_impact": "Applicant/community; incorrect admission or exclusion.",
+      "comparison": "added-value conditional on later current-validity requirement; local submit already verifies revocation.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "source_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+      "source_path": "corpus/lifecycle/DTF-004.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-030–034",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Membership credential was valid and community reports effective removal.",
+      "relying_proposition": "Credential remains currently valid after competent effective status revocation.",
+      "precondition_analysis": "Requires initially valid VMC, competent revocation effective before later current-validity query. Departure alone is not proof of every artifact revocation; verify actual status and timing.",
+      "trigger": "The relying system evaluates current validity using artifact evidence that does not incorporate the effective revocation state.",
+      "falsification": [
+        "The system returns PASS for current validity after an authoritative revocation is known to be effective.",
+        "The system cannot establish current revocation state but converts that uncertainty into PASS."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Reject revoked VMC for current validity or return indeterminate if status unavailable; preserve historical question separately.",
+      "potential_impact": "Former member and service; improper membership reliance.",
+      "comparison": "added-value: connects issued artifact to separation status and later relying query; distinguish artifact validity from dependent authority (DTF-001/003).",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-004",
+      "case_version": "0.1.0",
+      "source_blob": "c9f038116f85414c8e7574f1b20befba10d9f4e0",
+      "source_path": "corpus/lifecycle/DTF-004.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "Decision Conformance; List Retention; Revoke Conformance",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Recorded allow grant previously valid and cached.",
+      "relying_proposition": "Cached grant record is currently valid after authoritative deletion.",
+      "precondition_analysis": "Requires previously valid grant record, effective VTA withdrawal and later current-validity reliance; grant record is the artifact under evaluation, not the permanently verifiable decision document.",
+      "trigger": "The relying system evaluates current validity using artifact evidence that does not incorporate the effective revocation state.",
+      "falsification": [
+        "The system returns PASS for current validity after an authoritative revocation is known to be effective.",
+        "The system cannot establish current revocation state but converts that uncertainty into PASS."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Do not accept cached grant as current after effective withdrawal; default-deny and reconcile against VTA as required.",
+      "potential_impact": "Operator and participants; unauthorized content delivery.",
+      "comparison": "no-added-value for core stale grant mechanism already in #135; distinguish grant validity from signature validity.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-005",
+      "case_version": "0.1.0",
+      "source_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+      "source_path": "corpus/lifecycle/DTF-005.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3"
+      ],
+      "sections": "Manifest item 5; Submit Which criterion governs",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Prior criterion was published and may remain applicable during requirementsGrace.",
+      "relying_proposition": "Prior manifest criterion is current after successor takes effect.",
+      "precondition_analysis": "Requires actual prior and successor criterion, effective supersession before current-state query, no applicable grace or compatibility. A digest referring to an older criterion within grace is a legitimate control.",
+      "trigger": "The relying system selects or accepts the superseded artifact as current without evaluating the supersession relationship or an applicable compatibility rule.",
+      "falsification": [
+        "The system returns PASS for current status solely from a superseded artifact when no applicable compatibility rule permits that reliance.",
+        "The system ignores known supersession evidence when selecting the current authoritative artifact."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Apply governing digest/grace rule; distinguish current publication from permitted prior-version reliance; refuse or defer if rule cannot be established.",
+      "potential_impact": "Applicant/community; arbitrary admission or rejection.",
+      "comparison": "no-added-value for version-selection mechanism already explicit in submit; ceremony makes control visible.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-005",
+      "case_version": "0.1.0",
+      "source_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+      "source_path": "corpus/lifecycle/DTF-005.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-030–034,040–043",
+      "disposition": "not-established-within-profile",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Departure can change membership status and revoke VMC.",
+      "relying_proposition": "An earlier authoritative artifact is still current despite an identified successor.",
+      "precondition_analysis": "Selected removal flow establishes withdrawal, not necessarily a successor artifact or authoritative superseding state distinct from revocation; no exact replacement relationship shown. Re-admission or rotation would require additional evidence.",
+      "trigger": "The relying system selects or accepts the superseded artifact as current without evaluating the supersession relationship or an applicable compatibility rule.",
+      "falsification": [
+        "The system returns PASS for current status solely from a superseded artifact when no applicable compatibility rule permits that reliance.",
+        "The system ignores known supersession evidence when selecting the current authoritative artifact."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Evaluate actual revocation under DTF-004; if a successor is established, check provenance, effective time and compatibility before accepting predecessor as current.",
+      "potential_impact": "Member/service; reliance on obsolete membership evidence.",
+      "comparison": "no-added-value within selected removal path; do not double count revocation as supersession.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-005",
+      "case_version": "0.1.0",
+      "source_blob": "0d4941fbb4be7f76c2aa261f4a14078701293edf",
+      "source_path": "corpus/lifecycle/DTF-005.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Decision Conformance; List change stream and scoped reads",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "A prior grant decision can be superseded by a newer decision for the same subject.",
+      "relying_proposition": "Old allow remains current after newer authoritative deny or narrower replacement.",
+      "precondition_analysis": "Requires prior current grant, actual authoritative successor for exact subject, effective replacement before current-state query and no compatibility rule. Change-stream token alone does not establish replacement.",
+      "trigger": "The relying system selects or accepts the superseded artifact as current without evaluating the supersession relationship or an applicable compatibility rule.",
+      "falsification": [
+        "The system returns PASS for current status solely from a superseded artifact when no applicable compatibility rule permits that reliance.",
+        "The system ignores known supersession evidence when selecting the current authoritative artifact."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Reconcile current grant and scope with VTA; do not treat old grant or sync token as current authorization.",
+      "potential_impact": "Operator/participants; excessive delivery or replies.",
+      "comparison": "limited: prior consent cache analysis already captures stale reliance; distinguish replacement from deletion.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-006",
+      "case_version": "0.1.0",
+      "source_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+      "source_path": "corpus/lifecycle/DTF-006.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Which criterion governs, Deciding and Retention; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Admission may have satisfied then-applicable criterion and credential evidence.",
+      "relying_proposition": "Admission was invalid then because criterion or credential is withdrawn now.",
+      "precondition_analysis": "Requires established historical validity at t1, later withdrawal/supersession t2 and an explicitly historical query; no presumption of historical validity from mere recorded approval.",
+      "trigger": "The relying system answers a historical-validity question using only the artifact's current withdrawn, revoked, or superseded state.",
+      "falsification": [
+        "The system concludes that the artifact was invalid at the historical time solely because it is withdrawn, revoked, or superseded now.",
+        "The system collapses current-state evidence and historical-state evidence into a single undifferentiated validity result."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Reconstruct then-applicable criterion and status at t1, distinguish later event; if evidence missing report historical indeterminate rather than retroactive invalidity.",
+      "potential_impact": "Member/community; wrongful historical disqualification or loss of contestability.",
+      "comparison": "added-value: links historical admission decision inputs and later lifecycle events across stages.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-006",
+      "case_version": "0.1.0",
+      "source_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+      "source_path": "corpus/lifecycle/DTF-006.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1",
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Removal audit and disposition; VTI-MEM-002,030–034; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Earlier membership may have been valid before effective separation.",
+      "relying_proposition": "Current departure proves earlier membership was never valid.",
+      "precondition_analysis": "Requires established validity at historical time, later status change and historical question. Lawful purge may make reconstruction unavailable; cannot infer invalidity or require unlimited retention.",
+      "trigger": "The relying system answers a historical-validity question using only the artifact's current withdrawn, revoked, or superseded state.",
+      "falsification": [
+        "The system concludes that the artifact was invalid at the historical time solely because it is withdrawn, revoked, or superseded now.",
+        "The system collapses current-state evidence and historical-state evidence into a single undifferentiated validity result."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Answer historical validity using competent historical evidence and rules; report unavailable/indeterminate when erased; do not treat current departure as retroactive proof.",
+      "potential_impact": "Former member/community; denial of historical entitlements or excessive retention.",
+      "comparison": "added-value: admission-to-separation trace exposes historical/current distinction and retention trade-off.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-006",
+      "case_version": "0.1.0",
+      "source_blob": "290496ebf17d87bc68a9ef7146783a752d8913fe",
+      "source_path": "corpus/lifecycle/DTF-006.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "Decision evidence and grantedAt/expiresAt; Revoke audit; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Grant may have validly authorized an earlier delivery.",
+      "relying_proposition": "Later revocation proves earlier delivery lacked consent.",
+      "precondition_analysis": "Requires exact historical grant and authorized delivery context at t1, later withdrawal t2 and historical query; current absence alone cannot establish original validity either.",
+      "trigger": "The relying system answers a historical-validity question using only the artifact's current withdrawn, revoked, or superseded state.",
+      "falsification": [
+        "The system concludes that the artifact was invalid at the historical time solely because it is withdrawn, revoked, or superseded now.",
+        "The system collapses current-state evidence and historical-state evidence into a single undifferentiated validity result."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Use retained admissible grant provenance and historical effect/scope; qualify unavailable evidence rather than infer retroactive invalidity.",
+      "potential_impact": "Operator/participants; erroneous disputes or excessive audit retention.",
+      "comparison": "added-value conditional on historical review of grant-to-delivery relation; no proof of actual retained history.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-031",
+      "case_version": "0.1.0",
+      "source_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+      "source_path": "corpus/lifecycle/DTF-031.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1",
+        "https://trusttasks.org/spec/vtc/members/admit/0.1"
+      ],
+      "sections": "Submit Deciding; Decide Conformance; Admit referral/execution; VTI-APV-017",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "A review or referred direct admission was blocked pending competent decision.",
+      "relying_proposition": "Condition remains unresolved solely because earlier state was pending despite valid current approval.",
+      "precondition_analysis": "Requires actual blocking condition, admissible resolution under applicable rule and evidence still current. Approval resolves only its own condition; other criteria and live capability still apply. Supplement path not assumed.",
+      "trigger": "The relying system continues to block, defer, or report the condition as unresolved because it preserves the earlier unresolved state without reassessing current admissible evidence.",
+      "falsification": [
+        "The system continues to block solely because the condition was once unresolved even though current admissible resolution evidence is sufficient.",
+        "A valid resolution event is ignored without evidence that it became stale, revoked, conflicting, superseded, or otherwise invalid.",
+        "The system cannot distinguish legitimate continued blocking from failure to re-evaluate the resolved condition."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Re-evaluate resolved condition and remaining gates; proceed only when all applicable requirements hold; record reason for legitimate continued blocking.",
+      "potential_impact": "Applicant/community; unjustified denial or premature admission.",
+      "comparison": "added-value: distinguishes legitimate recovery from persistent stale workflow state.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-031",
+      "case_version": "0.1.0",
+      "source_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+      "source_path": "corpus/lifecycle/DTF-031.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt Conformance; VTI-MEM-030–034",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Departure completion may initially be unestablished while authoritative effects are pending.",
+      "relying_proposition": "Departure remains reported unresolved after current admissible community evidence establishes the particular required effect.",
+      "precondition_analysis": "Requires earlier consequential deferral, competent resolution of the same condition and current evidence. Receipt alone does not resolve downstream access, publication or erasure conditions outside its claim.",
+      "trigger": "The relying system continues to block, defer, or report the condition as unresolved because it preserves the earlier unresolved state without reassessing current admissible evidence.",
+      "falsification": [
+        "The system continues to block solely because the condition was once unresolved even though current admissible resolution evidence is sufficient.",
+        "A valid resolution event is ignored without evidence that it became stale, revoked, conflicting, superseded, or otherwise invalid.",
+        "The system cannot distinguish legitimate continued blocking from failure to re-evaluate the resolved condition."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Update only the resolved condition; reassess outstanding dependent effects; do not repeat removal or withhold a supported departure determination solely because it was pending.",
+      "potential_impact": "Departing member/service; unjustified continued membership or service delay.",
+      "comparison": "added-value: distinguish individual effect resolution from whole-ceremony completion.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-031",
+      "case_version": "0.1.0",
+      "source_blob": "bc301a8084db9e0bd651136ebc02994754ef1ddb",
+      "source_path": "corpus/lifecycle/DTF-031.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Request Conformance; Decision Conformance; List Retention",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Unknown subject causes held delivery pending valid allow.",
+      "relying_proposition": "Delivery remains blocked solely because pending state was not reassessed after a current valid allow.",
+      "precondition_analysis": "Requires earlier material block, exact authorized current allow satisfying release condition and no later deny/revoke/expiry or other independent blocking rule. Not every held message must be released regardless of policy or retention.",
+      "trigger": "The relying system continues to block, defer, or report the condition as unresolved because it preserves the earlier unresolved state without reassessing current admissible evidence.",
+      "falsification": [
+        "The system continues to block solely because the condition was once unresolved even though current admissible resolution evidence is sufficient.",
+        "A valid resolution event is ignored without evidence that it became stale, revoked, conflicting, superseded, or otherwise invalid.",
+        "The system cannot distinguish legitimate continued blocking from failure to re-evaluate the resolved condition."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Reassess exact grant and remaining delivery policy; do not preserve obsolete pending classification; release only where otherwise permitted.",
+      "potential_impact": "Operator/participants; unjustified denial or delayed communication.",
+      "comparison": "limited: request/decision already specifies release; ceremony records recovery as distinct from fail-open prevention.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    }
+  ],
+  "limitations": [
+    "Conditional documentary hypotheses, not observed failures.",
+    "DTF-006 and DTF-031 require preserving the canonical negative/falsification semantics; the disposition for a prohibited false conclusion is not a universal DENY of the underlying transaction or historical claim.",
+    "Do not equate artifact revocation, supersession, authority withdrawal or historical invalidity.",
+    "Per-precondition adversarial review and matrix validation remain pending."
+  ]
+}
