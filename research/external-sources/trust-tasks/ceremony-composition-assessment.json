@@ -1,0 +1,694 @@
+{
+  "kind": "ceremony-comparative-author-assessment-increment",
+  "issue": 168,
+  "family": "composition",
+  "status": "provisional-author-judgments",
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "profile_blob": "feff06fe825f44af02ae468d17630060e61a0621",
+  "canonical_catalog_blob": "180f48bfa375c150e0cfaf1ee42a86948b2d9730",
+  "case_count": 8,
+  "profile_count": 3,
+  "dispositions": [
+    {
+      "profile": "joining",
+      "case_id": "DTF-007",
+      "case_version": "0.1.0",
+      "source_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+      "source_path": "corpus/composition/DTF-007.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3"
+      ],
+      "sections": "Manifest conformance: vetting requirements; submit: Meeting it; VTI-CMP-070–074",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Credential and vetting evidence can satisfy their individual checks.",
+      "relying_proposition": "Admission evidence independently corroborates eligibility.",
+      "precondition_analysis": "Requires multiple items actually weighted as independent, common material controller/dependency and an independence-sensitive decision; none is established by the task contracts alone.",
+      "trigger": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent.",
+      "falsification": [
+        "The system returns PASS because it counts materially dependent evidence as independent corroboration.",
+        "The system cannot establish source independence but treats separate presentation as proof of independence."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "If a policy requires independence, trace vetter/issuer control and refuse or defer unsupported independent corroboration.",
+      "potential_impact": "Applicant and community; wrongful admission or exclusion.",
+      "comparison": "added-value: compare evidence dependencies across admission rather than count documents; submit itself already addresses criterion satisfaction.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-007",
+      "case_version": "0.1.0",
+      "source_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+      "source_path": "corpus/composition/DTF-007.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove receipt Conformance; VTI-CMP-070–074",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Removal response and authenticated receipt may both originate from community.",
+      "relying_proposition": "Two independent confirmations establish departure.",
+      "precondition_analysis": "Response and receipt can share provenance, but the selected separation profile does not establish an independence-sensitive relying proposition or extra evidentiary weight attributed to apparently independent sources.",
+      "trigger": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent.",
+      "falsification": [
+        "The system returns PASS because it counts materially dependent evidence as independent corroboration.",
+        "The system cannot establish source independence but treats separate presentation as proof of independence."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Do not count the two assertions as independent; obtain independent observations if policy requires them.",
+      "potential_impact": "Departing member; false assurance of erasure or access removal.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-007",
+      "case_version": "0.1.0",
+      "source_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
+      "source_path": "corpus/composition/DTF-007.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Decision Conformance/Security; List scoped reads; VTI-CMP-070–074",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Recorded grant and bridge cache can reproduce same VTA decision.",
+      "relying_proposition": "Independent attestations establish operator choice.",
+      "precondition_analysis": "Grant and cache are linked by design. No independent corroboration requirement or decision assigning additional weight for apparent independence is established in the selected profile.",
+      "trigger": "The relying system aggregates separately presented evidence without evaluating whether the evidence sources are materially independent.",
+      "falsification": [
+        "The system returns PASS because it counts materially dependent evidence as independent corroboration.",
+        "The system cannot establish source independence but treats separate presentation as proof of independence."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Preserve common provenance and obtain genuinely independent evidence if required.",
+      "potential_impact": "Operator and conversation participants; false confidence in consent.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-008",
+      "case_version": "0.1.0",
+      "source_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+      "source_path": "corpus/composition/DTF-008.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3"
+      ],
+      "sections": "Manifest items 5–6; Submit Which criterion governs",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Applicable criterion version determined by digest and grace.",
+      "relying_proposition": "Admission justified despite unresolved conflict of competent sources.",
+      "precondition_analysis": "No pair of current conflicting competent sources without precedence is established; old/new criteria have a specified rule.",
+      "trigger": "The relying system evaluates the proposition while authoritative conflict remains unresolved.",
+      "falsification": [
+        "The system returns PASS by selecting a supportive authoritative source while silently ignoring an unresolved conflicting authoritative source.",
+        "The system interprets absence of a conflict-resolution rule as permission to choose whichever authoritative source produces PASS."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Apply criterion version rule; if a separate unresolved competent conflict actually exists, do not PASS on selective evidence.",
+      "potential_impact": "Applicant and community; unjustified decision.",
+      "comparison": "no-added-value: version selection already handled locally; distinct unresolved conflict would need additional facts.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-008",
+      "case_version": "0.1.0",
+      "source_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+      "source_path": "corpus/composition/DTF-008.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Receipt Conformance; VTI-MEM-030–034; VTI-CMP-040–042",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Community reports departure; downstream may hold an older observation.",
+      "relying_proposition": "Departure status established despite unresolved current authoritative disagreement.",
+      "precondition_analysis": "Cache divergence or differently timed assertions are not two current authoritative sources; no unresolved precedence established.",
+      "trigger": "The relying system evaluates the proposition while authoritative conflict remains unresolved.",
+      "falsification": [
+        "The system returns PASS by selecting a supportive authoritative source while silently ignoring an unresolved conflicting authoritative source.",
+        "The system interprets absence of a conflict-resolution rule as permission to choose whichever authoritative source produces PASS."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Reconcile timestamps and authoritative scope; refuse/defer only if genuine unresolved conflict remains.",
+      "potential_impact": "Member and verifier; incorrect access decision.",
+      "comparison": "no-added-value: distinguish stale state from authoritative conflict.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-008",
+      "case_version": "0.1.0",
+      "source_blob": "560458a71815b57772a029295f34f3ebc42238b7",
+      "source_path": "corpus/composition/DTF-008.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/list/1.1",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "List Retention; Revoke Conformance",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "VTA is authoritative; cache advisory.",
+      "relying_proposition": "Cache and VTA are equally authoritative conflicting sources.",
+      "precondition_analysis": "Source specifies precedence for explicit point check/stale token; no second competent current authority established.",
+      "trigger": "The relying system evaluates the proposition while authoritative conflict remains unresolved.",
+      "falsification": [
+        "The system returns PASS by selecting a supportive authoritative source while silently ignoring an unresolved conflicting authoritative source.",
+        "The system interprets absence of a conflict-resolution rule as permission to choose whichever authoritative source produces PASS."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Defer to VTA when required, fail closed on ambiguous revoke.",
+      "potential_impact": "Conversation participants; unauthorized delivery.",
+      "comparison": "no-added-value: existing consent cache semantics already establish source precedence.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-009",
+      "case_version": "0.1.0",
+      "source_blob": "bfccad840128a91048842172c50945098ba2815b",
+      "source_path": "corpus/composition/DTF-009.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Meeting it; VTI-CMP-030–032,050–053",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Community recognizes an issuer for a particular criterion; issuer may attest a subject.",
+      "relying_proposition": "Community recognition automatically extends to an issuer-recognized third party for another scope.",
+      "precondition_analysis": "Issuer acceptance and credential issuance do not establish two scoped recognition edges. No concrete A recognises B, B recognises C, and unsupported A-to-C extension is established in the selected profile.",
+      "trigger": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion.",
+      "falsification": [
+        "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule.",
+        "The system treats an undeclared transitivity policy as permissive rather than unresolved or prohibited."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Check exact issuer scope and explicit recognition rule; no automatic extension.",
+      "potential_impact": "Applicant/community; unauthorized admission or privileges.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-009",
+      "case_version": "0.1.0",
+      "source_blob": "bfccad840128a91048842172c50945098ba2815b",
+      "source_path": "corpus/composition/DTF-009.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Admin-remove Conformance; VTI-CMP-050–053; VTI-ACL-070–073",
+      "disposition": "not-established-within-profile",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Community authorizes a bounded administrator to remove a member.",
+      "relying_proposition": "External party recognized by that administrator may also exercise removal or derivative authority.",
+      "precondition_analysis": "Bounded administrative delegation is not a two-edge recognition chain. No specific recognition relationship and unsupported transitive reliance is established.",
+      "trigger": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion.",
+      "falsification": [
+        "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule.",
+        "The system treats an undeclared transitivity policy as permissive rather than unresolved or prohibited."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Verify explicit delegation and current scope rather than infer from recognition.",
+      "potential_impact": "Member and third party; unauthorized removal or retained access.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-009",
+      "case_version": "0.1.0",
+      "source_blob": "bfccad840128a91048842172c50945098ba2815b",
+      "source_path": "corpus/composition/DTF-009.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approver-set/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0"
+      ],
+      "sections": "Approver-set Conformance; Decision Approver authority",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Context admin binds approver; enrolled bridge may attest operator choice.",
+      "relying_proposition": "Approver or bridge recognition extends to another party for consent.",
+      "precondition_analysis": "Approver binding and bridge enrollment are not two scoped recognition edges. No actual transitive recognition claim is established.",
+      "trigger": "The relying system treats A-to-B and B-to-C relationships as sufficient authority for an A-to-C trust conclusion.",
+      "falsification": [
+        "The system returns PASS for an A-to-C trust conclusion solely because A recognises B and B recognises C without an applicable transitivity rule.",
+        "The system treats an undeclared transitivity policy as permissive rather than unresolved or prohibited."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Require VTA-authorized exact issuer/context and explicit delegation where needed.",
+      "potential_impact": "Operator and conversation participants; unauthorized disclosure.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-020",
+      "case_version": "0.1.0",
+      "source_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+      "source_path": "corpus/composition/DTF-020.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Deciding; VTI-MEM-010–013; VTI-CMP-020–021",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Community makes admission decision; exchange communicates it.",
+      "relying_proposition": "Integration may treat exchange coordinator as competent owner of admission.",
+      "precondition_analysis": "Community decision ownership is explicit in the selected sources. No unresolved ambiguity about ownership of a material fact is established; nonconforming assignment would require separate deployment evidence.",
+      "trigger": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established.",
+      "falsification": [
+        "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule.",
+        "A component is treated as owner of a material fact solely because it produced the most convenient or most recent value."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Identify competent decision source; refuse/defer if deployment ownership is unresolved.",
+      "potential_impact": "Applicant and community; erroneous membership activation.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-020",
+      "case_version": "0.1.0",
+      "source_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+      "source_path": "corpus/composition/DTF-020.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove/receipt Conformance; VTI-MEM-001,033; VTI-ACL-080–082",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Removal response and receipt assert community-side effects; downstream observes access.",
+      "relying_proposition": "A convenient component owns effective downstream termination.",
+      "precondition_analysis": "Community removal and downstream enforcement concern distinct facts. Response timing tension does not establish unresolved ownership of the same material fact.",
+      "trigger": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established.",
+      "falsification": [
+        "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule.",
+        "A component is treated as owner of a material fact solely because it produced the most convenient or most recent value."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Identify owner of membership state and each enforcement fact; withhold stronger completion claim if unresolved.",
+      "potential_impact": "Departing member and relying service; persistent access or misleading removal assurance.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-020",
+      "case_version": "0.1.0",
+      "source_blob": "fe115554faf10d3a9ded5b76606b197edfa6b9cf",
+      "source_path": "corpus/composition/DTF-020.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Decision Conformance; List Retention",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "VTA owns grant; bridge enforces it.",
+      "relying_proposition": "Grant authority or delivery evidence owner is ambiguous.",
+      "precondition_analysis": "The selected contracts identify grant owner and enforcement role; no unresolved ownership of the material fact is established. Delivery observation is separate.",
+      "trigger": "The composed system selects, synthesizes, or infers a value for the material fact and returns a relying result as though semantic ownership were established.",
+      "falsification": [
+        "The system returns PASS after choosing between overlapping semantic claims without an explicit competent owner or reconciliation rule.",
+        "A component is treated as owner of a material fact solely because it produced the most convenient or most recent value."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Use VTA for grant and bridge observation for actual delivery; unresolved integration ownership requires separate evidence.",
+      "potential_impact": "Operator/participants; misleading consent assurance.",
+      "comparison": "no-added-value for grant ownership; already explicit locally.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "source_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+      "source_path": "corpus/composition/DTF-021.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/members/admit/0.1"
+      ],
+      "sections": "Submit Meeting it; Admit Conformance item 7; VTI-APV-017",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Earlier VP check or parked direct-admission authorization valid at evaluation.",
+      "relying_proposition": "Later admission or access remains authorized on earlier evidence.",
+      "precondition_analysis": "Requires later material decision, possible intervening change and no established continuity. For direct referral recheck is explicitly required; violating it is nonconforming.",
+      "trigger": "The later component reuses the earlier lifecycle result and returns PASS without obtaining current-enough evidence for the later material boundary.",
+      "falsification": [
+        "The system returns PASS at execution using only an earlier lifecycle check when intervening state change is possible and continuity is unproved.",
+        "A stale earlier-stage status result is treated as equivalent to a later-stage current-state evaluation."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Re-evaluate applicable status/authority at later execution; defer or refuse unsupported continuity.",
+      "potential_impact": "Applicant/community; unauthorized admission or access.",
+      "comparison": "added-value: locates later reliance across stages; recheck rule itself already local.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "source_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+      "source_path": "corpus/composition/DTF-021.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Receipt Conformance; VTI-MEM-030–034; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Earlier membership/access check may have been valid.",
+      "relying_proposition": "Later access remains permissible after departure.",
+      "precondition_analysis": "Requires earlier valid lifecycle observation, later material reliance, possible changed status and no positive freshness continuity.",
+      "trigger": "The later component reuses the earlier lifecycle result and returns PASS without obtaining current-enough evidence for the later material boundary.",
+      "falsification": [
+        "The system returns PASS at execution using only an earlier lifecycle check when intervening state change is possible and continuity is unproved.",
+        "A stale earlier-stage status result is treated as equivalent to a later-stage current-state evaluation."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Check current membership-derived authority and status; preserve unrelated grants.",
+      "potential_impact": "Former member and service; unauthorized access or unjustified exclusion.",
+      "comparison": "added-value: admission-to-departure trace makes time and dependency explicit.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-021",
+      "case_version": "0.1.0",
+      "source_blob": "f7f46b27c90da425ca0f8cd822d11444300890a4",
+      "source_path": "corpus/composition/DTF-021.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "List Retention; Revoke Security & Privacy; VTI-CMP-040–042",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Earlier cached allow valid when obtained.",
+      "relying_proposition": "Later release authorized after grant may change.",
+      "precondition_analysis": "Requires later release, possible expiry/revoke, no current-enough continuity evidence and PASS using earlier check.",
+      "trigger": "The later component reuses the earlier lifecycle result and returns PASS without obtaining current-enough evidence for the later material boundary.",
+      "falsification": [
+        "The system returns PASS at execution using only an earlier lifecycle check when intervening state change is possible and continuity is unproved.",
+        "A stale earlier-stage status result is treated as equivalent to a later-stage current-state evaluation."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Honor expiry/revoke; defer to VTA as required; default-deny on ambiguity.",
+      "potential_impact": "Conversation participants; unauthorized content delivery.",
+      "comparison": "no-added-value for core stale-cache mechanism already established in #135; ceremony trace contextualizes it.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-022",
+      "case_version": "0.1.0",
+      "source_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+      "source_path": "corpus/composition/DTF-022.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Deciding; VTI-MEM-011; Receipt verifier rules 5–11",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Request identifier and signed ceremony membership bind documents.",
+      "relying_proposition": "Binding proves successful admission.",
+      "precondition_analysis": "Requires valid artifact binding, separate effect proposition and absent/unresolved admission evidence; PASS solely on binding.",
+      "trigger": "The relying system interprets the valid binding as proof of execution or effect and returns PASS for completion or success.",
+      "falsification": [
+        "The system returns PASS for successful execution solely because a valid context binding exists.",
+        "The system cannot produce execution or effect evidence but represents the binding itself as completion evidence."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Require competent admission decision and applicable evidence; refer is not admit.",
+      "potential_impact": "Applicant/community; false membership activation.",
+      "comparison": "added-value: distinguish enactment membership and legitimate admission; source already expressly forbids exchange-success inference.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-022",
+      "case_version": "0.1.0",
+      "source_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+      "source_path": "corpus/composition/DTF-022.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Receipt Conformance; Receipt 0.1 verifier rules 5–11",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Authenticated acknowledgment correlates to departure receipt.",
+      "relying_proposition": "Correlation proves removal and dependent status effects.",
+      "precondition_analysis": "Requires valid binding with separate effect claim and absent/conflicting effect evidence; signed community removal assertion is not merely binding and must be assessed separately.",
+      "trigger": "The relying system interprets the valid binding as proof of execution or effect and returns PASS for completion or success.",
+      "falsification": [
+        "The system returns PASS for successful execution solely because a valid context binding exists.",
+        "The system cannot produce execution or effect evidence but represents the binding itself as completion evidence."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Check competent removal/status evidence and relevant enforcement; no effect PASS from correlation.",
+      "potential_impact": "Departing member; misleading erasure or access assurance.",
+      "comparison": "added-value: separates receipt delivery and downstream effects.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-022",
+      "case_version": "0.1.0",
+      "source_blob": "f1dccfa5f263c55f72f953e420ce199e80a1c93d",
+      "source_path": "corpus/composition/DTF-022.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0"
+      ],
+      "sections": "Request Response; Decision Conformance",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Challenge and subject correlate request/decision; accepted means prompt routed.",
+      "relying_proposition": "Correlation establishes allow or delivery.",
+      "precondition_analysis": "Requires valid binding, separate effect and absent effect evidence; actual recorded deny contradicts allow.",
+      "trigger": "The relying system interprets the valid binding as proof of execution or effect and returns PASS for completion or success.",
+      "falsification": [
+        "The system returns PASS for successful execution solely because a valid context binding exists.",
+        "The system cannot produce execution or effect evidence but represents the binding itself as completion evidence."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Require actual current allow and relevant delivery evidence; hold/drop otherwise.",
+      "potential_impact": "Operator/participants; unauthorized delivery.",
+      "comparison": "no-added-value for prompt/decision separation already in #135.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-023",
+      "case_version": "0.1.0",
+      "source_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+      "source_path": "corpus/composition/DTF-023.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Manifest Conformance; Submit Deciding; VTI-CMP-001,010–011,020–021",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Local proof, presentation and review exchanges can validate for their respective propositions.",
+      "relying_proposition": "Composed admission and current access are valid.",
+      "precondition_analysis": "Requires at least two independently valid local propositions and an unevaluated additional seam obligation, e.g. actual access authorization; missing mandatory review means execution violation, not all tasks conforming.",
+      "trigger": "The relying system derives composition PASS directly from the component PASS results without evaluating the material seam obligation.",
+      "falsification": [
+        "The system computes Composition(A,B)=PASS solely because A=PASS and B=PASS while an additional seam obligation is unevaluated.",
+        "A local conformance result is represented as composition assurance without evidence for the composed proposition."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate applicable admission path and access authority separately; do not require review on automatic path.",
+      "potential_impact": "Applicant/community; wrongful access or denial.",
+      "comparison": "added-value: identifies composed proposition and distinguishes local correctness from path completion.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-023",
+      "case_version": "0.1.0",
+      "source_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+      "source_path": "corpus/composition/DTF-023.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Receipt Conformance; VTI-MEM-033–034; VTI-CMP-010–011",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Community-side departure and authenticated receipt delivery can be valid.",
+      "relying_proposition": "All membership-dependent enforcement and disclosure obligations are satisfied.",
+      "precondition_analysis": "Requires two local validations, additional downstream obligation and absent evaluation; if source explicitly requires effect and it was not performed, classify nonconforming enforcement.",
+      "trigger": "The relying system derives composition PASS directly from the component PASS results without evaluating the material seam obligation.",
+      "falsification": [
+        "The system computes Composition(A,B)=PASS solely because A=PASS and B=PASS while an additional seam obligation is unevaluated.",
+        "A local conformance result is represented as composition assurance without evidence for the composed proposition."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Check dependent status/access/publication effects; distinguish pending lawful convergence from false completion.",
+      "potential_impact": "Member and service; continuing access or disclosure.",
+      "comparison": "added-value: makes dependent effects explicit without assuming atomicity.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-023",
+      "case_version": "0.1.0",
+      "source_blob": "54d845b017e21acc1ae8d81a31cecbf5b49f99f1",
+      "source_path": "corpus/composition/DTF-023.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approver-set/1.0",
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Decision Conformance; List scoped reads; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Binding, decision and sync can each satisfy local contracts.",
+      "relying_proposition": "Whole interaction preserves privacy and legitimate purpose for every disclosed party.",
+      "precondition_analysis": "Requires at least two local validations, additional actual composition privacy/purpose obligation and missing seam evaluation; no universal participant-consent requirement asserted.",
+      "trigger": "The relying system derives composition PASS directly from the component PASS results without evaluating the material seam obligation.",
+      "falsification": [
+        "The system computes Composition(A,B)=PASS solely because A=PASS and B=PASS while an additional seam obligation is unevaluated.",
+        "A local conformance result is represented as composition assurance without evidence for the composed proposition."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Evaluate applicable purpose and joint disclosure against policy; do not claim composition assurance solely from local PASS.",
+      "potential_impact": "Conversation participants; excessive disclosure or correlation.",
+      "comparison": "added-value conditional on additional deployment privacy obligation; not duplicate of stale cache finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-024",
+      "case_version": "0.1.0",
+      "source_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+      "source_path": "corpus/composition/DTF-024.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/members/admit/0.1"
+      ],
+      "sections": "Manifest vetting; Admit item 7; VTI-CMP-070–074; VTI-APV-007",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Threshold of nominal vetters or eligible referral approvers may be met.",
+      "relying_proposition": "Threshold establishes independent approval.",
+      "precondition_analysis": "Requires actual numeric threshold, policy requiring material independence and missing/common-control evidence; distinct identifiers alone insufficient; not every criterion requires independence.",
+      "trigger": "The relying system converts threshold satisfaction into PASS for independent approval without establishing the required independence.",
+      "falsification": [
+        "The system returns PASS for independent approval solely because the numeric threshold was met while independence is unresolved.",
+        "Multiple approvals controlled by the same material authority are counted as independent without an explicit rule permitting that interpretation."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Check policy and material independence where required; otherwise do not invent additional rule.",
+      "potential_impact": "Applicant/community; captured admission or false rejection.",
+      "comparison": "added-value: distinguish criterion count from independent corroboration across actors.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-024",
+      "case_version": "0.1.0",
+      "source_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+      "source_path": "corpus/composition/DTF-024.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Admin-remove Security & Privacy; VTI-APV-019,022; VTI-CMP-070–074",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Policy may require confirmation for admin removal.",
+      "relying_proposition": "Numeric approval proves independent authorization.",
+      "precondition_analysis": "Administrative confirmation does not establish a numeric threshold requiring materially independent approvals. The selected path lacks those canonical premises.",
+      "trigger": "The relying system converts threshold satisfaction into PASS for independent approval without establishing the required independence.",
+      "falsification": [
+        "The system returns PASS for independent approval solely because the numeric threshold was met while independence is unresolved.",
+        "Multiple approvals controlled by the same material authority are counted as independent without an explicit rule permitting that interpretation."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Check applicable rule and eligible independent approvers if required; respect bounded single-admin alternative.",
+      "potential_impact": "Member and community; captured removal or unjustified lockout.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-024",
+      "case_version": "0.1.0",
+      "source_blob": "ada115d6649c34a7c2df265c235634efc5a0eb41",
+      "source_path": "corpus/composition/DTF-024.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approver-set/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0"
+      ],
+      "sections": "Approver-set Conformance; Decision Conformance",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Selected flow resolves an authorized approver.",
+      "relying_proposition": "N-of-M independent approval is satisfied.",
+      "precondition_analysis": "No numeric quorum or independence-sensitive threshold in selected consent flow; generic VTI operation approval cannot be imported.",
+      "trigger": "The relying system converts threshold satisfaction into PASS for independent approval without establishing the required independence.",
+      "falsification": [
+        "The system returns PASS for independent approval solely because the numeric threshold was met while independence is unresolved.",
+        "Multiple approvals controlled by the same material authority are counted as independent without an explicit rule permitting that interpretation."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Do not require quorum unless a separately sourced deployment policy establishes it.",
+      "potential_impact": "Operator/participants; unjustified denial if nonexistent threshold imposed.",
+      "comparison": "no-added-value: outside selected profile; distinguish task-consent from message consent.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    }
+  ],
+  "limitations": [
+    "Documentary conditional hypotheses, not observed failures.",
+    "Each cell is one profile/case judgment; multiple variants do not increase denominator.",
+    "Case-specific precondition analysis is provisional pending adversarial review and final matrix validation.",
+    "VTI snapshot is separately pinned comparative evidence, not established cross-version conformance.",
+    "Gate C adversarial narrowing: do not promote a merely imaginable extension beyond the selected profile into a conditional candidate. Not established does not imply safety."
+  ]
+}

@@ -22,7 +22,7 @@ The Pages site is a presentation layer over this repository. Individual case pag
 
 ## Representative Trust Tasks applicability research
 
-The current research deliverable is a [source-pinned Consent family assessment](docs/trust-tasks-representative-consent-study.md), covering eight consent versions against the 37 existing DTF failure propositions. It is author-side, non-normative research with falsifiable consumer-boundary hypotheses, not a certification or observed implementation audit. The full registry census is maintained as a reproducible source index, **not as a commitment to exhaustively assess all 1,391 pinned versions**. The [generated version navigator](https://qbf-consulting.github.io/digital-trust-failure-corpus/trust-tasks/) is published through GitHub Pages; the [tracked landing file](docs/trust-tasks/index.md) explains the distinction.
+A foundational research deliverable is a [source-pinned Consent family assessment](docs/trust-tasks-representative-consent-study.md), covering eight consent versions against the 37 existing DTF failure propositions. It is author-side, non-normative research with falsifiable consumer-boundary hypotheses, not a certification or observed implementation audit. Its companion [Trust Ceremonies assurance study](docs/trust-ceremonies-assurance-study.md) examines three profiles and 111 profile/case judgments, with separate execution, legitimacy and effective-state analysis. The full registry census is maintained as a reproducible source index, **not as a commitment to exhaustively assess all 1,391 pinned versions**. The [generated version navigator](https://qbf-consulting.github.io/digital-trust-failure-corpus/trust-tasks/) is published through GitHub Pages; the [tracked landing file](docs/trust-tasks/index.md) explains the distinction.
 
 ## Core design principles
 
@@ -98,7 +98,7 @@ A [three-source, 37-case semantic screening](docs/external-semantic-screening.md
 
 The [eight directly inspected external records](docs/inspected-external-records.md) include case-specific W3C T4/DTF-032 and T18/DTF-035 provenance bindings; these are informative research mappings, not evidence of third-party adoption.
 
-The [historical Trust Tasks registry checkpoint](docs/trust-tasks-research-checkpoint.md) preserves the earlier 1,391-version pinned census, preliminary screening records and generated version navigator. The earlier exhaustive research objective was explicitly superseded; [issue #135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135) closed with the representative Consent-family study, not with a claim of registry-wide semantic coverage. The **current report, experimental design and contribution guidance** are in the [representative Consent study](docs/trust-tasks-representative-consent-study.md).
+The [historical Trust Tasks registry checkpoint](docs/trust-tasks-research-checkpoint.md) preserves the earlier 1,391-version pinned census, preliminary screening records and generated version navigator. The earlier exhaustive research objective was explicitly superseded; [issue #135](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/135) closed with the representative Consent-family study, not with a claim of registry-wide semantic coverage. The **comparative research reports and contribution guidance** are in the [representative Consent study](docs/trust-tasks-representative-consent-study.md) and the [Trust Ceremonies assurance study](docs/trust-ceremonies-assurance-study.md).
 
 ## Authoring and adoption
 
@@ -130,5 +130,5 @@ Cases `DTF-013`–`DTF-019` cover signature/authority substitution, expired and 
 
 ## Historical Trust Tasks research milestones (archived context)
 
-The initial [12-task pilot](docs/trust-tasks-crosswalk.md) and [pinned registry inventory](docs/trust-tasks-inventory.md) established bounded screening and the complete upstream source census. Early counts in those documents represent **their dated research stages**, not the current assessment scope or a commitment to evaluate every registry entry. The active reader-facing deliverable is the [eight-version Consent case study](docs/trust-tasks-representative-consent-study.md); the earlier issue #135 was closed under that revised contract.
+The initial [12-task pilot](docs/trust-tasks-crosswalk.md) and [pinned registry inventory](docs/trust-tasks-inventory.md) established bounded screening and the complete upstream source census. Early counts in those documents represent **their dated research stages**, not the current assessment scope or a commitment to evaluate every registry entry. The [eight-version Consent case study](docs/trust-tasks-representative-consent-study.md) remains a standalone deliverable; the earlier issue #135 was closed under that revised contract.
 

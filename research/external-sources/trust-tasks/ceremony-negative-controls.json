@@ -1,0 +1,274 @@
+{
+  "kind": "ceremony-negative-control-designs",
+  "issue": 168,
+  "status": "unexecuted-author-hypotheses",
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "framework_commit": "bdf2cdd9256f9d7b98fe8b40c776124fc27a6084",
+  "vti_commit": "83e88fcf8760f6bd159bbac09a27b002f5b656c2",
+  "profile_source_blob": "feff06fe825f44af02ae468d17630060e61a0621",
+  "design_count": 4,
+  "limitations": [
+    "This is a falsification design, not executed tests, external deployment evidence or independent semantic acceptance.",
+    "Controls require verifying actual applicable policy and authoritative event times. A nonconforming implementation is not a specification defect.",
+    "No assertion that ceremony abstraction exclusively detects failures."
+  ],
+  "designs": [
+    {
+      "evidence_status": "hypothetical-unexecuted-author-design",
+      "observed_failure": false,
+      "independent_review": "not-established",
+      "evaluation_contract": "Use identical stipulated task-local output records on negative and control paths; vary the specified governing-policy or current-authority fact, and test whether relying determination correctly incorporates it. No demonstrated exclusive ceremony-only detection.",
+      "id": "NC-JOIN-01",
+      "profile": "joining",
+      "case_ids": [
+        "DTF-010",
+        "DTF-022",
+        "DTF-023",
+        "DTF-030"
+      ],
+      "task_refs": [
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+          "spec_blob": "d04734db18aad2692d2c7e64a8cb7cf32f0967ff",
+          "schema_blob": "845c9f1827b16241ec9fee3faa6fd1999375665d"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+          "spec_blob": "73e3738dfd1c86bdd14b1359351ba0f021430cbe",
+          "schema_blob": "69d6feb2e64d46a2823e76548dc00428bcc43f51"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/decide/0.1",
+          "spec_blob": "1b822327e434e9c670deb7f1a40453031c76ae1e",
+          "schema_blob": "dad0486fecbef4e2241e8f31fd600c0183ac3c4f"
+        }
+      ],
+      "actors": [
+        "applicant",
+        "community decision service",
+        "competent reviewer",
+        "relying membership service"
+      ],
+      "initial_state": "Applicant not a member; valid criterion and application; no admission effective.",
+      "policy": "Review-required criterion is applicable, within its specified grace/version rules; only an eligible reviewer may resolve the referral. Automatic admission is a separate valid criterion.",
+      "intervention": "Negative: accept authentic submit acknowledgment and proof, omit the required decide/0.1 approval, and claim completed admission. Control: same local submit outputs but obtain valid competent decide approval and recorded membership; second control uses an actually automatic criterion, for which absence of review is not a defect.",
+      "identical_local_observations": "Authentic manifest criterion lookup and submit/0.3 acceptance, valid proof/VP, and referral response. These local artifacts alone do not attest final reviewed admission.",
+      "relying_proposition": "The applicant was legitimately admitted and currently has membership-derived access.",
+      "negative": {
+        "execution": "pending while review awaited; violated if incorrectly asserted completed",
+        "legitimacy": "not established",
+        "effective_state": "not established without authoritative membership/access evidence",
+        "safe": "Do not activate reviewed membership or derived access; await competent decision."
+      },
+      "control": {
+        "execution": "completed only after applicable review path and evidence, or under actual automatic path",
+        "legitimacy": "supported with correct current criterion, decision and record",
+        "effective_state": "requires separately observed membership and access state",
+        "safe": "Permit only after applicable conditions established; do not mandate review in automatic path."
+      },
+      "observation_point": "After submit acceptance, before asserted activation; compare against later competent decision and state transition.",
+      "required_evidence": [
+        "criterion content/digest, mode and grace",
+        "submit proof and response",
+        "competent reviewer capability and decision when required",
+        "membership state and scoped access decision"
+      ],
+      "task_only_vs_ceremony": "Task-only with referral plus criterion already detects missing review if given policy; ceremony profile exposes unsupported completion claim systematically; no exclusive detection claim.",
+      "falsifier": "Show a policy-permitted automatic/admit path actually applied, or valid competent review and effective record before claimed completion; then the negative premise fails."
+    },
+    {
+      "evidence_status": "hypothetical-unexecuted-author-design",
+      "observed_failure": false,
+      "independent_review": "not-established",
+      "evaluation_contract": "Use identical stipulated task-local output records on negative and control paths; vary the specified governing-policy or current-authority fact, and test whether relying determination correctly incorporates it. No demonstrated exclusive ceremony-only detection.",
+      "id": "NC-SEPARATION-01",
+      "profile": "separation",
+      "case_ids": [
+        "DTF-001",
+        "DTF-003",
+        "DTF-021",
+        "DTF-023"
+      ],
+      "task_refs": [
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+          "spec_blob": "96a50db79e1efddf9481df124460a0f2e43bdd7c",
+          "schema_blob": "a59f5b71cca3b6af8c0155d7fa348dbd3fa3a844"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1",
+          "spec_blob": "b9c1bbf4f088bf5d33b8df36bb4a52dd5284fd08",
+          "schema_blob": "bdbbac4afc4d073a2a7908a22e8f0ffd67bb0a24"
+        }
+      ],
+      "actors": [
+        "member",
+        "community",
+        "downstream verifier",
+        "delegate"
+      ],
+      "initial_state": "Member M holds current membership-derived authority A; independent entitlement I may exist and is assessed separately.",
+      "policy": "Hypothetical explicit policy binds downstream A and its dependent B to active membership; an independently granted I is not withdrawn by departure. Notification delay is not itself a prohibited execution.",
+      "intervention": "Negative: removal has become effective and A withdrawn, but downstream accepts old cached B as currently authoritative. Control A: before effective removal, pending request/notification with currently valid A. Control B: after departure, independent I remains current and authorizes the exact action; control C: verifier denies B after authoritative refresh.",
+      "identical_local_observations": "Authentic self-remove response/receipt delivery and previously valid downstream B observation; no forged receipt is needed for the negative.",
+      "relying_proposition": "The former member's delegate still has current permission for the requested resource action.",
+      "negative": {
+        "execution": "local removal and receipt may be valid; relying enforcement nonconforming if it accepts withdrawn dependent authority",
+        "legitimacy": "departure legitimate, later B-based action not authorized",
+        "effective_state": "combined outcome partially effective only if actual downstream unauthorized acceptance is observed; otherwise unknown",
+        "safe": "Deny B after current source withdrawal, or defer while source status unresolved."
+      },
+      "control": {
+        "execution": "pending removal does not automatically withdraw A; independent I is separately evaluated",
+        "legitimacy": "supported only if effective source/policy for precise action remains current",
+        "effective_state": "not inferred from receipt alone",
+        "safe": "Honor legitimate pending status and valid independent grant, deny stale dependent B."
+      },
+      "observation_point": "Relying authorization decision after effective withdrawal; distinguish effect time from notification and attempt from execution.",
+      "required_evidence": [
+        "actual removal/effect and status times",
+        "applicable dependency policy and B scope",
+        "earlier and later verifier observations",
+        "independent I provenance if asserted",
+        "actual decision and execution logs"
+      ],
+      "task_only_vs_ceremony": "A task-only assessor with temporal and dependency evidence reaches same result; ceremony structure calls attention to cross-step effect and enforcement.",
+      "falsifier": "Demonstrate the source never became effectively withdrawn, that B is not derived from A, or that a current independent I authorizes the action."
+    },
+    {
+      "evidence_status": "hypothetical-unexecuted-author-design",
+      "observed_failure": false,
+      "independent_review": "not-established",
+      "evaluation_contract": "Use identical stipulated task-local output records on negative and control paths; vary the specified governing-policy or current-authority fact, and test whether relying determination correctly incorporates it. No demonstrated exclusive ceremony-only detection.",
+      "id": "NC-CONSENT-01",
+      "profile": "consent",
+      "case_ids": [
+        "DTF-002",
+        "DTF-010",
+        "DTF-020",
+        "DTF-027"
+      ],
+      "task_refs": [
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/request/1.0",
+          "spec_blob": "bad7128bcfa1e033e87cdfca4900cc1f842a8e62",
+          "schema_blob": "b4309516f00fdaad398943d23bf860ab339520e5"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
+          "spec_blob": "cd56354533d596b2450ca5fce1d61dce5641637b",
+          "schema_blob": "c4a86db60bb196c54860b802ab5e1642389f95d6"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/decision/1.0",
+          "spec_blob": "ee255ddcc72733bde705f60dac6fef2d23be31af",
+          "schema_blob": "d6d3222ad358239c0f02a5389eb23cbbdfc1c669"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/consent/list/1.1",
+          "spec_blob": "9bf820d71ee9b72a2fcfc0e6f32d191feff1b9e1",
+          "schema_blob": "0ecf8268c6ab3aa39039192175d1d323c21f2cbd"
+        }
+      ],
+      "actors": [
+        "authorized operator",
+        "enrolled bridge",
+        "VTA",
+        "agent",
+        "relying delivery service"
+      ],
+      "initial_state": "No established current grant for exact platform, conversationRef, kind, agent, and receive/converse scope.",
+      "policy": "VTA authoritative; direct choice requires valid challenge where applicable; enrolled bridge can attest out-of-band choice but does not thereby prove a legal mandate; receive does not include converse.",
+      "intervention": "Negative A: bridge-attested decision is cryptographically valid but bridge enrollment, operator choice or issuer competence is absent. Negative B: valid exact receive-only grant is used to authorize converse. Control: enrolled and competent bridge provides appropriately scoped and current evidence, or direct operator submits correct signed decision/challenge; a policy-permitted preauthorization is also allowed.",
+      "identical_local_observations": "Validly formatted request, decision signature and advisory list response; these artifacts do not independently prove enrollment, authorized choice, exact scope, or current VTA state.",
+      "relying_proposition": "The bridge or agent has current authority to deliver or converse for the specified subject and scope.",
+      "negative": {
+        "execution": "local exchange may be schema/signature-valid but authorization/subject checks remain violated or indeterminate",
+        "legitimacy": "not established for unqualified bridge; contradicted for known receive-only converse action",
+        "effective_state": "cannot assert delivery from decision receipt; unauthorized delivery only if observed",
+        "safe": "Default-deny or defer to VTA exact-current check; do not infer legal representative authority."
+      },
+      "control": {
+        "execution": "supported only for applicable decision provenance and binding path",
+        "legitimacy": "supported for exact permitted receive/converse action under current VTA grant",
+        "effective_state": "must be observed at bridge release, not inferred from stored grant",
+        "safe": "Permit only matching current scoped action."
+      },
+      "observation_point": "At grant validation and bridge release; check subject tuple, issuer competence, source freshness and action.",
+      "required_evidence": [
+        "bridge enrollment and operator binding",
+        "exact subject tuple and scope",
+        "decision provenance and authorized issuer",
+        "challenge if required by path",
+        "VTA effective grant state and release log"
+      ],
+      "task_only_vs_ceremony": "#135 already identified substantive provenance and cache/scope concerns; new ceremony grouping is organizational, not novel detection or evidence.",
+      "falsifier": "Produce valid enrollment/choice provenance and current exact scope matching the action; absent actual converse action, no observed unauthorized effect."
+    },
+    {
+      "evidence_status": "hypothetical-unexecuted-author-design",
+      "observed_failure": false,
+      "independent_review": "not-established",
+      "evaluation_contract": "Use identical stipulated task-local output records on negative and control paths; vary the specified governing-policy or current-authority fact, and test whether relying determination correctly incorporates it. No demonstrated exclusive ceremony-only detection.",
+      "id": "NC-CROSS-01",
+      "profile": "cross-ceremony:joining+separation",
+      "case_ids": [
+        "DTF-001",
+        "DTF-003",
+        "DTF-006",
+        "DTF-021"
+      ],
+      "task_refs": [
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/join-requests/decide/0.1",
+          "spec_blob": "1b822327e434e9c670deb7f1a40453031c76ae1e",
+          "schema_blob": "dad0486fecbef4e2241e8f31fd600c0183ac3c4f"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+          "spec_blob": "96a50db79e1efddf9481df124460a0f2e43bdd7c",
+          "schema_blob": "a59f5b71cca3b6af8c0155d7fa348dbd3fa3a844"
+        },
+        {
+          "type_uri": "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1",
+          "spec_blob": "b9c1bbf4f088bf5d33b8df36bb4a52dd5284fd08",
+          "schema_blob": "bdbbac4afc4d073a2a7908a22e8f0ffd67bb0a24"
+        }
+      ],
+      "actors": [
+        "community C",
+        "member M",
+        "delegate D",
+        "relying service R"
+      ],
+      "initial_state": "M legitimately admitted; scoped A is granted only during membership; B was validly delegated under a policy permitting that dependency.",
+      "policy": "Stipulated policy makes B dependent on active A with no survival clause. A separately issued I or explicit competent preservation rule must be judged on its own terms; historical validity remains distinct.",
+      "intervention": "Negative: C effectively withdraws A on separation; R later accepts earlier authorization of B without current dependency check. Control: R denies B on current evidence; alternative current independent grant I may permit the same action. Historical t-before-withdrawal verification is a different valid question.",
+      "identical_local_observations": "Valid admission record, legitimate earlier B evaluation and valid separation receipt; all remain authentic in negative and controls.",
+      "relying_proposition": "Earlier B evaluation proves authority for D's action after A is withdrawn.",
+      "negative": {
+        "execution": "individual admission and removal may each be correct; later relying enforcement may be nonconforming",
+        "legitimacy": "later B-derived action not authorized under stipulated P",
+        "effective_state": "actual wrong grant/access unknown absent reliance and execution evidence",
+        "safe": "Re-evaluate B's source dependency at action boundary; deny/defer while current evidence lacking."
+      },
+      "control": {
+        "execution": "valid local actions; relying decision independently checks current authority",
+        "legitimacy": "B denial justified after source loss; current independent I may authorize exact action",
+        "effective_state": "not inferred from receipt or absence of access logs",
+        "safe": "Deny B, preserve valid I and historical earlier authority."
+      },
+      "observation_point": "R's later decision (after effective withdrawal), not merely message delivery; record actual action separately.",
+      "required_evidence": [
+        "admission policy and effective membership record",
+        "A scope, delegation B chain and governing dependency",
+        "precise withdrawal effect time",
+        "R's check/decision time and cache input",
+        "current independent I or preservation rule if asserted",
+        "execution and impact logs if harm claimed"
+      ],
+      "task_only_vs_ceremony": "Same complete temporal/dependency/policy evidence yields same conclusion to task-only and ceremony assessors; incremental value is structured boundary and causal propagation accounting, not stronger normative authority.",
+      "falsifier": "Verify a current independently authorized grant, policy-permitted survival, or that removal was not effective when R decided."
+    }
+  ]
+}

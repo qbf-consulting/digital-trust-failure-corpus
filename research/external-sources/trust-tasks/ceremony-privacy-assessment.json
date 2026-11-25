@@ -1,0 +1,531 @@
+{
+  "kind": "ceremony-comparative-author-assessment-increment",
+  "issue": 168,
+  "family": "privacy",
+  "status": "provisional-author-judgments",
+  "registry_commit": "f21a98ec8383352d18629a08dd5dd23935456142",
+  "profile_blob": "feff06fe825f44af02ae468d17630060e61a0621",
+  "canonical_catalog_blob": "3dd6c52c12df123715e8a15fff48c38416c5b474",
+  "case_count": 6,
+  "profile_count": 3,
+  "dispositions": [
+    {
+      "profile": "joining",
+      "case_id": "DTF-032",
+      "case_version": "0.1.0",
+      "source_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb",
+      "source_path": "corpus/privacy/DTF-032.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Security & Privacy: Correlation; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Pairwise applicant identifiers and minimized presentations can satisfy local disclosure requirements.",
+      "relying_proposition": "Applications across communities are unlinkable.",
+      "precondition_analysis": "Requires intended minimized stable identifiers, securing metadata visible across relying contexts and unlinkability claim; actual repeated key reference/proof metadata or timing join must be tested. Stable credential payload identifiers alone are not this mechanism.",
+      "trigger": "A verifier, colluding verifiers, or another observer can link otherwise separate interactions using stable or distinctive securing-mechanism data while the system still reports the intended privacy property as satisfied.",
+      "falsification": [
+        "The system returns PASS for unlinkability while repeated or otherwise distinctive proof metadata links interactions across contexts.",
+        "Privacy analysis inspects only the credential payload and excludes observable securing-mechanism metadata that materially enables correlation."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate full proof and key-reference exposure across contexts; withhold unlinkability claim absent evidence; preserve legitimate within-community correlation.",
+      "potential_impact": "Applicant; cross-community profiling.",
+      "comparison": "added-value: evaluate proof metadata across complete interactions; submit already identifies residual credential correlation.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-032",
+      "case_version": "0.1.0",
+      "source_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb",
+      "source_path": "corpus/privacy/DTF-032.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "Self-remove-receipt authenticated community; VTI-CMP-060–064",
+      "disposition": "not-established-within-profile",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Signed removal evidence can be authentic.",
+      "relying_proposition": "Credential presentations associated with separate departure/reliance contexts remain unlinkable.",
+      "precondition_analysis": "Authenticated removal documents do not establish privacy-minimized credential/presentation payload, cross-context observable securing metadata or declared unlinkability. A distinct downstream credential presentation path would require evidence before mapping.",
+      "trigger": "A verifier, colluding verifiers, or another observer can link otherwise separate interactions using stable or distinctive securing-mechanism data while the system still reports the intended privacy property as satisfied.",
+      "falsification": [
+        "The system returns PASS for unlinkability while repeated or otherwise distinctive proof metadata links interactions across contexts.",
+        "Privacy analysis inspects only the credential payload and excludes observable securing-mechanism metadata that materially enables correlation."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Test actual credential proof metadata across contexts; do not confuse ordinary member DID correlation with this securing-mechanism-specific case.",
+      "potential_impact": "Departing member; cross-context reconstruction.",
+      "comparison": "not established within selected profile; additional source-grounded premises required before mapping. Existing safe control remains a conditional diagnostic, not a finding.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-032",
+      "case_version": "0.1.0",
+      "source_blob": "1ab2cd1e39f12987e65b89aa061976ff22e8c8bb",
+      "source_path": "corpus/privacy/DTF-032.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approve-request/0.1",
+        "https://trusttasks.org/spec/consent/decision/1.0"
+      ],
+      "sections": "Decision evidence modes; shared ConsentSubject schema",
+      "disposition": "not-established-within-profile",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Opaque conversation reference minimizes exposure of raw platform address.",
+      "relying_proposition": "Credential presentation payload minimization establishes unlinkability despite securing metadata.",
+      "precondition_analysis": "Selected flow does not establish credential/presentation payload designed to minimize stable identifiers or declared cross-context unlinkability. Signed task envelopes and opaque references alone do not establish these preconditions.",
+      "trigger": "A verifier, colluding verifiers, or another observer can link otherwise separate interactions using stable or distinctive securing-mechanism data while the system still reports the intended privacy property as satisfied.",
+      "falsification": [
+        "The system returns PASS for unlinkability while repeated or otherwise distinctive proof metadata links interactions across contexts.",
+        "Privacy analysis inspects only the credential payload and excludes observable securing-mechanism metadata that materially enables correlation."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Assess envelope/subject correlation under appropriate privacy proposition; do not claim credential unlinkability or import credential-specific premise.",
+      "potential_impact": "Operator/participants; correlation if additional facts exist.",
+      "comparison": "no-added-value within scoped message-consent profile.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-033",
+      "case_version": "0.1.0",
+      "source_blob": "42bc6ee721049289f166817779b23683dea3a650",
+      "source_path": "corpus/privacy/DTF-033.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3"
+      ],
+      "sections": "Submit Meeting it: credential signature, validity, revocation; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Credential status check can be correct and minimal in result.",
+      "relying_proposition": "Status resolution does not reveal where or when applicant presented credential.",
+      "precondition_analysis": "Requires observable status interaction and privacy objective limiting issuer/provider knowledge; actual request metadata/timing must permit presentation inference. No particular status technology assumed.",
+      "trigger": "The status-resolution event exposes a credential-specific or context-specific observation that permits usage correlation, while the verification flow still treats privacy assurance as satisfied.",
+      "falsification": [
+        "The system reports PASS for the privacy proposition even though the status provider can associate credential-specific requests with distinct presentation events.",
+        "Assessment examines only the content of the status response and ignores privacy-significant metadata created by making the lookup."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate observer and request metadata, not response alone; use privacy-preserving resolution where required or qualify claim.",
+      "potential_impact": "Applicant; issuer knowledge of community application.",
+      "comparison": "added-value: combines presentation and status-resolution observations; local task already requires status verification.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-033",
+      "case_version": "0.1.0",
+      "source_blob": "42bc6ee721049289f166817779b23683dea3a650",
+      "source_path": "corpus/privacy/DTF-033.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "VTI-MEM-030–034; VTI-CMP-040–042,060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Downstream status check can correctly observe revoked membership credential.",
+      "relying_proposition": "Post-departure status resolution is privacy-neutral.",
+      "precondition_analysis": "Requires observable credential/status lookup, privacy objective limiting provider knowledge of use and actual request/context correlation; publication or status list retrieval need not reveal individual credential use.",
+      "trigger": "The status-resolution event exposes a credential-specific or context-specific observation that permits usage correlation, while the verification flow still treats privacy assurance as satisfied.",
+      "falsification": [
+        "The system reports PASS for the privacy proposition even though the status provider can associate credential-specific requests with distinct presentation events.",
+        "Assessment examines only the content of the status response and ignores privacy-significant metadata created by making the lookup."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Test lookup granularity, cache/observer/timing effects; distinguish public status distribution from credential-specific queries.",
+      "potential_impact": "Former member and relying service; disclosure of attempted use or relationship.",
+      "comparison": "added-value: connects departure and later relying-party status activity without assuming every status mechanism leaks.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-033",
+      "case_version": "0.1.0",
+      "source_blob": "42bc6ee721049289f166817779b23683dea3a650",
+      "source_path": "corpus/privacy/DTF-033.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/list/1.1",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "List scoped reads, Retention; shared ConsentSubject schema",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Scoped VTA grant-state query may return correct status.",
+      "relying_proposition": "Authorization-state resolution reveals no conversation activity.",
+      "precondition_analysis": "Requires observable status lookup, privacy objective limiting provider knowledge of use and actual subject/agent-specific request or timing exposing relationship. Bulk change sync may be legitimate counterexample.",
+      "trigger": "The status-resolution event exposes a credential-specific or context-specific observation that permits usage correlation, while the verification flow still treats privacy assurance as satisfied.",
+      "falsification": [
+        "The system reports PASS for the privacy proposition even though the status provider can associate credential-specific requests with distinct presentation events.",
+        "Assessment examines only the content of the status response and ignores privacy-significant metadata created by making the lookup."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Evaluate request and timing visibility, minimize query scope consistent with authorization and freshness; do not claim privacy neutrality without evidence.",
+      "potential_impact": "Conversation participants/operator; inference of activity.",
+      "comparison": "added-value conditional on explicit privacy objective; opaque handles do not eliminate usage metadata.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-034",
+      "case_version": "0.1.0",
+      "source_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa",
+      "source_path": "corpus/privacy/DTF-034.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/manifest/0.4",
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3"
+      ],
+      "sections": "Submit Security & Privacy: Consent/purpose, Retention; Manifest directoryDisclosure",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Applicant legitimately discloses verified or self-asserted evidence for admission.",
+      "relying_proposition": "Successful application permits unrelated directory use, profiling or indefinite retention.",
+      "precondition_analysis": "Requires legitimate original disclosure and successful presentation, distinct later processing and absent applicable purpose/authority; registryConsent only covers registry publication, not blanket reuse.",
+      "trigger": "A downstream party performs secondary processing and relies on the fact of successful presentation rather than establishing an applicable purpose, policy, authority, or other governance basis for that later use.",
+      "falsification": [
+        "The system treats successful presentation as sufficient basis for materially different downstream processing without evaluating the applicable purpose or policy.",
+        "Data is retained or transferred beyond an applicable bound while the decision record continues to represent the processing as within the original relying purpose."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate separate purpose and authority, minimize retention and distinguish refused/admitted applications; no presumption that lawful audit is prohibited.",
+      "potential_impact": "Applicant; unauthorized secondary use.",
+      "comparison": "limited: explicit source purpose restriction already captures mechanism; ceremony locates subsequent processing.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-034",
+      "case_version": "0.1.0",
+      "source_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa",
+      "source_path": "corpus/privacy/DTF-034.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Removal disposition/audit; VTI-MEM-031–034",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Admission and removal evidence may be legitimately collected and retained under applicable audit rules.",
+      "relying_proposition": "Initial legitimate disclosure authorizes unrelated use of retained records after departure.",
+      "precondition_analysis": "Requires original legitimate disclosure and successful verification, distinct later processing beyond applicable purpose/audience/retention, no separate governance basis. Authorized audit retention is a control.",
+      "trigger": "A downstream party performs secondary processing and relies on the fact of successful presentation rather than establishing an applicable purpose, policy, authority, or other governance basis for that later use.",
+      "falsification": [
+        "The system treats successful presentation as sufficient basis for materially different downstream processing without evaluating the applicable purpose or policy.",
+        "Data is retained or transferred beyond an applicable bound while the decision record continues to represent the processing as within the original relying purpose."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Apply disposition and retention policy; preserve only justified evidence, reject unsupported secondary use; do not downgrade erasure.",
+      "potential_impact": "Former member; profiling or unauthorized retention.",
+      "comparison": "added-value: evaluates purpose continuity across admission and separation.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-034",
+      "case_version": "0.1.0",
+      "source_blob": "2b80482f834cbdecf0c843bea586fa0b23e77daa",
+      "source_path": "corpus/privacy/DTF-034.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "Request scope and displayHint; Decision effect/scope; Revoke Conformance",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Authorized receive/converse grant permits scoped delivery.",
+      "relying_proposition": "Successful delivery authorizes unrelated retention, profiling or further transfer.",
+      "precondition_analysis": "Requires original legitimate disclosure and successful delivery, later materially different processing and absent applicable purpose basis. Message consent is not necessarily legal basis for all processing.",
+      "trigger": "A downstream party performs secondary processing and relies on the fact of successful presentation rather than establishing an applicable purpose, policy, authority, or other governance basis for that later use.",
+      "falsification": [
+        "The system treats successful presentation as sufficient basis for materially different downstream processing without evaluating the applicable purpose or policy.",
+        "Data is retained or transferred beyond an applicable bound while the decision record continues to represent the processing as within the original relying purpose."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Enforce exact grant and independently establish lawful/governance basis for later processing; revocation does not automatically erase every record.",
+      "potential_impact": "Conversation participants/operator; secondary use of content or metadata.",
+      "comparison": "added-value: distinguishes delivery decision from downstream processing purpose.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-035",
+      "case_version": "0.1.0",
+      "source_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af",
+      "source_path": "corpus/privacy/DTF-035.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Correlation; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Authorized issuers/community may choose identifiers and credential/proof configurations.",
+      "relying_proposition": "Authorized participants necessarily preserve applicant unlinkability.",
+      "precondition_analysis": "Requires stated unlinkability/minimization objective, authority-controlled cross-interaction metadata and no independent demonstration of property; actual join from choices must be tested.",
+      "trigger": "Authoritative participant choices create a stable or distinctive join across interactions while local credential and proof validation continue to succeed.",
+      "falsification": [
+        "The system returns PASS for unlinkability while issuer-controlled or operator-controlled metadata consistently links otherwise separate interactions.",
+        "Assessment assumes that an authoritative participant preserves privacy merely because that participant is authorized to issue or operate the relevant component."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Trace control of issuer IDs, credential IDs, timing and proof choices; assess privacy claim independently of issuance competence.",
+      "potential_impact": "Applicant; correlation across communities.",
+      "comparison": "added-value: attributes correlation surface to actors across steps, not just applicant choices.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-035",
+      "case_version": "0.1.0",
+      "source_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af",
+      "source_path": "corpus/privacy/DTF-035.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1"
+      ],
+      "sections": "VTI-MEM-033–034; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Community controls removal publication and notification timing.",
+      "relying_proposition": "Authorized community operation guarantees unlinkability of departure/status events.",
+      "precondition_analysis": "Requires actual claimed minimization/unlinkability, observable operator-controlled metadata across contexts and no demonstration of protection; timing or stable status identifiers may correlate if observable.",
+      "trigger": "Authoritative participant choices create a stable or distinctive join across interactions while local credential and proof validation continue to succeed.",
+      "falsification": [
+        "The system returns PASS for unlinkability while issuer-controlled or operator-controlled metadata consistently links otherwise separate interactions.",
+        "Assessment assumes that an authoritative participant preserves privacy merely because that participant is authorized to issue or operate the relevant component."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Test controlled identifiers and cadence under applicable privacy objective; do not delay required credential status merely for batching.",
+      "potential_impact": "Departing member; relationship inference.",
+      "comparison": "added-value: reconciles privacy controls with effective status timing across stages.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-035",
+      "case_version": "0.1.0",
+      "source_blob": "db1a5f43d8c68d8da7665bbf7a50186ea40a31af",
+      "source_path": "corpus/privacy/DTF-035.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/approver-set/1.0",
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Shared ConsentSubject/ApproverBinding; List scoped reads; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Enrolled bridge controls opaque conversation references; VTA controls grant/sync records.",
+      "relying_proposition": "Authorized bridge and opaque references guarantee unlinkability across contexts.",
+      "precondition_analysis": "Requires declared privacy property, participant-controlled values observable across interactions and absence of demonstrated protection; actual reuse or distinctive timing must be tested. Stable handle within its intended scope may be necessary.",
+      "trigger": "Authoritative participant choices create a stable or distinctive join across interactions while local credential and proof validation continue to succeed.",
+      "falsification": [
+        "The system returns PASS for unlinkability while issuer-controlled or operator-controlled metadata consistently links otherwise separate interactions.",
+        "Assessment assumes that an authoritative participant preserves privacy merely because that participant is authorized to issue or operate the relevant component."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Test handle generation, reuse and observer-specific joins; restrict cross-context exposure; distinguish authorized operation from privacy assurance.",
+      "potential_impact": "Participants/operator; activity and relationship profiling.",
+      "comparison": "added-value conditional: actor control and cross-context reuse extend beyond local opaque-field check.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-036",
+      "case_version": "0.1.0",
+      "source_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad",
+      "source_path": "corpus/privacy/DTF-036.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Requested attributes, Correlation and Data carried; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Individual attributes, VP and review metadata may each be justified.",
+      "relying_proposition": "Combined evidence is privacy-minimal because each item is individually justified.",
+      "precondition_analysis": "Requires multiple linkable disclosures, per-item acceptability and untested combined privacy property; actual sensitive inference or identity narrowing must be evaluated.",
+      "trigger": "The combined disclosure set materially narrows identity, enables profiling, or reveals a sensitive inference while the system treats independent minimization of each element as sufficient privacy evidence.",
+      "falsification": [
+        "The system returns PASS for minimization solely because each disclosed element is individually justified while their combination materially enables identification or profiling.",
+        "Privacy analysis omits readily available joins among disclosed facts that change the sensitivity or identifiability of the combined result."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Assess joint VP/attributes/metadata against purpose and observer knowledge; avoid unnecessary fields and respect selective disclosure.",
+      "potential_impact": "Applicant; identification or sensitive inference.",
+      "comparison": "added-value: joint disclosure evaluation directly tests composition.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-036",
+      "case_version": "0.1.0",
+      "source_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad",
+      "source_path": "corpus/privacy/DTF-036.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1",
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Removal disposition and audit; receipt 0.1 Security & Privacy; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Removal records, status metadata and receipts may be individually necessary.",
+      "relying_proposition": "Combined admission and departure evidence remains minimally disclosing.",
+      "precondition_analysis": "Requires multiple linkable elements, per-item justification, intended privacy objective and untested joint property; mere identification of known member within authorized community is not failure.",
+      "trigger": "The combined disclosure set materially narrows identity, enables profiling, or reveals a sensitive inference while the system treats independent minimization of each element as sufficient privacy evidence.",
+      "falsification": [
+        "The system returns PASS for minimization solely because each disclosed element is individually justified while their combination materially enables identification or profiling.",
+        "Privacy analysis omits readily available joins among disclosed facts that change the sensitivity or identifiability of the combined result."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Evaluate joint audience, linkage and sensitive inference; disclose only necessary scoped evidence.",
+      "potential_impact": "Former member; reconstruction of affiliation or removal circumstances.",
+      "comparison": "added-value: combines lifecycle evidence across enactments and audiences.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-036",
+      "case_version": "0.1.0",
+      "source_blob": "0b68862f36ff54e17de6a79113de4de7297f76ad",
+      "source_path": "corpus/privacy/DTF-036.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/approve-request/0.1",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1"
+      ],
+      "sections": "Request display/context hints; shared ConsentSubject; Decision evidence; List scoped reads",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Opaque subject, agent DID, prompt metadata and grant timing may each serve a legitimate purpose.",
+      "relying_proposition": "Their combined exposure remains privacy-minimal.",
+      "precondition_analysis": "Requires individually justified elements visible in same/linkable context, untested combined property and actual identity narrowing or inference. No claim every combination reveals identity.",
+      "trigger": "The combined disclosure set materially narrows identity, enables profiling, or reveals a sensitive inference while the system treats independent minimization of each element as sufficient privacy evidence.",
+      "falsification": [
+        "The system returns PASS for minimization solely because each disclosed element is individually justified while their combination materially enables identification or profiling.",
+        "Privacy analysis omits readily available joins among disclosed facts that change the sensitivity or identifiability of the combined result."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Evaluate combined disclosure and observer knowledge; minimize hints, identifiers and timing exposure where compatible with operation.",
+      "potential_impact": "Conversation participants/operator; sensitive relationship or activity inference.",
+      "comparison": "added-value: ceremony-wide join analysis beyond individual field minimization.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "joining",
+      "case_id": "DTF-037",
+      "case_version": "0.1.0",
+      "source_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff",
+      "source_path": "corpus/privacy/DTF-037.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/join-requests/submit/0.3",
+        "https://trusttasks.org/spec/vtc/join-requests/decide/0.1"
+      ],
+      "sections": "Submit Retention: VP and vpClaims; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Durable application records preserve decision evidence.",
+      "relying_proposition": "Audit value justifies indefinite or broadly aggregated retention of all linkable evidence.",
+      "precondition_analysis": "Requires persistable verification artifacts, joinable identifiers/metadata and no established necessity for broad retention; actual excessive retention/correlation must be evidenced. Source recommends disposal policy but supplies no universal lifetime.",
+      "trigger": "Verification artefacts are persisted or aggregated beyond the justified purpose or retention boundary and become a durable dataset from which otherwise separate interactions can be reconstructed or correlated.",
+      "falsification": [
+        "The system reports PASS for privacy while retaining verification artefacts beyond the established purpose or retention boundary and those artefacts permit cross-context reconstruction.",
+        "Audit or assurance value is asserted as a blanket justification for retaining raw or linkable artefacts when less correlating evidence would satisfy the same stated purpose."
+      ],
+      "authority": "VTC owns admission decision; applicable governance framework may constrain policy; live authority cannot be conferred by policy alone.",
+      "expected_safe_outcome": "Evaluate retention separately for VP, projection, attributes and audit references; retain minimum justified evidence and record disposal policy.",
+      "potential_impact": "Applicant including refused applicant; durable profiling or exposure.",
+      "comparison": "added-value: links multiple stores and later use; source already identifies durable VP/projection risk.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "separation",
+      "case_id": "DTF-037",
+      "case_version": "0.1.0",
+      "source_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff",
+      "source_path": "corpus/privacy/DTF-037.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/vtc/members/self-remove/0.1",
+        "https://trusttasks.org/spec/vtc/members/self-remove-receipt/0.1",
+        "https://trusttasks.org/spec/vtc/members/admin-remove/0.1"
+      ],
+      "sections": "Removal disposition and audit survival; VTI-MEM-031–034; VTI-CMP-060–064",
+      "disposition": "conditional-candidate",
+      "attribution": "cross-ceremony",
+      "local_proposition": "Audit evidence can legitimately survive certain record disposal.",
+      "relying_proposition": "Audit survival authorizes indefinite aggregation of admission, status and departure records.",
+      "precondition_analysis": "Requires persistent verification artifacts joinable across contexts, no positive necessity for broad retention and actual excess aggregation; erasure and audit obligations must be reconciled, not presumed incompatible.",
+      "trigger": "Verification artefacts are persisted or aggregated beyond the justified purpose or retention boundary and become a durable dataset from which otherwise separate interactions can be reconstructed or correlated.",
+      "falsification": [
+        "The system reports PASS for privacy while retaining verification artefacts beyond the established purpose or retention boundary and those artefacts permit cross-context reconstruction.",
+        "Audit or assurance value is asserted as a blanket justification for retaining raw or linkable artefacts when less correlating evidence would satisfy the same stated purpose."
+      ],
+      "authority": "VTC owns lifecycle decision; member initiates own departure; administrator requires applicable community authority and policy controls.",
+      "expected_safe_outcome": "Document per-artifact purpose/bound, retain minimally correlating evidence where sufficient, respect applicable erasure; qualify historical gaps.",
+      "potential_impact": "Former member; durable affiliation reconstruction or loss of contestability.",
+      "comparison": "added-value: evaluates retention and correlation over relationship lifecycle.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    },
+    {
+      "profile": "consent",
+      "case_id": "DTF-037",
+      "case_version": "0.1.0",
+      "source_blob": "f16f5673ee92c5f53b1a8e087c8f84a0ac1e35ff",
+      "source_path": "corpus/privacy/DTF-037.json",
+      "task_versions": [
+        "https://trusttasks.org/spec/consent/request/1.0",
+        "https://trusttasks.org/spec/consent/decision/1.0",
+        "https://trusttasks.org/spec/consent/list/1.1",
+        "https://trusttasks.org/spec/consent/revoke/1.0"
+      ],
+      "sections": "Request displayHint retention; Decision evidence mode; List Retention; Revoke audit",
+      "disposition": "conditional-candidate",
+      "attribution": "ceremony-compositional",
+      "local_proposition": "Grant state and limited operational/audit evidence can be justified.",
+      "relying_proposition": "Operational/audit need justifies retaining and aggregating all prompts, handles, decisions and cache histories indefinitely.",
+      "precondition_analysis": "Requires persistable artifacts, joinability via subject/timing/agent and absent necessity for broad retention; actual storage and retention bounds are deployment evidence not supplied.",
+      "trigger": "Verification artefacts are persisted or aggregated beyond the justified purpose or retention boundary and become a durable dataset from which otherwise separate interactions can be reconstructed or correlated.",
+      "falsification": [
+        "The system reports PASS for privacy while retaining verification artefacts beyond the established purpose or retention boundary and those artefacts permit cross-context reconstruction.",
+        "Audit or assurance value is asserted as a blanket justification for retaining raw or linkable artefacts when less correlating evidence would satisfy the same stated purpose."
+      ],
+      "authority": "VTA owns authoritative grant and approver resolution; bridge enforces delivery; context admin sets binding; approver decides within authority.",
+      "expected_safe_outcome": "Inventory stores and purposes; minimize retained hints and linkable histories, enforce applicable disposal, preserve required audit evidence with limits.",
+      "potential_impact": "Participants/operator; durable conversation relationship reconstruction.",
+      "comparison": "added-value: evaluates joined retained records across bridge/VTA and revocation.",
+      "observed_failure": false,
+      "independent_review": "not-established"
+    }
+  ],
+  "limitations": [
+    "Conditional documentary hypotheses, not observed privacy violations.",
+    "Privacy objectives, actual observers, data joins and retention necessity must be established for the deployment; authorized within-context correlation is not inherently a failure.",
+    "DTF-032 requires credential/presentation securing-mechanism premises, not merely stable task envelope identifiers.",
+    "VTI snapshot separately pinned; compatibility not asserted.",
+    "Per-precondition adversarial review and final matrix validation remain pending.",
+    "Gate C adversarial narrowing: do not promote a merely imaginable extension beyond the selected profile into a conditional candidate. Not established does not imply safety."
+  ]
+}
