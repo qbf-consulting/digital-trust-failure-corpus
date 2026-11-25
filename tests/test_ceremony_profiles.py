@@ -70,6 +70,31 @@ class CeremonyProfileTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "catalog blob drift"):
             self.validate()
 
+    def test_missing_state_dimension(self):
+        self.profiles["determination_model"]["effective_state"].remove("indeterminate")
+        with self.assertRaisesRegex(ValueError, "determination state drift"):
+            self.validate()
+
+    def test_shared_source_drift(self):
+        self.profiles["shared_sources"][0]["blob"] = "0" * 40
+        with self.assertRaisesRegex(ValueError, "shared source binding drift"):
+            self.validate()
+
+    def test_unknown_path_task(self):
+        self.profiles["profiles"][0]["paths"][0]["order"].append("consent/revoke/1.0")
+        with self.assertRaisesRegex(ValueError, "invalid execution path"):
+            self.validate()
+
+    def test_missing_alternative_path(self):
+        self.profiles["profiles"][0]["paths"].pop()
+        with self.assertRaisesRegex(ValueError, "execution path membership drift"):
+            self.validate()
+
+    def test_missing_policy_owner(self):
+        self.profiles["profiles"][0]["policy_owner"] = ""
+        with self.assertRaisesRegex(ValueError, "missing policy_owner"):
+            self.validate()
+
 
 if __name__ == "__main__":
     unittest.main()
