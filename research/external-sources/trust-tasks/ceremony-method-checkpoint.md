@@ -1,6 +1,6 @@
 # Ceremony assessment: source and method checkpoint
 
-Issue [#168](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/168). Author-side research, AI-assisted; not a completed Gate A, not an independent review or an implementation assessment.
+Issue [#168](https://github.com/qbf-consulting/digital-trust-failure-corpus/issues/168). Author-side research, AI-assisted; bounded Gate A source contract, not an independent review or an implementation assessment.
 
 ## Source authority
 
@@ -29,6 +29,24 @@ For each selected profile and canonical DTF case, separately determine local tas
 
 The existing receipt assessment and Consent study remain unchanged. A receipt does not confer authority. VTI already explicitly states the semantic-completion distinction: research contribution must be operationalizing it through pinned cases, alternative paths and falsification designs, not asserting novelty of the principle.
 
-## Remaining Gate A obligations
+## Gate A source disposition
 
-Inspect selected payload schemas against inventory blob pins; read full selected Consent and receipt contracts; inspect governing VTC chapter and relevant credential/access requirements; resolve or explicitly bound version/source tensions; freeze actual canonical case blobs; produce validated profiles with task dependencies, completion and legitimacy predicates. The 111-cell assessment and publication remain pending. No independent review, live execution, or conformance claim.
+The selected task payloads, relevant VTC/ACL chapters and shared schemas are recorded in ceremony-profiles.json. The frozen canonical baseline is ceremony-case-baseline.json. The profile validator and its 15-test suite were included in successful validation, documentation and DCO workflows on c43d60ffcef4cd634cdc877b176e8a147e7ba4b7. This is structural evidence, not semantic acceptance.
+
+### Upstream ceremony definition versus analytical profile
+
+At the registry pin the [definition meta-schema](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/ceremonies/ceremony.meta.schema.json) (blob 35ca1d2006b420721cca178fa806a1b591c6cf2c) describes roles, steps, partial order, optionality, multiplicity, bounded repetition, completion, evidence and descriptive compensation. The [design note](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/docs/design-notes/trust-ceremonies.md) (blob 47a67418df285edec5f858dab777126ad6944eb7) is non-normative rationale with mixed historical and prospective statements; the actual framework, receipt contract and registry definition take precedence.
+
+The [VTC Member Onboarding 0.1 definition](https://github.com/trustoverip/dtgwg-trust-tasks-tf/blob/f21a98ec8383352d18629a08dd5dd23935456142/ceremonies/vtc/member-onboarding/0.1/ceremony.json) (blob df00c69e8b233bea78a1339f9359693353b49f23, draft, target framework 0.4) is a real upstream definition, not our analytical profile. It binds manifest/0.1, submit/0.1, submit-receipt/0.1, status/0.1, decide/0.1, solicit-vmc/0.1, request-vmc/0.1 and vmc/0.1. Discover is optional; acknowledge and decide depend on apply concurrently; status has at most three rounds; reciprocal credential steps are optional. Completion allOf(apply, decide, anyOf(decide, reciprocate)) reduces logically to apply AND decide. Both decide and reciprocate can carry terminal markers; the description says decide is terminal on rejection. The expression alone cannot distinguish approval from rejection or establish reciprocal credentials; signed terminal evidence and task payload semantics matter. The receipt verifier still checks the definition and applicable signed evidence. This is a conditional research question, not an assertion of a defect or deployed behavior. Its 30-day maxDuration is definition-specific; do not import it into the analytical profile. The note in the definition about missing supplement task is historical relative to the selected inventory, which contains supplement/0.1. Do not silently upgrade the actual definition.
+
+The analytical joining profile uses manifest/0.4 and submit/0.3, reviewed/automatic alternatives, and a distinct direct-admission contrast. It assesses community-side membership and separately current access; reciprocal membership is not asserted. No equivalence or wire compatibility with the upstream definition is claimed. Discovery is policy evidence, not a required network exchange when current criteria already known. Separation and consent are author-defined bounded profiles, not claims that no upstream definition exists.
+
+### Explicit limits rather than silent reconciliation
+
+- Self-remove/0.1 response requires did, disposition and removed; self-remove-receipt/0.1 expressly follows effective removal and has acknowledgement of delivery. Both are source assertions; acceptance alone is not effective departure and neither proves all dependent effects. Exact scheduling and implementation-specific timing remain unresolved.
+- Submit/0.3 conformance distinguishes allow/admit, refer, requestMore and deny; automatic admission may be refused or referred on recorded external grounds. Review requires an administrator decision. Its text references approve/0.1; decide/0.1 is the selected successor contrast, not a claim of historical wire equivalence.
+- Consent/decision/1.0 records both allow and deny; preauthorization is policy-conditional; bridge provenance is not legal mandate. Consent/list/1.1 cache is advisory and revoke/1.0 must fail closed.
+- Receipt/0.1 verifier rules 2–11 distinguish unavailable definition, invalid enumeration, role binding, signed terminal marker, held-document proofs and predecessor chains. Without terminal document completion is unverified; nested content, maxDuration and unobserved omissions are explicitly bounded. Receipt grants no authority.
+- The study does not claim full transitive schema closure, deployment-specific policy/effect times, exhaustive upstream ceremony catalogue or cross-version conformance. These are limitations of the selected research contract; any case depending on them remains conditional or unresolved.
+
+The selected source boundaries are sufficient for bounded author-side comparative assessment; no independent review, live execution or conformance claim. Gate B remains to be performed.
