@@ -329,9 +329,9 @@
       "case_id": "DTF-007",
       "case_version": "0.1.0",
       "case_blob": "dfee9e0b4ee6e73636f9c5f1e0c263fcf35b5e67",
-      "ceremony_disposition": "conditional-candidate",
-      "category": "conditional-extension",
-      "rationale": "Additional claim of independent corroboration and common origin must be stipulated; not simply weak bridge provenance.",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "Common provenance of VTA grant and advisory cache is established, but independence-sensitive corroboration and additional weight for apparent independence are not established in this profile.",
       "prior_decisions": [
         {
           "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
@@ -433,9 +433,9 @@
       "case_id": "DTF-009",
       "case_version": "0.1.0",
       "case_blob": "bfccad840128a91048842172c50945098ba2815b",
-      "ceremony_disposition": "conditional-candidate",
-      "category": "conditional-extension",
-      "rationale": "Requires actual two recognition edges and unsupported transitivity; enrollment alone insufficient.",
+      "ceremony_disposition": "not-established-within-profile",
+      "category": "not-established",
+      "rationale": "Approver binding and bridge enrollment do not establish two recognition edges or unsupported transitive reliance. No source-grounded recognition chain is established.",
       "prior_decisions": [
         {
           "type_uri": "https://trusttasks.org/spec/consent/approve-request/0.1",
